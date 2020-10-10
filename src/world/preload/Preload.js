@@ -1,5 +1,6 @@
 import Load from '../../interface/menus/load/Load'
 import Start from '../../interface/menus/start/Start'
+import Login from '../../interface/menus/login/Login'
 
 
 export default class Preload extends Phaser.Scene {
@@ -9,7 +10,8 @@ export default class Preload extends Phaser.Scene {
 
         this.preloadScenes({
             'load': { sceneKey: 'Load', scene: Load },
-            'start': { sceneKey: 'Start', scene: Start }
+            'start': { sceneKey: 'Start', scene: Start },
+            'login': { sceneKey: 'Login', scene: Login }
         })
     }
 

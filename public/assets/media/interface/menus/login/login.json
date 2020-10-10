@@ -1,0 +1,345 @@
+{
+	"textures": [
+		{
+			"image": "login.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 920,
+				"h": 616
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "large-hover-2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 601,
+						"h": 165
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 601,
+						"h": 144
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 601,
+						"h": 144
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "large-hover-3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 601,
+						"h": 165
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 15,
+						"w": 598,
+						"h": 136
+					},
+					"frame": {
+						"x": 1,
+						"y": 147,
+						"w": 598,
+						"h": 136
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "large-hover",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 601,
+						"h": 165
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 18,
+						"w": 592,
+						"h": 128
+					},
+					"frame": {
+						"x": 1,
+						"y": 285,
+						"w": 592,
+						"h": 128
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "small-hover-2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 426,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 426,
+						"h": 73
+					},
+					"frame": {
+						"x": 1,
+						"y": 415,
+						"w": 426,
+						"h": 73
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "small-hover-3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 426,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 424,
+						"h": 70
+					},
+					"frame": {
+						"x": 1,
+						"y": 490,
+						"w": 424,
+						"h": 70
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "input",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 380,
+						"h": 53
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 380,
+						"h": 53
+					},
+					"frame": {
+						"x": 1,
+						"y": 562,
+						"w": 380,
+						"h": 53
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "note",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 280,
+						"h": 223
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 280,
+						"h": 223
+					},
+					"frame": {
+						"x": 604,
+						"y": 1,
+						"w": 280,
+						"h": 223
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "login-button-active",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 318,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 318,
+						"h": 105
+					},
+					"frame": {
+						"x": 601,
+						"y": 226,
+						"w": 318,
+						"h": 105
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "login-button-hover",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 318,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 318,
+						"h": 105
+					},
+					"frame": {
+						"x": 595,
+						"y": 333,
+						"w": 318,
+						"h": 105
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "small-hover",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 426,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 7,
+						"w": 420,
+						"h": 66
+					},
+					"frame": {
+						"x": 429,
+						"y": 440,
+						"w": 420,
+						"h": 66
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "login-button",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 318,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 318,
+						"h": 105
+					},
+					"frame": {
+						"x": 427,
+						"y": 508,
+						"w": 318,
+						"h": 105
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "checkbox-active",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 53,
+						"h": 53
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 53,
+						"h": 53
+					},
+					"frame": {
+						"x": 851,
+						"y": 440,
+						"w": 53,
+						"h": 53
+					},
+					"anchor": {
+						"x": 0.41509434,
+						"y": 0.58490566
+					}
+				},
+				{
+					"filename": "checkbox",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 53,
+						"h": 53
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 45,
+						"h": 45
+					},
+					"frame": {
+						"x": 747,
+						"y": 508,
+						"w": 45,
+						"h": 45
+					},
+					"anchor": {
+						"x": 0.41509434,
+						"y": 0.58490566
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:0d6f6413e31113f1c254fd5ded277dd1:af8cf1e211d6f87f01169701f0904d03:ffb62af756263e4644c882ff552ab6d3$"
+	}
+}

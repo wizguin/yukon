@@ -12,6 +12,12 @@
                 "url": "public/assets/media/interface/menus/load/load.json",
                 "path": "public/assets/media/interface/menus/load/",
                 "key": "load"
+            },
+            {
+                "type": "multiatlas",
+                "url": "public/assets/media/interface/menus/login/login.json",
+                "path": "public/assets/media/interface/menus/login/",
+                "key": "login"
             }
         ]
     },

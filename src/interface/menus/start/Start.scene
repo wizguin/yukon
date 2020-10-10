@@ -125,6 +125,7 @@
                 "Button"
             ],
             "Button.spriteName": "start-button",
+            "Button.callback": "() => this.startClick()",
             "texture": {
                 "key": "start",
                 "frame": "start-button"
