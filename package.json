@@ -1,0 +1,23 @@
+{
+  "name": "yukon",
+  "version": "1.0.0",
+  "description": "A HTML5 recreation of Club Penguin",
+  "scripts": {
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wizguin/yukon.git"
+  },
+  "author": "wizguin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wizguin/yukon/issues"
+  },
+  "homepage": "https://github.com/wizguin/yukon#readme",
+  "devDependencies": {
+    "rollup": "^2.29.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-serve": "^1.0.4"
+  }
+}
