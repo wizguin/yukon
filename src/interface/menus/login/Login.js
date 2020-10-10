@@ -1,4 +1,4 @@
-import Button from '../../../components/Button'
+import { Button } from '../../../components/components'
 
 
 /* START OF COMPILED CODE */
