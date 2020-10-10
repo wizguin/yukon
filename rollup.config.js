@@ -4,7 +4,7 @@ import livereload from 'rollup-plugin-livereload'
 
 
 export default {
-    input: 'src/Yukon.js',
+    input: 'src/yukon.js',
     output: {
         file: 'public/assets/scripts/client/yukon.js',
         format: 'iife'

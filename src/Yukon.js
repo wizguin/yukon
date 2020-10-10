@@ -1,4 +1,4 @@
-import Game from './world/Game'
+import Game from './Game'
 
 
 window.addEventListener('load', function () {

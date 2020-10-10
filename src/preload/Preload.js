@@ -1,6 +1,6 @@
-import Load from '../../interface/menus/load/Load'
-import Start from '../../interface/menus/start/Start'
-import Login from '../../interface/menus/login/Login'
+import Load from '../interface/menus/load/Load'
+import Start from '../interface/menus/start/Start'
+import Login from '../interface/menus/login/Login'
 
 
 export default class Preload extends Phaser.Scene {
