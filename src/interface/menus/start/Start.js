@@ -1,5 +1,5 @@
+import Button from '../../../components/Button'
 
-// You can write more code here
 
 /* START OF COMPILED CODE */
 
@@ -44,13 +44,17 @@ class Start extends Phaser.Scene {
         this.add.image(1264, 855, "start", "penguin-2");
         
         // start_button
-        this.add.sprite(760, 826, "start", "start-button");
+        const start_button = this.add.sprite(760, 826, "start", "start-button");
         
         // start_text
         this.add.image(760, 826, "start", "start-text");
         
         // logo
         this.add.image(760, 682, "start", "logo");
+        
+        // start_button (components)
+        const start_buttonButton = new Button(start_button);
+        start_buttonButton.spriteName = "start-button";
     }
     
     /* START-USER-CODE */

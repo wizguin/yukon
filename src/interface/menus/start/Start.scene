@@ -124,6 +124,7 @@
             "components": [
                 "Button"
             ],
+            "Button.spriteName": "start-button",
             "texture": {
                 "key": "start",
                 "frame": "start-button"
