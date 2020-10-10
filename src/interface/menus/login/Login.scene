@@ -30,7 +30,7 @@
                 "Button"
             ],
             "Button.spriteName": "login-button",
-            "Button.callback": "() => this.loginClick()",
+            "Button.callback": "() => this.onLoginClick()",
             "texture": {
                 "key": "login",
                 "frame": "login-button"

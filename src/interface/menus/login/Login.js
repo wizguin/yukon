@@ -98,7 +98,7 @@ class Login extends Phaser.Scene {
         // login_button (components)
         const login_buttonButton = new Button(login_button);
         login_buttonButton.spriteName = "login-button";
-        login_buttonButton.callback = () => this.loginClick();
+        login_buttonButton.callback = () => this.onLoginClick();
     }
 
     /* START-USER-CODE */
@@ -113,14 +113,20 @@ class Login extends Phaser.Scene {
         this.elements.password = this.add.dom(815, 259).createFromHTML(passwordField)
 
         let enterKey = this.input.keyboard.addKey('ENTER')
-        enterKey.on('down', () => { this.loginClick() })
+        enterKey.on('down', () => { this.onLoginClick() })
+
+        this.input.on('pointerdown', () => { this.onSceneClick() })
     }
 
-    loginClick() {
+    onLoginClick() {
         let username = this.elements.username.getChildByName('username').value
         let password = this.elements.password.getChildByName('password').value
 
         console.log(username, password)
+    }
+
+    onSceneClick() {
+        document.activeElement.blur() // Removes input focus
     }
 
     /* END-USER-CODE */

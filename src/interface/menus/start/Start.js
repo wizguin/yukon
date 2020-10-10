@@ -55,12 +55,12 @@ class Start extends Phaser.Scene {
         // start_button (components)
         const start_buttonButton = new Button(start_button);
         start_buttonButton.spriteName = "start-button";
-        start_buttonButton.callback = () => this.startClick();
+        start_buttonButton.callback = () => this.onStartClick();
     }
     
     /* START-USER-CODE */
 
-    startClick() {
+    onStartClick() {
         this.scene.start('Login')
     }
 
