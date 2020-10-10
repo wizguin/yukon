@@ -1,4 +1,4 @@
-import Preload from './preload/Preload'
+import Preload from '@/preload/Preload'
 
 
 export default class Game extends Phaser.Game {

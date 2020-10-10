@@ -1,6 +1,8 @@
+import alias from '@rollup/plugin-alias'
 import json from '@rollup/plugin-json'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import path from 'path'
 
 
 export default {
@@ -10,6 +12,11 @@ export default {
         format: 'iife'
     },
     plugins: [
+        alias({
+            entries: [
+                { find: '@', replacement: path.resolve(__dirname, 'src') }
+            ]
+        }),
         json(),
         serve({
             contentBase: 'public',
