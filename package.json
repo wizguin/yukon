@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/wizguin/yukon#readme",
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "rollup": "^2.29.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-serve": "^1.0.4"

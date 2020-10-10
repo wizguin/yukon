@@ -1,0 +1,164 @@
+{
+    "id": "ba7dc8df-af93-4730-8143-9dc3bef1ebe4",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadPackFiles": [],
+        "sceneKey": "Start",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "96cc930f-376d-4def-b717-53a62834f7f0",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "load",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "533f6f60-9a4c-4425-b6bc-e454b4d5ef33",
+            "label": "christmas",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "christmas"
+            },
+            "x": 760,
+            "y": 420
+        },
+        {
+            "type": "Image",
+            "id": "17b698fc-769a-49c8-acd0-5b4f8e354a86",
+            "label": "bottom",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "bottom"
+            },
+            "x": 760,
+            "y": 766
+        },
+        {
+            "type": "Image",
+            "id": "4bfbb7f7-41a1-45fc-b078-2904917758a3",
+            "label": "blog-text",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "blog-text"
+            },
+            "x": 364,
+            "y": 884
+        },
+        {
+            "type": "Image",
+            "id": "bddc35f3-b9b5-4828-9ab3-7a052dc44556",
+            "label": "blog",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "blog"
+            },
+            "x": 364,
+            "y": 812
+        },
+        {
+            "type": "Image",
+            "id": "48b93171-b21c-4e22-88a4-e6d0132dfe14",
+            "label": "new",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "new"
+            },
+            "x": 1141,
+            "y": 775
+        },
+        {
+            "type": "Image",
+            "id": "135e2a9d-1080-400d-a887-9490d36de2b7",
+            "label": "member",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "member"
+            },
+            "x": 1157,
+            "y": 860
+        },
+        {
+            "type": "Image",
+            "id": "d7fb6570-52e7-40af-97a3-0badc5bf7df4",
+            "label": "penguin_1",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "penguin-1"
+            },
+            "x": 1268,
+            "y": 771
+        },
+        {
+            "type": "Image",
+            "id": "010d3ca9-7f96-47e1-a952-19baeb027de0",
+            "label": "penguin_2",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "penguin-2"
+            },
+            "x": 1264,
+            "y": 855
+        },
+        {
+            "type": "Sprite",
+            "id": "e857ac4c-0c2e-41e9-bc47-b7a5d595c755",
+            "label": "start_button",
+            "components": [
+                "Button"
+            ],
+            "texture": {
+                "key": "start",
+                "frame": "start-button"
+            },
+            "x": 760,
+            "y": 826
+        },
+        {
+            "type": "Image",
+            "id": "3300ec3a-a3fc-4011-93a4-65617aa1efa9",
+            "label": "start_text",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "start-text"
+            },
+            "x": 760,
+            "y": 826
+        },
+        {
+            "type": "Image",
+            "id": "2dded06f-d699-4d10-b5be-b8d036c25a58",
+            "label": "logo",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "logo"
+            },
+            "x": 760,
+            "y": 682
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

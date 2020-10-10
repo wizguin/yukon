@@ -1,5 +1,6 @@
-import livereload from 'rollup-plugin-livereload'
+import json from '@rollup/plugin-json'
 import serve from 'rollup-plugin-serve'
+import livereload from 'rollup-plugin-livereload'
 
 
 export default {
@@ -9,6 +10,7 @@ export default {
         format: 'iife'
     },
     plugins: [
+        json(),
         serve({
             contentBase: 'public',
             port: 8080
