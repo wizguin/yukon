@@ -10,6 +10,10 @@ window.addEventListener('load', function () {
         backgroundColor: '#14529b',
         autoRound: true,
         roundPixels: true,
+        parent: 'client-container',
+        dom: {
+            createContainer: true
+        },
         scale: {
             mode: Phaser.Scale.FIT,
             autoCenter: Phaser.Scale.CENTER_BOTH

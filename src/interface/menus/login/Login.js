@@ -9,11 +9,13 @@ class Login extends Phaser.Scene {
         super("Login");
 
         /* START-USER-CTR-CODE */
-        // Write your code here.
+
+        this.elements = {}
+
         /* END-USER-CTR-CODE */
     }
 
-    create() {
+    _create() {
 
         // bg
         const bg = this.add.image(0, 0, "load", "bg");
@@ -101,8 +103,24 @@ class Login extends Phaser.Scene {
 
     /* START-USER-CODE */
 
-    loginClick() {
+    create() {
+        this._create()
 
+        let usernameField = '<input class="login-field" type="text" name="username">'
+        let passwordField = '<input class="login-field" type="password" name="password">'
+
+        this.elements.username = this.add.dom(815, 200).createFromHTML(usernameField)
+        this.elements.password = this.add.dom(815, 259).createFromHTML(passwordField)
+
+        let enterKey = this.input.keyboard.addKey('ENTER')
+        enterKey.on('down', () => { this.loginClick() })
+    }
+
+    loginClick() {
+        let username = this.elements.username.getChildByName('username').value
+        let password = this.elements.password.getChildByName('password').value
+
+        console.log(username, password)
     }
 
     /* END-USER-CODE */

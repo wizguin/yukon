@@ -2,3 +2,14 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.login-field {
+    width: 380px;
+    height: 53px;
+
+    font-size: 35px;
+
+    background-color: transparent;
+    border-color: transparent;
+    outline: transparent;
+}

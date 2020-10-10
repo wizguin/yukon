@@ -4,6 +4,7 @@
     "settings": {
         "compilerInsertSpaces": true,
         "preloadPackFiles": [],
+        "createMethodName": "_create",
         "sceneKey": "Login",
         "borderWidth": 1520,
         "borderHeight": 960
