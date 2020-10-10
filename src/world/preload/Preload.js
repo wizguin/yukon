@@ -7,24 +7,23 @@ export default class Preload extends Phaser.Scene {
     preload() {
         this.baseURL = 'assets/media/interface/menus'
 
-        this.preloadFiles([
-            'load',
-            'start'
-        ])
-
-        this.scene.add('Load', Load)
-        this.scene.add('Start', Start)
+        this.preloadScenes({
+            'load': { sceneKey: 'Load', scene: Load },
+            'start': { sceneKey: 'Start', scene: Start }
+        })
     }
 
-    preloadFiles(files) {
-        for (let file of files) {
+    preloadScenes(scenes) {
+        for (let key in scenes) {
+            let scene = scenes[key]
 
             this.load.multiatlas({
-                key: file,
-                atlasURL: `${this.baseURL}/${file}/${file}.json`,
-                path: `${this.baseURL}/${file}`
+                key: key,
+                atlasURL: `${this.baseURL}/${key}/${key}.json`,
+                path: `${this.baseURL}/${key}`
             })
 
+            this.scene.add(scene.sceneKey, scene.scene)
         }
     }
 
