@@ -2,7 +2,7 @@
     "components": [
         {
             "name": "Button",
-            "baseClass": "",
+            "baseClass": "SimpleButton",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": [
                 {
@@ -14,6 +14,23 @@
                         "id": "string"
                     }
                 },
+                {
+                    "name": "callback",
+                    "label": "Callback",
+                    "tooltip": "Callback",
+                    "defValue": "() => {}",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SimpleButton",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
                 {
                     "name": "callback",
                     "label": "Callback",

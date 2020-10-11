@@ -1,37 +1,36 @@
+import SimpleButton from './SimpleButton'
 
-// You can write more code here
 
 /* START OF COMPILED CODE */
 
-class Button {
-
+class Button extends SimpleButton {
+    
     constructor(gameObject) {
+        super(gameObject);
+        
         gameObject["__Button"] = this;
-
+        
         /** @type {Phaser.GameObjects.Sprite} */
         this.gameObject = gameObject;
         /** @type {string} */
         this.spriteName = "";
         /** @type {any} */
         this.callback = () => {};
-
+        
         /* START-USER-CTR-CODE */
-
-        this.gameObject.setInteractive({ cursor: 'pointer' })
 
         this.gameObject.on('pointerover', () => this.onOver())
         this.gameObject.on('pointerout', () => this.onOut())
         this.gameObject.on('pointerdown', () => this.onDown())
-        this.gameObject.on('pointerup', () => this.onUp())
 
         /* END-USER-CTR-CODE */
     }
-
+    
     /** @returns {Button} */
     static getComponent(gameObject) {
         return gameObject["__Button"];
     }
-
+    
     /* START-USER-CODE */
 
     onOver() {
