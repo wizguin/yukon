@@ -5,29 +5,29 @@
 			"format": "RGBA8888",
 			"size": {
 				"w": 920,
-				"h": 616
+				"h": 614
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "large-hover-2",
+					"filename": "large-button-2",
 					"rotated": false,
-					"trimmed": true,
+					"trimmed": false,
 					"sourceSize": {
 						"w": 601,
-						"h": 165
+						"h": 142
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 10,
+						"y": 0,
 						"w": 601,
-						"h": 144
+						"h": 142
 					},
 					"frame": {
 						"x": 1,
 						"y": 1,
 						"w": 601,
-						"h": 144
+						"h": 142
 					},
 					"anchor": {
 						"x": 0.5,
@@ -35,22 +35,22 @@
 					}
 				},
 				{
-					"filename": "large-hover-3",
+					"filename": "large-button-3",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
 						"w": 601,
-						"h": 165
+						"h": 142
 					},
 					"spriteSourceSize": {
 						"x": 2,
-						"y": 15,
+						"y": 4,
 						"w": 598,
 						"h": 136
 					},
 					"frame": {
 						"x": 1,
-						"y": 147,
+						"y": 145,
 						"w": 598,
 						"h": 136
 					},
@@ -60,22 +60,22 @@
 					}
 				},
 				{
-					"filename": "large-hover",
+					"filename": "large-button-1",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
 						"w": 601,
-						"h": 165
+						"h": 142
 					},
 					"spriteSourceSize": {
 						"x": 5,
-						"y": 18,
+						"y": 7,
 						"w": 592,
 						"h": 128
 					},
 					"frame": {
 						"x": 1,
-						"y": 285,
+						"y": 283,
 						"w": 592,
 						"h": 128
 					},
@@ -85,24 +85,24 @@
 					}
 				},
 				{
-					"filename": "small-hover-2",
+					"filename": "small-button-2",
 					"rotated": false,
-					"trimmed": true,
+					"trimmed": false,
 					"sourceSize": {
 						"w": 426,
-						"h": 80
+						"h": 72
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 4,
+						"y": 0,
 						"w": 426,
-						"h": 73
+						"h": 72
 					},
 					"frame": {
 						"x": 1,
-						"y": 415,
+						"y": 413,
 						"w": 426,
-						"h": 73
+						"h": 72
 					},
 					"anchor": {
 						"x": 0.5,
@@ -110,22 +110,22 @@
 					}
 				},
 				{
-					"filename": "small-hover-3",
+					"filename": "small-button-3",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
 						"w": 426,
-						"h": 80
+						"h": 72
 					},
 					"spriteSourceSize": {
 						"x": 1,
-						"y": 5,
+						"y": 1,
 						"w": 424,
 						"h": 70
 					},
 					"frame": {
 						"x": 1,
-						"y": 490,
+						"y": 487,
 						"w": 424,
 						"h": 70
 					},
@@ -150,7 +150,7 @@
 					},
 					"frame": {
 						"x": 1,
-						"y": 562,
+						"y": 559,
 						"w": 380,
 						"h": 53
 					},
@@ -235,16 +235,16 @@
 					}
 				},
 				{
-					"filename": "small-hover",
+					"filename": "small-button-1",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
 						"w": 426,
-						"h": 80
+						"h": 72
 					},
 					"spriteSourceSize": {
 						"x": 3,
-						"y": 7,
+						"y": 3,
 						"w": 420,
 						"h": 66
 					},
@@ -305,8 +305,8 @@
 						"h": 53
 					},
 					"anchor": {
-						"x": 0.41509434,
-						"y": 0.58490566
+						"x": 0.41509,
+						"y": 0.5849
 					}
 				},
 				{
@@ -330,8 +330,58 @@
 						"h": 45
 					},
 					"anchor": {
-						"x": 0.41509434,
-						"y": 0.58490566
+						"x": 0.41509,
+						"y": 0.5849
+					}
+				},
+				{
+					"filename": "large-button",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 601,
+						"h": 142
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 886,
+						"y": 1,
+						"w": 3,
+						"h": 3
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "small-button",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 426,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 915,
+						"y": 333,
+						"w": 3,
+						"h": 3
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				}
 			]
@@ -340,6 +390,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:0d6f6413e31113f1c254fd5ded277dd1:af8cf1e211d6f87f01169701f0904d03:ffb62af756263e4644c882ff552ab6d3$"
+		"smartupdate": "$TexturePacker:SmartUpdate:5a619e9a5cbaa28d1fdb6a48960a4691:927cb9ba226303c50f4b4b3055739ca5:ffb62af756263e4644c882ff552ab6d3$"
 	}
 }

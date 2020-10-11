@@ -19,24 +19,61 @@
                 "key": "load",
                 "frame": "bg"
             },
+            "y": 1,
             "originX": 0,
             "originY": 0
         },
         {
-            "type": "Image",
-            "id": "d54f4f4f-2569-4441-a370-6e29e4af5074",
-            "label": "login_button",
+            "type": "Sprite",
+            "id": "d16ac858-4ea0-46e8-93ab-a50f3a460376",
+            "label": "backButton",
             "components": [
-                "Button"
+                "SimpleButton",
+                "Animated"
             ],
-            "Button.spriteName": "login-button",
-            "Button.callback": "() => this.onLoginClick()",
+            "SimpleButton.callback": "() => this.onBackClick()",
+            "Animated.animation": "small-button",
+            "Animated.onHover": true,
             "texture": {
                 "key": "login",
-                "frame": "login-button"
+                "frame": "small-button"
             },
             "x": 760,
-            "y": 482
+            "y": 876
+        },
+        {
+            "type": "Sprite",
+            "id": "54a9d69a-d9ea-4d03-a10b-025ef91c9263",
+            "label": "createButton",
+            "components": [
+                "SimpleButton",
+                "Animated"
+            ],
+            "Animated.animation": "large-button",
+            "Animated.onHover": true,
+            "texture": {
+                "key": "login",
+                "frame": "large-button"
+            },
+            "x": 760,
+            "y": 728
+        },
+        {
+            "type": "Sprite",
+            "id": "e7d1dae8-bad8-408a-864c-184cec80ed19",
+            "label": "forgotButton",
+            "components": [
+                "SimpleButton",
+                "Animated"
+            ],
+            "Animated.animation": "small-button",
+            "Animated.onHover": true,
+            "texture": {
+                "key": "login",
+                "frame": "small-button"
+            },
+            "x": 760,
+            "y": 604
         },
         {
             "type": "Image",
@@ -47,16 +84,16 @@
                 "key": "login",
                 "frame": "note"
             },
-            "x": 1153,
-            "y": 547
+            "x": 1182,
+            "y": 556
         },
         {
             "type": "Text",
             "id": "5d9ec495-590b-4df6-80bb-0fffebb15251",
-            "label": "back_text",
+            "label": "backText",
             "components": [],
             "x": 760,
-            "y": 874,
+            "y": 876,
             "text": "Back",
             "lineSpacing": 25,
             "align": "right",
@@ -67,10 +104,10 @@
         {
             "type": "Text",
             "id": "6e080082-1f94-49de-93ac-a33f0a579e66",
-            "label": "register_text_2",
+            "label": "registerText2",
             "components": [],
             "x": 760,
-            "y": 740,
+            "y": 747,
             "text": "Create a free account now",
             "lineSpacing": 25,
             "align": "right",
@@ -81,10 +118,10 @@
         {
             "type": "Text",
             "id": "d7f0475d-0213-4ab6-bab2-d8be86122e35",
-            "label": "register_text",
+            "label": "registerText",
             "components": [],
             "x": 760,
-            "y": 709,
+            "y": 713,
             "text": "Don't have a penguin?",
             "lineSpacing": 25,
             "align": "right",
@@ -95,10 +132,10 @@
         {
             "type": "Text",
             "id": "731adc13-a878-47cf-866b-555084400e4c",
-            "label": "forgot_text",
+            "label": "forgotText",
             "components": [],
             "x": 760,
-            "y": 602,
+            "y": 604,
             "text": "Forgot your password?",
             "lineSpacing": 25,
             "align": "right",
@@ -107,12 +144,28 @@
             "color": "#ffffffff"
         },
         {
+            "type": "Sprite",
+            "id": "d54f4f4f-2569-4441-a370-6e29e4af5074",
+            "label": "loginButton",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "login-button",
+            "Button.callback": "() => this.onLoginClick()",
+            "texture": {
+                "key": "login",
+                "frame": "login-button"
+            },
+            "x": 760,
+            "y": 483
+        },
+        {
             "type": "Text",
             "id": "ad2e73b7-d14d-456d-8cb0-7ea3cf7a150b",
-            "label": "login_text",
+            "label": "loginText",
             "components": [],
             "x": 760,
-            "y": 482,
+            "y": 483,
             "text": "Login",
             "lineSpacing": 25,
             "align": "right",
@@ -122,26 +175,11 @@
         },
         {
             "type": "Text",
-            "id": "10506aaa-25e4-4548-bc18-5792a4555f46",
-            "label": "remember_text_2",
-            "components": [],
-            "x": 598,
-            "y": 328,
-            "originX": 0,
-            "text": "Remember me on this computer",
-            "lineSpacing": 25,
-            "align": "right",
-            "fontFamily": "Arial Narrow",
-            "fontSize": "30px",
-            "color": "#000000ff"
-        },
-        {
-            "type": "Text",
             "id": "ce42702b-eee2-4d27-93fd-ad4abd13fa72",
-            "label": "remember_text",
+            "label": "rememberUsernameText",
             "components": [],
             "x": 598,
-            "y": 382,
+            "y": 384,
             "originX": 0,
             "text": "Remember my password",
             "lineSpacing": 25,
@@ -152,13 +190,13 @@
         },
         {
             "type": "Text",
-            "id": "6ff586b9-fbe0-49f6-9801-71f273c1df58",
-            "label": "password_text",
+            "id": "10506aaa-25e4-4548-bc18-5792a4555f46",
+            "label": "rememberPasswordText",
             "components": [],
-            "x": 503,
-            "y": 259,
+            "x": 598,
+            "y": 329,
             "originX": 0,
-            "text": "Password:",
+            "text": "Remember me on this computer",
             "lineSpacing": 25,
             "align": "right",
             "fontFamily": "Arial Narrow",
@@ -167,47 +205,22 @@
         },
         {
             "type": "Image",
-            "id": "dc8fe5d7-4283-4e71-bdbf-6b2163fb01e6",
-            "label": "username_input",
+            "id": "930b1bfe-4d64-4250-957a-e2c5a9e3d6ef",
+            "label": "passwordCheckbox",
             "components": [],
             "texture": {
                 "key": "login",
-                "frame": "input"
+                "frame": "checkbox"
             },
-            "x": 815,
-            "y": 200
-        },
-        {
-            "type": "Text",
-            "id": "dfe772c9-e24b-4230-a416-f95f1b14b3b3",
-            "label": "username_text",
-            "components": [],
-            "x": 448,
-            "y": 200,
-            "originX": 0,
-            "text": "Penguin Name:",
-            "lineSpacing": 25,
-            "align": "right",
-            "fontFamily": "Arial Narrow",
-            "fontSize": "30px",
-            "color": "#000000ff"
-        },
-        {
-            "type": "Image",
-            "id": "869f8873-7e3a-49dd-838a-055f9c7dfe30",
-            "label": "password_input",
-            "components": [],
-            "texture": {
-                "key": "login",
-                "frame": "input"
-            },
-            "x": 815,
-            "y": 259
+            "x": 569,
+            "y": 383,
+            "originX": 0.41509434,
+            "originY": 0.58490566
         },
         {
             "type": "Image",
             "id": "48754edf-6d54-4018-ad29-f90e50323404",
-            "label": "checkbox",
+            "label": "usernameCheckbox",
             "components": [],
             "texture": {
                 "key": "login",
@@ -220,17 +233,57 @@
         },
         {
             "type": "Image",
-            "id": "930b1bfe-4d64-4250-957a-e2c5a9e3d6ef",
-            "label": "checkbox_1",
+            "id": "869f8873-7e3a-49dd-838a-055f9c7dfe30",
+            "label": "passwordInput",
             "components": [],
             "texture": {
                 "key": "login",
-                "frame": "checkbox"
+                "frame": "input"
             },
-            "x": 569,
-            "y": 382,
-            "originX": 0.41509434,
-            "originY": 0.58490566
+            "x": 815,
+            "y": 259
+        },
+        {
+            "type": "Image",
+            "id": "dc8fe5d7-4283-4e71-bdbf-6b2163fb01e6",
+            "label": "usernameInput",
+            "components": [],
+            "texture": {
+                "key": "login",
+                "frame": "input"
+            },
+            "x": 815,
+            "y": 200
+        },
+        {
+            "type": "Text",
+            "id": "6ff586b9-fbe0-49f6-9801-71f273c1df58",
+            "label": "passwordText",
+            "components": [],
+            "x": 503,
+            "y": 258,
+            "originX": 0,
+            "text": "Password:",
+            "lineSpacing": 25,
+            "align": "right",
+            "fontFamily": "Arial Narrow",
+            "fontSize": "30px",
+            "color": "#000000ff"
+        },
+        {
+            "type": "Text",
+            "id": "dfe772c9-e24b-4230-a416-f95f1b14b3b3",
+            "label": "usernameText",
+            "components": [],
+            "x": 448,
+            "y": 200,
+            "originX": 0,
+            "text": "Penguin Name:",
+            "lineSpacing": 25,
+            "align": "right",
+            "fontFamily": "Arial Narrow",
+            "fontSize": "30px",
+            "color": "#000000ff"
         }
     ],
     "meta": {

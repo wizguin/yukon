@@ -42,6 +42,37 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Animated",
+            "baseClass": "EventComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "animation",
+                    "label": "Animation",
+                    "tooltip": "Animation",
+                    "defValue": "",
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "onHover",
+                    "label": "On Hover",
+                    "tooltip": "Only show on hover?",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "EventComponent",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.GameObject",
+            "properties": []
         }
     ],
     "meta": {

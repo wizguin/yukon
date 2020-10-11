@@ -1,0 +1,55 @@
+{
+    "anims": [
+        {
+            "key": "large-button",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "login",
+                    "frame": "large-button-1",
+                    "duration": 0
+                },
+                {
+                    "key": "login",
+                    "frame": "large-button-2",
+                    "duration": 0
+                },
+                {
+                    "key": "login",
+                    "frame": "large-button-3",
+                    "duration": 0
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "small-button",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "login",
+                    "frame": "small-button-1",
+                    "duration": 0
+                },
+                {
+                    "key": "login",
+                    "frame": "small-button-2",
+                    "duration": 0
+                },
+                {
+                    "key": "login",
+                    "frame": "small-button-3",
+                    "duration": 0
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}
