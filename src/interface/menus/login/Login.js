@@ -68,23 +68,23 @@ class Login extends Phaser.Scene {
         loginText.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"38px"});
         
         // rememberUsernameText
-        const rememberUsernameText = this.add.text(598, 384, "", {});
+        const rememberUsernameText = this.add.text(602, 384, "", {});
         rememberUsernameText.setOrigin(0, 0.5);
         rememberUsernameText.text = "Remember my password";
         rememberUsernameText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
         
         // rememberPasswordText
-        const rememberPasswordText = this.add.text(598, 329, "", {});
+        const rememberPasswordText = this.add.text(602, 329, "", {});
         rememberPasswordText.setOrigin(0, 0.5);
         rememberPasswordText.text = "Remember me on this computer";
         rememberPasswordText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
         
         // passwordCheckbox
-        const passwordCheckbox = this.add.image(569, 383, "login", "checkbox");
+        const passwordCheckbox = this.add.image(568, 383, "login", "checkbox");
         passwordCheckbox.setOrigin(0.41509434, 0.58490566);
         
         // usernameCheckbox
-        const usernameCheckbox = this.add.image(569, 328, "login", "checkbox");
+        const usernameCheckbox = this.add.image(568, 328, "login", "checkbox");
         usernameCheckbox.setOrigin(0.41509434, 0.58490566);
         
         // passwordInput

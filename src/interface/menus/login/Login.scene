@@ -178,7 +178,7 @@
             "id": "ce42702b-eee2-4d27-93fd-ad4abd13fa72",
             "label": "rememberUsernameText",
             "components": [],
-            "x": 598,
+            "x": 602,
             "y": 384,
             "originX": 0,
             "text": "Remember my password",
@@ -193,7 +193,7 @@
             "id": "10506aaa-25e4-4548-bc18-5792a4555f46",
             "label": "rememberPasswordText",
             "components": [],
-            "x": 598,
+            "x": 602,
             "y": 329,
             "originX": 0,
             "text": "Remember me on this computer",
@@ -212,7 +212,7 @@
                 "key": "login",
                 "frame": "checkbox"
             },
-            "x": 569,
+            "x": 568,
             "y": 383,
             "originX": 0.41509434,
             "originY": 0.58490566
@@ -226,7 +226,7 @@
                 "key": "login",
                 "frame": "checkbox"
             },
-            "x": 569,
+            "x": 568,
             "y": 328,
             "originX": 0.41509434,
             "originY": 0.58490566
