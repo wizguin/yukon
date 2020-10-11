@@ -23,6 +23,15 @@
                         "id": "expression",
                         "expressionType": "any"
                     }
+                },
+                {
+                    "name": "activeFrame",
+                    "label": "Active Frame",
+                    "tooltip": "Active Frame",
+                    "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
         },

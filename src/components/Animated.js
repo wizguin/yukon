@@ -4,29 +4,29 @@ import EventComponent from './EventComponent'
 /* START OF COMPILED CODE */
 
 class Animated extends EventComponent {
-
+    
     constructor(gameObject) {
         super(gameObject);
-
+        
         gameObject["__Animated"] = this;
-
+        
         /** @type {Phaser.GameObjects.Sprite} */
         this.gameObject = gameObject;
         /** @type {string} */
         this.animation = "";
         /** @type {boolean} */
         this.onHover = false;
-
+        
         /* START-USER-CTR-CODE */
         // Write your code here.
         /* END-USER-CTR-CODE */
     }
-
+    
     /** @returns {Animated} */
     static getComponent(gameObject) {
         return gameObject["__Animated"];
     }
-
+    
     /* START-USER-CODE */
 
     start() {

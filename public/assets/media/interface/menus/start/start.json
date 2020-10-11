@@ -4,36 +4,11 @@
 			"image": "start.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 1563,
+				"w": 1614,
 				"h": 1143
 			},
 			"scale": 1,
 			"frames": [
-				{
-					"filename": "bottom",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 1283,
-						"h": 388
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 1283,
-						"h": 388
-					},
-					"frame": {
-						"x": 1,
-						"y": 1,
-						"w": 1283,
-						"h": 388
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
 				{
 					"filename": "christmas",
 					"rotated": false,
@@ -50,7 +25,7 @@
 					},
 					"frame": {
 						"x": 1,
-						"y": 391,
+						"y": 1,
 						"w": 1252,
 						"h": 751
 					},
@@ -60,24 +35,24 @@
 					}
 				},
 				{
-					"filename": "blog-text",
+					"filename": "bottom",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 307,
-						"h": 21
+						"w": 1283,
+						"h": 388
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 307,
-						"h": 21
+						"w": 1283,
+						"h": 388
 					},
 					"frame": {
-						"x": 1255,
-						"y": 391,
-						"w": 307,
-						"h": 21
+						"x": 1,
+						"y": 754,
+						"w": 1283,
+						"h": 388
 					},
 					"anchor": {
 						"x": 0.5,
@@ -85,49 +60,24 @@
 					}
 				},
 				{
-					"filename": "penguin-button",
+					"filename": "member-button-hover",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 302,
-						"h": 71
+						"w": 358,
+						"h": 127
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 302,
-						"h": 71
+						"w": 358,
+						"h": 127
 					},
 					"frame": {
 						"x": 1255,
-						"y": 414,
-						"w": 302,
-						"h": 71
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blog",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 307,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 4,
 						"y": 1,
-						"w": 299,
-						"h": 100
-					},
-					"frame": {
-						"x": 1255,
-						"y": 487,
-						"w": 299,
-						"h": 100
+						"w": 358,
+						"h": 127
 					},
 					"anchor": {
 						"x": 0.5,
@@ -135,24 +85,24 @@
 					}
 				},
 				{
-					"filename": "logo",
+					"filename": "member-button",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 259,
-						"h": 120
+						"w": 358,
+						"h": 127
 					},
 					"spriteSourceSize": {
-						"x": 8,
+						"x": 131,
 						"y": 0,
-						"w": 251,
-						"h": 120
+						"w": 227,
+						"h": 127
 					},
 					"frame": {
-						"x": 1286,
-						"y": 1,
-						"w": 251,
-						"h": 120
+						"x": 1255,
+						"y": 130,
+						"w": 227,
+						"h": 127
 					},
 					"anchor": {
 						"x": 0.5,
@@ -175,7 +125,7 @@
 					},
 					"frame": {
 						"x": 1255,
-						"y": 589,
+						"y": 259,
 						"w": 281,
 						"h": 120
 					},
@@ -200,7 +150,7 @@
 					},
 					"frame": {
 						"x": 1255,
-						"y": 711,
+						"y": 381,
 						"w": 281,
 						"h": 120
 					},
@@ -225,7 +175,7 @@
 					},
 					"frame": {
 						"x": 1255,
-						"y": 833,
+						"y": 503,
 						"w": 281,
 						"h": 120
 					},
@@ -235,73 +185,23 @@
 					}
 				},
 				{
-					"filename": "penguin-2",
+					"filename": "create-button-hover",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 97,
-						"h": 127
+						"w": 358,
+						"h": 112
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 97,
-						"h": 127
+						"w": 358,
+						"h": 112
 					},
 					"frame": {
 						"x": 1255,
-						"y": 955,
-						"w": 97,
-						"h": 127
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "member",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 127,
-						"h": 51
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 127,
-						"h": 51
-					},
-					"frame": {
-						"x": 1255,
-						"y": 1084,
-						"w": 127,
-						"h": 51
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "penguin-1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 84,
-						"h": 112
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 84,
-						"h": 112
-					},
-					"frame": {
-						"x": 1354,
-						"y": 955,
-						"w": 84,
+						"y": 625,
+						"w": 358,
 						"h": 112
 					},
 					"anchor": {
@@ -310,24 +210,99 @@
 					}
 				},
 				{
-					"filename": "new",
+					"filename": "logo",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 259,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 0,
+						"w": 251,
+						"h": 120
+					},
+					"frame": {
+						"x": 1286,
+						"y": 739,
+						"w": 251,
+						"h": 120
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "create-button",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 358,
+						"h": 112
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 0,
+						"w": 249,
+						"h": 112
+					},
+					"frame": {
+						"x": 1286,
+						"y": 861,
+						"w": 249,
+						"h": 112
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blog",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 307,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 299,
+						"h": 100
+					},
+					"frame": {
+						"x": 1286,
+						"y": 975,
+						"w": 299,
+						"h": 100
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blog-text",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 162,
-						"h": 49
+						"w": 307,
+						"h": 21
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 162,
-						"h": 49
+						"w": 307,
+						"h": 21
 					},
 					"frame": {
-						"x": 1384,
-						"y": 1069,
-						"w": 162,
-						"h": 49
+						"x": 1286,
+						"y": 1077,
+						"w": 307,
+						"h": 21
 					},
 					"anchor": {
 						"x": 0.5,
@@ -350,7 +325,7 @@
 					},
 					"frame": {
 						"x": 1286,
-						"y": 123,
+						"y": 1100,
 						"w": 139,
 						"h": 41
 					},
@@ -365,6 +340,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:794d83972e0d1759d51e3280c5d5a76c:eea40382249eae87074fb280b1364787:a1adc19a587f5099be71dba01527eb7d$"
+		"smartupdate": "$TexturePacker:SmartUpdate:5b26ab0c9951f66e9af103cd5fbacd40:5d736c52c60103446b82b1d0616e49dd:a1adc19a587f5099be71dba01527eb7d$"
 	}
 }

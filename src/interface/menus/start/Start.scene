@@ -48,7 +48,7 @@
         {
             "type": "Image",
             "id": "4bfbb7f7-41a1-45fc-b078-2904917758a3",
-            "label": "blogText",
+            "label": "blog-text",
             "components": [],
             "texture": {
                 "key": "start",
@@ -74,50 +74,34 @@
         },
         {
             "type": "Image",
-            "id": "48b93171-b21c-4e22-88a4-e6d0132dfe14",
-            "label": "new",
-            "components": [],
-            "texture": {
-                "key": "start",
-                "frame": "new"
-            },
-            "x": 1141,
-            "y": 775
-        },
-        {
-            "type": "Image",
-            "id": "135e2a9d-1080-400d-a887-9490d36de2b7",
-            "label": "member",
-            "components": [],
-            "texture": {
-                "key": "start",
-                "frame": "member"
-            },
-            "x": 1157,
-            "y": 860
-        },
-        {
-            "type": "Image",
             "id": "d7fb6570-52e7-40af-97a3-0badc5bf7df4",
-            "label": "penguin1",
-            "components": [],
+            "label": "createButton",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "create-button",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "start",
-                "frame": "penguin-1"
+                "frame": "create-button"
             },
-            "x": 1268,
+            "x": 1145,
             "y": 771
         },
         {
             "type": "Image",
             "id": "010d3ca9-7f96-47e1-a952-19baeb027de0",
-            "label": "penguin2",
-            "components": [],
+            "label": "memberButton",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "member-button",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "start",
-                "frame": "penguin-2"
+                "frame": "member-button"
             },
-            "x": 1264,
+            "x": 1145,
             "y": 855
         },
         {
