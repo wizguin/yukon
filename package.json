@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A HTML5 recreation of Club Penguin",
   "scripts": {
-    "dev": "rollup -c -w"
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,13 @@
   },
   "homepage": "https://github.com/wizguin/yukon#readme",
   "devDependencies": {
-    "@rollup/plugin-alias": "^3.1.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "rollup": "^2.29.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-serve": "^1.0.4"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "socket.io-client": "^2.3.1",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
