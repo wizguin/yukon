@@ -1,0 +1,10 @@
+{
+    "login": {
+        "host": "localhost",
+        "port": 6111
+    },
+    "blizzard": {
+        "host": "localhost",
+        "port": 6112
+    }
+}

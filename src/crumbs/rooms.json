@@ -1,0 +1,20 @@
+{
+    "221": {
+        "isGame": false,
+        "name": "attic",
+        "x": 760,
+        "y": 600
+    },
+    "802": {
+        "isGame": false,
+        "name": "rink",
+        "x": 570,
+        "y": 450
+    },
+    "805": {
+        "isGame": false,
+        "name": "berg",
+        "x": 570,
+        "y": 450
+    }
+}

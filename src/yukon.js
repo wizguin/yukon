@@ -1,4 +1,6 @@
 import Game from '@/Game'
+import rooms from '@/crumbs/rooms.json'
+import worlds from '@/crumbs/worlds.json'
 
 
 window.addEventListener('load', function () {
@@ -17,6 +19,13 @@ window.addEventListener('load', function () {
         scale: {
             mode: Phaser.Scale.FIT,
             autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+        plugins: {
+            global: [ NineSlice.Plugin.DefaultCfg ]
+        },
+        crumbs: {
+            rooms: rooms,
+            worlds: worlds
         }
     })
 
