@@ -1,3 +1,5 @@
+import DataHandler from './DataHandler'
+
 import io from 'socket.io-client'
 
 
@@ -7,27 +9,30 @@ export default class Network {
         this.game = game
         this.crumbs = game.crumbs
 
+        this.handler = new DataHandler(this)
         this.client = null
     }
 
     connectLogin(username, password) {
-        this.connect('login')
-
-        this.client.on('message', (message) => { this.onLogin(message) })
-        this.client.on('disconnect', () => { this.disconnect() })
+        this.connect('login', () => { this.disconnect() })
 
         this.send('login', { username: username, password: password })
     }
 
-    connectGame(world) {
+    connectGame(world, username, loginKey) {
+        this.connect(world, () => { this.onConnectionLost() })
 
+        this.send('login_key', { username: username, loginKey: loginKey })
     }
 
-    connect(world) {
+    connect(world, onDisconnect) {
         world = this.crumbs.worlds[world]
 
         this.disconnect()
+
         this.client = io.connect(`${world.host}:${world.port}`)
+        this.client.on('message', (message) => { this.onMessage(message) })
+        this.client.on('disconnect', onDisconnect)
     }
 
     disconnect() {
@@ -40,16 +45,12 @@ export default class Network {
 
     // Handlers
 
-    onLogin(message) {
-        console.log(message)
-    }
-
-    onMessage() {
-
+    onMessage(message) {
+        this.handler.handle(message)
     }
 
     onConnectionLost() {
-
+        this.disconnect()
     }
 
 }
