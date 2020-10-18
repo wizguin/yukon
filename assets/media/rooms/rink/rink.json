@@ -1,0 +1,720 @@
+{
+	"textures": [
+		{
+			"image": "rink.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1970,
+				"h": 2077
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "fg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1652,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1652,
+						"h": 512
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1652,
+						"h": 512
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "stand_middle",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 316,
+						"h": 134
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 316,
+						"h": 134
+					},
+					"frame": {
+						"x": 1654,
+						"y": 0,
+						"w": 316,
+						"h": 134
+					},
+					"anchor": {
+						"x": 0.51265823,
+						"y": 0.42537313
+					}
+				},
+				{
+					"filename": "left_bleachers",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 243,
+						"h": 369
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 243,
+						"h": 369
+					},
+					"frame": {
+						"x": 1654,
+						"y": 136,
+						"w": 243,
+						"h": 369
+					},
+					"anchor": {
+						"x": 0.44444444,
+						"y": 0.16260163
+					}
+				},
+				{
+					"filename": "goal_back",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 71,
+						"h": 176
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 71,
+						"h": 176
+					},
+					"frame": {
+						"x": 1899,
+						"y": 136,
+						"w": 71,
+						"h": 176
+					},
+					"anchor": {
+						"x": 0.97183099,
+						"y": 0.48863636
+					}
+				},
+				{
+					"filename": "sports_door0002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 81
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 9,
+						"w": 66,
+						"h": 72
+					},
+					"frame": {
+						"x": 1899,
+						"y": 314,
+						"w": 66,
+						"h": 72
+					},
+					"anchor": {
+						"x": 0.5125,
+						"y": 0.62962963
+					}
+				},
+				{
+					"filename": "sports_door0003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 81
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 9,
+						"w": 66,
+						"h": 72
+					},
+					"frame": {
+						"x": 1899,
+						"y": 388,
+						"w": 66,
+						"h": 72
+					},
+					"anchor": {
+						"x": 0.5125,
+						"y": 0.62962963
+					}
+				},
+				{
+					"filename": "ball",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 52,
+						"h": 54
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 52,
+						"h": 54
+					},
+					"frame": {
+						"x": 1899,
+						"y": 462,
+						"w": 52,
+						"h": 54
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.7037037
+					}
+				},
+				{
+					"filename": "right_bleachers",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 243,
+						"h": 369
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 243,
+						"h": 369
+					},
+					"frame": {
+						"x": 1654,
+						"y": 507,
+						"w": 243,
+						"h": 369
+					},
+					"anchor": {
+						"x": 0.5473251,
+						"y": 0.16531165
+					}
+				},
+				{
+					"filename": "rink_border",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1625,
+						"h": 779
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 274,
+						"w": 1625,
+						"h": 505
+					},
+					"frame": {
+						"x": 0,
+						"y": 514,
+						"w": 1625,
+						"h": 505
+					},
+					"anchor": {
+						"x": 0.30707692,
+						"y": 0.42490372
+					}
+				},
+				{
+					"filename": "drink",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 49
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 49
+					},
+					"frame": {
+						"x": 1627,
+						"y": 514,
+						"w": 24,
+						"h": 49
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.75510204
+					}
+				},
+				{
+					"filename": "snacks_door0001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 47,
+						"h": 143
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 44,
+						"h": 139
+					},
+					"frame": {
+						"x": 1899,
+						"y": 518,
+						"w": 44,
+						"h": 139
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "snacks_door0002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 47,
+						"h": 143
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 43,
+						"h": 111
+					},
+					"frame": {
+						"x": 1899,
+						"y": 659,
+						"w": 43,
+						"h": 111
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "snacks_door0003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 47,
+						"h": 143
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 43,
+						"h": 111
+					},
+					"frame": {
+						"x": 1899,
+						"y": 772,
+						"w": 43,
+						"h": 111
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "bleachers_rail",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 242,
+						"h": 220
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 242,
+						"h": 220
+					},
+					"frame": {
+						"x": 1627,
+						"y": 878,
+						"w": 242,
+						"h": 220
+					},
+					"anchor": {
+						"x": 0.82231405,
+						"y": 0.78181818
+					}
+				},
+				{
+					"filename": "sports_door0001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 81
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 67
+					},
+					"frame": {
+						"x": 1871,
+						"y": 885,
+						"w": 72,
+						"h": 67
+					},
+					"anchor": {
+						"x": 0.5125,
+						"y": 0.62962963
+					}
+				},
+				{
+					"filename": "bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1571,
+						"h": 798
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1571,
+						"h": 798
+					},
+					"frame": {
+						"x": 0,
+						"y": 1021,
+						"w": 1571,
+						"h": 798
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "snacks",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 397,
+						"h": 297
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 397,
+						"h": 297
+					},
+					"frame": {
+						"x": 1573,
+						"y": 1100,
+						"w": 397,
+						"h": 297
+					},
+					"anchor": {
+						"x": 0.44080605,
+						"y": 0.79461279
+					}
+				},
+				{
+					"filename": "stand_base",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 504,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 504,
+						"h": 256
+					},
+					"frame": {
+						"x": 0,
+						"y": 1821,
+						"w": 504,
+						"h": 256
+					},
+					"anchor": {
+						"x": 0.99404762,
+						"y": 0.36328125
+					}
+				},
+				{
+					"filename": "goal",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 140,
+						"h": 247
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 140,
+						"h": 247
+					},
+					"frame": {
+						"x": 506,
+						"y": 1821,
+						"w": 140,
+						"h": 247
+					},
+					"anchor": {
+						"x": 0.58571429,
+						"y": 0.91902834
+					}
+				},
+				{
+					"filename": "snacks_ring",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 58
+					},
+					"frame": {
+						"x": 1573,
+						"y": 1021,
+						"w": 41,
+						"h": 58
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "trash",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 34,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 34,
+						"h": 56
+					},
+					"frame": {
+						"x": 1871,
+						"y": 954,
+						"w": 34,
+						"h": 56
+					},
+					"anchor": {
+						"x": 0.44117647,
+						"y": 0.69642857
+					}
+				},
+				{
+					"filename": "fish_dogs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 134,
+						"h": 184
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 134,
+						"h": 184
+					},
+					"frame": {
+						"x": 648,
+						"y": 1821,
+						"w": 134,
+						"h": 184
+					},
+					"anchor": {
+						"x": 0.51492537,
+						"y": 0.79347826
+					}
+				},
+				{
+					"filename": "catalog0002",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 153,
+						"h": 115
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 153,
+						"h": 115
+					},
+					"frame": {
+						"x": 784,
+						"y": 1821,
+						"w": 153,
+						"h": 115
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "catalog0003",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 153,
+						"h": 115
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 153,
+						"h": 115
+					},
+					"frame": {
+						"x": 784,
+						"y": 1938,
+						"w": 153,
+						"h": 115
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "catalog0004",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 153,
+						"h": 115
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 153,
+						"h": 115
+					},
+					"frame": {
+						"x": 939,
+						"y": 1821,
+						"w": 153,
+						"h": 115
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "catalog0001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 153,
+						"h": 115
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 113,
+						"h": 113
+					},
+					"frame": {
+						"x": 939,
+						"y": 1938,
+						"w": 113,
+						"h": 113
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "stand_top",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 425,
+						"h": 83
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 425,
+						"h": 83
+					},
+					"frame": {
+						"x": 1054,
+						"y": 1938,
+						"w": 425,
+						"h": 83
+					},
+					"anchor": {
+						"x": 0.50117647,
+						"y": 2.57831325
+					}
+				},
+				{
+					"filename": "sports",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 236,
+						"h": 268
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 236,
+						"h": 268
+					},
+					"frame": {
+						"x": 1573,
+						"y": 1399,
+						"w": 236,
+						"h": 268
+					},
+					"anchor": {
+						"x": 0.52966102,
+						"y": 0.80970149
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4b9f55a6c61b4264746391dc4a284d42:79bad4903c5514df8e96ca856a65dc9a:519a0e57883d619200576294c1e2da8b$"
+	}
+}

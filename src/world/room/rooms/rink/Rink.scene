@@ -1,0 +1,339 @@
+{
+    "id": "53214d11-5d69-4d03-b292-75b2ecec737a",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "Rink",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1cbd9670-8af9-419a-a0a4-06e6d95c1257",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "bg"
+            },
+            "x": -33,
+            "y": -7,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "139351a3-ad27-4f1c-b1cc-cb39e13fb57d",
+            "label": "rink_border",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "rink_border"
+            },
+            "x": 444,
+            "y": 335,
+            "originX": 0.30707692,
+            "originY": 0.42490372
+        },
+        {
+            "type": "Image",
+            "id": "8d069f94-5f09-4127-8056-9e6adf5c877d",
+            "label": "sports",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "sports"
+            },
+            "x": 1390,
+            "y": 250,
+            "originX": 0.52966102,
+            "originY": 0.80970149
+        },
+        {
+            "type": "Image",
+            "id": "5efbc284-3a48-4070-afaa-7e75fdd7fa7a",
+            "label": "sports_door0001",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "sports_door0001"
+            },
+            "x": 1327,
+            "y": 280,
+            "originX": 0.5125,
+            "originY": 0.62962963
+        },
+        {
+            "type": "Image",
+            "id": "dd5aac14-4403-46f8-89e5-bf4c0af9d7e1",
+            "label": "ball",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "ball"
+            },
+            "x": 765,
+            "y": 537,
+            "originY": 0.7037037
+        },
+        {
+            "type": "Image",
+            "id": "8d678d53-c165-41fb-84fa-af61ae034f40",
+            "label": "fish_dogs",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "fish_dogs"
+            },
+            "x": 166,
+            "y": 242,
+            "originX": 0.51492537,
+            "originY": 0.79347826
+        },
+        {
+            "type": "Image",
+            "id": "ef1c8365-1a0f-48ec-ad08-058a520546e3",
+            "label": "left_bleachers",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "left_bleachers"
+            },
+            "x": 105,
+            "y": 258,
+            "originX": 0.44444444,
+            "originY": 0.16260163
+        },
+        {
+            "type": "Image",
+            "id": "1a5fbcad-92bb-46b9-8009-7b1decadfe73",
+            "label": "bleachers_rail",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "bleachers_rail"
+            },
+            "x": 38,
+            "y": 558,
+            "originX": 0.82231405,
+            "originY": 0.78181818
+        },
+        {
+            "type": "Image",
+            "id": "71d3ac56-d068-41fc-a032-34745024edf5",
+            "label": "right_bleachers",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "right_bleachers"
+            },
+            "x": 1415,
+            "y": 258,
+            "originX": 0.5473251,
+            "originY": 0.16531165
+        },
+        {
+            "type": "Image",
+            "id": "75874fb2-e84e-4279-8d62-8c6a59cb2bb5",
+            "label": "bleachers_rail_1",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "bleachers_rail"
+            },
+            "x": 1482,
+            "y": 558,
+            "originX": 0.82231405,
+            "originY": 0.78181818,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "0e99bf40-ebdd-49df-9cd2-299b87a4eb9b",
+            "label": "drink",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "drink"
+            },
+            "x": 70,
+            "y": 485,
+            "originY": 0.75510204
+        },
+        {
+            "type": "Image",
+            "id": "4696c680-3ebf-4d19-b173-930fa9100e32",
+            "label": "fg",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "fg"
+            },
+            "x": -64,
+            "y": 535,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "3e1b4e7e-0f5b-4cda-ac6e-248ce8878e73",
+            "label": "trash",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "trash"
+            },
+            "x": 858,
+            "y": 214,
+            "originX": 0.44117647,
+            "originY": 0.69642857
+        },
+        {
+            "type": "Image",
+            "id": "a37ff0c1-0127-4006-a381-ce6757c35c1d",
+            "label": "snacks",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "snacks"
+            },
+            "x": 1046,
+            "y": 230,
+            "originX": 0.44080605,
+            "originY": 0.79461279
+        },
+        {
+            "type": "Image",
+            "id": "43cdf079-69ad-4419-a792-0e60a8c4e4ab",
+            "label": "snacks_door0001",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "snacks_door0001"
+            },
+            "x": 1214,
+            "y": 183
+        },
+        {
+            "type": "Image",
+            "id": "27852398-508b-4012-a23f-3fd21298185a",
+            "label": "snacks_ring",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "snacks_ring"
+            },
+            "x": 1251,
+            "y": 203
+        },
+        {
+            "type": "Image",
+            "id": "32361733-5092-4745-9a30-10cddef6d1e5",
+            "label": "stand_base",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "stand_base"
+            },
+            "x": 731,
+            "y": 126,
+            "originX": 0.99404762,
+            "originY": 0.36328125
+        },
+        {
+            "type": "Image",
+            "id": "be5cc6f5-703e-4a40-894f-ec6d5d3d7cc9",
+            "label": "stand_middle",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "stand_middle"
+            },
+            "x": 528,
+            "y": 167,
+            "originX": 0.51265823,
+            "originY": 0.42537313
+        },
+        {
+            "type": "Image",
+            "id": "623653b5-a2d7-4918-8598-d48314177fe6",
+            "label": "stand_top",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "stand_top"
+            },
+            "x": 522,
+            "y": 236,
+            "originX": 0.50117647,
+            "originY": 2.57831325
+        },
+        {
+            "type": "Image",
+            "id": "e98107c1-00e5-4038-af33-9c09f0215d15",
+            "label": "goal_back",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "goal_back"
+            },
+            "x": 1258,
+            "y": 441,
+            "originX": 0.97183099,
+            "originY": 0.48863636
+        },
+        {
+            "type": "Image",
+            "id": "d2fc417b-d621-42bf-b36f-9ceb490309a9",
+            "label": "goal",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "goal"
+            },
+            "x": 1273,
+            "y": 578,
+            "originX": 0.58571429,
+            "originY": 0.91902834
+        },
+        {
+            "type": "Image",
+            "id": "e0207549-cdcf-46ef-bc96-f47224bdbf9e",
+            "label": "goal_back_1",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "goal_back"
+            },
+            "x": 262,
+            "y": 441,
+            "originX": 0.97183099,
+            "originY": 0.48863636,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "22bb19b8-4dba-44de-b801-0c1a933e24e7",
+            "label": "goal_1",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "goal"
+            },
+            "x": 247,
+            "y": 578,
+            "originX": 0.58571429,
+            "originY": 0.91902834,
+            "flipX": true
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

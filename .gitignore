@@ -123,4 +123,4 @@ dist
 *.woff2
 
 # bundles
-public/assets/scripts/client/
+assets/scripts/client/

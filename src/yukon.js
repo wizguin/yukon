@@ -1,5 +1,5 @@
 import Game from '@/Game'
-import rooms from '@/crumbs/rooms.json'
+import rooms from '@/crumbs/rooms'
 import worlds from '@/crumbs/worlds.json'
 
 

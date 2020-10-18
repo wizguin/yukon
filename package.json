@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A HTML5 recreation of Club Penguin",
   "scripts": {
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",

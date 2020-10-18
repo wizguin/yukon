@@ -3,21 +3,27 @@
         "files": [
             {
                 "type": "multiatlas",
-                "url": "public/assets/media/interface/menus/start/start.json",
-                "path": "public/assets/media/interface/menus/start/",
+                "url": "assets/media/interface/menus/start/start.json",
+                "path": "assets/media/interface/menus/start/",
                 "key": "start"
             },
             {
                 "type": "multiatlas",
-                "url": "public/assets/media/interface/menus/load/load.json",
-                "path": "public/assets/media/interface/menus/load/",
+                "url": "assets/media/interface/menus/load/load.json",
+                "path": "assets/media/interface/menus/load/",
                 "key": "load"
             },
             {
                 "type": "multiatlas",
-                "url": "public/assets/media/interface/menus/login/login.json",
-                "path": "public/assets/media/interface/menus/login/",
+                "url": "assets/media/interface/menus/login/login.json",
+                "path": "assets/media/interface/menus/login/",
                 "key": "login"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/interface/windows/prompt/prompt.json",
+                "path": "assets/media/interface/windows/prompt/",
+                "key": "prompt"
             }
         ]
     },

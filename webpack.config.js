@@ -6,13 +6,13 @@ module.exports = {
     entry: './src/yukon.js',
     output: {
         filename: 'yukon.js',
-        path: path.resolve(__dirname, 'public/assets/scripts/client')
+        path: path.resolve(__dirname, 'assets/scripts/client')
     },
     optimization : {
         minimize: false
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
+        contentBase: path.join(__dirname),
         publicPath: '/',
         writeToDisk: true
     },

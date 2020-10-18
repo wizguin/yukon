@@ -12,11 +12,14 @@ export default class Login extends Plugin {
     }
 
     login(args) {
-        if (args.success) this.network.connectGame('blizzard', args.username, args.loginKey)
+        if (args.success) {
+            console.log(this.game.scene.stop('Login'))
+            this.network.connectGame('blizzard', args.username, args.loginKey)
+        }
     }
 
     loginKey(args) {
-
+        if (args.success) this.network.send('load_player')
     }
 
 }
