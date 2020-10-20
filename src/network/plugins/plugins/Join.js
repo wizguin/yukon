@@ -23,7 +23,7 @@ export default class Join extends Plugin {
     }
 
     joinRoom(args) {
-        this.game.joinRoom(args.room, args.users)
+        this.scene.start('World', args)
     }
 
     addPlayer(args) {

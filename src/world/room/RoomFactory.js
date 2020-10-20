@@ -1,20 +1,19 @@
 export default class RoomFactory {
 
-    constructor(game) {
-        this.game = game
+    constructor(world) {
+        this.world = world
 
-        this.rooms = game.crumbs.rooms
+        this.scene = world.scene
+        this.rooms = world.game.crumbs.rooms
     }
 
-    createRoom(id, penguins) {
-        if (id in this.game.scene.keys) {
+    createRoom(id, users) {
+        if (id in this.scene.manager.keys) {
 
 
         } else {
             let config = this.rooms[id]
-            let room = this.game.scene.add(config.name, config.scene, false)
-
-            this.game.scene.start(config.name)
+            let room = this.scene.add(config.name, config.scene, true)
 
             return room
         }
