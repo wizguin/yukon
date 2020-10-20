@@ -4,7 +4,9 @@
     "settings": {
         "compilerInsertSpaces": true,
         "superClassName": "RoomScene",
-        "preloadPackFiles": [],
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/rink/rink-pack.json"
+        ],
         "createMethodName": "_create",
         "sceneKey": "Rink",
         "borderWidth": 1520,

@@ -21,7 +21,7 @@ export default class Game extends Phaser.Game {
     }
 
     joinRoom(id, users) {
-        this.room = this.roomFactory.createRoom(id, null);
+        this.room = this.roomFactory.createRoom(id, null)
     }
 
 }

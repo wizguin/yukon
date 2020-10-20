@@ -1,6 +1,6 @@
 import Game from '@/Game'
 import rooms from '@/crumbs/rooms'
-import worlds from '@/crumbs/worlds.json'
+import worlds from '@/crumbs/worlds'
 
 
 window.addEventListener('load', function () {
