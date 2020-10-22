@@ -1,31 +1,6 @@
 {
     "section1": {
-        "files": [
-            {
-                "type": "multiatlas",
-                "url": "assets/media/interface/menus/start/start.json",
-                "path": "assets/media/interface/menus/start/",
-                "key": "start"
-            },
-            {
-                "type": "multiatlas",
-                "url": "assets/media/interface/menus/load/load.json",
-                "path": "assets/media/interface/menus/load/",
-                "key": "load"
-            },
-            {
-                "type": "multiatlas",
-                "url": "assets/media/interface/menus/login/login.json",
-                "path": "assets/media/interface/menus/login/",
-                "key": "login"
-            },
-            {
-                "type": "multiatlas",
-                "url": "assets/media/interface/windows/prompt/prompt.json",
-                "path": "assets/media/interface/windows/prompt/",
-                "key": "prompt"
-            }
-        ]
+        "files": []
     },
     "meta": {
         "app": "Phaser Editor 2D - Asset Pack Editor",
