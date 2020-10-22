@@ -1,30 +1,26 @@
 import Penguin from './Penguin'
+import PenguinLoader from './PenguinLoader'
 
 
 export default class PenguinFactory {
 
-    constructor(world) {
-        this.world = world
-
-        this.penguins = {}
+    constructor() {
+        this.penguinLoader = new PenguinLoader()
     }
 
     createClient(client) {
 
     }
 
-    createPenguin(user) {
-        let penguin = new Penguin(user, this.world, user.x, user.y)
-        this.penguins[user.id] = penguin
-
-        return penguin
+    createPenguin(user, room) {
+        return new Penguin(user, room, user.x, user.y, this.penguinLoader)
     }
 
-    createPenguins(users) {
+    createPenguins(users, room) {
         let penguins = {}
 
         for (let user of users) {
-            penguins[user.id] = this.createPenguin(user)
+            penguins[user.id] = this.createPenguin(user, room)
         }
 
         return penguins

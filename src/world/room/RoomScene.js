@@ -2,11 +2,12 @@ export default class RoomScene extends Phaser.Scene {
 
     constructor(key) {
         super(key)
+
+        this.penguins = null
     }
 
-    init(data) {
+    init() {
         this.network = this.game.network
-        this.penguins = data.penguins
     }
 
     preload() {
@@ -15,8 +16,14 @@ export default class RoomScene extends Phaser.Scene {
 
     create() {
         this._create()
-        // this.scene.launch("Main");
-        // this.scene.bringToTop("Main");
+
+        this.sortChildren()
+    }
+
+    sortChildren() {
+        for (let child of this.children.getChildren()) {
+            child.depth = child.y
+        }
     }
 
     addPenguin() {

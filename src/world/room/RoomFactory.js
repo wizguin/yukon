@@ -7,9 +7,7 @@ export default class RoomFactory {
         this.rooms = world.game.crumbs.rooms
     }
 
-    createRoom(id, penguins) {
-        console.log(penguins)
-
+    createRoom(id) {
         if (id in this.scene.manager.keys) {
 
 

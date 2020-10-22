@@ -21,9 +21,9 @@ export default class World extends Phaser.Scene {
     }
 
     joinRoom(id, users) {
-        let penguins = this.penguinFactory.createPenguins(users)
+        this.room = this.roomFactory.createRoom(id)
 
-        this.room = this.roomFactory.createRoom(id, penguins)
+        this.room.penguins = this.penguinFactory.createPenguins(users, this.room)
     }
 
 }
