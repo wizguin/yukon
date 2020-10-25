@@ -4,8 +4,8 @@ import PenguinLoader from './PenguinLoader'
 
 export default class PenguinFactory {
 
-    constructor() {
-        this.penguinLoader = new PenguinLoader()
+    constructor(world) {
+        this.penguinLoader = new PenguinLoader(world.anims)
     }
 
     createClient(client) {
