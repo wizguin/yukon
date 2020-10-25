@@ -1,0 +1,320 @@
+{
+	"textures": [
+		{
+			"image": "attic.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2047,
+				"h": 1038
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1520,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1520,
+						"h": 960
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1520,
+						"h": 960
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"filename": "box",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 324,
+						"h": 724
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 324,
+						"h": 724
+					},
+					"frame": {
+						"x": 1523,
+						"y": 1,
+						"w": 324,
+						"h": 724
+					},
+					"anchor": {
+						"x": 0,
+						"y": 1
+					}
+				},
+				{
+					"filename": "arm",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 175,
+						"h": 251
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 175,
+						"h": 251
+					},
+					"frame": {
+						"x": 1849,
+						"y": 1,
+						"w": 175,
+						"h": 251
+					},
+					"anchor": {
+						"x": 0.497143,
+						"y": 0.649402
+					}
+				},
+				{
+					"filename": "table4-hover",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 167,
+						"h": 132
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 167,
+						"h": 132
+					},
+					"frame": {
+						"x": 1849,
+						"y": 254,
+						"w": 167,
+						"h": 132
+					},
+					"anchor": {
+						"x": 0.42515,
+						"y": 0.606061
+					}
+				},
+				{
+					"filename": "table4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 167,
+						"h": 132
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 167,
+						"h": 124
+					},
+					"frame": {
+						"x": 1849,
+						"y": 388,
+						"w": 167,
+						"h": 124
+					},
+					"anchor": {
+						"x": 0.42515,
+						"y": 0.606061
+					}
+				},
+				{
+					"filename": "table3-hover",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 152,
+						"h": 136
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 152,
+						"h": 136
+					},
+					"frame": {
+						"x": 1849,
+						"y": 514,
+						"w": 152,
+						"h": 136
+					},
+					"anchor": {
+						"x": 0.493421,
+						"y": 0.507353
+					}
+				},
+				{
+					"filename": "table3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 152,
+						"h": 136
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 152,
+						"h": 135
+					},
+					"frame": {
+						"x": 1849,
+						"y": 652,
+						"w": 152,
+						"h": 135
+					},
+					"anchor": {
+						"x": 0.493421,
+						"y": 0.507353
+					}
+				},
+				{
+					"filename": "horse0001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 250,
+						"h": 314
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 0,
+						"w": 221,
+						"h": 302
+					},
+					"frame": {
+						"x": 1523,
+						"y": 727,
+						"w": 221,
+						"h": 302
+					},
+					"anchor": {
+						"x": 0.544,
+						"y": 0.503185
+					}
+				},
+				{
+					"filename": "table1-hover",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 149,
+						"h": 132
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 149,
+						"h": 132
+					},
+					"frame": {
+						"x": 1746,
+						"y": 789,
+						"w": 149,
+						"h": 132
+					},
+					"anchor": {
+						"x": 0.543624,
+						"y": 0.568182
+					}
+				},
+				{
+					"filename": "table1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 149,
+						"h": 132
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 149,
+						"h": 129
+					},
+					"frame": {
+						"x": 1897,
+						"y": 789,
+						"w": 149,
+						"h": 129
+					},
+					"anchor": {
+						"x": 0.543624,
+						"y": 0.568182
+					}
+				},
+				{
+					"filename": "table2-hover",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 136,
+						"h": 116
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 136,
+						"h": 116
+					},
+					"frame": {
+						"x": 1897,
+						"y": 920,
+						"w": 136,
+						"h": 116
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.560345
+					}
+				},
+				{
+					"filename": "table2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 136,
+						"h": 116
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 136,
+						"h": 114
+					},
+					"frame": {
+						"x": 1746,
+						"y": 923,
+						"w": 136,
+						"h": 114
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.560345
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b6c046e8b6cb5cd80438222ddbfa0131:ceb903f02c414e7a0970b904c22540c7:1ac86f84a6f2e9eebd3d48573057c090$"
+	}
+}

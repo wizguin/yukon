@@ -1,0 +1,146 @@
+{
+    "id": "d06e2ce3-02f2-4c08-8508-2c0256d679c5",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/attic/attic-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Attic",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "35457aaa-97a7-4ce5-8a8c-50288c3378b3",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "5415a75b-9831-4ffa-a621-3222772839b7",
+            "label": "arm",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "arm"
+            },
+            "x": 225,
+            "y": 611,
+            "originX": 0.497143,
+            "originY": 0.649402
+        },
+        {
+            "type": "Image",
+            "id": "744bf6b7-7721-40a8-9619-6d45e1fc6b44",
+            "label": "horse0001",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "horse0001"
+            },
+            "x": 1369,
+            "y": 639,
+            "originX": 0.544,
+            "originY": 0.503185
+        },
+        {
+            "type": "Image",
+            "id": "eb9018e6-d7b8-40e4-8e0b-0f8c6a08db5b",
+            "label": "table2",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "table2"
+            },
+            "x": 438,
+            "y": 751,
+            "originX": 0.47058824,
+            "originY": 0.56034483
+        },
+        {
+            "type": "Image",
+            "id": "8e5fef97-e7e0-46e9-8668-1b8ef5527023",
+            "label": "table1",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "table1"
+            },
+            "x": 810,
+            "y": 762,
+            "originX": 0.54362416,
+            "originY": 0.56818182
+        },
+        {
+            "type": "Image",
+            "id": "e48b31c6-05cd-452f-81cb-1b43bd460e71",
+            "label": "table3",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "table3"
+            },
+            "x": 606,
+            "y": 618,
+            "originX": 0.49342105,
+            "originY": 0.50735294
+        },
+        {
+            "type": "Image",
+            "id": "7101e17b-61ef-4a77-ad1c-57ad61bbe582",
+            "label": "table1_1",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "table1"
+            },
+            "x": 873,
+            "y": 582,
+            "originX": 0.54362416,
+            "originY": 0.56818182
+        },
+        {
+            "type": "Image",
+            "id": "018928c6-2420-48ef-8ec4-88803c1b610a",
+            "label": "table4",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "table4"
+            },
+            "x": 1135,
+            "y": 802,
+            "originX": 0.4251497005988024,
+            "originY": 0.6060606060606061
+        },
+        {
+            "type": "Image",
+            "id": "65a936ef-a9a8-486c-977e-31ccc0f17219",
+            "label": "box",
+            "components": [],
+            "texture": {
+                "key": "attic",
+                "frame": "box"
+            },
+            "x": -1,
+            "y": 970,
+            "originX": 0,
+            "originY": 1
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

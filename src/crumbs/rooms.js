@@ -1,10 +1,11 @@
+import Attic from '@/world/room/rooms/attic/Attic'
 import Rink from '@/world/room/rooms/rink/Rink'
 
 
 let rooms = {
     221: {
         name: 'Attic',
-        scene: null,
+        scene: Attic,
         x: 570,
         y: 450
     },
