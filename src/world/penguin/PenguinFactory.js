@@ -5,15 +5,21 @@ import PenguinLoader from './PenguinLoader'
 export default class PenguinFactory {
 
     constructor(world) {
+        this.world = world
+
         this.penguinLoader = new PenguinLoader(world.anims)
     }
 
-    createClient(client) {
-
-    }
-
     createPenguin(user, room) {
-        return new Penguin(user, room, user.x, user.y, this.penguinLoader)
+        let penguin = new Penguin(user, room, user.x, user.y, this.penguinLoader)
+        let client = this.world.client
+
+        if (user.id == client.id) {
+            client.penguin = penguin
+            client.setInput(room)
+        }
+
+        return penguin
     }
 
     createPenguins(users, room) {

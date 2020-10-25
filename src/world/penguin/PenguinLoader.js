@@ -57,7 +57,6 @@ export default class PenguinLoader {
         let sprite = penguin.scene.add.sprite(0, 0, id, '1_1')
 
         this.addAnims(id, sprite)
-        sprite.anims.play(`${id}_9`)
 
         if (id == 'penguin-body') sprite.tint = this.colors[penguin.data.color - 1]
 

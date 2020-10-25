@@ -19,6 +19,7 @@ export default class Join extends Plugin {
         let x = roomConfig.x
         let y = roomConfig.y
 
+        this.world.setClient(args)
         this.network.send('join_server', { x: x, y: y })
     }
 
