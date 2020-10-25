@@ -10,6 +10,10 @@ export default class ClientPenguin {
         this.input = new ClientInput(this) // Input handling
     }
 
+    get actions() {
+        return this.penguin.actions
+    }
+
     setInput(room) {
         this.input.setInput(room)
     }

@@ -33,28 +33,29 @@ export default class PenguinLoader {
     }
 
     addShadow(penguin) {
-        let shadow = penguin.scene.add.sprite(0, 0, 'penguin-base', 'shadow')
+        let shadow = penguin.room.add.image(0, 0, 'penguin-base', 'shadow')
         penguin.addAt(shadow, 0)
     }
 
     addRing(penguin) {
-        let ring = penguin.scene.add.sprite(0, 0, 'penguin-base', 'ring')
+        let ring = penguin.room.add.image(0, 0, 'penguin-base', 'ring')
         penguin.addAt(ring, 0)
     }
 
     addName(penguin) {
         let x = penguin.x
         let y = penguin.y + 40
-        let nameTag = penguin.scene.add.text(x, y, penguin.username, this.nameStyle)
+        let nameTag = penguin.room.add.text(x, y, penguin.username, this.nameStyle)
 
         nameTag.setOrigin(0.5)
+        nameTag.depth = 2000 // Keep nametag above everything else
 
         return nameTag
     }
 
     loadSprite(penguin, id, depth) {
         id = String(id)
-        let sprite = penguin.scene.add.sprite(0, 0, id, '1_1')
+        let sprite = penguin.room.add.sprite(0, 0, id, '1_1')
 
         this.addAnims(id, sprite)
 

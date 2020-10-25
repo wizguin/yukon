@@ -1,10 +1,12 @@
+import PenguinActions from './PenguinActions'
+
 export default class Penguin extends Phaser.GameObjects.Container {
 
-    constructor(data, scene, x, y, penguinLoader) {
-        super(scene, x, y)
+    constructor(data, room, x, y, penguinLoader) {
+        super(room, x, y)
 
         this.data = data
-        this.scene = scene
+        this.room = room
         this.x = x
         this.y = y
         this.penguinLoader = penguinLoader
@@ -15,10 +17,12 @@ export default class Penguin extends Phaser.GameObjects.Container {
 
         this.depth = y
         this.frame = 1
-        this.scale = 0.666;
+        this.scale = 0.666
+
+        this.actions = new PenguinActions(this)
 
         penguinLoader.loadPenguin(this)
-        scene.add.existing(this)
+        room.add.existing(this)
     }
 
 }
