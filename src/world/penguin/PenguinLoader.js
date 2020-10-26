@@ -3,11 +3,13 @@ import animations from './animations'
 
 export default class PenguinLoader {
 
-    constructor(anims) {
-        this.anims = anims
+    constructor(world) {
+        this.world = world
+
+        this.url = '/assets/media/clothing'
 
         this.colors = [
-            0x003366,0x009900, 0xFF3399, 0x333333, 0xCC0000, 0xFF6600, 0xFFCC00,
+            0x003366, 0x009900, 0xFF3399, 0x333333, 0xCC0000, 0xFF6600, 0xFFCC00,
             0x660099, 0x996600, 0xFF6666, 0x006600, 0x0099CC, 0x8AE302, 0xF0F0D8
         ]
 
@@ -19,12 +21,20 @@ export default class PenguinLoader {
         }
     }
 
-    loadPenguin(penguin) {
-        let items = this.getItems(penguin.data)
+    getItems({ feet, body, neck, hand, face, head }) {
+        return { feet, body, neck, hand, face, head }
+    }
 
+    getZIndex(item) {
+        return ['feet', 'body', 'neck', 'hand', 'face', 'head'].indexOf(item) + 10
+    }
+
+    loadPenguin(penguin) {
         this.addPenguin(penguin)
         this.addShadow(penguin)
         this.addRing(penguin)
+
+        this.loadItems(penguin)
     }
 
     addPenguin(penguin) {
@@ -53,6 +63,37 @@ export default class PenguinLoader {
         return nameTag
     }
 
+    loadItems(penguin) {
+        let items = this.getItems(penguin.data)
+
+        for (let item in items) {
+            if (items[item] > 0) {
+                this.loadItem(penguin, items[item])
+            }
+        }
+
+        penguin.load.start()
+        penguin.load.once('complete', () => { this.onLoadComplete(penguin, items) })
+    }
+
+    loadItem(penguin, item) {
+        item = String(item)
+
+        penguin.load.atlas({
+            key: item,
+            atlasURL: `${this.url}/${item}/${item}.json`,
+            textureURL: `${this.url}/${item}/${item}.png`
+        })
+    }
+
+    onLoadComplete(penguin, items) {
+        for (let item in items) {
+            if (items[item] > 0) {
+                this.loadSprite(penguin, items[item], this.getZIndex(item))
+            }
+        }
+    }
+
     loadSprite(penguin, id, depth) {
         id = String(id)
         let sprite = penguin.room.add.sprite(0, 0, id, '1_1')
@@ -65,27 +106,25 @@ export default class PenguinLoader {
     }
 
     addAnims(id) {
-        if (this.anims.exists(`${id}_1`)) return // If sprite animations are already loaded
+        let anims = this.world.anims
 
-        for (const [animationId, animation] of Object.entries(animations)) {
+        if (anims.exists(`${id}_1`)) return // If sprite animations are already loaded
 
-            let frames = this.anims.generateFrameNames(id, {
+        for (let [animationId, animation] of Object.entries(animations)) {
+
+            let frames = anims.generateFrameNames(id, {
                 start: (animation.start) ? animation.start : 1,
                 end: animation.end,
                 prefix: `${animationId}_`
             })
 
-            this.anims.create({
+            anims.create({
                 key: `${id}_${animationId}`,
                 frames: frames,
                 frameRate: 24,
                 repeat: (animation.repeat) ? animation.repeat : 0
             })
         }
-    }
-
-    getItems({ feet, body, neck, hand, face, head }) {
-        return { feet, body, neck, hand, face, head }
     }
 
 }

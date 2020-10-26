@@ -1,5 +1,6 @@
 import PenguinActions from './PenguinActions'
 
+
 export default class Penguin extends Phaser.GameObjects.Container {
 
     constructor(data, room, x, y, penguinLoader) {
@@ -20,6 +21,8 @@ export default class Penguin extends Phaser.GameObjects.Container {
         this.scale = 0.666
 
         this.actions = new PenguinActions(this)
+
+        this.load = new Phaser.Loader.LoaderPlugin(room) // Dedicated loader for clothing
 
         penguinLoader.loadPenguin(this)
         room.add.existing(this)

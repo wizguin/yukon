@@ -7,7 +7,7 @@ export default class PenguinFactory {
     constructor(world) {
         this.world = world
 
-        this.penguinLoader = new PenguinLoader(world.anims)
+        this.penguinLoader = new PenguinLoader(world)
     }
 
     createPenguin(user, room) {
