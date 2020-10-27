@@ -126,4 +126,4 @@ dist
 assets/scripts/client/
 
 # media
-assets/media/
+assets/media/**
