@@ -125,5 +125,5 @@ dist
 # bundles
 assets/scripts/client/
 
-# clothing
-assets/media/clothing/
+# media
+assets/media/
