@@ -23,6 +23,13 @@ window.addEventListener('load', function () {
         plugins: {
             global: [ NineSlice.Plugin.DefaultCfg ]
         },
+        physics: {
+            default: 'matter',
+            matter: {
+                debug: false,
+                gravity: false
+            },
+        },
         crumbs: {
             rooms: rooms,
             worlds: worlds

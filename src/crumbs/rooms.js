@@ -6,8 +6,8 @@ let rooms = {
     221: {
         name: 'Attic',
         scene: Attic,
-        x: 570,
-        y: 450
+        x: 966,
+        y: 560
     },
     802: {
         name: 'Rink',

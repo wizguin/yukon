@@ -5,8 +5,8 @@ export default class PenguinActions {
         this.room = penguin.room
 
         this.speed = 260
-
         this.tween = null
+        this.direction = 0
     }
 
     sit(x, y) {
@@ -17,7 +17,7 @@ export default class PenguinActions {
     }
 
     rotate(x, y) {
-        if (this.penguin.frame > 8) return
+        if (this.penguin.frame > 8) return // Only rotate on standing frames
 
         let angle = this.getAngle({ x: this.penguin.x, y: this.penguin.y }, { x: x, y: y })
         let direction = this.getDirection(angle)
@@ -29,23 +29,25 @@ export default class PenguinActions {
         if (this.tween) this.removeTween()
 
         let pos = { x: this.penguin.x, y: this.penguin.y }
-        let newPos = { x: x, y: y }
+        let newPos = this.getPath(pos, { x: x, y: y })
+
+        if (!newPos) return
 
         let duration = this.getDuration(pos, newPos)
         let angle = this.getAngle(pos, newPos)
-        let direction = this.getDirection(angle)
+        this.direction = this.getDirection(angle)
 
-        this.playFrame(direction + 9) // + 9 for walking frame id
+        this.playFrame(this.direction + 9) // + 9 for walking frame id
 
         this.tween = this.room.tweens.add({
             targets: this.penguin,
-            ease: 'Linear',
             duration: duration,
-            x: Math.floor(x),
-            y: Math.floor(y),
+
+            x: Math.floor(newPos.x),
+            y: Math.floor(newPos.y),
 
             onUpdate: () => { this.onMoveUpdate() },
-            onComplete: () => { this.onMoveComplete(direction) }
+            onComplete: () => { this.onMoveComplete() },
         })
     }
 
@@ -55,9 +57,8 @@ export default class PenguinActions {
         if (this.penguin.nameTag) this.updateNameTag()
     }
 
-    onMoveComplete(direction) {
+    onMoveComplete() {
         this.removeTween()
-        this.playFrame(direction + 1) // + 1 for standing frame id
     }
 
     updateNameTag() {
@@ -66,9 +67,10 @@ export default class PenguinActions {
     }
 
     playFrame(frame) {
+        // Filters out shadow and ring
         let sprites = this.penguin.list.filter(child => child.type == 'Sprite')
 
-        if (this.tween == null) {
+        if (!this.tween) {
             for (let sprite of sprites) {
                 sprite.anims.play(`${sprite.texture.key}_${frame}`)
             }
@@ -78,16 +80,59 @@ export default class PenguinActions {
     }
 
     removeTween() {
+        if (!this.tween) return
+
         this.tween.remove()
         this.tween = null
+
+        this.playFrame(this.direction + 1) // + 1 for standing frame id
     }
 
     /*========== Tween calculations ==========*/
 
-    getDuration(pos, newPos) {
+    getPath(pos, newPos) {
+        let distance = this.getDistance(pos, newPos)
+
+        if (distance < 1) return null
+
+        let steps = Math.round(distance) / 2
+        let move = {
+            x: (newPos.x - pos.x) / steps,
+            y: (newPos.y - pos.y) / steps
+        }
+        let safe = { x: pos.x, y: pos.y }
+        let startBlocked = this.blockTest(safe.x, safe.y)
+
+        while (steps > 0) {
+            safe.x += move.x
+            safe.y += move.y
+
+            if (this.blockTest(safe.x, safe.y) && !startBlocked) {
+                break
+            }
+
+            startBlocked = false
+            steps--
+        }
+
+        distance = this.getDistance(pos, safe)
+
+        if (distance > 10) {
+            return safe
+        } else {
+            return null
+        }
+    }
+
+    getDistance(pos, newPos) {
         let a = (pos.x - newPos.x) ** 2
         let b = (pos.y - newPos.y) ** 2
-        let distance = Math.sqrt(a + b)
+
+        return Math.sqrt(a + b)
+    }
+
+    getDuration(pos, newPos) {
+        let distance = this.getDistance(pos, newPos)
 
         return (distance / this.speed) * 1000
     }
@@ -112,6 +157,10 @@ export default class PenguinActions {
         } else {
             return direction
         }
+    }
+
+    blockTest(x, y) {
+        return this.room.matter.containsPoint(this.room.block, x, y)
     }
 
 }
