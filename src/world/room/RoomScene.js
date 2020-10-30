@@ -34,10 +34,9 @@ export default class RoomScene extends Phaser.Scene {
     }
 
     sortChildren() {
-        // Filter out penguins and nametags
-        let children = this.children.getChildren().filter(child => ['Image', 'Sprite'].includes(child.type))
+        if (!this.sort) return
 
-        for (let child of children) {
+        for (let child of this.sort) {
             child.depth = child.y
         }
     }

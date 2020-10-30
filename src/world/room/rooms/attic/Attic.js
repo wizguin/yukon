@@ -8,6 +8,9 @@ class Attic extends RoomScene {
     constructor() {
         super("Attic");
 
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.sort;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -54,6 +57,11 @@ class Attic extends RoomScene {
         // box
         const box = this.add.image(-1, 970, "attic", "box");
         box.setOrigin(0, 1);
+
+        // lists
+        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse0001]
+
+        this.sort = sort;
     }
 
     /* START-USER-CODE */

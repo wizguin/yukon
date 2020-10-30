@@ -8,6 +8,9 @@ class Lodge extends RoomScene {
     constructor() {
         super("Lodge");
 
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.sort;
+
         /* START-USER-CTR-CODE */
         // Write your code here.
         /* END-USER-CTR-CODE */
@@ -25,14 +28,14 @@ class Lodge extends RoomScene {
         bg.setOrigin(0, 0);
 
         // door
-        this.add.image(136, 461, "lodge", "door");
+        const door = this.add.image(136, 461, "lodge", "door");
 
         // footrest
         const footrest = this.add.image(1279, 747, "lodge", "footrest");
         footrest.setOrigin(0.49295775, 0.47222222);
 
         // chair
-        this.add.image(1365, 763, "lodge", "chair");
+        const chair = this.add.image(1365, 763, "lodge", "chair");
 
         // fire0001
         const fire0001 = this.add.image(1294, 439, "lodge", "fire0001");
@@ -65,6 +68,11 @@ class Lodge extends RoomScene {
         // candle0001
         const candle0001 = this.add.image(453, 276, "lodge", "candle0001");
         candle0001.setOrigin(0, 0.5);
+
+        // lists
+        const sort = [door, table3, table2, table4, footrest, chair]
+
+        this.sort = sort;
     }
 
     /* START-USER-CODE */
