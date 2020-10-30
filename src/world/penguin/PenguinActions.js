@@ -59,11 +59,23 @@ export default class PenguinActions {
 
     onMoveComplete() {
         this.removeTween()
+
+        if (this.penguin.isClient) this.triggerTest()
     }
 
     updateNameTag() {
         this.penguin.nameTag.x = this.penguin.x
         this.penguin.nameTag.y = this.penguin.y + 40
+    }
+
+    triggerTest() {
+        for (let [roomId, trigger] of Object.entries(this.room.triggers)) {
+
+            if (this.room.matter.containsPoint(trigger, this.penguin.x, this.penguin.y)) {
+                console.log('trigger')
+                return
+            }
+        }
     }
 
     playFrame(frame) {

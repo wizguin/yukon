@@ -5,6 +5,7 @@ export default class RoomScene extends Phaser.Scene {
 
         this.penguins = null
         this.block = null // Block collision body
+        this.triggers = null // Trigger collision bodies
     }
 
     init() {
@@ -22,6 +23,7 @@ export default class RoomScene extends Phaser.Scene {
         this.matter.world.setBounds(0, 0, this.game.config.width, this.game.config.height)
 
         this.block = this.addBlock()
+        this.triggers = this.addTriggers()
     }
 
     addBlock() {
@@ -31,6 +33,20 @@ export default class RoomScene extends Phaser.Scene {
         this.matter.body.setPosition(block, block.centerOffset) // Centers block in room
 
         return block
+    }
+
+    addTriggers() {
+        if (!this.roomTriggers) return null
+
+        let triggers = {}
+
+        for (let [roomId, trigger] of Object.entries(this.roomTriggers)) {
+            let triggerBody = this.matter.add.fromPhysicsEditor(trigger.x, trigger.y, trigger.body)
+
+            triggers[roomId] = triggerBody
+        }
+
+        return triggers
     }
 
     sortChildren() {

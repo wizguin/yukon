@@ -70,6 +70,16 @@ class Attic extends RoomScene {
         return this.cache.json.get('attic-physics')
     }
 
+    get roomTriggers() {
+        return {
+            220: {
+                body: this.roomPhysics.lodge,
+                x: 1150,
+                y: 646
+            }
+        }
+    }
+
     /* END-USER-CODE */
 }
 

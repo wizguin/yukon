@@ -15,6 +15,7 @@ export default class PenguinFactory {
         let client = this.world.client
 
         if (user.id == client.id) {
+            penguin.isClient = true
             client.penguin = penguin
             client.setInput(room)
         }
