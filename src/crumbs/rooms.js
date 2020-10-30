@@ -1,9 +1,16 @@
 import Attic from '@/world/room/rooms/attic/Attic'
+import Lodge from '@/world/room/rooms/lodge/Lodge'
 import Rink from '@/world/room/rooms/rink/Rink'
 
 
 let rooms = {
     221: {
+        name: 'Lodge',
+        scene: Lodge,
+        x: 760,
+        y: 800
+    },
+    220: {
         name: 'Attic',
         scene: Attic,
         x: 966,

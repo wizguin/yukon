@@ -1,0 +1,191 @@
+{
+    "id": "bc5d5ed3-9075-4784-b657-6e05cdce00ad",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/lodge/lodge-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Lodge",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "76eaef0a-15dc-43f1-9bc8-5622f0ec228e",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "bg"
+            },
+            "x": -17,
+            "y": -2,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "88448b99-23ca-4433-82a8-40b75fe91423",
+            "label": "door",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "door"
+            },
+            "x": 136,
+            "y": 461
+        },
+        {
+            "type": "Image",
+            "id": "53e3dc25-0ed5-456d-ab6b-fcf13df0fceb",
+            "label": "footrest",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "footrest"
+            },
+            "x": 1279,
+            "y": 747,
+            "originX": 0.49295775,
+            "originY": 0.47222222
+        },
+        {
+            "type": "Image",
+            "id": "c015247e-c4dd-45b4-a287-6530da7dbc01",
+            "label": "chair",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "chair"
+            },
+            "x": 1365,
+            "y": 763
+        },
+        {
+            "type": "Image",
+            "id": "043cb8a8-f3ae-44fd-ad07-20c2ca07c4a2",
+            "label": "fire0001",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "fire0001"
+            },
+            "x": 1294,
+            "y": 439,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "a63ca841-5066-4bac-9805-f6730b8850a4",
+            "label": "fishing_door",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "fishing-door"
+            },
+            "x": 1000,
+            "y": 294
+        },
+        {
+            "type": "Image",
+            "id": "77cd1882-69fd-448c-979f-f284c45113b8",
+            "label": "rods",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "rods"
+            },
+            "x": 819,
+            "y": 328
+        },
+        {
+            "type": "Image",
+            "id": "62189c22-d3e4-4dbd-9c11-3402e58a1215",
+            "label": "bait",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "bait"
+            },
+            "x": 838,
+            "y": 416
+        },
+        {
+            "type": "Image",
+            "id": "1bcadf52-0e40-4659-a7fd-d782d5681eda",
+            "label": "catalog_small",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "catalog-small"
+            },
+            "x": 853,
+            "y": 261
+        },
+        {
+            "type": "Image",
+            "id": "815121c9-6c0c-4a5c-9bfa-44290eeb376c",
+            "label": "table3",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "table3"
+            },
+            "x": 600,
+            "y": 515,
+            "originX": 0.4868421052631579,
+            "originY": 0.6838235294117647
+        },
+        {
+            "type": "Image",
+            "id": "116a3627-102f-4436-ade3-2a3a1d84b925",
+            "label": "table2",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "table2"
+            },
+            "x": 620,
+            "y": 792,
+            "originX": 0.7720588235294118,
+            "originY": 0.7586206896551724
+        },
+        {
+            "type": "Image",
+            "id": "92344cad-eff7-4748-9a84-6ce047322bc4",
+            "label": "table4",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "table4"
+            },
+            "x": 1020,
+            "y": 812,
+            "originX": 0.48502994,
+            "originY": 0.77272727
+        },
+        {
+            "type": "Image",
+            "id": "0503fb33-c16c-42c7-8a78-de9df070e30f",
+            "label": "candle0001",
+            "components": [],
+            "texture": {
+                "key": "lodge",
+                "frame": "candle0001"
+            },
+            "x": 453,
+            "y": 276,
+            "originX": 0
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
