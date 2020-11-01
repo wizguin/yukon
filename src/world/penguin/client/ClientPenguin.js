@@ -1,5 +1,6 @@
 import ClientInput from './ClientInput'
 
+
 export default class ClientPenguin {
 
     constructor(client) {

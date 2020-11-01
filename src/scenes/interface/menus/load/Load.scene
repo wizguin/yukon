@@ -3,6 +3,7 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "sceneKey": "Load",
         "borderWidth": 1520,

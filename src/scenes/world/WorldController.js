@@ -1,9 +1,11 @@
-import ClientPenguin from './penguin/ClientPenguin'
-import PenguinFactory from './penguin/PenguinFactory'
-import RoomFactory from './room/RoomFactory'
+import BaseScene from '@scenes/base/BaseScene'
+
+import ClientPenguin from '@/world/penguin/client/ClientPenguin'
+import PenguinFactory from '@/world/penguin/PenguinFactory'
+import RoomFactory from '@/world/room/RoomFactory'
 
 
-export default class World extends Phaser.Scene {
+export default class WorldController extends BaseScene {
 
     constructor(key) {
         super(key)
@@ -13,8 +15,6 @@ export default class World extends Phaser.Scene {
     }
 
     init(data) {
-        this.network = this.game.network
-
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
 

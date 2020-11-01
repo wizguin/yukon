@@ -1,4 +1,7 @@
-export default class RoomScene extends Phaser.Scene {
+import BaseScene from '@scenes/base/BaseScene'
+
+
+export default class RoomScene extends BaseScene {
 
     constructor(key) {
         super(key)
@@ -6,10 +9,6 @@ export default class RoomScene extends Phaser.Scene {
         this.penguins = null
         this.block = null // Block collision body
         this.triggers = null // Trigger collision bodies
-    }
-
-    init() {
-        this.network = this.game.network
     }
 
     create() {

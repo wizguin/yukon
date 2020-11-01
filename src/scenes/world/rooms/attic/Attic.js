@@ -1,4 +1,4 @@
-import RoomScene from '@/world/room/RoomScene'
+import RoomScene from '../RoomScene'
 
 
 /* START OF COMPILED CODE */

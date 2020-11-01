@@ -1,4 +1,4 @@
-{
+const penguin = {
     "1": {
         "end": 1
     },
@@ -80,3 +80,5 @@
         "end": 1
     }
 }
+
+export default penguin

@@ -1,0 +1,385 @@
+{
+    "id": "6a706849-068e-4444-a72e-8fdc26d261cf",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapEnabled": true,
+        "snapWidth": 1,
+        "snapHeight": 1,
+        "superClassName": "BaseScene",
+        "preloadPackFiles": [],
+        "sceneKey": "Main",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "00577d6e-77b3-4f4d-a972-c43494357612",
+            "label": "map_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "map-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "map-button"
+            },
+            "x": 90,
+            "y": 888
+        },
+        {
+            "type": "Image",
+            "id": "b8adf69c-a4a9-47ec-bbac-5e9b86643dec",
+            "label": "news_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "news-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "news-button"
+            },
+            "x": 70,
+            "y": 61
+        },
+        {
+            "type": "Image",
+            "id": "24426f54-e0c3-496d-97ec-a720c62ce2f8",
+            "label": "mail_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "mail-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "mail-button"
+            },
+            "x": 170,
+            "y": 49
+        },
+        {
+            "type": "Image",
+            "id": "5dce1a5e-0a11-4e37-a002-99517e8f72bf",
+            "label": "mod_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "mod-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "mod-button"
+            },
+            "x": 1434,
+            "y": 69
+        },
+        {
+            "type": "Image",
+            "id": "7d205242-0757-4e4c-9298-88832a914a09",
+            "label": "dock",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "dock"
+            },
+            "x": 760,
+            "y": 924
+        },
+        {
+            "type": "Image",
+            "id": "2351bf55-0c93-41dd-b444-f89ba39d6a6c",
+            "label": "chat_box",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "chat-box"
+            },
+            "x": 748,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "6791cf27-2369-4375-b006-df8d483ad73a",
+            "label": "chat_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 246,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "aa9caccb-a731-4b3b-bfe5-984fe2f6d4ac",
+            "label": "chat_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "chat-icon"
+            },
+            "x": 246,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "aa5a43fd-2f35-4413-a4ff-5aed6de52e4a",
+            "label": "emote_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 306,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "b192506d-5e8d-4220-98d0-60ad0d1e2e65",
+            "label": "emote_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "emote-icon"
+            },
+            "x": 306,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "50404a9c-520b-44d0-b6db-33695974eeee",
+            "label": "action_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 366,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "e48d913a-1f46-4bcc-ae4b-2bb6b5e7add7",
+            "label": "action_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "action-icon"
+            },
+            "x": 366,
+            "y": 927
+        },
+        {
+            "type": "Image",
+            "id": "9c3e46c6-d221-4bae-9e1f-af84b746fc63",
+            "label": "snowball_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 426,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "0b686bbe-3796-4b9d-b965-ee59d7380e1f",
+            "label": "snowball_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "snowball-icon"
+            },
+            "x": 426,
+            "y": 930
+        },
+        {
+            "type": "Image",
+            "id": "bb79f35a-9956-4446-b8b8-027e4cc26b04",
+            "label": "chat_send_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 1026,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "9891188b-feea-49f2-8a70-4d5e85546a7c",
+            "label": "chat_send_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "chat-icon"
+            },
+            "x": 1026,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "4600cc8c-67b7-47ed-a113-02ba822eee8a",
+            "label": "player_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 1086,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "71da470c-c4ad-4f6e-9aa1-ddc2aed0743f",
+            "label": "badge_member",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "badge-member"
+            },
+            "x": 1086,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "23b638a0-11e0-47c1-a3f7-a1e9cbce660a",
+            "label": "buddies_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 1146,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "9fe13e03-fd99-450c-81f6-cf6220c3c28c",
+            "label": "buddies_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "buddies-icon"
+            },
+            "x": 1146,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "3bfb98b3-d47a-4d4f-ac62-1c5a524510f8",
+            "label": "igloo_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 1206,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "c3de3562-d313-43a0-b5c1-fa0cc197473a",
+            "label": "igloo_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "igloo-icon"
+            },
+            "x": 1206,
+            "y": 929
+        },
+        {
+            "type": "Image",
+            "id": "4036c6a3-dcd9-4553-9158-d84317ec0799",
+            "label": "help_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "blue-button",
+            "texture": {
+                "key": "main",
+                "frame": "blue-button"
+            },
+            "x": 1266,
+            "y": 931
+        },
+        {
+            "type": "Image",
+            "id": "2dd95bb8-62eb-4d8a-916e-734bc44b3c9d",
+            "label": "help_icon",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "help-icon"
+            },
+            "x": 1266,
+            "y": 929
+        },
+        {
+            "type": "Container",
+            "id": "0e05726d-d429-4926-98ac-ce484ac8835a",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": -24,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "12999762-715f-4e0c-a7b4-90909b8788f0",
+                    "label": "tab",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "tab"
+                    },
+                    "y": 37
+                },
+                {
+                    "type": "Image",
+                    "id": "cf88c928-5a72-4305-990e-9968f32523d3",
+                    "label": "tab_arrow",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "tab-arrow"
+                    },
+                    "y": 29
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

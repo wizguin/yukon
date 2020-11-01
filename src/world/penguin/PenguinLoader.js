@@ -1,6 +1,3 @@
-import animations from './animations'
-
-
 export default class PenguinLoader {
 
     constructor(world) {
@@ -8,10 +5,8 @@ export default class PenguinLoader {
 
         this.url = '/assets/media/clothing'
 
-        this.colors = [
-            0x003366, 0x009900, 0xFF3399, 0x333333, 0xCC0000, 0xFF6600, 0xFFCC00,
-            0x660099, 0x996600, 0xFF6666, 0x006600, 0x0099CC, 0x8AE302, 0xF0F0D8
-        ]
+        this.animations = world.crumbs.penguin
+        this.colors = world.crumbs.colors
 
         this.nameStyle = {
             fontFamily: 'Arial',
@@ -110,7 +105,7 @@ export default class PenguinLoader {
 
         if (anims.exists(`${id}_1`)) return // If sprite animations are already loaded
 
-        for (let [animationId, animation] of Object.entries(animations)) {
+        for (let [animationId, animation] of Object.entries(this.animations)) {
 
             let frames = anims.generateFrameNames(id, {
                 start: (animation.start) ? animation.start : 1,

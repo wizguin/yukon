@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
-    entry: './src/yukon.js',
+    entry: './src/Game.js',
     output: {
         filename: 'yukon.js',
         path: path.resolve(__dirname, 'assets/scripts/client')
@@ -18,7 +18,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src'),
+            '@scenes': path.resolve(__dirname, 'src/scenes'),
+            '@rooms': path.resolve(__dirname, 'src/scenes/world/rooms')
         }
     },
     module: {

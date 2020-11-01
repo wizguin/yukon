@@ -1,5 +1,7 @@
 import Network from '@/network/Network'
-import Preload from '@/preload/Preload'
+import Preload from '@scenes/preload/Preload'
+
+import game from '@/crumbs/game'
 
 
 export default class Game extends Phaser.Game {
@@ -13,8 +15,6 @@ export default class Game extends Phaser.Game {
         this.scene.add('Preload', Preload, true)
     }
 
-    get world() {
-        return this.scene.getScene('World')
-    }
-
 }
+
+window.onload = new Game(game)

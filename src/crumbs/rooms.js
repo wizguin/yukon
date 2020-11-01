@@ -1,9 +1,9 @@
-import Attic from '@/world/room/rooms/attic/Attic'
-import Lodge from '@/world/room/rooms/lodge/Lodge'
-import Rink from '@/world/room/rooms/rink/Rink'
+import Attic from '@rooms/attic/Attic'
+import Lodge from '@rooms/lodge/Lodge'
+import Rink from '@rooms/rink/Rink'
 
 
-let rooms = {
+const rooms = {
     220: {
         name: 'Lodge',
         scene: Lodge,

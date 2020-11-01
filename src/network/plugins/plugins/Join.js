@@ -24,7 +24,7 @@ export default class Join extends Plugin {
     }
 
     joinRoom(args) {
-        this.scene.start('World', args)
+        this.scene.start('WorldController', args)
     }
 
     addPlayer(args) {

@@ -15,11 +15,12 @@ export default class PenguinFactory {
         let client = this.world.client
 
         if (user.id == client.id) {
-            this.penguinLoader.addRing(penguin)
-
             penguin.isClient = true
+
             client.penguin = penguin
             client.setInput(room)
+
+            this.penguinLoader.addRing(penguin)
         }
 
         return penguin

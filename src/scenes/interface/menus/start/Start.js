@@ -1,15 +1,16 @@
+import BaseScene from '@scenes/base/BaseScene'
+
 import { Button, SimpleButton } from '@/components/components'
 
 
 /* START OF COMPILED CODE */
 
-class Start extends Phaser.Scene {
+class Start extends BaseScene {
     
     constructor() {
         super("Start");
         
         /* START-USER-CTR-CODE */
-        // Write your code here.
         /* END-USER-CTR-CODE */
     }
     

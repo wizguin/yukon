@@ -3,7 +3,7 @@ export default class PenguinActions {
     constructor(penguin) {
         this.penguin = penguin
         this.room = penguin.room
-        this.network = penguin.room.network
+        this.network = this.room.network
 
         this.speed = 260
         this.tween = null

@@ -2,14 +2,13 @@ export default class Plugin {
 
     constructor(network) {
         this.network = network
-
         this.game = network.game
-        this.crumbs = network.game.crumbs
-        this.scene = network.game.scene
+        this.crumbs = this.game.crumbs
+        this.scene = this.game.scene
     }
 
     get world() {
-        return this.game.world
+        return this.scene.getScene('WorldController')
     }
 
 }

@@ -1,10 +1,12 @@
+import BaseScene from '@scenes/base/BaseScene'
+
 import animations from './animations.json'
 import { Animated, Button, SimpleButton } from '@/components/components'
 
 
 /* START OF COMPILED CODE */
 
-class Login extends Phaser.Scene {
+class Login extends BaseScene {
 
     constructor() {
         super("Login");
@@ -155,11 +157,11 @@ class Login extends Phaser.Scene {
         let username = this.elements.username.getChildByName('username').value
         let password = this.elements.password.getChildByName('password').value
 
-        this.game.network.connectLogin(username, password)
+        this.network.connectLogin(username, password)
     }
 
     onBackClick() {
-        this.game.network.disconnect()
+        this.network.disconnect()
 
         this.scene.start('Start')
     }
