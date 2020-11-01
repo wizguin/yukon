@@ -6,6 +6,7 @@ import WorldController from '@scenes/world/WorldController'
 import Load from '@scenes/interface/menus/load/Load'
 import Start from '@scenes/interface/menus/start/Start'
 import Login from '@scenes/interface/menus/login/Login'
+import Main from '@scenes/interface/game/main/Main'
 
 
 export default class Preload extends BaseScene {
@@ -19,6 +20,7 @@ export default class Preload extends BaseScene {
         this.scene.add('Load', Load)
         this.scene.add('Start', Start)
         this.scene.add('Login', Login)
+        this.scene.add('Main', Main)
     }
 
     create() {

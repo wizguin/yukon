@@ -1,5 +1,7 @@
 import BaseScene from '@scenes/base/BaseScene'
 
+import { Button } from '@/components/components'
+
 
 /* START OF COMPILED CODE */
 

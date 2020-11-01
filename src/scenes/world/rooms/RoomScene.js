@@ -16,6 +16,8 @@ export default class RoomScene extends BaseScene {
         this.sortChildren()
 
         if (this.roomPhysics) this.addPhysics()
+
+        this.interface.showInterface()
     }
 
     addPhysics() {

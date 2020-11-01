@@ -4,16 +4,16 @@ export default class BaseScene extends Phaser.Scene {
         return this.game.crumbs
     }
 
-    get interface() {
-        return this.scene.getScene('InterfaceController')
-    }
-
     get network() {
         return this.game.network
     }
 
+    get interface() {
+        return this.scene.manager.getScene('InterfaceController')
+    }
+
     get world() {
-        return this.scene.getScene('WorldController')
+        return this.scene.manager.getScene('WorldController')
     }
 
 }

@@ -7,8 +7,9 @@ export default class InterfaceController extends BaseScene {
         super(key)
     }
 
-    init() {
-        console.log(this.network, this.world)
+    showInterface() {
+        this.scene.launch('Main')
+        this.scene.bringToTop('Main')
     }
 
 }
