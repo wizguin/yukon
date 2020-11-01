@@ -57,12 +57,20 @@ export default class RoomScene extends Phaser.Scene {
         }
     }
 
-    addPenguin() {
-
+    addPenguin(id, penguin) {
+        this.penguins[id] = penguin
     }
 
-    removePenguin() {
+    removePenguin(id) {
+        let penguin = this.penguins[id]
+        let actions = penguin.actions
 
+        if (actions.tween) actions.removeTween()
+
+        penguin.nameTag.destroy()
+        penguin.destroy()
+
+        delete this.penguins[id]
     }
 
 }

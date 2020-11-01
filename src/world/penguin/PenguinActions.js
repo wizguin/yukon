@@ -3,6 +3,7 @@ export default class PenguinActions {
     constructor(penguin) {
         this.penguin = penguin
         this.room = penguin.room
+        this.network = penguin.room.network
 
         this.speed = 260
         this.tween = null
@@ -12,8 +13,11 @@ export default class PenguinActions {
     sit(x, y) {
         let angle = this.getAngle({ x: this.penguin.x, y: this.penguin.y }, { x: x, y: y })
         let direction = this.getDirection(angle)
+        let frame = direction + 17 // + 17 for sitting frame id
 
-        this.playFrame(direction + 17) // + 17 for sitting frame id
+        this.playFrame(frame)
+
+        if (this.penguin.isClient) this.network.send('send_frame', { loop: true, frame: frame })
     }
 
     rotate(x, y) {
@@ -38,6 +42,8 @@ export default class PenguinActions {
         this.direction = this.getDirection(angle)
 
         this.playFrame(this.direction + 9) // + 9 for walking frame id
+
+        if (this.penguin.isClient) this.network.send('send_position', { x: newPos.x, y: newPos.y })
 
         this.tween = this.room.tweens.add({
             targets: this.penguin,
@@ -69,6 +75,8 @@ export default class PenguinActions {
     }
 
     triggerTest() {
+        if (!this.room.triggers) return
+
         for (let [roomId, trigger] of Object.entries(this.room.triggers)) {
 
             if (this.room.matter.containsPoint(trigger, this.penguin.x, this.penguin.y)) {
@@ -78,17 +86,17 @@ export default class PenguinActions {
         }
     }
 
-    playFrame(frame) {
+    playFrame(frame, loop = true) {
+        if (this.tween) return
+
         // Filters out shadow and ring
         let sprites = this.penguin.list.filter(child => child.type == 'Sprite')
 
-        if (!this.tween) {
-            for (let sprite of sprites) {
-                sprite.anims.play(`${sprite.texture.key}_${frame}`)
-            }
-
-            this.penguin.frame = frame
+        for (let sprite of sprites) {
+            sprite.anims.play(`${sprite.texture.key}_${frame}`)
         }
+
+        this.penguin.frame = frame
     }
 
     removeTween() {

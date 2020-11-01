@@ -31,4 +31,14 @@ export default class World extends Phaser.Scene {
         this.room.penguins = this.penguinFactory.createPenguins(users, this.room)
     }
 
+    addPenguin(user) {
+        let penguin = this.penguinFactory.createPenguin(user, this.room)
+
+        this.room.addPenguin(user.id, penguin)
+    }
+
+    removePenguin(id) {
+        this.room.removePenguin(id)
+    }
+
 }

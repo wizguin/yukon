@@ -32,8 +32,6 @@ export default class PenguinLoader {
     loadPenguin(penguin) {
         this.addPenguin(penguin)
         this.addShadow(penguin)
-        this.addRing(penguin)
-
         this.loadItems(penguin)
     }
 
@@ -44,11 +42,13 @@ export default class PenguinLoader {
 
     addShadow(penguin) {
         let shadow = penguin.room.add.image(0, 0, 'penguin-base', 'shadow')
+
         penguin.addAt(shadow, 0)
     }
 
     addRing(penguin) {
         let ring = penguin.room.add.image(0, 0, 'penguin-base', 'ring')
+
         penguin.addAt(ring, 0)
     }
 

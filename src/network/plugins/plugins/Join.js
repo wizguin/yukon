@@ -28,11 +28,11 @@ export default class Join extends Plugin {
     }
 
     addPlayer(args) {
-
+        this.world.addPenguin(args.user)
     }
 
     removePlayer(args) {
-
+        this.world.removePenguin(args.user)
     }
 
 }

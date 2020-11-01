@@ -28,4 +28,12 @@ export default class Penguin extends Phaser.GameObjects.Container {
         room.add.existing(this)
     }
 
+    movePenguin(x, y) {
+        this.actions.move(x, y)
+    }
+
+    playFrame(frame, loop = true) {
+        this.actions.playFrame(frame, loop)
+    }
+
 }

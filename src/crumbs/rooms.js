@@ -4,13 +4,13 @@ import Rink from '@/world/room/rooms/rink/Rink'
 
 
 let rooms = {
-    221: {
+    220: {
         name: 'Lodge',
         scene: Lodge,
         x: 760,
         y: 800
     },
-    220: {
+    221: {
         name: 'Attic',
         scene: Attic,
         x: 966,
