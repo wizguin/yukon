@@ -1,6 +1,7 @@
 import BaseScene from '@scenes/base/BaseScene'
 
 import { Button } from '@/components/components'
+import ActionsMenu from './actions/ActionsMenu'
 
 
 /* START OF COMPILED CODE */
