@@ -64,9 +64,8 @@ export default class RoomScene extends BaseScene {
 
     removePenguin(id) {
         let penguin = this.penguins[id]
-        let actions = penguin.actions
 
-        if (actions.tween) actions.removeTween()
+        if (penguin.isTweening) penguin.actions.movement.removeTween()
 
         penguin.nameTag.destroy()
         penguin.destroy()

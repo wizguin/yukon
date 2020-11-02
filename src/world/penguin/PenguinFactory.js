@@ -1,3 +1,4 @@
+import ClientPenguin from './client/ClientPenguin'
 import Penguin from './Penguin'
 import PenguinLoader from './PenguinLoader'
 
@@ -11,19 +12,17 @@ export default class PenguinFactory {
     }
 
     createPenguin(user, room) {
-        let penguin = new Penguin(user, room, user.x, user.y, this.penguinLoader)
         let client = this.world.client
 
         if (user.id == client.id) {
-            penguin.isClient = true
-
-            client.penguin = penguin
+            client.penguin = new ClientPenguin(user, room, user.x, user.y, this.penguinLoader)
             client.setInput(room)
 
-            this.penguinLoader.addRing(penguin)
-        }
+            return client.penguin
 
-        return penguin
+        } else {
+            return new Penguin(user, room, user.x, user.y, this.penguinLoader)
+        }
     }
 
     createPenguins(users, room) {

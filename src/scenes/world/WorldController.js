@@ -1,6 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import ClientPenguin from '@/world/penguin/client/ClientPenguin'
+import ClientController from '@/world/penguin/client/ClientController'
 import PenguinFactory from '@/world/penguin/PenguinFactory'
 import RoomFactory from '@/world/room/RoomFactory'
 
@@ -24,7 +24,7 @@ export default class WorldController extends BaseScene {
     }
 
     setClient(args) {
-        this.client = new ClientPenguin(args)
+        this.client = new ClientController(args)
     }
 
     joinRoom(id, users) {

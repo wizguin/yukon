@@ -1,59 +1,31 @@
-export default class PenguinActions {
+export default class PenguinMovement {
 
     constructor(penguin) {
         this.penguin = penguin
         this.room = penguin.room
-        this.network = this.room.network
 
         this.speed = 260
         this.tween = null
         this.direction = 0
     }
 
-    sit(x, y) {
-        let angle = this.getAngle({ x: this.penguin.x, y: this.penguin.y }, { x: x, y: y })
-        let direction = this.getDirection(angle)
-        let frame = direction + 17 // + 17 for sitting frame id
-
-        this.playFrame(frame)
-
-        if (this.penguin.isClient) this.network.send('send_frame', { loop: true, frame: frame })
-    }
-
-    rotate(x, y) {
-        if (this.penguin.frame > 8) return // Only rotate on standing frames
-
-        let angle = this.getAngle({ x: this.penguin.x, y: this.penguin.y }, { x: x, y: y })
-        let direction = this.getDirection(angle)
-
-        this.playFrame(direction + 1) // + 1 for standing frame id
-    }
-
-    move(x, y) {
+    movePenguin(path, triggerTest = false) {
         if (this.tween) this.removeTween()
 
-        let pos = { x: this.penguin.x, y: this.penguin.y }
-        let newPos = this.getPath(pos, { x: x, y: y })
-
-        if (!newPos) return
-
-        let duration = this.getDuration(pos, newPos)
-        let angle = this.getAngle(pos, newPos)
-        this.direction = this.getDirection(angle)
-
-        this.playFrame(this.direction + 9) // + 9 for walking frame id
-
-        if (this.penguin.isClient) this.network.send('send_position', { x: newPos.x, y: newPos.y })
+        this.penguin.playFrame(this.direction + 9) // + 9 for walking frame id
 
         this.tween = this.room.tweens.add({
             targets: this.penguin,
-            duration: duration,
+            duration: path.duration,
 
-            x: Math.floor(newPos.x),
-            y: Math.floor(newPos.y),
+            x: Math.floor(path.target.x),
+            y: Math.floor(path.target.y),
 
             onUpdate: () => { this.onMoveUpdate() },
-            onComplete: () => { this.onMoveComplete() },
+            onComplete: () => {
+                if (triggerTest) this.triggerTest()
+                this.onMoveComplete()
+            }
         })
     }
 
@@ -65,8 +37,6 @@ export default class PenguinActions {
 
     onMoveComplete() {
         this.removeTween()
-
-        if (this.penguin.isClient) this.triggerTest()
     }
 
     updateNameTag() {
@@ -77,26 +47,11 @@ export default class PenguinActions {
     triggerTest() {
         if (!this.room.triggers) return
 
-        for (let [roomId, trigger] of Object.entries(this.room.triggers)) {
-
-            if (this.room.matter.containsPoint(trigger, this.penguin.x, this.penguin.y)) {
+        for (let trigger in this.room.triggers) {
+            if (this.room.matter.containsPoint(this.room.triggers[trigger], this.penguin.x, this.penguin.y)) {
                 console.log('trigger')
-                return
             }
         }
-    }
-
-    playFrame(frame, loop = true) {
-        if (this.tween) return
-
-        // Filters out shadow and ring
-        let sprites = this.penguin.list.filter(child => child.type == 'Sprite')
-
-        for (let sprite of sprites) {
-            sprite.anims.play(`${sprite.texture.key}_${frame}`)
-        }
-
-        this.penguin.frame = frame
     }
 
     removeTween() {
@@ -105,22 +60,44 @@ export default class PenguinActions {
         this.tween.remove()
         this.tween = null
 
-        this.playFrame(this.direction + 1) // + 1 for standing frame id
+        this.penguin.playFrame(this.direction + 1) // + 1 for standing frame id
     }
 
     /*========== Tween calculations ==========*/
 
-    getPath(pos, newPos) {
+    getPath(x, y) {
+        let pos = this.penguin.pos
+        let newPos = { x: x, y: y }
+
+        let target = this.getTargetPos(pos, newPos)
+        if (!target) return
+
+        let duration = this.getDuration(pos, target)
+        let angle = this.getAngle(pos, target)
+        this.direction = this.getDirection(angle)
+
+        return {
+            target: target,
+            duration: duration
+        }
+    }
+
+    getTargetPos(pos, newPos) {
         let distance = this.getDistance(pos, newPos)
 
         if (distance < 1) return null
 
         let steps = Math.round(distance) / 2
+
         let move = {
             x: (newPos.x - pos.x) / steps,
             y: (newPos.y - pos.y) / steps
         }
-        let safe = { x: pos.x, y: pos.y }
+        let safe = {
+            x: pos.x,
+            y: pos.y
+        }
+
         let startBlocked = this.blockTest(safe.x, safe.y)
 
         while (steps > 0) {

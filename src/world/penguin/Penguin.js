@@ -1,4 +1,4 @@
-import PenguinActions from './PenguinActions'
+import PenguinActions from './actions/PenguinActions'
 
 
 export default class Penguin extends Phaser.GameObjects.Container {
@@ -20,7 +20,7 @@ export default class Penguin extends Phaser.GameObjects.Container {
         this.frame = 1
         this.scale = 0.666
 
-        this.actions = new PenguinActions(this)
+        this.actions = this.setActions()
 
         this.load = new Phaser.Loader.LoaderPlugin(room) // Dedicated loader for clothing
 
@@ -28,8 +28,20 @@ export default class Penguin extends Phaser.GameObjects.Container {
         room.add.existing(this)
     }
 
+    get isTweening() {
+        return (this.actions.movement.tween) ? true : false
+    }
+
+    get pos() {
+        return { x: this.x, y: this.y }
+    }
+
+    setActions() {
+        return new PenguinActions(this)
+    }
+
     movePenguin(x, y) {
-        this.actions.move(x, y)
+        this.actions.movePenguin(x, y)
     }
 
     playFrame(frame, loop = true) {

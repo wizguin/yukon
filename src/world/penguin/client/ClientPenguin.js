@@ -1,22 +1,17 @@
-import ClientInput from './ClientInput'
+import ClientActions from './ClientActions'
+import Penguin from '../Penguin'
 
 
-export default class ClientPenguin {
+export default class ClientPenguin extends Penguin {
 
-    constructor(client) {
-        this.id = client.user.id
-        this.inventory = client.inventory
+    constructor(data, room, x, y, penguinLoader) {
+        super(data, room, x, y, penguinLoader)
 
-        this.penguin = null // Reference to client Penguin object
-        this.input = new ClientInput(this) // Input handling
+        penguinLoader.addRing(this)
     }
 
-    get actions() {
-        return this.penguin.actions
-    }
-
-    setInput(room) {
-        this.input.setInput(room)
+    setActions() {
+        return new ClientActions(this)
     }
 
 }
