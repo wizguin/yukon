@@ -22,11 +22,8 @@ export default class ItemLoader extends BaseLoader {
         let items = this.getItems(this.penguin.user)
         let values = Object.values(items)
 
-        console.log(values)
-
         for (let item of values) {
             if (item > 0) {
-                console.log(item)
                 this.loadItem(item)
             }
         }
