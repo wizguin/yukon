@@ -1,6 +1,6 @@
 import ClientPenguin from './client/ClientPenguin'
 import Penguin from './Penguin'
-import PenguinLoader from './PenguinLoader'
+import PenguinLoader from './loader/PenguinLoader'
 
 
 export default class PenguinFactory {

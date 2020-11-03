@@ -19,12 +19,14 @@ export default class Join extends Plugin {
         let x = roomConfig.x
         let y = roomConfig.y
 
+        this.scene.start('WorldController')
         this.world.setClient(args)
+
         this.network.send('join_server', { x: x, y: y })
     }
 
     joinRoom(args) {
-        this.scene.start('WorldController', args)
+        this.world.joinRoom(args.room, args.users)
     }
 
     addPlayer(args) {

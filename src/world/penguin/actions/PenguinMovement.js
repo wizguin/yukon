@@ -9,7 +9,7 @@ export default class PenguinMovement {
         this.direction = 0
     }
 
-    movePenguin(path, triggerTest = false) {
+    movePenguin(path) {
         if (this.tween) this.removeTween()
 
         this.penguin.playFrame(this.direction + 9) // + 9 for walking frame id
@@ -22,10 +22,7 @@ export default class PenguinMovement {
             y: Math.floor(path.target.y),
 
             onUpdate: () => { this.onMoveUpdate() },
-            onComplete: () => {
-                if (triggerTest) this.triggerTest()
-                this.onMoveComplete()
-            }
+            onComplete: () => { this.onMoveComplete() }
         })
     }
 
@@ -42,16 +39,6 @@ export default class PenguinMovement {
     updateNameTag() {
         this.penguin.nameTag.x = this.penguin.x
         this.penguin.nameTag.y = this.penguin.y + 40
-    }
-
-    triggerTest() {
-        if (!this.room.triggers) return
-
-        for (let trigger in this.room.triggers) {
-            if (this.room.matter.containsPoint(this.room.triggers[trigger], this.penguin.x, this.penguin.y)) {
-                console.log('trigger')
-            }
-        }
     }
 
     removeTween() {

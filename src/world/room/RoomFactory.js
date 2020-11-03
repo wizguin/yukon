@@ -8,14 +8,15 @@ export default class RoomFactory {
     }
 
     createRoom(id) {
-        if (id in this.scene.manager.keys) {
+        let config = this.rooms[id]
 
+        if (config.name in this.scene.manager.keys) {
+            this.scene.start(config.name)
+
+            return this.scene.manager.getScene(config.name)
 
         } else {
-            let config = this.rooms[id]
-            let room = this.scene.add(config.name, config.scene, true)
-
-            return room
+            return this.scene.add(config.name, config.scene, true)
         }
 
     }

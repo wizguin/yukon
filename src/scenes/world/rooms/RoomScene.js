@@ -6,9 +6,18 @@ export default class RoomScene extends BaseScene {
     constructor(key) {
         super(key)
 
+        this.key = key
+
         this.penguins = null
         this.block = null // Block collision body
         this.triggers = null // Trigger collision bodies
+    }
+
+    // Physics configuration object
+    get roomPhysics() {
+        let key = this.key.toLowerCase()
+
+        return this.cache.json.get(`${key}-physics`)
     }
 
     create() {
@@ -18,6 +27,14 @@ export default class RoomScene extends BaseScene {
         if (this.roomPhysics) this.addPhysics()
 
         this.interface.showInterface()
+    }
+
+    sortChildren() {
+        if (!this.sort) return
+
+        for (let child of this.sort) {
+            child.depth = child.y
+        }
     }
 
     addPhysics() {
@@ -39,23 +56,14 @@ export default class RoomScene extends BaseScene {
     addTriggers() {
         if (!this.roomTriggers) return null
 
-        let triggers = {}
+        let triggers = []
 
-        for (let [roomId, trigger] of Object.entries(this.roomTriggers)) {
-            let triggerBody = this.matter.add.fromPhysicsEditor(trigger.x, trigger.y, trigger.body)
-
-            triggers[roomId] = triggerBody
+        for (let trigger of this.roomTriggers) {
+            trigger.body = this.matter.add.fromPhysicsEditor(trigger.x, trigger.y, trigger.body)
+            triggers.push(trigger)
         }
 
         return triggers
-    }
-
-    sortChildren() {
-        if (!this.sort) return
-
-        for (let child of this.sort) {
-            child.depth = child.y
-        }
     }
 
     addPenguin(id, penguin) {
@@ -71,6 +79,10 @@ export default class RoomScene extends BaseScene {
         penguin.destroy()
 
         delete this.penguins[id]
+    }
+
+    triggerRoom(id, x, y) {
+        this.network.send('join_room', { room: id, x: x, y: y })
     }
 
 }

@@ -14,13 +14,11 @@ export default class WorldController extends BaseScene {
         this.room = null
     }
 
-    init(data) {
+    init() {
         this.scene.launch('InterfaceController')
 
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
-
-        this.joinRoom(data.room, data.users)
     }
 
     setClient(args) {
@@ -28,8 +26,9 @@ export default class WorldController extends BaseScene {
     }
 
     joinRoom(id, users) {
-        this.room = this.roomFactory.createRoom(id)
+        if (this.room) this.room.scene.stop()
 
+        this.room = this.roomFactory.createRoom(id)
         this.room.penguins = this.penguinFactory.createPenguins(users, this.room)
     }
 

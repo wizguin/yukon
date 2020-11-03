@@ -77,8 +77,15 @@ class Lodge extends RoomScene {
 
     /* START-USER-CODE */
 
-    get roomPhysics() {
-        return this.cache.json.get('lodge-physics')
+    get roomTriggers() {
+        return [
+            {
+                body: this.roomPhysics.attic,
+                x: 1214,
+                y: 466,
+                callback: () => { this.triggerRoom(221, 966, 560) }
+            }
+        ]
     }
 
     /* END-USER-CODE */

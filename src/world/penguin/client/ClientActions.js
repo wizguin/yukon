@@ -7,14 +7,31 @@ export default class ClientActions extends PenguinActions {
         super(penguin)
 
         this.network = this.room.network
+
+        // Overrides onMoveComplete to check for triggers
+        this.movement.onMoveComplete = () => {
+            this.movement.removeTween()
+            this.triggerTest()
+        }
     }
 
     movePenguin(x, y) {
         let path = this.movement.getPath(x, y)
 
         if (path) {
+            this.movement.movePenguin(path)
             this.network.send('send_position', { x: path.target.x, y: path.target.y })
-            this.movement.movePenguin(path, true)
+        }
+    }
+
+    triggerTest() {
+        if (!this.room.triggers) return
+
+        for (let trigger of this.room.triggers) {
+
+            if (this.room.matter.containsPoint(trigger.body, this.penguin.x, this.penguin.y)) {
+                if (trigger.callback) trigger.callback()
+            }
         }
     }
 
@@ -37,7 +54,6 @@ export default class ClientActions extends PenguinActions {
         let frame = direction + 17 // + 17 for sitting frame id
 
         this.playFrame(frame)
-
         this.network.send('send_frame', { loop: true, frame: frame })
     }
 

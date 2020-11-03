@@ -4,8 +4,8 @@ import Penguin from '../Penguin'
 
 export default class ClientPenguin extends Penguin {
 
-    constructor(data, room, x, y, penguinLoader) {
-        super(data, room, x, y, penguinLoader)
+    constructor(user, room, x, y, penguinLoader) {
+        super(user, room, x, y, penguinLoader)
 
         penguinLoader.addRing(this)
     }
