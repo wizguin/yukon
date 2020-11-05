@@ -147,6 +147,7 @@ class Map extends Phaser.GameObjects.Container {
         // rink (components)
         const rinkButton = new Button(rink);
         rinkButton.spriteName = "rink";
+        rinkButton.callback = () => { this.onRoomClick(802) };
         rinkButton.activeFrame = false;
         
         // forest (components)
