@@ -88,6 +88,10 @@ class Map extends Phaser.GameObjects.Container {
         const grey_button = scene.add.image(483, -313, "main", "grey-button");
         this.add(grey_button);
         
+        // grey_x
+        const grey_x = scene.add.image(483, -315, "main", "grey-x");
+        this.add(grey_x);
+        
         // block (components)
         new Interactive(block);
         
@@ -107,6 +111,7 @@ class Map extends Phaser.GameObjects.Container {
         // village (components)
         const villageButton = new Button(village);
         villageButton.spriteName = "village";
+        villageButton.callback = () => { this.onRoomClick(200) };
         villageButton.activeFrame = false;
         
         // beach (components)
@@ -173,10 +178,21 @@ class Map extends Phaser.GameObjects.Container {
         grey_buttonButton.callback = () => { this.visible = false };
         
         /* START-USER-CTR-CODE */
+
+        this.network = scene.network
+        this.rooms = scene.crumbs.rooms
+
         /* END-USER-CTR-CODE */
     }
     
     /* START-USER-CODE */
+
+    onRoomClick(id) {
+        let room = this.rooms[id]
+
+        this.network.send('join_room', { room: id, x: room.x, y: room.y })
+    }
+
     /* END-USER-CODE */
 }
 

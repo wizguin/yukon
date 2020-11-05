@@ -108,6 +108,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "village",
+                    "Button.callback": "() => { this.onRoomClick(200) }",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
@@ -321,6 +322,18 @@
                     },
                     "x": 483,
                     "y": -313
+                },
+                {
+                    "type": "Image",
+                    "id": "45830b5d-99cb-41f8-8903-65046e08ebfe",
+                    "label": "grey_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-x"
+                    },
+                    "x": 483,
+                    "y": -315
                 }
             ]
         }
