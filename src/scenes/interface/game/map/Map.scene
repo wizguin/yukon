@@ -221,6 +221,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "rink",
+                    "Button.callback": "() => { this.onRoomClick(802) }",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
