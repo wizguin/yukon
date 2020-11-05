@@ -1,0 +1,334 @@
+{
+    "id": "dc649c7a-1824-4b21-8431-e3d1168a4506",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "bfaa02be-42e7-4151-a022-1a38f8f54b3a",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 460,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "b1ff237f-06e7-44ac-8bfc-e87a7fc83c3d",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "main",
+                        "frame": "block"
+                    },
+                    "y": 21
+                },
+                {
+                    "type": "Image",
+                    "id": "7d3b5435-8293-44e8-9d1e-24583bf640d1",
+                    "label": "bg",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "map",
+                        "frame": "bg"
+                    },
+                    "y": -15
+                },
+                {
+                    "type": "Image",
+                    "id": "2dade6d3-c572-40be-ae0a-d43d68c09cdf",
+                    "label": "dojo",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "dojo",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "dojo"
+                    },
+                    "x": 69,
+                    "y": -290
+                },
+                {
+                    "type": "Image",
+                    "id": "e29f8478-c32e-4adc-8631-c1f523326cce",
+                    "label": "mountains",
+                    "components": [],
+                    "texture": {
+                        "key": "map",
+                        "frame": "mountains"
+                    },
+                    "x": 29,
+                    "y": -256
+                },
+                {
+                    "type": "Image",
+                    "id": "edb9c700-0a8b-4c48-bfd5-4c74e91b5c17",
+                    "label": "island",
+                    "components": [],
+                    "texture": {
+                        "key": "map",
+                        "frame": "island"
+                    },
+                    "x": -12,
+                    "y": -10
+                },
+                {
+                    "type": "Image",
+                    "id": "5c64a2da-bf48-4d74-a077-30300d0f85b7",
+                    "label": "mtn",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "mtn",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "mtn"
+                    },
+                    "x": -232,
+                    "y": -236
+                },
+                {
+                    "type": "Image",
+                    "id": "c95bd268-af44-4f26-8b57-e8d55fa89b54",
+                    "label": "village",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "village",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "village"
+                    },
+                    "x": -181,
+                    "y": -159
+                },
+                {
+                    "type": "Image",
+                    "id": "48697a5d-c6d1-4a02-819a-c5b8775bfc8a",
+                    "label": "beach",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "beach",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "beach"
+                    },
+                    "x": -390,
+                    "y": -74
+                },
+                {
+                    "type": "Image",
+                    "id": "1cad58f9-47d6-40f0-8884-7005765b0850",
+                    "label": "dock",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "dock",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "dock"
+                    },
+                    "x": -370,
+                    "y": 134
+                },
+                {
+                    "type": "Image",
+                    "id": "ada151eb-d62c-45cd-a80b-8f59eca3055c",
+                    "label": "town",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "town",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "town"
+                    },
+                    "x": -128,
+                    "y": 42
+                },
+                {
+                    "type": "Image",
+                    "id": "7de47079-9407-4049-86f5-356a3b041b32",
+                    "label": "forts",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "forts",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "forts"
+                    },
+                    "x": 78,
+                    "y": 50
+                },
+                {
+                    "type": "Image",
+                    "id": "ab1952f8-b32f-4817-ab44-93b746e7b923",
+                    "label": "igloo",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "igloo",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "igloo"
+                    },
+                    "x": 201,
+                    "y": 161
+                },
+                {
+                    "type": "Image",
+                    "id": "ebab9d5e-21bf-4291-8e69-9d4c47862543",
+                    "label": "plaza",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "plaza",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "plaza"
+                    },
+                    "x": 264,
+                    "y": 42
+                },
+                {
+                    "type": "Image",
+                    "id": "091aa901-1d70-4b5b-a185-3ca1179e0d84",
+                    "label": "rink",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "rink",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "rink"
+                    },
+                    "x": 52,
+                    "y": -78
+                },
+                {
+                    "type": "Image",
+                    "id": "326379c0-9514-4191-81a2-a5a304ba310c",
+                    "label": "forest",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "forest",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "forest"
+                    },
+                    "x": 291,
+                    "y": -64
+                },
+                {
+                    "type": "Image",
+                    "id": "3fb1a7d1-acee-4efd-a469-1d131b45cfd4",
+                    "label": "cove",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "cove",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "cove"
+                    },
+                    "x": 334,
+                    "y": -149
+                },
+                {
+                    "type": "Image",
+                    "id": "53528dbf-77a2-4a02-b89d-ec4ffda769c4",
+                    "label": "mine",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "mine",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "mine"
+                    },
+                    "x": 168,
+                    "y": -194
+                },
+                {
+                    "type": "Image",
+                    "id": "008eebce-1137-4123-97c3-78447be90dea",
+                    "label": "berg",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "berg",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "map",
+                        "frame": "berg"
+                    },
+                    "x": 402,
+                    "y": -190
+                },
+                {
+                    "type": "Image",
+                    "id": "ee452c9a-6118-4182-9a0c-0960e662e2e1",
+                    "label": "note",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "map",
+                        "frame": "note"
+                    },
+                    "x": 419,
+                    "y": 262
+                },
+                {
+                    "type": "Image",
+                    "id": "6466fda5-512e-4d12-9c12-084e900d2f3e",
+                    "label": "grey_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "grey-button",
+                    "Button.callback": "() => { this.visible = false }",
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-button"
+                    },
+                    "x": 483,
+                    "y": -313
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

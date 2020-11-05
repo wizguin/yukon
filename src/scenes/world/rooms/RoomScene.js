@@ -13,13 +13,6 @@ export default class RoomScene extends BaseScene {
         this.triggers = null // Trigger collision bodies
     }
 
-    // Physics configuration object
-    get roomPhysics() {
-        let key = this.key.toLowerCase()
-
-        return this.cache.json.get(`${key}-physics`)
-    }
-
     create() {
         this._create()
         this.sortChildren()
@@ -36,6 +29,30 @@ export default class RoomScene extends BaseScene {
             child.depth = child.y
         }
     }
+
+    addPenguin(id, penguin) {
+        this.penguins[id] = penguin
+    }
+
+    removePenguin(id) {
+        let penguin = this.penguins[id]
+
+        if (penguin.isTweening) penguin.actions.movement.removeTween()
+
+        penguin.nameTag.destroy()
+        penguin.destroy()
+
+        delete this.penguins[id]
+    }
+
+    /*========== Physics ==========*/
+
+    get roomPhysics() {
+        let key = this.key.toLowerCase()
+
+        return this.cache.json.get(`${key}-physics`)
+    }
+
 
     addPhysics() {
         this.matter.world.setBounds(0, 0, this.game.config.width, this.game.config.height)
@@ -64,21 +81,6 @@ export default class RoomScene extends BaseScene {
         }
 
         return triggers
-    }
-
-    addPenguin(id, penguin) {
-        this.penguins[id] = penguin
-    }
-
-    removePenguin(id) {
-        let penguin = this.penguins[id]
-
-        if (penguin.isTweening) penguin.actions.movement.removeTween()
-
-        penguin.nameTag.destroy()
-        penguin.destroy()
-
-        delete this.penguins[id]
     }
 
     triggerRoom(id, x, y) {

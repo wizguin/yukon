@@ -3,7 +3,7 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
-        "superClassName": "BaseScene",
+        "superClassName": "InterfaceScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
         "sceneKey": "Login",

@@ -1,6 +1,3 @@
-
-// You can write more code here
-
 /* START OF COMPILED CODE */
 
 class ActionsMenu extends Phaser.GameObjects.Container {
@@ -54,9 +51,6 @@ class ActionsMenu extends Phaser.GameObjects.Container {
     }
 
     /* START-USER-CODE */
-
-    // Write your code here.
-
     /* END-USER-CODE */
 }
 

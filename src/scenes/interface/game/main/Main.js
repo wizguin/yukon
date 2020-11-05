@@ -1,12 +1,14 @@
-import BaseScene from '@scenes/base/BaseScene'
+import InterfaceScene from '@scenes/interface/InterfaceScene'
 
-import { Button } from '@/components/components'
-import ActionsMenu from './actions/ActionsMenu'
+import { Button, Interactive } from '@/components/components'
+
+import ActionsMenu from '../actions/ActionsMenu'
+import Map from '../map/Map'
 
 
 /* START OF COMPILED CODE */
 
-class Main extends BaseScene {
+class Main extends InterfaceScene {
 
     constructor() {
         super("Main");
@@ -15,7 +17,7 @@ class Main extends BaseScene {
         /* END-USER-CTR-CODE */
     }
 
-    create() {
+    _create() {
 
         // map_button
         const map_button = this.add.sprite(90, 888, "main", "map-button");
@@ -30,10 +32,10 @@ class Main extends BaseScene {
         const mod_button = this.add.image(1434, 69, "main", "mod-button");
 
         // dock
-        this.add.image(760, 924, "main", "dock");
+        const dock = this.add.image(760, 924, "main", "dock");
 
         // chat_box
-        this.add.image(748, 931, "main", "chat-box");
+        const chat_box = this.add.image(748, 931, "main", "chat-box");
 
         // chat_button
         const chat_button = this.add.image(246, 931, "main", "blue-button");
@@ -103,6 +105,7 @@ class Main extends BaseScene {
         // map_button (components)
         const map_buttonButton = new Button(map_button);
         map_buttonButton.spriteName = "map-button";
+        map_buttonButton.callback = () => { this.map.visible = true };
         map_buttonButton.activeFrame = false;
 
         // news_button (components)
@@ -119,6 +122,12 @@ class Main extends BaseScene {
         const mod_buttonButton = new Button(mod_button);
         mod_buttonButton.spriteName = "mod-button";
         mod_buttonButton.activeFrame = false;
+
+        // dock (components)
+        new Interactive(dock);
+
+        // chat_box (components)
+        new Interactive(chat_box);
 
         // chat_button (components)
         const chat_buttonButton = new Button(chat_button);
@@ -158,6 +167,13 @@ class Main extends BaseScene {
     }
 
     /* START-USER-CODE */
+
+    create() {
+        this._create()
+
+        this.map = this.loadPrefab(new Map(this, 760, 460))
+    }
+
     /* END-USER-CODE */
 }
 

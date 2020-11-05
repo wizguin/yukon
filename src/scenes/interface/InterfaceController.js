@@ -10,6 +10,7 @@ export default class InterfaceController extends BaseScene {
     showInterface() {
         this.scene.launch('Main')
         this.scene.bringToTop('Main')
+        this.scene.bringToTop()
     }
 
 }

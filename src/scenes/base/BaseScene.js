@@ -9,11 +9,11 @@ export default class BaseScene extends Phaser.Scene {
     }
 
     get interface() {
-        return this.scene.manager.getScene('InterfaceController')
+        return this.scene.get('InterfaceController')
     }
 
     get world() {
-        return this.scene.manager.getScene('WorldController')
+        return this.scene.get('WorldController')
     }
 
 }

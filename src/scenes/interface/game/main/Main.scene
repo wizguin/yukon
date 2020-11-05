@@ -6,8 +6,9 @@
         "snapEnabled": true,
         "snapWidth": 1,
         "snapHeight": 1,
-        "superClassName": "BaseScene",
+        "superClassName": "InterfaceScene",
         "preloadPackFiles": [],
+        "createMethodName": "_create",
         "sceneKey": "Main",
         "borderWidth": 1520,
         "borderHeight": 960
@@ -21,6 +22,7 @@
                 "Button"
             ],
             "Button.spriteName": "map-button",
+            "Button.callback": "() => { this.map.visible = true }",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
@@ -81,7 +83,9 @@
             "type": "Image",
             "id": "7d205242-0757-4e4c-9298-88832a914a09",
             "label": "dock",
-            "components": [],
+            "components": [
+                "Interactive"
+            ],
             "texture": {
                 "key": "main",
                 "frame": "dock"
@@ -93,7 +97,9 @@
             "type": "Image",
             "id": "2351bf55-0c93-41dd-b444-f89ba39d6a6c",
             "label": "chat_box",
-            "components": [],
+            "components": [
+                "Interactive"
+            ],
             "texture": {
                 "key": "main",
                 "frame": "chat-box"
@@ -377,6 +383,7 @@
             ]
         }
     ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
