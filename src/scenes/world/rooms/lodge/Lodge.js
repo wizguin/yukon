@@ -84,6 +84,12 @@ class Lodge extends RoomScene {
                 x: 1214,
                 y: 466,
                 callback: () => { this.triggerRoom(221, 966, 560) }
+            },
+            {
+                body: this.roomPhysics.village,
+                x: 180,
+                y: 640,
+                callback: () => { this.triggerRoom(200, 940, 540) }
             }
         ]
     }
