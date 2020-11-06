@@ -4,6 +4,7 @@ import { Button, Interactive } from '@/components/components'
 
 import ActionsMenu from '../actions/ActionsMenu'
 import Map from '../map/Map'
+import PlayerCard from '../playercard/PlayerCard'
 
 
 /* START OF COMPILED CODE */
@@ -152,6 +153,7 @@ class Main extends InterfaceScene {
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
+        player_buttonButton.callback = () => { this.playerCard.showCard(this.world.client) };
 
         // buddies_button (components)
         const buddies_buttonButton = new Button(buddies_button);
@@ -171,7 +173,8 @@ class Main extends InterfaceScene {
     create() {
         this._create()
 
-        this.map = this.loadPrefab(new Map(this, 760, 460))
+        this.playerCard = this.loadPrefab(new PlayerCard(this, 446, 436), 1)
+        this.map = this.loadPrefab(new Map(this, 760, 460), 2)
     }
 
     /* END-USER-CODE */

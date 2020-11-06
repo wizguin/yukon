@@ -6,8 +6,6 @@ export default class BaseLoader {
         this.anims = world.anims
         this.animations = world.crumbs.penguin
         this.colors = world.crumbs.colors
-
-        this.url = '/assets/media/clothing'
     }
 
     loadSprite(penguin, id, depth) {

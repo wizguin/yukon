@@ -250,6 +250,7 @@
                 "Button"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => { this.playerCard.showCard(this.world.client) }",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"

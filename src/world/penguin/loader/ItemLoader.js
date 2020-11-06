@@ -8,6 +8,7 @@ export default class ItemLoader extends BaseLoader {
 
         this.penguin = penguin
         this.load = new Phaser.Loader.LoaderPlugin(penguin.room)
+        this.url = '/assets/media/clothing/sprites'
     }
 
     getItems({ feet, body, neck, hand, face, head }) {

@@ -1,16 +1,13 @@
-
-// You can write more code here
-
 /* START OF COMPILED CODE */
 
 class EventComponent {
-    
+
     constructor(gameObject) {
         gameObject["__EventComponent"] = this;
-        
+
         /** @type {Phaser.GameObjects.GameObject} */
         this.gameObject = gameObject;
-        
+
         /* START-USER-CTR-CODE */
 
         this.scene = gameObject.scene
@@ -24,12 +21,12 @@ class EventComponent {
 
         /* END-USER-CTR-CODE */
     }
-    
+
     /** @returns {EventComponent} */
     static getComponent(gameObject) {
         return gameObject["__EventComponent"];
     }
-    
+
     /* START-USER-CODE */
 
     start() {

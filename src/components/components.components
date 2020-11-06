@@ -88,6 +88,52 @@
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Image",
             "properties": []
+        },
+        {
+            "name": "Draggable",
+            "baseClass": "EventComponent",
+            "gameObjectType": "Phaser.GameObjects.GameObject",
+            "properties": [
+                {
+                    "name": "callback",
+                    "label": "Callback",
+                    "tooltip": "Callback",
+                    "defValue": "() => {}",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "setSize",
+                    "label": "Set Size",
+                    "tooltip": "Set Size for Container",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "width",
+                    "label": "Width",
+                    "tooltip": "Width",
+                    "defValue": "",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "height",
+                    "label": "Height",
+                    "tooltip": "Height",
+                    "defValue": "",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
