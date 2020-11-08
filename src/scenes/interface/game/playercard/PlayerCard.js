@@ -1,5 +1,7 @@
 import { Button, Draggable, Interactive } from '@/components/components'
 
+import PaperDoll from '@/world/penguin/PaperDoll'
+
 
 /* START OF COMPILED CODE */
 
@@ -33,17 +35,17 @@ class PlayerCard extends Phaser.GameObjects.Container {
         grey_arrow_1.flipY = true;
         this.add(grey_arrow_1);
 
+        // card_photo
+        const card_photo = scene.add.image(0, -2, "main", "card-photo");
+        this.add(card_photo);
+
         // card_bg
-        const card_bg = scene.add.image(0, 0, "main", "card-bg");
+        const card_bg = scene.add.image(0, 0, "main", "card-bg-player");
         this.add(card_bg);
 
         // card_coin
         const card_coin = scene.add.image(164, 255, "main", "card-coin");
         this.add(card_coin);
-
-        // card_photo
-        const card_photo = scene.add.image(0, -2, "main", "card-photo");
-        this.add(card_photo);
 
         // coins
         const coins = scene.add.text(-13, 255, "", {});
@@ -120,7 +122,7 @@ class PlayerCard extends Phaser.GameObjects.Container {
         this.add(item_1);
 
         // tab
-        const tab = scene.add.container(735, -121);
+        const tab = scene.add.container(736, -121);
         this.add(tab);
 
         // tab_handle
@@ -152,6 +154,11 @@ class PlayerCard extends Phaser.GameObjects.Container {
         this.username = username;
 
         /* START-USER-CTR-CODE */
+
+        // Adds PaperDoll container at index 7
+        this.paperDoll = new PaperDoll(this.scene, 0, -2)
+        this.addAt(this.paperDoll, 7)
+
         /* END-USER-CTR-CODE */
     }
 
@@ -174,8 +181,8 @@ class PlayerCard extends Phaser.GameObjects.Container {
         this.coins.text = `Your Coins: ${penguin.user.coins}`
     }
 
-    showPaperDoll() {
-
+    showPaperDoll(penguin) {
+        this.paperDoll.loadPaperDoll(penguin)
     }
 
     /* END-USER-CODE */

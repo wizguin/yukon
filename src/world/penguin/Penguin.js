@@ -1,5 +1,6 @@
 import ItemLoader from './loader/ItemLoader'
 import PenguinActions from './actions/PenguinActions'
+import PenguinItems from './PenguinItems'
 
 
 export default class Penguin extends Phaser.GameObjects.Container {
@@ -15,15 +16,15 @@ export default class Penguin extends Phaser.GameObjects.Container {
 
         this.username = user.username
         this.nameTag = penguinLoader.addName(this)
-        this.worn = {}
 
         this.depth = y
         this.frame = 1
         this.scale = 0.666
 
         this.actions = this.setActions()
-
+        this.items = this.setItems()
         this.itemLoader = new ItemLoader(this)
+
         this.loadPenguin()
     }
 
@@ -37,6 +38,10 @@ export default class Penguin extends Phaser.GameObjects.Container {
 
     setActions() {
         return new PenguinActions(this)
+    }
+
+    setItems() {
+        return new PenguinItems(this)
     }
 
     loadPenguin() {

@@ -11,21 +11,14 @@ export default class ItemLoader extends BaseLoader {
         this.url = '/assets/media/clothing/sprites'
     }
 
-    getItems({ feet, body, neck, hand, face, head }) {
-        return { feet, body, neck, hand, face, head }
-    }
-
-    getZIndex(slot) {
-        return ['feet', 'body', 'neck', 'hand', 'face', 'head'].indexOf(slot) + 10
-    }
-
     loadItems() {
-        let items = this.getItems(this.penguin.user)
-        let values = Object.values(items)
+        let items = this.penguin.items.sprites
 
-        for (let item of values) {
-            if (item > 0) {
-                this.loadItem(item)
+        for (let item in items) {
+            item = items[item]
+
+            if (item.id > 0) {
+                this.loadItem(item.id)
             }
         }
 
@@ -52,10 +45,10 @@ export default class ItemLoader extends BaseLoader {
 
     onLoadComplete(items) {
         for (let item in items) {
-            let id = items[item]
+            item = items[item]
 
-            if (id > 0 && this.world.textures.exists(id)) {
-                this.loadSprite(this.penguin, id, this.getZIndex(item))
+            if (item.id > 0 && this.world.textures.exists(item.id)) {
+                this.loadSprite(this.penguin, item.id, item.depth)
             }
         }
     }

@@ -101,32 +101,11 @@
                 },
                 {
                     "type": "Image",
-                    "id": "93824b0c-8f6f-4cef-a620-7a30100d3bd9",
-                    "label": "card_bg",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "card-bg"
-                    }
-                },
-                {
-                    "type": "Image",
-                    "id": "6e0b3192-1f75-484c-ba84-d76ccd3a3345",
-                    "label": "card_coin",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "card-coin"
-                    },
-                    "x": 164,
-                    "y": 255
-                },
-                {
-                    "type": "Image",
                     "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
                     "label": "card_photo",
                     "components": [
-                        "Interactive"
+                        "Interactive",
+                        "Depth"
                     ],
                     "texture": {
                         "key": "main",
@@ -135,11 +114,39 @@
                     "y": -2
                 },
                 {
+                    "type": "Image",
+                    "id": "fe294108-b9df-4ff7-8a4c-2b4ee0d81d76",
+                    "label": "card_bg",
+                    "components": [
+                        "Depth"
+                    ],
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-bg-player"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "6e0b3192-1f75-484c-ba84-d76ccd3a3345",
+                    "label": "card_coin",
+                    "components": [
+                        "Depth"
+                    ],
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-coin"
+                    },
+                    "x": 164,
+                    "y": 255
+                },
+                {
                     "type": "Text",
                     "id": "41323b7b-a2e7-4992-b3c1-b2c6e3078c0e",
                     "label": "coins",
                     "scope": "CLASS",
-                    "components": [],
+                    "components": [
+                        "Depth"
+                    ],
                     "x": -13,
                     "y": 255,
                     "text": "Your Coins: 000000",
@@ -154,7 +161,9 @@
                     "id": "e96707d4-a8b8-4cf9-bdd5-3babddd9ac5c",
                     "label": "username",
                     "scope": "CLASS",
-                    "components": [],
+                    "components": [
+                        "Depth"
+                    ],
                     "y": -238,
                     "text": "Username",
                     "fixedWidth": 360,
@@ -168,7 +177,9 @@
                     "type": "Image",
                     "id": "c872414d-cfa7-46ab-bf78-7618077e1f55",
                     "label": "card_badge_member",
-                    "components": [],
+                    "components": [
+                        "Depth"
+                    ],
                     "texture": {
                         "key": "main",
                         "frame": "card-badge-member"
@@ -181,7 +192,8 @@
                     "id": "274b2a17-fd19-4625-8207-2ce436778aba",
                     "label": "x_button",
                     "components": [
-                        "Button"
+                        "Button",
+                        "Depth"
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => { this.visible = false }",
@@ -196,7 +208,9 @@
                     "type": "Image",
                     "id": "0a074237-0457-4002-a588-2d9705f5aaf4",
                     "label": "blue_x",
-                    "components": [],
+                    "components": [
+                        "Depth"
+                    ],
                     "texture": {
                         "key": "main",
                         "frame": "blue-x"
@@ -353,7 +367,7 @@
                     "id": "6cfb1b76-c736-4dc0-9543-fc400bc632d9",
                     "label": "tab",
                     "components": [],
-                    "x": 735,
+                    "x": 736,
                     "y": -121,
                     "list": [
                         {
