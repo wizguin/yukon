@@ -12,6 +12,8 @@ const colors = [
     0x006600,
     0x0099CC,
     0x8AE302,
+    0x93A0A4,
+    0x02A797,
     0xF0F0D8
 ]
 
