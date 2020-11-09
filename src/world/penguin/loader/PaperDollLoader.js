@@ -26,7 +26,7 @@ export default class PaperDollLoader {
         if (this.load.totalToLoad > 0) {
             this.load.once('complete', () => { this.onLoadComplete(penguin, items) })
         } else {
-            this.onLoadComplete(items)
+            this.onLoadComplete(penguin, items)
         }
     }
 
