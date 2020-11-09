@@ -7,6 +7,8 @@ export default class ClientPenguin extends Penguin {
     constructor(user, room, x, y, penguinLoader) {
         super(user, room, x, y, penguinLoader)
 
+        this.isClient = true
+
         penguinLoader.addRing(this)
     }
 

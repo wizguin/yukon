@@ -17,9 +17,7 @@ export default class ItemLoader extends BaseLoader {
         for (let item in items) {
             item = items[item]
 
-            if (item.id > 0) {
-                this.loadItem(item.id)
-            }
+            if (item.id > 0) this.loadItem(item.id)
         }
 
         this.load.start()

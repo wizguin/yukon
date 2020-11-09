@@ -18,15 +18,13 @@ export default class PaperDollLoader {
         for (let item in items) {
             item = items[item]
 
-            if (item.id > 0) {
-                this.loadItem(item.id)
-            }
+            if (item.id > 0) this.loadItem(item.id)
         }
 
         this.load.start()
 
         if (this.load.totalToLoad > 0) {
-            this.load.once('complete', () => { this.onLoadComplete(items) })
+            this.load.once('complete', () => { this.onLoadComplete(penguin, items) })
         } else {
             this.onLoadComplete(items)
         }
@@ -43,7 +41,7 @@ export default class PaperDollLoader {
         })
     }
 
-    onLoadComplete(items) {
+    onLoadComplete(penguin, items) {
         for (let slot in items) {
             let item = items[slot]
 
@@ -51,23 +49,39 @@ export default class PaperDollLoader {
 
                 switch (slot) {
                     case 'photo':
-                        this.loadPaper(item.id, item.depth, this.photoScale)
+                        this.loadPaper(penguin, slot, item, this.photoScale)
                         break
 
                     default:
-                        this.loadPaper(item.id, item.depth)
+                        this.loadPaper(penguin, slot, item)
                         break
                 }
-
             }
         }
     }
 
-    loadPaper(id, depth, scale = this.scale) {
-        let paper = this.scene.add.image(0, 0, `${this.prefix}${id}`)
+    loadPaper(penguin, slot, item, scale = this.scale) {
+        let paper = this.scene.add.image(0, 0, `${this.prefix}${item.id}`)
         paper.scale = scale
 
-        this.paperDoll.addAt(paper, depth)
+        this.paperDoll.addAt(paper, item.depth)
+
+        if (penguin.isClient) this.addInput(slot, item, paper)
+    }
+
+    addInput(slot, item, paper) {
+        if (slot == 'color') {
+            return paper.setInteractive({
+                pixelPerfect: true
+            })
+        }
+
+        paper.setInteractive({
+            cursor: 'pointer',
+            pixelPerfect: true
+        })
+
+        paper.on('pointerdown', () => this.paperDoll.onPaperClick(item))
     }
 
 }

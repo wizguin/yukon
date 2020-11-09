@@ -9,8 +9,6 @@ export default class ClientController {
 
         this.penguin = null // Reference to ClientPenguin object
         this.input = new ClientInput(this) // Input handling
-
-        this.isClient = true
     }
 
     setInput(room) {

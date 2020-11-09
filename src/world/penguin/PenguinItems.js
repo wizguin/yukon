@@ -22,7 +22,7 @@ export default class PenguinItems {
         for (let slot of this.slots) {
             items[slot] = {
                 id: penguin.user[slot],
-                depth: this.slots.indexOf(slot) + 10
+                depth: this.slots.indexOf(slot)
             }
         }
 

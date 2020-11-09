@@ -14,4 +14,8 @@ export default class PaperDoll extends Phaser.GameObjects.Container {
         this.paperDollLoader.loadItems(penguin)
     }
 
+    onPaperClick(item) {
+        console.log(item)
+    }
+
 }

@@ -103,10 +103,7 @@
                     "type": "Image",
                     "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
                     "label": "card_photo",
-                    "components": [
-                        "Interactive",
-                        "Depth"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "card-photo"
@@ -117,9 +114,7 @@
                     "type": "Image",
                     "id": "fe294108-b9df-4ff7-8a4c-2b4ee0d81d76",
                     "label": "card_bg",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "card-bg-player"
@@ -129,9 +124,7 @@
                     "type": "Image",
                     "id": "6e0b3192-1f75-484c-ba84-d76ccd3a3345",
                     "label": "card_coin",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "card-coin"
@@ -144,9 +137,7 @@
                     "id": "41323b7b-a2e7-4992-b3c1-b2c6e3078c0e",
                     "label": "coins",
                     "scope": "CLASS",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "x": -13,
                     "y": 255,
                     "text": "Your Coins: 000000",
@@ -161,9 +152,7 @@
                     "id": "e96707d4-a8b8-4cf9-bdd5-3babddd9ac5c",
                     "label": "username",
                     "scope": "CLASS",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "y": -238,
                     "text": "Username",
                     "fixedWidth": 360,
@@ -177,9 +166,7 @@
                     "type": "Image",
                     "id": "c872414d-cfa7-46ab-bf78-7618077e1f55",
                     "label": "card_badge_member",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "card-badge-member"
@@ -192,8 +179,7 @@
                     "id": "274b2a17-fd19-4625-8207-2ce436778aba",
                     "label": "x_button",
                     "components": [
-                        "Button",
-                        "Depth"
+                        "Button"
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => { this.visible = false }",
@@ -208,9 +194,7 @@
                     "type": "Image",
                     "id": "0a074237-0457-4002-a588-2d9705f5aaf4",
                     "label": "blue_x",
-                    "components": [
-                        "Depth"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "blue-x"
@@ -379,7 +363,7 @@
                                 "key": "main",
                                 "frame": "tab"
                             },
-                            "x": 8,
+                            "x": 7,
                             "y": 1,
                             "angle": -90
                         },

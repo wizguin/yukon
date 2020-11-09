@@ -1,4 +1,4 @@
-import { Button, Draggable, Interactive } from '@/components/components'
+import { Button, Draggable } from '@/components/components'
 
 import PaperDoll from '@/world/penguin/PaperDoll'
 
@@ -126,7 +126,7 @@ class PlayerCard extends Phaser.GameObjects.Container {
         this.add(tab);
 
         // tab_handle
-        const tab_handle = scene.add.image(8, 1, "main", "tab");
+        const tab_handle = scene.add.image(7, 1, "main", "tab");
         tab_handle.angle = -90;
         tab.add(tab_handle);
 
@@ -141,9 +141,6 @@ class PlayerCard extends Phaser.GameObjects.Container {
         thisDraggable.setSize = true;
         thisDraggable.width = card_bg.width;
         thisDraggable.height = card_bg.height;
-
-        // card_photo (components)
-        new Interactive(card_photo);
 
         // x_button (components)
         const x_buttonButton = new Button(x_button);
@@ -165,24 +162,18 @@ class PlayerCard extends Phaser.GameObjects.Container {
     /* START-USER-CODE */
 
     showCard(penguin) {
-        if (penguin.isClient) {
-            let inventory = penguin.inventory
-            penguin = penguin.penguin
-        }
-
         this.setText(penguin)
-        this.showPaperDoll(penguin)
-
+        this.paperDoll.loadPaperDoll(penguin)
         this.visible = true
+    }
+
+    showClientCard(client) {
+        this.showCard(client.penguin)
     }
 
     setText(penguin) {
         this.username.text = penguin.username
         this.coins.text = `Your Coins: ${penguin.user.coins}`
-    }
-
-    showPaperDoll(penguin) {
-        this.paperDoll.loadPaperDoll(penguin)
     }
 
     /* END-USER-CODE */
