@@ -162,6 +162,9 @@ class PlayerCard extends Phaser.GameObjects.Container {
     /* START-USER-CODE */
 
     showCard(penguin) {
+        // Don't open player's card if it's already open
+        if (this.username.text == penguin.username && this.visible) return
+
         this.setText(penguin)
         this.paperDoll.loadPaperDoll(penguin)
         this.visible = true

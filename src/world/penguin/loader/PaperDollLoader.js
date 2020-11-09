@@ -62,7 +62,11 @@ export default class PaperDollLoader {
 
     loadPaper(penguin, slot, item, scale = this.scale) {
         let paper = this.scene.add.image(0, 0, `${this.prefix}${item.id}`)
+
         paper.scale = scale
+
+        // Fade in everything except for penguin color
+        if (slot != 'color') this.fadeIn(paper)
 
         this.paperDoll.addAt(paper, item.depth)
 
@@ -82,6 +86,16 @@ export default class PaperDollLoader {
         })
 
         paper.on('pointerdown', () => this.paperDoll.onPaperClick(item))
+    }
+
+    fadeIn(paper) {
+        paper.alpha = 0
+
+        this.scene.tweens.add({
+            targets: paper,
+            alpha: { from: 0, to: 1 },
+            duration: 200
+        })
     }
 
 }
