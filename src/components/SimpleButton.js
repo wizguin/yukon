@@ -1,6 +1,3 @@
-
-// You can write more code here
-
 /* START OF COMPILED CODE */
 
 class SimpleButton {
@@ -17,7 +14,7 @@ class SimpleButton {
 
         this.gameObject.setInteractive({ cursor: 'pointer' })
 
-        this.gameObject.on('pointerup', () => this.onUp())
+        this.gameObject.on('pointerup', () => { this.onUp() })
 
         /* END-USER-CTR-CODE */
     }

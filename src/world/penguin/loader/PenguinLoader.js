@@ -17,6 +17,7 @@ export default class PenguinLoader extends BaseLoader {
     loadPenguin(penguin) {
         this.addPenguin(penguin)
         this.addShadow(penguin)
+        this.addInput(penguin)
     }
 
     addPenguin(penguin) {
@@ -45,6 +46,35 @@ export default class PenguinLoader extends BaseLoader {
         nameTag.depth = 2000 // Keep nametag above everything else
 
         return nameTag
+    }
+
+    // Bug: when penguin leaves room movement/rotation is still locked
+    addInput(penguin) {
+        let hitArea = new Phaser.Geom.Ellipse(0, -30, 110, 130)
+
+        penguin.setInteractive({
+            cursor: 'pointer',
+            hitArea: hitArea,
+            hitAreaCallback: Phaser.Geom.Ellipse.Contains
+        })
+
+        penguin.on('pointerover', () => { this.onPenguinOver() })
+        penguin.on('pointerout', () => { this.onPenguinOut() })
+        penguin.on('pointerup', () => { this.onPenguinClick(penguin) })
+    }
+
+    onPenguinOver() {
+        this.world.client.penguin.movementEnabled = false
+        this.world.client.penguin.rotationEnabled = false
+    }
+
+    onPenguinOut() {
+        this.world.client.penguin.movementEnabled = true
+        this.world.client.penguin.rotationEnabled = true
+    }
+
+    onPenguinClick(penguin) {
+        this.world.interface.showCard(penguin)
     }
 
 }

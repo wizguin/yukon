@@ -93,44 +93,30 @@
             "name": "Draggable",
             "baseClass": "EventComponent",
             "gameObjectType": "Phaser.GameObjects.GameObject",
+            "properties": []
+        },
+        {
+            "name": "DraggableContainer",
+            "baseClass": "EventComponent",
+            "gameObjectType": "Phaser.GameObjects.Container",
             "properties": [
                 {
-                    "name": "callback",
-                    "label": "Callback",
-                    "tooltip": "Callback",
-                    "defValue": "() => {}",
-                    "type": {
-                        "id": "expression",
-                        "expressionType": "any"
-                    }
-                },
-                {
-                    "name": "setSize",
-                    "label": "Set Size",
-                    "tooltip": "Set Size for Container",
-                    "defValue": false,
-                    "type": {
-                        "id": "boolean"
-                    }
-                },
-                {
-                    "name": "width",
-                    "label": "Width",
-                    "tooltip": "Width",
+                    "name": "handle",
+                    "label": "Handle",
+                    "tooltip": "Draggable handle",
                     "defValue": "",
                     "type": {
                         "id": "expression",
-                        "expressionType": "any"
+                        "expressionType": "Phaser.GameObjects.GameObject"
                     }
                 },
                 {
-                    "name": "height",
-                    "label": "Height",
-                    "tooltip": "Height",
-                    "defValue": "",
+                    "name": "depth",
+                    "label": "Depth",
+                    "tooltip": "Depth of created zone",
+                    "defValue": 0,
                     "type": {
-                        "id": "expression",
-                        "expressionType": "any"
+                        "id": "number"
                     }
                 }
             ]

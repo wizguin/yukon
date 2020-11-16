@@ -21,9 +21,9 @@ class Button extends SimpleButton {
 
         /* START-USER-CTR-CODE */
 
-        this.gameObject.on('pointerover', () => this.onOver())
-        this.gameObject.on('pointerout', () => this.onOut())
-        this.gameObject.on('pointerdown', () => this.onDown())
+        this.gameObject.on('pointerover', () => { this.onOver() })
+        this.gameObject.on('pointerout', () => { this.onOut() })
+        this.gameObject.on('pointerdown', () => { this.onDown() })
 
         /* END-USER-CTR-CODE */
     }

@@ -12,14 +12,6 @@ class Draggable extends EventComponent {
 
         /** @type {Phaser.GameObjects.GameObject} */
         this.gameObject = gameObject;
-        /** @type {any} */
-        this.callback = () => {};
-        /** @type {boolean} */
-        this.setSize = false;
-        /** @type {any} */
-        this.width;
-        /** @type {any} */
-        this.height;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -33,13 +25,9 @@ class Draggable extends EventComponent {
     /* START-USER-CODE */
 
     start() {
-        if (this.setSize) {
-            this.gameObject.setSize(this.width, this.height)
-        }
-
         this.gameObject.setInteractive({ draggable: true })
 
-        this.scene.input.on('drag', (pointer, gameObject, dragX, dragY) => {
+        this.gameObject.on('drag', (pointer, dragX, dragY) => {
             this.onDrag(dragX, dragY)
         })
     }

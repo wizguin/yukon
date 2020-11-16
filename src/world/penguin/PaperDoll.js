@@ -1,7 +1,9 @@
+import BaseContainer from '@scenes/base/BaseContainer'
+
 import PaperDollLoader from './loader/PaperDollLoader'
 
 
-export default class PaperDoll extends Phaser.GameObjects.Container {
+export default class PaperDoll extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y)

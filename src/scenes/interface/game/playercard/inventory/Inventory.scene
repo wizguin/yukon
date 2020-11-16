@@ -1,0 +1,386 @@
+{
+    "id": "092e5111-82e2-4289-8f29-b8d9568e9497",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 132,
+        "snapHeight": 132,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "756cf99e-60b7-437d-b065-1538e6f59923",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 460,
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "eae4d995-d616-4c16-8c52-98e843ce92a3",
+                    "label": "container",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -56,
+                    "y": -272,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "f20da11a-78aa-4baf-ac70-37e03e3cd66c",
+                            "label": "inventory_bg",
+                            "components": [
+                                "Interactive"
+                            ],
+                            "texture": {
+                                "key": "main",
+                                "frame": "inventory-bg"
+                            },
+                            "x": 56,
+                            "y": 270
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d4dec657-fcbd-4344-a016-ccc04f1a99d9",
+                            "label": "inventory_scroll",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "inventory-scroll"
+                            },
+                            "x": 368,
+                            "y": 245
+                        },
+                        {
+                            "type": "Image",
+                            "id": "815e0fe9-d8dd-46d0-9684-8cc3e4356375",
+                            "label": "down_button",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "grey-button",
+                            "Button.callback": "() => { this.nextPage() }",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-button"
+                            },
+                            "x": 368,
+                            "y": 472
+                        },
+                        {
+                            "type": "Image",
+                            "id": "bf4588bb-b113-44cd-9dc1-06f94cb2d3bc",
+                            "label": "grey_arrow_1",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-arrow"
+                            },
+                            "x": 368,
+                            "y": 470,
+                            "flipY": true
+                        },
+                        {
+                            "type": "Image",
+                            "id": "0b5533b7-c680-4a0f-81c6-e21150533bd6",
+                            "label": "up_button",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "grey-button",
+                            "Button.callback": "() => { this.prevPage() }",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-button"
+                            },
+                            "x": 368,
+                            "y": 2
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d6e0be58-df01-418e-a4ca-3f1654bbdfd8",
+                            "label": "grey_arrow",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-arrow"
+                            },
+                            "x": 368
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d6a6ceec-2733-4ce8-b3db-fc8512d511db",
+                            "label": "slot_12",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(11) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 264,
+                            "y": 439
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5885b455-3d59-4919-bf64-e62dec45af64",
+                            "label": "slot_11",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(10) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 132,
+                            "y": 439
+                        },
+                        {
+                            "type": "Image",
+                            "id": "85944064-4368-4806-88aa-b2a320d17fff",
+                            "label": "slot_10",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(9) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "y": 439
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4323d409-9184-4bcd-8c61-b38c941db82a",
+                            "label": "slot_9",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(8) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 264,
+                            "y": 307
+                        },
+                        {
+                            "type": "Image",
+                            "id": "64c4bf79-5c82-472a-8bb7-cabaa01e0b3e",
+                            "label": "slot_8",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(7) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 132,
+                            "y": 307
+                        },
+                        {
+                            "type": "Image",
+                            "id": "152034c5-0c63-47ed-ae32-19f02652cad2",
+                            "label": "slot_7",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(6) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "y": 307
+                        },
+                        {
+                            "type": "Image",
+                            "id": "472324e9-cdfe-489e-8b1b-a14b99e13fa2",
+                            "label": "slot_6",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(5) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 264,
+                            "y": 175
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3c18b24c-1337-4d99-b860-5d1af3d4fd73",
+                            "label": "slot_5",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(4) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 132,
+                            "y": 175
+                        },
+                        {
+                            "type": "Image",
+                            "id": "6229f89d-065c-41b8-8f5b-8964235e8415",
+                            "label": "slot_4",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(3) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "y": 175
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b6b3a7a4-dfd5-439b-98b4-e712b5f7dec3",
+                            "label": "slot_3",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(2) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 264,
+                            "y": 43
+                        },
+                        {
+                            "type": "Image",
+                            "id": "87abf07a-43fc-4a55-8133-8a6bf2c0fed6",
+                            "label": "slot_2",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(1) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 132,
+                            "y": 43
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c7acf20a-882e-4e6f-8b47-8eb584288565",
+                            "label": "slot_1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.callback": "() => { this.onSlotClick(0) }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "y": 43
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "e8832f40-f7c5-4dcc-a31d-a8c8c5488162",
+                    "label": "tab",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 369,
+                    "y": -156,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "640c38ba-bfaf-49da-a89a-7f82f3210d62",
+                            "label": "tab_handle",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => { this.onTabClick() }",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab"
+                            },
+                            "x": 8,
+                            "y": 2,
+                            "angle": -90
+                        },
+                        {
+                            "type": "Image",
+                            "id": "52c457ab-fc2c-4c34-8c62-d5a976701bdd",
+                            "label": "arrow",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab-arrow"
+                            },
+                            "angle": -90
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "ddcd8e73-a8fd-4e47-8f9f-d3cd0bd0d027",
+            "label": "slots",
+            "objectIds": [
+                "c7acf20a-882e-4e6f-8b47-8eb584288565",
+                "87abf07a-43fc-4a55-8133-8a6bf2c0fed6",
+                "b6b3a7a4-dfd5-439b-98b4-e712b5f7dec3",
+                "6229f89d-065c-41b8-8f5b-8964235e8415",
+                "3c18b24c-1337-4d99-b860-5d1af3d4fd73",
+                "472324e9-cdfe-489e-8b1b-a14b99e13fa2",
+                "152034c5-0c63-47ed-ae32-19f02652cad2",
+                "64c4bf79-5c82-472a-8bb7-cabaa01e0b3e",
+                "4323d409-9184-4bcd-8c61-b38c941db82a",
+                "85944064-4368-4806-88aa-b2a320d17fff",
+                "5885b455-3d59-4919-bf64-e62dec45af64",
+                "d6a6ceec-2733-4ce8-b3db-fc8512d511db"
+            ]
+        }
+    ]
+}

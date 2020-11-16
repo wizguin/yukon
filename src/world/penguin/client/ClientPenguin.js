@@ -9,6 +9,9 @@ export default class ClientPenguin extends Penguin {
 
         this.isClient = true
 
+        this.movementEnabled = true
+        this.rotationEnabled = true
+
         penguinLoader.addRing(this)
     }
 

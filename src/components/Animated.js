@@ -31,8 +31,8 @@ class Animated extends EventComponent {
 
     start() {
         if (this.onHover) {
-            this.gameObject.on('pointerover', () => this.onOver())
-            this.gameObject.on('pointerout', () => this.onOut())
+            this.gameObject.on('pointerover', () => { this.onOver() })
+            this.gameObject.on('pointerout', () => { this.onOut() })
 
         } else {
             this.gameObject.play(this.animation)

@@ -3,9 +3,9 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
-        "snapEnabled": true,
-        "snapWidth": 1,
-        "snapHeight": 1,
+        "snapWidth": 20,
+        "snapHeight": 20,
+        "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -18,92 +18,19 @@
             "id": "80b40d42-bac6-4d3b-ac21-b81f37ee9a54",
             "label": "container_1",
             "components": [
-                "Draggable"
+                "DraggableContainer"
             ],
-            "Draggable.setSize": true,
-            "Draggable.width": "card_bg.width",
-            "Draggable.height": "card_bg.height",
-            "x": 517,
-            "y": 477,
+            "DraggableContainer.handle": "card_bg",
+            "x": 760,
+            "y": 460,
             "list": [
-                {
-                    "type": "Image",
-                    "id": "26bade1e-da61-4a2e-beb8-43846632b100",
-                    "label": "inventory_bg",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "inventory-bg"
-                    },
-                    "x": 366,
-                    "y": 34
-                },
-                {
-                    "type": "Image",
-                    "id": "ed8b4f84-ae5e-4692-8b3a-ab083c6f936b",
-                    "label": "inventory_scroll",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "inventory-scroll"
-                    },
-                    "x": 675,
-                    "y": 11
-                },
-                {
-                    "type": "Image",
-                    "id": "0fa692f2-0695-4e9a-bcc9-4103e3fc19e8",
-                    "label": "down_button",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "grey-button"
-                    },
-                    "x": 677,
-                    "y": 240
-                },
-                {
-                    "type": "Image",
-                    "id": "c8f7b553-92b8-41b4-b49b-89c70803f06a",
-                    "label": "up_button",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "grey-button"
-                    },
-                    "x": 677,
-                    "y": -232
-                },
-                {
-                    "type": "Image",
-                    "id": "9bdf0369-4aa1-4162-a9c8-750d12e0cf81",
-                    "label": "grey_arrow",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "grey-arrow"
-                    },
-                    "x": 677,
-                    "y": -234
-                },
-                {
-                    "type": "Image",
-                    "id": "0b54e69a-e2f6-4dd4-ab5d-6b918338cce5",
-                    "label": "grey_arrow_1",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "grey-arrow"
-                    },
-                    "x": 677,
-                    "y": 238,
-                    "flipY": true
-                },
                 {
                     "type": "Image",
                     "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
                     "label": "card_photo",
-                    "components": [],
+                    "components": [
+                        "Interactive"
+                    ],
                     "texture": {
                         "key": "main",
                         "frame": "card-photo"
@@ -121,31 +48,47 @@
                     }
                 },
                 {
-                    "type": "Image",
-                    "id": "6e0b3192-1f75-484c-ba84-d76ccd3a3345",
-                    "label": "card_coin",
+                    "prefabId": "8808181a-7877-4aef-982e-f4ba2441da75",
+                    "id": "b958363f-47ef-45d1-ab73-8ee745452d50",
+                    "label": "buttons",
+                    "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "card-coin"
-                    },
-                    "x": 164,
                     "y": 255
                 },
                 {
-                    "type": "Text",
-                    "id": "41323b7b-a2e7-4992-b3c1-b2c6e3078c0e",
-                    "label": "coins",
+                    "type": "Container",
+                    "id": "b173b409-a478-4303-9fbc-f0300fea9f35",
+                    "label": "stats",
                     "scope": "CLASS",
                     "components": [],
                     "x": -13,
                     "y": 255,
-                    "text": "Your Coins: 000000",
-                    "fixedWidth": 300,
-                    "align": "right",
-                    "fontFamily": "Arial",
-                    "fontSize": "24px",
-                    "color": "#000000ff"
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "6e0b3192-1f75-484c-ba84-d76ccd3a3345",
+                            "label": "card_coin",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "card-coin"
+                            },
+                            "x": 177
+                        },
+                        {
+                            "type": "Text",
+                            "id": "41323b7b-a2e7-4992-b3c1-b2c6e3078c0e",
+                            "label": "coins",
+                            "scope": "CLASS",
+                            "components": [],
+                            "text": "Your Coins: 000000",
+                            "fixedWidth": 300,
+                            "align": "right",
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000ff"
+                        }
+                    ]
                 },
                 {
                     "type": "Text",
@@ -203,183 +146,13 @@
                     "y": -239
                 },
                 {
-                    "type": "Image",
-                    "id": "bd6fe90a-1568-40cb-9162-65d13f8de063",
-                    "label": "item_12",
+                    "prefabId": "092e5111-82e2-4289-8f29-b8d9568e9497",
+                    "id": "2c78d474-38e5-4639-85d4-0191679ebb81",
+                    "label": "inventory",
+                    "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 571,
-                    "y": 205
-                },
-                {
-                    "type": "Image",
-                    "id": "37497139-889f-464e-8a6e-d3c63266a9f7",
-                    "label": "item_11",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 439,
-                    "y": 204
-                },
-                {
-                    "type": "Image",
-                    "id": "4344232d-e845-43da-b704-0c969af452d7",
-                    "label": "item_10",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 307,
-                    "y": 205
-                },
-                {
-                    "type": "Image",
-                    "id": "f3ba0276-0954-4847-bb43-a1c653cc8dca",
-                    "label": "item_9",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 571,
-                    "y": 74
-                },
-                {
-                    "type": "Image",
-                    "id": "7c40d5f3-5e1b-44cf-ad45-e4a156dc60b8",
-                    "label": "item_8",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 439,
-                    "y": 74
-                },
-                {
-                    "type": "Image",
-                    "id": "9a992743-7813-46f0-ada9-5721335cef7f",
-                    "label": "item_7",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 307,
-                    "y": 74
-                },
-                {
-                    "type": "Image",
-                    "id": "4016f653-1dc0-4519-b98f-ca64245bae80",
-                    "label": "item_6",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 571,
-                    "y": -58
-                },
-                {
-                    "type": "Image",
-                    "id": "3dd1c420-9bce-4ab8-b182-230fbac2029d",
-                    "label": "item_5",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 439,
-                    "y": -59
-                },
-                {
-                    "type": "Image",
-                    "id": "3ee553f2-9f2d-4370-a4e9-31f1f84a9a91",
-                    "label": "item_4",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 307,
-                    "y": -60
-                },
-                {
-                    "type": "Image",
-                    "id": "b5fb513c-bc33-4775-b83f-ad58e13d7060",
-                    "label": "item_3",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 571,
-                    "y": -192
-                },
-                {
-                    "type": "Image",
-                    "id": "ac53bfb6-34da-453b-93af-e5886f4c3843",
-                    "label": "item_2",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 439,
-                    "y": -192
-                },
-                {
-                    "type": "Image",
-                    "id": "53581246-ed0b-41a0-b184-a173b0ec1e2a",
-                    "label": "item_1",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "large-box"
-                    },
-                    "x": 307,
-                    "y": -194
-                },
-                {
-                    "type": "Container",
-                    "id": "6cfb1b76-c736-4dc0-9543-fc400bc632d9",
-                    "label": "tab",
-                    "components": [],
-                    "x": 736,
-                    "y": -121,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "bf436fc8-2c1b-4f08-bede-24df8d5718b7",
-                            "label": "tab_handle",
-                            "components": [],
-                            "texture": {
-                                "key": "main",
-                                "frame": "tab"
-                            },
-                            "x": 7,
-                            "y": 1,
-                            "angle": -90
-                        },
-                        {
-                            "type": "Image",
-                            "id": "28c334e9-0764-4622-93c3-4d73cd4a5fd8",
-                            "label": "tab_arrow",
-                            "components": [],
-                            "texture": {
-                                "key": "main",
-                                "frame": "tab-arrow"
-                            },
-                            "angle": -90,
-                            "flipY": true
-                        }
-                    ]
+                    "x": -135,
+                    "y": 33
                 }
             ]
         }

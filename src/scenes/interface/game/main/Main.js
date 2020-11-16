@@ -153,7 +153,7 @@ class Main extends InterfaceScene {
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
-        player_buttonButton.callback = () => { this.playerCard.showClientCard(this.world.client) };
+        player_buttonButton.callback = () => { this.playerCard.showCard(this.world.client.penguin) };
 
         // buddies_button (components)
         const buddies_buttonButton = new Button(buddies_button);

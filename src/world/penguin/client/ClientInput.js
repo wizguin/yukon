@@ -8,6 +8,14 @@ export default class ClientInput {
         return this.client.penguin.actions
     }
 
+    get movementEnabled() {
+        return this.client.penguin.movementEnabled
+    }
+
+    get rotationEnabled() {
+        return this.client.penguin.rotationEnabled
+    }
+
     setInput(room) {
         // Movement
         room.input.on('pointerup', (pointer) => { this.onUp(pointer) })
@@ -24,10 +32,12 @@ export default class ClientInput {
     }
 
     onUp(pointer) {
+        if (!this.movementEnabled) return
         this.actions.movePenguin(pointer.x, pointer.y)
     }
 
     onMove(pointer) {
+        if (!this.rotationEnabled) return
         this.actions.rotatePenguin(pointer.x, pointer.y)
     }
 
