@@ -223,6 +223,7 @@
                 "Button"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => { this.onChatSend() }",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"

@@ -24,6 +24,11 @@ export default class Preload extends BaseScene {
     }
 
     create() {
+        document.querySelector('#client-container canvas').onclick = () => {
+            // Removes input focus from active element
+            document.activeElement.blur()
+        }
+
         this.scene.start('Start')
     }
 

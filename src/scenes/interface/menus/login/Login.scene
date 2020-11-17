@@ -152,7 +152,7 @@
                 "Button"
             ],
             "Button.spriteName": "login-button",
-            "Button.callback": "() => this.onLoginClick()",
+            "Button.callback": "() => this.onLoginSubmit()",
             "texture": {
                 "key": "login",
                 "frame": "login-button"
@@ -233,30 +233,6 @@
             "originY": 0.58490566
         },
         {
-            "type": "Image",
-            "id": "869f8873-7e3a-49dd-838a-055f9c7dfe30",
-            "label": "passwordInput",
-            "components": [],
-            "texture": {
-                "key": "login",
-                "frame": "input"
-            },
-            "x": 815,
-            "y": 259
-        },
-        {
-            "type": "Image",
-            "id": "dc8fe5d7-4283-4e71-bdbf-6b2163fb01e6",
-            "label": "usernameInput",
-            "components": [],
-            "texture": {
-                "key": "login",
-                "frame": "input"
-            },
-            "x": 815,
-            "y": 200
-        },
-        {
             "type": "Text",
             "id": "6ff586b9-fbe0-49f6-9801-71f273c1df58",
             "label": "passwordText",
@@ -287,6 +263,7 @@
             "color": "#000000ff"
         }
     ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

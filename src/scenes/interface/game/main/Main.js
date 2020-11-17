@@ -1,6 +1,7 @@
 import InterfaceScene from '@scenes/interface/InterfaceScene'
 
 import { Button, Interactive } from '@/components/components'
+import TextInput from '@/world/text/TextInput'
 
 import ActionsMenu from '../actions/ActionsMenu'
 import Map from '../map/Map'
@@ -149,6 +150,7 @@ class Main extends InterfaceScene {
         // chat_send_button (components)
         const chat_send_buttonButton = new Button(chat_send_button);
         chat_send_buttonButton.spriteName = "blue-button";
+        chat_send_buttonButton.callback = () => { this.onChatSend() };
 
         // player_button (components)
         const player_buttonButton = new Button(player_button);
@@ -173,8 +175,44 @@ class Main extends InterfaceScene {
     create() {
         this._create()
 
+        // Chat input
+
+        let style = {
+            width: 510,
+            height: 50,
+            color: '#fff',
+            fontSize: 24
+        }
+
+        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() })
+        this.add.existing(this.chatInput)
+
+        // Prefabs
+
         this.playerCard = this.loadPrefab(new PlayerCard(this, 446, 436), 1)
         this.map = this.loadPrefab(new Map(this, 760, 460), 2)
+
+        // Input
+
+        this.input.keyboard.on('keydown_TAB', (event) => { this.onChatKeyDown(event) })
+        this.input.keyboard.on('keydown_ENTER', (event) => { this.onChatKeyDown(event) })
+    }
+
+    onChatKeyDown(event) {
+        // Prevent default to stop tab switching elements
+        event.preventDefault()
+
+        this.chatInput.setFocus()
+    }
+
+    onChatSend() {
+        let text = this.chatInput.text
+
+        this.chatInput.clearText()
+
+        if (text) {
+            console.log(text)
+        }
     }
 
     /* END-USER-CODE */

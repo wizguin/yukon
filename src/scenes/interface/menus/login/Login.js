@@ -2,6 +2,7 @@ import InterfaceScene from '@scenes/interface/InterfaceScene'
 
 import animations from './animations.json'
 import { Animated, Button, SimpleButton } from '@/components/components'
+import TextInput from '@/world/text/TextInput'
 
 
 /* START OF COMPILED CODE */
@@ -12,9 +13,6 @@ class Login extends InterfaceScene {
         super("Login");
 
         /* START-USER-CTR-CODE */
-
-        this.elements = {}
-
         /* END-USER-CTR-CODE */
     }
 
@@ -89,12 +87,6 @@ class Login extends InterfaceScene {
         const usernameCheckbox = this.add.image(568, 328, "login", "checkbox");
         usernameCheckbox.setOrigin(0.41509434, 0.58490566);
 
-        // passwordInput
-        this.add.image(815, 259, "login", "input");
-
-        // usernameInput
-        this.add.image(815, 200, "login", "input");
-
         // passwordText
         const passwordText = this.add.text(503, 258, "", {});
         passwordText.setOrigin(0, 0.5);
@@ -129,7 +121,7 @@ class Login extends InterfaceScene {
         // loginButton (components)
         const loginButtonButton = new Button(loginButton);
         loginButtonButton.spriteName = "login-button";
-        loginButtonButton.callback = () => this.onLoginClick();
+        loginButtonButton.callback = () => this.onLoginSubmit();
     }
 
     /* START-USER-CODE */
@@ -141,21 +133,33 @@ class Login extends InterfaceScene {
 
         // Login form
 
-        let usernameField = '<input class="login-field" type="text" name="username">'
-        let passwordField = '<input class="login-field" type="password" name="password">'
+        let style = {
+            width: 380,
+            height: 53,
+            padding: '0 6px 0 6px',
 
-        this.elements.username = this.add.dom(815, 200).createFromHTML(usernameField)
-        this.elements.password = this.add.dom(815, 259).createFromHTML(passwordField)
+            backgroundColor: '#fff',
+            outline: '1px solid #000',
+            filter: 'none',
+
+            color: '#000',
+            fontSize: 35
+        }
+
+        this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => { this.onLoginSubmit() }, false)
+        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => { this.onLoginSubmit() }, false)
+
+        this.add.existing(this.usernameInput)
+        this.add.existing(this.passwordInput)
 
         // Input
 
-        this.input.keyboard.on('keydown_ENTER', () => { this.onLoginClick() })
-        this.input.on('pointerdown', () => { this.onSceneClick() })
+        this.input.keyboard.on('keydown_ENTER', () => { this.onLoginSubmit() })
     }
 
-    onLoginClick() {
-        let username = this.elements.username.getChildByName('username').value
-        let password = this.elements.password.getChildByName('password').value
+    onLoginSubmit() {
+        let username = this.usernameInput.text
+        let password = this.passwordInput.text
 
         this.network.connectLogin(username, password)
     }
@@ -164,10 +168,6 @@ class Login extends InterfaceScene {
         this.network.disconnect()
 
         this.scene.start('Start')
-    }
-
-    onSceneClick() {
-        document.activeElement.blur() // Removes input focus
     }
 
     /* END-USER-CODE */
