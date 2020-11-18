@@ -18,9 +18,10 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            '@engine': path.resolve(__dirname, 'src/engine'),
             '@scenes': path.resolve(__dirname, 'src/scenes'),
-            '@rooms': path.resolve(__dirname, 'src/scenes/world/rooms')
+            '@components': path.resolve(__dirname, 'src/scenes/components'),
+            '@rooms': path.resolve(__dirname, 'src/scenes/rooms')
         }
     },
     module: {

@@ -1,8 +1,8 @@
 import InterfaceScene from '@scenes/interface/InterfaceScene'
 
 import animations from './animations.json'
-import { Animated, Button, SimpleButton } from '@/components/components'
-import TextInput from '@/world/text/TextInput'
+import { Animated, Button, SimpleButton } from '@components/components'
+import TextInput from '@engine/interface/text/TextInput'
 
 
 /* START OF COMPILED CODE */

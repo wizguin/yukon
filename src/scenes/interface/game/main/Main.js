@@ -1,7 +1,7 @@
 import InterfaceScene from '@scenes/interface/InterfaceScene'
 
-import { Button, Interactive } from '@/components/components'
-import TextInput from '@/world/text/TextInput'
+import { Button, Interactive } from '@components/components'
+import TextInput from '@engine/interface/text/TextInput'
 
 import ActionsMenu from '../actions/ActionsMenu'
 import Map from '../map/Map'

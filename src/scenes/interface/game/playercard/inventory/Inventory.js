@@ -1,8 +1,8 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, Interactive, SimpleButton } from '@/components/components'
+import { Button, Interactive, SimpleButton } from '@components/components'
 
-import InventoryLoader from '@/world/penguin/loader/InventoryLoader'
+import InventoryLoader from '@engine/world/penguin/loader/InventoryLoader'
 
 
 /* START OF COMPILED CODE */

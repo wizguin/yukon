@@ -1,10 +1,10 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, DraggableContainer, Interactive } from '@/components/components'
+import { Button, DraggableContainer, Interactive } from '@components/components'
 
 import Inventory from './inventory/Inventory'
 import Buttons from './buttons/Buttons'
-import PaperDoll from '@/world/penguin/PaperDoll'
+import PaperDoll from '@engine/world/penguin/PaperDoll'
 
 
 /* START OF COMPILED CODE */

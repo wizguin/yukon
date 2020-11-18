@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, Interactive } from '@/components/components'
+import { Button, Interactive } from '@components/components'
 
 
 /* START OF COMPILED CODE */

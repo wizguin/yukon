@@ -1,6 +1,6 @@
 import InterfaceScene from '@scenes/interface/InterfaceScene'
 
-import { Button, SimpleButton } from '@/components/components'
+import { Button, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */

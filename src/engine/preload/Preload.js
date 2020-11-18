@@ -1,7 +1,7 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import InterfaceController from '@scenes/interface/InterfaceController'
-import WorldController from '@scenes/world/WorldController'
+import InterfaceController from '@engine/interface/InterfaceController'
+import WorldController from '@engine/world/WorldController'
 
 import Load from '@scenes/interface/menus/load/Load'
 import Start from '@scenes/interface/menus/start/Start'

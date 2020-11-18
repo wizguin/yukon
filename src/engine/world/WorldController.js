@@ -1,8 +1,8 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import ClientController from '@/world/penguin/client/ClientController'
-import PenguinFactory from '@/world/penguin/PenguinFactory'
-import RoomFactory from '@/world/room/RoomFactory'
+import ClientController from './penguin/client/ClientController'
+import PenguinFactory from './penguin/PenguinFactory'
+import RoomFactory from './room/RoomFactory'
 
 
 export default class WorldController extends BaseScene {
