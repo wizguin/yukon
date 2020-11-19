@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import PaperDollLoader from './loader/PaperDollLoader'
+import PaperDollLoader from './PaperDollLoader'
 
 
 export default class PaperDoll extends BaseContainer {

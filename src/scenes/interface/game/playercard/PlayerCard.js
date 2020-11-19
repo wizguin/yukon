@@ -4,7 +4,7 @@ import { Button, DraggableContainer, Interactive } from '@components/components'
 
 import Inventory from './inventory/Inventory'
 import Buttons from './buttons/Buttons'
-import PaperDoll from '@engine/world/penguin/PaperDoll'
+import PaperDoll from '@engine/interface/paperdoll/PaperDoll'
 
 
 /* START OF COMPILED CODE */
