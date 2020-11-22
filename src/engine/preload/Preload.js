@@ -24,7 +24,9 @@ export default class Preload extends BaseScene {
     }
 
     create() {
-        document.querySelector('#client-container canvas').onclick = () => {
+        let parent = this.game.config.parent
+
+        document.querySelector(`#${parent} canvas`).onclick = () => {
             // Removes input focus from active element
             document.activeElement.blur()
         }

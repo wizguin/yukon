@@ -28,7 +28,7 @@ const game = {
     },
 
     scale: {
-        parent: 'client-container',
+        parent: 'game',
         mode: Phaser.Scale.FIT,
         autoRound: true,
         autoCenter: Phaser.Scale.CENTER_BOTH
