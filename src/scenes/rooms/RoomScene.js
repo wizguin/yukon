@@ -39,6 +39,7 @@ export default class RoomScene extends BaseScene {
 
         if (penguin.isTweening) penguin.actions.movement.removeTween()
 
+        if (penguin.balloon) penguin.balloon.destroy()
         penguin.nameTag.destroy()
         penguin.destroy()
 

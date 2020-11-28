@@ -1,6 +1,6 @@
 export default class TextInput extends Phaser.GameObjects.DOMElement {
 
-    constructor(scene, x, y, type, style, callback = () => {}, preventTab = true) {
+    constructor(scene, x, y, type, style, callback = () => {}, maxLength = 100, preventTab = true) {
         let element = document.createElement('input')
 
         // Combine default styles with passed in styles
@@ -15,6 +15,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         element.type = type
         element.autocomplete = 'off'
         element.spellcheck = false
+        element.maxLength = maxLength
 
         super(scene, x, y, element, style)
 

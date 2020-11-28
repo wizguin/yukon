@@ -3,6 +3,8 @@ import InterfaceScene from '@scenes/interface/InterfaceScene'
 import { Button, Interactive } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
+import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
+
 import ActionsMenu from '../actions/ActionsMenu'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
@@ -175,6 +177,10 @@ class Main extends InterfaceScene {
     create() {
         this._create()
 
+        // Balloons
+
+        this.balloonFactory = new BalloonFactory(this)
+
         // Chat input
 
         let style = {
@@ -184,7 +190,7 @@ class Main extends InterfaceScene {
             fontSize: 24
         }
 
-        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() })
+        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() }, 48)
         this.add.existing(this.chatInput)
 
         // Prefabs
@@ -210,9 +216,7 @@ class Main extends InterfaceScene {
 
         this.chatInput.clearText()
 
-        if (text) {
-            console.log(text)
-        }
+        this.balloonFactory.showTextBalloon(this.world.client.id, text)
     }
 
     /* END-USER-CODE */

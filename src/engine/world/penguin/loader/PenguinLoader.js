@@ -43,7 +43,7 @@ export default class PenguinLoader extends BaseLoader {
         let nameTag = penguin.room.add.text(x, y, penguin.username, this.nameStyle)
 
         nameTag.setOrigin(0.5)
-        nameTag.depth = 2000 // Keep nametag above everything else
+        nameTag.depth = penguin.depth + 2000 // Keep nametag above everything else
 
         return nameTag
     }

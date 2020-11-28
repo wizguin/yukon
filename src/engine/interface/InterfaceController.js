@@ -3,10 +3,6 @@ import BaseScene from '@scenes/base/BaseScene'
 
 export default class InterfaceController extends BaseScene {
 
-    constructor(key) {
-        super(key)
-    }
-
     get main() {
         return this.scene.get('Main')
     }
@@ -15,6 +11,10 @@ export default class InterfaceController extends BaseScene {
         this.scene.launch('Main')
         this.scene.bringToTop('Main')
         this.scene.bringToTop()
+    }
+
+    showBalloon(text) {
+
     }
 
     showCard(penguin) {

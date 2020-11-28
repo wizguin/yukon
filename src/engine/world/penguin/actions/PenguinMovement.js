@@ -30,6 +30,7 @@ export default class PenguinMovement {
         this.penguin.depth = this.penguin.y
 
         if (this.penguin.nameTag) this.updateNameTag()
+        if (this.penguin.balloon) this.updateBalloon()
     }
 
     onMoveComplete() {
@@ -39,6 +40,13 @@ export default class PenguinMovement {
     updateNameTag() {
         this.penguin.nameTag.x = this.penguin.x
         this.penguin.nameTag.y = this.penguin.y + 40
+        this.penguin.nameTag.depth = this.penguin.depth + 2000
+    }
+
+    updateBalloon() {
+        this.penguin.balloon.x = this.penguin.x
+        this.penguin.balloon.y = this.penguin.y - 95
+        this.penguin.balloon.depth = this.penguin.depth + 2100
     }
 
     removeTween() {

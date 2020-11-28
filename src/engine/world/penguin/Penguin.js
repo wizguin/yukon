@@ -17,6 +17,8 @@ export default class Penguin extends Phaser.GameObjects.Container {
         this.username = user.username
         this.nameTag = penguinLoader.addName(this)
 
+        this.balloon = null // Chat balloon
+
         this.depth = y
         this.frame = 1
         this.scale = 0.666
