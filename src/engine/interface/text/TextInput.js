@@ -54,8 +54,8 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         if (event.key == 'Enter') {
             event.preventDefault()
 
+            if (!this.text) this.node.blur()
             this.callback()
-            this.node.blur()
 
         } else if (event.key == 'Tab' && this.preventTab) {
             // Prevent default to stop tab switching elements
