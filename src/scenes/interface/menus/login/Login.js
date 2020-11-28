@@ -146,8 +146,8 @@ class Login extends InterfaceScene {
             fontSize: 35
         }
 
-        this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => { this.onLoginSubmit() }, false)
-        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => { this.onLoginSubmit() }, false)
+        this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => { this.onLoginSubmit() }, 12, false)
+        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => { this.onLoginSubmit() }, 128, false)
 
         this.add.existing(this.usernameInput)
         this.add.existing(this.passwordInput)

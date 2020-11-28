@@ -7,8 +7,8 @@ export default class PenguinItems {
     }
 
     /**
-     * Gets items worn as sprites on the in-game avatar
-
+     * Gets items worn as sprites on the in-game avatar.
+     *
      * @readonly
      */
     get sprites() {
