@@ -13,8 +13,8 @@ export default class InterfaceController extends BaseScene {
         this.scene.bringToTop()
     }
 
-    showBalloon(text) {
-
+    showTextBalloon(id, text) {
+        this.main.balloonFactory.showTextBalloon(id, text)
     }
 
     showCard(penguin) {

@@ -7,6 +7,10 @@ export default class Plugin {
         this.scene = this.game.scene
     }
 
+    get interface() {
+        return this.scene.getScene('InterfaceController')
+    }
+
     get world() {
         return this.scene.getScene('WorldController')
     }

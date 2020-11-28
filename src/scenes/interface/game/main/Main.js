@@ -217,6 +217,7 @@ class Main extends InterfaceScene {
         this.chatInput.clearText()
 
         this.balloonFactory.showTextBalloon(this.world.client.id, text)
+        this.network.send('send_message', { message: text })
     }
 
     /* END-USER-CODE */

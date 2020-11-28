@@ -46,7 +46,6 @@ export default class PenguinMovement {
     updateBalloon() {
         this.penguin.balloon.x = this.penguin.x
         this.penguin.balloon.y = this.penguin.y - 95
-        this.penguin.balloon.depth = this.penguin.depth + 2100
     }
 
     removeTween() {

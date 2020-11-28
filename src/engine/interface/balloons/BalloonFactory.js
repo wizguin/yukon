@@ -21,14 +21,14 @@ export default class BalloonFactory {
         let penguin = this.main.world.room.penguins[id]
         if (!penguin) return
 
-        let balloon = new TextBalloon(this.main, penguin.x, penguin.y - 95, text)
+        let balloon = new TextBalloon(this.main.world.room, penguin.x, penguin.y - 95, text)
         this.addBalloon(penguin, balloon)
     }
 
     addBalloon(penguin, balloon) {
         if (penguin.balloon) penguin.balloon.destroy() // Destroy existing balloon
 
-        balloon.depth = penguin.depth + 2100 // Balloons depth sorted and above nametags
+        balloon.depth = (penguin.isClient) ? 3001 : 3000 // Client balloons sorted higher
 
         penguin.room.add.existing(balloon)
         penguin.balloon = balloon
