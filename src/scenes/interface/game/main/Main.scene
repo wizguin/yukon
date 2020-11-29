@@ -142,6 +142,7 @@
                 "Button"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => { this.emotesMenu.visible = true }",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -169,6 +170,7 @@
                 "Button"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => { this.actionsMenu.visible = true }",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"

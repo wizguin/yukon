@@ -36,6 +36,7 @@ export default class ClientActions extends PenguinActions {
     }
 
     rotatePenguin(x, y) {
+        if (this.penguin.isTweening) return
         if (this.penguin.frame > 8) return // Only rotate on standing frames
 
         let newPos = { x: x, y: y }
@@ -47,6 +48,8 @@ export default class ClientActions extends PenguinActions {
     }
 
     sitPenguin(x, y) {
+        if (this.penguin.isTweening) return
+
         let newPos = { x: x, y: y }
 
         let angle = this.movement.getAngle(this.penguin.pos, newPos)

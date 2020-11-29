@@ -5,7 +5,8 @@ import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
 
-import ActionsMenu from '../actions/ActionsMenu'
+import ActionsMenu from '../floating/actions/ActionsMenu'
+import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
 
@@ -140,10 +141,12 @@ class Main extends InterfaceScene {
         // emote_button (components)
         const emote_buttonButton = new Button(emote_button);
         emote_buttonButton.spriteName = "blue-button";
+        emote_buttonButton.callback = () => { this.emotesMenu.visible = true };
 
         // action_button (components)
         const action_buttonButton = new Button(action_button);
         action_buttonButton.spriteName = "blue-button";
+        action_buttonButton.callback = () => { this.actionsMenu.visible = true };
 
         // snowball_button (components)
         const snowball_buttonButton = new Button(snowball_button);
@@ -196,7 +199,9 @@ class Main extends InterfaceScene {
         // Prefabs
 
         this.playerCard = this.loadPrefab(new PlayerCard(this, 446, 436), 1)
-        this.map = this.loadPrefab(new Map(this, 760, 460), 2)
+        this.actionsMenu = this.loadPrefab(new ActionsMenu(this, 366, 872), 2)
+        this.emotesMenu = this.loadPrefab(new EmotesMenu(this, 306, 872), 2)
+        this.map = this.loadPrefab(new Map(this, 760, 460), 3)
 
         // Input
 

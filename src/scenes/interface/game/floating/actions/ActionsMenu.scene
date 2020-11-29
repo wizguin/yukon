@@ -1,0 +1,199 @@
+{
+    "id": "c0278f51-86ed-479c-93d8-d832408669c2",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "FloatingMenu",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d6623608-b2dc-4728-bd7f-d52fd1c818d7",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a448f33d-239a-46fc-ac7e-292b87be9c3a",
+                    "label": "safe",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -198,
+                    "isFilled": true,
+                    "fillColor": "#00ffff",
+                    "fillAlpha": 0.5,
+                    "width": 200,
+                    "height": 460
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "55fdf621-dcdc-4854-88d5-673953e35b64",
+                    "label": "close",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 61,
+                    "isFilled": true,
+                    "fillColor": "#00ffff",
+                    "fillAlpha": 0.5,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "type": "Image",
+                    "id": "2b65127e-bd41-4d5b-9976-e7ab5e2a5b58",
+                    "label": "actions",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "actions"
+                    },
+                    "y": -198
+                },
+                {
+                    "type": "Image",
+                    "id": "2ff17070-bf89-4936-8123-5979259bda75",
+                    "label": "sit_4",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "small-box",
+                    "Button.callback": "() => { this.onActionClick(24) }",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "small-box"
+                    },
+                    "x": 32,
+                    "y": -38
+                },
+                {
+                    "type": "Image",
+                    "id": "ed9c58e3-0664-467b-b9b1-732f5663d69a",
+                    "label": "sit_3",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "small-box",
+                    "Button.callback": "() => { this.onActionClick(22) }",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "small-box"
+                    },
+                    "x": 32,
+                    "y": -102
+                },
+                {
+                    "type": "Image",
+                    "id": "e9f39988-46fb-49e1-844d-459685ea93e9",
+                    "label": "sit_2",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "small-box",
+                    "Button.callback": "() => { this.onActionClick(20) }",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "small-box"
+                    },
+                    "x": -32,
+                    "y": -102
+                },
+                {
+                    "type": "Image",
+                    "id": "fbd60784-f33f-4c90-8925-0d7ee8ac0957",
+                    "label": "sit_1",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "small-box",
+                    "Button.callback": "() => { this.onActionClick(18) }",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "small-box"
+                    },
+                    "x": -32,
+                    "y": -38
+                },
+                {
+                    "type": "Image",
+                    "id": "0916e4ba-ef95-45fe-aec2-c1c6f1249870",
+                    "label": "wave",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "y": -198
+                },
+                {
+                    "type": "Image",
+                    "id": "c64957fa-a2e2-4280-832e-42523f4e33ec",
+                    "label": "dance",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "y": -326
+                },
+                {
+                    "type": "Image",
+                    "id": "195665c0-e4e3-480d-97db-3a23fa03a0e5",
+                    "label": "wave_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "wave"
+                    },
+                    "y": -198
+                },
+                {
+                    "type": "Image",
+                    "id": "b3e2c777-f587-4447-a5ad-a6281002e0dd",
+                    "label": "sit_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "sit"
+                    },
+                    "y": -70
+                },
+                {
+                    "type": "Image",
+                    "id": "725c49b4-a4f6-4d45-ab40-34ea533df3e4",
+                    "label": "dance_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "dance"
+                    },
+                    "y": -326
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -1,3 +1,4 @@
+import EmoteBalloon from './EmoteBalloon'
 import TextBalloon from './TextBalloon'
 
 
@@ -7,6 +8,22 @@ export default class BalloonFactory {
         this.main = main // Main interface
 
         this.delay = 4500 // Balloon destruction delay
+    }
+
+    /**
+     * Shows an text balloon.
+     *
+     * @param {number} id - Penguin ID
+     * @param {string} emote - Emote ID
+     */
+    showEmoteBalloon(id, emote) {
+        if (!emote) return
+
+        let penguin = this.main.world.room.penguins[id]
+        if (!penguin) return
+
+        let balloon = new EmoteBalloon(this.main.world.room, penguin.x, penguin.y - 95, emote)
+        this.addBalloon(penguin, balloon)
     }
 
     /**

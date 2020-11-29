@@ -13,6 +13,10 @@ export default class InterfaceController extends BaseScene {
         this.scene.bringToTop()
     }
 
+    showEmoteBalloon(id, emote) {
+        this.main.balloonFactory.showEmoteBalloon(id, emote)
+    }
+
     showTextBalloon(id, text) {
         this.main.balloonFactory.showTextBalloon(id, text)
     }
