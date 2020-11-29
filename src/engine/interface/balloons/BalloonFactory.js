@@ -11,7 +11,7 @@ export default class BalloonFactory {
     }
 
     /**
-     * Shows an text balloon.
+     * Shows an emote balloon.
      *
      * @param {number} id - Penguin ID
      * @param {string} emote - Emote ID
