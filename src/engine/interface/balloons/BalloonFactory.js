@@ -14,7 +14,7 @@ export default class BalloonFactory {
      * Shows an emote balloon.
      *
      * @param {number} id - Penguin ID
-     * @param {string} emote - Emote ID
+     * @param {number} emote - Emote ID
      */
     showEmoteBalloon(id, emote) {
         if (!emote) return
