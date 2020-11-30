@@ -1,4 +1,4 @@
-import InterfaceScene from '@scenes/interface/InterfaceScene'
+import BaseScene from '@scenes/base/BaseScene'
 
 import { Button, Interactive } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
@@ -13,7 +13,7 @@ import PlayerCard from '../playercard/PlayerCard'
 
 /* START OF COMPILED CODE */
 
-class Main extends InterfaceScene {
+class Main extends BaseScene {
 
     constructor() {
         super("Main");

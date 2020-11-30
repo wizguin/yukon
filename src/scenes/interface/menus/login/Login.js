@@ -1,4 +1,4 @@
-import InterfaceScene from '@scenes/interface/InterfaceScene'
+import BaseScene from '@scenes/base/BaseScene'
 
 import animations from './animations.json'
 import { Animated, Button, SimpleButton } from '@components/components'
@@ -7,7 +7,7 @@ import TextInput from '@engine/interface/text/TextInput'
 
 /* START OF COMPILED CODE */
 
-class Login extends InterfaceScene {
+class Login extends BaseScene {
 
     constructor() {
         super("Login");

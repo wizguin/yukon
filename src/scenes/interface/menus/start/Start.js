@@ -1,11 +1,11 @@
-import InterfaceScene from '@scenes/interface/InterfaceScene'
+import BaseScene from '@scenes/base/BaseScene'
 
 import { Button, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */
 
-class Start extends InterfaceScene {
+class Start extends BaseScene {
 
     constructor() {
         super("Start");

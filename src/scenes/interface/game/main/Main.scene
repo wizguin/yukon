@@ -6,7 +6,7 @@
         "snapEnabled": true,
         "snapWidth": 1,
         "snapHeight": 1,
-        "superClassName": "InterfaceScene",
+        "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
         "sceneKey": "Main",

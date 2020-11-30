@@ -1,9 +1,9 @@
-import InterfaceScene from '@scenes/interface/InterfaceScene'
+import BaseScene from '@scenes/base/BaseScene'
 
 
 /* START OF COMPILED CODE */
 
-class Load extends InterfaceScene {
+class Load extends BaseScene {
 
     constructor() {
         super("Load");
