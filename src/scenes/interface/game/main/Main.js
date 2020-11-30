@@ -6,6 +6,7 @@ import TextInput from '@engine/interface/text/TextInput'
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
 
 import ActionsMenu from '../floating/actions/ActionsMenu'
+import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
@@ -105,16 +106,9 @@ class Main extends BaseScene {
         // help_icon
         this.add.image(1266, 929, "main", "help-icon");
 
-        // container_1
-        const container_1 = this.add.container(760, -24);
-
-        // tab
-        const tab = this.add.image(0, 37, "main", "tab");
-        container_1.add(tab);
-
-        // tab_arrow
-        const tab_arrow = this.add.image(0, 29, "main", "tab-arrow");
-        container_1.add(tab_arrow);
+        // chatLog
+        const chatLog = new ChatLog(this, 760, -435);
+        this.add.existing(chatLog);
 
         // playerCard
         const playerCard = new PlayerCard(this, 446, 436);

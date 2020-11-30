@@ -1,0 +1,74 @@
+{
+    "id": "cd6b92e2-56e2-4e72-a90d-c4edead84679",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "92e957a7-0f17-4c68-89bc-eb4b0611ba23",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9c22db95-d631-4fce-9e29-9283e7c6e94f",
+                    "label": "chatlog_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "chatlog/bg"
+                    },
+                    "visible": false
+                },
+                {
+                    "type": "Container",
+                    "id": "7db0ab5b-69c4-4ffe-b23f-e695c697d44e",
+                    "label": "tab",
+                    "components": [],
+                    "y": 440,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "03bee9bb-bf10-4b55-ad10-6b736ee7141c",
+                            "label": "tab_handle",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => { this.onTabClick() }",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab"
+                            },
+                            "y": 8
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ee9a6172-57eb-46e5-b92c-6e60b171a7a5",
+                            "label": "arrow",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab-arrow"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

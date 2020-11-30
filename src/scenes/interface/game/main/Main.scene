@@ -355,36 +355,12 @@
             "y": 929
         },
         {
-            "type": "Container",
-            "id": "0e05726d-d429-4926-98ac-ce484ac8835a",
-            "label": "container_1",
+            "prefabId": "cd6b92e2-56e2-4e72-a90d-c4edead84679",
+            "id": "4040e412-ba63-4812-bbe9-fc4ba0f76672",
+            "label": "chatLog",
             "components": [],
             "x": 760,
-            "y": -24,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "12999762-715f-4e0c-a7b4-90909b8788f0",
-                    "label": "tab",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "tab"
-                    },
-                    "y": 37
-                },
-                {
-                    "type": "Image",
-                    "id": "cf88c928-5a72-4305-990e-9968f32523d3",
-                    "label": "tab_arrow",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "tab-arrow"
-                    },
-                    "y": 29
-                }
-            ]
+            "y": -435
         },
         {
             "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
