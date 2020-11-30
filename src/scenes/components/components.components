@@ -15,6 +15,16 @@
                     }
                 },
                 {
+                    "name": "hoverCallback",
+                    "label": "Hover Callback",
+                    "tooltip": "Hover Callback",
+                    "defValue": "null",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
                     "name": "callback",
                     "label": "Callback",
                     "tooltip": "Callback",

@@ -3,6 +3,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 import { Button, Interactive, SimpleButton } from '@components/components'
 
 import InventoryLoader from '@engine/world/penguin/loader/InventoryLoader'
+import InventorySort from '../inventory_sort/InventorySort'
 
 
 /* START OF COMPILED CODE */
@@ -18,11 +19,11 @@ class Inventory extends BaseContainer {
         this.add(container);
 
         // inventory_bg
-        const inventory_bg = scene.add.image(56, 270, "main", "inventory-bg");
+        const inventory_bg = scene.add.image(56, 270, "main", "inventory/bg");
         container.add(inventory_bg);
 
         // inventory_scroll
-        const inventory_scroll = scene.add.image(368, 245, "main", "inventory-scroll");
+        const inventory_scroll = scene.add.image(368, 245, "main", "inventory/scroll");
         container.add(inventory_scroll);
 
         // down_button
@@ -90,6 +91,17 @@ class Inventory extends BaseContainer {
         const slot_1 = scene.add.image(0, 43, "main", "large-box");
         container.add(slot_1);
 
+        // inventory_sort_button
+        const inventory_sort_button = scene.add.image(131, 553, "main", "inventory/sort-button");
+        container.add(inventory_sort_button);
+
+        // active_text
+        const active_text = scene.add.text(130, 553, "", {});
+        active_text.setOrigin(0.5, 0.5);
+        active_text.text = "All Items";
+        active_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        container.add(active_text);
+
         // tab
         const tab = scene.add.container(369, -156);
         this.add(tab);
@@ -103,6 +115,11 @@ class Inventory extends BaseContainer {
         const arrow = scene.add.image(0, 0, "main", "tab-arrow");
         arrow.angle = -90;
         tab.add(arrow);
+
+        // inventorySort
+        const inventorySort = new InventorySort(scene, 74, 282);
+        inventorySort.visible = false;
+        this.add(inventorySort);
 
         // lists
         const slots = [slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12]
@@ -192,12 +209,18 @@ class Inventory extends BaseContainer {
         slot_1Button.callback = () => { this.onSlotClick(0) };
         slot_1Button.activeFrame = false;
 
+        // inventory_sort_button (components)
+        const inventory_sort_buttonButton = new Button(inventory_sort_button);
+        inventory_sort_buttonButton.spriteName = "inventory/sort-button";
+        inventory_sort_buttonButton.callback = () => { inventorySort.visible = true };
+        inventory_sort_buttonButton.activeFrame = false;
+
         // tab_handle (components)
         const tab_handleSimpleButton = new SimpleButton(tab_handle);
         tab_handleSimpleButton.callback = () => { this.onTabClick() };
 
         this.container = container;
-        this.tab = tab;
+        this.active_text = active_text;
         this.arrow = arrow;
         this.slots = slots;
 

@@ -24,6 +24,7 @@ class PlayerCard extends BaseContainer {
 
         // buttons
         const buttons = new Buttons(scene, 0, 255);
+        buttons.visible = false;
         this.add(buttons);
 
         // stats

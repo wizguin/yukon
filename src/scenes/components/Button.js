@@ -15,6 +15,8 @@ class Button extends SimpleButton {
         /** @type {string} */
         this.spriteName = "";
         /** @type {any} */
+        this.hoverCallback = null;
+        /** @type {any} */
         this.callback = () => {};
         /** @type {boolean} */
         this.activeFrame = true;
@@ -37,6 +39,8 @@ class Button extends SimpleButton {
 
     onOver() {
         this.gameObject.setFrame(`${this.spriteName}-hover`)
+
+        if (this.hoverCallback) this.hoverCallback()
     }
 
     onOut() {

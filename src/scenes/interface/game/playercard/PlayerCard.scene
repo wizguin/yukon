@@ -50,10 +50,14 @@
                 {
                     "prefabId": "8808181a-7877-4aef-982e-f4ba2441da75",
                     "id": "b958363f-47ef-45d1-ab73-8ee745452d50",
+                    "unlock": [
+                        "visible"
+                    ],
                     "label": "buttons",
                     "scope": "CLASS",
                     "components": [],
-                    "y": 255
+                    "y": 255,
+                    "visible": false
                 },
                 {
                     "type": "Container",

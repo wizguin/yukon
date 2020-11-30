@@ -40,7 +40,7 @@
                             ],
                             "texture": {
                                 "key": "main",
-                                "frame": "inventory-bg"
+                                "frame": "inventory/bg"
                             },
                             "x": 56,
                             "y": 270
@@ -52,7 +52,7 @@
                             "components": [],
                             "texture": {
                                 "key": "main",
-                                "frame": "inventory-scroll"
+                                "frame": "inventory/scroll"
                             },
                             "x": 368,
                             "y": 245
@@ -312,6 +312,38 @@
                                 "frame": "large-box"
                             },
                             "y": 43
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1bad3a32-320a-4ad1-a924-2575a398eb7d",
+                            "label": "inventory_sort_button",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "inventory/sort-button",
+                            "Button.callback": "() => { inventorySort.visible = true }",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "inventory/sort-button"
+                            },
+                            "x": 131,
+                            "y": 553
+                        },
+                        {
+                            "type": "Text",
+                            "id": "4b101eea-f513-4768-87a2-2fc527df43e5",
+                            "label": "active_text",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": 130,
+                            "y": 553,
+                            "text": "All Items",
+                            "fixedWidth": 268,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000ff"
                         }
                     ]
                 },
@@ -319,7 +351,6 @@
                     "type": "Container",
                     "id": "e8832f40-f7c5-4dcc-a31d-a8c8c5488162",
                     "label": "tab",
-                    "scope": "CLASS",
                     "components": [],
                     "x": 369,
                     "y": -156,
@@ -353,6 +384,18 @@
                             "angle": -90
                         }
                     ]
+                },
+                {
+                    "prefabId": "676b9d5e-1fcd-4a27-8667-0f19254fc582",
+                    "id": "fc186fd8-eb1f-4dd8-9831-487f0f88fe29",
+                    "unlock": [
+                        "visible"
+                    ],
+                    "label": "inventorySort",
+                    "components": [],
+                    "x": 74,
+                    "y": 282,
+                    "visible": false
                 }
             ]
         }
