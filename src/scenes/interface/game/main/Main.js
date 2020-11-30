@@ -18,6 +18,15 @@ class Main extends InterfaceScene {
     constructor() {
         super("Main");
 
+        /** @type {PlayerCard} */
+        this.playerCard;
+        /** @type {ActionsMenu} */
+        this.actionsMenu;
+        /** @type {EmotesMenu} */
+        this.emotesMenu;
+        /** @type {Map} */
+        this.map;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -107,6 +116,26 @@ class Main extends InterfaceScene {
         const tab_arrow = this.add.image(0, 29, "main", "tab-arrow");
         container_1.add(tab_arrow);
 
+        // playerCard
+        const playerCard = new PlayerCard(this, 446, 436);
+        this.add.existing(playerCard);
+        playerCard.visible = false;
+
+        // actionsMenu
+        const actionsMenu = new ActionsMenu(this, 366, 872);
+        this.add.existing(actionsMenu);
+        actionsMenu.visible = false;
+
+        // emotesMenu
+        const emotesMenu = new EmotesMenu(this, 306, 872);
+        this.add.existing(emotesMenu);
+        emotesMenu.visible = false;
+
+        // map
+        const map = new Map(this, 760, 460);
+        this.add.existing(map);
+        map.visible = false;
+
         // map_button (components)
         const map_buttonButton = new Button(map_button);
         map_buttonButton.spriteName = "map-button";
@@ -173,6 +202,11 @@ class Main extends InterfaceScene {
         // help_button (components)
         const help_buttonButton = new Button(help_button);
         help_buttonButton.spriteName = "blue-button";
+
+        this.playerCard = playerCard;
+        this.actionsMenu = actionsMenu;
+        this.emotesMenu = emotesMenu;
+        this.map = map;
     }
 
     /* START-USER-CODE */
@@ -195,13 +229,6 @@ class Main extends InterfaceScene {
 
         this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() }, 48)
         this.add.existing(this.chatInput)
-
-        // Prefabs
-
-        this.playerCard = this.loadPrefab(new PlayerCard(this, 446, 436), 1)
-        this.actionsMenu = this.loadPrefab(new ActionsMenu(this, 366, 872), 2)
-        this.emotesMenu = this.loadPrefab(new EmotesMenu(this, 306, 872), 2)
-        this.map = this.loadPrefab(new Map(this, 760, 460), 3)
 
         // Input
 

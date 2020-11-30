@@ -385,6 +385,58 @@
                     "y": 29
                 }
             ]
+        },
+        {
+            "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
+            "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
+            "unlock": [
+                "visible"
+            ],
+            "label": "playerCard",
+            "scope": "CLASS",
+            "components": [],
+            "x": 446,
+            "y": 436,
+            "visible": false
+        },
+        {
+            "prefabId": "c0278f51-86ed-479c-93d8-d832408669c2",
+            "id": "9e95fb34-42e7-4212-ac8d-9eb39e13f9bf",
+            "unlock": [
+                "visible"
+            ],
+            "label": "actionsMenu",
+            "scope": "CLASS",
+            "components": [],
+            "x": 366,
+            "y": 872,
+            "visible": false
+        },
+        {
+            "prefabId": "0dee3174-7c8b-4158-b686-0fbea0d0c1f1",
+            "id": "ac9c272b-08ad-4e66-8146-0cbd3207ee0a",
+            "unlock": [
+                "visible"
+            ],
+            "label": "emotesMenu",
+            "scope": "CLASS",
+            "components": [],
+            "x": 306,
+            "y": 872,
+            "visible": false
+        },
+        {
+            "prefabId": "dc649c7a-1824-4b21-8431-e3d1168a4506",
+            "id": "75179079-5eb1-4135-9798-34cea7db0f09",
+            "unlock": [
+                "visible"
+            ],
+            "label": "map",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 460,
+            "visible": false
         }
     ],
     "plainObjects": [],
