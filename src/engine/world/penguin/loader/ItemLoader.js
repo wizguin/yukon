@@ -36,8 +36,8 @@ export default class ItemLoader extends BaseLoader {
 
         this.load.atlas({
             key: item,
-            atlasURL: `${this.url}/${item}/${item}.json`,
-            textureURL: `${this.url}/${item}/${item}.png`
+            atlasURL: `${this.url}/${item}.json`,
+            textureURL: `${this.url}/${item}.png`
         })
     }
 
@@ -46,7 +46,8 @@ export default class ItemLoader extends BaseLoader {
             item = items[item]
 
             if (item.id > 0 && this.world.textures.exists(item.id)) {
-                this.loadSprite(this.penguin, item.id, item.depth)
+                // item.depth + 1 to ensure items are loaded on top of penguin body
+                this.loadSprite(this.penguin, item.id, item.depth + 1)
             }
         }
     }
