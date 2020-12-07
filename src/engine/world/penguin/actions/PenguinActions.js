@@ -22,10 +22,25 @@ export default class PenguinActions {
         let sprites = this.penguin.list.filter(child => child.type == 'Sprite')
 
         for (let sprite of sprites) {
-            sprite.anims.play(`${sprite.texture.key}_${frame}`)
+            let key = `${sprite.texture.key}_${frame}`
+
+            if (this.checkFrames(sprite, key)) {
+                sprite.visible = true
+                sprite.anims.play(key)
+            } else {
+                sprite.visible = false
+            }
         }
 
         this.penguin.frame = frame
+    }
+
+    checkFrames(sprite, key) {
+        let animation = sprite.anims.animationManager.anims.entries[key]
+
+        if (animation.frames.length > 0) {
+            return true
+        }
     }
 
 }
