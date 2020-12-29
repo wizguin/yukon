@@ -115,9 +115,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# images
-*.png
-
 # fonts
 *.woff
 *.woff2

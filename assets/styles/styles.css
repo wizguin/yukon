@@ -1,4 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+:root {
+    --bg-color: #22a4f3;
+    --text-color: #ffffff;
+    --accent-color: #ffcc00;
+    --button-color: #117bd1;
+    --button-hover-color: #0052af;
+}
+
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 90%;
+    height: 60px;
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header a {
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+header i {
+    display: inline-block;
+}
+
+nav a {
+    margin-right: 10px;
+}
+
+nav a:hover {
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--accent-color);
+    transition: all ease 300ms;
+}
+
+.logout {
+    margin-left: auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    transition: background ease .3s;
+}
+
+.logout:hover {
+    background-color: var(--button-hover-color);
+}
+
+#game {
+    width: 100%;
+    height: 90%;
+    min-width: 500px;
+    max-width: 1520px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#game canvas {
+    border-radius: 5px;
+}
+
+.icon-home {
+    width: 20px;
+    height: 19px;
+    background: url(../images/icons.png) -49px -1px;
+}
+
+.icon-arrow {
+    width: 8px;
+    height: 12px;
+    background: url(../images/icons.png) -1px -49px;
+}
+
+.icon-logout {
+    width: 16px;
+    height: 14px;
+    margin-right: 10px;
+    background: url(../images/icons.png) -49px -22px;
+}
+
+.icon-close {
+    width: 46px;
+    height: 46px;
+    background: url(../images/icons.png) -1px -1px;
 }
