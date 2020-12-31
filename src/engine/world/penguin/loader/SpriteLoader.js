@@ -1,4 +1,4 @@
-export default class BaseLoader {
+export default class SpriteLoader {
 
     constructor(world) {
         this.world = world
@@ -9,14 +9,17 @@ export default class BaseLoader {
     }
 
     loadSprite(penguin, id, depth) {
-        id = String(id)
         let sprite = penguin.room.add.sprite(0, 0, id, '1_1')
-
-        this.addAnims(id, sprite)
 
         if (id == 'penguin-body') sprite.tint = this.colors[penguin.user.color - 1]
 
-        penguin.addAt(sprite, depth)
+        // Attach depth so that children can be sorted using penguin.sort('depth')
+        sprite.depth = depth
+
+        this.addAnims(id, sprite)
+        penguin.add(sprite)
+
+        return sprite
     }
 
     addAnims(id) {

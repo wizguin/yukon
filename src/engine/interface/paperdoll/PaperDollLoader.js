@@ -4,16 +4,23 @@ export default class PaperDollLoader {
         this.paperDoll = paperDoll
         this.scene = paperDoll.scene
 
+        this.scale = 0.7325
+        this.photoScale = 0.7
+
         this.load = new Phaser.Loader.LoaderPlugin(this.scene)
         this.url = '/assets/media/clothing/paper'
         this.prefix = 'paper/'
 
-        this.scale = 0.7325
-        this.photoScale = 0.7
+        this.load.on('filecomplete', this.onFileComplete, this)
+        this.load.on('complete', this.onComplete, this)
     }
 
-    loadItems(penguin) {
-        let items = penguin.items.items
+    get penguin() {
+        return this.paperDoll.penguin
+    }
+
+    loadItems() {
+        let items = this.penguin.items.all
 
         for (let item in items) {
             item = items[item]
@@ -22,55 +29,56 @@ export default class PaperDollLoader {
         }
 
         this.load.start()
-
-        if (this.load.totalToLoad > 0) {
-            this.load.once('complete', () => { this.onLoadComplete(penguin, items) })
-        } else {
-            this.onLoadComplete(penguin, items)
-        }
     }
 
     loadItem(item) {
-        item = String(item)
+        let key = `${this.prefix}${item}`
 
-        if (this.scene.textures.exists(`${this.prefix}${item}`)) return
+        if (this.scene.textures.exists(key)) return this.onFileComplete(key)
 
         this.load.image({
-            key: `${this.prefix}${item}`,
+            key: key,
             url: `${this.url}/${item}.png`,
         })
     }
 
-    onLoadComplete(penguin, items) {
-        for (let slot in items) {
-            let item = items[slot]
+    onFileComplete(key) {
+        let item = key.replace(this.prefix, '')
+        let slot = this.penguin.items.getItemSlot(item)
+        if (!slot) return
 
-            if (item.id > 0 && this.scene.textures.exists(`${this.prefix}${item.id}`)) {
+        if (item > 0 && this.scene.textures.exists(key)) {
+            switch (slot) {
+                case 'photo':
+                    this.loadPaper(key, item, slot, this.photoScale)
+                    break
 
-                switch (slot) {
-                    case 'photo':
-                        this.loadPaper(penguin, slot, item, this.photoScale)
-                        break
-
-                    default:
-                        this.loadPaper(penguin, slot, item)
-                        break
-                }
+                default:
+                    this.loadPaper(key, item, slot)
+                    break
             }
         }
     }
 
-    loadPaper(penguin, slot, item, scale = this.scale) {
-        let paper = this.scene.add.image(0, 0, `${this.prefix}${item.id}`)
+    onComplete() {
+        this.paperDoll.sort('depth')
+    }
 
+    loadPaper(key, item, slot, scale = this.scale) {
+        let paperDollItem = this.paperDoll.items[slot]
+        if (paperDollItem.sprite) this.removeItem(paperDollItem)
+
+        let paper = this.scene.add.image(0, 0, key)
         paper.scale = scale
+        paper.depth = paperDollItem.depth
 
         // Fade in everything except for penguin color
         if (slot != 'color') this.fadeIn(paper)
 
-        this.paperDoll.addAt(paper, item.depth)
+        this.paperDoll.add(paper)
+        paperDollItem.sprite = paper
 
-        if (penguin.isClient) this.addInput(slot, item, paper)
+        if (this.penguin.isClient) this.addInput(slot, item, paper)
     }
 
     addInput(slot, item, paper) {
@@ -96,6 +104,11 @@ export default class PaperDollLoader {
             alpha: { from: 0, to: 1 },
             duration: 200
         })
+    }
+
+    removeItem(item) {
+        item.sprite.destroy()
+        item.sprite = null
     }
 
 }

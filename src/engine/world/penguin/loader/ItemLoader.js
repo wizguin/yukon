@@ -1,38 +1,35 @@
-import BaseLoader from './BaseLoader'
+import SpriteLoader from './SpriteLoader'
 
 
-export default class ItemLoader extends BaseLoader {
+export default class ItemLoader extends SpriteLoader {
 
     constructor(penguin) {
         super(penguin.room.world)
 
         this.penguin = penguin
+        this.equipped = this.penguin.items.equipped
+
         this.load = new Phaser.Loader.LoaderPlugin(penguin.room)
         this.url = '/assets/media/clothing/sprites'
+
+        this.load.on('filecomplete', this.onFileComplete, this)
+        this.load.on('complete', this.onComplete, this)
     }
 
     loadItems() {
-        let items = this.penguin.items.sprites
-
-        for (let item in items) {
-            item = items[item]
+        for (let slot in this.equipped) {
+            let item = this.equipped[slot]
 
             if (item.id > 0) this.loadItem(item.id)
         }
 
         this.load.start()
-
-        if (this.load.totalToLoad > 0) {
-            this.load.once('complete', () => { this.onLoadComplete(items) })
-        } else {
-            this.onLoadComplete(items)
-        }
     }
 
     loadItem(item) {
         item = String(item)
 
-        if (this.world.textures.exists(item)) return
+        if (this.world.textures.exists(item)) return this.onFileComplete(item)
 
         this.load.atlas({
             key: item,
@@ -41,15 +38,38 @@ export default class ItemLoader extends BaseLoader {
         })
     }
 
-    onLoadComplete(items) {
-        for (let item in items) {
-            item = items[item]
+    onFileComplete(key) {
+        let slot = this.penguin.items.getItemSlot(key)
+        if (!slot) return
 
-            if (item.id > 0 && this.world.textures.exists(item.id)) {
-                // item.depth + 1 to ensure items are loaded on top of penguin body
-                this.loadSprite(this.penguin, item.id, item.depth + 1)
-            }
+        let item = this.equipped[slot]
+
+        // Remove item if one is already equipped
+        if (item.sprite) this.removeItem(item)
+
+        if (key > 0 && this.world.textures.exists(key)) {
+            // item.depth + 1 to ensure items are loaded on top of penguin body
+            item.sprite = this.loadSprite(this.penguin, key, item.depth + 1)
         }
+    }
+
+    onComplete() {
+        this.penguin.sort('depth')
+
+        let frame = this.penguin.frame
+
+        // Frames above dancing will be set to frame 1
+        if (frame > 26) {
+            this.penguin.playFrame(1)
+        } else {
+            this.penguin.playFrame(frame)
+        }
+
+    }
+
+    removeItem(item) {
+        item.sprite.destroy()
+        item.sprite = null
     }
 
 }

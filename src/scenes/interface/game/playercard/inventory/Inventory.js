@@ -284,7 +284,7 @@ class Inventory extends BaseContainer {
 
         if (!item || !item.id || !item.active) return
 
-        console.log(item.id)
+        this.network.send('update_player', { item: item.id, type: this.crumbs.items[item.id].type })
     }
 
     /* END-USER-CODE */

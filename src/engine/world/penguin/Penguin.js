@@ -1,9 +1,11 @@
+import BaseContainer from '@scenes/base/BaseContainer'
+
 import ItemLoader from './loader/ItemLoader'
 import PenguinActions from './actions/PenguinActions'
 import PenguinItems from './PenguinItems'
 
 
-export default class Penguin extends Phaser.GameObjects.Container {
+export default class Penguin extends BaseContainer {
 
     constructor(user, room, x, y, penguinLoader) {
         super(room, x, y)
@@ -24,7 +26,7 @@ export default class Penguin extends Phaser.GameObjects.Container {
         this.scale = 0.666
 
         this.actions = this.setActions()
-        this.items = this.setItems()
+        this.items = new PenguinItems(this)
         this.itemLoader = new ItemLoader(this)
 
         this.loadPenguin()
@@ -38,12 +40,12 @@ export default class Penguin extends Phaser.GameObjects.Container {
         return { x: this.x, y: this.y }
     }
 
-    setActions() {
-        return new PenguinActions(this)
+    get playerCard() {
+        return this.interface.main.playerCard
     }
 
-    setItems() {
-        return new PenguinItems(this)
+    setActions() {
+        return new PenguinActions(this)
     }
 
     loadPenguin() {
@@ -55,6 +57,21 @@ export default class Penguin extends Phaser.GameObjects.Container {
 
     movePenguin(x, y) {
         this.actions.movePenguin(x, y)
+    }
+
+    updatePenguin(item, slot) {
+        this.items.setItem(item, slot)
+
+        // Load item sprite
+        if (slot in this.items.equipped) {
+            this.itemLoader.loadItem(item, slot)
+            this.itemLoader.load.start()
+        }
+
+        // Load item paper, only if card is active
+        if (this.playerCard.visible && this.playerCard.paperDoll.id == this.user.id) {
+            this.playerCard.paperDoll.loadItem(item)
+        }
     }
 
     playFrame(frame, loop = true) {

@@ -1,7 +1,7 @@
-import BaseLoader from './BaseLoader'
+import SpriteLoader from './SpriteLoader'
 
 
-export default class PenguinLoader extends BaseLoader {
+export default class PenguinLoader extends SpriteLoader {
 
     constructor(world) {
         super(world)

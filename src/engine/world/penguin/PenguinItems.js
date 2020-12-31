@@ -2,8 +2,12 @@ export default class PenguinItems {
 
     constructor(penguin) {
         this.penguin = penguin
+
+        // Slots ordered by depth
         this.slots = [ 'photo', 'flag', 'color', 'feet', 'body', 'neck', 'hand', 'face', 'head' ]
-        this.items = this.setItems(penguin)
+
+        // All items
+        this.all = this.setAll()
     }
 
     /**
@@ -11,17 +15,23 @@ export default class PenguinItems {
      *
      * @readonly
      */
-    get sprites() {
-        let { color, photo, flag, ...sprites } = this.items
+    get equipped() {
+        let { color, photo, flag, ...sprites } = this.all
         return sprites
     }
 
-    setItems(penguin) {
+    getItemSlot(item) {
+        for (let i in this.all) {
+            if (this.all[i].id == item) return i
+        }
+    }
+
+    setAll() {
         let items = {}
 
         for (let slot of this.slots) {
             items[slot] = {
-                id: penguin.user[slot],
+                id: this.penguin.user[slot],
                 depth: this.slots.indexOf(slot)
             }
         }
@@ -29,8 +39,8 @@ export default class PenguinItems {
         return items
     }
 
-    setItem(slot, item) {
-        this.slots[slot] = item
+    setItem(item, slot) {
+        this.all[slot].id = item
     }
 
 }
