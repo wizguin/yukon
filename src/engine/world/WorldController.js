@@ -26,7 +26,12 @@ export default class WorldController extends BaseScene {
     }
 
     joinRoom(id, users) {
-        if (this.room) this.room.scene.stop()
+        if (this.room) {
+            // Prevents joining active room
+            if (this.room.key == this.crumbs.rooms[id].name) return
+
+            this.room.scene.stop()
+        }
 
         this.room = this.roomFactory.createRoom(id)
         this.room.penguins = this.penguinFactory.createPenguins(users, this.room)
