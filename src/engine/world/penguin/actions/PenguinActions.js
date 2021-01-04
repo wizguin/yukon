@@ -16,7 +16,8 @@ export default class PenguinActions {
     }
 
     playFrame(frame, loop = true) {
-        if (this.movement.tween) return
+        // Moving penguins can only update when frames are movement frames (9-16)
+        if (this.movement.tween && (frame < 9 || frame > 16)) return
 
         // Filters out shadow and ring
         let sprites = this.penguin.list.filter(child => child.type == 'Sprite')
