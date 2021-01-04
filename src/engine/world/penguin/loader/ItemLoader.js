@@ -13,6 +13,7 @@ export default class ItemLoader extends SpriteLoader {
         this.url = '/assets/media/clothing/sprites'
 
         this.load.on('filecomplete', this.onFileComplete, this)
+        this.load.on('loaderror', this.onLoadError, this)
         this.load.on('complete', this.onComplete, this)
     }
 
@@ -20,37 +21,44 @@ export default class ItemLoader extends SpriteLoader {
         for (let slot in this.equipped) {
             let item = this.equipped[slot]
 
-            if (item.id > 0) this.loadItem(item.id)
+            if (item.id > 0) this.loadItem(item.id, slot)
         }
 
         this.load.start()
     }
 
-    loadItem(item) {
-        item = String(item)
+    loadItem(item, slot) {
+        if (item == 0) return this.removeItem(slot)
 
-        if (this.world.textures.exists(item)) return this.onFileComplete(item)
+        let key = `${slot}/${item}`
+
+        if (this.world.textures.exists(key)) return this.onFileComplete(key)
 
         this.load.atlas({
-            key: item,
+            key: key,
             atlasURL: `${this.url}/${item}.json`,
             textureURL: `${this.url}/${item}.png`
         })
     }
 
     onFileComplete(key) {
-        let slot = this.penguin.items.getItemSlot(key)
-        if (!slot) return
+        if (!this.world.textures.exists(key)) return
 
+        let slot = key.split('/')[0]
         let item = this.equipped[slot]
 
         // Remove item if one is already equipped
-        if (item.sprite) this.removeItem(item)
+        if (item.sprite) this.removeItem(slot)
 
-        if (key > 0 && this.world.textures.exists(key)) {
-            // item.depth + 1 to ensure items are loaded on top of penguin body
-            item.sprite = this.loadSprite(this.penguin, key, item.depth + 1)
-        }
+        // item.depth + 1 to ensure items are loaded on top of penguin body
+        item.sprite = this.loadSprite(this.penguin, key, item.depth + 1)
+    }
+
+    onLoadError(file) {
+        let slot = file.key.split('/')[0]
+        let item = this.equipped[slot]
+
+        if (item.sprite) this.removeItem(slot)
     }
 
     onComplete() {
@@ -67,7 +75,10 @@ export default class ItemLoader extends SpriteLoader {
 
     }
 
-    removeItem(item) {
+    removeItem(slot) {
+        let item = this.equipped[slot]
+        if (!item || !item.sprite) return
+
         item.sprite.destroy()
         item.sprite = null
     }

@@ -20,12 +20,6 @@ export default class PenguinItems {
         return sprites
     }
 
-    getItemSlot(item) {
-        for (let i in this.all) {
-            if (this.all[i].id == item) return i
-        }
-    }
-
     setAll() {
         let items = {}
 

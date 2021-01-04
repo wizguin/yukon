@@ -46,13 +46,4 @@ export default class PaperDoll extends BaseContainer {
         this.paperDollLoader.loadItems()
     }
 
-    loadItem(item) {
-        this.paperDollLoader.loadItem(item)
-        this.paperDollLoader.load.start()
-    }
-
-    onPaperClick(item) {
-        console.log(item)
-    }
-
 }

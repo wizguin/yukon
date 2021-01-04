@@ -237,7 +237,8 @@ class Inventory extends BaseContainer {
     /* START-USER-CODE */
 
     get inventory() {
-        return this.world.client.inventory
+        let inventory = this.world.client.inventory
+        return Object.values(inventory).flat()
     }
 
     get maxPage() {
@@ -284,7 +285,7 @@ class Inventory extends BaseContainer {
 
         if (!item || !item.id || !item.active) return
 
-        this.network.send('update_player', { item: item.id, type: this.crumbs.items[item.id].type })
+        this.network.send('update_player', { item: item.id })
     }
 
     /* END-USER-CODE */
