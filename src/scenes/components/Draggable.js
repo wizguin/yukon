@@ -33,8 +33,8 @@ class Draggable extends EventComponent {
     }
 
     onDrag(dragX, dragY) {
-        this.gameObject.x = dragX
-        this.gameObject.y = dragY
+        this.gameObject.x = Math.round(dragX)
+        this.gameObject.y = Math.round(dragY)
     }
 
     /* END-USER-CODE */

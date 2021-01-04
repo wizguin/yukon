@@ -50,8 +50,8 @@ class DraggableContainer extends EventComponent {
     }
 
     onDrag(pointer) {
-        this.gameObject.x = pointer.x + this.offsetX
-        this.gameObject.y = pointer.y + this.offsetY
+        this.gameObject.x = Math.round(pointer.x + this.offsetX)
+        this.gameObject.y = Math.round(pointer.y + this.offsetY)
     }
 
     /* END-USER-CODE */

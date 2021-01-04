@@ -18,8 +18,8 @@ export default class PenguinMovement {
             targets: this.penguin,
             duration: path.duration,
 
-            x: Math.floor(path.target.x),
-            y: Math.floor(path.target.y),
+            x: Math.round(path.target.x),
+            y: Math.round(path.target.y),
 
             onUpdate: () => { this.onMoveUpdate() },
             onComplete: () => { this.onMoveComplete() }
@@ -38,14 +38,14 @@ export default class PenguinMovement {
     }
 
     updateNameTag() {
-        this.penguin.nameTag.x = this.penguin.x
-        this.penguin.nameTag.y = this.penguin.y + 40
+        this.penguin.nameTag.x = Math.round(this.penguin.x)
+        this.penguin.nameTag.y = Math.round(this.penguin.y) + 40
         this.penguin.nameTag.depth = this.penguin.depth + 2000
     }
 
     updateBalloon() {
-        this.penguin.balloon.x = this.penguin.x
-        this.penguin.balloon.y = this.penguin.y - 95
+        this.penguin.balloon.x = Math.round(this.penguin.x)
+        this.penguin.balloon.y = Math.round(this.penguin.y) - 95
     }
 
     removeTween() {
