@@ -228,6 +228,7 @@ class Inventory extends BaseContainer {
 
         this.page = 1
         this.pageSize = 12
+        this.filter = null
 
         this.inventoryLoader = new InventoryLoader(this, this.slots)
 
@@ -238,6 +239,12 @@ class Inventory extends BaseContainer {
 
     get inventory() {
         let inventory = this.world.client.inventory
+
+        if (this.filter) {
+            // If filter is other then inventory results in concat of flags, photos and awards
+            inventory = (this.filter == 'other') ? inventory.flag.concat(inventory.photo, inventory.award) : inventory[this.filter]
+        }
+
         return Object.values(inventory).flat()
     }
 
@@ -246,6 +253,8 @@ class Inventory extends BaseContainer {
     }
 
     showPage() {
+        if (!this.visible) return
+
         let page = this.inventory.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
         this.inventoryLoader.loadPage(page)
     }
