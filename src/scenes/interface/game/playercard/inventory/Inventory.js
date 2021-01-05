@@ -2,7 +2,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, Interactive, SimpleButton } from '@components/components'
 
-import InventoryLoader from '@engine/world/penguin/loader/InventoryLoader'
+import InventoryLoader from '@engine/interface/inventory/InventoryLoader'
 import InventorySort from '../inventory_sort/InventorySort'
 
 
