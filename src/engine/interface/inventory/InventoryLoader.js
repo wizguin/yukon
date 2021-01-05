@@ -71,6 +71,8 @@ export default class InventoryLoader {
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
 
+        if (!slot) return
+
         // Do not load into empty slot
         if (['large-box', 'large-box-hover'].includes(slot.frame.name)) this.loadIcon(key, slot, item)
     }
@@ -80,6 +82,7 @@ export default class InventoryLoader {
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
 
+        if (!slot) return
         if (slot.spinner) slot.spinner.destroy()
 
         let errorIcon = this.scene.add.image(slot.x, slot.y, 'main', 'x-icon')
