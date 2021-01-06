@@ -88,6 +88,7 @@ export default class InventoryLoader {
         let errorIcon = this.scene.add.image(slot.x, slot.y, 'main', 'x-icon')
         this.inventory.container.add(errorIcon)
 
+        errorIcon.id = item
         slot.item = errorIcon
     }
 
