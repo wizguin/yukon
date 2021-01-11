@@ -159,6 +159,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "town",
+                    "Button.callback": "() => { this.onRoomClick(100) }",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",

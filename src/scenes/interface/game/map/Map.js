@@ -130,6 +130,7 @@ class Map extends BaseContainer {
         // town (components)
         const townButton = new Button(town);
         townButton.spriteName = "town";
+        townButton.callback = () => { this.onRoomClick(100) };
         townButton.activeFrame = false;
 
         // forts (components)

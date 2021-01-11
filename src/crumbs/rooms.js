@@ -3,10 +3,17 @@ import Dock from '@rooms/dock/Dock'
 import Lodge from '@rooms/lodge/Lodge'
 import Plaza from '@rooms/plaza/Plaza'
 import Rink from '@rooms/rink/Rink'
+import Town from '@rooms/town/Town'
 import Village from '@rooms/village/Village'
 
 
 const rooms = {
+    100: {
+        name: 'Town',
+        scene: Town,
+        x: 760,
+        y: 660
+    },
     200: {
         name: 'Village',
         scene: Village,

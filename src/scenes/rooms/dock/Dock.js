@@ -91,6 +91,12 @@ class Dock extends RoomScene {
                 x: 330,
                 y: 220,
                 callback : () => { this.triggerRoom(200, 1300, 760) }
+            },
+            {
+                body: this.roomPhysics.town,
+                x: 1350,
+                y: 360,
+                callback : () => { this.triggerRoom(100, 368, 640) }
             }
         ]
     }
