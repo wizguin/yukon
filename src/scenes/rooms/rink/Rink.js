@@ -8,6 +8,9 @@ class Rink extends RoomScene {
     constructor() {
         super("Rink");
 
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.sort;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -65,8 +68,8 @@ class Rink extends RoomScene {
         drink.setOrigin(0.5, 0.75510204);
 
         // fg
-        const fg = this.add.image(-64, 535, "rink", "fg");
-        fg.setOrigin(0, 0);
+        const fg = this.add.image(-64, 1046.9173886139422, "rink", "fg");
+        fg.setOrigin(0, 0.9998385876423137);
 
         // trash
         const trash = this.add.image(858, 214, "rink", "trash");
@@ -75,12 +78,6 @@ class Rink extends RoomScene {
         // snacks
         const snacks = this.add.image(1046, 230, "rink", "snacks");
         snacks.setOrigin(0.44080605, 0.79461279);
-
-        // snacks_door0001
-        this.add.image(1214, 183, "rink", "snacks_door0001");
-
-        // snacks_ring
-        this.add.image(1251, 203, "rink", "snacks_ring");
 
         // stand_base
         const stand_base = this.add.image(731, 126, "rink", "stand_base");
@@ -111,6 +108,17 @@ class Rink extends RoomScene {
         const goal_1 = this.add.image(247, 578, "rink", "goal");
         goal_1.setOrigin(0.58571429, 0.91902834);
         goal_1.flipX = true;
+
+        // snacks_door0001
+        this.add.image(1214, 185, "rink", "snacks_door0001");
+
+        // snacks_ring
+        this.add.image(1250, 200, "rink", "snacks_ring");
+
+        // lists
+        const sort = [fg, ball, goal_back, goal, goal_back_1, goal_1, snacks, sports_door0001, sports, right_bleachers, bleachers_rail_1, bleachers_rail, left_bleachers, fish_dogs, stand_middle, stand_base, stand_top, trash, rink_border]
+
+        this.sort = sort;
     }
 
     /* START-USER-CODE */

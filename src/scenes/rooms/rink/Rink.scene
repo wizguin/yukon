@@ -176,9 +176,9 @@
                 "frame": "fg"
             },
             "x": -64,
-            "y": 535,
+            "y": 1046.9173886139422,
             "originX": 0,
-            "originY": 0
+            "originY": 0.9998385876423137
         },
         {
             "type": "Image",
@@ -207,30 +207,6 @@
             "y": 230,
             "originX": 0.44080605,
             "originY": 0.79461279
-        },
-        {
-            "type": "Image",
-            "id": "43cdf079-69ad-4419-a792-0e60a8c4e4ab",
-            "label": "snacks_door0001",
-            "components": [],
-            "texture": {
-                "key": "rink",
-                "frame": "snacks_door0001"
-            },
-            "x": 1214,
-            "y": 183
-        },
-        {
-            "type": "Image",
-            "id": "27852398-508b-4012-a23f-3fd21298185a",
-            "label": "snacks_ring",
-            "components": [],
-            "texture": {
-                "key": "rink",
-                "frame": "snacks_ring"
-            },
-            "x": 1251,
-            "y": 203
         },
         {
             "type": "Image",
@@ -331,11 +307,63 @@
             "originX": 0.58571429,
             "originY": 0.91902834,
             "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "1daf781a-48ce-435e-8a67-ff83a00acf18",
+            "label": "snacks_door0001",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "snacks_door0001"
+            },
+            "x": 1214,
+            "y": 185
+        },
+        {
+            "type": "Image",
+            "id": "9b6face9-4978-4553-9f5a-f1a87ad0a76a",
+            "label": "snacks_ring",
+            "components": [],
+            "texture": {
+                "key": "rink",
+                "frame": "snacks_ring"
+            },
+            "x": 1250,
+            "y": 200
         }
     ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+    },
+    "lists": [
+        {
+            "id": "9e830a7e-9e8a-466e-aec7-18c94d7d6d64",
+            "label": "sort",
+            "objectIds": [
+                "4696c680-3ebf-4d19-b173-930fa9100e32",
+                "dd5aac14-4403-46f8-89e5-bf4c0af9d7e1",
+                "e98107c1-00e5-4038-af33-9c09f0215d15",
+                "d2fc417b-d621-42bf-b36f-9ceb490309a9",
+                "e0207549-cdcf-46ef-bc96-f47224bdbf9e",
+                "22bb19b8-4dba-44de-b801-0c1a933e24e7",
+                "a37ff0c1-0127-4006-a381-ce6757c35c1d",
+                "5efbc284-3a48-4070-afaa-7e75fdd7fa7a",
+                "8d069f94-5f09-4127-8056-9e6adf5c877d",
+                "71d3ac56-d068-41fc-a032-34745024edf5",
+                "75874fb2-e84e-4279-8d62-8c6a59cb2bb5",
+                "1a5fbcad-92bb-46b9-8009-7b1decadfe73",
+                "ef1c8365-1a0f-48ec-ad08-058a520546e3",
+                "8d678d53-c165-41fb-84fa-af61ae034f40",
+                "be5cc6f5-703e-4a40-894f-ec6d5d3d7cc9",
+                "32361733-5092-4745-9a30-10cddef6d1e5",
+                "623653b5-a2d7-4918-8598-d48314177fe6",
+                "3e1b4e7e-0f5b-4cda-ac6e-248ce8878e73",
+                "139351a3-ad27-4f1c-b1cc-cb39e13fb57d"
+            ]
+        }
+    ]
 }
