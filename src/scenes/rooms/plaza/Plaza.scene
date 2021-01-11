@@ -1,0 +1,204 @@
+{
+    "id": "ae2549c0-6ea9-4446-8617-33e0cd41dc29",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/plaza/plaza-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Plaza",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "fb3a02e1-470c-4b33-a3f0-ea6bbe0ed425",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "bg"
+            },
+            "x": -18,
+            "y": -2,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "924c61e4-abb7-4066-8ec9-f7a98abdba1a",
+            "label": "pet_door",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "pet_door"
+            },
+            "x": 333,
+            "y": 489,
+            "originX": 0.473118,
+            "originY": 0.678218
+        },
+        {
+            "type": "Image",
+            "id": "8765e580-25dd-483f-8083-9cff48de2f75",
+            "label": "cave_door",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "cave_door"
+            },
+            "x": 564,
+            "y": 510,
+            "originX": 0.473684,
+            "originY": 0.781513
+        },
+        {
+            "type": "Image",
+            "id": "80fc9eda-4cee-4224-9895-3ed352215762",
+            "label": "stage_door_1",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_door_1"
+            },
+            "x": 733,
+            "y": 385,
+            "originY": 0.45679
+        },
+        {
+            "type": "Image",
+            "id": "f05e408e-53d1-4aa1-8371-f0d3ccce1dfa",
+            "label": "stage_door_2",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_door_2"
+            },
+            "x": 958,
+            "y": 385,
+            "originY": 0.45679
+        },
+        {
+            "type": "Image",
+            "id": "b523771a-425c-42a3-8512-8209c7bc2d7a",
+            "label": "pizza_door",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "pizza_door"
+            },
+            "x": 1194,
+            "y": 410,
+            "originX": 0.5311,
+            "originY": 0.442211
+        },
+        {
+            "type": "Image",
+            "id": "a5831911-1f3f-4f17-94d0-a69e8045a6b1",
+            "label": "stage_lights_back0001",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_lights_back0001"
+            },
+            "x": 851,
+            "y": 174
+        },
+        {
+            "type": "Image",
+            "id": "1d1d724b-4983-4e2d-962f-0cddd22b1c1f",
+            "label": "stage_screen",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_screen"
+            },
+            "x": 847,
+            "y": 221
+        },
+        {
+            "type": "Image",
+            "id": "142c4594-3c76-4932-a93c-31cffe3168d5",
+            "label": "text",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "text"
+            },
+            "x": 851,
+            "y": 248
+        },
+        {
+            "type": "Image",
+            "id": "bc77f388-6cf6-4a0d-a2e2-aa77337d24e0",
+            "label": "stage_lights_front0001",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_lights_front0001"
+            },
+            "x": 853,
+            "y": 166
+        },
+        {
+            "type": "Image",
+            "id": "05caec4d-6fa1-4eb9-9ba9-95c690a5ad2f",
+            "label": "tickets",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "tickets"
+            },
+            "x": 846,
+            "y": 457,
+            "originY": 0.9247311827956989
+        },
+        {
+            "type": "Image",
+            "id": "d1edf127-2391-44cd-a58f-48dc7184c82b",
+            "label": "lamp",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "lamp"
+            },
+            "x": 129,
+            "y": 827,
+            "originX": 0.5099009900990099,
+            "originY": 0.9323076923076923
+        },
+        {
+            "type": "Image",
+            "id": "73ddca4b-f3a4-41ff-921b-240bad12cbe8",
+            "label": "title",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "title"
+            },
+            "x": 725,
+            "y": 200,
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "9c185332-22f1-4d89-8194-2666eda5e6ad",
+            "label": "sort",
+            "objectIds": [
+                "05caec4d-6fa1-4eb9-9ba9-95c690a5ad2f",
+                "d1edf127-2391-44cd-a58f-48dc7184c82b"
+            ]
+        }
+    ]
+}

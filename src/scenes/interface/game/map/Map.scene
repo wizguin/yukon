@@ -206,6 +206,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "plaza",
+                    "Button.callback": "() => { this.onRoomClick(300) }",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",

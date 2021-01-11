@@ -144,6 +144,7 @@ class Map extends BaseContainer {
         // plaza (components)
         const plazaButton = new Button(plaza);
         plazaButton.spriteName = "plaza";
+        plazaButton.callback = () => { this.onRoomClick(300) };
         plazaButton.activeFrame = false;
 
         // rink (components)
