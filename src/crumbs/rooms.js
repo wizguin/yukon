@@ -1,4 +1,5 @@
 import Attic from '@rooms/attic/Attic'
+import Dock from '@rooms/dock/Dock'
 import Lodge from '@rooms/lodge/Lodge'
 import Plaza from '@rooms/plaza/Plaza'
 import Rink from '@rooms/rink/Rink'
@@ -29,6 +30,12 @@ const rooms = {
         scene: Plaza,
         x: 760,
         y: 680
+    },
+    800: {
+        name: 'Dock',
+        scene: Dock,
+        x: 800,
+        y: 400
     },
     802: {
         name: 'Rink',

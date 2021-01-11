@@ -142,6 +142,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "dock",
+                    "Button.callback": "() => { this.onRoomClick(800) }",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",

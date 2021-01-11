@@ -124,6 +124,7 @@ class Map extends BaseContainer {
         // dock (components)
         const dockButton = new Button(dock);
         dockButton.spriteName = "dock";
+        dockButton.callback = () => { this.onRoomClick(800) };
         dockButton.activeFrame = false;
 
         // town (components)

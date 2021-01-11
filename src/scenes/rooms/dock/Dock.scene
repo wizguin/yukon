@@ -1,0 +1,229 @@
+{
+    "id": "79a7c5e8-e143-439d-97dd-8b257ce6a9c8",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/dock/dock-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Dock",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1821b301-2ee0-4825-89e3-fc399fb78c16",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "bg"
+            },
+            "x": -48,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "363b2306-4ab4-4dee-8ae4-e8f85beb4c8c",
+            "label": "post_1",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "post_1"
+            },
+            "x": 443,
+            "y": 592,
+            "originX": 0.55,
+            "originY": 0.54782609
+        },
+        {
+            "type": "Image",
+            "id": "14fdf146-1816-4c50-9b9f-0e48a8ff8458",
+            "label": "boat0001",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "boat0001"
+            },
+            "x": 233,
+            "y": 636,
+            "originX": 0.6858407079646017,
+            "originY": 0.8487282463186078
+        },
+        {
+            "type": "Image",
+            "id": "3a0e34c9-8797-4190-b347-45bbeb255dd3",
+            "label": "dock",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "dock"
+            },
+            "x": 187,
+            "y": 593,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "82971793-e993-4857-bcc2-8eb4693dd08e",
+            "label": "post_2",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "post_2"
+            },
+            "x": 572,
+            "y": 619,
+            "originX": 0.43243243243243246,
+            "originY": 0.49137931034482757
+        },
+        {
+            "type": "Image",
+            "id": "4c224620-df0c-469c-9e6e-e6c8fa0c1543",
+            "label": "post_3",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "post_3"
+            },
+            "x": 367,
+            "y": 882,
+            "originX": 0.5384615384615384,
+            "originY": 0.806282722513089
+        },
+        {
+            "type": "Image",
+            "id": "3cdfc1d7-a088-4755-9681-626a406168cb",
+            "label": "post_4",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "post_4"
+            },
+            "x": 164,
+            "y": 832,
+            "originX": 0.4943820224719101,
+            "originY": 0.7960526315789473
+        },
+        {
+            "type": "Image",
+            "id": "7f5d0769-ef22-41fe-9394-3218ff57c8da",
+            "label": "box",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "box"
+            },
+            "x": 434,
+            "y": 652,
+            "originX": 0.4915254237288136,
+            "originY": 0.7142857142857143
+        },
+        {
+            "type": "Image",
+            "id": "64b572bb-5e25-49eb-9f38-01a536a9605e",
+            "label": "bollard_1",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "bollard_1"
+            },
+            "x": 353,
+            "y": 689,
+            "originY": 0.9302325581395349
+        },
+        {
+            "type": "Image",
+            "id": "9e9fae00-3cf7-4877-a335-f8effc61638f",
+            "label": "bollard_2",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "bollard_2"
+            },
+            "x": 279,
+            "y": 732,
+            "originY": 0.9215686274509803
+        },
+        {
+            "type": "Image",
+            "id": "c811c8ad-ce91-436c-b8b8-74a4e57fb0aa",
+            "label": "rings0001",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "rings0001"
+            },
+            "x": 632,
+            "y": 668,
+            "originX": 0.4975124378109453,
+            "originY": 0.8127659574468085
+        },
+        {
+            "type": "Image",
+            "id": "500aaefd-4802-455f-91f6-dfbff3540286",
+            "label": "right_sign",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "right_sign"
+            },
+            "x": 1366,
+            "y": 270
+        },
+        {
+            "type": "Image",
+            "id": "a6d2e34c-2e79-4069-ae5d-30b6dec540fe",
+            "label": "left_sign",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "left_sign"
+            },
+            "x": 120,
+            "y": 345
+        },
+        {
+            "type": "Image",
+            "id": "ed03b75e-e452-4a89-9e7c-44dd67f456f3",
+            "label": "boards",
+            "components": [],
+            "texture": {
+                "key": "dock",
+                "frame": "boards"
+            },
+            "x": 740,
+            "y": 746,
+            "originY": 0.7721088435374149
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "672dde11-c1fa-4288-8b95-0278f69713f1",
+            "label": "sort",
+            "objectIds": [
+                "4c224620-df0c-469c-9e6e-e6c8fa0c1543",
+                "3cdfc1d7-a088-4755-9681-626a406168cb",
+                "363b2306-4ab4-4dee-8ae4-e8f85beb4c8c",
+                "82971793-e993-4857-bcc2-8eb4693dd08e",
+                "c811c8ad-ce91-436c-b8b8-74a4e57fb0aa",
+                "9e9fae00-3cf7-4877-a335-f8effc61638f",
+                "64b572bb-5e25-49eb-9f38-01a536a9605e",
+                "3a0e34c9-8797-4190-b347-45bbeb255dd3",
+                "7f5d0769-ef22-41fe-9394-3218ff57c8da",
+                "ed03b75e-e452-4a89-9e7c-44dd67f456f3"
+            ]
+        }
+    ]
+}
