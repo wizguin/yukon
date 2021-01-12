@@ -65,6 +65,7 @@ export default class InventoryLoader {
     }
 
     onFileComplete(key) {
+        if (!this.inventory.visible) return
         if (!this.scene.textures.exists(key)) return
 
         let item = parseInt(key.split('/')[1])
@@ -78,6 +79,8 @@ export default class InventoryLoader {
     }
 
     onLoadError(file) {
+        if (!this.inventory.visible) return
+
         let item = parseInt(file.key.split('/')[1])
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
