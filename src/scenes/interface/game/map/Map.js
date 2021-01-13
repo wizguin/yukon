@@ -16,10 +16,12 @@ class Map extends BaseContainer {
 
         // bg
         const bg = scene.add.image(0, -15, "map", "bg");
+        bg.setOrigin(0.5, 0.5007429420505201);
         this.add(bg);
 
         // dojo
         const dojo = scene.add.image(69, -290, "map", "dojo");
+        dojo.setOrigin(0.5038759689922481, 0.5056179775280899);
         this.add(dojo);
 
         // mountains
@@ -28,6 +30,7 @@ class Map extends BaseContainer {
 
         // island
         const island = scene.add.image(-12, -10, "map", "island");
+        island.setOrigin(0.5005417118093174, 0.5);
         this.add(island);
 
         // mtn
@@ -36,6 +39,7 @@ class Map extends BaseContainer {
 
         // village
         const village = scene.add.image(-181, -159, "map", "village");
+        village.setOrigin(0.503030303030303, 0.5041322314049587);
         this.add(village);
 
         // beach
@@ -44,6 +48,7 @@ class Map extends BaseContainer {
 
         // dock
         const dock = scene.add.image(-370, 134, "map", "dock");
+        dock.setOrigin(0.5, 0.5037037037037037);
         this.add(dock);
 
         // town
@@ -52,6 +57,7 @@ class Map extends BaseContainer {
 
         // forts
         const forts = scene.add.image(78, 50, "map", "forts");
+        forts.setOrigin(0.5045045045045045, 0.5045871559633027);
         this.add(forts);
 
         // igloo
@@ -60,22 +66,27 @@ class Map extends BaseContainer {
 
         // plaza
         const plaza = scene.add.image(264, 42, "map", "plaza");
+        plaza.setOrigin(0.5, 0.5038167938931297);
         this.add(plaza);
 
         // rink
         const rink = scene.add.image(52, -78, "map", "rink");
+        rink.setOrigin(0.5023041474654378, 0.5);
         this.add(rink);
 
         // forest
         const forest = scene.add.image(291, -64, "map", "forest");
+        forest.setOrigin(0.5027027027027027, 0.5057471264367817);
         this.add(forest);
 
         // cove
         const cove = scene.add.image(334, -149, "map", "cove");
+        cove.setOrigin(0.5, 0.5058823529411764);
         this.add(cove);
 
         // mine
         const mine = scene.add.image(168, -194, "map", "mine");
+        mine.setOrigin(0.5042016806722689, 0.5);
         this.add(mine);
 
         // berg
@@ -84,6 +95,7 @@ class Map extends BaseContainer {
 
         // note
         const note = scene.add.image(419, 262, "map", "note");
+        note.setOrigin(0.5017667844522968, 0.5);
         this.add(note);
 
         // grey_button
@@ -113,29 +125,31 @@ class Map extends BaseContainer {
         // village (components)
         const villageButton = new Button(village);
         villageButton.spriteName = "village";
-        villageButton.callback = () => { this.onRoomClick(200) };
+        villageButton.callback = () => this.onRoomClick(200);
         villageButton.activeFrame = false;
 
         // beach (components)
         const beachButton = new Button(beach);
         beachButton.spriteName = "beach";
+        beachButton.callback = () => this.onRoomClick(400);
         beachButton.activeFrame = false;
 
         // dock (components)
         const dockButton = new Button(dock);
         dockButton.spriteName = "dock";
-        dockButton.callback = () => { this.onRoomClick(800) };
+        dockButton.callback = () => this.onRoomClick(800);
         dockButton.activeFrame = false;
 
         // town (components)
         const townButton = new Button(town);
         townButton.spriteName = "town";
-        townButton.callback = () => { this.onRoomClick(100) };
+        townButton.callback = () => this.onRoomClick(100);
         townButton.activeFrame = false;
 
         // forts (components)
         const fortsButton = new Button(forts);
         fortsButton.spriteName = "forts";
+        fortsButton.callback = () => this.onRoomClick(801);
         fortsButton.activeFrame = false;
 
         // igloo (components)
@@ -146,13 +160,13 @@ class Map extends BaseContainer {
         // plaza (components)
         const plazaButton = new Button(plaza);
         plazaButton.spriteName = "plaza";
-        plazaButton.callback = () => { this.onRoomClick(300) };
+        plazaButton.callback = () => this.onRoomClick(300);
         plazaButton.activeFrame = false;
 
         // rink (components)
         const rinkButton = new Button(rink);
         rinkButton.spriteName = "rink";
-        rinkButton.callback = () => { this.onRoomClick(802) };
+        rinkButton.callback = () => this.onRoomClick(802);
         rinkButton.activeFrame = false;
 
         // forest (components)

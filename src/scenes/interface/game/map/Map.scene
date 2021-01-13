@@ -34,7 +34,7 @@
                 },
                 {
                     "type": "Image",
-                    "id": "7d3b5435-8293-44e8-9d1e-24583bf640d1",
+                    "id": "3b02b716-3b32-4703-89fd-ec27acfcacf2",
                     "label": "bg",
                     "components": [
                         "Interactive"
@@ -43,11 +43,12 @@
                         "key": "map",
                         "frame": "bg"
                     },
-                    "y": -15
+                    "y": -15,
+                    "originY": 0.5007429420505201
                 },
                 {
                     "type": "Image",
-                    "id": "2dade6d3-c572-40be-ae0a-d43d68c09cdf",
+                    "id": "ac515e14-94e2-4872-845c-ff165b0bb45d",
                     "label": "dojo",
                     "components": [
                         "Button"
@@ -59,11 +60,13 @@
                         "frame": "dojo"
                     },
                     "x": 69,
-                    "y": -290
+                    "y": -290,
+                    "originX": 0.5038759689922481,
+                    "originY": 0.5056179775280899
                 },
                 {
                     "type": "Image",
-                    "id": "e29f8478-c32e-4adc-8631-c1f523326cce",
+                    "id": "78f24163-a8fc-466e-aef4-9d47733701c5",
                     "label": "mountains",
                     "components": [],
                     "texture": {
@@ -75,7 +78,7 @@
                 },
                 {
                     "type": "Image",
-                    "id": "edb9c700-0a8b-4c48-bfd5-4c74e91b5c17",
+                    "id": "7195e0a7-5c4e-4f00-9419-5a583b6c23e2",
                     "label": "island",
                     "components": [],
                     "texture": {
@@ -83,11 +86,12 @@
                         "frame": "island"
                     },
                     "x": -12,
-                    "y": -10
+                    "y": -10,
+                    "originX": 0.5005417118093174
                 },
                 {
                     "type": "Image",
-                    "id": "5c64a2da-bf48-4d74-a077-30300d0f85b7",
+                    "id": "0641ff28-946b-4d7c-8d9d-368067367dc1",
                     "label": "mtn",
                     "components": [
                         "Button"
@@ -103,29 +107,32 @@
                 },
                 {
                     "type": "Image",
-                    "id": "c95bd268-af44-4f26-8b57-e8d55fa89b54",
+                    "id": "50d7b312-f4fe-47d2-bf65-2e4d25bfeebc",
                     "label": "village",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "village",
-                    "Button.callback": "() => { this.onRoomClick(200) }",
+                    "Button.callback": "() => this.onRoomClick(200)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
                         "frame": "village"
                     },
                     "x": -181,
-                    "y": -159
+                    "y": -159,
+                    "originX": 0.503030303030303,
+                    "originY": 0.5041322314049587
                 },
                 {
                     "type": "Image",
-                    "id": "48697a5d-c6d1-4a02-819a-c5b8775bfc8a",
+                    "id": "a389ddf6-8668-40bf-8f74-ccddc823e608",
                     "label": "beach",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "beach",
+                    "Button.callback": "() => this.onRoomClick(400)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
@@ -136,30 +143,31 @@
                 },
                 {
                     "type": "Image",
-                    "id": "1cad58f9-47d6-40f0-8884-7005765b0850",
+                    "id": "df5b5b0b-75a3-4fcf-9d3c-0949e2b203a6",
                     "label": "dock",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "dock",
-                    "Button.callback": "() => { this.onRoomClick(800) }",
+                    "Button.callback": "() => this.onRoomClick(800)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
                         "frame": "dock"
                     },
                     "x": -370,
-                    "y": 134
+                    "y": 134,
+                    "originY": 0.5037037037037037
                 },
                 {
                     "type": "Image",
-                    "id": "ada151eb-d62c-45cd-a80b-8f59eca3055c",
+                    "id": "6ebf11b0-353f-4461-b443-5b908e39f478",
                     "label": "town",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "town",
-                    "Button.callback": "() => { this.onRoomClick(100) }",
+                    "Button.callback": "() => this.onRoomClick(100)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
@@ -170,23 +178,26 @@
                 },
                 {
                     "type": "Image",
-                    "id": "7de47079-9407-4049-86f5-356a3b041b32",
+                    "id": "a9575e75-c858-4cb9-8a36-d203a05d6f41",
                     "label": "forts",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "forts",
+                    "Button.callback": "() => this.onRoomClick(801)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
                         "frame": "forts"
                     },
                     "x": 78,
-                    "y": 50
+                    "y": 50,
+                    "originX": 0.5045045045045045,
+                    "originY": 0.5045871559633027
                 },
                 {
                     "type": "Image",
-                    "id": "ab1952f8-b32f-4817-ab44-93b746e7b923",
+                    "id": "4cd7313a-df16-45c5-982d-47ef02db8644",
                     "label": "igloo",
                     "components": [
                         "Button"
@@ -202,41 +213,43 @@
                 },
                 {
                     "type": "Image",
-                    "id": "ebab9d5e-21bf-4291-8e69-9d4c47862543",
+                    "id": "d3b40e62-b025-4aa8-8921-e44f27622978",
                     "label": "plaza",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "plaza",
-                    "Button.callback": "() => { this.onRoomClick(300) }",
+                    "Button.callback": "() => this.onRoomClick(300)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
                         "frame": "plaza"
                     },
                     "x": 264,
-                    "y": 42
+                    "y": 42,
+                    "originY": 0.5038167938931297
                 },
                 {
                     "type": "Image",
-                    "id": "091aa901-1d70-4b5b-a185-3ca1179e0d84",
+                    "id": "ad02f0a0-536f-4527-916d-160fbff13923",
                     "label": "rink",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "rink",
-                    "Button.callback": "() => { this.onRoomClick(802) }",
+                    "Button.callback": "() => this.onRoomClick(802)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
                         "frame": "rink"
                     },
                     "x": 52,
-                    "y": -78
+                    "y": -78,
+                    "originX": 0.5023041474654378
                 },
                 {
                     "type": "Image",
-                    "id": "326379c0-9514-4191-81a2-a5a304ba310c",
+                    "id": "49d0d4bf-c5a0-4b1d-8ca8-f81b4bf1e890",
                     "label": "forest",
                     "components": [
                         "Button"
@@ -248,11 +261,13 @@
                         "frame": "forest"
                     },
                     "x": 291,
-                    "y": -64
+                    "y": -64,
+                    "originX": 0.5027027027027027,
+                    "originY": 0.5057471264367817
                 },
                 {
                     "type": "Image",
-                    "id": "3fb1a7d1-acee-4efd-a469-1d131b45cfd4",
+                    "id": "b44b0389-8323-44c5-9b76-6930d99d787c",
                     "label": "cove",
                     "components": [
                         "Button"
@@ -264,11 +279,12 @@
                         "frame": "cove"
                     },
                     "x": 334,
-                    "y": -149
+                    "y": -149,
+                    "originY": 0.5058823529411764
                 },
                 {
                     "type": "Image",
-                    "id": "53528dbf-77a2-4a02-b89d-ec4ffda769c4",
+                    "id": "a36839c5-3b16-4c3f-b57f-bba9dc74caa9",
                     "label": "mine",
                     "components": [
                         "Button"
@@ -280,11 +296,12 @@
                         "frame": "mine"
                     },
                     "x": 168,
-                    "y": -194
+                    "y": -194,
+                    "originX": 0.5042016806722689
                 },
                 {
                     "type": "Image",
-                    "id": "008eebce-1137-4123-97c3-78447be90dea",
+                    "id": "6ef9d490-a6ca-4c85-88d6-7a6a329da016",
                     "label": "berg",
                     "components": [
                         "Button"
@@ -300,7 +317,7 @@
                 },
                 {
                     "type": "Image",
-                    "id": "ee452c9a-6118-4182-9a0c-0960e662e2e1",
+                    "id": "6ff6b726-9bc1-4d27-8da8-381fb36f8e39",
                     "label": "note",
                     "components": [
                         "Interactive"
@@ -310,7 +327,8 @@
                         "frame": "note"
                     },
                     "x": 419,
-                    "y": 262
+                    "y": 262,
+                    "originX": 0.5017667844522968
                 },
                 {
                     "type": "Image",
