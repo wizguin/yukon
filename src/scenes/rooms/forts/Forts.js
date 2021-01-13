@@ -99,6 +99,12 @@ class Forts extends RoomScene {
                 x: 520,
                 y: 320,
                 callback : () => { this.triggerRoom(802, 780, 340) }
+            },
+            {
+                body: this.roomPhysics.plaza,
+                x: 1455,
+                y: 670,
+                callback : () => { this.triggerRoom(300, 340, 660) }
             }
         ]
     }

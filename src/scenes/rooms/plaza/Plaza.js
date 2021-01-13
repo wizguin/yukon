@@ -79,6 +79,18 @@ class Plaza extends RoomScene {
     }
 
     /* START-USER-CODE */
+
+    get roomTriggers() {
+        return [
+            {
+                body: this.roomPhysics.forts,
+                x: 125,
+                y: 550,
+                callback : () => { this.triggerRoom(801, 1284, 720) }
+            }
+        ]
+    }
+
     /* END-USER-CODE */
 }
 
