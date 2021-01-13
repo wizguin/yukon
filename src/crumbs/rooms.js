@@ -1,5 +1,6 @@
 import Attic from '@rooms/attic/Attic'
 import Beach from '@rooms/beach/Beach'
+import Cove from '@rooms/cove/Cove'
 import Dock from '@rooms/dock/Dock'
 import Forts from '@rooms/forts/Forts'
 import Lodge from '@rooms/lodge/Lodge'
@@ -63,6 +64,12 @@ const rooms = {
         scene: Rink,
         x: 770,
         y: 400
+    },
+    810: {
+        name: 'Cove',
+        scene: Cove,
+        x: 840,
+        y: 480
     }
 }
 

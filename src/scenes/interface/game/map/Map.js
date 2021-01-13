@@ -177,6 +177,7 @@ class Map extends BaseContainer {
         // cove (components)
         const coveButton = new Button(cove);
         coveButton.spriteName = "cove";
+        coveButton.callback = () => this.onRoomClick(810);
         coveButton.activeFrame = false;
 
         // mine (components)

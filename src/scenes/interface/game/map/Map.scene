@@ -273,6 +273,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "cove",
+                    "Button.callback": "() => this.onRoomClick(810)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
