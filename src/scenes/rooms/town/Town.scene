@@ -261,7 +261,14 @@
             "id": "b1ee46a5-a8cc-4134-84ca-72009a3f91e3",
             "label": "sort",
             "objectIds": [
-                "79ce3240-4965-41fc-a51b-a2b6ec9c624d"
+                "79ce3240-4965-41fc-a51b-a2b6ec9c624d",
+                "0c94c016-2a42-4413-bfc0-abe028143024",
+                "d2f7523e-4ee3-4112-afea-1031b0bde58e",
+                "40a013ea-83e9-4eff-8634-46134d60d75a",
+                "97ca136f-d936-4bb2-8db1-381245bfaa5b",
+                "da800ad3-3d6f-4c6b-be77-696bbf7e30b5",
+                "dafb207c-e4d9-4941-83f8-9351f393e0a0",
+                "52130162-4cfc-4f67-b4b2-fa16fd824ee2"
             ]
         }
     ]

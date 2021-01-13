@@ -91,7 +91,7 @@ class Town extends RoomScene {
         table_1.setOrigin(0.49572649572649574, 0.7830188679245284);
 
         // lists
-        const sort = [fg]
+        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2]
 
         this.sort = sort;
     }
