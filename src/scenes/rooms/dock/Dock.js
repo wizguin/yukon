@@ -87,6 +87,12 @@ class Dock extends RoomScene {
     get roomTriggers() {
         return [
             {
+                body: this.roomPhysics.beach,
+                x: 90,
+                y: 420,
+                callback : () => { this.triggerRoom(400, 950, 430) }
+            },
+            {
                 body: this.roomPhysics.village,
                 x: 330,
                 y: 220,

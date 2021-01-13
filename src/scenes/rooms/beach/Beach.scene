@@ -1,0 +1,232 @@
+{
+    "id": "24db8785-cf30-469d-a74f-ea97eb924543",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/beach/beach-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Beach",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "3ea95aa1-108f-428e-b3ae-83ad38cc1bf3",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "bg"
+            },
+            "x": -20,
+            "y": -20,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "4012baa0-518e-4853-9e83-d20c84ba503d",
+            "label": "lighthouse_door",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "lighthouse_door"
+            },
+            "x": 388,
+            "y": 216,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "a8d842d4-6bc1-4716-85f4-0f36cc59f6d3",
+            "label": "cage",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "cage"
+            },
+            "x": 232,
+            "y": 352,
+            "originX": 0.4935064935064935
+        },
+        {
+            "type": "Image",
+            "id": "b2b4b1cb-12e9-4604-9913-ed9514d3f98c",
+            "label": "buoy",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "buoy"
+            },
+            "x": 194,
+            "y": 428,
+            "originX": 0.5185185185185185,
+            "originY": 0.4965034965034965
+        },
+        {
+            "type": "Image",
+            "id": "60d6901e-4fdf-4814-bf8f-7f012aaa7678",
+            "label": "fish",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "fish"
+            },
+            "x": 297,
+            "y": 392,
+            "originX": 0.4782608695652174,
+            "originY": 0.4956521739130435
+        },
+        {
+            "type": "Image",
+            "id": "e6eeb0bc-357d-45f6-944b-5b556e34731d",
+            "label": "net",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "net"
+            },
+            "x": 290,
+            "y": 465,
+            "originX": 0.49767441860465117
+        },
+        {
+            "type": "Image",
+            "id": "ecf3d23d-1704-4df6-9e8d-59c0d57d7f21",
+            "label": "fg",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "fg"
+            },
+            "x": 1217,
+            "y": 293,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "6962a5eb-c8c8-4689-b4bb-23126518fcc1",
+            "label": "sign",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "sign"
+            },
+            "x": 1146,
+            "y": 323,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "d61413a7-c14f-4606-a0b5-9f2e391242f8",
+            "label": "chair_ground",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "chair_ground"
+            },
+            "x": 906,
+            "y": 524,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "415dd9a9-d5e8-447e-8cb4-a51fdfd7a503",
+            "label": "chair_2",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "chair_2"
+            },
+            "x": 1060,
+            "y": 501,
+            "originX": 0.5185185185185185,
+            "originY": 0.6060606060606061
+        },
+        {
+            "type": "Image",
+            "id": "7c8f2975-d88a-4e02-8a8b-2c1f0ffdb26b",
+            "label": "chair_2_front",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "chair_2_front"
+            },
+            "x": 1053,
+            "y": 522,
+            "originY": 0.6764705882352942
+        },
+        {
+            "type": "Image",
+            "id": "c372b672-3064-41e6-b681-70b5180c1b28",
+            "label": "chair_1",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "chair_1"
+            },
+            "x": 961,
+            "y": 526,
+            "originY": 0.58778626
+        },
+        {
+            "type": "Image",
+            "id": "7dd9eb62-1537-4f6c-b67f-74fcd38f2154",
+            "label": "chair_1_front",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "chair_1_front"
+            },
+            "x": 943,
+            "y": 542,
+            "originX": 0.4,
+            "originY": 0.67054264
+        },
+        {
+            "type": "Image",
+            "id": "88cb8488-1341-4273-9776-5481d3092d3b",
+            "label": "bucket_bucket0001",
+            "components": [],
+            "texture": {
+                "key": "beach",
+                "frame": "bucket/bucket0001"
+            },
+            "x": 1078,
+            "y": 612,
+            "originX": 0.8863109,
+            "originY": 0.94611727
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "1bc796af-8118-4a54-b624-39e93ad42d65",
+            "label": "sort",
+            "objectIds": [
+                "88cb8488-1341-4273-9776-5481d3092d3b",
+                "7dd9eb62-1537-4f6c-b67f-74fcd38f2154",
+                "c372b672-3064-41e6-b681-70b5180c1b28",
+                "7c8f2975-d88a-4e02-8a8b-2c1f0ffdb26b",
+                "415dd9a9-d5e8-447e-8cb4-a51fdfd7a503",
+                "e6eeb0bc-357d-45f6-944b-5b556e34731d",
+                "60d6901e-4fdf-4814-bf8f-7f012aaa7678",
+                "b2b4b1cb-12e9-4604-9913-ed9514d3f98c",
+                "a8d842d4-6bc1-4716-85f4-0f36cc59f6d3"
+            ]
+        }
+    ]
+}
