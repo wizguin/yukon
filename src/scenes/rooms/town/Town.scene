@@ -84,97 +84,6 @@
         },
         {
             "type": "Image",
-            "id": "b0cee8a3-3f11-4cf4-91e0-79ab97772e34",
-            "label": "chair_2",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "chair_2"
-            },
-            "x": 438,
-            "y": 462,
-            "originY": 0.27358490566037735
-        },
-        {
-            "type": "Image",
-            "id": "b93ec5ce-ef8e-4b90-a0e2-bb7117726ad4",
-            "label": "table_2",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "table_2"
-            },
-            "x": 483,
-            "y": 522,
-            "originY": 0.79126214
-        },
-        {
-            "type": "Image",
-            "id": "dd428f5c-a559-4435-ace5-bbc8604e8f12",
-            "label": "chair_1",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "chair_1"
-            },
-            "x": 401,
-            "y": 511,
-            "originY": 0.2857142857142857
-        },
-        {
-            "type": "Image",
-            "id": "13a8d1cc-fca5-440b-b800-2e17d01b5c77",
-            "label": "table_1",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "table_1"
-            },
-            "x": 454,
-            "y": 575,
-            "originY": 0.7830188679245284
-        },
-        {
-            "type": "Image",
-            "id": "dc917ba7-c5d3-4785-a84b-26c37e69a8b2",
-            "label": "box_1",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "box_1"
-            },
-            "x": 973,
-            "y": 432,
-            "originY": 0.63432836
-        },
-        {
-            "type": "Image",
-            "id": "b4a980c3-bd8e-461f-ae73-f3a6007a8251",
-            "label": "box_2",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "box_2"
-            },
-            "x": 955,
-            "y": 483,
-            "originY": 0.67894737
-        },
-        {
-            "type": "Image",
-            "id": "9790583b-c4e0-40e7-ac49-b1bbc8caad84",
-            "label": "box_3",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "box_3"
-            },
-            "x": 1148,
-            "y": 582,
-            "originY": 0.56329114
-        },
-        {
-            "type": "Image",
             "id": "5c2f7dd4-607f-4d1d-afcd-cb7b37bdbe0f",
             "label": "gift_door",
             "components": [],
@@ -189,16 +98,17 @@
         },
         {
             "type": "Image",
-            "id": "399808fd-be84-4d7e-a82c-56928192b452",
+            "id": "bfabdf1f-c4c7-4ece-8599-ca93c8326447",
             "label": "canopy",
             "components": [],
             "texture": {
                 "key": "town",
                 "frame": "canopy"
             },
-            "x": 693,
+            "x": 692,
             "y": 464,
-            "originY": 0.94036697
+            "originX": 0.49606299212598426,
+            "originY": 0.9403669724770642
         },
         {
             "type": "Image",
@@ -241,6 +151,103 @@
             "y": -75,
             "originX": 0,
             "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "d2f7523e-4ee3-4112-afea-1031b0bde58e",
+            "label": "box_1",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "box_1"
+            },
+            "x": 973,
+            "y": 432,
+            "originX": 0.49382716049382713,
+            "originY": 0.6268656716417911
+        },
+        {
+            "type": "Image",
+            "id": "0c94c016-2a42-4413-bfc0-abe028143024",
+            "label": "box_2",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "box_2"
+            },
+            "x": 954,
+            "y": 483,
+            "originX": 0.49504950495049505,
+            "originY": 0.6736842105263158
+        },
+        {
+            "type": "Image",
+            "id": "40a013ea-83e9-4eff-8634-46134d60d75a",
+            "label": "box_3",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "box_3"
+            },
+            "x": 1148,
+            "y": 581,
+            "originX": 0.4943820224719101,
+            "originY": 0.5569620253164557
+        },
+        {
+            "type": "Image",
+            "id": "97ca136f-d936-4bb2-8db1-381245bfaa5b",
+            "label": "chair_2",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "chair_2"
+            },
+            "x": 436,
+            "y": 462,
+            "originX": 0.49382716049382713,
+            "originY": 0.27358490566037735
+        },
+        {
+            "type": "Image",
+            "id": "52130162-4cfc-4f67-b4b2-fa16fd824ee2",
+            "label": "table_2",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "table_2"
+            },
+            "x": 485,
+            "y": 523,
+            "originY": 0.7864077669902912
+        },
+        {
+            "type": "Image",
+            "id": "da800ad3-3d6f-4c6b-be77-696bbf7e30b5",
+            "label": "chair_1",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "chair_1"
+            },
+            "x": 402,
+            "y": 511,
+            "originX": 0.49411764705882355,
+            "originY": 0.2857142857142857
+        },
+        {
+            "type": "Image",
+            "id": "dafb207c-e4d9-4941-83f8-9351f393e0a0",
+            "label": "table_1",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "table_1"
+            },
+            "x": 455,
+            "y": 575,
+            "originX": 0.49572649572649574,
+            "originY": 0.7830188679245284
         }
     ],
     "plainObjects": [],
@@ -254,14 +261,7 @@
             "id": "b1ee46a5-a8cc-4134-84ca-72009a3f91e3",
             "label": "sort",
             "objectIds": [
-                "79ce3240-4965-41fc-a51b-a2b6ec9c624d",
-                "dd428f5c-a559-4435-ace5-bbc8604e8f12",
-                "13a8d1cc-fca5-440b-b800-2e17d01b5c77",
-                "b0cee8a3-3f11-4cf4-91e0-79ab97772e34",
-                "b93ec5ce-ef8e-4b90-a0e2-bb7117726ad4",
-                "dc917ba7-c5d3-4785-a84b-26c37e69a8b2",
-                "b4a980c3-bd8e-461f-ae73-f3a6007a8251",
-                "9790583b-c4e0-40e7-ac49-b1bbc8caad84"
+                "79ce3240-4965-41fc-a51b-a2b6ec9c624d"
             ]
         }
     ]
