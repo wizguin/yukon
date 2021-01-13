@@ -122,6 +122,18 @@ class Rink extends RoomScene {
     }
 
     /* START-USER-CODE */
+
+    get roomTriggers() {
+        return [
+            {
+                body: this.roomPhysics.forts,
+                x: 765,
+                y: 190,
+                callback : () => { this.triggerRoom(801, 560, 400) }
+            }
+        ]
+    }
+
     /* END-USER-CODE */
 }
 

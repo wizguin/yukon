@@ -105,6 +105,12 @@ class Town extends RoomScene {
                 x: 130,
                 y: 580,
                 callback : () => { this.triggerRoom(800, 1200, 400) }
+            },
+            {
+                body: this.roomPhysics.forts,
+                x: 1380,
+                y: 580,
+                callback : () => { this.triggerRoom(801, 360, 520) }
             }
         ]
     }
