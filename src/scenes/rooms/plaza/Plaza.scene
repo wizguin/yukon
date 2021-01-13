@@ -57,32 +57,6 @@
         },
         {
             "type": "Image",
-            "id": "80fc9eda-4cee-4224-9895-3ed352215762",
-            "label": "stage_door_1",
-            "components": [],
-            "texture": {
-                "key": "plaza",
-                "frame": "stage_door_1"
-            },
-            "x": 733,
-            "y": 385,
-            "originY": 0.45679
-        },
-        {
-            "type": "Image",
-            "id": "f05e408e-53d1-4aa1-8371-f0d3ccce1dfa",
-            "label": "stage_door_2",
-            "components": [],
-            "texture": {
-                "key": "plaza",
-                "frame": "stage_door_2"
-            },
-            "x": 958,
-            "y": 385,
-            "originY": 0.45679
-        },
-        {
-            "type": "Image",
             "id": "b523771a-425c-42a3-8512-8209c7bc2d7a",
             "label": "pizza_door",
             "components": [],
@@ -97,7 +71,7 @@
         },
         {
             "type": "Image",
-            "id": "a5831911-1f3f-4f17-94d0-a69e8045a6b1",
+            "id": "4cbdd610-b504-42d8-8743-1fbda48c3c9b",
             "label": "stage_lights_back0001",
             "components": [],
             "texture": {
@@ -105,7 +79,8 @@
                 "frame": "stage_lights_back0001"
             },
             "x": 851,
-            "y": 174
+            "y": 174,
+            "originX": 0.5011764705882353
         },
         {
             "type": "Image",
@@ -121,18 +96,6 @@
         },
         {
             "type": "Image",
-            "id": "142c4594-3c76-4932-a93c-31cffe3168d5",
-            "label": "text",
-            "components": [],
-            "texture": {
-                "key": "plaza",
-                "frame": "text"
-            },
-            "x": 851,
-            "y": 248
-        },
-        {
-            "type": "Image",
             "id": "bc77f388-6cf6-4a0d-a2e2-aa77337d24e0",
             "label": "stage_lights_front0001",
             "components": [],
@@ -142,19 +105,6 @@
             },
             "x": 853,
             "y": 166
-        },
-        {
-            "type": "Image",
-            "id": "05caec4d-6fa1-4eb9-9ba9-95c690a5ad2f",
-            "label": "tickets",
-            "components": [],
-            "texture": {
-                "key": "plaza",
-                "frame": "tickets"
-            },
-            "x": 846,
-            "y": 457,
-            "originY": 0.9247311827956989
         },
         {
             "type": "Image",
@@ -183,6 +133,61 @@
             "y": 200,
             "originX": 0,
             "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "51061cdc-f70a-4e59-b0f3-2a5aa91e8040",
+            "label": "stage_door_1",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_door_1"
+            },
+            "x": 733,
+            "y": 385,
+            "originX": 0.5045871559633027,
+            "originY": 0.4567901234567901
+        },
+        {
+            "type": "Image",
+            "id": "50a9ce54-f89e-4569-b0b8-86b834c33508",
+            "label": "stage_door_2",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "stage_door_2"
+            },
+            "x": 958,
+            "y": 385,
+            "originX": 0.5045871559633027,
+            "originY": 0.4567901234567901
+        },
+        {
+            "type": "Image",
+            "id": "e6064661-b8d1-44d5-baa6-27a0f534f6a5",
+            "label": "tickets",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "tickets"
+            },
+            "x": 846,
+            "y": 457,
+            "originX": 0.49612403100775193,
+            "originY": 0.9247311827956989
+        },
+        {
+            "type": "Image",
+            "id": "4778c541-1443-4ddf-b416-858568a08728",
+            "label": "text",
+            "components": [],
+            "texture": {
+                "key": "plaza",
+                "frame": "text"
+            },
+            "x": 851,
+            "y": 248,
+            "originY": 0.49333333333333335
         }
     ],
     "plainObjects": [],
@@ -196,8 +201,8 @@
             "id": "9c185332-22f1-4d89-8194-2666eda5e6ad",
             "label": "sort",
             "objectIds": [
-                "05caec4d-6fa1-4eb9-9ba9-95c690a5ad2f",
-                "d1edf127-2391-44cd-a58f-48dc7184c82b"
+                "d1edf127-2391-44cd-a58f-48dc7184c82b",
+                "e6064661-b8d1-44d5-baa6-27a0f534f6a5"
             ]
         }
     ]

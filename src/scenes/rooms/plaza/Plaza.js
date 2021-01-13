@@ -34,33 +34,19 @@ class Plaza extends RoomScene {
         const cave_door = this.add.image(564, 510, "plaza", "cave_door");
         cave_door.setOrigin(0.473684, 0.781513);
 
-        // stage_door_1
-        const stage_door_1 = this.add.image(733, 385, "plaza", "stage_door_1");
-        stage_door_1.setOrigin(0.5, 0.45679);
-
-        // stage_door_2
-        const stage_door_2 = this.add.image(958, 385, "plaza", "stage_door_2");
-        stage_door_2.setOrigin(0.5, 0.45679);
-
         // pizza_door
         const pizza_door = this.add.image(1194, 410, "plaza", "pizza_door");
         pizza_door.setOrigin(0.5311, 0.442211);
 
         // stage_lights_back0001
-        this.add.image(851, 174, "plaza", "stage_lights_back0001");
+        const stage_lights_back0001 = this.add.image(851, 174, "plaza", "stage_lights_back0001");
+        stage_lights_back0001.setOrigin(0.5011764705882353, 0.5);
 
         // stage_screen
         this.add.image(847, 221, "plaza", "stage_screen");
 
-        // text
-        this.add.image(851, 248, "plaza", "text");
-
         // stage_lights_front0001
         this.add.image(853, 166, "plaza", "stage_lights_front0001");
-
-        // tickets
-        const tickets = this.add.image(846, 457, "plaza", "tickets");
-        tickets.setOrigin(0.5, 0.9247311827956989);
 
         // lamp
         const lamp = this.add.image(129, 827, "plaza", "lamp");
@@ -70,8 +56,24 @@ class Plaza extends RoomScene {
         const title = this.add.image(725, 200, "plaza", "title");
         title.setOrigin(0, 0);
 
+        // stage_door_1
+        const stage_door_1 = this.add.image(733, 385, "plaza", "stage_door_1");
+        stage_door_1.setOrigin(0.5045871559633027, 0.4567901234567901);
+
+        // stage_door_2
+        const stage_door_2 = this.add.image(958, 385, "plaza", "stage_door_2");
+        stage_door_2.setOrigin(0.5045871559633027, 0.4567901234567901);
+
+        // tickets
+        const tickets = this.add.image(846, 457, "plaza", "tickets");
+        tickets.setOrigin(0.49612403100775193, 0.9247311827956989);
+
+        // text
+        const text = this.add.image(851, 248, "plaza", "text");
+        text.setOrigin(0.5, 0.49333333333333335);
+
         // lists
-        const sort = [tickets, lamp]
+        const sort = [lamp, tickets]
 
         this.sort = sort;
     }
