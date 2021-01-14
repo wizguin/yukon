@@ -121,6 +121,7 @@ class Map extends BaseContainer {
         // mtn (components)
         const mtnButton = new Button(mtn);
         mtnButton.spriteName = "mtn";
+        mtnButton.callback = () => this.onRoomClick(230);
         mtnButton.activeFrame = false;
 
         // village (components)

@@ -1,0 +1,230 @@
+{
+    "id": "c6f5636b-d3ba-4ce2-bc1d-af06cb6a7d61",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/mtn/mtn-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Mtn",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "9276e7ab-0fd9-44c4-a644-321d4c8c2888",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "bg"
+            },
+            "x": -21,
+            "y": -19,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "eaf9e9be-ca78-4327-be22-3bddc6fb28a7",
+            "label": "chair_chair0001",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "chair/chair0001"
+            },
+            "x": 846,
+            "y": 75,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "1abbdc89-c43a-40a3-9750-3d0d7a800f8e",
+            "label": "mountain",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "mountain"
+            },
+            "x": -21,
+            "y": 214,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "9aa8b583-902d-4dfe-a8cf-cc853faf2676",
+            "label": "pole",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "pole"
+            },
+            "x": 727,
+            "y": 359,
+            "originX": 0.6204081632653061,
+            "originY": 0.9194630872483222
+        },
+        {
+            "type": "Image",
+            "id": "124720c1-f214-45b6-88d4-0325da8e2114",
+            "label": "sled",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "sled"
+            },
+            "x": 532,
+            "y": 284,
+            "originX": 0.8289473684210527,
+            "originY": 0.7647058823529411
+        },
+        {
+            "type": "Image",
+            "id": "cd1933ae-fcd6-41e3-96e7-4b9b0636560b",
+            "label": "catalog_small",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "catalog_small"
+            },
+            "x": 520,
+            "y": 407,
+            "originX": 0.49230769230769234,
+            "originY": 3.685185185185185
+        },
+        {
+            "type": "Image",
+            "id": "1c5792fa-1ebb-4c76-80a3-3844bf374b53",
+            "label": "barrier_1",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_1"
+            },
+            "x": 282,
+            "y": 533,
+            "originY": 0.45901639344262296
+        },
+        {
+            "type": "Image",
+            "id": "74c6b487-49c2-4d99-91de-5cbcd18b710c",
+            "label": "barrier_1_1",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_1"
+            },
+            "x": 341,
+            "y": 572,
+            "originY": 0.45901639344262296
+        },
+        {
+            "type": "Image",
+            "id": "3f89ca97-4ee3-4e70-a2c7-cc6c53d3a3bd",
+            "label": "barrier_1_2",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_1"
+            },
+            "x": 404,
+            "y": 612,
+            "originY": 0.45901639344262296
+        },
+        {
+            "type": "Image",
+            "id": "c083ad69-215c-4727-aa47-c688074f9421",
+            "label": "barrier_1_3",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_1"
+            },
+            "x": 584,
+            "y": 697,
+            "angle": -15,
+            "originY": 0.45901639344262296
+        },
+        {
+            "type": "Image",
+            "id": "2d86727f-e5d7-4a89-a46d-846b9a9f71d9",
+            "label": "barrier_2",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_2"
+            },
+            "x": 654,
+            "y": 707,
+            "originX": 0.48,
+            "originY": 0.47761194029850745
+        },
+        {
+            "type": "Image",
+            "id": "41ffb611-2532-4e73-8664-f5143a98ab87",
+            "label": "barrier_2_1",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_2"
+            },
+            "x": 903,
+            "y": 747,
+            "originX": 0.48,
+            "originY": 0.47761194029850745
+        },
+        {
+            "type": "Image",
+            "id": "c78f0d5e-64d2-4bf0-a7bf-d520a4b369a4",
+            "label": "barrier_1_4",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "barrier_1"
+            },
+            "x": 1120,
+            "y": 651,
+            "originY": 0.45901639344262296,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "85cf3723-7671-4140-a0c0-d0f430f57910",
+            "label": "express",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "express"
+            },
+            "x": 1061,
+            "y": 809,
+            "originX": 0.4647887323943662,
+            "originY": 0.875
+        },
+        {
+            "type": "Image",
+            "id": "7bbb8294-2b6c-499d-a669-848e6a4508ca",
+            "label": "penguin_run",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "penguin_run"
+            },
+            "x": 524,
+            "y": 606,
+            "originX": 0.6390977443609023,
+            "originY": 0.943089430894309
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

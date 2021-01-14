@@ -102,6 +102,12 @@ class Village extends RoomScene {
                 x: 320,
                 y: 880,
                 callback : () => { this.triggerRoom(400, 920, 360) }
+            },
+            {
+                body: this.roomPhysics.mtn,
+                x: 410,
+                y: 430,
+                callback : () => { this.triggerRoom(230, 840, 320) }
             }
         ]
     }

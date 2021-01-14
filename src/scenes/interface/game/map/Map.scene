@@ -98,6 +98,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "mtn",
+                    "Button.callback": "() => this.onRoomClick(230)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",

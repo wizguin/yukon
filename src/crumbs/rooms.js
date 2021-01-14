@@ -6,6 +6,7 @@ import DojoExt from '@rooms/dojoext/DojoExt'
 import Forest from '@rooms/forest/Forest'
 import Forts from '@rooms/forts/Forts'
 import Lodge from '@rooms/lodge/Lodge'
+import Mtn from '@rooms/mtn/Mtn'
 import Plaza from '@rooms/plaza/Plaza'
 import Rink from '@rooms/rink/Rink'
 import Shack from '@rooms/shack/Shack'
@@ -37,6 +38,12 @@ const rooms = {
         scene: Attic,
         x: 966,
         y: 560
+    },
+    230: {
+        name: 'Mtn',
+        scene: Mtn,
+        x: 760,
+        y: 440
     },
     300: {
         name: 'Plaza',
