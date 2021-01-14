@@ -1,0 +1,327 @@
+{
+    "id": "60b45cef-141d-418d-9738-29099a7e710e",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/shack/shack-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Shack",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "a4b24e65-8e8b-4ada-b3aa-63dc7881ba72",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "bg"
+            },
+            "x": -22,
+            "y": 1,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "ff7b1ff6-a9df-445d-8653-ccaab4b6525d",
+            "label": "plant",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "plant"
+            },
+            "x": -28,
+            "y": 122,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "4edbc7bd-61a1-4bcf-9d00-771ca8df84ff",
+            "label": "trees_1",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "trees_1"
+            },
+            "x": 196,
+            "y": 645,
+            "originX": 0.8208955223880597,
+            "originY": 0.36511156186612576
+        },
+        {
+            "type": "Image",
+            "id": "43d346f4-3000-4ed0-a8f2-b4bd8fc16119",
+            "label": "plant_doors",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "plant_doors"
+            },
+            "x": 6,
+            "y": 355,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "1b75df5a-e789-491c-98d5-76fa6178cd01",
+            "label": "flowers",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "flowers"
+            },
+            "x": 206,
+            "y": 464,
+            "originX": 0.5352112676056338,
+            "originY": 0.7903225806451613
+        },
+        {
+            "type": "Image",
+            "id": "3a45e1fd-9a4d-4631-b4e8-176f722f7f02",
+            "label": "tree",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "tree"
+            },
+            "x": 290,
+            "y": 365,
+            "originX": 0.15776699029126215,
+            "originY": 0.8953488372093024
+        },
+        {
+            "type": "Image",
+            "id": "9a0a504e-14ce-4e47-a4c4-b2ca2dc2a306",
+            "label": "cart_2",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "cart_2"
+            },
+            "x": 625,
+            "y": 526,
+            "originX": 0.5206611570247934,
+            "originY": 0.7475728155339806
+        },
+        {
+            "type": "Image",
+            "id": "c5c109f1-761a-4b75-b951-88bc9f1b107f",
+            "label": "cart_1",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "cart_1"
+            },
+            "x": 519,
+            "y": 568,
+            "originX": 0.4928571428571429,
+            "originY": 0.7401574803149606
+        },
+        {
+            "type": "Image",
+            "id": "b1a96675-73c0-4550-9e90-cd46ef205df8",
+            "label": "fence",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "fence"
+            },
+            "x": 718,
+            "y": 584,
+            "originX": 0.5180722891566265,
+            "originY": 0.5562130177514792
+        },
+        {
+            "type": "Image",
+            "id": "a446c3cf-8762-40b4-98f3-ab6ea6dca0c1",
+            "label": "shovel",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "shovel"
+            },
+            "x": 1143,
+            "y": 470,
+            "originX": 0.17543859649122806,
+            "originY": 0.856
+        },
+        {
+            "type": "Image",
+            "id": "057c49b1-bfc1-468c-b342-0d224d03b020",
+            "label": "barrel_2",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "barrel_2"
+            },
+            "x": 1252,
+            "y": 492,
+            "originX": 0.759493670886076,
+            "originY": 0.8953488372093024
+        },
+        {
+            "type": "Image",
+            "id": "d6016795-3581-4a4c-b316-f44c5efdc1e2",
+            "label": "bag",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "bag"
+            },
+            "x": 1164,
+            "y": 503,
+            "originX": 0.09859154929577464,
+            "originY": 0.7682926829268293
+        },
+        {
+            "type": "Image",
+            "id": "ed7d3cf2-15d8-4ed5-808c-33a2e61b6b1e",
+            "label": "bear",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "bear"
+            },
+            "x": 1142,
+            "y": 482,
+            "originX": 0.71,
+            "originY": 0.7178423236514523
+        },
+        {
+            "type": "Image",
+            "id": "1b6a1590-c0ce-462d-8978-e273efb984ac",
+            "label": "flowers_1",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "flowers"
+            },
+            "x": 1003,
+            "y": 537,
+            "originX": 0.5352112676056338,
+            "originY": 0.7903225806451613
+        },
+        {
+            "type": "Image",
+            "id": "9e25e333-7a12-490b-92fa-fca1f4f4166b",
+            "label": "house_back",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "house_back"
+            },
+            "x": 1298,
+            "y": 332,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "567d0c6e-11d2-4eeb-9dde-dc510dfde6ab",
+            "label": "barrel",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "barrel"
+            },
+            "x": 1367,
+            "y": 398,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "e0583c81-2e85-4c6f-a881-1e67317c684e",
+            "label": "house",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "house"
+            },
+            "x": 1291,
+            "y": 500,
+            "originX": 0.08679245283018867,
+            "originY": 0.8169014084507042
+        },
+        {
+            "type": "Image",
+            "id": "81dacd10-d79b-45be-8105-9626ee126513",
+            "label": "pipe_10001",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "pipe_10001"
+            },
+            "x": 1004,
+            "y": 588,
+            "originX": 0.44106463878326996,
+            "originY": 0.40707964601769914
+        },
+        {
+            "type": "Image",
+            "id": "53559ae5-dc78-47be-852f-e0a590982e1f",
+            "label": "pipe_20001",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "pipe_20001"
+            },
+            "x": 1268,
+            "y": 681,
+            "originX": 0.054945054945054944,
+            "originY": 0.3333333333333333
+        },
+        {
+            "type": "Image",
+            "id": "4d5377c0-4850-4c54-a790-a347b2765240",
+            "label": "trees_2",
+            "components": [],
+            "texture": {
+                "key": "shack",
+                "frame": "trees_2"
+            },
+            "x": 1204,
+            "y": 968,
+            "originX": 0,
+            "originY": 1
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "5b05df9c-2b13-4c2e-9199-6607fd85e390",
+            "label": "sort",
+            "objectIds": [
+                "e0583c81-2e85-4c6f-a881-1e67317c684e",
+                "81dacd10-d79b-45be-8105-9626ee126513",
+                "53559ae5-dc78-47be-852f-e0a590982e1f",
+                "4d5377c0-4850-4c54-a790-a347b2765240",
+                "567d0c6e-11d2-4eeb-9dde-dc510dfde6ab",
+                "1b6a1590-c0ce-462d-8978-e273efb984ac",
+                "ed7d3cf2-15d8-4ed5-808c-33a2e61b6b1e",
+                "d6016795-3581-4a4c-b316-f44c5efdc1e2",
+                "057c49b1-bfc1-468c-b342-0d224d03b020",
+                "a446c3cf-8762-40b4-98f3-ab6ea6dca0c1",
+                "b1a96675-73c0-4550-9e90-cd46ef205df8",
+                "c5c109f1-761a-4b75-b951-88bc9f1b107f",
+                "9a0a504e-14ce-4e47-a4c4-b2ca2dc2a306",
+                "3a45e1fd-9a4d-4631-b4e8-176f722f7f02",
+                "1b75df5a-e789-491c-98d5-76fa6178cd01",
+                "4edbc7bd-61a1-4bcf-9d00-771ca8df84ff"
+            ]
+        }
+    ]
+}

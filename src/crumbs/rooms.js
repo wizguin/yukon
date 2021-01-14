@@ -7,6 +7,7 @@ import Forts from '@rooms/forts/Forts'
 import Lodge from '@rooms/lodge/Lodge'
 import Plaza from '@rooms/plaza/Plaza'
 import Rink from '@rooms/rink/Rink'
+import Shack from '@rooms/shack/Shack'
 import Town from '@rooms/town/Town'
 import Village from '@rooms/village/Village'
 
@@ -65,6 +66,12 @@ const rooms = {
         scene: Rink,
         x: 770,
         y: 400
+    },
+    807: {
+        name: 'Shack',
+        scene: Shack,
+        x: 760,
+        y: 680
     },
     809: {
         name: 'Forest',

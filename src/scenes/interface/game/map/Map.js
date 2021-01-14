@@ -184,6 +184,7 @@ class Map extends BaseContainer {
         // mine (components)
         const mineButton = new Button(mine);
         mineButton.spriteName = "mine";
+        mineButton.callback = () => this.onRoomClick(807);
         mineButton.activeFrame = false;
 
         // berg (components)

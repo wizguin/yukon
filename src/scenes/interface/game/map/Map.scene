@@ -292,6 +292,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "mine",
+                    "Button.callback": "() => this.onRoomClick(807)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
