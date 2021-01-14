@@ -1,0 +1,50 @@
+{
+    "id": "a89b33c3-c317-4c8a-ba16-25d33afb9862",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/berg/berg-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Berg",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "009c916f-93cb-4de1-8ffe-0c3d0f4f5b83",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "berg",
+                "frame": "bg"
+            },
+            "x": -18,
+            "y": -18,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "0f7a085f-d758-4ba2-98d1-1de608d7e4bf",
+            "label": "aqua0001",
+            "components": [],
+            "texture": {
+                "key": "berg",
+                "frame": "aqua0001"
+            },
+            "x": 1255,
+            "y": 325,
+            "originY": 0.4014336917562724
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

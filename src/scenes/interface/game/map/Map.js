@@ -192,6 +192,7 @@ class Map extends BaseContainer {
         // berg (components)
         const bergButton = new Button(berg);
         bergButton.spriteName = "berg";
+        bergButton.callback = () => this.onRoomClick(805);
         bergButton.activeFrame = false;
 
         // note (components)

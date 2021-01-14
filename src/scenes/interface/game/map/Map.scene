@@ -312,6 +312,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "berg",
+                    "Button.callback": "() => this.onRoomClick(805)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
