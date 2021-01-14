@@ -2,6 +2,7 @@ import Attic from '@rooms/attic/Attic'
 import Beach from '@rooms/beach/Beach'
 import Cove from '@rooms/cove/Cove'
 import Dock from '@rooms/dock/Dock'
+import DojoExt from '@rooms/dojoext/DojoExt'
 import Forest from '@rooms/forest/Forest'
 import Forts from '@rooms/forts/Forts'
 import Lodge from '@rooms/lodge/Lodge'
@@ -42,6 +43,12 @@ const rooms = {
         scene: Plaza,
         x: 760,
         y: 680
+    },
+    321: {
+        name: 'DojoExt',
+        scene: DojoExt,
+        x: 780,
+        y: 790
     },
     400: {
         name: 'Beach',

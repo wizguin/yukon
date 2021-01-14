@@ -115,6 +115,7 @@ class Map extends BaseContainer {
         // dojo (components)
         const dojoButton = new Button(dojo);
         dojoButton.spriteName = "dojo";
+        dojoButton.callback = () => this.onRoomClick(321);
         dojoButton.activeFrame = false;
 
         // mtn (components)

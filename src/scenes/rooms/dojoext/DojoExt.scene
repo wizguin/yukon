@@ -1,0 +1,146 @@
+{
+    "id": "0fefab2b-6069-48b3-bb82-9a19342e4d9a",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/dojoext/dojoext-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "DojoExt",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "7952af9d-43cb-4f95-884a-01505ec00ec9",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "bg"
+            },
+            "x": -15,
+            "y": -6,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "0b0f65f9-638b-4650-84a7-b74b3e6c2831",
+            "label": "trees",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "trees"
+            },
+            "x": 1364,
+            "y": 915,
+            "originX": 0.518840579710145,
+            "originY": 0.8611111111111112
+        },
+        {
+            "type": "Image",
+            "id": "649f80de-aa71-4ec2-9e69-71c0c6d6305e",
+            "label": "fence",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "fence"
+            },
+            "x": 170,
+            "y": 920,
+            "originX": 0.4491315136476427,
+            "originY": 0.773109243697479
+        },
+        {
+            "type": "Image",
+            "id": "aafc525d-0832-4870-a550-7e1579477332",
+            "label": "puffles",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "puffles"
+            },
+            "x": 786,
+            "y": 823,
+            "originX": 0.49942196531791905,
+            "originY": 0.47202797202797203
+        },
+        {
+            "type": "Image",
+            "id": "62861faa-03f5-4327-848a-b027fa8e15b1",
+            "label": "dojo_door",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "dojo_door"
+            },
+            "x": 682,
+            "y": 425,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "766aeda6-ec13-432e-9022-62e1fed978bc",
+            "label": "ninja_door_locked0001",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "ninja_door_locked0001"
+            },
+            "x": 221,
+            "y": 562,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "7f02aced-c71f-4a6b-9ead-a23366ca6b9b",
+            "label": "door_top",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "door_top"
+            },
+            "x": 689,
+            "y": 430,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "8feb5ece-be73-4b2e-a4a4-a92b7c4c7904",
+            "label": "tree",
+            "components": [],
+            "texture": {
+                "key": "dojoext",
+                "frame": "tree"
+            },
+            "x": 311,
+            "y": 577,
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "09507045-c43d-47ba-bb5e-e528ddec4255",
+            "label": "sort",
+            "objectIds": [
+                "aafc525d-0832-4870-a550-7e1579477332",
+                "649f80de-aa71-4ec2-9e69-71c0c6d6305e",
+                "0b0f65f9-638b-4650-84a7-b74b3e6c2831"
+            ]
+        }
+    ]
+}

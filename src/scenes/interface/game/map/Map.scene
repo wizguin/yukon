@@ -54,6 +54,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "dojo",
+                    "Button.callback": "() => this.onRoomClick(321)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",
