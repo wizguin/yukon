@@ -172,6 +172,7 @@ class Map extends BaseContainer {
         // forest (components)
         const forestButton = new Button(forest);
         forestButton.spriteName = "forest";
+        forestButton.callback = () => this.onRoomClick(809);
         forestButton.activeFrame = false;
 
         // cove (components)

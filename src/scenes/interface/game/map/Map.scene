@@ -255,6 +255,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "forest",
+                    "Button.callback": "() => this.onRoomClick(809)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "map",

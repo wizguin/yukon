@@ -1,0 +1,146 @@
+{
+    "id": "6fc6429c-88a9-499f-bc93-ad79ff673de2",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/forest/forest-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Forest",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "5080d887-d532-415b-83ec-53af0f423cce",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "bg"
+            },
+            "x": -24,
+            "y": -13,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "6e3db976-9917-4d00-b9c1-bf0c18983238",
+            "label": "rock0001",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "rock0001"
+            },
+            "x": 254,
+            "y": 681,
+            "originX": 0.6005747126436781,
+            "originY": 0.7300884955752213
+        },
+        {
+            "type": "Image",
+            "id": "a0c5ffb3-138e-40ad-a79c-f9bb8cb88507",
+            "label": "tree",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "tree"
+            },
+            "x": -16,
+            "y": 272,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "68230858-5ed1-4a66-b956-6f9ba462bf8b",
+            "label": "fg",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "fg"
+            },
+            "y": 969,
+            "originX": 0,
+            "originY": 1
+        },
+        {
+            "type": "Image",
+            "id": "f375e9d0-76b5-4bff-a7bc-68ab12b63736",
+            "label": "middle",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "middle"
+            },
+            "x": 781,
+            "y": 548,
+            "originY": 0.608540925266904
+        },
+        {
+            "type": "Image",
+            "id": "956385da-974c-4842-8041-66c0c32df5ea",
+            "label": "stairs",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "stairs"
+            },
+            "x": 1129,
+            "y": 302,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "44a1f1df-8536-406f-a92e-d43130ae3799",
+            "label": "rail",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "rail"
+            },
+            "x": 1441,
+            "y": 831,
+            "originY": 0.5885714285714285
+        },
+        {
+            "type": "Image",
+            "id": "610c10a8-e1b6-47bf-9293-ac3f7bf11de7",
+            "label": "sign",
+            "components": [],
+            "texture": {
+                "key": "forest",
+                "frame": "sign"
+            },
+            "x": 1317,
+            "y": 681,
+            "originX": 0.4794520547945205,
+            "originY": 0.9397590361445783
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "adc6dee8-ab4a-4215-92af-f5272ec15c19",
+            "label": "sort",
+            "objectIds": [
+                "610c10a8-e1b6-47bf-9293-ac3f7bf11de7",
+                "44a1f1df-8536-406f-a92e-d43130ae3799",
+                "f375e9d0-76b5-4bff-a7bc-68ab12b63736",
+                "68230858-5ed1-4a66-b956-6f9ba462bf8b",
+                "a0c5ffb3-138e-40ad-a79c-f9bb8cb88507",
+                "6e3db976-9917-4d00-b9c1-bf0c18983238"
+            ]
+        }
+    ]
+}

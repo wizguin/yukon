@@ -153,6 +153,18 @@ class Cove extends RoomScene {
     }
 
     /* START-USER-CODE */
+
+    get roomTriggers() {
+        return [
+            {
+                body: this.roomPhysics.forest,
+                x: 490,
+                y: 340,
+                callback : () => { this.triggerRoom(809, 1190, 750) }
+            }
+        ]
+    }
+
     /* END-USER-CODE */
 }
 

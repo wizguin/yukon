@@ -2,6 +2,7 @@ import Attic from '@rooms/attic/Attic'
 import Beach from '@rooms/beach/Beach'
 import Cove from '@rooms/cove/Cove'
 import Dock from '@rooms/dock/Dock'
+import Forest from '@rooms/forest/Forest'
 import Forts from '@rooms/forts/Forts'
 import Lodge from '@rooms/lodge/Lodge'
 import Plaza from '@rooms/plaza/Plaza'
@@ -64,6 +65,12 @@ const rooms = {
         scene: Rink,
         x: 770,
         y: 400
+    },
+    809: {
+        name: 'Forest',
+        scene: Forest,
+        x: 760,
+        y: 430
     },
     810: {
         name: 'Cove',
