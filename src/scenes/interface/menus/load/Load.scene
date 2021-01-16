@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
+        "createMethodName": "_create",
         "sceneKey": "Load",
         "borderWidth": 1520,
         "borderHeight": 960
@@ -12,15 +13,76 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "5a42f1e3-6411-445e-83e8-c971d5e7af32",
+            "id": "a57c75e9-6bb6-4de4-99aa-f0fac23f918f",
             "label": "bg",
-            "components": [],
+            "components": [
+                "Interactive"
+            ],
             "texture": {
                 "key": "load",
                 "frame": "bg"
             },
             "originX": 0,
             "originY": 0
+        },
+        {
+            "type": "Text",
+            "id": "cc4e3627-2803-4fac-b06d-a576ca441cee",
+            "label": "text",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 520,
+            "originX": 0,
+            "originY": 0,
+            "fontFamily": "Arial",
+            "fontSize": "32px"
+        },
+        {
+            "type": "Container",
+            "id": "f544c8c5-65b2-4a7c-bba8-f46f0d094bb3",
+            "label": "bar",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "e1f7ce5b-a300-4482-9247-33e878e7212e",
+                    "label": "outline",
+                    "components": [],
+                    "strokeColor": "#006699",
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 200,
+                    "height": 40
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "2a6d34d0-56ad-44c0-8657-af8aa9ad2e9c",
+                    "label": "progress",
+                    "scope": "CLASS",
+                    "components": [],
+                    "isFilled": true,
+                    "width": 180,
+                    "height": 20
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "fab30d32-77eb-4780-941d-dba5444c50bc",
+            "label": "spinner",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "load",
+                "frame": "spinner"
+            },
+            "x": 760,
+            "y": 400
         }
     ],
     "plainObjects": [],
