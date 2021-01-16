@@ -8,7 +8,7 @@ const game = {
     width: 1520,
     height: 960,
     type: Phaser.CANVAS,
-    backgroundColor: '#14529b',
+    transparent: true,
     roundPixels: true,
 
     dom: {
