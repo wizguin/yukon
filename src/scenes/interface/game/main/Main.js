@@ -208,6 +208,8 @@ class Main extends BaseScene {
     create() {
         this._create()
 
+        this.events.on('sleep', this.onSleep, this)
+
         // Balloons
 
         this.balloonFactory = new BalloonFactory(this)
@@ -228,6 +230,10 @@ class Main extends BaseScene {
 
         this.input.keyboard.on('keydown_TAB', (event) => { this.onChatKeyDown(event) })
         this.input.keyboard.on('keydown_ENTER', (event) => { this.onChatKeyDown(event) })
+    }
+
+    onSleep() {
+        this.chatInput.clearText()
     }
 
     onChatKeyDown(event) {

@@ -13,6 +13,14 @@ export default class RoomScene extends BaseScene {
         this.triggers = null // Trigger collision bodies
     }
 
+    init() {
+        this.load.on('start', this.onStart, this)
+    }
+
+    onStart() {
+        this.interface.showLoading(`Loading ${this.key}`)
+    }
+
     create() {
         this._create()
         this.sortChildren()
@@ -85,6 +93,9 @@ export default class RoomScene extends BaseScene {
     }
 
     triggerRoom(id, x, y) {
+        let room = this.crumbs.rooms[id]
+        this.interface.showLoading(`Joining ${room.name}`)
+
         this.network.send('join_room', { room: id, x: x, y: y })
     }
 

@@ -211,6 +211,10 @@ class Map extends BaseContainer {
 
     onRoomClick(id) {
         let room = this.crumbs.rooms[id]
+        if (this.world.room.key == room.name) return
+
+        this.visible = false
+        this.interface.showLoading(`Joining ${room.name}`)
 
         this.network.send('join_room', { room: id, x: room.x, y: room.y })
     }
