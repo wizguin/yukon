@@ -161,6 +161,9 @@ class Login extends BaseScene {
         let username = this.usernameInput.text
         let password = this.passwordInput.text
 
+        this.interface.showLoading(`Logging in ${username}`)
+        this.scene.stop()
+
         this.network.connectLogin(username, password)
     }
 
