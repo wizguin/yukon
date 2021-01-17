@@ -112,9 +112,11 @@
             "id": "6791cf27-2369-4375-b006-df8d483ad73a",
             "label": "chat_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "ShowHint.text": "Messages",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -139,10 +141,12 @@
             "id": "aa5a43fd-2f35-4413-a4ff-5aed6de52e4a",
             "label": "emote_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => { this.emotesMenu.visible = true }",
+            "ShowHint.text": "Emotes",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -167,10 +171,12 @@
             "id": "50404a9c-520b-44d0-b6db-33695974eeee",
             "label": "action_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => { this.actionsMenu.visible = true }",
+            "ShowHint.text": "Actions",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -195,9 +201,11 @@
             "id": "9c3e46c6-d221-4bae-9e1f-af84b746fc63",
             "label": "snowball_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "ShowHint.text": "Snowball",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -222,10 +230,12 @@
             "id": "bb79f35a-9956-4446-b8b8-027e4cc26b04",
             "label": "chat_send_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => { this.onChatSend() }",
+            "ShowHint.text": "Send",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -250,10 +260,12 @@
             "id": "4600cc8c-67b7-47ed-a113-02ba822eee8a",
             "label": "player_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => { this.playerCard.showCard(this.world.client.penguin) }",
+            "ShowHint.text": "Edit Player",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -278,9 +290,11 @@
             "id": "23b638a0-11e0-47c1-a3f7-a1e9cbce660a",
             "label": "buddies_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "ShowHint.text": "Show Buddies",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -305,9 +319,11 @@
             "id": "3bfb98b3-d47a-4d4f-ac62-1c5a524510f8",
             "label": "igloo_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "ShowHint.text": "Your Home",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -332,9 +348,11 @@
             "id": "4036c6a3-dcd9-4553-9158-d84317ec0799",
             "label": "help_button",
             "components": [
-                "Button"
+                "Button",
+                "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "ShowHint.text": "Edit Account",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"

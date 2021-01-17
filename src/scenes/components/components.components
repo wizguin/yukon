@@ -130,6 +130,22 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "ShowHint",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.GameObject",
+            "properties": [
+                {
+                    "name": "text",
+                    "label": "Hint Text",
+                    "tooltip": "Hint Text",
+                    "defValue": "",
+                    "type": {
+                        "id": "string"
+                    }
+                }
+            ]
         }
     ],
     "meta": {

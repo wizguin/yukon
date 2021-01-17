@@ -1,9 +1,10 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import { Button, Interactive } from '@components/components'
+import { Button, Interactive, ShowHint } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
+import Hint from '@engine/interface/hint/Hint'
 
 import ActionsMenu from '../floating/actions/ActionsMenu'
 import ChatLog from '../chatlog/ChatLog'
@@ -160,42 +161,60 @@ class Main extends BaseScene {
         // chat_button (components)
         const chat_buttonButton = new Button(chat_button);
         chat_buttonButton.spriteName = "blue-button";
+        const chat_buttonShowHint = new ShowHint(chat_button);
+        chat_buttonShowHint.text = "Messages";
 
         // emote_button (components)
         const emote_buttonButton = new Button(emote_button);
         emote_buttonButton.spriteName = "blue-button";
         emote_buttonButton.callback = () => { this.emotesMenu.visible = true };
+        const emote_buttonShowHint = new ShowHint(emote_button);
+        emote_buttonShowHint.text = "Emotes";
 
         // action_button (components)
         const action_buttonButton = new Button(action_button);
         action_buttonButton.spriteName = "blue-button";
         action_buttonButton.callback = () => { this.actionsMenu.visible = true };
+        const action_buttonShowHint = new ShowHint(action_button);
+        action_buttonShowHint.text = "Actions";
 
         // snowball_button (components)
         const snowball_buttonButton = new Button(snowball_button);
         snowball_buttonButton.spriteName = "blue-button";
+        const snowball_buttonShowHint = new ShowHint(snowball_button);
+        snowball_buttonShowHint.text = "Snowball";
 
         // chat_send_button (components)
         const chat_send_buttonButton = new Button(chat_send_button);
         chat_send_buttonButton.spriteName = "blue-button";
         chat_send_buttonButton.callback = () => { this.onChatSend() };
+        const chat_send_buttonShowHint = new ShowHint(chat_send_button);
+        chat_send_buttonShowHint.text = "Send";
 
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
         player_buttonButton.callback = () => { this.playerCard.showCard(this.world.client.penguin) };
+        const player_buttonShowHint = new ShowHint(player_button);
+        player_buttonShowHint.text = "Edit Player";
 
         // buddies_button (components)
         const buddies_buttonButton = new Button(buddies_button);
         buddies_buttonButton.spriteName = "blue-button";
+        const buddies_buttonShowHint = new ShowHint(buddies_button);
+        buddies_buttonShowHint.text = "Show Buddies";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
+        const igloo_buttonShowHint = new ShowHint(igloo_button);
+        igloo_buttonShowHint.text = "Your Home";
 
         // help_button (components)
         const help_buttonButton = new Button(help_button);
         help_buttonButton.spriteName = "blue-button";
+        const help_buttonShowHint = new ShowHint(help_button);
+        help_buttonShowHint.text = "Edit Account";
 
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
@@ -213,6 +232,12 @@ class Main extends BaseScene {
         // Balloons
 
         this.balloonFactory = new BalloonFactory(this)
+
+        // Hints
+
+        this.hint = new Hint(this, 0, 0)
+        this.add.existing(this.hint)
+        this.hint.visible = false
 
         // Chat input
 

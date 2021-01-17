@@ -51,11 +51,13 @@
                     "id": "ac515e14-94e2-4872-845c-ff165b0bb45d",
                     "label": "dojo",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "dojo",
                     "Button.callback": "() => this.onRoomClick(321)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Dojo Courtyard",
                     "texture": {
                         "key": "map",
                         "frame": "dojo"
@@ -95,11 +97,13 @@
                     "id": "0641ff28-946b-4d7c-8d9d-368067367dc1",
                     "label": "mtn",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "mtn",
                     "Button.callback": "() => this.onRoomClick(230)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Ski Hill",
                     "texture": {
                         "key": "map",
                         "frame": "mtn"
@@ -112,11 +116,13 @@
                     "id": "50d7b312-f4fe-47d2-bf65-2e4d25bfeebc",
                     "label": "village",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "village",
                     "Button.callback": "() => this.onRoomClick(200)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Ski Village",
                     "texture": {
                         "key": "map",
                         "frame": "village"
@@ -131,11 +137,13 @@
                     "id": "a389ddf6-8668-40bf-8f74-ccddc823e608",
                     "label": "beach",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "beach",
                     "Button.callback": "() => this.onRoomClick(400)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "The Beach",
                     "texture": {
                         "key": "map",
                         "frame": "beach"
@@ -148,11 +156,13 @@
                     "id": "df5b5b0b-75a3-4fcf-9d3c-0949e2b203a6",
                     "label": "dock",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "dock",
                     "Button.callback": "() => this.onRoomClick(800)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "The Dock",
                     "texture": {
                         "key": "map",
                         "frame": "dock"
@@ -166,11 +176,13 @@
                     "id": "6ebf11b0-353f-4461-b443-5b908e39f478",
                     "label": "town",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "town",
                     "Button.callback": "() => this.onRoomClick(100)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Town",
                     "texture": {
                         "key": "map",
                         "frame": "town"
@@ -183,11 +195,13 @@
                     "id": "a9575e75-c858-4cb9-8a36-d203a05d6f41",
                     "label": "forts",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "forts",
                     "Button.callback": "() => this.onRoomClick(801)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Snow Forts",
                     "texture": {
                         "key": "map",
                         "frame": "forts"
@@ -202,10 +216,12 @@
                     "id": "4cd7313a-df16-45c5-982d-47ef02db8644",
                     "label": "igloo",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "igloo",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Member Igloos",
                     "texture": {
                         "key": "map",
                         "frame": "igloo"
@@ -218,11 +234,13 @@
                     "id": "d3b40e62-b025-4aa8-8921-e44f27622978",
                     "label": "plaza",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "plaza",
                     "Button.callback": "() => this.onRoomClick(300)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "The Plaza",
                     "texture": {
                         "key": "map",
                         "frame": "plaza"
@@ -236,11 +254,13 @@
                     "id": "ad02f0a0-536f-4527-916d-160fbff13923",
                     "label": "rink",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "rink",
                     "Button.callback": "() => this.onRoomClick(802)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Stadium",
                     "texture": {
                         "key": "map",
                         "frame": "rink"
@@ -254,11 +274,13 @@
                     "id": "49d0d4bf-c5a0-4b1d-8ca8-f81b4bf1e890",
                     "label": "forest",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "forest",
                     "Button.callback": "() => this.onRoomClick(809)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Forest",
                     "texture": {
                         "key": "map",
                         "frame": "forest"
@@ -273,11 +295,13 @@
                     "id": "b44b0389-8323-44c5-9b76-6930d99d787c",
                     "label": "cove",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "cove",
                     "Button.callback": "() => this.onRoomClick(810)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Cove",
                     "texture": {
                         "key": "map",
                         "frame": "cove"
@@ -291,11 +315,13 @@
                     "id": "a36839c5-3b16-4c3f-b57f-bba9dc74caa9",
                     "label": "mine",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "mine",
                     "Button.callback": "() => this.onRoomClick(807)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Mine Shack",
                     "texture": {
                         "key": "map",
                         "frame": "mine"

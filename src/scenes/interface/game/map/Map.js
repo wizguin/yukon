@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, Interactive } from '@components/components'
+import { Button, Interactive, ShowHint } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -117,77 +117,103 @@ class Map extends BaseContainer {
         dojoButton.spriteName = "dojo";
         dojoButton.callback = () => this.onRoomClick(321);
         dojoButton.activeFrame = false;
+        const dojoShowHint = new ShowHint(dojo);
+        dojoShowHint.text = "Dojo Courtyard";
 
         // mtn (components)
         const mtnButton = new Button(mtn);
         mtnButton.spriteName = "mtn";
         mtnButton.callback = () => this.onRoomClick(230);
         mtnButton.activeFrame = false;
+        const mtnShowHint = new ShowHint(mtn);
+        mtnShowHint.text = "Ski Hill";
 
         // village (components)
         const villageButton = new Button(village);
         villageButton.spriteName = "village";
         villageButton.callback = () => this.onRoomClick(200);
         villageButton.activeFrame = false;
+        const villageShowHint = new ShowHint(village);
+        villageShowHint.text = "Ski Village";
 
         // beach (components)
         const beachButton = new Button(beach);
         beachButton.spriteName = "beach";
         beachButton.callback = () => this.onRoomClick(400);
         beachButton.activeFrame = false;
+        const beachShowHint = new ShowHint(beach);
+        beachShowHint.text = "The Beach";
 
         // dock (components)
         const dockButton = new Button(dock);
         dockButton.spriteName = "dock";
         dockButton.callback = () => this.onRoomClick(800);
         dockButton.activeFrame = false;
+        const dockShowHint = new ShowHint(dock);
+        dockShowHint.text = "The Dock";
 
         // town (components)
         const townButton = new Button(town);
         townButton.spriteName = "town";
         townButton.callback = () => this.onRoomClick(100);
         townButton.activeFrame = false;
+        const townShowHint = new ShowHint(town);
+        townShowHint.text = "Town";
 
         // forts (components)
         const fortsButton = new Button(forts);
         fortsButton.spriteName = "forts";
         fortsButton.callback = () => this.onRoomClick(801);
         fortsButton.activeFrame = false;
+        const fortsShowHint = new ShowHint(forts);
+        fortsShowHint.text = "Snow Forts";
 
         // igloo (components)
         const iglooButton = new Button(igloo);
         iglooButton.spriteName = "igloo";
         iglooButton.activeFrame = false;
+        const iglooShowHint = new ShowHint(igloo);
+        iglooShowHint.text = "Member Igloos";
 
         // plaza (components)
         const plazaButton = new Button(plaza);
         plazaButton.spriteName = "plaza";
         plazaButton.callback = () => this.onRoomClick(300);
         plazaButton.activeFrame = false;
+        const plazaShowHint = new ShowHint(plaza);
+        plazaShowHint.text = "The Plaza";
 
         // rink (components)
         const rinkButton = new Button(rink);
         rinkButton.spriteName = "rink";
         rinkButton.callback = () => this.onRoomClick(802);
         rinkButton.activeFrame = false;
+        const rinkShowHint = new ShowHint(rink);
+        rinkShowHint.text = "Stadium";
 
         // forest (components)
         const forestButton = new Button(forest);
         forestButton.spriteName = "forest";
         forestButton.callback = () => this.onRoomClick(809);
         forestButton.activeFrame = false;
+        const forestShowHint = new ShowHint(forest);
+        forestShowHint.text = "Forest";
 
         // cove (components)
         const coveButton = new Button(cove);
         coveButton.spriteName = "cove";
         coveButton.callback = () => this.onRoomClick(810);
         coveButton.activeFrame = false;
+        const coveShowHint = new ShowHint(cove);
+        coveShowHint.text = "Cove";
 
         // mine (components)
         const mineButton = new Button(mine);
         mineButton.spriteName = "mine";
         mineButton.callback = () => this.onRoomClick(807);
         mineButton.activeFrame = false;
+        const mineShowHint = new ShowHint(mine);
+        mineShowHint.text = "Mine Shack";
 
         // berg (components)
         const bergButton = new Button(berg);
