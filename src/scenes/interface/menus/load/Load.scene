@@ -4,7 +4,9 @@
     "settings": {
         "compilerInsertSpaces": true,
         "superClassName": "BaseScene",
-        "preloadPackFiles": [],
+        "preloadPackFiles": [
+            "yukon/assets/media/interface/menus/load/load-pack.json"
+        ],
         "createMethodName": "_create",
         "sceneKey": "Load",
         "borderWidth": 1520,
@@ -33,7 +35,6 @@
             "components": [],
             "x": 760,
             "y": 520,
-            "originX": 0,
             "originY": 0,
             "fontFamily": "Arial",
             "fontSize": "32px"
@@ -46,7 +47,6 @@
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false,
             "list": [
                 {
                     "type": "Rectangle",
@@ -65,6 +65,9 @@
                     "label": "progress",
                     "scope": "CLASS",
                     "components": [],
+                    "x": -90,
+                    "scaleX": 0,
+                    "originX": 0,
                     "isFilled": true,
                     "width": 180,
                     "height": 20

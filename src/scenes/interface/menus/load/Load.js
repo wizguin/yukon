@@ -23,6 +23,11 @@ class Load extends BaseScene {
         /* END-USER-CTR-CODE */
     }
 
+    preload() {
+
+        this.load.pack("load-pack", "assets/media/interface/menus/load/load-pack.json");
+    }
+
     _create() {
 
         // bg
@@ -45,7 +50,9 @@ class Load extends BaseScene {
         bar.add(outline);
 
         // progress
-        const progress = this.add.rectangle(0, 0, 180, 20);
+        const progress = this.add.rectangle(-90, 0, 180, 20);
+        progress.scaleX = 0;
+        progress.setOrigin(0, 0.5);
         progress.isFilled = true;
         bar.add(progress);
 

@@ -28,7 +28,7 @@ export default class InterfaceController extends BaseScene {
     }
 
     hideLoading() {
-        if (this.loading.scene.isActive()) this.scene.sleep('Load')
+        if (this.loading && this.loading.scene.isActive()) this.scene.sleep('Load')
     }
 
     showInterface() {
@@ -45,7 +45,7 @@ export default class InterfaceController extends BaseScene {
     }
 
     hideInterface() {
-        if (this.main.scene.isActive()) this.scene.sleep('Main')
+        if (this.main && this.main.scene.isActive()) this.scene.sleep('Main')
     }
 
     showEmoteBalloon(id, emote) {
