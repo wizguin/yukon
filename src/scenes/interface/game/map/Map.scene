@@ -20,17 +20,18 @@
             "y": 460,
             "list": [
                 {
-                    "type": "Image",
-                    "id": "b1ff237f-06e7-44ac-8bfc-e87a7fc83c3d",
+                    "type": "Rectangle",
+                    "id": "43dbb293-36da-4727-8b01-a9969fda2bec",
                     "label": "block",
                     "components": [
                         "Interactive"
                     ],
-                    "texture": {
-                        "key": "main",
-                        "frame": "block"
-                    },
-                    "y": 21
+                    "y": 21,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
                 },
                 {
                     "type": "Image",

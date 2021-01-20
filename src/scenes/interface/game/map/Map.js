@@ -11,7 +11,10 @@ class Map extends BaseContainer {
         super(scene, x, y);
 
         // block
-        const block = scene.add.image(0, 21, "main", "block");
+        const block = scene.add.rectangle(0, 21, 1520, 960);
+        block.isFilled = true;
+        block.fillColor = 0;
+        block.fillAlpha = 0.2;
         this.add(block);
 
         // bg
