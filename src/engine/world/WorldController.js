@@ -15,8 +15,6 @@ export default class WorldController extends BaseScene {
     }
 
     create() {
-        this.scene.launch('InterfaceController')
-
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
     }

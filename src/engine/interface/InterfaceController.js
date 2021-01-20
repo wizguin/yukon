@@ -1,7 +1,13 @@
 import BaseScene from '@scenes/base/BaseScene'
 
+import PromptController from './prompt/PromptController'
+
 
 export default class InterfaceController extends BaseScene {
+
+    create() {
+        this.prompt = new PromptController(this)
+    }
 
     get loading() {
         return this.scene.get('Load')

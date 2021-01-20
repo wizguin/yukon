@@ -26,6 +26,7 @@ export default class Preload extends BaseScene {
         }
 
         this.interface.hideLoading()
+        this.scene.start('InterfaceController')
         this.scene.start('Start')
     }
 

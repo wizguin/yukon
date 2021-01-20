@@ -17,6 +17,7 @@ export default class Login extends Plugin {
         } else {
             this.interface.hideLoading()
             this.scene.start('Login')
+            this.interface.prompt.showError(args.message)
         }
     }
 
