@@ -51,6 +51,9 @@ export default class Network {
 
     onConnectionLost() {
         this.disconnect()
+
+        let prompt = this.game.scene.getScene('InterfaceController').prompt
+        prompt.showError('Connection was lost.\nPlease click to learn more', 'Learn More', () => { })
     }
 
 }

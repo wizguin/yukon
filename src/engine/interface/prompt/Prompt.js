@@ -66,20 +66,20 @@ export default class Prompt extends BaseContainer {
 
     createButton(frame, text) {
         let button = this.scene.add.container(0, 0)
-        let buttonBg = this.scene.add.image(0, 0, 'prompt', frame)
-        let buttonText = this.scene.add.text(0, 0, text, this.buttonTextStyle)
+        button.bg = this.scene.add.image(0, 0, 'prompt', frame)
+        button.text = this.scene.add.text(0, 0, text, this.buttonTextStyle)
 
-        button.add(buttonBg)
-        button.add(buttonText)
+        button.add(button.bg)
+        button.add(button.text)
 
-        buttonText.setOrigin(0.5)
-        buttonBg.setOrigin(0.5, 0.5)
+        button.text.setOrigin(0.5)
+        button.bg.setOrigin(0.5, 0.5)
 
-        button.setSize(buttonBg.width, buttonBg.height)
+        button.setSize(button.bg.width, button.bg.height)
 
-        let component = new Button(buttonBg)
-        component.spriteName = frame
-        component.callback = () => this.visible = false
+        button.component = new Button(button.bg)
+        button.component.spriteName = frame
+        button.component.callback = () => this.visible = false
 
         return button
     }

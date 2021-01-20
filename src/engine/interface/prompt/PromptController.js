@@ -11,8 +11,8 @@ export default class PromptController {
         _interface.add.existing(this.error)
     }
 
-    showError(text) {
-        this.error.show(text)
+    showError(text, buttonText = 'Okay', callback = () => this.error.visible = false) {
+        this.error.show(text, buttonText, callback)
         this.bringToTop()
     }
 

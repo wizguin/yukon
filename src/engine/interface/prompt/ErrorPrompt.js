@@ -13,8 +13,11 @@ class ErrorPrompt extends Prompt {
         this.add([ this.bg, this.text, this.button ])
     }
 
-    show(text) {
+    show(text, buttonText, callback) {
         this.text.text = text
+        this.button.text.text = buttonText
+        // Allows for modification of callback
+        this.button.component.callback = callback
 
         // Clamp minimum text height at 140px
         this.text.height = (this.text.height > 140) ? this.text.height : 140
