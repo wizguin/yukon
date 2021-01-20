@@ -226,5 +226,16 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+    },
+    "lists": [
+        {
+            "id": "5ae19c1d-cf39-4d6e-a5fa-935dde376775",
+            "label": "sort",
+            "objectIds": [
+                "7bbb8294-2b6c-499d-a669-848e6a4508ca",
+                "85cf3723-7671-4140-a0c0-d0f430f57910",
+                "9aa8b583-902d-4dfe-a8cf-cc853faf2676"
+            ]
+        }
+    ]
 }

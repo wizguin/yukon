@@ -8,6 +8,9 @@ class Mtn extends RoomScene {
     constructor() {
         super("Mtn");
 
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.sort;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -80,6 +83,11 @@ class Mtn extends RoomScene {
         // penguin_run
         const penguin_run = this.add.image(524, 606, "mtn", "penguin_run");
         penguin_run.setOrigin(0.6390977443609023, 0.943089430894309);
+
+        // lists
+        const sort = [penguin_run, express, pole]
+
+        this.sort = sort;
     }
 
     /* START-USER-CODE */
