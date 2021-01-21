@@ -16,29 +16,32 @@
             "id": "92e957a7-0f17-4c68-89bc-eb4b0611ba23",
             "label": "container_1",
             "components": [],
+            "x": 760,
+            "y": 480,
             "list": [
                 {
                     "type": "Image",
                     "id": "9c22db95-d631-4fce-9e29-9283e7c6e94f",
-                    "label": "chatlog_bg",
+                    "label": "bg",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "chatlog/bg"
                     },
-                    "visible": false
+                    "y": -440
                 },
                 {
                     "type": "Container",
                     "id": "7db0ab5b-69c4-4ffe-b23f-e695c697d44e",
                     "label": "tab",
                     "components": [],
-                    "y": 440,
                     "list": [
                         {
                             "type": "Image",
                             "id": "03bee9bb-bf10-4b55-ad10-6b736ee7141c",
-                            "label": "tab_handle",
+                            "label": "handle",
+                            "scope": "CLASS",
                             "components": [
                                 "SimpleButton"
                             ],
@@ -58,7 +61,8 @@
                             "texture": {
                                 "key": "main",
                                 "frame": "tab-arrow"
-                            }
+                            },
+                            "y": 2
                         }
                     ]
                 }

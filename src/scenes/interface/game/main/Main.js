@@ -108,7 +108,7 @@ class Main extends BaseScene {
         this.add.image(1266, 929, "main", "help-icon");
 
         // chatLog
-        const chatLog = new ChatLog(this, 760, -435);
+        const chatLog = new ChatLog(this, 760, 2);
         this.add.existing(chatLog);
 
         // playerCard
