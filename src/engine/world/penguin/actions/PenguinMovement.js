@@ -10,7 +10,7 @@ export default class PenguinMovement {
     }
 
     movePenguin(path) {
-        if (this.tween) this.removeTween()
+        if (this.tween) this.removeTween(false)
 
         this.penguin.playFrame(this.direction + 9) // + 9 for walking frame id
 
@@ -48,13 +48,13 @@ export default class PenguinMovement {
         this.penguin.balloon.y = Math.round(this.penguin.y) - 95
     }
 
-    removeTween() {
+    removeTween(playFrame = true) {
         if (!this.tween) return
 
         this.tween.remove()
         this.tween = null
 
-        this.penguin.playFrame(this.direction + 1) // + 1 for standing frame id
+        if (playFrame) this.penguin.playFrame(this.direction + 1) // + 1 for standing frame id
     }
 
     /*========== Tween calculations ==========*/

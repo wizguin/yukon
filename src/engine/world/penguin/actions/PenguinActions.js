@@ -16,6 +16,7 @@ export default class PenguinActions {
     }
 
     playFrame(frame, loop = true) {
+        if (this.penguin.frame == frame) return
         // Moving penguins can only update when frames are movement frames (9-16)
         if (this.movement.tween && (frame < 9 || frame > 16)) return
 
