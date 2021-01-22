@@ -20,6 +20,8 @@ class Main extends BaseScene {
     constructor() {
         super("Main");
 
+        /** @type {ChatLog} */
+        this.chatLog;
         /** @type {PlayerCard} */
         this.playerCard;
         /** @type {ActionsMenu} */
@@ -216,6 +218,7 @@ class Main extends BaseScene {
         const help_buttonShowHint = new ShowHint(help_button);
         help_buttonShowHint.text = "Edit Account";
 
+        this.chatLog = chatLog;
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
@@ -259,6 +262,7 @@ class Main extends BaseScene {
 
     onSleep() {
         this.chatInput.clearText()
+        this.chatLog.clearMessages()
     }
 
     onChatKeyDown(event) {

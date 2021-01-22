@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "snapEnabled": true,
+        "snapHeight": 57,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -24,7 +26,9 @@
                     "id": "9c22db95-d631-4fce-9e29-9283e7c6e94f",
                     "label": "bg",
                     "scope": "CLASS",
-                    "components": [],
+                    "components": [
+                        "Interactive"
+                    ],
                     "texture": {
                         "key": "main",
                         "frame": "chatlog/bg"

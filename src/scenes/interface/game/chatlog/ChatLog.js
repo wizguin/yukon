@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { SimpleButton } from '@components/components'
+import { Button, Interactive, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -26,6 +26,9 @@ class ChatLog extends BaseContainer {
         const arrow = scene.add.image(0, 2, "main", "tab-arrow");
         tab.add(arrow);
 
+        // bg (components)
+        new Interactive(bg);
+
         // handle (components)
         const handleSimpleButton = new SimpleButton(handle);
         handleSimpleButton.callback = () => { this.onTabClick() };
@@ -35,6 +38,17 @@ class ChatLog extends BaseContainer {
         this.arrow = arrow;
 
         /* START-USER-CTR-CODE */
+
+        this.textStyle = {
+            fontFamily: 'Arial',
+            fontSize: 24,
+            color: '#000000',
+            align: 'left',
+            fixedWidth: 720
+        }
+
+        this.messages = []
+        this.containers = this.createContainers()
 
         this.open = false
         this.dragging = false
@@ -51,6 +65,49 @@ class ChatLog extends BaseContainer {
     }
 
     /* START-USER-CODE */
+
+    createContainers() {
+        let containers = []
+        let y = -17
+
+        for (let i = 1; i <= 20; i++) {
+            y -= 40
+
+            let container = this.scene.add.image(0, y, 'main', 'chatlog/message')
+            container.text = this.scene.add.text(0, y, '', this.textStyle)
+            container.text.setOrigin(0.5)
+
+            this.add([ container, container.text ])
+            containers.push(container)
+
+            let component = new Button(container)
+            component.spriteName = 'chatlog/message'
+            component.activeFrame = false
+        }
+
+        return containers
+    }
+
+    addMessage(username, message) {
+        if (this.messages.length == 20) this.messages.pop()
+
+        this.messages.unshift(`${username}: ${message}`)
+        this.updateMessages()
+    }
+
+    updateMessages() {
+        for (let [index, message] of this.messages.entries()) {
+            this.containers[index].text.text = message
+        }
+    }
+
+    clearMessages() {
+        this.messages = []
+
+        for (let container of this.containers) {
+            container.text.text = ''
+        }
+    }
 
     onTabClick() {
         // Log cannot be closed during a drag
@@ -74,7 +131,7 @@ class ChatLog extends BaseContainer {
         // Keep log inside boundary
         if (y > 840) y = 840
         if (y < 2) y = 2
-        this.y = y
+        this.y = Math.round(y)
 
         // If log passes 222px then set open state to true
         if (!this.open && y > 222) {

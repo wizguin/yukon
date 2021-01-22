@@ -376,6 +376,7 @@
             "prefabId": "cd6b92e2-56e2-4e72-a90d-c4edead84679",
             "id": "4040e412-ba63-4812-bbe9-fc4ba0f76672",
             "label": "chatLog",
+            "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 2
