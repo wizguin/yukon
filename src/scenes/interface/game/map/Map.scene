@@ -26,7 +26,7 @@
                     "components": [
                         "Interactive"
                     ],
-                    "y": 21,
+                    "y": 20,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "fillAlpha": 0.2,
