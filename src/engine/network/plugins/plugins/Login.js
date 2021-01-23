@@ -12,10 +12,11 @@ export default class Login extends Plugin {
     }
 
     login(args) {
+        this.interface.hideLoading()
+
         if (args.success) {
-            this.network.connectGame('blizzard', args.username, args.loginKey)
+            this.scene.start('Servers', args)
         } else {
-            this.interface.hideLoading()
             this.scene.start('Login')
             this.interface.prompt.showError(args.message)
         }

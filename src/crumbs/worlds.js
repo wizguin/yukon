@@ -1,11 +1,13 @@
 const worlds = {
-    'login': {
-        'host': 'localhost',
-        'port': 6111
+    login: {
+        host: 'localhost',
+        port: 6111
     },
-    'blizzard': {
-        'host': 'localhost',
-        'port': 6112
+    game: {
+        Blizzard: {
+            host: 'localhost',
+            port: 6112
+        }
     }
 }
 

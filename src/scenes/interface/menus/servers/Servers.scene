@@ -1,0 +1,122 @@
+{
+    "id": "06606f01-d6a4-4dd8-89a5-389d49270e4b",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "Servers",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "2df8eaea-42ca-488c-b2db-030beeb2c591",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "load",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Text",
+            "id": "cd539005-a4ee-493d-9699-024f0c3cf9ec",
+            "label": "text_2",
+            "components": [],
+            "x": 1095,
+            "y": 908,
+            "originX": 0,
+            "text": "Ultimate safe chat",
+            "fixedWidth": 200,
+            "fontFamily": "Arial Narrow",
+            "fontSize": "28px"
+        },
+        {
+            "type": "Image",
+            "id": "301a85ab-d65d-42bf-a328-82daaa6b311c",
+            "label": "safe_small",
+            "components": [],
+            "texture": {
+                "key": "servers",
+                "frame": "safe_small"
+            },
+            "x": 1070,
+            "y": 908,
+            "originY": 0.5161290322580645
+        },
+        {
+            "type": "Text",
+            "id": "a2357d40-ba85-4524-8b48-0a0427ad447b",
+            "label": "text_1",
+            "components": [],
+            "x": 645,
+            "y": 908,
+            "originX": 0,
+            "text": "Amount of penguins online",
+            "fixedWidth": 300,
+            "fontFamily": "Arial Narrow",
+            "fontSize": "28px"
+        },
+        {
+            "type": "Image",
+            "id": "55e6d159-ef2d-4438-8e91-c7de6e621fea",
+            "label": "bar_full_small",
+            "components": [],
+            "texture": {
+                "key": "servers",
+                "frame": "bar_full_small"
+            },
+            "x": 620,
+            "y": 908
+        },
+        {
+            "type": "Text",
+            "id": "6b9c5da6-539b-470a-b4c3-8fa5a68e143f",
+            "label": "text",
+            "components": [],
+            "x": 277,
+            "y": 908,
+            "originX": 0,
+            "text": "Buddies online",
+            "fixedWidth": 200,
+            "fontFamily": "Arial Narrow",
+            "fontSize": "28px"
+        },
+        {
+            "type": "Image",
+            "id": "568eed78-10bd-4110-a4e1-6fe1c0a26263",
+            "label": "online_small",
+            "components": [],
+            "texture": {
+                "key": "servers",
+                "frame": "online_small"
+            },
+            "x": 252,
+            "y": 908
+        },
+        {
+            "type": "Image",
+            "id": "915d2eb9-7362-4642-a783-2f2c6bc11da5",
+            "label": "more",
+            "components": [],
+            "texture": {
+                "key": "servers",
+                "frame": "more"
+            },
+            "x": 1300,
+            "y": 630,
+            "originY": 0.5027322404371585
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

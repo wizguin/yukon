@@ -14,20 +14,18 @@ export default class Network {
     }
 
     connectLogin(username, password) {
-        this.connect('login', () => { this.disconnect() })
+        this.connect(this.crumbs.worlds.login, () => { this.disconnect() })
 
         this.send('login', { username: username, password: password })
     }
 
     connectGame(world, username, loginKey) {
-        this.connect(world, () => { this.onConnectionLost() })
+        this.connect(this.crumbs.worlds.game[world], () => { this.onConnectionLost() })
 
         this.send('login_key', { username: username, loginKey: loginKey })
     }
 
     connect(world, onDisconnect) {
-        world = this.crumbs.worlds[world]
-
         this.disconnect()
 
         this.client = io.connect(`${world.host}:${world.port}`)
