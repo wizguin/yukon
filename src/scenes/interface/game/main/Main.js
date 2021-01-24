@@ -25,12 +25,12 @@ class Main extends BaseScene {
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
         this.crosshair;
+        /** @type {PlayerCard} */
+        this.playerCard;
         /** @type {ActionsMenu} */
         this.actionsMenu;
         /** @type {EmotesMenu} */
         this.emotesMenu;
-        /** @type {PlayerCard} */
-        this.playerCard;
         /** @type {Map} */
         this.map;
 
@@ -120,6 +120,11 @@ class Main extends BaseScene {
         // mod_button
         const mod_button = this.add.image(1434, 69, "main", "mod-button");
 
+        // playerCard
+        const playerCard = new PlayerCard(this, 446, 436);
+        this.add.existing(playerCard);
+        playerCard.visible = false;
+
         // actionsMenu
         const actionsMenu = new ActionsMenu(this, 366, 872);
         this.add.existing(actionsMenu);
@@ -129,11 +134,6 @@ class Main extends BaseScene {
         const emotesMenu = new EmotesMenu(this, 306, 872);
         this.add.existing(emotesMenu);
         emotesMenu.visible = false;
-
-        // playerCard
-        const playerCard = new PlayerCard(this, 446, 436);
-        this.add.existing(playerCard);
-        playerCard.visible = false;
 
         // map
         const map = new Map(this, 760, 460);
@@ -232,9 +232,9 @@ class Main extends BaseScene {
 
         this.chatLog = chatLog;
         this.crosshair = crosshair;
+        this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
-        this.playerCard = playerCard;
         this.map = map;
     }
 

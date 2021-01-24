@@ -399,6 +399,19 @@
             "y": 69
         },
         {
+            "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
+            "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
+            "unlock": [
+                "visible"
+            ],
+            "label": "playerCard",
+            "scope": "CLASS",
+            "components": [],
+            "x": 446,
+            "y": 436,
+            "visible": false
+        },
+        {
             "prefabId": "c0278f51-86ed-479c-93d8-d832408669c2",
             "id": "9e95fb34-42e7-4212-ac8d-9eb39e13f9bf",
             "unlock": [
@@ -422,19 +435,6 @@
             "components": [],
             "x": 306,
             "y": 872,
-            "visible": false
-        },
-        {
-            "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
-            "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
-            "unlock": [
-                "visible"
-            ],
-            "label": "playerCard",
-            "scope": "CLASS",
-            "components": [],
-            "x": 446,
-            "y": 436,
             "visible": false
         },
         {
