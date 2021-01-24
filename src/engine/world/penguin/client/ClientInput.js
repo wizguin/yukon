@@ -29,6 +29,9 @@ export default class ClientInput {
 
         // Sitting to pointer
         room.input.keyboard.on('keydown_S', () => { this.onSitKeyDown(room.game.input.mousePointer) })
+
+        // Crosshair
+        room.input.keyboard.on('keydown_T', () => { this.onCrosshairKeyDown() })
     }
 
     onUp(pointer) {
@@ -47,6 +50,11 @@ export default class ClientInput {
 
     onSitKeyDown(mousePointer) {
         this.actions.sitPenguin(mousePointer.x, mousePointer.y)
+    }
+
+    onCrosshairKeyDown() {
+        if (!this.client.penguin.interface.main) return
+        this.client.penguin.interface.main.onSnowballClick()
     }
 
 }
