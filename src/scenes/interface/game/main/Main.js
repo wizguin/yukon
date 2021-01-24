@@ -5,6 +5,7 @@ import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
 import Hint from '@engine/interface/hint/Hint'
+import SnowballFactory from '@engine/interface/snowball/SnowballFactory'
 
 import ActionsMenu from '../floating/actions/ActionsMenu'
 import ChatLog from '../chatlog/ChatLog'
@@ -244,9 +245,10 @@ class Main extends BaseScene {
 
         this.events.on('sleep', this.onSleep, this)
 
-        // Balloons
+        // Factories
 
         this.balloonFactory = new BalloonFactory(this)
+        this.snowballFactory = new SnowballFactory(this.world)
 
         // Hints
 
@@ -293,6 +295,7 @@ class Main extends BaseScene {
 
     onCrosshairClick() {
         this.stopCrosshair()
+        this.snowballFactory.throwBall(this.world.client.id, this.crosshair.x, this.crosshair.y)
     }
 
     stopCrosshair() {
