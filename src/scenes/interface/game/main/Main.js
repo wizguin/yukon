@@ -1,6 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import { Button, Interactive, ShowHint } from '@components/components'
+import { Button, Interactive, SimpleButton, ShowHint } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
@@ -22,12 +22,14 @@ class Main extends BaseScene {
 
         /** @type {ChatLog} */
         this.chatLog;
-        /** @type {PlayerCard} */
-        this.playerCard;
+        /** @type {Phaser.GameObjects.Image} */
+        this.crosshair;
         /** @type {ActionsMenu} */
         this.actionsMenu;
         /** @type {EmotesMenu} */
         this.emotesMenu;
+        /** @type {PlayerCard} */
+        this.playerCard;
         /** @type {Map} */
         this.map;
 
@@ -36,18 +38,6 @@ class Main extends BaseScene {
     }
 
     _create() {
-
-        // map_button
-        const map_button = this.add.sprite(90, 888, "main", "map-button");
-
-        // news_button
-        const news_button = this.add.image(70, 61, "main", "news-button");
-
-        // mail_button
-        const mail_button = this.add.image(170, 49, "main", "mail-button");
-
-        // mod_button
-        const mod_button = this.add.image(1434, 69, "main", "mod-button");
 
         // dock
         const dock = this.add.image(760, 924, "main", "dock");
@@ -113,10 +103,21 @@ class Main extends BaseScene {
         const chatLog = new ChatLog(this, 760, 2);
         this.add.existing(chatLog);
 
-        // playerCard
-        const playerCard = new PlayerCard(this, 446, 436);
-        this.add.existing(playerCard);
-        playerCard.visible = false;
+        // crosshair
+        const crosshair = this.add.image(0, 1100, "main", "crosshair");
+        crosshair.visible = false;
+
+        // map_button
+        const map_button = this.add.sprite(90, 888, "main", "map-button");
+
+        // news_button
+        const news_button = this.add.image(70, 61, "main", "news-button");
+
+        // mail_button
+        const mail_button = this.add.image(170, 49, "main", "mail-button");
+
+        // mod_button
+        const mod_button = this.add.image(1434, 69, "main", "mod-button");
 
         // actionsMenu
         const actionsMenu = new ActionsMenu(this, 366, 872);
@@ -128,31 +129,15 @@ class Main extends BaseScene {
         this.add.existing(emotesMenu);
         emotesMenu.visible = false;
 
+        // playerCard
+        const playerCard = new PlayerCard(this, 446, 436);
+        this.add.existing(playerCard);
+        playerCard.visible = false;
+
         // map
         const map = new Map(this, 760, 460);
         this.add.existing(map);
         map.visible = false;
-
-        // map_button (components)
-        const map_buttonButton = new Button(map_button);
-        map_buttonButton.spriteName = "map-button";
-        map_buttonButton.callback = () => { this.map.visible = true };
-        map_buttonButton.activeFrame = false;
-
-        // news_button (components)
-        const news_buttonButton = new Button(news_button);
-        news_buttonButton.spriteName = "news-button";
-        news_buttonButton.activeFrame = false;
-
-        // mail_button (components)
-        const mail_buttonButton = new Button(mail_button);
-        mail_buttonButton.spriteName = "mail-button";
-        mail_buttonButton.activeFrame = false;
-
-        // mod_button (components)
-        const mod_buttonButton = new Button(mod_button);
-        mod_buttonButton.spriteName = "mod-button";
-        mod_buttonButton.activeFrame = false;
 
         // dock (components)
         new Interactive(dock);
@@ -183,6 +168,7 @@ class Main extends BaseScene {
         // snowball_button (components)
         const snowball_buttonButton = new Button(snowball_button);
         snowball_buttonButton.spriteName = "blue-button";
+        snowball_buttonButton.callback = () => this.onSnowballClick();
         const snowball_buttonShowHint = new ShowHint(snowball_button);
         snowball_buttonShowHint.text = "Snowball";
 
@@ -218,10 +204,36 @@ class Main extends BaseScene {
         const help_buttonShowHint = new ShowHint(help_button);
         help_buttonShowHint.text = "Edit Account";
 
+        // crosshair (components)
+        const crosshairSimpleButton = new SimpleButton(crosshair);
+        crosshairSimpleButton.callback = () => this.onCrosshairClick();
+
+        // map_button (components)
+        const map_buttonButton = new Button(map_button);
+        map_buttonButton.spriteName = "map-button";
+        map_buttonButton.callback = () => { this.map.visible = true };
+        map_buttonButton.activeFrame = false;
+
+        // news_button (components)
+        const news_buttonButton = new Button(news_button);
+        news_buttonButton.spriteName = "news-button";
+        news_buttonButton.activeFrame = false;
+
+        // mail_button (components)
+        const mail_buttonButton = new Button(mail_button);
+        mail_buttonButton.spriteName = "mail-button";
+        mail_buttonButton.activeFrame = false;
+
+        // mod_button (components)
+        const mod_buttonButton = new Button(mod_button);
+        mod_buttonButton.spriteName = "mod-button";
+        mod_buttonButton.activeFrame = false;
+
         this.chatLog = chatLog;
-        this.playerCard = playerCard;
+        this.crosshair = crosshair;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
+        this.playerCard = playerCard;
         this.map = map;
     }
 
@@ -263,6 +275,29 @@ class Main extends BaseScene {
     onSleep() {
         this.chatInput.clearText()
         this.chatLog.clearMessages()
+        this.stopCrosshair()
+    }
+
+    onSnowballClick() {
+        this.crosshair.visible = true
+        this.crosshair.x = this.input.x
+        this.crosshair.y = this.input.y
+
+        this.input.on('pointermove', (pointer) => this.onCrosshairMove(pointer))
+    }
+
+    onCrosshairMove(pointer) {
+        this.crosshair.x = Math.round(pointer.x)
+        this.crosshair.y = Math.round(pointer.y)
+    }
+
+    onCrosshairClick() {
+        this.stopCrosshair()
+    }
+
+    stopCrosshair() {
+        this.input.off('pointermove')
+        this.crosshair.visible = false
     }
 
     onChatKeyDown(event) {

@@ -15,71 +15,6 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "00577d6e-77b3-4f4d-a972-c43494357612",
-            "label": "map_button",
-            "components": [
-                "Button"
-            ],
-            "Button.spriteName": "map-button",
-            "Button.callback": "() => { this.map.visible = true }",
-            "Button.activeFrame": false,
-            "texture": {
-                "key": "main",
-                "frame": "map-button"
-            },
-            "x": 90,
-            "y": 888
-        },
-        {
-            "type": "Image",
-            "id": "b8adf69c-a4a9-47ec-bbac-5e9b86643dec",
-            "label": "news_button",
-            "components": [
-                "Button"
-            ],
-            "Button.spriteName": "news-button",
-            "Button.activeFrame": false,
-            "texture": {
-                "key": "main",
-                "frame": "news-button"
-            },
-            "x": 70,
-            "y": 61
-        },
-        {
-            "type": "Image",
-            "id": "24426f54-e0c3-496d-97ec-a720c62ce2f8",
-            "label": "mail_button",
-            "components": [
-                "Button"
-            ],
-            "Button.spriteName": "mail-button",
-            "Button.activeFrame": false,
-            "texture": {
-                "key": "main",
-                "frame": "mail-button"
-            },
-            "x": 170,
-            "y": 49
-        },
-        {
-            "type": "Image",
-            "id": "5dce1a5e-0a11-4e37-a002-99517e8f72bf",
-            "label": "mod_button",
-            "components": [
-                "Button"
-            ],
-            "Button.spriteName": "mod-button",
-            "Button.activeFrame": false,
-            "texture": {
-                "key": "main",
-                "frame": "mod-button"
-            },
-            "x": 1434,
-            "y": 69
-        },
-        {
             "type": "Image",
             "id": "7d205242-0757-4e4c-9298-88832a914a09",
             "label": "dock",
@@ -205,6 +140,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => this.onSnowballClick()",
             "ShowHint.text": "Snowball",
             "texture": {
                 "key": "main",
@@ -382,17 +318,85 @@
             "y": 2
         },
         {
-            "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
-            "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
-            "unlock": [
-                "visible"
-            ],
-            "label": "playerCard",
+            "type": "Image",
+            "id": "83cfc67f-0393-455c-bfe2-6e5ce8e1adb7",
+            "label": "crosshair",
             "scope": "CLASS",
-            "components": [],
-            "x": 446,
-            "y": 436,
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.callback": "() => this.onCrosshairClick()",
+            "texture": {
+                "key": "main",
+                "frame": "crosshair"
+            },
+            "y": 1100,
             "visible": false
+        },
+        {
+            "type": "Sprite",
+            "id": "00577d6e-77b3-4f4d-a972-c43494357612",
+            "label": "map_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "map-button",
+            "Button.callback": "() => { this.map.visible = true }",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "map-button"
+            },
+            "x": 90,
+            "y": 888
+        },
+        {
+            "type": "Image",
+            "id": "b8adf69c-a4a9-47ec-bbac-5e9b86643dec",
+            "label": "news_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "news-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "news-button"
+            },
+            "x": 70,
+            "y": 61
+        },
+        {
+            "type": "Image",
+            "id": "24426f54-e0c3-496d-97ec-a720c62ce2f8",
+            "label": "mail_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "mail-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "mail-button"
+            },
+            "x": 170,
+            "y": 49
+        },
+        {
+            "type": "Image",
+            "id": "5dce1a5e-0a11-4e37-a002-99517e8f72bf",
+            "label": "mod_button",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "mod-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "mod-button"
+            },
+            "x": 1434,
+            "y": 69
         },
         {
             "prefabId": "c0278f51-86ed-479c-93d8-d832408669c2",
@@ -418,6 +422,19 @@
             "components": [],
             "x": 306,
             "y": 872,
+            "visible": false
+        },
+        {
+            "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
+            "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
+            "unlock": [
+                "visible"
+            ],
+            "label": "playerCard",
+            "scope": "CLASS",
+            "components": [],
+            "x": 446,
+            "y": 436,
             "visible": false
         },
         {
