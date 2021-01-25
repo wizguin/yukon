@@ -16,8 +16,8 @@ export default class SnowballFactory {
         if (!penguin) return
 
         let ball = this.createBall(penguin)
-        x = Math.round(x + Math.random() * 41)
-        y = Math.round(y + Math.random() * 41)
+        x += Phaser.Math.Between(-20, 20)
+        y += Phaser.Math.Between(-20, 20)
 
         this.addTween(ball, x, y)
     }
@@ -26,9 +26,7 @@ export default class SnowballFactory {
         let oldest = this.balls.shift()
 
         if (oldest.tween) oldest.tween.remove()
-        if (oldest.shadow.tween) oldest.shadow.tween.remove()
-        if (oldest.shadow) oldest.shadow.destroy()
-
+        oldest.shadow.destroy()
         oldest.destroy()
     }
 
@@ -56,7 +54,6 @@ export default class SnowballFactory {
         ball.tween = this.world.room.tweens.add({
             targets: ball.shadow,
             duration: duration,
-            //delay: 200,
 
             x: x,
             y: y,
@@ -73,12 +70,11 @@ export default class SnowballFactory {
         ball.y = position.y
 
         ball.shadow.depth = ball.shadow.y
-        ball.depth = ball.shadow.depth
+        ball.depth = ball.shadow.depth + 1
     }
 
     onTweenComplete(ball) {
         ball.setTexture('main', 'snowball/ground')
-        ball.shadow.destroy()
     }
 
     getPeak(duration) {
