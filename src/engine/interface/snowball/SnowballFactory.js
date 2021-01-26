@@ -5,8 +5,8 @@ export default class SnowballFactory {
 
         this.balls = []
         this.speed = 875
-        this.maxHeight = 450
-        this.minHeight = 300
+        this.maxHeight = 425
+        this.minHeight = 350
     }
 
     throwBall(id, x, y) {
