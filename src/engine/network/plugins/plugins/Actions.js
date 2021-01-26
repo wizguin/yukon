@@ -7,7 +7,8 @@ export default class Actions extends Plugin {
         super(network)
         this.events = {
             'send_position': this.sendPosition,
-            'send_frame': this.sendFrame
+            'send_frame': this.sendFrame,
+            'snowball': this.snowball
         }
     }
 
@@ -17,6 +18,10 @@ export default class Actions extends Plugin {
 
     sendFrame(args) {
         this.world.room.penguins[args.id].playFrame(args.frame, args.loop)
+    }
+
+    snowball(args) {
+        this.interface.main.snowballFactory.throwBall(args.id, args.x, args.y)
     }
 
 }
