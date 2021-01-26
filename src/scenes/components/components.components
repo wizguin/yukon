@@ -146,6 +146,31 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "NineSlice",
+            "baseClass": "EventComponent",
+            "gameObjectType": "Phaser.GameObjects.GameObject",
+            "properties": [
+                {
+                    "name": "texture",
+                    "label": "Texture",
+                    "tooltip": "Texture",
+                    "defValue": "{\"key\":\"prompt\",\"frame\":\"window\"}",
+                    "type": {
+                        "id": "texture-config"
+                    }
+                },
+                {
+                    "name": "corner",
+                    "label": "Corner Slice",
+                    "tooltip": "Corner Slice",
+                    "defValue": 10,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
