@@ -336,6 +336,7 @@ class EmotesMenu extends FloatingMenu {
 
     onEmoteClick(emote) {
         this.interface.showEmoteBalloon(this.world.client.id, emote)
+        this.network.send('send_emote', { emote: emote })
         this.visible = false
     }
 
