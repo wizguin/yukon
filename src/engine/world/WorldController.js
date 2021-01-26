@@ -28,6 +28,8 @@ export default class WorldController extends BaseScene {
             // Prevents joining active room
             if (this.room.key == this.crumbs.rooms[id].name) return
 
+            this.interface.main.snowballFactory.clearBalls()
+
             this.room.scene.stop()
         }
 

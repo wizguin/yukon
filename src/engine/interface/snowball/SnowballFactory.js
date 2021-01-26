@@ -22,7 +22,7 @@ export default class SnowballFactory {
 
         this.playAnimation(penguin, x, y)
 
-        this.world.time.addEvent({
+        this.world.room.time.addEvent({
             delay: 833,
             callback: () => this.addTween(ball, x, y)
         })
@@ -109,6 +109,10 @@ export default class SnowballFactory {
             x: (x1 + x2) / 2,
             y: (y1 + y2) / 2
         }
+    }
+
+    clearBalls() {
+        this.balls = []
     }
 
 }
