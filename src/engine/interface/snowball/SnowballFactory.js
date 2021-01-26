@@ -4,22 +4,28 @@ export default class SnowballFactory {
         this.world = world
 
         this.balls = []
-        this.speed = 875
+        this.speed = 800 // 875
+        this.startHeight = -12
         this.maxHeight = 425
         this.minHeight = 350
     }
 
     throwBall(id, x, y) {
-        if (this.balls.length > 9) this.removeOldestBall()
-
         let penguin = this.world.room.penguins[id]
-        if (!penguin) return
+        if (!penguin || penguin.isTweening) return
+
+        if (this.balls.length > 9) this.removeOldestBall()
 
         let ball = this.createBall(penguin)
         x += Phaser.Math.Between(-20, 20)
         y += Phaser.Math.Between(-20, 20)
 
-        this.addTween(ball, x, y)
+        this.playAnimation(penguin, x, y)
+
+        this.world.time.addEvent({
+            delay: 833,
+            callback: () => this.addTween(ball, x, y)
+        })
     }
 
     removeOldestBall() {
@@ -31,11 +37,22 @@ export default class SnowballFactory {
     }
 
     createBall(penguin) {
-        let ball = this.world.room.add.image(penguin.x, penguin.y - 12, 'main', 'snowball/ball')
-        ball.shadow = this.world.room.add.image(penguin.x, penguin.y - 12, 'main', 'snowball/shadow')
+        let ball = this.world.room.add.image(penguin.x, penguin.y + this.startHeight, 'main', 'snowball/ball')
+        ball.shadow = this.world.room.add.image(penguin.x, penguin.y, 'main', 'snowball/shadow')
+
+        ball.visible = false
+        ball.shadow.visible = false
 
         this.balls.push(ball)
         return ball
+    }
+
+    playAnimation(penguin, x, y) {
+        let angle = penguin.actions.movement.getAngle({ x: penguin.x, y: penguin.y }, { x: x, y: y })
+        let direction = Math.max(Math.round(penguin.actions.movement.getDirection(angle) / 2), 1)
+        let frame = direction + 26 // + 26 for throwing frame id
+
+        penguin.playFrame(frame, false)
     }
 
     addTween(ball, x, y) {
@@ -54,13 +71,17 @@ export default class SnowballFactory {
         ball.tween = this.world.room.tweens.add({
             targets: ball.shadow,
             duration: duration,
-
-            x: x,
             y: y,
 
+            onStart: () => this.onTweenStart(ball),
             onUpdate: () => this.onTweenUpdate(ball, curve),
             onComplete: () => this.onTweenComplete(ball)
         })
+    }
+
+    onTweenStart(ball) {
+        ball.visible = true
+        ball.shadow.visible = true
     }
 
     onTweenUpdate(ball, curve) {
@@ -68,9 +89,10 @@ export default class SnowballFactory {
 
         ball.x = position.x
         ball.y = position.y
+        ball.shadow.x = position.x
 
+        ball.depth = ball.shadow.y + 1
         ball.shadow.depth = ball.shadow.y
-        ball.depth = ball.shadow.depth + 1
     }
 
     onTweenComplete(ball) {
