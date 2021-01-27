@@ -97,3 +97,7 @@ nav a:hover {
     height: 46px;
     background: url(../images/icons.png) -1px -1px;
 }
+
+input  {
+    background: none !important;
+}

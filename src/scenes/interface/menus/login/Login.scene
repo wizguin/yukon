@@ -208,7 +208,11 @@
             "type": "Image",
             "id": "930b1bfe-4d64-4250-957a-e2c5a9e3d6ef",
             "label": "passwordCheckbox",
-            "components": [],
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.callback": "() => this.onRememberPasswordClick()",
             "texture": {
                 "key": "login",
                 "frame": "checkbox"
@@ -222,15 +226,19 @@
             "type": "Image",
             "id": "48754edf-6d54-4018-ad29-f90e50323404",
             "label": "usernameCheckbox",
-            "components": [],
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.callback": "() => this.onRememberMeClick()",
             "texture": {
                 "key": "login",
                 "frame": "checkbox"
             },
             "x": 568,
             "y": 328,
-            "originX": 0.41509434,
-            "originY": 0.58490566
+            "originX": 0.41509,
+            "originY": 0.5849
         },
         {
             "type": "Text",
@@ -261,6 +269,56 @@
             "fontFamily": "Arial Narrow",
             "fontSize": "30px",
             "color": "#000000ff"
+        },
+        {
+            "type": "Image",
+            "id": "ffeb45b6-13e0-49b0-ad82-294a535c3ac4",
+            "label": "input",
+            "components": [],
+            "texture": {
+                "key": "login",
+                "frame": "input"
+            },
+            "x": 815,
+            "y": 258
+        },
+        {
+            "type": "Image",
+            "id": "f3dd63e7-4704-47f4-913d-b0daebe09d24",
+            "label": "input_1",
+            "components": [],
+            "texture": {
+                "key": "login",
+                "frame": "input"
+            },
+            "x": 815,
+            "y": 200
+        },
+        {
+            "prefabId": "b1f49bb5-b7f5-4eb9-81d7-21aa125e487f",
+            "id": "71f5ebab-c88b-4516-881b-0ac2f1827416",
+            "unlock": [
+                "visible"
+            ],
+            "label": "waitPrompt",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "visible": false
+        },
+        {
+            "prefabId": "4a66782f-1b3a-41da-b0c3-3d9d3c24217c",
+            "id": "864618dc-5334-40ca-af06-f3fb878ca5b1",
+            "unlock": [
+                "visible"
+            ],
+            "label": "savePrompt",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "visible": false
         }
     ],
     "plainObjects": [],

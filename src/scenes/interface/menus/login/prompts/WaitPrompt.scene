@@ -1,0 +1,131 @@
+{
+    "id": "b1f49bb5-b7f5-4eb9-81d7-21aa125e487f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9244c573-84b8-456c-8da8-e7103c11b56a",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "5726d6ab-b9ce-453f-a25d-b96aa03247f3",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9eee87f5-3843-4a54-a202-82bdfa58e570",
+                    "label": "rectangle",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 724,
+                    "height": 410
+                },
+                {
+                    "type": "Image",
+                    "id": "fd12cada-5586-4751-8253-16fe9a898e2e",
+                    "label": "yes_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "wait-button",
+                    "Button.callback": "() => this.onYesClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "wait-button"
+                    },
+                    "x": -140,
+                    "y": 95
+                },
+                {
+                    "type": "Image",
+                    "id": "92512547-817c-42bd-9350-18d9477d82f9",
+                    "label": "no_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "wait-button",
+                    "Button.callback": "() => this.onYesClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "wait-button"
+                    },
+                    "x": 140,
+                    "y": 95
+                },
+                {
+                    "type": "Text",
+                    "id": "50fe41ab-9314-4cbd-8adc-dc72f1e935a1",
+                    "label": "text",
+                    "components": [],
+                    "y": -70,
+                    "text": "WAIT!\nDo other people use this\ncomputer?",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "36px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "822ed487-c5c5-4121-9a0e-5f4236601f74",
+                    "label": "text_1",
+                    "components": [],
+                    "x": -140,
+                    "y": 95,
+                    "text": "Yes",
+                    "fixedWidth": 200,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "36px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "4a203440-e971-483e-b6b0-50819551bead",
+                    "label": "text_2",
+                    "components": [],
+                    "x": 140,
+                    "y": 95,
+                    "text": "No",
+                    "fixedWidth": 200,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "36px",
+                    "fontStyle": "bold"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

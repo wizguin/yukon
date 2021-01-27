@@ -4,6 +4,9 @@ import animations from './animations.json'
 import { Animated, Button, SimpleButton } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
+import WaitPrompt from './prompts/WaitPrompt'
+import SavePrompt from './prompts/SavePrompt'
+
 
 /* START OF COMPILED CODE */
 
@@ -11,6 +14,15 @@ class Login extends BaseScene {
 
     constructor() {
         super("Login");
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.passwordCheckbox;
+        /** @type {Phaser.GameObjects.Image} */
+        this.usernameCheckbox;
+        /** @type {WaitPrompt} */
+        this.waitPrompt;
+        /** @type {SavePrompt} */
+        this.savePrompt;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -99,6 +111,22 @@ class Login extends BaseScene {
         usernameText.text = "Penguin Name:";
         usernameText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
 
+        // input
+        this.add.image(815, 258, "login", "input");
+
+        // input_1
+        this.add.image(815, 200, "login", "input");
+
+        // waitPrompt
+        const waitPrompt = new WaitPrompt(this, 760, 480);
+        this.add.existing(waitPrompt);
+        waitPrompt.visible = false;
+
+        // savePrompt
+        const savePrompt = new SavePrompt(this, 760, 480);
+        this.add.existing(savePrompt);
+        savePrompt.visible = false;
+
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
@@ -122,12 +150,28 @@ class Login extends BaseScene {
         const loginButtonButton = new Button(loginButton);
         loginButtonButton.spriteName = "login-button";
         loginButtonButton.callback = () => this.onLoginSubmit();
+
+        // passwordCheckbox (components)
+        const passwordCheckboxSimpleButton = new SimpleButton(passwordCheckbox);
+        passwordCheckboxSimpleButton.callback = () => this.onRememberPasswordClick();
+
+        // usernameCheckbox (components)
+        const usernameCheckboxSimpleButton = new SimpleButton(usernameCheckbox);
+        usernameCheckboxSimpleButton.callback = () => this.onRememberMeClick();
+
+        this.passwordCheckbox = passwordCheckbox;
+        this.usernameCheckbox = usernameCheckbox;
+        this.waitPrompt = waitPrompt;
+        this.savePrompt = savePrompt;
     }
 
     /* START-USER-CODE */
 
     create() {
         this._create()
+
+        this.usernameCheckbox.checked = false
+        this.passwordCheckbox.checked = false
 
         this.anims.fromJSON(animations)
 
@@ -137,9 +181,6 @@ class Login extends BaseScene {
             width: 380,
             height: 53,
             padding: '0 6px 0 6px',
-
-            backgroundColor: '#fff',
-            outline: '1px solid #000',
             filter: 'none',
 
             color: '#000',
@@ -169,8 +210,37 @@ class Login extends BaseScene {
 
     onBackClick() {
         this.network.disconnect()
-
         this.scene.start('Start')
+    }
+
+    onRememberMeClick() {
+        if (this.passwordCheckbox.checked) this.disableCheckbox(this.passwordCheckbox)
+
+        this.toggleCheckbox(this.usernameCheckbox)
+    }
+
+    onRememberPasswordClick() {
+        if (!this.passwordCheckbox.checked) return this.waitPrompt.visible = true
+
+        this.disableCheckbox(this.usernameCheckbox)
+        this.disableCheckbox(this.passwordCheckbox)
+    }
+
+    toggleCheckbox(checkbox) {
+        let texture = (checkbox.checked) ? 'checkbox' : 'checkbox-active'
+
+        checkbox.checked = !checkbox.checked
+        checkbox.setTexture('login', texture)
+    }
+
+    enableCheckbox(checkbox) {
+        checkbox.checked = true
+        checkbox.setTexture('login', 'checkbox-active')
+    }
+
+    disableCheckbox(checkbox) {
+        checkbox.checked = false
+        checkbox.setTexture('login', 'checkbox')
     }
 
     /* END-USER-CODE */

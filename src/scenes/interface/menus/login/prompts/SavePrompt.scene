@@ -1,0 +1,222 @@
+{
+    "id": "4a66782f-1b3a-41da-b0c3-3d9d3c24217c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f4532693-6530-4145-9654-d68c424f2406",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "3033ad5b-d357-40e7-8246-d6f0d17da117",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "x": -1,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "2d3790c2-7862-4b7e-b730-5e6142ba7401",
+                    "label": "illustration",
+                    "components": [],
+                    "texture": {
+                        "key": "login",
+                        "frame": "illustration1"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "960b19f2-4814-45f8-8275-1dce70dc8521",
+                    "label": "save_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "login",
+                        "frame": "save-bg"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "c426fa4e-11f2-419a-9a47-50628e81e22d",
+                    "label": "save_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "save-button",
+                    "Button.callback": "() => this.onSaveClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "save-button"
+                    },
+                    "x": -303,
+                    "y": 285
+                },
+                {
+                    "type": "Image",
+                    "id": "e0940c7e-fe5a-4d45-b3b4-eb74a96def91",
+                    "label": "no_save_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "save-button",
+                    "Button.callback": "() => this.visible = false",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "save-button"
+                    },
+                    "x": 21,
+                    "y": 285
+                },
+                {
+                    "type": "Image",
+                    "id": "51bbafe3-69c8-45e4-bc2a-661cd140e94a",
+                    "label": "learn_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "learn-button",
+                    "Button.callback": "() => this.visible = false",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "learn-button"
+                    },
+                    "x": 343,
+                    "y": 285
+                },
+                {
+                    "type": "Image",
+                    "id": "83cb438d-cca2-4ca9-8bb6-4eb1f2b7e5d6",
+                    "label": "blue_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.visible = false",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 487,
+                    "y": -334
+                },
+                {
+                    "type": "Image",
+                    "id": "9c4d4315-bc51-47fa-b560-20477b23806f",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 487,
+                    "y": -336
+                },
+                {
+                    "type": "Text",
+                    "id": "334992e9-15ce-4a27-bdbf-370c566f3789",
+                    "label": "text",
+                    "components": [],
+                    "y": -280,
+                    "text": "If you save your password here, anyone who uses this\ncomputer could access your account.",
+                    "fixedWidth": 900,
+                    "fixedHeight": 80,
+                    "fontFamily": "Arial",
+                    "fontSize": "34px",
+                    "fontStyle": "bold",
+                    "shadow.offsetX": 3,
+                    "shadow.offsetY": 3,
+                    "shadow.fill": true,
+                    "shadow.color": "#003366"
+                },
+                {
+                    "type": "Text",
+                    "id": "22dc8d89-bcdd-4bc2-b319-2c1eab43e724",
+                    "label": "text_1",
+                    "components": [],
+                    "x": -303,
+                    "y": 285,
+                    "text": "Save Password",
+                    "fixedWidth": 300,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "ac60a8c8-45f2-4d43-ad42-9794af9e8aa3",
+                    "label": "text_2",
+                    "components": [],
+                    "x": 21,
+                    "y": 285,
+                    "text": "Don't Save\nPassword",
+                    "fixedWidth": 300,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "ab1a111f-97d5-4cf2-b9cb-241f9d47a2aa",
+                    "label": "text_3",
+                    "components": [],
+                    "x": 343,
+                    "y": 285,
+                    "text": "Learn More",
+                    "fixedWidth": 300,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "f5f17a23-f3ba-4c4e-9223-9688596122e9",
+                    "label": "illustration_text",
+                    "components": [],
+                    "x": -404,
+                    "y": -175,
+                    "originX": 0,
+                    "originY": 0,
+                    "text": "They could spend\nyour coins!",
+                    "fixedWidth": 600,
+                    "fontFamily": "Arial",
+                    "fontSize": "44px",
+                    "fontStyle": "bold",
+                    "color": "#000000",
+                    "shadow.offsetX": 3,
+                    "shadow.offsetY": 3,
+                    "shadow.color": "#003366"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -13,7 +13,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         }
 
         element.type = type
-        element.autocomplete = 'off'
+        element.autocomplete = 'new-password'
         element.spellcheck = false
         element.maxLength = maxLength
 
