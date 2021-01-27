@@ -40,6 +40,14 @@ class NineSlice extends EventComponent {
         )
 
         this.sliced.setOrigin(this.gameObject.originX, this.gameObject.originY)
+
+        // Set correct position inside container
+        if (this.gameObject.parentContainer) {
+            let parent = this.gameObject.parentContainer
+            let index = parent.getIndex(this.gameObject)
+
+            parent.addAt(this.sliced, index)
+        }
     }
 
     /* END-USER-CODE */
