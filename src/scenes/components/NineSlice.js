@@ -18,9 +18,6 @@ class NineSlice extends EventComponent {
         this.corner = 10;
 
         /* START-USER-CTR-CODE */
-
-        gameObject.visible = false
-
         /* END-USER-CTR-CODE */
     }
 
@@ -32,22 +29,26 @@ class NineSlice extends EventComponent {
     /* START-USER-CODE */
 
     start() {
-        this.sliced = this.scene.add.nineslice(
+        if (this.gameObject.visible == false) return
+
+        let sliced = this.scene.add.nineslice(
             this.gameObject.x, this.gameObject.y,
             this.gameObject.width, this.gameObject.height,
             this.texture,
             this.corner
         )
 
-        this.sliced.setOrigin(this.gameObject.originX, this.gameObject.originY)
+        sliced.setOrigin(this.gameObject.originX, this.gameObject.originY)
 
         // Set correct position inside container
         if (this.gameObject.parentContainer) {
             let parent = this.gameObject.parentContainer
             let index = parent.getIndex(this.gameObject)
 
-            parent.addAt(this.sliced, index)
+            parent.addAt(sliced, index)
         }
+
+        this.gameObject.visible = false
     }
 
     /* END-USER-CODE */
