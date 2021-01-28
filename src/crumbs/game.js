@@ -7,7 +7,7 @@ import worlds from './worlds'
 const game = {
     width: 1520,
     height: 960,
-    type: Phaser.CANVAS,
+    type: Phaser.WEBGL,
     transparent: true,
     roundPixels: true,
 
