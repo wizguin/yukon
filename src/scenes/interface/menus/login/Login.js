@@ -4,6 +4,7 @@ import animations from './animations.json'
 import { Animated, Button, SimpleButton } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
+import Checks from './checks/Checks'
 import WaitPrompt from './prompts/WaitPrompt'
 import SavePrompt from './prompts/SavePrompt'
 
@@ -15,10 +16,8 @@ class Login extends BaseScene {
     constructor() {
         super("Login");
 
-        /** @type {Phaser.GameObjects.Image} */
-        this.passwordCheckbox;
-        /** @type {Phaser.GameObjects.Image} */
-        this.usernameCheckbox;
+        /** @type {Checks} */
+        this.checks;
         /** @type {WaitPrompt} */
         this.waitPrompt;
         /** @type {SavePrompt} */
@@ -79,26 +78,6 @@ class Login extends BaseScene {
         loginText.text = "Login";
         loginText.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"38px"});
 
-        // rememberUsernameText
-        const rememberUsernameText = this.add.text(602, 384, "", {});
-        rememberUsernameText.setOrigin(0, 0.5);
-        rememberUsernameText.text = "Remember my password";
-        rememberUsernameText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
-
-        // rememberPasswordText
-        const rememberPasswordText = this.add.text(602, 329, "", {});
-        rememberPasswordText.setOrigin(0, 0.5);
-        rememberPasswordText.text = "Remember me on this computer";
-        rememberPasswordText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
-
-        // passwordCheckbox
-        const passwordCheckbox = this.add.image(568, 383, "login", "checkbox");
-        passwordCheckbox.setOrigin(0.41509434, 0.58490566);
-
-        // usernameCheckbox
-        const usernameCheckbox = this.add.image(568, 328, "login", "checkbox");
-        usernameCheckbox.setOrigin(0.41509434, 0.58490566);
-
         // passwordText
         const passwordText = this.add.text(503, 258, "", {});
         passwordText.setOrigin(0, 0.5);
@@ -116,6 +95,10 @@ class Login extends BaseScene {
 
         // input_1
         this.add.image(815, 200, "login", "input");
+
+        // checks
+        const checks = new Checks(this, 568, 328);
+        this.add.existing(checks);
 
         // waitPrompt
         const waitPrompt = new WaitPrompt(this, 760, 480);
@@ -151,16 +134,7 @@ class Login extends BaseScene {
         loginButtonButton.spriteName = "login-button";
         loginButtonButton.callback = () => this.onLoginSubmit();
 
-        // passwordCheckbox (components)
-        const passwordCheckboxSimpleButton = new SimpleButton(passwordCheckbox);
-        passwordCheckboxSimpleButton.callback = () => this.onRememberPasswordClick();
-
-        // usernameCheckbox (components)
-        const usernameCheckboxSimpleButton = new SimpleButton(usernameCheckbox);
-        usernameCheckboxSimpleButton.callback = () => this.onRememberMeClick();
-
-        this.passwordCheckbox = passwordCheckbox;
-        this.usernameCheckbox = usernameCheckbox;
+        this.checks = checks;
         this.waitPrompt = waitPrompt;
         this.savePrompt = savePrompt;
     }
@@ -169,9 +143,6 @@ class Login extends BaseScene {
 
     create() {
         this._create()
-
-        this.usernameCheckbox.checked = false
-        this.passwordCheckbox.checked = false
 
         this.anims.fromJSON(animations)
 
@@ -187,15 +158,15 @@ class Login extends BaseScene {
             fontSize: 35
         }
 
-        this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => { this.onLoginSubmit() }, 12, false)
-        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => { this.onLoginSubmit() }, 128, false)
+        this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => this.onLoginSubmit(), 12, false)
+        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => this.onLoginSubmit(), 128, false)
 
         this.add.existing(this.usernameInput)
         this.add.existing(this.passwordInput)
 
         // Input
 
-        this.input.keyboard.on('keydown_ENTER', () => { this.onLoginSubmit() })
+        this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
     }
 
     onLoginSubmit() {
@@ -205,42 +176,12 @@ class Login extends BaseScene {
         this.interface.showLoading(`Logging in ${username}`)
         this.scene.stop()
 
-        this.network.connectLogin(username, password)
+        this.network.connectLogin(username, password, this.checks.username.checked, this.checks.password.checked)
     }
 
     onBackClick() {
         this.network.disconnect()
         this.scene.start('Start')
-    }
-
-    onRememberMeClick() {
-        if (this.passwordCheckbox.checked) this.disableCheckbox(this.passwordCheckbox)
-
-        this.toggleCheckbox(this.usernameCheckbox)
-    }
-
-    onRememberPasswordClick() {
-        if (!this.passwordCheckbox.checked) return this.waitPrompt.visible = true
-
-        this.disableCheckbox(this.usernameCheckbox)
-        this.disableCheckbox(this.passwordCheckbox)
-    }
-
-    toggleCheckbox(checkbox) {
-        let texture = (checkbox.checked) ? 'checkbox' : 'checkbox-active'
-
-        checkbox.checked = !checkbox.checked
-        checkbox.setTexture('login', texture)
-    }
-
-    enableCheckbox(checkbox) {
-        checkbox.checked = true
-        checkbox.setTexture('login', 'checkbox-active')
-    }
-
-    disableCheckbox(checkbox) {
-        checkbox.checked = false
-        checkbox.setTexture('login', 'checkbox')
     }
 
     /* END-USER-CODE */

@@ -1,0 +1,111 @@
+{
+    "id": "1072368d-f96d-4a62-a72d-3927be2d8680",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapEnabled": true,
+        "snapWidth": 10,
+        "snapHeight": 10,
+        "superClassName": "BaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "PenguinSelect",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "7644d214-9644-4ebc-97c8-ce4ad34056c9",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "load",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Rectangle",
+            "id": "d04ed871-ebc2-456e-b405-a6a74d54bd6c",
+            "label": "largeBg",
+            "scope": "CLASS",
+            "components": [
+                "NineSlice"
+            ],
+            "NineSlice.corner": 50,
+            "x": 760,
+            "y": 430,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#0280CD",
+            "width": 1368,
+            "height": 664
+        },
+        {
+            "type": "Rectangle",
+            "id": "9f9f4600-ce90-4d06-baa1-7af0946104a1",
+            "label": "smallBg",
+            "scope": "CLASS",
+            "components": [
+                "NineSlice"
+            ],
+            "NineSlice.corner": 50,
+            "x": 760,
+            "y": 430,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#0280CD",
+            "width": 1308,
+            "height": 728
+        },
+        {
+            "type": "Sprite",
+            "id": "d6ba3354-0d05-4958-9f1d-d7ff7b4063a6",
+            "label": "backButton",
+            "components": [
+                "SimpleButton",
+                "Animated"
+            ],
+            "SimpleButton.callback": "() => this.onBackClick()",
+            "Animated.animation": "larger-button",
+            "Animated.onHover": true,
+            "texture": {
+                "key": "login",
+                "frame": "larger-button"
+            },
+            "x": 760,
+            "y": 876
+        },
+        {
+            "type": "Text",
+            "id": "f1807514-ce92-475e-b6b2-55aa3fbe0629",
+            "label": "backText",
+            "components": [],
+            "x": 760,
+            "y": 876,
+            "text": "Login as a different penguin",
+            "fixedWidth": 400,
+            "lineSpacing": 25,
+            "align": "center",
+            "fontFamily": "Arial Narrow",
+            "fontSize": "30px",
+            "color": "#ffffffff"
+        },
+        {
+            "type": "Container",
+            "id": "385d784b-c28d-4a3a-8506-13d53c422ff2",
+            "label": "container",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

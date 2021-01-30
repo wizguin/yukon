@@ -1,0 +1,87 @@
+{
+    "id": "ad6f3593-431e-4451-9b81-a589ddd72242",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "1c5978f9-cd54-4259-8979-f97d5bfa2bbd",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "846d9c56-c43a-4eb9-bc0f-a6f23fbc30db",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 488,
+                    "height": 664
+                },
+                {
+                    "type": "Image",
+                    "id": "d897b6cc-195c-4eb5-a6dd-ec48f8d723d6",
+                    "label": "penguin_large",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "player_large",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "login",
+                        "frame": "player_large"
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "b7ce3c05-47d9-4ce8-9537-8c11bd4de74e",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 215,
+                    "fixedWidth": 420,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "44px",
+                    "fontStyle": "bold italic",
+                    "stroke": "#003366",
+                    "strokeThickness": 10,
+                    "shadow.color": "#000000ff"
+                },
+                {
+                    "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
+                    "id": "3a5b4729-5974-4ad8-bf78-04377e100ce4",
+                    "unlock": [
+                        "fadeIn"
+                    ],
+                    "label": "paperDoll",
+                    "scope": "CLASS",
+                    "fadeIn": false,
+                    "components": [],
+                    "y": -45
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

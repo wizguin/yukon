@@ -116,8 +116,8 @@ class SavePrompt extends BaseContainer {
 
     onSaveClick() {
         this.visible = false
-        this.scene.enableCheckbox(this.scene.usernameCheckbox)
-        this.scene.enableCheckbox(this.scene.passwordCheckbox)
+        this.scene.checks.enable(this.scene.checks.username)
+        this.scene.checks.enable(this.scene.checks.password)
     }
 
     /* END-USER-CODE */

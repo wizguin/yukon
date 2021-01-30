@@ -1,0 +1,69 @@
+{
+    "id": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "c93124bb-5bb1-422a-9900-7a3a915df703",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c8cfd096-2e07-472e-b1e0-a11a86e0efd2",
+                    "label": "body",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "paperdoll/body"
+                    },
+                    "y": 3,
+                    "tintTopLeft": "#fff",
+                    "tintTopRight": "#fff",
+                    "tintBottomLeft": "#fff",
+                    "tintBottomRight": "#fff"
+                },
+                {
+                    "type": "Image",
+                    "id": "74e2da01-371c-4d43-8319-d06c0236ab6b",
+                    "label": "paperdoll",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "paperdoll/paperdoll"
+                    },
+                    "y": 30
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "fadeIn",
+            "label": "Fade In",
+            "tooltip": "Fade In",
+            "defValue": true,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
+}

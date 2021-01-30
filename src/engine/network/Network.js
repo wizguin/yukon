@@ -11,9 +11,15 @@ export default class Network {
 
         this.handler = new DataHandler(this)
         this.client = null
+
+        this.saveUsername = false
+        this.savePassword = false
     }
 
-    connectLogin(username, password) {
+    connectLogin(username, password, saveUsername, savePassword) {
+        this.saveUsername = saveUsername
+        this.savePassword = savePassword
+
         this.connect(this.crumbs.worlds.login, () => { this.disconnect() })
 
         this.send('login', { username: username, password: password })
@@ -52,6 +58,27 @@ export default class Network {
 
         let prompt = this.game.scene.getScene('InterfaceController').prompt
         prompt.showError('Connection was lost.\nPlease click to learn more', 'Learn More', () => { })
+    }
+
+    // Saved penguins
+
+    get isSavedPenguins() {
+        if (localStorage.getItem('saved_penguins')) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    get savedPenguins() {
+        let savedPenguins = localStorage.getItem('saved_penguins')
+        if (!savedPenguins) return {}
+
+        try {
+            return JSON.parse(savedPenguins)
+        } catch (error) {
+            return {}
+        }
     }
 
 }

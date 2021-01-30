@@ -1,0 +1,94 @@
+{
+    "id": "1a09293b-d8f0-454f-ad6c-dc0364729549",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "31eda64c-7714-49cd-a8c9-c60b5c4030e0",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "ce42702b-eee2-4d27-93fd-ad4abd13fa72",
+                    "label": "text_2",
+                    "components": [],
+                    "x": 34,
+                    "y": 56,
+                    "originX": 0,
+                    "text": "Remember my password",
+                    "lineSpacing": 25,
+                    "align": "right",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "30px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Text",
+                    "id": "10506aaa-25e4-4548-bc18-5792a4555f46",
+                    "label": "text_1",
+                    "components": [],
+                    "x": 34,
+                    "y": 1,
+                    "originX": 0,
+                    "text": "Remember me on this computer",
+                    "lineSpacing": 25,
+                    "align": "right",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "30px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Image",
+                    "id": "930b1bfe-4d64-4250-957a-e2c5a9e3d6ef",
+                    "label": "password",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onRememberPasswordClick()",
+                    "texture": {
+                        "key": "login",
+                        "frame": "checkbox"
+                    },
+                    "y": 55,
+                    "originX": 0.41509434,
+                    "originY": 0.58490566
+                },
+                {
+                    "type": "Image",
+                    "id": "48754edf-6d54-4018-ad29-f90e50323404",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onRememberMeClick()",
+                    "texture": {
+                        "key": "login",
+                        "frame": "checkbox"
+                    },
+                    "originX": 0.41509,
+                    "originY": 0.5849
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -19,6 +19,8 @@ export default class Join extends Plugin {
         let x = roomConfig.x
         let y = roomConfig.y
 
+        if (this.network.saveUsername) this.savePlayer(args, this.network.savePassword)
+
         this.scene.start('WorldController')
         this.world.setClient(args)
 
@@ -35,6 +37,18 @@ export default class Join extends Plugin {
 
     removePlayer(args) {
         this.world.removePenguin(args.user)
+    }
+
+    // Saves a player to local storage
+    savePlayer(args, savePassword) {
+        let savedPenguins = this.network.savedPenguins
+
+        if (Object.keys(savedPenguins).length > 5 && !(args.user.username in savedPenguins)) return
+
+        let { photo, flag, x, y, frame, coins, id, ...penguin } = args.user
+
+        savedPenguins[args.user.username] = penguin
+        localStorage.setItem('saved_penguins', JSON.stringify(savedPenguins))
     }
 
 }
