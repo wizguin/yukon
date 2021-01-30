@@ -29,6 +29,9 @@ export default class Penguin extends BaseContainer {
         this.items = new PenguinItems(this)
         this.itemLoader = new ItemLoader(this)
 
+        this.savedPenguins = this.network.savedPenguins
+        this.save = this.savedPenguins[this.username]
+
         this.loadPenguin()
     }
 
@@ -65,6 +68,11 @@ export default class Penguin extends BaseContainer {
 
     updatePenguin(item, slot) {
         this.items.setItem(item, slot)
+
+        if (this.save && slot in this.save) {
+            this.save[slot] = item
+            localStorage.setItem('saved_penguins', JSON.stringify(this.savedPenguins))
+        }
 
         // Load item sprite
         if (slot in this.items.equipped) {
