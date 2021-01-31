@@ -29,7 +29,6 @@
                         "key": "main",
                         "frame": "paperdoll/body"
                     },
-                    "y": 3,
                     "tintTopLeft": "#fff",
                     "tintTopRight": "#fff",
                     "tintBottomLeft": "#fff",
@@ -43,8 +42,7 @@
                     "texture": {
                         "key": "main",
                         "frame": "paperdoll/paperdoll"
-                    },
-                    "y": 30
+                    }
                 }
             ]
         }

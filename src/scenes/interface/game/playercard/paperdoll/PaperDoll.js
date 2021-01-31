@@ -11,11 +11,11 @@ class PaperDoll extends BaseContainer {
         super(scene, x, y);
 
         // body
-        const body = scene.add.image(0, 3, "main", "paperdoll/body");
+        const body = scene.add.image(0, 0, "main", "paperdoll/body");
         this.add(body);
 
         // paperdoll
-        const paperdoll = scene.add.image(0, 30, "main", "paperdoll/paperdoll");
+        const paperdoll = scene.add.image(0, 0, "main", "paperdoll/paperdoll");
         this.add(paperdoll);
 
         this.body = body;
