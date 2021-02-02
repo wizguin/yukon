@@ -8,6 +8,7 @@ import Hint from '@engine/interface/hint/Hint'
 import SnowballFactory from '@engine/interface/snowball/SnowballFactory'
 
 import ActionsMenu from '../floating/actions/ActionsMenu'
+import Buddy from '../buddy/Buddy'
 import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Map from '../map/Map'
@@ -25,6 +26,10 @@ class Main extends BaseScene {
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
         this.crosshair;
+        /** @type {Phaser.GameObjects.Image} */
+        this.request_button;
+        /** @type {Buddy} */
+        this.buddy;
         /** @type {PlayerCard} */
         this.playerCard;
         /** @type {ActionsMenu} */
@@ -117,8 +122,16 @@ class Main extends BaseScene {
         // mail_button
         const mail_button = this.add.image(170, 49, "main", "mail-button");
 
+        // request_button
+        const request_button = this.add.image(270, 62, "main", "buddy-button");
+
         // mod_button
         const mod_button = this.add.image(1434, 69, "main", "mod-button");
+
+        // buddy
+        const buddy = new Buddy(this, 1140, 436);
+        this.add.existing(buddy);
+        buddy.visible = false;
 
         // playerCard
         const playerCard = new PlayerCard(this, 446, 436);
@@ -190,6 +203,7 @@ class Main extends BaseScene {
         // buddies_button (components)
         const buddies_buttonButton = new Button(buddies_button);
         buddies_buttonButton.spriteName = "blue-button";
+        buddies_buttonButton.callback = () => this.buddy.visible = true;
         const buddies_buttonShowHint = new ShowHint(buddies_button);
         buddies_buttonShowHint.text = "Show Buddies";
 
@@ -225,6 +239,11 @@ class Main extends BaseScene {
         mail_buttonButton.spriteName = "mail-button";
         mail_buttonButton.activeFrame = false;
 
+        // request_button (components)
+        const request_buttonButton = new Button(request_button);
+        request_buttonButton.spriteName = "buddy-button";
+        request_buttonButton.activeFrame = false;
+
         // mod_button (components)
         const mod_buttonButton = new Button(mod_button);
         mod_buttonButton.spriteName = "mod-button";
@@ -232,6 +251,8 @@ class Main extends BaseScene {
 
         this.chatLog = chatLog;
         this.crosshair = crosshair;
+        this.request_button = request_button;
+        this.buddy = buddy;
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
@@ -318,6 +339,10 @@ class Main extends BaseScene {
 
         this.balloonFactory.showTextBalloon(this.world.client.id, text)
         this.network.send('send_message', { message: text })
+    }
+
+    bounceIcon() {
+
     }
 
     /* END-USER-CODE */

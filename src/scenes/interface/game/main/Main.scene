@@ -230,6 +230,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => this.buddy.visible = true",
             "ShowHint.text": "Show Buddies",
             "texture": {
                 "key": "main",
@@ -384,6 +385,23 @@
         },
         {
             "type": "Image",
+            "id": "c054d933-88b4-4df6-a787-8b5f568974ac",
+            "label": "request_button",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "buddy-button",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "main",
+                "frame": "buddy-button"
+            },
+            "x": 270,
+            "y": 62
+        },
+        {
+            "type": "Image",
             "id": "5dce1a5e-0a11-4e37-a002-99517e8f72bf",
             "label": "mod_button",
             "components": [
@@ -397,6 +415,19 @@
             },
             "x": 1434,
             "y": 69
+        },
+        {
+            "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
+            "id": "9acd4a58-cbf9-4751-b96a-2822f121af9c",
+            "unlock": [
+                "visible"
+            ],
+            "label": "buddy",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1140,
+            "y": 436,
+            "visible": false
         },
         {
             "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",

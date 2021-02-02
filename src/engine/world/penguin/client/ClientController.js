@@ -5,6 +5,8 @@ export default class ClientController {
 
     constructor(client) {
         this.id = client.user.id
+
+        this.buddies = client.buddies
         this.inventory = client.inventory
 
         this.penguin = null // Reference to ClientPenguin object

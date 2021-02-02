@@ -1,0 +1,319 @@
+{
+    "id": "27889184-8ae4-4103-ab57-1cbad21b7401",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapHeight": 52,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "2e3cb4cb-5882-4e08-bbc6-e88eee8ac431",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "card_bg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "a95e00f1-6c2c-4342-99c2-a511260db9fe",
+                    "label": "card_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-bg"
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "841ebb39-649d-42b9-9511-ea1f3e822dc7",
+                    "label": "text",
+                    "components": [],
+                    "y": -236,
+                    "text": "Your Friends",
+                    "fixedWidth": 420,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000"
+                },
+                {
+                    "type": "Image",
+                    "id": "2ac6e99f-200e-4c66-bf80-a3495a593265",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => { this.visible = false }",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 177,
+                    "y": -237
+                },
+                {
+                    "type": "Image",
+                    "id": "5a1c1fba-b044-4f40-9206-0ec74445befe",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 177,
+                    "y": -239
+                },
+                {
+                    "type": "Image",
+                    "id": "7c656c7f-7656-4d79-a77d-6596ac339266",
+                    "label": "buddy_scroll",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/scroll"
+                    },
+                    "x": 177,
+                    "y": 14
+                },
+                {
+                    "type": "Image",
+                    "id": "da2bfe74-79fd-4772-9752-0d82acb1fb35",
+                    "label": "down_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.nextPage()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 177,
+                    "y": 195
+                },
+                {
+                    "type": "Image",
+                    "id": "877e60ba-ac93-4acc-8476-c139a829aa83",
+                    "label": "up_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.prevPage()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 177,
+                    "y": -173
+                },
+                {
+                    "type": "Image",
+                    "id": "76d94d02-bbfe-418f-ac6a-e5a7f397303c",
+                    "label": "blue_arrow_1",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 177,
+                    "y": 193,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "8ef106be-0a79-4b5b-bae3-c290e66ce84d",
+                    "label": "blue_arrow",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 177,
+                    "y": -175
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "f2a26b6e-7543-43ed-9451-bd62201d532b",
+                    "label": "buddy_item_7",
+                    "components": [],
+                    "x": -26,
+                    "y": 194
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "fa0b2b61-62ae-45d2-83ca-7c8fa9d5c283",
+                    "label": "buddy_item_6",
+                    "components": [],
+                    "x": -26,
+                    "y": 142
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "6eeaebcc-ba63-4f4e-9b87-8fce28d4514e",
+                    "label": "buddy_item_5",
+                    "components": [],
+                    "x": -26,
+                    "y": 90
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "8832d9b7-0a60-4918-afa5-d8c8a8e7a2f9",
+                    "label": "buddy_item_4",
+                    "components": [],
+                    "x": -26,
+                    "y": 38
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "39722cd4-e0f0-4a56-9956-1810785d54ea",
+                    "label": "buddy_item_3",
+                    "components": [],
+                    "x": -26,
+                    "y": -14
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "ae597d89-b8e4-47d4-9a9f-f263f2a9130d",
+                    "label": "buddy_item_2",
+                    "components": [],
+                    "x": -26,
+                    "y": -66
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "22fa7563-5315-46f4-8966-e40b241e26a2",
+                    "label": "buddy_item_1",
+                    "components": [],
+                    "x": -26,
+                    "y": -118
+                },
+                {
+                    "prefabId": "4bb6ff30-8325-40f6-a7ec-ab36bcde7e44",
+                    "id": "68c9019a-a0e7-42f8-8b77-1072aa33724e",
+                    "label": "buddy_item",
+                    "components": [],
+                    "x": -26,
+                    "y": -170
+                },
+                {
+                    "type": "Image",
+                    "id": "5f8516e6-2e1f-47ce-8caa-1a64b80c125d",
+                    "label": "buddy_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": -60,
+                    "y": 255
+                },
+                {
+                    "type": "Image",
+                    "id": "45edc42e-79e1-4aac-b6a7-bf2edac79c7b",
+                    "label": "profile_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "y": 255
+                },
+                {
+                    "type": "Image",
+                    "id": "33936fde-f58d-43d6-a23b-36cd73927b5c",
+                    "label": "igloo_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 60,
+                    "y": 255
+                },
+                {
+                    "type": "Image",
+                    "id": "323acf4c-cbf1-4065-85d7-5c5079dea9c4",
+                    "label": "buddies_icon_disabled",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddies-icon"
+                    },
+                    "x": -60,
+                    "y": 253
+                },
+                {
+                    "type": "Image",
+                    "id": "495a1656-7219-4392-ac81-83c8f251d36d",
+                    "label": "help_icon_disabled",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "online-icon"
+                    },
+                    "y": 253
+                },
+                {
+                    "type": "Image",
+                    "id": "3eec9a6b-c31e-47fb-865b-12626a034f33",
+                    "label": "igloo_icon_disabled",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "ignore-icon"
+                    },
+                    "x": 60,
+                    "y": 253
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "3a2022e0-a154-4abb-8444-0210e4c14fe6",
+            "label": "items",
+            "objectIds": [
+                "68c9019a-a0e7-42f8-8b77-1072aa33724e",
+                "22fa7563-5315-46f4-8966-e40b241e26a2",
+                "ae597d89-b8e4-47d4-9a9f-f263f2a9130d",
+                "39722cd4-e0f0-4a56-9956-1810785d54ea",
+                "8832d9b7-0a60-4918-afa5-d8c8a8e7a2f9",
+                "6eeaebcc-ba63-4f4e-9b87-8fce28d4514e",
+                "fa0b2b61-62ae-45d2-83ca-7c8fa9d5c283",
+                "f2a26b6e-7543-43ed-9451-bd62201d532b"
+            ]
+        }
+    ]
+}
