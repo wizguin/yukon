@@ -1,9 +1,11 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
+import { Button } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
-class Buttons extends Phaser.GameObjects.Container {
+class Buttons extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y);
@@ -29,38 +31,55 @@ class Buttons extends Phaser.GameObjects.Container {
         this.add(profile_button);
 
         // buddy_button
-        const buddy_button = scene.add.image(-150, 0, "main", "blue-button-disabled");
+        const buddy_button = scene.add.image(-150, 0, "main", "blue-button");
         this.add(buddy_button);
 
-        // buddies_icon_disabled
-        const buddies_icon_disabled = scene.add.image(-150, -2, "main", "buddies-icon-disabled");
-        this.add(buddies_icon_disabled);
+        // buddies_icon
+        const buddies_icon = scene.add.image(-151, -2, "main", "buddies-icon");
+        this.add(buddies_icon);
 
-        // help_icon_disabled
-        const help_icon_disabled = scene.add.image(-90, -2, "main", "help-icon-disabled");
-        this.add(help_icon_disabled);
+        // help_icon
+        const help_icon = scene.add.image(-90, -2, "main", "help-icon-disabled");
+        this.add(help_icon);
 
-        // igloo_icon_disabled
-        const igloo_icon_disabled = scene.add.image(-30, -2, "main", "igloo-icon-disabled");
-        this.add(igloo_icon_disabled);
+        // igloo_icon
+        const igloo_icon = scene.add.image(-30, -2, "main", "igloo-icon-disabled");
+        this.add(igloo_icon);
 
-        // mail_icon_disabled
-        const mail_icon_disabled = scene.add.image(30, -2, "main", "mail-icon-disabled");
-        this.add(mail_icon_disabled);
+        // mail_icon
+        const mail_icon = scene.add.image(30, -2, "main", "mail-icon-disabled");
+        this.add(mail_icon);
 
-        // ignore_icon_disabled
-        const ignore_icon_disabled = scene.add.image(90, -2, "main", "ignore-icon-disabled");
-        this.add(ignore_icon_disabled);
+        // ignore_icon
+        const ignore_icon = scene.add.image(90, -2, "main", "ignore-icon-disabled");
+        this.add(ignore_icon);
 
-        // mod_icon_disabled
-        const mod_icon_disabled = scene.add.image(150, -1, "main", "mod-icon-disabled");
-        this.add(mod_icon_disabled);
+        // mod_icon
+        const mod_icon = scene.add.image(150, -1, "main", "mod-icon-disabled");
+        this.add(mod_icon);
+
+        // buddy_button (components)
+        const buddy_buttonButton = new Button(buddy_button);
+        buddy_buttonButton.spriteName = "blue-button";
+        buddy_buttonButton.callback = () => this.onBuddyClick();
+        buddy_buttonButton.activeFrame = false;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    onBuddyClick() {
+        let text = `Would you like to add ${this.parentContainer.username.text}\nto your buddy list`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('buddy_request', { id: this.parentContainer.id })
+
+            this.interface.prompt.showWindow('Request Sent', 'single')
+        })
+    }
+
     /* END-USER-CODE */
 }
 

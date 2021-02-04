@@ -353,19 +353,22 @@
         },
         {
             "type": "Image",
-            "id": "b8adf69c-a4a9-47ec-bbac-5e9b86643dec",
-            "label": "news_button",
+            "id": "c054d933-88b4-4df6-a787-8b5f568974ac",
+            "label": "request_button",
+            "scope": "CLASS",
             "components": [
                 "Button"
             ],
-            "Button.spriteName": "news-button",
+            "Button.spriteName": "buddy-button",
+            "Button.callback": "() => this.onRequestClick()",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
-                "frame": "news-button"
+                "frame": "buddy-button"
             },
-            "x": 70,
-            "y": 61
+            "x": 270,
+            "y": 62,
+            "visible": false
         },
         {
             "type": "Image",
@@ -385,20 +388,19 @@
         },
         {
             "type": "Image",
-            "id": "c054d933-88b4-4df6-a787-8b5f568974ac",
-            "label": "request_button",
-            "scope": "CLASS",
+            "id": "b8adf69c-a4a9-47ec-bbac-5e9b86643dec",
+            "label": "news_button",
             "components": [
                 "Button"
             ],
-            "Button.spriteName": "buddy-button",
+            "Button.spriteName": "news-button",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
-                "frame": "buddy-button"
+                "frame": "news-button"
             },
-            "x": 270,
-            "y": 62
+            "x": 70,
+            "y": 61
         },
         {
             "type": "Image",

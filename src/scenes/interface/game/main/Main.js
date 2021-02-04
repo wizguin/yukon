@@ -116,14 +116,15 @@ class Main extends BaseScene {
         // map_button
         const map_button = this.add.sprite(90, 888, "main", "map-button");
 
-        // news_button
-        const news_button = this.add.image(70, 61, "main", "news-button");
+        // request_button
+        const request_button = this.add.image(270, 62, "main", "buddy-button");
+        request_button.visible = false;
 
         // mail_button
         const mail_button = this.add.image(170, 49, "main", "mail-button");
 
-        // request_button
-        const request_button = this.add.image(270, 62, "main", "buddy-button");
+        // news_button
+        const news_button = this.add.image(70, 61, "main", "news-button");
 
         // mod_button
         const mod_button = this.add.image(1434, 69, "main", "mod-button");
@@ -229,20 +230,21 @@ class Main extends BaseScene {
         map_buttonButton.callback = () => { this.map.visible = true };
         map_buttonButton.activeFrame = false;
 
-        // news_button (components)
-        const news_buttonButton = new Button(news_button);
-        news_buttonButton.spriteName = "news-button";
-        news_buttonButton.activeFrame = false;
+        // request_button (components)
+        const request_buttonButton = new Button(request_button);
+        request_buttonButton.spriteName = "buddy-button";
+        request_buttonButton.callback = () => this.onRequestClick();
+        request_buttonButton.activeFrame = false;
 
         // mail_button (components)
         const mail_buttonButton = new Button(mail_button);
         mail_buttonButton.spriteName = "mail-button";
         mail_buttonButton.activeFrame = false;
 
-        // request_button (components)
-        const request_buttonButton = new Button(request_button);
-        request_buttonButton.spriteName = "buddy-button";
-        request_buttonButton.activeFrame = false;
+        // news_button (components)
+        const news_buttonButton = new Button(news_button);
+        news_buttonButton.spriteName = "news-button";
+        news_buttonButton.activeFrame = false;
 
         // mod_button (components)
         const mod_buttonButton = new Button(mod_button);
@@ -276,6 +278,10 @@ class Main extends BaseScene {
         this.hint = new Hint(this, 0, 0)
         this.add.existing(this.hint)
         this.hint.visible = false
+
+        // Buddy requests
+
+        this.requests = []
 
         // Chat input
 
@@ -341,8 +347,40 @@ class Main extends BaseScene {
         this.network.send('send_message', { message: text })
     }
 
-    bounceIcon() {
+    onRequestClick() {
+        let request = this.requests.shift()
+        if (this.requests.length < 1) this.request_button.visible = false
+        if (!request) return
 
+        let text = `${request.username} has asked to be your buddy.\nDo you accept?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    addRequest(request) {
+        // Prevent duplicate requests
+        if (this.requests.some(item => item.id == request.id)) return
+
+        this.requests.push(request)
+
+        this.request_button.visible = true
+        this.bounce(this.request_button)
+    }
+
+    bounce(gameObject) {
+        if (!gameObject.startY) gameObject.startY = gameObject.y
+
+        this.tweens.add({
+            targets: gameObject,
+            y: {
+                from: gameObject.startY - 100,
+                to: gameObject.startY
+            },
+            ease: 'Bounce',
+            duration: 200
+        })
     }
 
     /* END-USER-CODE */

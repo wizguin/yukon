@@ -3,6 +3,7 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -77,29 +78,34 @@
                     "type": "Image",
                     "id": "7490ec55-9795-4b55-bcf2-7170ee493ffd",
                     "label": "buddy_button",
-                    "components": [],
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onBuddyClick()",
+                    "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "blue-button-disabled"
+                        "frame": "blue-button"
                     },
                     "x": -150
                 },
                 {
                     "type": "Image",
                     "id": "92ce6fc2-cb90-444d-9a33-0566100ebc0f",
-                    "label": "buddies_icon_disabled",
+                    "label": "buddies_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "buddies-icon-disabled"
+                        "frame": "buddies-icon"
                     },
-                    "x": -150,
+                    "x": -151,
                     "y": -2
                 },
                 {
                     "type": "Image",
                     "id": "49810571-d58b-4ed6-883f-1f1baffe6403",
-                    "label": "help_icon_disabled",
+                    "label": "help_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
@@ -111,7 +117,7 @@
                 {
                     "type": "Image",
                     "id": "f0daa280-4416-48d2-986e-41f34099de22",
-                    "label": "igloo_icon_disabled",
+                    "label": "igloo_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
@@ -123,7 +129,7 @@
                 {
                     "type": "Image",
                     "id": "2b0aee28-83bc-4f3e-bc89-4c338f5558d0",
-                    "label": "mail_icon_disabled",
+                    "label": "mail_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
@@ -135,7 +141,7 @@
                 {
                     "type": "Image",
                     "id": "26ec7369-28a0-470f-b281-7dd6a3e7b31f",
-                    "label": "ignore_icon_disabled",
+                    "label": "ignore_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
@@ -147,7 +153,7 @@
                 {
                     "type": "Image",
                     "id": "682a26a5-7f79-4e67-9be0-4992ab794f04",
-                    "label": "mod_icon_disabled",
+                    "label": "mod_icon",
                     "components": [],
                     "texture": {
                         "key": "main",
