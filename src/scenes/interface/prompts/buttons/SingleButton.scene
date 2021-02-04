@@ -1,0 +1,59 @@
+{
+    "id": "48dfbf63-271b-4c3d-9fcc-6406eb7a0754",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "64c8eb85-fe90-4df1-88a4-774813373aba",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "13fd6c69-6da4-4aa3-b666-875ad02c51c5",
+                    "label": "button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "window-button",
+                    "Button.callback": "() => this.parentContainer.visible = false",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window-button"
+                    },
+                    "originY": 0.5047619047619047
+                },
+                {
+                    "type": "Text",
+                    "id": "7cebd0b7-9243-4401-8fde-0d271502364a",
+                    "label": "text_1",
+                    "components": [],
+                    "text": "Ok",
+                    "fixedWidth": 280,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "id": "c8bd80b3-7ef6-4945-950c-2ab697bd77e3",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapEnabled": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e3245eff-88e8-47ca-8803-d76dde32392e",
+            "label": "container_2",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e3ad716b-49e2-4f64-bf11-e4270508f97c",
+                    "label": "no_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "window-button-small",
+                    "Button.callback": "() => this.parentContainer.visible = false",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window-button-small"
+                    },
+                    "x": 110,
+                    "originY": 0.49523809523809526
+                },
+                {
+                    "type": "Image",
+                    "id": "b8c7eb26-4d81-40c9-ab5f-c0c8c3684cb3",
+                    "label": "yes_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "window-button-small",
+                    "Button.callback": "() => this.onYesClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window-button-small"
+                    },
+                    "x": -110,
+                    "originY": 0.49523809523809526
+                },
+                {
+                    "type": "Text",
+                    "id": "073efe64-d21e-4663-b0f9-17753d93647a",
+                    "label": "text_2",
+                    "components": [],
+                    "x": 110,
+                    "text": "No",
+                    "fixedWidth": 150,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "c95659f2-1d60-4b5e-9619-9caa08ca0597",
+                    "label": "text_1",
+                    "components": [],
+                    "x": -110,
+                    "text": "Yes",
+                    "fixedWidth": 150,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
