@@ -81,7 +81,7 @@ export default class Penguin extends BaseContainer {
         }
 
         // Load item paper, only if card is active
-        if (this.playerCard.visible && this.playerCard.paperDoll.id == this.user.id) {
+        if (this.playerCard.visible && this.playerCard.id == this.user.id) {
             this.paperDollLoader.loadItem(item, slot)
             this.paperDollLoader.load.start()
         }

@@ -89,6 +89,9 @@ class PlayerCard extends BaseContainer {
         this.paperDoll = new PaperDoll(this.scene, 0, -2)
         this.addAt(this.paperDoll, 1)
 
+        // Active penguin id
+        this.id = null
+
         /* END-USER-CTR-CODE */
     }
 
@@ -118,6 +121,7 @@ class PlayerCard extends BaseContainer {
             this.inventory.visible = false
         }
 
+        this.id = penguin.user.id
         this.visible = true
     }
 
