@@ -18,7 +18,12 @@ export default class Buddy extends Plugin {
     }
 
     buddyAccept(args) {
+        if (args.requester) this.interface.main.addRequest(args)
 
+        let { requester, ...buddy } = args
+
+        this.world.client.buddies.push(buddy)
+        this.interface.main.buddy.showPage()
     }
 
     buddyRemove(args) {

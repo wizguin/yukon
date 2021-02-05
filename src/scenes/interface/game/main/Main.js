@@ -352,9 +352,27 @@ class Main extends BaseScene {
         if (this.requests.length < 1) this.request_button.visible = false
         if (!request) return
 
+        if (request.requester) {
+            // Show buddy accept prompt
+            this.showAccept(request)
+        } else {
+            // Show buddy request prompt
+            this.showRequest(request)
+        }
+    }
+
+    showAccept(request) {
+        let text = `${request.username} is now your buddy!`
+
+        this.interface.prompt.showWindow(text, 'single')
+    }
+
+    showRequest(request) {
         let text = `${request.username} has asked to be your buddy.\nDo you accept?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('buddy_accept', request)
+
             this.interface.prompt.window.visible = false
         })
     }
