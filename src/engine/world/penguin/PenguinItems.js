@@ -20,6 +20,19 @@ export default class PenguinItems {
         return sprites
     }
 
+    /**
+     * Returns a new object of slots mapped to item ids.
+     *
+     * @readonly
+     */
+    get flat() {
+        return Object.fromEntries(
+            Object.entries(this.all).map(
+                ([key, value]) => [key, value.id]
+            )
+        )
+    }
+
     setAll() {
         let items = {}
 

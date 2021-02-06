@@ -16,6 +16,10 @@ export default class PaperDollLoader {
         this.load.on('complete', this.onComplete, this)
     }
 
+    setColor(id) {
+        this.paperDoll.body.tint = this.paperDoll.crumbs.colors[id - 1]
+    }
+
     loadItems(penguin) {
         for (let slot of this.paperDoll.slots) {
             let item = penguin[slot]
@@ -27,6 +31,7 @@ export default class PaperDollLoader {
     }
 
     loadItem(item, slot) {
+        if (slot == 'color') return this.setColor(item)
         if (item == 0) return this.removeItem(slot)
 
         let key = `${this.prefix}/${slot}/${item}`
@@ -84,7 +89,7 @@ export default class PaperDollLoader {
 
         this.paperDoll.add(paper)
 
-        //if (this.penguin.isClient) this.addInput(slot, paper)
+        if (this.paperDoll.isInputEnabled) this.addInput(slot, paper)
 
         return paper
     }
@@ -99,24 +104,18 @@ export default class PaperDollLoader {
         })
     }
 
-    // addInput(slot, paper) {
-    //     if (slot == 'color') {
-    //         return paper.setInteractive({
-    //             pixelPerfect: true
-    //         })
-    //     }
+    addInput(slot, paper) {
+        paper.setInteractive({
+            cursor: 'pointer',
+            pixelPerfect: true
+        })
 
-    //     paper.setInteractive({
-    //         cursor: 'pointer',
-    //         pixelPerfect: true
-    //     })
+        paper.on('pointerdown', () => this.onPaperClick(slot))
+    }
 
-    //     paper.on('pointerdown', () => this.onPaperClick(slot))
-    // }
-
-    // onPaperClick(slot) {
-    //     this.scene.network.send('remove_item', { type: slot })
-    // }
+    onPaperClick(slot) {
+        this.scene.network.send('remove_item', { type: slot })
+    }
 
     removeItem(slot) {
         let item = this.paperDoll.items[slot]

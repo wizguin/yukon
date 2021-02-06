@@ -124,7 +124,7 @@ class PenguinSelect extends BaseScene {
         for (let penguin of savedPenguins) {
             let object = new size(this, 0, 0)
 
-            object.paperDoll.loadPenguin(penguin)
+            object.paperDoll.loadDoll(penguin)
             object.username.text = penguin.username.toUpperCase()
             object.button.callback = () => this.onPenguinClick(penguin)
 

@@ -12,6 +12,11 @@ class PaperDoll extends BaseContainer {
 
         // body
         const body = scene.add.image(0, 0, "main", "paperdoll/body");
+        body.tintFill = true;
+        body.tintTopLeft = 13158;
+        body.tintTopRight = 13158;
+        body.tintBottomLeft = 13158;
+        body.tintBottomRight = 13158;
         this.add(body);
 
         // paperdoll
@@ -19,20 +24,23 @@ class PaperDoll extends BaseContainer {
         this.add(paperdoll);
 
         this.body = body;
+        this.paperdoll = paperdoll;
 
         /** @type {boolean} */
         this.fadeIn = true;
 
         /* START-USER-CTR-CODE */
 
-        body.depth = -2
-        paperdoll.depth = -1
+        body.depth = 1
+        paperdoll.depth = 2
 
         // Slots ordered by depth
-        this.slots = [ 'photo', 'flag', 'feet', 'body', 'neck', 'hand', 'face', 'head' ]
+        // '' representing paperdoll
+        this.slots = [ 'photo', 'color', '', 'feet', 'body', 'neck', 'hand', 'face', 'head', 'flag' ]
         this.items = this.setItems()
 
         this.paperDollLoader = new PaperDollLoader(this)
+        this.isInputEnabled = false
 
         /* END-USER-CTR-CODE */
     }
@@ -43,6 +51,7 @@ class PaperDoll extends BaseContainer {
         let items = {}
 
         for (let slot of this.slots) {
+            if (!slot) continue
             items[slot] = {
                 depth: this.slots.indexOf(slot)
             }
@@ -51,10 +60,48 @@ class PaperDoll extends BaseContainer {
         return items
     }
 
-    loadPenguin(penguin) {
-        this.body.tint = this.crumbs.colors[penguin.color - 1]
+    removeItems() {
+        for (let item in this.items) {
+            let sprite = this.items[item].sprite
+
+            if (this.items[item].sprite) {
+                sprite.destroy()
+                sprite = null
+            }
+        }
+    }
+
+    loadDoll(penguin, isInputEnabled = false) {
+        // Clear items for next penguin
+        this.removeItems()
+
+        this.isInputEnabled = isInputEnabled
+
+        if (isInputEnabled) {
+            this.enableInput()
+        } else {
+            this.disableInput()
+        }
 
         this.paperDollLoader.loadItems(penguin)
+    }
+
+    /**
+     * Enables input on body and paperdoll sprites,
+     * does not include clothing items.
+     */
+    enableInput() {
+        this.body.setInteractive({ pixelPerfect: true })
+        this.paperdoll.setInteractive({ pixelPerfect: true })
+    }
+
+    /**
+     * Disables input on body and paperdoll sprites,
+     * does not include clothing items.
+     */
+    disableInput() {
+        this.body.removeInteractive()
+        this.paperdoll.removeInteractive()
     }
 
     /* END-USER-CODE */

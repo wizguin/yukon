@@ -38,6 +38,14 @@
                     "y": -2
                 },
                 {
+                    "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
+                    "id": "d6bbac10-17e0-44da-902d-f6dfbbe8bc93",
+                    "label": "paperDoll",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -2
+                },
+                {
                     "type": "Image",
                     "id": "fe294108-b9df-4ff7-8a4c-2b4ee0d81d76",
                     "label": "card_bg",

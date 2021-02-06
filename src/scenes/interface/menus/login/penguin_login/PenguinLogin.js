@@ -144,7 +144,7 @@ class PenguinLogin extends BaseScene {
         // Penguin
 
         this.penguin = data.penguin
-        this.container.paperDoll.loadPenguin(this.penguin)
+        this.container.paperDoll.loadDoll(this.penguin)
         this.container.username.text = this.penguin.username.toUpperCase()
         this.container.button.callback = () => this.onBackClick(this.penguin)
 

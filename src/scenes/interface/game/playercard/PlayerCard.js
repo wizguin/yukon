@@ -4,7 +4,7 @@ import { Button, DraggableContainer, Interactive } from '@components/components'
 
 import Inventory from './inventory/Inventory'
 import Buttons from './buttons/Buttons'
-import PaperDoll from '@engine/interface/paperdoll/PaperDoll'
+import PaperDoll from './paperdoll/PaperDoll'
 
 
 /* START OF COMPILED CODE */
@@ -17,6 +17,10 @@ class PlayerCard extends BaseContainer {
         // card_photo
         const card_photo = scene.add.image(0, -2, "main", "card-photo");
         this.add(card_photo);
+
+        // paperDoll
+        const paperDoll = new PaperDoll(scene, 0, -2);
+        this.add(paperDoll);
 
         // card_bg
         const card_bg = scene.add.image(0, 0, "main", "card-bg-player");
@@ -77,6 +81,7 @@ class PlayerCard extends BaseContainer {
         x_buttonButton.spriteName = "blue-button";
         x_buttonButton.callback = () => { this.visible = false };
 
+        this.paperDoll = paperDoll;
         this.buttons = buttons;
         this.stats = stats;
         this.coins = coins;
@@ -84,10 +89,6 @@ class PlayerCard extends BaseContainer {
         this.inventory = inventory;
 
         /* START-USER-CTR-CODE */
-
-        // Adds PaperDoll inbetween card_photo and card_bg
-        this.paperDoll = new PaperDoll(this.scene, 0, -2)
-        this.addAt(this.paperDoll, 1)
 
         // Active penguin id
         this.id = null
@@ -106,7 +107,7 @@ class PlayerCard extends BaseContainer {
         this.coins.text = `Your Coins: ${penguin.user.coins}`
 
         // Paper doll
-        this.paperDoll.loadPaperDoll(penguin)
+        this.paperDoll.loadDoll(penguin.items.flat, penguin.isClient)
 
         // Inventory
         if (penguin.isClient) {

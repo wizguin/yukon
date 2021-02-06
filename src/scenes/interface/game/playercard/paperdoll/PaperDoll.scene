@@ -29,15 +29,17 @@
                         "key": "main",
                         "frame": "paperdoll/body"
                     },
-                    "tintTopLeft": "#fff",
-                    "tintTopRight": "#fff",
-                    "tintBottomLeft": "#fff",
-                    "tintBottomRight": "#fff"
+                    "tintTopLeft": "#003366",
+                    "tintTopRight": "#003366",
+                    "tintBottomLeft": "#003366",
+                    "tintBottomRight": "#003366",
+                    "tintFill": true
                 },
                 {
                     "type": "Image",
                     "id": "74e2da01-371c-4d43-8319-d06c0236ab6b",
                     "label": "paperdoll",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "main",
