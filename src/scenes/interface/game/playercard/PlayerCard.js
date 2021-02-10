@@ -105,6 +105,9 @@ class PlayerCard extends BaseContainer {
      * @param {number} id - Penguin ID
      */
     showCard(id) {
+        // Don't open player's card if it's already open
+        if (id == this.id && this.visible) return
+
         if (id in this.world.room.penguins) {
             let penguin = this.world.room.penguins[id]
             this._showCard(penguin, penguin.items.flat)
@@ -124,9 +127,6 @@ class PlayerCard extends BaseContainer {
      * @param {object} items - Penguin items object
      */
     _showCard(penguin, items = penguin) {
-        // Don't open player's card if it's already open
-        if (this.username.text == penguin.username && this.visible) return
-
         // Text
         this.username.text = penguin.username
         this.coins.text = `Your Coins: ${penguin.coins}`
