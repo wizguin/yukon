@@ -27,16 +27,33 @@ class BuddyItem extends BaseContainer {
         // buddy_item (components)
         const buddy_itemButton = new Button(buddy_item);
         buddy_itemButton.spriteName = "buddy/item";
+        buddy_itemButton.callback = () => this.onClick();
         buddy_itemButton.activeFrame = false;
 
         this.icon = icon;
         this.username = username;
 
         /* START-USER-CTR-CODE */
+
+        this.id = null
+
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    setItem(buddy) {
+        this.id = buddy.id
+        this.username.text = buddy.username
+
+        let texture = (buddy.online) ? 'buddy/icon-buddy' : 'buddy/icon-offline'
+        this.icon.setTexture('main', texture)
+    }
+
+    onClick() {
+        this.interface.showCard(this.id)
+    }
+
     /* END-USER-CODE */
 }
 

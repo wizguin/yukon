@@ -9,7 +9,9 @@ export default class Buddy extends Plugin {
             'buddy_request': this.buddyRequest,
             'buddy_accept': this.buddyAccept,
             'buddy_remove': this.buddyRemove,
-            'buddy_find': this.buddyFind
+            'buddy_find': this.buddyFind,
+            'buddy_online': this.buddyOnline,
+            'buddy_offline': this.buddyOffline
         }
     }
 
@@ -32,6 +34,20 @@ export default class Buddy extends Plugin {
 
     buddyFind(args) {
 
+    }
+
+    buddyOnline(args) {
+        let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
+
+        if (buddy) buddy.online = true
+        this.interface.main.buddy.showPage()
+    }
+
+    buddyOffline(args) {
+        let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
+
+        if (buddy) buddy.online = false
+        this.interface.main.buddy.showPage()
     }
 
 }

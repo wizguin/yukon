@@ -162,11 +162,22 @@ class Buddy extends BaseContainer {
     /* START-USER-CODE */
 
     get penguins() {
+        this.sort()
         return this.world.client.buddies
     }
 
     get maxPage() {
         return Math.ceil(this.penguins.length / this.pageSize)
+    }
+
+    /**
+     * Sorts the client buddies array, first by online status, and then alphabetically.
+     */
+    sort() {
+        this.world.client.buddies.sort((a, b) => {
+            return -(a.online - b.online) // Reverse: true before false
+            || a.username.toLowerCase().localeCompare(b.username.toLowerCase())
+        })
     }
 
     showPage() {
@@ -176,9 +187,9 @@ class Buddy extends BaseContainer {
             let buddy = page[index]
 
             if (buddy) {
-                item.username.text = buddy.username
+                item.setItem(buddy)
             } else {
-                item.username.text = ''
+                item.setItem('')
             }
         }
     }
