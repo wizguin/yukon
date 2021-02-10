@@ -60,7 +60,7 @@ export default class PenguinLoader extends SpriteLoader {
 
         penguin.on('pointerover', () => { this.onPenguinOver() })
         penguin.on('pointerout', () => { this.onPenguinOut() })
-        penguin.on('pointerup', () => { this.onPenguinClick(penguin) })
+        penguin.on('pointerup', () => { this.onPenguinClick(penguin.id) })
     }
 
     onPenguinOver() {
@@ -73,8 +73,8 @@ export default class PenguinLoader extends SpriteLoader {
         this.world.client.penguin.rotationEnabled = true
     }
 
-    onPenguinClick(penguin) {
-        this.world.interface.showCard(penguin)
+    onPenguinClick(id) {
+        this.world.interface.showCard(id)
     }
 
 }

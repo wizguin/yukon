@@ -200,7 +200,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => { this.playerCard.showCard(this.world.client.penguin) }",
+            "Button.callback": "() => { this.playerCard.showCard(this.world.client.id) }",
             "ShowHint.text": "Edit Player",
             "texture": {
                 "key": "main",

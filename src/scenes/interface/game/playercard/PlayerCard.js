@@ -98,16 +98,41 @@ class PlayerCard extends BaseContainer {
 
     /* START-USER-CODE */
 
-    showCard(penguin) {
+    /**
+     * Shows a player card by id, if the user is found in the current room the penguin object can
+     * be taken from there. Otherwise the penguin object must be fetched from the server.
+     *
+     * @param {number} id - Penguin ID
+     */
+    showCard(id) {
+        if (id in this.world.room.penguins) {
+            let penguin = this.world.room.penguins[id]
+            this._showCard(penguin, penguin.items.flat)
+
+        } else {
+            // Fetch penguin object from server
+            this.network.send('get_penguin', { id: id, showCard: true })
+        }
+    }
+
+    /**
+     * Primary showCard function, which accepts a penguin object, and optionally an items object to
+     * fill the player card with the correct data. The items object is not required if the penguin is fetched
+     * from the server due to all necessary data being available from the penguin object.
+     *
+     * @param {object} penguin - Penguin object
+     * @param {object} items - Penguin items object
+     */
+    _showCard(penguin, items = penguin) {
         // Don't open player's card if it's already open
         if (this.username.text == penguin.username && this.visible) return
 
         // Text
         this.username.text = penguin.username
-        this.coins.text = `Your Coins: ${penguin.user.coins}`
+        this.coins.text = `Your Coins: ${penguin.coins}`
 
         // Paper doll
-        this.paperDoll.loadDoll(penguin.items.flat, penguin.isClient)
+        this.paperDoll.loadDoll(items, penguin.isClient)
 
         // Inventory
         if (penguin.isClient) {
@@ -122,7 +147,7 @@ class PlayerCard extends BaseContainer {
             this.inventory.visible = false
         }
 
-        this.id = penguin.user.id
+        this.id = penguin.id
         this.visible = true
     }
 

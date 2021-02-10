@@ -16,6 +16,8 @@ export default class Penguin extends BaseContainer {
         this.y = y
         this.penguinLoader = penguinLoader
 
+        this.id = user.id
+        this.coins = user.coins
         this.username = user.username
         this.nameTag = penguinLoader.addName(this)
 

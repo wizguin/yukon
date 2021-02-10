@@ -197,7 +197,7 @@ class Main extends BaseScene {
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
-        player_buttonButton.callback = () => { this.playerCard.showCard(this.world.client.penguin) };
+        player_buttonButton.callback = () => { this.playerCard.showCard(this.world.client.id) };
         const player_buttonShowHint = new ShowHint(player_button);
         player_buttonShowHint.text = "Edit Player";
 
