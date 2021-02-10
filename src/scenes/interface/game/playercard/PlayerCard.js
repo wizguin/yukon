@@ -114,7 +114,7 @@ class PlayerCard extends BaseContainer {
 
         } else {
             // Fetch penguin object from server
-            this.network.send('get_penguin', { id: id, showCard: true })
+            this.network.send('get_player', { id: id, showCard: true })
         }
     }
 

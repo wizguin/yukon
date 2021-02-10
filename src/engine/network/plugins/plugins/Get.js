@@ -6,11 +6,11 @@ export default class Get extends Plugin {
     constructor(network) {
         super(network)
         this.events = {
-            'get_penguin': this.getPenguin
+            'get_player': this.getPlayer
         }
     }
 
-    getPenguin(args) {
+    getPlayer(args) {
         if (args.showCard) {
             this.interface.main.playerCard._showCard(args.penguin)
         }
