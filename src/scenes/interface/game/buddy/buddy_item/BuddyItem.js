@@ -51,7 +51,9 @@ class BuddyItem extends BaseContainer {
     }
 
     onClick() {
-        this.interface.showCard(this.id)
+        if (this.id) {
+            this.interface.showCard(this.id)
+        }
     }
 
     /* END-USER-CODE */
