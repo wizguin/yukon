@@ -134,7 +134,7 @@ class PlayerCard extends BaseContainer {
         // Paper doll
         this.paperDoll.loadDoll(items, penguin.isClient)
 
-        // Inventory
+        // Visible elements
         if (penguin.isClient) {
             this.inventory.showPage()
             this.stats.visible = true
@@ -145,10 +145,32 @@ class PlayerCard extends BaseContainer {
             this.stats.visible = false
             this.buttons.visible = true
             this.inventory.visible = false
+
+            // Update buttons
+            let relationship = this.getRelationship(penguin.id)
+            this.buttons.updateButtons(relationship)
         }
 
         this.id = penguin.id
         this.visible = true
+    }
+
+    getRelationship(penguinId) {
+        if (this.isBuddy(penguinId)) {
+            return this.isOnline(penguinId) ? 'online' : 'offline'
+        }
+
+        return 'none'
+    }
+
+    isBuddy(id) {
+        let buddiesFlat = this.world.client.buddies.map(buddy => buddy.id)
+        return buddiesFlat.includes(id)
+    }
+
+    isOnline(id) {
+        let buddy = this.world.client.buddies.find(obj => obj.id == id)
+        return buddy.online
     }
 
     /* END-USER-CODE */
