@@ -296,6 +296,20 @@
                     },
                     "x": 60,
                     "y": 253
+                },
+                {
+                    "type": "Text",
+                    "id": "21bfa9d2-cd3d-4f86-af80-f86f84ae37e8",
+                    "label": "total",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -132,
+                    "y": 273,
+                    "fixedWidth": 100,
+                    "fixedHeight": 64,
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "24px",
+                    "color": "#003366"
                 }
             ]
         }

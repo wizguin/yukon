@@ -108,6 +108,12 @@ class Buddy extends BaseContainer {
         const igloo_icon_disabled = scene.add.image(60, 253, "main", "ignore-icon");
         this.add(igloo_icon_disabled);
 
+        // total
+        const total = scene.add.text(-132, 273, "", {});
+        total.setOrigin(0.5, 0.5);
+        total.setStyle({"color":"#003366","fixedWidth":100,"fixedHeight":64,"fontFamily":"Arial Narrow","fontSize":"24px"});
+        this.add(total);
+
         // lists
         const items = [buddy_item, buddy_item_1, buddy_item_2, buddy_item_3, buddy_item_4, buddy_item_5, buddy_item_6, buddy_item_7]
 
@@ -153,6 +159,7 @@ class Buddy extends BaseContainer {
         const igloo_buttonShowHint = new ShowHint(igloo_button);
         igloo_buttonShowHint.text = "Show Ignored";
 
+        this.total = total;
         this.items = items;
 
         /* START-USER-CTR-CODE */
@@ -198,6 +205,8 @@ class Buddy extends BaseContainer {
                 item.setItem('')
             }
         }
+
+        this.total.text = `${this.world.client.buddies.length}/100`
     }
 
     prevPage() {
