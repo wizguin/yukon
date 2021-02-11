@@ -145,19 +145,24 @@ class PlayerCard extends BaseContainer {
             this.stats.visible = false
             this.buttons.visible = true
             this.inventory.visible = false
-
-            // Update buttons
-            let relationship = this.getRelationship(penguin.id)
-            this.buttons.updateButtons(relationship)
         }
 
         this.id = penguin.id
+        // Update buttons
+        this.updateButtons()
         this.visible = true
     }
 
-    getRelationship(penguinId) {
-        if (this.isBuddy(penguinId)) {
-            return this.isOnline(penguinId) ? 'online' : 'offline'
+    updateButtons() {
+        if (this.buttons.visible) {
+            let relationship = this.getRelationship(this.id)
+            this.buttons.updateButtons(relationship)
+        }
+    }
+
+    getRelationship(id) {
+        if (this.isBuddy(id)) {
+            return this.isOnline(id) ? 'online' : 'offline'
         }
 
         return 'none'

@@ -25,11 +25,13 @@ export default class Buddy extends Plugin {
         let { requester, ...buddy } = args
 
         this.world.client.buddies.push(buddy)
-        this.interface.main.buddy.showPage()
+        this.updateBuddies()
     }
 
     buddyRemove(args) {
-
+        // Filter buddy out of list
+        this.world.client.buddies = this.world.client.buddies.filter(obj => obj.id != args.id)
+        this.updateBuddies()
     }
 
     buddyFind(args) {
@@ -40,13 +42,21 @@ export default class Buddy extends Plugin {
         let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
 
         if (buddy) buddy.online = true
-        this.interface.main.buddy.showPage()
+        this.updateBuddies()
     }
 
     buddyOffline(args) {
         let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
 
         if (buddy) buddy.online = false
+        this.updateBuddies()
+    }
+
+    /**
+     * Refreshes buddy list and player card to reflect changes from the server.
+     */
+    updateBuddies() {
+        this.interface.main.playerCard.updateButtons()
         this.interface.main.buddy.showPage()
     }
 

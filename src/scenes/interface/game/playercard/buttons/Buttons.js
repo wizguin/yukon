@@ -176,17 +176,35 @@ class Buttons extends BaseContainer {
     }
 
     onBuddyClick() {
-        let text = `Would you like to add ${this.parentContainer.username.text}\nto your buddy list`
+        if (this.buddy_icon.frame.name == 'buddies-remove-icon') {
+            this.showRemovePrompt()
+        } else {
+            this.showRequestPrompt()
+        }
+    }
+
+    onFindClick() {
+        this.network.send('buddy_find', { id: this.parentContainer.id })
+    }
+
+    showRemovePrompt() {
+        let text = `Would you like to remove ${this.parentContainer.username.text}\nfrom your buddy list?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('buddy_remove', { id: this.parentContainer.id })
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    showRequestPrompt() {
+        let text = `Would you like to add ${this.parentContainer.username.text}\nto your buddy list?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.network.send('buddy_request', { id: this.parentContainer.id })
 
             this.interface.prompt.showWindow('Request Sent', 'single')
         })
-    }
-
-    onFindClick() {
-        this.network.send('buddy_find', { id: this.parentContainer.id })
     }
 
     /* END-USER-CODE */
