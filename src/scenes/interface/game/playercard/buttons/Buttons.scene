@@ -67,10 +67,15 @@
                     "type": "Image",
                     "id": "ebce1c1c-faeb-45a9-ba2c-1559e185f215",
                     "label": "profile_button",
-                    "components": [],
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onFindClick()",
+                    "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "blue-button-disabled"
+                        "frame": "blue-button"
                     },
                     "x": -90
                 },
@@ -99,7 +104,7 @@
                         "key": "main",
                         "frame": "buddies-icon"
                     },
-                    "x": -151,
+                    "x": -150,
                     "y": -2
                 },
                 {
@@ -109,7 +114,7 @@
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "help-icon-disabled"
+                        "frame": "help-icon"
                     },
                     "x": -90,
                     "y": -2

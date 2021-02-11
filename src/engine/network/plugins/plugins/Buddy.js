@@ -33,7 +33,7 @@ export default class Buddy extends Plugin {
     }
 
     buddyFind(args) {
-
+        this.interface.prompt.showWindow(args.find, 'single')
     }
 
     buddyOnline(args) {

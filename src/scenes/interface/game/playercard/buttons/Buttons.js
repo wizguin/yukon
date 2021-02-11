@@ -27,7 +27,7 @@ class Buttons extends BaseContainer {
         this.add(igloo_button);
 
         // profile_button
-        const profile_button = scene.add.image(-90, 0, "main", "blue-button-disabled");
+        const profile_button = scene.add.image(-90, 0, "main", "blue-button");
         this.add(profile_button);
 
         // buddy_button
@@ -35,11 +35,11 @@ class Buttons extends BaseContainer {
         this.add(buddy_button);
 
         // buddies_icon
-        const buddies_icon = scene.add.image(-151, -2, "main", "buddies-icon");
+        const buddies_icon = scene.add.image(-150, -2, "main", "buddies-icon");
         this.add(buddies_icon);
 
         // help_icon
-        const help_icon = scene.add.image(-90, -2, "main", "help-icon-disabled");
+        const help_icon = scene.add.image(-90, -2, "main", "help-icon");
         this.add(help_icon);
 
         // igloo_icon
@@ -57,6 +57,12 @@ class Buttons extends BaseContainer {
         // mod_icon
         const mod_icon = scene.add.image(150, -1, "main", "mod-icon-disabled");
         this.add(mod_icon);
+
+        // profile_button (components)
+        const profile_buttonButton = new Button(profile_button);
+        profile_buttonButton.spriteName = "blue-button";
+        profile_buttonButton.callback = () => this.onFindClick();
+        profile_buttonButton.activeFrame = false;
 
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);
@@ -78,6 +84,10 @@ class Buttons extends BaseContainer {
 
             this.interface.prompt.showWindow('Request Sent', 'single')
         })
+    }
+
+    onFindClick() {
+        this.network.send('buddy_find', { id: this.parentContainer.id })
     }
 
     /* END-USER-CODE */
