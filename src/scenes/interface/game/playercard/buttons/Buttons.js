@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button } from '@components/components'
+import { Button, ShowHint } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -62,33 +62,45 @@ class Buttons extends BaseContainer {
         const report_buttonButton = new Button(report_button);
         report_buttonButton.spriteName = "blue-button";
         report_buttonButton.activeFrame = false;
+        const report_buttonShowHint = new ShowHint(report_button);
+        report_buttonShowHint.text = "Report Player";
 
         // ignore_button (components)
         const ignore_buttonButton = new Button(ignore_button);
         ignore_buttonButton.spriteName = "blue-button";
         ignore_buttonButton.activeFrame = false;
+        const ignore_buttonShowHint = new ShowHint(ignore_button);
+        ignore_buttonShowHint.text = "Ignore Player";
 
         // mail_button (components)
         const mail_buttonButton = new Button(mail_button);
         mail_buttonButton.spriteName = "blue-button";
         mail_buttonButton.activeFrame = false;
+        const mail_buttonShowHint = new ShowHint(mail_button);
+        mail_buttonShowHint.text = "Send Mail";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
         igloo_buttonButton.activeFrame = false;
+        const igloo_buttonShowHint = new ShowHint(igloo_button);
+        igloo_buttonShowHint.text = "Visit Igloo";
 
         // profile_button (components)
         const profile_buttonButton = new Button(profile_button);
         profile_buttonButton.spriteName = "blue-button";
         profile_buttonButton.callback = () => this.onFindClick();
         profile_buttonButton.activeFrame = false;
+        const profile_buttonShowHint = new ShowHint(profile_button);
+        profile_buttonShowHint.text = "Find Player";
 
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);
         buddy_buttonButton.spriteName = "blue-button";
         buddy_buttonButton.callback = () => this.onBuddyClick();
         buddy_buttonButton.activeFrame = false;
+        const buddy_buttonShowHint = new ShowHint(buddy_button);
+        buddy_buttonShowHint.text = "Add Buddy";
 
         this.report_button = report_button;
         this.ignore_button = ignore_button;
@@ -120,8 +132,9 @@ class Buttons extends BaseContainer {
             let button = this[`${name}_button`]
             let icon = this[`${name}_icon`]
             let iconTexture = icon.frame.name.replace('-disabled', '')
+            let hint = button.__ShowHint.text.slice()
 
-            buttons[name] = { button: button, icon: icon, buttonTexture: 'blue-button', iconTexture: iconTexture}
+            buttons[name] = { button: button, icon: icon, buttonTexture: 'blue-button', iconTexture: iconTexture, hint: hint }
         }
 
         return buttons
@@ -132,12 +145,12 @@ class Buttons extends BaseContainer {
 
         switch (relationship) {
             case 'online':
-                this.enableButton('buddy', 'buddies-remove-icon')
+                this.enableButton('buddy', 'buddies-remove-icon', 'Remove Buddy')
                 this.enableButtons(['profile', 'igloo', 'mail', 'report'])
                 break
 
             case 'offline':
-                this.enableButton('buddy', 'buddies-remove-icon')
+                this.enableButton('buddy', 'buddies-remove-icon', 'Remove Buddy')
                 this.enableButtons(['igloo', 'mail', 'report'])
                 break
 
@@ -159,12 +172,13 @@ class Buttons extends BaseContainer {
         }
     }
 
-    enableButton(name, icon = this.buttons[name].iconTexture) {
+    enableButton(name, icon = this.buttons[name].iconTexture, hint = this.buttons[name].hint) {
         let button = this.buttons[name]
 
         button.button.setInteractive()
         button.button.setTexture('main', button.buttonTexture)
         button.icon.setTexture('main', icon)
+        button.button.__ShowHint.text = hint
     }
 
     disableButton(name) {
