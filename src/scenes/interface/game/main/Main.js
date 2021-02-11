@@ -22,6 +22,12 @@ class Main extends BaseScene {
     constructor() {
         super("Main");
 
+        /** @type {Phaser.GameObjects.Container} */
+        this.onlinePopup;
+        /** @type {Phaser.GameObjects.Image} */
+        this.popup;
+        /** @type {Phaser.GameObjects.Text} */
+        this.popupText;
         /** @type {ChatLog} */
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
@@ -104,6 +110,20 @@ class Main extends BaseScene {
 
         // help_icon
         this.add.image(1266, 929, "main", "help-icon");
+
+        // onlinePopup
+        const onlinePopup = this.add.container(1155, 857);
+        onlinePopup.visible = false;
+
+        // popup
+        const popup = this.add.image(0, 11, "main", "buddy-online");
+        onlinePopup.add(popup);
+
+        // popupText
+        const popupText = this.add.text(-6, 0, "", {});
+        popupText.setOrigin(0.5, 0.5);
+        popupText.setStyle({"align":"center","color":"#000000","fixedWidth":380,"fontFamily":"Arial","fontSize":"24px"});
+        onlinePopup.add(popupText);
 
         // chatLog
         const chatLog = new ChatLog(this, 760, 2);
@@ -251,6 +271,9 @@ class Main extends BaseScene {
         mod_buttonButton.spriteName = "mod-button";
         mod_buttonButton.activeFrame = false;
 
+        this.onlinePopup = onlinePopup;
+        this.popup = popup;
+        this.popupText = popupText;
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
@@ -387,13 +410,30 @@ class Main extends BaseScene {
         this.bounce(this.request_button)
     }
 
-    bounce(gameObject) {
+    showOnlinePopup(username) {
+        let text = `${username} is online`
+        let texture = (text.length > 18) ? 'buddy-online-large' : 'buddy-online'
+
+        this.popupText.text = text
+        this.popup.setTexture('main', texture)
+
+        this.onlinePopup.visible = true
+        this.bounce(this.onlinePopup, 20)
+
+        // Hide popup after 10 seconds
+        this.time.addEvent({
+            delay: 10000,
+            callback: () => this.onlinePopup.visible = false
+        })
+    }
+
+    bounce(gameObject, from = -100) {
         if (!gameObject.startY) gameObject.startY = gameObject.y
 
         this.tweens.add({
             targets: gameObject,
             y: {
-                from: gameObject.startY - 100,
+                from: gameObject.startY + from,
                 to: gameObject.startY
             },
             ease: 'Bounce',

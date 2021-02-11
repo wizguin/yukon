@@ -26,6 +26,7 @@ export default class Buddy extends Plugin {
 
         this.world.client.buddies.push(buddy)
         this.updateBuddies()
+        this.interface.main.showOnlinePopup(buddy.username)
     }
 
     buddyRemove(args) {
@@ -41,15 +42,20 @@ export default class Buddy extends Plugin {
     buddyOnline(args) {
         let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
 
-        if (buddy) buddy.online = true
-        this.updateBuddies()
+        if (buddy) {
+            buddy.online = true
+            this.updateBuddies()
+            this.interface.main.showOnlinePopup(buddy.username)
+        }
     }
 
     buddyOffline(args) {
         let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
 
-        if (buddy) buddy.online = false
-        this.updateBuddies()
+        if (buddy) {
+            buddy.online = false
+            this.updateBuddies()
+        }
     }
 
     /**

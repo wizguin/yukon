@@ -310,6 +310,43 @@
             "y": 929
         },
         {
+            "type": "Container",
+            "id": "fcd23835-76eb-4b24-bcc1-920fa5429d8f",
+            "label": "onlinePopup",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1155,
+            "y": 857,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "795c7f78-2f45-46e5-b2dd-de88c796aa68",
+                    "label": "popup",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy-online"
+                    },
+                    "y": 11
+                },
+                {
+                    "type": "Text",
+                    "id": "7cf83357-cb16-4ae2-94c0-49e37796db74",
+                    "label": "popupText",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -6,
+                    "fixedWidth": 380,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "color": "#000000"
+                }
+            ]
+        },
+        {
             "prefabId": "cd6b92e2-56e2-4e72-a90d-c4edead84679",
             "id": "4040e412-ba63-4812-bbe9-fc4ba0f76672",
             "label": "chatLog",
