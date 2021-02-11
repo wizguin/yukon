@@ -218,7 +218,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Show Buddies",
                     "texture": {
                         "key": "main",
@@ -236,7 +235,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Show Online",
                     "texture": {
                         "key": "main",
@@ -253,7 +251,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Show Ignored",
                     "texture": {
                         "key": "main",

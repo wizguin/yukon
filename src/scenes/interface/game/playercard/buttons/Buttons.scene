@@ -29,7 +29,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Report Player",
                     "texture": {
                         "key": "main",
@@ -47,7 +46,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Ignore Player",
                     "texture": {
                         "key": "main",
@@ -65,7 +63,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Send Mail",
                     "texture": {
                         "key": "main",
@@ -83,7 +80,6 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Visit Igloo",
                     "texture": {
                         "key": "main",
@@ -102,7 +98,6 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onFindClick()",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Find Player",
                     "texture": {
                         "key": "main",
@@ -121,7 +116,6 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onBuddyClick()",
-                    "Button.activeFrame": false,
                     "ShowHint.text": "Add Buddy",
                     "texture": {
                         "key": "main",

@@ -141,21 +141,18 @@ class Buddy extends BaseContainer {
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);
         buddy_buttonButton.spriteName = "blue-button";
-        buddy_buttonButton.activeFrame = false;
         const buddy_buttonShowHint = new ShowHint(buddy_button);
         buddy_buttonShowHint.text = "Show Buddies";
 
         // profile_button (components)
         const profile_buttonButton = new Button(profile_button);
         profile_buttonButton.spriteName = "blue-button";
-        profile_buttonButton.activeFrame = false;
         const profile_buttonShowHint = new ShowHint(profile_button);
         profile_buttonShowHint.text = "Show Online";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
-        igloo_buttonButton.activeFrame = false;
         const igloo_buttonShowHint = new ShowHint(igloo_button);
         igloo_buttonShowHint.text = "Show Ignored";
 
