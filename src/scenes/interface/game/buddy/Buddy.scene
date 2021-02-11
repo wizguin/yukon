@@ -214,10 +214,12 @@
                     "id": "5f8516e6-2e1f-47ce-8caa-1a64b80c125d",
                     "label": "buddy_button",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Show Buddies",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -230,10 +232,12 @@
                     "id": "45edc42e-79e1-4aac-b6a7-bf2edac79c7b",
                     "label": "profile_button",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Show Online",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -245,10 +249,12 @@
                     "id": "33936fde-f58d-43d6-a23b-36cd73927b5c",
                     "label": "igloo_button",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Show Ignored",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
