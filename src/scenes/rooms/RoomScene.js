@@ -40,6 +40,8 @@ export default class RoomScene extends BaseScene {
 
     addPenguin(id, penguin) {
         this.penguins[id] = penguin
+
+        this.interface.main.buddy.showPage()
     }
 
     removePenguin(id) {
@@ -52,6 +54,8 @@ export default class RoomScene extends BaseScene {
         penguin.destroy()
 
         delete this.penguins[id]
+
+        this.interface.main.buddy.showPage()
     }
 
     /*========== Physics ==========*/

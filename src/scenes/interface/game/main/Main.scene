@@ -80,7 +80,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => { this.emotesMenu.visible = true }",
+            "Button.callback": "() => this.emotesMenu.visible = true",
             "ShowHint.text": "Emotes",
             "texture": {
                 "key": "main",
@@ -110,7 +110,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => { this.actionsMenu.visible = true }",
+            "Button.callback": "() => this.actionsMenu.visible = true",
             "ShowHint.text": "Actions",
             "texture": {
                 "key": "main",
@@ -170,7 +170,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => { this.onChatSend() }",
+            "Button.callback": "() => this.onChatSend()",
             "ShowHint.text": "Send",
             "texture": {
                 "key": "main",
@@ -200,7 +200,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => { this.playerCard.showCard(this.world.client.id) }",
+            "Button.callback": "() => this.playerCard.showCard(this.world.client.id)",
             "ShowHint.text": "Edit Player",
             "texture": {
                 "key": "main",
@@ -230,7 +230,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
-            "Button.callback": "() => this.buddy.visible = true",
+            "Button.callback": "() => this.onBuddyClick()",
             "ShowHint.text": "Show Buddies",
             "texture": {
                 "key": "main",
@@ -379,7 +379,7 @@
                 "Button"
             ],
             "Button.spriteName": "map-button",
-            "Button.callback": "() => { this.map.visible = true }",
+            "Button.callback": "() => this.map.visible = true",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",

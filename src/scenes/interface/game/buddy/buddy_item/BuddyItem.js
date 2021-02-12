@@ -43,11 +43,21 @@ class BuddyItem extends BaseContainer {
     /* START-USER-CODE */
 
     setItem(buddy) {
+        if (!buddy) return this.clearItem()
+
         this.id = buddy.id
         this.username.text = buddy.username
 
-        let texture = (buddy.online) ? 'buddy/icon-buddy' : 'buddy/icon-offline'
+        let relationship = this.world.getRelationship(buddy.id)
+        let texture = `buddy/icon-${relationship}`
+
         this.icon.setTexture('main', texture)
+    }
+
+    clearItem() {
+        this.id = null
+        this.username.text = ''
+        this.icon.setTexture('main', 'buddy/icon-offline')
     }
 
     onClick() {

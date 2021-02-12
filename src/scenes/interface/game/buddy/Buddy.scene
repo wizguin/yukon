@@ -37,6 +37,7 @@
                     "type": "Text",
                     "id": "841ebb39-649d-42b9-9511-ea1f3e822dc7",
                     "label": "text",
+                    "scope": "CLASS",
                     "components": [],
                     "y": -236,
                     "text": "Your Friends",
@@ -218,6 +219,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.switchList('buddies', 'Your Friends')",
                     "ShowHint.text": "Show Buddies",
                     "texture": {
                         "key": "main",
@@ -235,6 +237,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.switchList('room', 'Users in Room')",
                     "ShowHint.text": "Show Online",
                     "texture": {
                         "key": "main",
@@ -251,6 +254,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.switchList('ignored', 'Ignore List')",
                     "ShowHint.text": "Show Ignored",
                     "texture": {
                         "key": "main",

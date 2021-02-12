@@ -47,4 +47,24 @@ export default class WorldController extends BaseScene {
         this.room.removePenguin(id)
     }
 
+    getRelationship(id) {
+        if (id == this.client.id) return 'player'
+
+        if (this.isBuddy(id)) {
+            return this.isOnline(id) ? 'online' : 'offline'
+        }
+
+        return 'none'
+    }
+
+    isBuddy(id) {
+        let buddiesFlat = this.client.buddies.map(buddy => buddy.id)
+        return buddiesFlat.includes(id)
+    }
+
+    isOnline(id) {
+        let buddy = this.client.buddies.find(obj => obj.id == id)
+        return buddy.online
+    }
+
 }

@@ -155,27 +155,9 @@ class PlayerCard extends BaseContainer {
 
     updateButtons() {
         if (this.buttons.visible) {
-            let relationship = this.getRelationship(this.id)
+            let relationship = this.world.getRelationship(this.id)
             this.buttons.updateButtons(relationship)
         }
-    }
-
-    getRelationship(id) {
-        if (this.isBuddy(id)) {
-            return this.isOnline(id) ? 'online' : 'offline'
-        }
-
-        return 'none'
-    }
-
-    isBuddy(id) {
-        let buddiesFlat = this.world.client.buddies.map(buddy => buddy.id)
-        return buddiesFlat.includes(id)
-    }
-
-    isOnline(id) {
-        let buddy = this.world.client.buddies.find(obj => obj.id == id)
-        return buddy.online
     }
 
     /* END-USER-CODE */

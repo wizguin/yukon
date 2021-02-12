@@ -141,26 +141,31 @@ class Buddy extends BaseContainer {
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);
         buddy_buttonButton.spriteName = "blue-button";
+        buddy_buttonButton.callback = () => this.switchList('buddies', 'Your Friends');
         const buddy_buttonShowHint = new ShowHint(buddy_button);
         buddy_buttonShowHint.text = "Show Buddies";
 
         // profile_button (components)
         const profile_buttonButton = new Button(profile_button);
         profile_buttonButton.spriteName = "blue-button";
+        profile_buttonButton.callback = () => this.switchList('room', 'Users in Room');
         const profile_buttonShowHint = new ShowHint(profile_button);
         profile_buttonShowHint.text = "Show Online";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
+        igloo_buttonButton.callback = () => this.switchList('ignored', 'Ignore List');
         const igloo_buttonShowHint = new ShowHint(igloo_button);
         igloo_buttonShowHint.text = "Show Ignored";
 
+        this.text = text;
         this.total = total;
         this.items = items;
 
         /* START-USER-CTR-CODE */
 
+        this.listType = 'buddies'
         this.page = 1
         this.pageSize = 8
 
@@ -172,8 +177,7 @@ class Buddy extends BaseContainer {
     /* START-USER-CODE */
 
     get penguins() {
-        this.sort()
-        return this.world.client.buddies
+        return this[this.listType]
     }
 
     get maxPage() {
@@ -181,16 +185,37 @@ class Buddy extends BaseContainer {
     }
 
     /**
-     * Sorts the client buddies array, first by online status, and then alphabetically.
+     * Gets the client buddies array, sorted first by online status, and then alphabetically.
      */
-    sort() {
-        this.world.client.buddies.sort((a, b) => {
+    get buddies() {
+        return this.world.client.buddies.sort((a, b) => {
             return -(a.online - b.online) // Reverse: true before false
             || a.username.toLowerCase().localeCompare(b.username.toLowerCase())
         })
     }
 
+    /**
+     * Gets the users in current room, sorted alphabetically.
+     */
+    get room() {
+        let penguins = Object.values(this.world.room.penguins)
+
+        return penguins.map(penguin => {
+            // Map penguin to buddy item object
+            return { id: penguin.id, username: penguin.username }
+        }).sort((a, b) => {
+            // Then sort by username
+            return a.username.toLowerCase().localeCompare(b.username.toLowerCase())
+        })
+    }
+
+    get ignored() {
+        return []
+    }
+
     showPage() {
+        if (this.visible == false) return
+
         let page = this.penguins.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
 
         for (let [index, item] of this.items.entries()) {
@@ -199,11 +224,18 @@ class Buddy extends BaseContainer {
             if (buddy) {
                 item.setItem(buddy)
             } else {
-                item.setItem('')
+                item.setItem(null)
             }
         }
 
-        this.total.text = `${this.world.client.buddies.length}/100`
+        // Update total buddies text
+        if (this.listType == 'buddies') {
+            this.total.text = `${this.world.client.buddies.length}/100`
+            this.total.visible = true
+        } else {
+            this.total.visible = false
+        }
+
     }
 
     prevPage() {
@@ -219,6 +251,13 @@ class Buddy extends BaseContainer {
         if (page > this.maxPage) return
 
         this.page = page
+        this.showPage()
+    }
+
+    switchList(type, text) {
+        this.page = 1
+        this.text.text = text
+        this.listType = type
         this.showPage()
     }
 
