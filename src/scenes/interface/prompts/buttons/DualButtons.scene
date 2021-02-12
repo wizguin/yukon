@@ -28,7 +28,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "window-button-small",
-                    "Button.callback": "() => this.parentContainer.visible = false",
+                    "Button.callback": "() => this.onNoClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "prompt",
