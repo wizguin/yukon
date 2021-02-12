@@ -395,14 +395,17 @@ class Main extends BaseScene {
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.network.send('buddy_accept', request)
+            this.interface.prompt.window.visible = false
 
+        }, () => {
+            this.network.send('buddy_reject', { id: request.id })
             this.interface.prompt.window.visible = false
         })
     }
 
     addRequest(request) {
         // Prevent duplicate requests
-        if (this.requests.some(item => item.id == request.id)) return
+        if (this.requests.some(item => item.id == request.id && !item.requester)) return
 
         this.requests.push(request)
 
