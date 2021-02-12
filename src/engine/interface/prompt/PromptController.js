@@ -19,8 +19,8 @@ export default class PromptController {
         this.bringToTop()
     }
 
-    showWindow(text, buttonLayout = 'single', callback = () => {}) {
-        this.window.show(text, buttonLayout, callback)
+    showWindow(text, buttonLayout = 'single', callback = () => {}, noCallback = () => this.window.visible = false) {
+        this.window.show(text, buttonLayout, callback, noCallback)
         this.bringToTop()
     }
 

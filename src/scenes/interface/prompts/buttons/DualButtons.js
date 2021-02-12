@@ -37,7 +37,7 @@ class DualButtons extends BaseContainer {
         // no_button (components)
         const no_buttonButton = new Button(no_button);
         no_buttonButton.spriteName = "window-button-small";
-        no_buttonButton.callback = () => this.parentContainer.visible = false;
+        no_buttonButton.callback = () => this.onNoClick();
         no_buttonButton.activeFrame = false;
 
         // yes_button (components)
@@ -54,6 +54,10 @@ class DualButtons extends BaseContainer {
 
     onYesClick() {
         this.parentContainer.callback()
+    }
+
+    onNoClick() {
+        this.parentContainer.noCallback()
     }
 
     /* END-USER-CODE */

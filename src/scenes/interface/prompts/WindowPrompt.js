@@ -62,7 +62,7 @@ class WindowPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(text, buttonLayout, callback) {
+    show(text, buttonLayout, callback, noCallback) {
         this.text.text = text
 
         // Display correct button layout
@@ -70,13 +70,21 @@ class WindowPrompt extends BaseContainer {
         this.single.visible = false
         this[buttonLayout].visible = true
 
+        // Callback on yes button
         this.callback = callback
+        // Callback on no button
+        this.noCallback = noCallback
 
         this.visible = true
     }
 
     // Overwritten by show
     callback() {
+
+    }
+
+    // Overwritten by show
+    noCallback() {
 
     }
 
