@@ -44,6 +44,8 @@ class Main extends BaseScene {
         this.emotesMenu;
         /** @type {Map} */
         this.map;
+        /** @type {Array<PlayerCard|Buddy|Map>} */
+        this.hideOnSleep;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -174,6 +176,9 @@ class Main extends BaseScene {
         this.add.existing(map);
         map.visible = false;
 
+        // lists
+        const hideOnSleep = [playerCard, buddy, map]
+
         // dock (components)
         new Interactive(dock);
 
@@ -282,6 +287,7 @@ class Main extends BaseScene {
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
         this.map = map;
+        this.hideOnSleep = hideOnSleep;
     }
 
     /* START-USER-CODE */
@@ -300,6 +306,7 @@ class Main extends BaseScene {
 
         this.hint = new Hint(this, 0, 0)
         this.add.existing(this.hint)
+        this.hideOnSleep.push(this.hint)
         this.hint.visible = false
 
         // Buddy requests
@@ -328,6 +335,10 @@ class Main extends BaseScene {
         this.chatInput.clearText()
         this.chatLog.clearMessages()
         this.stopCrosshair()
+
+        for (let item of this.hideOnSleep) {
+            item.visible = false
+        }
     }
 
     onSnowballClick() {
