@@ -392,6 +392,7 @@
                         "visible"
                     ],
                     "label": "inventorySort",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 74,
                     "y": 282,

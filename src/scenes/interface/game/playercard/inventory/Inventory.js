@@ -222,6 +222,7 @@ class Inventory extends BaseContainer {
         this.container = container;
         this.active_text = active_text;
         this.arrow = arrow;
+        this.inventorySort = inventorySort;
         this.slots = slots;
 
         /* START-USER-CTR-CODE */
@@ -278,6 +279,7 @@ class Inventory extends BaseContainer {
     onTabClick() {
         if (this.container.visible) {
             this.parentContainer.bringToTop(this)
+            this.inventorySort.visible = false
             this.x -= 495
 
         } else {
