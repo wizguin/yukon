@@ -67,6 +67,7 @@ class Buttons extends BaseContainer {
         // ignore_button (components)
         const ignore_buttonButton = new Button(ignore_button);
         ignore_buttonButton.spriteName = "blue-button";
+        ignore_buttonButton.callback = () => this.onIgnoreClick();
         const ignore_buttonShowHint = new ShowHint(ignore_button);
         ignore_buttonShowHint.text = "Ignore Player";
 
@@ -118,6 +119,10 @@ class Buttons extends BaseContainer {
     }
 
     /* START-USER-CODE */
+
+    get username() {
+        return this.parentContainer.username.text
+    }
 
     initButtons() {
         let buttons = {}
@@ -190,9 +195,9 @@ class Buttons extends BaseContainer {
 
     onBuddyClick() {
         if (this.buddy_icon.frame.name == 'buddies-remove-icon') {
-            this.showRemovePrompt()
+            this.showRemoveBuddy()
         } else {
-            this.showRequestPrompt()
+            this.showRequestBuddy()
         }
     }
 
@@ -200,8 +205,26 @@ class Buttons extends BaseContainer {
         this.network.send('buddy_find', { id: this.parentContainer.id })
     }
 
-    showRemovePrompt() {
-        let text = `Would you like to remove ${this.parentContainer.username.text}\nfrom your buddy list?`
+    onIgnoreClick() {
+        if (this.ignore_icon.frame.name == 'ignore-remove-icon') {
+            this.showRemoveIgnore()
+        } else {
+            this.showAddIgnore()
+        }
+    }
+
+    showRequestBuddy() {
+        let text = `Would you like to add ${this.username}\nto your buddy list?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('buddy_request', { id: this.parentContainer.id })
+
+            this.interface.prompt.showWindow('Request Sent', 'single')
+        })
+    }
+
+    showRemoveBuddy() {
+        let text = `Would you like to remove ${this.username}\nfrom your buddy list?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.network.send('buddy_remove', { id: this.parentContainer.id })
@@ -210,13 +233,23 @@ class Buttons extends BaseContainer {
         })
     }
 
-    showRequestPrompt() {
-        let text = `Would you like to add ${this.parentContainer.username.text}\nto your buddy list?`
+    showAddIgnore() {
+        let text = `Would you like to add ${this.username}\nto your ignore list?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
-            this.network.send('buddy_request', { id: this.parentContainer.id })
+            this.network.send('ignore_add', { id: this.parentContainer.id, username: this.username })
 
-            this.interface.prompt.showWindow('Request Sent', 'single')
+            this.interface.prompt.showWindow('Done', 'single')
+        })
+    }
+
+    showRemoveIgnore() {
+        let text = `Would you like to remove ${this.username}\nfrom your ignore list?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('ignore_remove', { id: this.parentContainer.id })
+
+            this.interface.prompt.showWindow('Done', 'single')
         })
     }
 

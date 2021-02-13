@@ -46,6 +46,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onIgnoreClick()",
                     "ShowHint.text": "Ignore Player",
                     "texture": {
                         "key": "main",
