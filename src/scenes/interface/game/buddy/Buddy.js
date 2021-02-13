@@ -240,9 +240,9 @@ class Buddy extends BaseContainer {
             }
         }
 
-        // Update total buddies text
-        if (this.listType == 'buddies') {
-            this.total.text = `${this.world.client.buddies.length}/100`
+        // Update total text
+        if (this.listType == 'buddies' || this.listType == 'ignores') {
+            this.total.text = `${this.world.client[this.listType].length}/100`
             this.total.visible = true
         } else {
             this.total.visible = false
