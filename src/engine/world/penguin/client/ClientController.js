@@ -7,6 +7,7 @@ export default class ClientController {
         this.id = client.user.id
 
         this.buddies = client.buddies
+        this.ignores = client.ignores
         this.inventory = client.inventory
 
         this.penguin = null // Reference to ClientPenguin object

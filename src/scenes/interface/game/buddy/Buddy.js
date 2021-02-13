@@ -155,7 +155,7 @@ class Buddy extends BaseContainer {
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
-        igloo_buttonButton.callback = () => this.switchList('ignored', 'Ignore List');
+        igloo_buttonButton.callback = () => this.switchList('ignores', 'Ignore List');
         const igloo_buttonShowHint = new ShowHint(igloo_button);
         igloo_buttonShowHint.text = "Show Ignored";
 
@@ -186,6 +186,8 @@ class Buddy extends BaseContainer {
 
     /**
      * Gets the client buddies array, sorted first by online status, and then alphabetically.
+     *
+     * @readonly
      */
     get buddies() {
         return this.world.client.buddies.sort((a, b) => {
@@ -196,6 +198,8 @@ class Buddy extends BaseContainer {
 
     /**
      * Gets the users in current room, sorted alphabetically.
+     *
+     * @readonly
      */
     get room() {
         let penguins = Object.values(this.world.room.penguins)
@@ -209,8 +213,16 @@ class Buddy extends BaseContainer {
         })
     }
 
-    get ignored() {
-        return []
+
+    /**
+     * Gets the client ignores array, sorted alphabetically.
+     *
+     * @readonly
+     */
+    get ignores() {
+        return this.world.client.ignores.sort((a, b) => {
+            return a.username.toLowerCase().localeCompare(b.username.toLowerCase())
+        })
     }
 
     showPage() {

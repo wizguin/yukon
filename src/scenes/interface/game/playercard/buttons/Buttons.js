@@ -148,6 +148,11 @@ class Buttons extends BaseContainer {
                 this.enableButtons(['igloo', 'mail', 'report'])
                 break
 
+            case 'ignore':
+                this.enableButton('ignore', 'ignore-remove-icon', 'Remove Ignore')
+                this.enableButton('report')
+                break
+
             default:
                 this.enableButtons(['buddy', 'mail', 'ignore', 'report'])
                 break

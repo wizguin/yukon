@@ -54,12 +54,19 @@ export default class WorldController extends BaseScene {
             return this.isOnline(id) ? 'online' : 'offline'
         }
 
+        if (this.isIgnore(id)) return 'ignore'
+
         return 'none'
     }
 
     isBuddy(id) {
         let buddiesFlat = this.client.buddies.map(buddy => buddy.id)
         return buddiesFlat.includes(id)
+    }
+
+    isIgnore(id) {
+        let ignoresFlat = this.client.ignores.map(ignore => ignore.id)
+        return ignoresFlat.includes(id)
     }
 
     isOnline(id) {
