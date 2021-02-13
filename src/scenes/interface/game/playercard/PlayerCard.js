@@ -136,10 +136,10 @@ class PlayerCard extends BaseContainer {
 
         // Visible elements
         if (penguin.isClient) {
-            this.inventory.showPage()
             this.stats.visible = true
             this.buttons.visible = false
             this.inventory.visible = true
+            this.inventory.showPage()
 
         } else {
             this.stats.visible = false
