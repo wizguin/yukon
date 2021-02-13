@@ -49,34 +49,34 @@ class SavePrompt extends BaseContainer {
         const text = scene.add.text(0, -280, "", {});
         text.setOrigin(0.5, 0.5);
         text.text = "If you save your password here, anyone who uses this\ncomputer could access your account.";
-        text.setStyle({"fixedWidth":900,"fixedHeight":80,"fontFamily":"Arial","fontSize":"34px","fontStyle":"bold","shadow.offsetX":3,"shadow.offsetY":3,"shadow.color":"#003366","shadow.fill":true});
+        text.setStyle({"fixedWidth":900,"fixedHeight":80,"fontFamily":"Burbank Small","fontSize":"34px","fontStyle":"bold","shadow.offsetX":3,"shadow.offsetY":3,"shadow.color":"#003366","shadow.fill":true});
         this.add(text);
 
         // text_1
         const text_1 = scene.add.text(-303, 285, "", {});
         text_1.setOrigin(0.5, 0.5);
         text_1.text = "Save Password";
-        text_1.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Arial","fontSize":"28px","fontStyle":"bold"});
+        text_1.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Burbank Small","fontSize":"28px","fontStyle":"bold"});
         this.add(text_1);
 
         // text_2
         const text_2 = scene.add.text(21, 285, "", {});
         text_2.setOrigin(0.5, 0.5);
         text_2.text = "Don't Save\nPassword";
-        text_2.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Arial","fontSize":"28px","fontStyle":"bold"});
+        text_2.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Burbank Small","fontSize":"28px","fontStyle":"bold"});
         this.add(text_2);
 
         // text_3
         const text_3 = scene.add.text(343, 285, "", {});
         text_3.setOrigin(0.5, 0.5);
         text_3.text = "Learn More";
-        text_3.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Arial","fontSize":"24px","fontStyle":"bold"});
+        text_3.setStyle({"align":"center","fixedWidth":300,"fontFamily":"Burbank Small","fontSize":"24px","fontStyle":"bold"});
         this.add(text_3);
 
         // illustration_text
         const illustration_text = scene.add.text(-404, -175, "", {});
         illustration_text.text = "They could spend\nyour coins!";
-        illustration_text.setStyle({"color":"#000000","fixedWidth":600,"fontFamily":"Arial","fontSize":"44px","fontStyle":"bold","shadow.offsetX":3,"shadow.offsetY":3,"shadow.color":"#003366"});
+        illustration_text.setStyle({"color":"#000000","fixedWidth":600,"fontFamily":"Burbank Small","fontSize":"44px","fontStyle":"bold","shadow.offsetX":3,"shadow.offsetY":3,"shadow.color":"#003366"});
         this.add(illustration_text);
 
         // block (components)

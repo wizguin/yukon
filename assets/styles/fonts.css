@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/Arial.woff2');
+}
+
+@font-face {
+    font-family: 'Arial';
+    font-weight: bold;
+    src: url('../fonts/Arial Bold.woff2');
+}
+
+@font-face {
+    font-family: 'Arial Narrow';
+    src: url('../fonts/Arial Narrow.woff2');
+}
+
+@font-face {
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    src: url('../fonts/Arial Narrow Bold.woff2');
+}
+
+@font-face {
+    font-family: 'Burbank Small';
+    src: url('../fonts/Burbank Small Medium.woff2');
+}
+
+@font-face {
+    font-family: 'Burbank Small';
+    font-weight: bold;
+    src: url('../fonts/Burbank Small Bold.woff2');
+}
+
+@font-face {
+    font-family: 'CCFaceFront';
+    font-style: italic;
+    font-weight: bold;
+    src: url('../fonts/CCFaceFront Bold Italic.woff2');
+}

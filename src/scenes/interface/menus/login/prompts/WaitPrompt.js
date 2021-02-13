@@ -35,21 +35,21 @@ class WaitPrompt extends BaseContainer {
 		const text = scene.add.text(0, -70, "", {});
 		text.setOrigin(0.5, 0.5);
 		text.text = "WAIT!\nDo other people use this\ncomputer?";
-		text.setStyle({"align":"center","fixedWidth":600,"fontFamily":"Arial","fontSize":"36px","fontStyle":"bold"});
+		text.setStyle({"align":"center","fixedWidth":600,"fontFamily":"Burbank Small","fontSize":"36px","fontStyle":"bold"});
 		this.add(text);
 
 		// text_1
 		const text_1 = scene.add.text(-140, 95, "", {});
 		text_1.setOrigin(0.5, 0.5);
 		text_1.text = "Yes";
-		text_1.setStyle({"align":"center","fixedWidth":200,"fontFamily":"Arial","fontSize":"36px","fontStyle":"bold"});
+		text_1.setStyle({"align":"center","fixedWidth":200,"fontFamily":"Burbank Small","fontSize":"36px","fontStyle":"bold"});
 		this.add(text_1);
 
 		// text_2
 		const text_2 = scene.add.text(140, 95, "", {});
 		text_2.setOrigin(0.5, 0.5);
 		text_2.text = "No";
-		text_2.setStyle({"align":"center","fixedWidth":200,"fontFamily":"Arial","fontSize":"36px","fontStyle":"bold"});
+		text_2.setStyle({"align":"center","fixedWidth":200,"fontFamily":"Burbank Small","fontSize":"36px","fontStyle":"bold"});
 		this.add(text_2);
 
 		// block (components)

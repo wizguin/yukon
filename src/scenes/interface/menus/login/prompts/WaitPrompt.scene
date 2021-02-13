@@ -87,7 +87,7 @@
                     "text": "WAIT!\nDo other people use this\ncomputer?",
                     "fixedWidth": 600,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "Burbank Small",
                     "fontSize": "36px",
                     "fontStyle": "bold"
                 },
@@ -101,7 +101,7 @@
                     "text": "Yes",
                     "fixedWidth": 200,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "Burbank Small",
                     "fontSize": "36px",
                     "fontStyle": "bold"
                 },
@@ -115,7 +115,7 @@
                     "text": "No",
                     "fixedWidth": 200,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "Burbank Small",
                     "fontSize": "36px",
                     "fontStyle": "bold"
                 }

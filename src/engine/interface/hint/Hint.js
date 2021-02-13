@@ -38,7 +38,7 @@ class Hint extends BaseContainer {
     }
 
     createText() {
-        let text = this.scene.add.text(0, -13, '', this.textStyle)
+        let text = this.scene.add.text(0, -14, '', this.textStyle)
 
         return text
     }

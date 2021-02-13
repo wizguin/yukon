@@ -8,7 +8,7 @@ export default class PenguinLoader extends SpriteLoader {
 
         this.nameStyle = {
             fontFamily: 'Arial',
-            fontSize: 23,
+            fontSize: 24,
             color: '#000000',
             align: 'center'
         }

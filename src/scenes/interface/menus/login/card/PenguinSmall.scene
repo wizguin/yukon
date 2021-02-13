@@ -56,7 +56,7 @@
                     "x": 90,
                     "fixedWidth": 420,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "CCFaceFront",
                     "fontSize": "48px",
                     "fontStyle": "bold italic",
                     "stroke": "#003366",

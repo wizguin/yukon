@@ -12,7 +12,7 @@ export default class TextBalloon extends Balloon {
         let textWidth = width - paddingX
 
         this.textStyle = {
-            fontFamily: 'Arial',
+            fontFamily: 'Burbank Small',
             fontSize: 24,
             color: '#000000',
             align: 'center',

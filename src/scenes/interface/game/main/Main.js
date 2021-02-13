@@ -318,8 +318,9 @@ class Main extends BaseScene {
         let style = {
             width: 510,
             height: 50,
-            color: '#fff',
-            fontSize: 24
+            fontFamily: 'Burbank Small',
+            fontSize: 24,
+            color: '#fff'
         }
 
         this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() }, 48)

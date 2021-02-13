@@ -25,7 +25,7 @@ class PenguinLarge extends BaseContainer {
         // username
         const username = scene.add.text(0, 215, "", {});
         username.setOrigin(0.5, 0.5);
-        username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"Arial","fontSize":"44px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
+        username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"CCFaceFront","fontSize":"44px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
         this.add(username);
 
         // paperDoll

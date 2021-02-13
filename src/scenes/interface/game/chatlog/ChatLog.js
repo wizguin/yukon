@@ -40,7 +40,7 @@ class ChatLog extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.textStyle = {
-            fontFamily: 'Arial',
+            fontFamily: 'Burbank Small',
             fontSize: 24,
             color: '#000000',
             align: 'left',
