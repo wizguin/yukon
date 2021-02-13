@@ -70,8 +70,10 @@ export default class InterfaceController extends BaseScene {
      * Refreshes buddy list and player card to reflect changes from the server.
      */
     updateBuddies() {
-        this.main.playerCard.updateButtons()
-        this.main.buddy.showPage()
+        if (this.main.scene.isActive()) {
+            this.main.playerCard.updateButtons()
+            this.main.buddy.showPage()
+        }
     }
 
 }

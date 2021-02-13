@@ -41,9 +41,11 @@ export default class Buddy extends Plugin {
 
     buddyOnline(args) {
         let buddy = this.world.client.buddies.find(obj => obj.id == args.id)
+        if (!buddy) return
 
-        if (buddy) {
-            buddy.online = true
+        buddy.online = true
+
+        if (this.interface.main.scene.isActive()) {
             this.interface.updateBuddies()
             this.interface.main.showOnlinePopup(buddy.username)
         }
