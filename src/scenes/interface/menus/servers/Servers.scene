@@ -111,6 +111,23 @@
             "x": 1300,
             "y": 630,
             "originY": 0.5027322404371585
+        },
+        {
+            "type": "Text",
+            "id": "fbbe9c79-7a12-47b5-884a-b75493fb5d17",
+            "label": "suggested",
+            "components": [],
+            "x": 760,
+            "y": 85,
+            "text": "YOUR SUGGESTED SERVERS",
+            "fixedWidth": 1200,
+            "align": "center",
+            "fontFamily": "CCFaceFront",
+            "fontSize": "40px",
+            "fontStyle": "bold italic",
+            "stroke": "#003366",
+            "strokeThickness": 10,
+            "shadow.color": "#000000ff"
         }
     ],
     "plainObjects": [],

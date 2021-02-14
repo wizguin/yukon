@@ -51,6 +51,12 @@ class Servers extends BaseScene {
         // more
         const more = this.add.image(1300, 630, "servers", "more");
         more.setOrigin(0.5, 0.5027322404371585);
+
+        // suggested
+        const suggested = this.add.text(760, 85, "", {});
+        suggested.setOrigin(0.5, 0.5);
+        suggested.text = "YOUR SUGGESTED SERVERS";
+        suggested.setStyle({"align":"center","fixedWidth":1200,"fontFamily":"CCFaceFront","fontSize":"40px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
     }
 
     /* START-USER-CODE */
