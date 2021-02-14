@@ -17,7 +17,8 @@ export default class TextBalloon extends Balloon {
             color: '#000000',
             align: 'center',
             fixedWidth: textWidth,
-            wordWrap: { width: textWidth, useAdvancedWrap: true }
+            wordWrap: { width: textWidth, useAdvancedWrap: true },
+            lineSpacing: -5
         }
         this.maxLength = 48
 
