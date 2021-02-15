@@ -25,7 +25,7 @@ export default class Penguin extends BaseContainer {
 
         this.depth = y
         this.frame = 1
-        this.scale = 0.666
+        this.scale = 1
 
         this.actions = this.setActions()
         this.items = new PenguinItems(this)

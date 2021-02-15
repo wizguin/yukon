@@ -67,35 +67,37 @@ class ActionsMenu extends FloatingMenu {
         // sit_4 (components)
         const sit_4Button = new Button(sit_4);
         sit_4Button.spriteName = "small-box";
-        sit_4Button.callback = () => { this.onActionClick(24) };
+        sit_4Button.callback = () => this.onActionClick(24);
         sit_4Button.activeFrame = false;
 
         // sit_3 (components)
         const sit_3Button = new Button(sit_3);
         sit_3Button.spriteName = "small-box";
-        sit_3Button.callback = () => { this.onActionClick(22) };
+        sit_3Button.callback = () => this.onActionClick(22);
         sit_3Button.activeFrame = false;
 
         // sit_2 (components)
         const sit_2Button = new Button(sit_2);
         sit_2Button.spriteName = "small-box";
-        sit_2Button.callback = () => { this.onActionClick(20) };
+        sit_2Button.callback = () => this.onActionClick(20);
         sit_2Button.activeFrame = false;
 
         // sit_1 (components)
         const sit_1Button = new Button(sit_1);
         sit_1Button.spriteName = "small-box";
-        sit_1Button.callback = () => { this.onActionClick(18) };
+        sit_1Button.callback = () => this.onActionClick(18);
         sit_1Button.activeFrame = false;
 
         // wave (components)
         const waveButton = new Button(wave);
         waveButton.spriteName = "large-box";
+        waveButton.callback = () => this.onActionClick(25, false);
         waveButton.activeFrame = false;
 
         // dance (components)
         const danceButton = new Button(dance);
         danceButton.spriteName = "large-box";
+        danceButton.callback = () => this.onActionClick(26);
         danceButton.activeFrame = false;
 
         this.safe = safe;

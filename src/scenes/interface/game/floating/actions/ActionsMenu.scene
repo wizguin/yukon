@@ -64,7 +64,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "small-box",
-                    "Button.callback": "() => { this.onActionClick(24) }",
+                    "Button.callback": "() => this.onActionClick(24)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -81,7 +81,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "small-box",
-                    "Button.callback": "() => { this.onActionClick(22) }",
+                    "Button.callback": "() => this.onActionClick(22)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -98,7 +98,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "small-box",
-                    "Button.callback": "() => { this.onActionClick(20) }",
+                    "Button.callback": "() => this.onActionClick(20)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -115,7 +115,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "small-box",
-                    "Button.callback": "() => { this.onActionClick(18) }",
+                    "Button.callback": "() => this.onActionClick(18)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -132,6 +132,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onActionClick(25, false)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -147,6 +148,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onActionClick(26)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",

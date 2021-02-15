@@ -29,11 +29,17 @@ export default class SpriteLoader {
 
         for (let [animationId, animation] of Object.entries(this.animations)) {
 
-            let frames = anims.generateFrameNames(id, {
-                start: (animation.start) ? animation.start : 1,
-                end: animation.end,
-                prefix: `${animationId}_`
-            })
+            let config = { prefix: `${animationId}_` }
+
+            if (animation.frames) {
+                // Animations with defined frame sequences (e.g waving)
+                config.frames = animation.frames
+            } else {
+                config.start = (animation.start) ? animation.start : 1
+                config.end = animation.end
+            }
+
+            let frames = anims.generateFrameNames(id, config)
 
             anims.create({
                 key: `${id}_${animationId}`,
