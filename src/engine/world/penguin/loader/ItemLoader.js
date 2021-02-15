@@ -34,10 +34,10 @@ export default class ItemLoader extends SpriteLoader {
 
         if (this.world.textures.exists(key)) return this.onFileComplete(key)
 
-        this.load.atlas({
+        this.load.multiatlas({
             key: key,
             atlasURL: `${this.url}/${item}.json`,
-            textureURL: `${this.url}/${item}.png`
+            path: `${this.url}`
         })
     }
 
