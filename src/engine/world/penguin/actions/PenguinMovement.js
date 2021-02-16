@@ -7,6 +7,12 @@ export default class PenguinMovement {
         this.speed = 260
         this.tween = null
         this.direction = 0
+
+        // Valid screen region
+        this.minX = 30
+        this.maxX = 1490
+        this.minY = 30
+        this.maxY = 870
     }
 
     movePenguin(path) {
@@ -77,8 +83,9 @@ export default class PenguinMovement {
     }
 
     getTargetPos(pos, newPos) {
-        let distance = this.getDistance(pos, newPos)
+        newPos = this.validatePos(newPos)
 
+        let distance = this.getDistance(pos, newPos)
         if (distance < 1) return null
 
         let steps = Math.round(distance) / 2
@@ -152,6 +159,33 @@ export default class PenguinMovement {
 
     blockTest(x, y) {
         return this.room.matter.containsPoint(this.room.block, x, y)
+    }
+
+    validatePos(pos) {
+        pos.x = this.getValidX(pos.x)
+        pos.y = this.getValidY(pos.y)
+
+        return pos
+    }
+
+    getValidX(x) {
+        if (x < this.minX) {
+            return this.minX
+        } else if (x > this.maxX) {
+            return this.maxX
+        } else {
+            return x
+        }
+    }
+
+    getValidY(y) {
+        if (y < this.minY) {
+            return this.minY
+        } else if (y > this.maxY) {
+            return this.maxY
+        } else {
+            return y
+        }
     }
 
 }
