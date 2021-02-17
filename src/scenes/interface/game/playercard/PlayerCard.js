@@ -103,10 +103,11 @@ class PlayerCard extends BaseContainer {
      * be taken from there. Otherwise the penguin object must be fetched from the server.
      *
      * @param {number} id - Penguin ID
+     * @param {boolean} refresh - Whether or not a card should pass the already open check
      */
-    showCard(id) {
+    showCard(id, refresh = false) {
         // Don't open player's card if it's already open
-        if (id == this.id && this.visible) return
+        if (id == this.id && this.visible && !refresh) return
 
         if (id in this.world.room.penguins) {
             let penguin = this.world.room.penguins[id]
@@ -114,7 +115,7 @@ class PlayerCard extends BaseContainer {
 
         } else {
             // Fetch penguin object from server
-            this.network.send('get_player', { id: id, showCard: true })
+            this.network.send('get_player', { id: id })
         }
     }
 
@@ -129,13 +130,13 @@ class PlayerCard extends BaseContainer {
     _showCard(penguin, items = penguin) {
         // Text
         this.username.text = penguin.username
-        this.coins.text = `Your Coins: ${penguin.coins}`
 
         // Paper doll
         this.paperDoll.loadDoll(items, penguin.isClient)
 
         // Visible elements
         if (penguin.isClient) {
+            this.coins.text = `Your Coins: ${this.world.client.coins}`
             this.stats.visible = true
             this.buttons.visible = false
             this.inventory.visible = true

@@ -78,16 +78,6 @@ class WindowPrompt extends BaseContainer {
         this.visible = true
     }
 
-    // Overwritten by show
-    callback() {
-
-    }
-
-    // Overwritten by show
-    noCallback() {
-
-    }
-
     /* END-USER-CODE */
 }
 

@@ -10,6 +10,8 @@ export default class ClientController {
         this.ignores = client.ignores
         this.inventory = client.inventory
 
+        this.coins = client.user.coins
+
         this.penguin = null // Reference to ClientPenguin object
         this.input = new ClientInput(this) // Input handling
     }

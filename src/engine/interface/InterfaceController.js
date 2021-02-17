@@ -62,8 +62,8 @@ export default class InterfaceController extends BaseScene {
         this.main.balloonFactory.showTextBalloon(id, text)
     }
 
-    showCard(id) {
-        this.main.playerCard.showCard(id)
+    showCard(id, refresh = false) {
+        this.main.playerCard.showCard(id, refresh)
     }
 
     /**
