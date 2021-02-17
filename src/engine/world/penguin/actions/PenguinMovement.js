@@ -83,7 +83,7 @@ export default class PenguinMovement {
     }
 
     getTargetPos(pos, newPos) {
-        newPos = this.validatePos(newPos)
+        newPos = this.validateTarget(newPos)
 
         let distance = this.getDistance(pos, newPos)
         if (distance < 1) return null
@@ -116,6 +116,9 @@ export default class PenguinMovement {
         distance = this.getDistance(pos, safe)
 
         if (distance > 10) {
+            safe.x = Math.round(safe.x)
+            safe.y = Math.round(safe.y)
+
             return safe
         } else {
             return null
@@ -161,7 +164,7 @@ export default class PenguinMovement {
         return this.room.matter.containsPoint(this.room.block, x, y)
     }
 
-    validatePos(pos) {
+    validateTarget(pos) {
         pos.x = this.getValidX(pos.x)
         pos.y = this.getValidY(pos.y)
 

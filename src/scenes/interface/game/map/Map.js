@@ -245,7 +245,8 @@ class Map extends BaseContainer {
         this.visible = false
         this.interface.showLoading(`Joining ${room.name}`)
 
-        this.network.send('join_room', { room: id, x: room.x, y: room.y })
+        let random = this.world.client.penguin.randomizePos(room.x, room.y, 80)
+        this.network.send('join_room', { room: id, x: random.x, y: random.y })
     }
 
     /* END-USER-CODE */

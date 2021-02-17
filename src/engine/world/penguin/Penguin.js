@@ -12,24 +12,25 @@ export default class Penguin extends BaseContainer {
 
         this.user = user // User attributes
         this.room = room
-        this.x = x
-        this.y = y
         this.penguinLoader = penguinLoader
+
+        this.actions = this.setActions()
+        this.items = new PenguinItems(this)
+        this.itemLoader = new ItemLoader(this)
+
+        this.x = this.movement.getValidX(x)
+        this.y = this.movement.getValidY(y)
+        this.validatePos(this.x, this.y)
 
         this.id = user.id
         this.coins = user.coins
         this.username = user.username
         this.nameTag = penguinLoader.addName(this)
-
         this.balloon = null // Chat balloon
 
-        this.depth = y
+        this.depth = this.y
         this.frame = 1
         this.scale = 1
-
-        this.actions = this.setActions()
-        this.items = new PenguinItems(this)
-        this.itemLoader = new ItemLoader(this)
 
         this.savedPenguins = this.network.savedPenguins
         this.save = this.savedPenguins[this.username]
@@ -37,8 +38,12 @@ export default class Penguin extends BaseContainer {
         this.loadPenguin()
     }
 
+    get movement() {
+        return this.actions.movement
+    }
+
     get isTweening() {
-        return (this.actions.movement.tween) ? true : false
+        return (this.movement.tween) ? true : false
     }
 
     get pos() {
@@ -91,6 +96,41 @@ export default class Penguin extends BaseContainer {
 
     playFrame(frame, loop = true) {
         this.actions.playFrame(frame, loop)
+    }
+
+    /**
+     * Validates player position upon loading, to prevent player from
+     * joining into the block layer.
+     */
+    validatePos(x, y) {
+        if (!this.movement.blockTest(x, y)) return
+
+        let room = this.crumbs.rooms[this.room.id]
+        let random
+
+        // 25 attempts to generate a new pos that is not blocked
+        for (let i = 0; i < 25; i++) {
+            random = this.randomizePos(room.x, room.y, 80)
+
+            if (!this.movement.blockTest(random.x, random.y)) {
+                return this.setPos(random.x, random.y)
+            }
+        }
+
+        // If all attempts fail just use room default x and y
+        this.setPos(room.x, room.y)
+    }
+
+    randomizePos(x, y, range) {
+        let randX = this.movement.getValidX(x + Phaser.Math.Between(-range, range))
+        let randY = this.movement.getValidY(y + Phaser.Math.Between(-range, range))
+
+        return { x: randX, y: randY }
+    }
+
+    setPos(x, y) {
+        this.x = x
+        this.y = y
     }
 
 }

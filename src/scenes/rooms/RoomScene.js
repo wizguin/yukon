@@ -13,7 +13,8 @@ export default class RoomScene extends BaseScene {
         this.triggers = null // Trigger collision bodies
     }
 
-    init() {
+    init(data) {
+        this.id = data.id
         this.load.on('start', this.onStart, this)
     }
 
@@ -100,7 +101,8 @@ export default class RoomScene extends BaseScene {
         let room = this.crumbs.rooms[id]
         this.interface.showLoading(`Joining ${room.name}`)
 
-        this.network.send('join_room', { room: id, x: x, y: y })
+        let random = this.world.client.penguin.randomizePos(x, y, 40)
+        this.network.send('join_room', { room: id, x: random.x, y: random.y })
     }
 
 }

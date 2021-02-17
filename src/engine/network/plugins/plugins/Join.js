@@ -15,16 +15,12 @@ export default class Join extends Plugin {
     }
 
     loadPlayer(args) {
-        let roomConfig = this.crumbs.rooms[args.room]
-        let x = roomConfig.x
-        let y = roomConfig.y
-
         if (this.network.saveUsername) this.savePlayer(args, this.network.savePassword)
 
         this.scene.start('WorldController')
         this.world.setClient(args)
 
-        this.network.send('join_server', { x: x, y: y })
+        this.network.send('join_server')
     }
 
     joinRoom(args) {

@@ -16,7 +16,7 @@ export default class RoomFactory {
             return this.scene.get(config.name)
 
         } else {
-            return this.scene.add(config.name, config.scene, true)
+            return this.scene.add(config.name, config.scene, true, { id: id })
         }
 
     }

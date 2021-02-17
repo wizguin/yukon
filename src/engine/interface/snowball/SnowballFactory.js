@@ -48,8 +48,8 @@ export default class SnowballFactory {
     }
 
     playAnimation(penguin, x, y) {
-        let angle = penguin.actions.movement.getAngle({ x: penguin.x, y: penguin.y }, { x: x, y: y })
-        let direction = Math.max(Math.round(penguin.actions.movement.getDirection(angle) / 2), 1)
+        let angle = penguin.movement.getAngle({ x: penguin.x, y: penguin.y }, { x: x, y: y })
+        let direction = Math.max(Math.round(penguin.movement.getDirection(angle) / 2), 1)
         let frame = direction + 26 // + 26 for throwing frame id
 
         penguin.playFrame(frame, false)
