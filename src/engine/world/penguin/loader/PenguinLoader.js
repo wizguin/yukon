@@ -50,7 +50,7 @@ export default class PenguinLoader extends SpriteLoader {
 
     // Bug: when penguin leaves room movement/rotation is still locked
     addInput(penguin) {
-        let hitArea = new Phaser.Geom.Ellipse(0, -30, 110, 130)
+        let hitArea = new Phaser.Geom.Ellipse(0, -20, 70, 90)
 
         penguin.setInteractive({
             cursor: 'pointer',
