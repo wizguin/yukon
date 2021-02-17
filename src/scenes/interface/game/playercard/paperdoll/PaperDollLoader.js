@@ -6,9 +6,10 @@ export default class PaperDollLoader {
 
         this.scale = 0.7325
         this.photoScale = 0.7
+        this.flagScale = 0.66
 
         this.load = new Phaser.Loader.LoaderPlugin(this.scene)
-        this.url = '/assets/media/clothing/paper'
+        this.url = '/assets/media/clothing'
         this.prefix = 'paper'
 
         this.load.on('filecomplete', this.onFileComplete, this)
@@ -38,9 +39,11 @@ export default class PaperDollLoader {
 
         if (this.scene.textures.exists(key)) return this.onFileComplete(key)
 
+        let url = (slot == 'flag') ? `${this.url}/icon` : `${this.url}/paper`
+
         this.load.image({
             key: key,
-            url: `${this.url}/${item}.png`,
+            url: `${url}/${item}.png`,
         })
     }
 
@@ -57,6 +60,12 @@ export default class PaperDollLoader {
         switch (slot) {
             case 'photo':
                 item.sprite = this.loadPaper(key, slot, item.depth, this.photoScale)
+                break
+
+            case 'flag':
+                item.sprite = this.loadPaper(key, slot, item.depth, this.flagScale)
+                item.sprite.x = -149
+                item.sprite.y = -116
                 break
 
             default:
