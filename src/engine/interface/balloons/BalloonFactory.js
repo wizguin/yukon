@@ -40,7 +40,7 @@ export default class BalloonFactory {
 
         let balloon = new TextBalloon(this.main.world.room, penguin.x, penguin.y - 95, text)
         this.addBalloon(penguin, balloon)
-        this.main.chatLog.addMessage(penguin.username, text)
+        this.main.chatLog.addMessage(penguin.id, penguin.username, text)
     }
 
     addBalloon(penguin, balloon) {

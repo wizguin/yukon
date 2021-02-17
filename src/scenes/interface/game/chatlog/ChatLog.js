@@ -74,6 +74,7 @@ class ChatLog extends BaseContainer {
             y -= 40
 
             let container = this.scene.add.image(0, y, 'main', 'chatlog/message')
+            container.id = null
             container.text = this.scene.add.text(0, y, '', this.textStyle)
             container.text.setOrigin(0.5)
 
@@ -83,21 +84,25 @@ class ChatLog extends BaseContainer {
             let component = new Button(container)
             component.spriteName = 'chatlog/message'
             component.activeFrame = false
+            component.callback = () => this.onMessageClick(container.id)
         }
 
         return containers
     }
 
-    addMessage(username, message) {
+    addMessage(id, username, message) {
         if (this.messages.length == 20) this.messages.pop()
 
-        this.messages.unshift(`${username}: ${message}`)
+        this.messages.unshift({ id: id, message: `${username}: ${message}` })
         this.updateMessages()
     }
 
     updateMessages() {
         for (let [index, message] of this.messages.entries()) {
-            this.containers[index].text.text = message
+            let container = this.containers[index]
+
+            container.id = message.id
+            container.text.text = message.message
         }
     }
 
@@ -105,7 +110,14 @@ class ChatLog extends BaseContainer {
         this.messages = []
 
         for (let container of this.containers) {
+            container.id = null
             container.text.text = ''
+        }
+    }
+
+    onMessageClick(id) {
+        if (id) {
+            this.interface.showCard(id)
         }
     }
 
