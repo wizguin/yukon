@@ -78,7 +78,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "save-button",
-                    "Button.callback": "() => this.visible = false",
+                    "Button.callback": "() => this.close()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "login",
@@ -95,7 +95,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "learn-button",
-                    "Button.callback": "() => this.visible = false",
+                    "Button.callback": "() => this.close()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "login",
@@ -112,7 +112,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.callback": "() => this.visible = false",
+                    "Button.callback": "() => this.close()",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"

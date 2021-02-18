@@ -11,19 +11,33 @@ export default class Login extends Plugin {
         }
     }
 
+    get loginScene() {
+        return this.scene.getScene('Login')
+    }
+
     login(args) {
         this.interface.hideLoading()
 
         if (args.success) {
             this.scene.start('Servers', args)
         } else {
+            this.loginScene.events.once('create', () => this.onLoginError(args.message))
             this.scene.start('Login')
-            this.interface.prompt.showError(args.message)
         }
     }
 
     loginKey(args) {
         if (args.success) this.network.send('load_player')
+    }
+
+    onLoginError(message) {
+        this.loginScene.events.emit('hideinput')
+
+        this.interface.prompt.showError(message, 'Okay', () => {
+            this.loginScene.events.emit('showinput')
+
+            this.interface.prompt.error.visible = false
+        })
     }
 
 }

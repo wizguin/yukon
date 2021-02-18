@@ -91,19 +91,19 @@ class SavePrompt extends BaseContainer {
         // no_save_button (components)
         const no_save_buttonButton = new Button(no_save_button);
         no_save_buttonButton.spriteName = "save-button";
-        no_save_buttonButton.callback = () => this.visible = false;
+        no_save_buttonButton.callback = () => this.close();
         no_save_buttonButton.activeFrame = false;
 
         // learn_button (components)
         const learn_buttonButton = new Button(learn_button);
         learn_buttonButton.spriteName = "learn-button";
-        learn_buttonButton.callback = () => this.visible = false;
+        learn_buttonButton.callback = () => this.close();
         learn_buttonButton.activeFrame = false;
 
         // blue_button (components)
         const blue_buttonButton = new Button(blue_button);
         blue_buttonButton.spriteName = "blue-button";
-        blue_buttonButton.callback = () => this.visible = false;
+        blue_buttonButton.callback = () => this.close();
 
         /* START-USER-CTR-CODE */
 
@@ -115,10 +115,16 @@ class SavePrompt extends BaseContainer {
     /* START-USER-CODE */
 
     onSaveClick() {
-        this.visible = false
         this.scene.checks.enable(this.scene.checks.username)
         this.scene.checks.enable(this.scene.checks.password)
+        this.close()
     }
+
+	close() {
+		this.visible = false
+
+        this.scene.events.emit('showinput')
+	}
 
     /* END-USER-CODE */
 }

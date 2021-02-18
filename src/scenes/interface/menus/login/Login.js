@@ -90,10 +90,10 @@ class Login extends BaseScene {
         usernameText.text = "Penguin Name:";
         usernameText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
 
-        // input
+        // password
         this.add.image(815, 258, "login", "input");
 
-        // input_1
+        // username
         this.add.image(815, 200, "login", "input");
 
         // checks
@@ -144,18 +144,21 @@ class Login extends BaseScene {
     create() {
         this._create()
 
+        // Todo: change to depth component
+        this.waitPrompt.depth = 1
+        this.savePrompt.depth = 1
+
         this.anims.fromJSON(animations)
 
         // Login form
-
         let style = {
             width: 380,
             height: 53,
             padding: '0 6px 0 6px',
             filter: 'none',
-
-            color: '#000',
-            fontSize: 35
+            fontFamily: 'Arial',
+            fontSize: 35,
+            color: '#000'
         }
 
         this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => this.onLoginSubmit(), 12, false)
@@ -165,7 +168,6 @@ class Login extends BaseScene {
         this.add.existing(this.passwordInput)
 
         // Input
-
         this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
     }
 

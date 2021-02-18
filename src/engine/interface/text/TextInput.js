@@ -22,6 +22,18 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         this.callback = callback
         this.preventTab = preventTab
 
+        // Phaser Text object which will be used on focus lost
+        let totalPadding = this.getTotalPadding(style.padding)
+        this.phaserText = this.scene.add.text(x, y, '', {
+            fixedWidth: style.width - totalPadding,
+            fontFamily: style.fontFamily,
+            fontSize: style.fontSize,
+            color: style.color
+        })
+
+        this.phaserText.setOrigin(0.5, 0.5)
+        this.phaserText.visible = false
+
         this.addListeners()
         this.addInput()
     }
@@ -30,16 +42,34 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         return this.node.value
     }
 
+    /**
+     * Gets total width of padding, requires padding to be in the following format:
+     * "1px 1px 1px 1px".
+     *
+     * @param {string} padding - CSS padding string
+     */
+    getTotalPadding(padding) {
+        if (!padding) return 0
+
+        let parsed = padding.replaceAll('px', '').split(' ')
+        return parseInt(parsed[1]) + parseInt(parsed[3])
+    }
+
     addListeners() {
         this.addListener('focus')
         this.addListener('blur')
         this.addListener('keydown')
+
+        this.scene.events.on('showinput', () => this.onShow())
+        this.scene.events.on('hideinput', () => this.onHide())
+
+        this.on('destroy', () => this.onDestroy())
     }
 
     addInput() {
-        this.on('focus', () => { this.onFocus() })
-        this.on('blur', () => { this.onBlur() })
-        this.on('keydown', (event) => { this.onKeyDown(event) })
+        this.on('focus', () => this.onFocus())
+        this.on('blur', () => this.onBlur())
+        this.on('keydown', (event) => this.onKeyDown(event))
     }
 
     onFocus() {
@@ -61,6 +91,25 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
             // Prevent default to stop tab switching elements
             event.preventDefault()
         }
+    }
+
+    onShow() {
+        this.phaserText.visible = false
+        this.visible = true
+    }
+
+    onHide() {
+        // Update phaser text
+        let text = (this.node.type == 'password') ? '•'.repeat(this.text.length) : this.text
+        this.phaserText.text = text
+
+        this.phaserText.visible = true
+        this.visible = false
+    }
+
+    onDestroy() {
+        this.scene.events.off('showinput')
+        this.scene.events.off('hideinput')
     }
 
     setFocus() {

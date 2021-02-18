@@ -207,7 +207,7 @@
         {
             "type": "Image",
             "id": "ffeb45b6-13e0-49b0-ad82-294a535c3ac4",
-            "label": "input",
+            "label": "password",
             "components": [],
             "texture": {
                 "key": "login",
@@ -219,7 +219,7 @@
         {
             "type": "Image",
             "id": "f3dd63e7-4704-47f4-913d-b0daebe09d24",
-            "label": "input_1",
+            "label": "username",
             "components": [],
             "texture": {
                 "key": "login",

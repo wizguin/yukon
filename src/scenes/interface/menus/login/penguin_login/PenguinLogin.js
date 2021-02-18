@@ -137,34 +137,35 @@ class PenguinLogin extends BaseScene {
     create(data) {
         this._create()
 
+        // Todo: change to depth component
+        this.waitPrompt.depth = 1
+        this.savePrompt.depth = 1
+
         this.anims.fromJSON(animations)
 
         this.checks.enable(this.checks.username)
 
         // Penguin
-
         this.penguin = data.penguin
         this.container.paperDoll.loadDoll(this.penguin)
         this.container.username.text = this.penguin.username.toUpperCase()
         this.container.button.callback = () => this.onBackClick(this.penguin)
 
         // Login form
-
         let style = {
             width: 380,
             height: 53,
             padding: '0 6px 0 6px',
             filter: 'none',
-
-            color: '#000',
-            fontSize: 35
+            fontFamily: 'Arial',
+            fontSize: 35,
+            color: '#000'
         }
 
         this.passwordInput = new TextInput(this, 973, 250, 'password', style, () => this.onLoginSubmit(), 128, false)
         this.add.existing(this.passwordInput)
 
         // Input
-
         this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
     }
 
