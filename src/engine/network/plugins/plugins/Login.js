@@ -7,7 +7,7 @@ export default class Login extends Plugin {
         super(network)
         this.events = {
             'login': this.login,
-            'login_key': this.loginKey
+            'login_auth': this.loginAuth
         }
     }
 
@@ -26,7 +26,7 @@ export default class Login extends Plugin {
         }
     }
 
-    loginKey(args) {
+    loginAuth(args) {
         if (args.success) this.network.send('load_player')
     }
 

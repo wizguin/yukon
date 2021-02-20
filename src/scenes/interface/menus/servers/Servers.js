@@ -77,16 +77,16 @@ class Servers extends BaseScene {
 
             server.name.text = world
             server.safe.visible = config.safe
-            server.button.callback = () => this.onServerClick(world, data.username, data.loginKey)
+            server.button.callback = () => this.onServerClick(world, data.username, data.key)
 
             this.add.existing(server)
         }
     }
 
-    onServerClick(world, username, loginKey) {
+    onServerClick(world, username, key) {
         this.interface.showLoading(`Joining ${world}`)
         this.scene.stop()
-        this.network.connectGame(world, username, loginKey)
+        this.network.connectGame(world, username, key)
     }
 
     /* END-USER-CODE */

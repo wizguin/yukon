@@ -25,10 +25,10 @@ export default class Network {
         this.send('login', { username: username, password: password })
     }
 
-    connectGame(world, username, loginKey) {
+    connectGame(world, username, key) {
         this.connect(this.crumbs.worlds.game[world], () => { this.onConnectionLost() })
 
-        this.send('login_key', { username: username, loginKey: loginKey })
+        this.send('login_auth', { username: username, key: key })
     }
 
     connect(world, onDisconnect) {
