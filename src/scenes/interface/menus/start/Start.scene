@@ -25,11 +25,11 @@
         {
             "type": "Image",
             "id": "533f6f60-9a4c-4425-b6bc-e454b4d5ef33",
-            "label": "christmas",
+            "label": "startscreen",
             "components": [],
             "texture": {
                 "key": "start",
-                "frame": "christmas"
+                "frame": "startscreen"
             },
             "x": 760,
             "y": 420
@@ -86,8 +86,8 @@
                 "key": "start",
                 "frame": "create-button"
             },
-            "x": 1145,
-            "y": 771
+            "x": 1115,
+            "y": 777
         },
         {
             "type": "Image",
@@ -102,7 +102,31 @@
                 "key": "start",
                 "frame": "member-button"
             },
-            "x": 1145,
+            "x": 1115,
+            "y": 861
+        },
+        {
+            "type": "Image",
+            "id": "fe3e6e46-ff99-4094-8992-0b287cd9a319",
+            "label": "penguin_1",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "penguin-1"
+            },
+            "x": 1281,
+            "y": 771
+        },
+        {
+            "type": "Image",
+            "id": "aee4306f-3002-4322-b1fa-e5dcedffef0c",
+            "label": "penguin_2",
+            "components": [],
+            "texture": {
+                "key": "start",
+                "frame": "penguin-2"
+            },
+            "x": 1274,
             "y": 855
         },
         {

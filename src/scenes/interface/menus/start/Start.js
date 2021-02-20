@@ -20,8 +20,8 @@ class Start extends BaseScene {
         const bg = this.add.image(0, 0, "load", "bg");
         bg.setOrigin(0, 0);
 
-        // christmas
-        this.add.image(760, 420, "start", "christmas");
+        // startscreen
+        this.add.image(760, 420, "start", "startscreen");
 
         // bottom
         this.add.image(760, 766, "start", "bottom");
@@ -33,10 +33,16 @@ class Start extends BaseScene {
         const blogButton = this.add.image(364, 812, "start", "blog");
 
         // createButton
-        const createButton = this.add.image(1145, 771, "start", "create-button");
+        const createButton = this.add.image(1115, 777, "start", "create-button");
 
         // memberButton
-        const memberButton = this.add.image(1145, 855, "start", "member-button");
+        const memberButton = this.add.image(1115, 861, "start", "member-button");
+
+        // penguin_1
+        this.add.image(1281, 771, "start", "penguin-1");
+
+        // penguin_2
+        this.add.image(1274, 855, "start", "penguin-2");
 
         // startButton
         const startButton = this.add.sprite(760, 826, "start", "start-button");
