@@ -64,9 +64,10 @@ class Checks extends BaseContainer {
     }
 
     onRememberPasswordClick() {
-        this.scene.events.emit('hideinput')
-
-        if (!this.password.checked) return this.scene.waitPrompt.visible = true
+        if (!this.password.checked) {
+            this.scene.events.emit('hideinput')
+            return this.scene.waitPrompt.visible = true
+        }
 
         this.disable(this.username)
         this.disable(this.password)
