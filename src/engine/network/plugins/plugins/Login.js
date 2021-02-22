@@ -7,7 +7,8 @@ export default class Login extends Plugin {
         super(network)
         this.events = {
             'login': this.login,
-            'login_auth': this.loginAuth
+            'game_auth': this.gameAuth,
+            'auth_token': this.authToken
         }
     }
 
@@ -26,10 +27,6 @@ export default class Login extends Plugin {
         }
     }
 
-    loginAuth(args) {
-        if (args.success) this.network.send('load_player')
-    }
-
     onLoginError(message) {
         this.loginScene.events.emit('hideinput')
 
@@ -38,6 +35,14 @@ export default class Login extends Plugin {
 
             this.interface.prompt.error.visible = false
         })
+    }
+
+    gameAuth(args) {
+        if (args.success) this.network.send('load_player')
+    }
+
+    authToken(args) {
+        if (args.token) this.network.token = args.token
     }
 
 }

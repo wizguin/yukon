@@ -14,29 +14,45 @@ export default class Network {
 
         this.saveUsername = false
         this.savePassword = false
+        this.token = null
     }
 
-    connectLogin(username, password, saveUsername, savePassword) {
+    connectLogin(saveUsername, savePassword, onConnect) {
         this.saveUsername = saveUsername
         this.savePassword = savePassword
 
-        this.connect(this.crumbs.worlds.login, () => { this.disconnect() })
-
-        this.send('login', { username: username, password: password })
+        this.connect(this.crumbs.worlds.login, () => {
+            onConnect()
+        }, () => {
+            this.disconnect()
+        })
     }
 
     connectGame(world, username, key) {
-        this.connect(this.crumbs.worlds.game[world], () => { this.onConnectionLost() })
+        // Only create token if save password is checked and space is available
+        let createToken = this.savePassword && Object.keys(this.savedPenguins).length <= 6
+        let response = { username: username, key: key, createToken: createToken }
 
-        this.send('login_auth', { username: username, key: key })
+        // If a token exists for the user add the token selector to response,
+        // so that the token can be deleted/refreshed by the server
+        let token = this.getToken(username)
+        if (token) response.token = token.split(':')[0]
+
+        this.connect(this.crumbs.worlds.game[world], () => {
+            this.send('game_auth', response)
+        }, () => {
+            this.onConnectionLost()
+        })
     }
 
-    connect(world, onDisconnect) {
+    connect(world, onConnect, onDisconnect) {
         this.disconnect()
 
         this.client = io.connect(`${world.host}:${world.port}`)
+
+        this.client.once('connect', onConnect)
+        this.client.once('disconnect', onDisconnect)
         this.client.on('message', (message) => { this.onMessage(message) })
-        this.client.on('disconnect', onDisconnect)
     }
 
     disconnect() {
@@ -78,6 +94,16 @@ export default class Network {
             return JSON.parse(savedPenguins)
         } catch (error) {
             return {}
+        }
+    }
+
+    getToken(username) {
+        let save = this.savedPenguins[username.toLowerCase()]
+
+        if (save && save.token) {
+            return save.token
+        } else {
+            return null
         }
     }
 

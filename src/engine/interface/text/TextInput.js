@@ -42,6 +42,10 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         return this.node.value
     }
 
+    setText(text) {
+        this.node.value = text
+    }
+
     /**
      * Gets total width of padding, requires padding to be in the following format:
      * "1px 1px 1px 1px".
@@ -117,7 +121,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
     }
 
     clearText() {
-        this.node.value = ''
+        this.setText('')
     }
 
 }

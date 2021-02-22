@@ -165,6 +165,18 @@ class PenguinLogin extends BaseScene {
         this.passwordInput = new TextInput(this, 973, 250, 'password', style, () => this.onLoginSubmit(), 128, false)
         this.add.existing(this.passwordInput)
 
+        // Token
+        let token = this.network.getToken(this.penguin.username)
+        this.passwordEdited = false
+
+        if (token) {
+            this.passwordInput.setText('password')
+            // Update password edited on password input
+            this.passwordInput.node.addEventListener('keypress', () => this.passwordEdited = true, { once: true })
+
+            this.checks.enable(this.checks.password)
+        }
+
         // Input
         this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
     }
@@ -173,17 +185,25 @@ class PenguinLogin extends BaseScene {
     onLoginSubmit() {
         let username = this.penguin.username
         let password = this.passwordInput.text
+        let token = this.network.getToken(username)
+        let onConnect
 
         this.interface.showLoading(`Logging in ${username}`)
         this.scene.stop()
 
-        this.network.connectLogin(username, password, this.checks.username.checked, this.checks.password.checked)
+        if (token && !this.passwordEdited) {
+            onConnect = () => this.network.send('token_login', { username: username, token: token })
+        } else {
+            onConnect = () => this.network.send('login', { username: username, password: password })
+        }
+
+        this.network.connectLogin(this.checks.username.checked, this.checks.password.checked, onConnect)
     }
 
     onForgetClick() {
         let savedPenguins = this.network.savedPenguins
 
-        delete savedPenguins[this.penguin.username]
+        delete savedPenguins[this.penguin.username.toLowerCase()]
         localStorage.setItem('saved_penguins', JSON.stringify(savedPenguins))
 
         this.scene.start('PenguinSelect')

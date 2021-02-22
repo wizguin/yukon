@@ -33,7 +33,7 @@ export default class Penguin extends BaseContainer {
         this.scale = 1
 
         this.savedPenguins = this.network.savedPenguins
-        this.save = this.savedPenguins[this.username]
+        this.save = this.savedPenguins[this.username.toLowerCase()]
 
         this.loadPenguin()
     }

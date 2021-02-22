@@ -178,7 +178,9 @@ class Login extends BaseScene {
         this.interface.showLoading(`Logging in ${username}`)
         this.scene.stop()
 
-        this.network.connectLogin(username, password, this.checks.username.checked, this.checks.password.checked)
+        this.network.connectLogin(this.checks.username.checked, this.checks.password.checked, () => {
+            this.network.send('login', { username: username, password: password })
+        })
     }
 
     onBackClick() {
