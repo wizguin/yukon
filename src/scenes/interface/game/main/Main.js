@@ -335,6 +335,7 @@ class Main extends BaseScene {
     onSleep() {
         this.chatInput.clearText()
         this.chatLog.clearMessages()
+        if (this.chatLog.open) this.chatLog.onTabClick()
         this.stopCrosshair()
 
         for (let item of this.hideOnSleep) {
