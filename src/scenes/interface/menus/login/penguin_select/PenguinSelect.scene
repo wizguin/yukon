@@ -46,19 +46,30 @@
         {
             "type": "Rectangle",
             "id": "9f9f4600-ce90-4d06-baa1-7af0946104a1",
-            "label": "smallBg",
+            "label": "smallBgBack",
             "scope": "CLASS",
-            "components": [
-                "NineSlice"
-            ],
-            "NineSlice.corner": 50,
+            "components": [],
             "x": 760,
             "y": 430,
             "visible": false,
             "isFilled": true,
             "fillColor": "#0280CD",
-            "width": 1308,
-            "height": 728
+            "width": 1250,
+            "height": 680
+        },
+        {
+            "type": "Image",
+            "id": "a6902721-8ff4-4e8b-bc7f-f010cf2713d6",
+            "label": "smallBg",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "login",
+                "frame": "small-bg"
+            },
+            "x": 760,
+            "y": 430,
+            "visible": false
         },
         {
             "type": "Sprite",

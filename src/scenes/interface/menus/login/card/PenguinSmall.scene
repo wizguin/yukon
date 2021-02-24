@@ -20,20 +20,6 @@
             "y": 480,
             "list": [
                 {
-                    "type": "Rectangle",
-                    "id": "846d9c56-c43a-4eb9-bc0f-a6f23fbc30db",
-                    "label": "bg",
-                    "scope": "CLASS",
-                    "components": [
-                        "NineSlice"
-                    ],
-                    "NineSlice.corner": 50,
-                    "isFilled": true,
-                    "fillColor": "#0280CD",
-                    "width": 688,
-                    "height": 288
-                },
-                {
                     "type": "Image",
                     "id": "e469efd7-0729-4668-8049-287496c7c11e",
                     "label": "penguin_small",
@@ -45,7 +31,25 @@
                     "texture": {
                         "key": "login",
                         "frame": "player_small"
-                    }
+                    },
+                    "scaleX": 1.01,
+                    "scaleY": 1.01
+                },
+                {
+                    "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
+                    "id": "1d48cf54-9599-4b49-8743-2aabc7c8948d",
+                    "unlock": [
+                        "visible",
+                        "fadeIn",
+                        "crop"
+                    ],
+                    "label": "paperDoll",
+                    "scope": "CLASS",
+                    "fadeIn": false,
+                    "crop": true,
+                    "components": [],
+                    "x": -212,
+                    "y": 60
                 },
                 {
                     "type": "Text",
@@ -64,19 +68,16 @@
                     "shadow.color": "#000000ff"
                 },
                 {
-                    "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
-                    "id": "1d48cf54-9599-4b49-8743-2aabc7c8948d",
-                    "unlock": [
-                        "visible",
-                        "fadeIn"
-                    ],
-                    "label": "paperDoll",
+                    "type": "Image",
+                    "id": "0927bfbc-f58f-4cb9-9965-a247ad43deea",
+                    "label": "bg",
                     "scope": "CLASS",
-                    "fadeIn": false,
                     "components": [],
-                    "x": -210,
-                    "y": 60,
-                    "visible": false
+                    "texture": {
+                        "key": "login",
+                        "frame": "card_small"
+                    },
+                    "x": 1
                 }
             ]
         }

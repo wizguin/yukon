@@ -28,6 +28,8 @@ class PaperDoll extends BaseContainer {
 
         /** @type {boolean} */
         this.fadeIn = true;
+        /** @type {boolean} */
+        this.crop = false;
 
         /* START-USER-CTR-CODE */
 
@@ -41,6 +43,8 @@ class PaperDoll extends BaseContainer {
 
         this.paperDollLoader = new PaperDollLoader(this)
         this.isInputEnabled = false
+
+        scene.events.once('create', () => this.setCrop())
 
         /* END-USER-CTR-CODE */
     }
@@ -58,6 +62,13 @@ class PaperDoll extends BaseContainer {
         }
 
         return items
+    }
+
+    setCrop() {
+        if (this.crop) {
+            this.body.setTexture('login', 'body-crop')
+            this.paperdoll.setTexture('login', 'paperdoll-crop')
+        }
     }
 
     removeItems() {

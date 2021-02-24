@@ -17,6 +17,8 @@ class PenguinSelect extends BaseScene {
         /** @type {Phaser.GameObjects.Rectangle} */
         this.largeBg;
         /** @type {Phaser.GameObjects.Rectangle} */
+        this.smallBgBack;
+        /** @type {Phaser.GameObjects.Image} */
         this.smallBg;
         /** @type {Phaser.GameObjects.Container} */
         this.container;
@@ -37,11 +39,15 @@ class PenguinSelect extends BaseScene {
         largeBg.isFilled = true;
         largeBg.fillColor = 164045;
 
+        // smallBgBack
+        const smallBgBack = this.add.rectangle(760, 430, 1250, 680);
+        smallBgBack.visible = false;
+        smallBgBack.isFilled = true;
+        smallBgBack.fillColor = 164045;
+
         // smallBg
-        const smallBg = this.add.rectangle(760, 430, 1308, 728);
+        const smallBg = this.add.image(760, 430, "login", "small-bg");
         smallBg.visible = false;
-        smallBg.isFilled = true;
-        smallBg.fillColor = 164045;
 
         // backButton
         const backButton = this.add.sprite(760, 876, "login", "larger-button");
@@ -59,10 +65,6 @@ class PenguinSelect extends BaseScene {
         const largeBgNineSlice = new NineSlice(largeBg);
         largeBgNineSlice.corner = 50;
 
-        // smallBg (components)
-        const smallBgNineSlice = new NineSlice(smallBg);
-        smallBgNineSlice.corner = 50;
-
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
@@ -71,6 +73,7 @@ class PenguinSelect extends BaseScene {
         backButtonAnimated.onHover = true;
 
         this.largeBg = largeBg;
+        this.smallBgBack = smallBgBack;
         this.smallBg = smallBg;
         this.container = container;
     }
@@ -83,6 +86,7 @@ class PenguinSelect extends BaseScene {
         this.anims.fromJSON(animations)
 
         this.container.depth = 1
+        this.smallBg.depth = 2
 
         let savedPenguins = Object.values(this.network.savedPenguins).slice(0, 6)
         let numSaved = savedPenguins.length
@@ -90,8 +94,13 @@ class PenguinSelect extends BaseScene {
         let size = (numSaved > 3) ? PenguinSmall : PenguinLarge
         let hideBg = ([3, 5, 6].includes(numSaved)) ? true : false
 
-        if (size == PenguinSmall && hideBg) this.smallBg.visible = true
-        if (size == PenguinLarge && hideBg) this.largeBg.visible = true
+        if (size == PenguinSmall && hideBg) {
+            this.smallBgBack.visible = true
+            this.smallBg.visible = true
+        }
+        if (size == PenguinLarge && hideBg) {
+            this.largeBg.visible = true
+        }
 
         this.createObjects(savedPenguins, size, hideBg)
 
