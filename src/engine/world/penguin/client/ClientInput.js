@@ -22,16 +22,16 @@ export default class ClientInput {
         room.input.on('pointermove', (pointer) => { this.onMove(pointer) })
 
         // Sitting
-        room.input.keyboard.on('keydown_UP', () => { this.onFrameKeyDown(21) })
-        room.input.keyboard.on('keydown_LEFT', () => { this.onFrameKeyDown(19) })
-        room.input.keyboard.on('keydown_DOWN', () => { this.onFrameKeyDown(17) })
-        room.input.keyboard.on('keydown_RIGHT', () => { this.onFrameKeyDown(23) })
+        room.input.keyboard.on('keydown-UP', () => { this.onFrameKeyDown(21) })
+        room.input.keyboard.on('keydown-LEFT', () => { this.onFrameKeyDown(19) })
+        room.input.keyboard.on('keydown-DOWN', () => { this.onFrameKeyDown(17) })
+        room.input.keyboard.on('keydown-RIGHT', () => { this.onFrameKeyDown(23) })
 
         // Sitting to pointer
-        room.input.keyboard.on('keydown_S', () => { this.onSitKeyDown(room.game.input.mousePointer) })
+        room.input.keyboard.on('keydown-S', () => { this.onSitKeyDown(room.game.input.mousePointer) })
 
         // Crosshair
-        room.input.keyboard.on('keydown_T', () => { this.onCrosshairKeyDown() })
+        room.input.keyboard.on('keydown-T', () => { this.onCrosshairKeyDown() })
     }
 
     onUp(pointer) {

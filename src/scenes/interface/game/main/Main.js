@@ -328,8 +328,8 @@ class Main extends BaseScene {
 
         // Input
 
-        this.input.keyboard.on('keydown_TAB', (event) => { this.onChatKeyDown(event) })
-        this.input.keyboard.on('keydown_ENTER', (event) => { this.onChatKeyDown(event) })
+        this.input.keyboard.on('keydown-TAB', (event) => { this.onChatKeyDown(event) })
+        this.input.keyboard.on('keydown-ENTER', (event) => { this.onChatKeyDown(event) })
     }
 
     onSleep() {

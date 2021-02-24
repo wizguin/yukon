@@ -168,7 +168,7 @@ class Login extends BaseScene {
         this.add.existing(this.passwordInput)
 
         // Input
-        this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
+        this.input.keyboard.on('keydown-ENTER', () => this.onLoginSubmit())
     }
 
     onLoginSubmit() {

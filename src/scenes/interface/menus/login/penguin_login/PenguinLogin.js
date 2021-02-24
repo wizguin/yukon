@@ -178,7 +178,7 @@ class PenguinLogin extends BaseScene {
         }
 
         // Input
-        this.input.keyboard.on('keydown_ENTER', () => this.onLoginSubmit())
+        this.input.keyboard.on('keydown-ENTER', () => this.onLoginSubmit())
     }
 
 
