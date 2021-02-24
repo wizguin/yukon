@@ -19,12 +19,13 @@ export default class Login extends Plugin {
     login(args) {
         this.interface.hideLoading()
 
-        if (args.success) {
-            this.scene.start('Servers', args)
-        } else {
-            this.loginScene.events.once('create', () => this.onLoginError(args.message))
-            this.scene.start('Login')
-        }
+        if (args.success) return this.scene.start('Servers', args)
+        if (!this.network.lastLoginScene) return this.scene.start('Login')
+
+        let scene = this.scene.getScene(this.network.lastLoginScene)
+
+        scene.events.once('create', () => this.onLoginError(args.message))
+        this.scene.start(this.network.lastLoginScene)
     }
 
     onLoginError(message) {

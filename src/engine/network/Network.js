@@ -15,6 +15,9 @@ export default class Network {
         this.saveUsername = false
         this.savePassword = false
         this.token = null
+
+        // Used to switch back to correct login scene on an error
+        this.lastLoginScene = null
     }
 
     connectLogin(saveUsername, savePassword, onConnect) {

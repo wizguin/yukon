@@ -137,6 +137,8 @@ class PenguinLogin extends BaseScene {
     create(data) {
         this._create()
 
+        this.network.lastLoginScene = 'PenguinLogin'
+
         // Todo: change to depth component
         this.waitPrompt.depth = 1
         this.savePrompt.depth = 1

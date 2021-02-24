@@ -144,6 +144,8 @@ class Login extends BaseScene {
     create() {
         this._create()
 
+        this.network.lastLoginScene = 'Login'
+
         // Todo: change to depth component
         this.waitPrompt.depth = 1
         this.savePrompt.depth = 1
