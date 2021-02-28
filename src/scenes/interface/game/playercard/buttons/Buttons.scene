@@ -81,6 +81,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onIglooClick()",
                     "ShowHint.text": "Visit Igloo",
                     "texture": {
                         "key": "main",

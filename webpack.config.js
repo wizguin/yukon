@@ -21,7 +21,8 @@ module.exports = {
             '@engine': path.resolve(__dirname, 'src/engine'),
             '@scenes': path.resolve(__dirname, 'src/scenes'),
             '@components': path.resolve(__dirname, 'src/scenes/components'),
-            '@rooms': path.resolve(__dirname, 'src/scenes/rooms')
+            '@rooms': path.resolve(__dirname, 'src/scenes/rooms'),
+            '@igloos': path.resolve(__dirname, 'src/scenes/igloos')
         }
     },
     module: {

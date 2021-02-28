@@ -3,6 +3,7 @@ import BaseScene from '@scenes/base/BaseScene'
 import ClientController from './penguin/client/ClientController'
 import PenguinFactory from './penguin/PenguinFactory'
 import RoomFactory from './room/RoomFactory'
+import IglooFactory from './room/IglooFactory'
 
 
 export default class WorldController extends BaseScene {
@@ -17,6 +18,7 @@ export default class WorldController extends BaseScene {
     create() {
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
+        this.iglooFactory = new IglooFactory(this)
     }
 
     setClient(args) {
@@ -29,12 +31,24 @@ export default class WorldController extends BaseScene {
             if (this.room.key == this.crumbs.rooms[id].name) return
 
             this.interface.main.snowballFactory.clearBalls()
-
             this.room.scene.stop()
         }
 
         this.room = this.roomFactory.createRoom(id)
         this.room.events.once('create', () => this.addPenguins(users))
+    }
+
+    joinIgloo(args) {
+        if (this.room) {
+            // Prevents joining active room
+            if (this.room.id == args.igloo) return
+
+            this.interface.main.snowballFactory.clearBalls()
+            this.room.scene.stop()
+        }
+
+        this.room = this.iglooFactory.createIgloo(args)
+        this.room.events.once('create', () => this.addPenguins(args.users))
     }
 
     addPenguins(users) {

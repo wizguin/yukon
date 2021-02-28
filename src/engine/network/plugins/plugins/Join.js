@@ -9,6 +9,7 @@ export default class Join extends Plugin {
         this.events = {
             'load_player': this.loadPlayer,
             'join_room': this.joinRoom,
+            'join_igloo': this.joinIgloo,
             'add_player': this.addPlayer,
             'remove_player': this.removePlayer
         }
@@ -29,6 +30,10 @@ export default class Join extends Plugin {
 
     joinRoom(args) {
         this.world.joinRoom(args.room, args.users)
+    }
+
+    joinIgloo(args) {
+        this.world.joinIgloo(args)
     }
 
     addPlayer(args) {

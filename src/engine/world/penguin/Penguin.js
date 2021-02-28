@@ -105,8 +105,14 @@ export default class Penguin extends BaseContainer {
     validatePos(x, y) {
         if (!this.movement.blockTest(x, y)) return
 
-        let room = this.crumbs.rooms[this.room.id]
+        let room
         let random
+
+        if (this.room.isIgloo) {
+            room = this.crumbs.igloos[this.room.args.type]
+        } else {
+            room = this.crumbs.rooms[this.room.id]
+        }
 
         // 25 attempts to generate a new pos that is not blocked
         for (let i = 0; i < 25; i++) {

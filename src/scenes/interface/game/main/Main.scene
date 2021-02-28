@@ -260,6 +260,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => this.onIglooClick()",
             "ShowHint.text": "Your Home",
             "texture": {
                 "key": "main",

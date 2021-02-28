@@ -80,6 +80,7 @@ class Buttons extends BaseContainer {
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
+        igloo_buttonButton.callback = () => this.onIglooClick();
         const igloo_buttonShowHint = new ShowHint(igloo_button);
         igloo_buttonShowHint.text = "Visit Igloo";
 
@@ -203,6 +204,13 @@ class Buttons extends BaseContainer {
 
     onFindClick() {
         this.network.send('buddy_find', { id: this.parentContainer.id })
+    }
+
+    onIglooClick() {
+        if (this.world.room.id == this.parentContainer.id) return
+
+        this.interface.showLoading('Joining Igloo')
+        this.network.send('join_igloo', { igloo: this.parentContainer.id, x: 0, y: 0 })
     }
 
     onIgnoreClick() {
