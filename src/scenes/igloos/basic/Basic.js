@@ -10,6 +10,8 @@ class Basic extends IglooScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+        /** @type {Phaser.GameObjects.Image} */
+        this.mask;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -50,6 +52,7 @@ class Basic extends IglooScene {
         this.add.image(491, 467, "basic", "door");
 
         this.floor = floor;
+        this.mask = mask;
     }
 
     /* START-USER-CODE */

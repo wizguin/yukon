@@ -32,6 +32,7 @@
             "type": "Image",
             "id": "8ce22a60-95e5-49cb-870f-2b3faa879881",
             "label": "mask",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "basic",
