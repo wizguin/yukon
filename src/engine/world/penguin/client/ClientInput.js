@@ -2,6 +2,7 @@ export default class ClientInput {
 
     constructor(client) {
         this.client = client
+        this.room = null
     }
 
     get actions() {
@@ -17,6 +18,8 @@ export default class ClientInput {
     }
 
     setInput(room) {
+        this.room = room
+
         // Movement
         room.input.on('pointerup', (pointer) => { this.onUp(pointer) })
         room.input.on('pointermove', (pointer) => { this.onMove(pointer) })
@@ -55,6 +58,16 @@ export default class ClientInput {
     onCrosshairKeyDown() {
         if (!this.client.penguin.interface.main) return
         this.client.penguin.interface.main.onSnowballClick()
+    }
+
+    enable() {
+        this.room.input.enabled = true
+        this.room.input.keyboard.enabled = true
+    }
+
+    disable() {
+        this.room.input.enabled = false
+        this.room.input.keyboard.enabled = false
     }
 
 }

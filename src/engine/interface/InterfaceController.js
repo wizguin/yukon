@@ -17,6 +17,10 @@ export default class InterfaceController extends BaseScene {
         return this.scene.get('Main')
     }
 
+    get iglooEdit() {
+        return this.scene.get('IglooEdit')
+    }
+
     showLoading(text = '', showBar = false) {
         this.hideInterface()
 
@@ -52,6 +56,21 @@ export default class InterfaceController extends BaseScene {
 
     hideInterface() {
         if (this.main && this.main.scene.isActive()) this.scene.sleep('Main')
+    }
+
+    showIglooEdit() {
+        if (this.scene.isSleeping('IglooEdit')) {
+            this.scene.wake('IglooEdit')
+
+        } else if (!this.scene.isActive('IglooEdit')) {
+            this.scene.launch('IglooEdit')
+        }
+
+        this.scene.bringToTop('IglooEdit')
+    }
+
+    hideIglooEdit() {
+        if (this.iglooEdit && this.iglooEdit.scene.isActive()) this.scene.sleep('IglooEdit')
     }
 
     showEmoteBalloon(id, emote) {
