@@ -7,6 +7,7 @@
         "snapHeight": 1000,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
+        "createMethodName": "_create",
         "sceneKey": "IglooEdit",
         "borderWidth": 1520,
         "borderHeight": 960
@@ -132,6 +133,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/furniture",
+                    "Button.callback": "() => this.onFurnitureClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",

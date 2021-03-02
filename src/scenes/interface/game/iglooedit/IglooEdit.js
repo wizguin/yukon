@@ -21,7 +21,7 @@ class IglooEdit extends BaseScene {
         /* END-USER-CTR-CODE */
     }
 
-    create() {
+    _create() {
 
         // defaultControls
         const defaultControls = this.add.container(1430, 758);
@@ -159,6 +159,7 @@ class IglooEdit extends BaseScene {
         // button_furniture (components)
         const button_furnitureButton = new Button(button_furniture);
         button_furnitureButton.spriteName = "button/furniture";
+        button_furnitureButton.callback = () => this.onFurnitureClick();
         button_furnitureButton.activeFrame = false;
 
         // button_music (components)
@@ -201,6 +202,20 @@ class IglooEdit extends BaseScene {
         this.furniture = furniture;
     }
 
+    create() {
+        this._create()
+
+         // Furniture list close hit area
+        let poly = new Phaser.Geom.Polygon([0,0, 1520,0, 1520,413, 1370,200, 1130,200, 1130,900, 1370,900, 1370,570, 1520,535, 1520,960, 0,960])
+        Phaser.Geom.Polygon.Translate(poly, -this.furniture.x, -this.furniture.y)
+
+        let closeArea = this.add.graphics()
+        this.furniture.add(closeArea)
+
+        closeArea.setInteractive(poly, Phaser.Geom.Polygon.Contains)
+        closeArea.on('pointerover', () => this.furniture.visible = false)
+    }
+
     /* START-USER-CODE */
 
     onEditClick() {
@@ -221,6 +236,11 @@ class IglooEdit extends BaseScene {
 
         this.controls.visible = false
         this.defaultControls.visible = true
+        this.furniture.visible = false
+    }
+
+    onFurnitureClick() {
+        this.furniture.visible = !this.furniture.visible
     }
 
     /* END-USER-CODE */
