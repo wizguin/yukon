@@ -1,17 +1,13 @@
-import Basic from '@igloos/basic/Basic'
-import Candy from '@igloos/candy/Candy'
-
-
 const igloos = {
     1: {
         name: 'Basic',
-        scene: Basic,
+        scene: require('@igloos/basic/Basic').default,
         x: 760,
         y: 660
     },
     2: {
         name: 'Candy',
-        scene: Candy,
+        scene: require('@igloos/candy/Candy').default,
         x: 760,
         y: 660
     }
