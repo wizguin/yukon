@@ -8,6 +8,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
             backgroundColor: 'transparent',
             border: 'transparent',
             outline: 'transparent',
+            pointerEvents: 'auto',
 
             ...style
         }
