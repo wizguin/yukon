@@ -35,7 +35,9 @@ class WallCrate extends Crate {
 
     /* START-USER-CODE */
 
-    drop() {
+    drop(item) {
+        this.items.push(item)
+
         this.crate.visible = true
         this.explosion.visible = false
         this.crate.scale = 1

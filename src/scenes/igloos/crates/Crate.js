@@ -21,6 +21,10 @@ class Crate extends Phaser.GameObjects.Container {
         this.defaultX = x
         this.defaultY = y
 
+        // Items that are being loaded, will be shown when crate explodes,
+        // array is used to prevent new tweens from cancelling previous items
+        this.items = []
+
         scene.anims.create({
             key: 'explode',
             frames: this.scene.anims.generateFrameNames('iglooedit', {
@@ -41,6 +45,11 @@ class Crate extends Phaser.GameObjects.Container {
     explode() {
         this.explosion.visible = true
         this.explosion.play('explode')
+
+        // Clear items to load
+        while (this.items.length) {
+            this.items.pop().visible = true
+        }
     }
 
     /* END-USER-CODE */

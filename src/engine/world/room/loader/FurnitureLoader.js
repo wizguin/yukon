@@ -36,7 +36,10 @@ export default class FurnitureLoader {
         if (!this.scene.textures.exists(key)) return
 
         let sprite = new FurnitureSprite(this.scene, crate.defaultX, crate.defaultY, key, '1_1_1')
+        sprite.visible = false
+
         this.scene.add.existing(sprite)
+        crate.drop(sprite)
     }
 
 }

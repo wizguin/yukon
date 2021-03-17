@@ -125,7 +125,6 @@ export default class IglooScene extends RoomScene {
                         ? this.wallCrate
                         : this.roomCrate
 
-        crate.drop()
         this.loader.loadFurniture(item, crate)
         this.loader.start()
     }

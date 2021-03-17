@@ -3,7 +3,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame)
 
-        this.depth = y
+        this.depth = y - 1 // - 1 to appear behind explosion
         this.frames = this.texture.getFrameNames()
         this.crumb = scene.crumbs.furniture[texture.split('/')[1]]
         this.isWall = this.crumb.type == 2

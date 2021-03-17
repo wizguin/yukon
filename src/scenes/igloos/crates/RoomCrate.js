@@ -44,7 +44,9 @@ class RoomCrate extends Crate {
 
     /* START-USER-CODE */
 
-    drop() {
+    drop(item) {
+        this.items.push(item)
+
         this.spinner.visible = true
         this.crate.visible = true
         this.explosion.visible = false
