@@ -24,7 +24,6 @@ class RoomCrate extends Crate {
 
         /* START-USER-CTR-CODE */
 
-        this.defaultY = y
         this.explosion.scale = 1.47
 
         scene.anims.create({

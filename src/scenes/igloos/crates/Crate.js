@@ -18,6 +18,9 @@ class Crate extends Phaser.GameObjects.Container {
         this.scene = scene
         this.tween
 
+        this.defaultX = x
+        this.defaultY = y
+
         scene.anims.create({
             key: 'explode',
             frames: this.scene.anims.generateFrameNames('iglooedit', {

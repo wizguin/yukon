@@ -73,10 +73,10 @@ export default class IglooScene extends RoomScene {
     }
 
     addCrates() {
-        this.roomCrate = new RoomCrate(this, 760, 700)
+        this.roomCrate = new RoomCrate(this, this.floorSpawn[0], this.floorSpawn[1])
         this.roomCrate.depth = this.roomCrate.y
 
-        this.wallCrate = new WallCrate(this, 760, 300)
+        this.wallCrate = new WallCrate(this, this.wallSpawn[0], this.wallSpawn[1])
         this.wallCrate.depth = this.wallCrate.y
 
         this.add.existing(this.roomCrate)
@@ -121,8 +121,12 @@ export default class IglooScene extends RoomScene {
     }
 
     loadFurniture(item) {
-        this.roomCrate.drop()
-        this.loader.loadFurniture(item)
+        let crate = (this.crumbs.furniture[item].type == 2)
+                        ? this.wallCrate
+                        : this.roomCrate
+
+        crate.drop()
+        this.loader.loadFurniture(item, crate)
         this.loader.start()
     }
 
