@@ -35,6 +35,10 @@ export default class Preload extends BaseScene {
             document.activeElement.blur()
         }
 
+        // Set crumbs
+        this.crumbs.furniture = this.cache.json.get('furniture')
+
+        // Start
         this.interface.hideLoading()
         this.scene.start('InterfaceController')
         this.scene.start('Start')
