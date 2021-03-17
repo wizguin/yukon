@@ -1,0 +1,59 @@
+{
+    "id": "c11fe3ba-0783-4be8-b028-1f3d80a0433e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "Crate",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d338c1b8-7396-4576-bdb2-4c3d45e7f2a5",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "3f7f0991-79ac-49c6-b0e6-1cc09399db36",
+                    "label": "crate",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "iglooedit",
+                        "frame": "crate/room_box"
+                    },
+                    "y": -44,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "9b2d5f41-4910-4436-9a4d-6c355de359ad",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "iglooedit",
+                        "frame": "crate/spinner0001"
+                    },
+                    "x": 42,
+                    "y": -35,
+                    "originY": 0.5094339622641509,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
