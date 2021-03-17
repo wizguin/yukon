@@ -233,7 +233,6 @@ class IglooEdit extends BaseScene {
         this.interface.hideInterface()
         this.world.room.showEditBg()
         this.world.room.hidePenguins()
-       //this.world.client.input.disable()
 
         this.defaultControls.visible = false
         this.controls.visible = true
@@ -243,7 +242,6 @@ class IglooEdit extends BaseScene {
         this.interface.showInterface()
         this.world.room.hideEditBg()
         this.world.room.showPenguins()
-        this.world.client.input.enable()
 
         this.controls.visible = false
         this.defaultControls.visible = true

@@ -9,6 +9,10 @@ export default class ClientInput {
         return this.client.penguin.actions
     }
 
+    get visible() {
+        return this.client.penguin.visible
+    }
+
     get movementEnabled() {
         return this.client.penguin.movementEnabled
     }
@@ -38,36 +42,28 @@ export default class ClientInput {
     }
 
     onUp(pointer) {
-        if (!this.movementEnabled) return
+        if (!this.movementEnabled || !this.visible) return
         this.actions.movePenguin(pointer.x, pointer.y)
     }
 
     onMove(pointer) {
-        if (!this.rotationEnabled) return
+        if (!this.rotationEnabled || !this.visible) return
         this.actions.rotatePenguin(pointer.x, pointer.y)
     }
 
     onFrameKeyDown(frame) {
+        if (!this.visible) return
         this.actions.playFrame(frame)
     }
 
     onSitKeyDown(mousePointer) {
+        if (!this.visible) return
         this.actions.sitPenguin(mousePointer.x, mousePointer.y)
     }
 
     onCrosshairKeyDown() {
-        if (!this.client.penguin.interface.main) return
+        if (!this.client.penguin.interface.main || !this.visible) return
         this.client.penguin.interface.main.onSnowballClick()
-    }
-
-    enable() {
-        this.room.input.enabled = true
-        this.room.input.keyboard.enabled = true
-    }
-
-    disable() {
-        this.room.input.enabled = false
-        this.room.input.keyboard.enabled = false
     }
 
 }
