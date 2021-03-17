@@ -337,6 +337,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/large",
+                    "Button.callback": "() => this.showGridView()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",
@@ -355,6 +356,17 @@
                     "originX": 0.5076923076923077
                 }
             ]
+        },
+        {
+            "prefabId": "5e67778f-f6b1-47c7-a8e0-fccf4a610c82",
+            "id": "f749e1e6-e14e-4503-8aed-0e0d28e0ef65",
+            "unlock": [
+                "visible"
+            ],
+            "label": "gridView",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false
         }
     ],
     "plainObjects": [],

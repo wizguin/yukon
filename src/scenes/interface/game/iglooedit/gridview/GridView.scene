@@ -1,0 +1,144 @@
+{
+    "id": "5e67778f-f6b1-47c7-a8e0-fccf4a610c82",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "7c1c9ca3-0998-4409-b76a-ead91db93dce",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "7258c2f0-4f26-4964-8c8b-58f82d3571c4",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "x": 760,
+                    "y": 480,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.6,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "38cb6806-a39c-475a-ab49-d9a06ec39179",
+                    "label": "grey_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "grey-button",
+                    "Button.callback": "() => this.visible = false",
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-button"
+                    },
+                    "x": 1472,
+                    "y": 40
+                },
+                {
+                    "type": "Image",
+                    "id": "ade69e0f-0b5e-424b-a78a-9a510e592742",
+                    "label": "grey_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-x"
+                    },
+                    "x": 1472,
+                    "y": 38
+                },
+                {
+                    "type": "Container",
+                    "id": "f252d1e9-d775-4ff8-a24a-4bf688bd7767",
+                    "label": "container",
+                    "scope": "CLASS",
+                    "components": [],
+                    "list": []
+                },
+                {
+                    "type": "Container",
+                    "id": "b4417fac-c8de-4926-bff3-4a4f3b1fd6ed",
+                    "label": "pageButtons",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 1393,
+                    "y": 125,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "ecaed311-3099-4fd8-8c54-c82e5e1d38ab",
+                            "label": "down_button",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "grey-button",
+                            "Button.callback": "() => this.nextPage()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-button"
+                            },
+                            "y": 688
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1100a04f-1ac4-4c35-b46c-ba649092312a",
+                            "label": "grey_arrow_1",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-arrow"
+                            },
+                            "y": 686,
+                            "flipY": true
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ddcad954-f487-4f86-9644-034b45159062",
+                            "label": "up_button",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "grey-button",
+                            "Button.callback": "() => this.prevPage()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-button"
+                            },
+                            "y": 2
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4773964e-d84d-40ff-8658-16620b15e061",
+                            "label": "grey_arrow",
+                            "components": [],
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-arrow"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

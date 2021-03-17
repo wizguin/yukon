@@ -2,6 +2,8 @@ import BaseScene from '@scenes/base/BaseScene'
 
 import { Button, ShowHint, SimpleButton } from '@components/components'
 
+import GridView from './gridview/GridView'
+
 
 /* START OF COMPILED CODE */
 
@@ -16,6 +18,8 @@ class IglooEdit extends BaseScene {
         this.controls;
         /** @type {Phaser.GameObjects.Container} */
         this.furniture;
+        /** @type {GridView} */
+        this.gridView;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -133,6 +137,11 @@ class IglooEdit extends BaseScene {
         icon_all.setOrigin(0.5076923076923077, 0.5);
         furniture.add(icon_all);
 
+        // gridView
+        const gridView = new GridView(this, 0, 0);
+        this.add.existing(gridView);
+        gridView.visible = false;
+
         // button_edit (components)
         const button_editButton = new Button(button_edit);
         button_editButton.spriteName = "button/edit";
@@ -195,17 +204,21 @@ class IglooEdit extends BaseScene {
         // allButton (components)
         const allButtonButton = new Button(allButton);
         allButtonButton.spriteName = "button/large";
+        allButtonButton.callback = () => this.showGridView();
         allButtonButton.activeFrame = false;
 
         this.defaultControls = defaultControls;
         this.controls = controls;
         this.furniture = furniture;
+        this.gridView = gridView;
     }
+
+    /* START-USER-CODE */
 
     create() {
         this._create()
 
-         // Furniture list close hit area
+        // Furniture list close hit area
         let poly = new Phaser.Geom.Polygon([0,0, 1520,0, 1520,413, 1370,200, 1130,200, 1130,900, 1370,900, 1370,570, 1520,535, 1520,960, 0,960])
         Phaser.Geom.Polygon.Translate(poly, -this.furniture.x, -this.furniture.y)
 
@@ -216,13 +229,11 @@ class IglooEdit extends BaseScene {
         closeArea.on('pointerover', () => this.furniture.visible = false)
     }
 
-    /* START-USER-CODE */
-
     onEditClick() {
         this.interface.hideInterface()
         this.world.room.showEditBg()
         this.world.room.hidePenguins()
-        this.world.client.input.disable()
+       //this.world.client.input.disable()
 
         this.defaultControls.visible = false
         this.controls.visible = true
@@ -241,6 +252,11 @@ class IglooEdit extends BaseScene {
 
     onFurnitureClick() {
         this.furniture.visible = !this.furniture.visible
+    }
+
+    showGridView(type = 'all') {
+        this.gridView.visible = true
+        this.gridView.startGrid()
     }
 
     /* END-USER-CODE */
