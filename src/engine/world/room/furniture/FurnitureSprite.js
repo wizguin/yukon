@@ -20,6 +20,11 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
             this.setAnim(this.frame.name)
         }
 
+        // Start wall item at middle rotation
+        if (this.isWall && this.maxFrames[0] > 1) {
+            this._setFrame('2_1_1')
+        }
+
         // Offsets based on original center vs pointer position at start of drag
         this.offsetX = 0
         this.offsetY = 0
@@ -36,6 +41,10 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         return this.frame.name.split('_')
     }
 
+    get wallBounds() {
+        return this.scene.wallBounds
+    }
+
     getFrameCount(index) {
         let frames = this.getSplitFrames(index)
         return Math.max.apply(Math, frames)
@@ -49,6 +58,17 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.x = Math.round(pointer.x + this.offsetX)
         this.y = Math.round(pointer.y + this.offsetY)
         this.depth = this.y
+
+        if (!this.isWall || !this.wallBounds) return
+
+        // Auto rotate wall item
+        if (this.x < this.wallBounds[0]) {
+            this.updateFrame(0, 1, true)
+        } else if (this.x > this.wallBounds[1]) {
+            this.updateFrame(0, 3, true)
+        } else {
+            this.updateFrame(0, 2, true)
+        }
     }
 
     hover(pointer) {
@@ -78,14 +98,19 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
      *
      * @param {number} index - Index of frame in currentFrame
      * @param {number} value - Value to modify the frame by
+     * @param {boolean} set - If the value should be directly set instead
      * @returns
      */
-    updateFrame(index, value) {
-        // Can't rotate wall items
-        if (this.isWall && index == 0) return
+    updateFrame(index, value, set = false) {
+        // Can't rotate wall items with keys
+        if (this.isWall && index == 0 && !set) return
 
         let frame = this.currentFrame
-        frame[index] = parseInt(frame[index]) + value
+        // Don't update set values if they are equal
+        if (set && frame[index] == value) return
+
+        let newFrame = (set) ? value : parseInt(frame[index]) + value
+        frame[index] = newFrame
 
         // Wrap value if necessary
         if (frame[index] > this.maxFrames[index]) {

@@ -14,6 +14,12 @@ class Candy extends IglooScene {
         this.mask;
 
         /* START-USER-CTR-CODE */
+
+        this.floorSpawn = [760, 760]
+        this.wallSpawn = [750, 320]
+        this.wallBounds = [580, 1000]
+        this.floorFrame = 1
+
         /* END-USER-CTR-CODE */
     }
 
