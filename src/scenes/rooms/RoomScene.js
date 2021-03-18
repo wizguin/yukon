@@ -71,17 +71,17 @@ export default class RoomScene extends BaseScene {
     addPhysics() {
         this.matter.world.setBounds(0, 0, this.game.config.width, this.game.config.height)
 
-        this.block = this.addBlock()
+        this.block = this.addBody('block')
         this.triggers = this.addTriggers()
     }
 
-    addBlock() {
-        if (!this.roomPhysics.block) return null
+    addBody(key) {
+        if (!this.roomPhysics[key]) return null
 
-        let block = this.matter.add.fromPhysicsEditor(0, 0, this.roomPhysics.block)
-        this.matter.body.setPosition(block, block.centerOffset) // Centers block in room
+        let body = this.matter.add.fromPhysicsEditor(0, 0, this.roomPhysics[key])
+        this.matter.body.setPosition(body, body.centerOffset) // Centers body in room
 
-        return block
+        return body
     }
 
     addTriggers() {

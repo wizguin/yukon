@@ -16,6 +16,8 @@ class IglooEdit extends BaseScene {
         this.defaultControls;
         /** @type {Phaser.GameObjects.Container} */
         this.controls;
+        /** @type {Phaser.GameObjects.Image} */
+        this.button_furniture;
         /** @type {Phaser.GameObjects.Container} */
         this.furniture;
         /** @type {GridView} */
@@ -209,6 +211,7 @@ class IglooEdit extends BaseScene {
 
         this.defaultControls = defaultControls;
         this.controls = controls;
+        this.button_furniture = button_furniture;
         this.furniture = furniture;
         this.gridView = gridView;
     }

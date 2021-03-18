@@ -129,6 +129,7 @@
                     "type": "Image",
                     "id": "151d56f4-b183-4ee4-b5a9-78d527173e78",
                     "label": "button_furniture",
+                    "scope": "CLASS",
                     "components": [
                         "Button"
                     ],

@@ -7,6 +7,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.frames = this.texture.getFrameNames()
         this.crumb = scene.crumbs.furniture[texture.split('/')[1]]
         this.isWall = this.crumb.type == 2
+        this.trashIcon
 
         this.maxFrames = [
             // Item frames (rotations)
@@ -15,6 +16,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
             this.getFrameCount(1)
         ]
 
+        // Set animations
         if (this.crumb.fps) {
             this._anims = this.getAnims()
             this.setAnim(this.frame.name)
@@ -33,8 +35,12 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.on('dragend', () => this.drop())
     }
 
+    get iglooEdit() {
+        return this.scene.interface.iglooEdit
+    }
+
     get editing() {
-        return this.scene.interface.iglooEdit.controls.visible
+        return this.iglooEdit.controls.visible
     }
 
     get currentFrame() {
@@ -58,6 +64,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.x = Math.round(pointer.x + this.offsetX)
         this.y = Math.round(pointer.y + this.offsetY)
         this.depth = this.y
+        this.setTrashState()
 
         if (!this.isWall || !this.wallBounds) return
 
@@ -86,10 +93,12 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     drop() {
-        if (this.editing) {
-            this.setFrame(this.frame.name.replace('_hover', ''))
-            this.scene.selected = null
-        }
+        if (!this.editing) return
+        this.scene.selected = null
+
+        if (this.trashTest(this.x, this.y)) return this.sendToTrash()
+
+        this.setFrame(this.frame.name.replace('_hover', ''))
     }
 
     /**
@@ -120,6 +129,64 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         }
 
         this.setFrame(frame.join('_'))
+    }
+
+    setTrashState() {
+        // Create trash icon if it doesn't exist yet
+        let icon = (this.trashIcon) ? this.trashIcon : this.addTrashIcon()
+
+        if (this.trashTest(this.x, this.y)) {
+            // Update trash icon
+            icon.visible = true
+            icon.x = this.x + this.frame.width / 2
+            icon.y = this.y
+            icon.depth = this.y + 1
+
+            this.alpha = 0.5
+            this.iglooEdit.button_furniture.setFrame('button/furniture-hover')
+
+        } else {
+            icon.visible = false
+
+            this.alpha = 1
+            this.iglooEdit.button_furniture.setFrame('button/furniture')
+        }
+    }
+
+    addTrashIcon() {
+        this.trashIcon = this.scene.add.image(0, 0, 'iglooedit', 'remove')
+        this.trashIcon.visible = false
+        return this.trashIcon
+    }
+
+    sendToTrash() {
+        this.trashIcon.destroy()
+
+        this.scene.tweens.add({
+            targets: this,
+            duration: 600,
+            x: 1430,
+            y: 460,
+            scale: 0.5,
+            ease: this.easeOutBack,
+            onComplete: () => this.onTrashComplete()
+        })
+    }
+
+    easeOutBack(value) {
+        return Phaser.Math.Easing.Back.Out(value, 0.5)
+    }
+
+    onTrashComplete() {
+        this.iglooEdit.button_furniture.setFrame('button/furniture')
+        this.destroy()
+    }
+
+    trashTest(x, y) {
+        if (this.scene.trash) {
+            return (this.scene.matter.containsPoint(this.scene.trash, x, y))
+                    || x < 0 || x > 1520 || y < 0 || y > 960
+        }
     }
 
     /*========== Animations ==========*/

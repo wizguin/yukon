@@ -16,6 +16,12 @@ export default class IglooScene extends RoomScene {
         this.roomCrate
         this.wallCrate
 
+        // Igloo physics areas
+        this.pet
+        this.room
+        this.trash
+        this.wall
+
         // Selected furniture sprite
         this.selected
     }
@@ -127,6 +133,17 @@ export default class IglooScene extends RoomScene {
 
         this.loader.loadFurniture(item, crate)
         this.loader.start()
+    }
+
+    /*========== Physics ==========*/
+
+    addPhysics() {
+        super.addPhysics()
+
+        this.pet = this.addBody('pet')
+        this.room = this.addBody('room')
+        this.trash = this.addBody('trash')
+        this.wall = this.addBody('wall')
     }
 
     /*========== Furniture input ==========*/
