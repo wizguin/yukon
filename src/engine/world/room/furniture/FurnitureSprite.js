@@ -31,6 +31,13 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.offsetX = 0
         this.offsetY = 0
 
+        // Last safe position
+        this.safeX = x
+        this.safeY = y
+
+        // Physics body that the furniture is allowed inside
+        this.safeArea = (this.isWall) ? scene['wall'] : scene['room']
+
         this.setInteractive({ draggable: true, pixelPerfect: true })
         this.on('dragend', () => this.drop())
     }
@@ -51,6 +58,19 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         return this.scene.wallBounds
     }
 
+    get isSafe() {
+        if (this.safeArea) {
+            return this.scene.matter.containsPoint(this.safeArea, this.x, this.y)
+        }
+    }
+
+    get isTrash() {
+        if (this.scene.trash) {
+            return (this.scene.matter.containsPoint(this.scene.trash, this.x, this.y))
+                    || this.x < 0 || this.x > 1520 || this.y < 0 || this.y > 960
+        }
+    }
+
     getFrameCount(index) {
         let frames = this.getSplitFrames(index)
         return Math.max.apply(Math, frames)
@@ -64,7 +84,8 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.x = Math.round(pointer.x + this.offsetX)
         this.y = Math.round(pointer.y + this.offsetY)
         this.depth = this.y
-        this.setTrashState()
+
+        this.checkPos()
 
         if (!this.isWall || !this.wallBounds) return
 
@@ -96,8 +117,18 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         if (!this.editing) return
         this.scene.selected = null
 
-        if (this.trashTest(this.x, this.y)) return this.sendToTrash()
+        if (!this.isSafe) {
+            if (this.isTrash) return this.sendToTrash()
 
+            // Return to safe position
+            this.x = this.safeX
+            this.y = this.safeY
+            this.depth = this.y
+            this.alpha = 1
+        }
+
+        this.safeX = this.x
+        this.safeY = this.y
         this.setFrame(this.frame.name.replace('_hover', ''))
     }
 
@@ -131,24 +162,41 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.setFrame(frame.join('_'))
     }
 
-    setTrashState() {
+    /*========== Trash ==========*/
+
+    /**
+     * Validates position when dragging furniture.
+     */
+    checkPos() {
+        // Furniture is outside allowed area
+        if (!this.isSafe) {
+            this.alpha = 0.5
+        } else {
+            this.alpha = 1
+        }
+
+        this.checkTrash()
+    }
+
+    /**
+     * Validates trash position when dragging furniture.
+     */
+    checkTrash() {
         // Create trash icon if it doesn't exist yet
         let icon = (this.trashIcon) ? this.trashIcon : this.addTrashIcon()
 
-        if (this.trashTest(this.x, this.y)) {
+        if (this.isTrash) {
             // Update trash icon
             icon.visible = true
             icon.x = this.x + this.frame.width / 2
             icon.y = this.y
             icon.depth = this.y + 1
 
-            this.alpha = 0.5
             this.iglooEdit.button_furniture.setFrame('button/furniture-hover')
 
         } else {
             icon.visible = false
 
-            this.alpha = 1
             this.iglooEdit.button_furniture.setFrame('button/furniture')
         }
     }
@@ -180,13 +228,6 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     onTrashComplete() {
         this.iglooEdit.button_furniture.setFrame('button/furniture')
         this.destroy()
-    }
-
-    trashTest(x, y) {
-        if (this.scene.trash) {
-            return (this.scene.matter.containsPoint(this.scene.trash, x, y))
-                    || x < 0 || x > 1520 || y < 0 || y > 960
-        }
     }
 
     /*========== Animations ==========*/
