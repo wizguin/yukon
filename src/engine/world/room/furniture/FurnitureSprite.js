@@ -22,7 +22,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
 
         // Start wall item at middle rotation
         if (this.isWall && this.maxFrames[0] > 1) {
-            this._setFrame('2_1_1')
+            this.setFrame('2_1_1')
         }
 
         // Offsets based on original center vs pointer position at start of drag
@@ -76,7 +76,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         if (!this.isWall) {
             let frame = this.currentFrame
             frame.splice(2, 0, 'hover')
-            this._setFrame(frame.join('_'))
+            this.setFrame(frame.join('_'))
         }
 
         this.offsetX = this.x - pointer.x
@@ -87,7 +87,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
 
     drop() {
         if (this.editing) {
-            this._setFrame(this.frame.name.replace('_hover', ''))
+            this.setFrame(this.frame.name.replace('_hover', ''))
             this.scene.selected = null
         }
     }
@@ -119,7 +119,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
             frame[index] = this.maxFrames[index]
         }
 
-        this._setFrame(frame.join('_'))
+        this.setFrame(frame.join('_'))
     }
 
     /*========== Animations ==========*/
@@ -166,13 +166,13 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         })
     }
 
-    _setFrame(frame) {
-        if (this.frame.name == frame) return
+    setFrame(frame) {
+        if (this.frame && this.frame.name == frame) return
 
         if (this._anims) {
             this.setAnim(frame)
         } else {
-            this.setFrame(frame)
+            super.setFrame(frame)
         }
     }
 
@@ -180,7 +180,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.stop() // Stop current animation
 
         frame = this.splitAnim(frame)
-        this.setFrame(`${frame.key}_1`)
+        super.setFrame(`${frame.key}_1`)
 
         if (!frame.anim) return // Not an animation
         this.play(frame.anim)
