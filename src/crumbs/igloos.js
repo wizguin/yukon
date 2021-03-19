@@ -46,6 +46,12 @@ const igloos = {
         scene: require('@igloos/deluxesnow/DeluxeSnow').default,
         x: 720,
         y: 600
+    },
+    10: {
+        name: 'BambooHut',
+        scene: require('@igloos/bamboohut/BambooHut').default,
+        x: 770,
+        y: 770
     }
 }
 

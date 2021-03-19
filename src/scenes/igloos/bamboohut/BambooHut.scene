@@ -1,0 +1,80 @@
+{
+    "id": "bb8fd37a-8fc0-4fad-84ae-5fd28e3aac29",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/bamboohut/bamboohut-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "BambooHut",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "509aab3a-26ae-49bf-a03f-275324831814",
+            "label": "floor",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "bamboohut",
+                "frame": "floor"
+            },
+            "x": 769,
+            "y": 691,
+            "originX": 0.5004468275245755,
+            "originY": 0.5017421602787456
+        },
+        {
+            "type": "Image",
+            "id": "93deeb5b-4ea3-4051-b98f-941a318d3b81",
+            "label": "mask",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "bamboohut",
+                "frame": "mask"
+            },
+            "x": 767,
+            "y": 688,
+            "originX": 0.5004524886877828,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "06fe3266-0d8b-4b51-8183-45d6455d6abe",
+            "label": "door",
+            "components": [],
+            "texture": {
+                "key": "bamboohut",
+                "frame": "door"
+            },
+            "x": 424,
+            "y": 474,
+            "originX": 0.5054945054945055
+        },
+        {
+            "type": "Image",
+            "id": "915b4812-cd1b-4d09-8484-152726e4ada3",
+            "label": "wall",
+            "components": [],
+            "texture": {
+                "key": "bamboohut",
+                "frame": "wall"
+            },
+            "x": 760,
+            "y": 402,
+            "originX": 0.5004101722723544
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
