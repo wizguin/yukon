@@ -1,15 +1,15 @@
 {
-    "id": "c161b28a-414a-490f-933b-7dcb7face3b7",
+    "id": "031c1111-cca6-441c-8292-9478cd25adab",
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
         "superClassName": "IglooScene",
         "preloadMethodName": "_preload",
         "preloadPackFiles": [
-            "yukon/assets/media/igloos/buildings/sprites/basic/basic-pack.json"
+            "yukon/assets/media/igloos/buildings/sprites/stone/stone-pack.json"
         ],
         "createMethodName": "_create",
-        "sceneKey": "Basic",
+        "sceneKey": "Stone",
         "borderWidth": 1520,
         "borderHeight": 960
     },
@@ -21,7 +21,7 @@
             "scope": "CLASS",
             "components": [],
             "texture": {
-                "key": "basic",
+                "key": "stone",
                 "frame": "floor"
             },
             "x": 765,
@@ -35,7 +35,7 @@
             "scope": "CLASS",
             "components": [],
             "texture": {
-                "key": "basic",
+                "key": "stone",
                 "frame": "mask"
             },
             "x": 765,
@@ -50,7 +50,7 @@
             "label": "wall_1",
             "components": [],
             "texture": {
-                "key": "basic",
+                "key": "stone",
                 "frame": "wall_1"
             },
             "x": 570,
@@ -63,7 +63,7 @@
             "label": "wall_2",
             "components": [],
             "texture": {
-                "key": "basic",
+                "key": "stone",
                 "frame": "wall_2"
             },
             "x": 972,
@@ -71,37 +71,11 @@
         },
         {
             "type": "Image",
-            "id": "edf0608a-a7f0-47c9-b2ed-d1b259b4b5b7",
-            "label": "chimney",
-            "components": [],
-            "texture": {
-                "key": "basic",
-                "frame": "chimney"
-            },
-            "x": 887,
-            "y": 120,
-            "originX": 0.5050505050505051
-        },
-        {
-            "type": "Image",
-            "id": "88c19fd8-3b24-4cbf-ad57-195715d6113b",
-            "label": "window",
-            "components": [],
-            "texture": {
-                "key": "basic",
-                "frame": "window"
-            },
-            "x": 828,
-            "y": 476,
-            "originX": 0.5014164305949008
-        },
-        {
-            "type": "Image",
             "id": "b9624c25-82fe-4807-a7d3-3b65be90734d",
             "label": "door",
             "components": [],
             "texture": {
-                "key": "basic",
+                "key": "stone",
                 "frame": "door"
             },
             "x": 491,

@@ -23,6 +23,18 @@ const igloos = {
         x: 720,
         y: 600
     },
+    5: {
+        name: 'Stone',
+        scene: require('@igloos/stone/Stone').default,
+        x: 760,
+        y: 660
+    },
+    6: {
+        name: 'Snow',
+        scene: require('@igloos/snow/Snow').default,
+        x: 760,
+        y: 660
+    },
     8: {
         name: 'DeluxeStone',
         scene: require('@igloos/deluxestone/DeluxeStone').default,
