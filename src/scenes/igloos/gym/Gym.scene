@@ -1,0 +1,115 @@
+{
+    "id": "d8789d22-d16e-42a6-882f-808a15a57d58",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/gym/gym-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Gym",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "94672f7c-be6c-4491-9ad1-624c6a573510",
+            "label": "floor",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8c7db143-d0ca-411d-99aa-6cd56118e27c",
+                    "label": "wood_1",
+                    "components": [],
+                    "texture": {
+                        "key": "gym",
+                        "frame": "wood"
+                    },
+                    "x": 1342,
+                    "y": 742,
+                    "originX": 0.5084745762711864,
+                    "originY": 0.5185185185185185,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c76c6db2-a1f9-47c3-b6e9-9882f9f2e95c",
+                    "label": "wood",
+                    "components": [],
+                    "texture": {
+                        "key": "gym",
+                        "frame": "wood"
+                    },
+                    "x": 177,
+                    "y": 742,
+                    "originX": 0.5084745762711864,
+                    "originY": 0.5185185185185185
+                },
+                {
+                    "type": "Image",
+                    "id": "ccf8a5ef-cf1d-4698-bc6e-4a40a88c7418",
+                    "label": "floor_1",
+                    "components": [],
+                    "texture": {
+                        "key": "gym",
+                        "frame": "floor"
+                    },
+                    "x": 760,
+                    "y": 753,
+                    "originX": 0.5004095004095004
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "0c082f0a-f217-4fba-9fcd-345c5af3894a",
+            "label": "mask",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "gym",
+                "frame": "mask"
+            },
+            "x": 760,
+            "y": 744,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "e413acaa-e002-4866-85c2-a1c04ef15653",
+            "label": "wall",
+            "components": [],
+            "texture": {
+                "key": "gym",
+                "frame": "wall"
+            },
+            "x": 760,
+            "y": 400,
+            "originX": 0.5003903200624512
+        },
+        {
+            "type": "Image",
+            "id": "ac383f53-ed54-4d52-a6ce-6e5f24e084be",
+            "label": "door",
+            "components": [],
+            "texture": {
+                "key": "gym",
+                "frame": "door"
+            },
+            "x": 339,
+            "y": 571,
+            "originX": 0.5084745762711864
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

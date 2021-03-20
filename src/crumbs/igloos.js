@@ -58,6 +58,12 @@ const igloos = {
         scene: require('@igloos/logcabin/LogCabin').default,
         x: 760,
         y: 720
+    },
+    12: {
+        name: 'Gym',
+        scene: require('@igloos/gym/Gym').default,
+        x: 760,
+        y: 720
     }
 }
 
