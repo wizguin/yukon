@@ -52,6 +52,12 @@ const igloos = {
         scene: require('@igloos/bamboohut/BambooHut').default,
         x: 770,
         y: 770
+    },
+    11: {
+        name: 'LogCabin',
+        scene: require('@igloos/logcabin/LogCabin').default,
+        x: 760,
+        y: 720
     }
 }
 
