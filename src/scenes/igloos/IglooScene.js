@@ -40,9 +40,19 @@ export default class IglooScene extends RoomScene {
 
         this.load.image(`locations/${this.args.location}`, `/assets/media/igloos/locations/${this.args.location}.png`)
 
-        if (this.args.flooring) {
-            this.load.image(`flooring/${this.args.flooring}`, `/assets/media/igloos/flooring/${this.args.flooring}.png`)
-        }
+        if (this.args.flooring) this.preloadFlooring(this.args.flooring)
+    }
+
+    preloadFlooring(flooring) {
+        if (this.textures.exists(`flooring/${flooring}`)) return
+
+        let path = '/assets/media/igloos/flooring/sprites'
+
+        this.load.multiatlas({
+            key: `flooring/${flooring}`,
+            atlasURL: `${path}/${flooring}.json`,
+            path: path
+        })
     }
 
     get editing() {
@@ -90,7 +100,7 @@ export default class IglooScene extends RoomScene {
     }
 
     addFlooring() {
-        let flooring = this.add.image(760, 760, `flooring/${this.args.flooring}`)
+        let flooring = this.add.image(0, 0, `flooring/${this.args.flooring}`, `${this.floorFrame}_1`)
         flooring.depth = -1
 
         let mask = this.mask.createBitmapMask()
