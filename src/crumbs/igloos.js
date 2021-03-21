@@ -64,6 +64,12 @@ const igloos = {
         scene: require('@igloos/gym/Gym').default,
         x: 760,
         y: 720
+    },
+    13: {
+        name: 'SplitLevel',
+        scene: require('@igloos/splitlevel/SplitLevel').default,
+        x: 310,
+        y: 700
     }
 }
 
