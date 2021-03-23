@@ -15,18 +15,39 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "746c3c7a-a19d-4796-a1ae-65809d0ab585",
+            "type": "Layer",
+            "id": "98be1edb-be78-4b16-af00-63c387ae9080",
             "label": "floor",
             "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "splitlevel",
-                "frame": "floor"
-            },
-            "x": 760,
-            "y": 630,
-            "originX": 0.5003861003861004
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "746c3c7a-a19d-4796-a1ae-65809d0ab585",
+                    "label": "floor_1",
+                    "components": [],
+                    "texture": {
+                        "key": "splitlevel",
+                        "frame": "floor"
+                    },
+                    "x": 760,
+                    "y": 630,
+                    "originX": 0.5003861003861004
+                },
+                {
+                    "type": "Image",
+                    "id": "584f6f3e-f68c-49f4-8213-0befec59e33e",
+                    "label": "stairs_top",
+                    "components": [],
+                    "texture": {
+                        "key": "splitlevel",
+                        "frame": "stairs_top"
+                    },
+                    "x": 763,
+                    "y": 667,
+                    "originY": 0.5035971223021583
+                }
+            ]
         },
         {
             "type": "Image",
@@ -63,22 +84,9 @@
                 "key": "splitlevel",
                 "frame": "wall_1"
             },
-            "x": 760,
+            "x": 757,
             "y": 380,
             "originX": 0.5003615328994938
-        },
-        {
-            "type": "Image",
-            "id": "584f6f3e-f68c-49f4-8213-0befec59e33e",
-            "label": "stairs_top",
-            "components": [],
-            "texture": {
-                "key": "splitlevel",
-                "frame": "stairs_top"
-            },
-            "x": 763,
-            "y": 667,
-            "originY": 0.5035971223021583
         },
         {
             "type": "Image",
@@ -89,8 +97,8 @@
                 "key": "splitlevel",
                 "frame": "stairs"
             },
-            "x": 779,
-            "y": 664
+            "x": 777,
+            "y": 667
         },
         {
             "type": "Image",
