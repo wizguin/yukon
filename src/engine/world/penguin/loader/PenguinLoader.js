@@ -10,7 +10,8 @@ export default class PenguinLoader extends SpriteLoader {
             fontFamily: 'Arial',
             fontSize: 24,
             color: '#000000',
-            align: 'center'
+            align: 'center',
+            fixedWidth: 250
         }
     }
 
