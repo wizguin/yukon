@@ -84,6 +84,9 @@ class GridView extends BaseContainer {
         this.pad = 40
         this.offsetY = 30
 
+        this.page = 1
+        this.filter = null
+
         this.loader = new FurnitureIconLoader(this)
 
         block.on('pointerup', () => this.visible = false)
@@ -94,32 +97,62 @@ class GridView extends BaseContainer {
     /* START-USER-CODE */
 
     get items() {
-        return Array(53).fill().map(() => Math.round(Math.random() * 1100))
+        return Object.keys(this.world.client.furniture).map(item => parseInt(item))
+    }
+
+    get pageSize() {
+        return Math.min(this.items.length, 54)
+    }
+
+    get maxPage() {
+        return Math.ceil(this.items.length / this.pageSize)
     }
 
     startGrid() {
         this.container.removeAll(true)
 
-        let items = this.items
+        this.page = 1
+        this.createBoxes()
 
-        this.createBoxes(items)
+        let cols = this.getColumns(this.pageSize)
+        let rows = Math.ceil(this.pageSize / cols)
 
-        let cols = this.getColumns(items.length)
-        let rows = Math.ceil(items.length / cols)
-
-        this.pageButtons.visible = items.length >= 54
+        this.pageButtons.visible = this.pageSize >= 54
 
         this.createGrid(cols, rows)
-        this.loader.loadPage(items)
+        this.showPage()
     }
 
-    createBoxes(items) {
-        for (let item of items) {
+    showPage() {
+        if (!this.visible) return
+
+        let page = this.items.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
+        this.loader.loadPage(page)
+    }
+
+    prevPage() {
+        let page = this.page - 1
+        if (page < 1) return
+
+        this.page = page
+        this.showPage()
+    }
+
+    nextPage() {
+        let page = this.page + 1
+        if (page > this.maxPage) return
+
+        this.page = page
+        this.showPage()
+    }
+
+    createBoxes() {
+        for (let i = 0; i < this.pageSize; i++) {
             let box = this.scene.add.image(0, 0, 'iglooedit', 'box/box')
 
             let component = new Button(box)
             component.spriteName = 'box/box'
-            component.callback = () => this.onItemClick(item)
+            component.callback = () => this.onItemClick(box)
             component.activeFrame = false
 
             this.container.add(box)
@@ -132,7 +165,7 @@ class GridView extends BaseContainer {
         this.visible = false
         this.scene.furniture.visible = false
 
-        this.world.room.loadFurniture(item)
+        this.world.room.loadFurniture(item.item.id)
     }
 
     createGrid(cols, rows, cellSize = this.cellSize) {
