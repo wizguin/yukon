@@ -3,6 +3,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 import { Button, Interactive } from '@components/components'
 
 import FurnitureIconLoader from '@engine/interface/gridview/FurnitureIconLoader'
+import GridViewSlot from './gridview_slot/GridViewSlot'
 
 
 /* START OF COMPILED CODE */
@@ -83,9 +84,11 @@ class GridView extends BaseContainer {
         this.cellSize = 418
         this.pad = 40
         this.offsetY = 30
+        this.slots
 
         this.page = 1
-        this.filter = null
+        this.filter
+        this.lastSize
 
         this.loader = new FurnitureIconLoader(this)
 
@@ -109,10 +112,13 @@ class GridView extends BaseContainer {
     }
 
     startGrid() {
-        this.container.removeAll(true)
-
         this.page = 1
-        this.createBoxes()
+
+        if (this.pageSize == this.lastSize) return this.showPage()
+        this.lastSize = this.pageSize
+
+        this.container.removeAll(true)
+        this.slots = this.createSlots()
 
         let cols = this.getColumns(this.pageSize)
         let rows = Math.ceil(this.pageSize / cols)
@@ -146,32 +152,22 @@ class GridView extends BaseContainer {
         this.showPage()
     }
 
-    createBoxes() {
+    createSlots() {
+        let slots = []
+
         for (let i = 0; i < this.pageSize; i++) {
-            let box = this.scene.add.image(0, 0, 'iglooedit', 'box/box')
-
-            let component = new Button(box)
-            component.spriteName = 'box/box'
-            component.callback = () => this.onItemClick(box)
-            component.activeFrame = false
-
-            this.container.add(box)
+            let slot = new GridViewSlot(this.scene)
+            this.container.add(slot)
+            slots.push(slot)
         }
-    }
 
-    onItemClick(item) {
-        if (!this.world.room.isIgloo || this.world.room.id != this.world.client.id) return
-
-        this.visible = false
-        this.scene.furniture.visible = false
-
-        this.world.room.loadFurniture(item.item.id)
+        return slots
     }
 
     createGrid(cols, rows, cellSize = this.cellSize) {
         cellSize += this.pad
 
-        Phaser.Actions.GridAlign(this.container.getAll(), {
+        Phaser.Actions.GridAlign(this.slots, {
             width: cols,
             height: rows,
             cellWidth: cellSize,
