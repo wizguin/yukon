@@ -37,11 +37,8 @@ export default class FurnitureLoader {
     onFileComplete(key, crate, x, y, frame, rotation) {
         if (!this.scene.textures.exists(key)) return
 
-        let sprite = new FurnitureSprite(this.scene, x, y, key, '1_1_1')
-        sprite.visible = !crate
-
+        let sprite = new FurnitureSprite(this.scene, crate, x, y, key, frame, rotation)
         this.scene.add.existing(sprite)
-        if (crate) crate.drop(sprite)
     }
 
 }

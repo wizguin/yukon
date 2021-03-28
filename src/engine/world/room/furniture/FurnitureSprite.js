@@ -1,9 +1,10 @@
 export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
 
-    constructor(scene, x, y, texture, frame) {
-        super(scene, x, y, texture, frame)
+    constructor(scene, crate, x, y, texture, frame, rotation) {
+        super(scene, x, y, texture, '1_1_1')
 
         this.frames = this.texture.getFrameNames()
+        this.visible = !crate
         this.crumb = scene.crumbs.furniture[texture.split('/')[1]]
         this.isWall = this.crumb.type == 2
         this.trashIcon
@@ -35,13 +36,20 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
             this.setAnim(this.frame.name)
         }
 
-        // Start wall item at middle rotation
-        if (this.isWall && this.maxFrames[0] > 1) {
-            this.setFrame('2_1_1')
+        // Set frames
+        this.updateFrame(1, frame, true)
+
+        if (this.isWall && crate && this.maxFrames[0] > 1) {
+            // Start new wall item at middle rotation
+            this.updateFrame(0, 2, true)
+        } else {
+            this.updateFrame(0, rotation, true)
         }
 
         this.setInteractive({ draggable: true, pixelPerfect: true })
         this.on('dragend', () => this.drop())
+
+        if (crate) crate.drop(this)
     }
 
     get iglooEdit() {
@@ -83,7 +91,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     /**
-     * Validates starting position
+     * Validates starting position.
      */
     validatePos() {
         if (!this.isSafe) {
