@@ -3,11 +3,24 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame)
 
-        this.depth = y - 1 // - 1 to appear behind explosion
         this.frames = this.texture.getFrameNames()
         this.crumb = scene.crumbs.furniture[texture.split('/')[1]]
         this.isWall = this.crumb.type == 2
         this.trashIcon
+
+        // Physics body that the furniture is allowed inside
+        this.safeArea = (this.isWall) ? scene['wall'] : scene['room']
+
+        this.validatePos()
+        this.depth = this.y - 1 // - 1 to appear behind explosion
+
+        // Last safe position
+        this.safeX = this.x
+        this.safeY = this.y
+
+        // Offsets based on original center vs pointer position at start of drag
+        this.offsetX = 0
+        this.offsetY = 0
 
         this.maxFrames = [
             // Item frames (rotations)
@@ -26,17 +39,6 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         if (this.isWall && this.maxFrames[0] > 1) {
             this.setFrame('2_1_1')
         }
-
-        // Offsets based on original center vs pointer position at start of drag
-        this.offsetX = 0
-        this.offsetY = 0
-
-        // Last safe position
-        this.safeX = x
-        this.safeY = y
-
-        // Physics body that the furniture is allowed inside
-        this.safeArea = (this.isWall) ? scene['wall'] : scene['room']
 
         this.setInteractive({ draggable: true, pixelPerfect: true })
         this.on('dragend', () => this.drop())
@@ -78,6 +80,18 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
 
     getSplitFrames(index) {
         return this.frames.map(frame => frame.split('_')[index])
+    }
+
+    /**
+     * Validates starting position
+     */
+    validatePos() {
+        if (!this.isSafe) {
+            let spawn = (this.isWall) ? this.scene.wallSpawn : this.scene.floorSpawn
+
+            this.x = spawn[0]
+            this.y = spawn[1]
+        }
     }
 
     drag(pointer) {
