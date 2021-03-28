@@ -80,6 +80,7 @@ export default class IglooScene extends RoomScene {
 
         if (this.args.flooring) this.addFlooring()
         this.addLocation()
+        this.loadAllFurniture()
     }
 
     addEditBg() {
@@ -136,12 +137,19 @@ export default class IglooScene extends RoomScene {
         }
     }
 
+    loadAllFurniture() {
+        for (let f of this.args.furniture) {
+            this.loader.loadFurniture(f.furnitureId, null, f.x, f.y, f.frame, f.rotation)
+        }
+        this.loader.start()
+    }
+
     loadFurniture(item) {
         let crate = (this.crumbs.furniture[item].type == 2)
                         ? this.wallCrate
                         : this.roomCrate
 
-        this.loader.loadFurniture(item, crate)
+        this.loader.loadFurniture(item, crate, crate.defaultX, crate.defaultY)
         this.loader.start()
     }
 
