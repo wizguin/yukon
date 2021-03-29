@@ -59,6 +59,10 @@ export default class IglooScene extends RoomScene {
         return this.interface.iglooEdit.controls.visible
     }
 
+    get furniture() {
+        return this.children.list.filter(f => f instanceof FurnitureSprite)
+    }
+
     onStart() {
         this.interface.showLoading('Loading Igloo')
     }
@@ -139,7 +143,7 @@ export default class IglooScene extends RoomScene {
 
     loadAllFurniture() {
         for (let f of this.args.furniture) {
-            this.loader.loadFurniture(f.furnitureId, null, f.x, f.y, f.frame, f.rotation)
+            this.loader.loadFurniture(f.furnitureId, null, f.x, f.y, f.rotation, f.frame)
         }
         this.loader.start()
     }

@@ -15,16 +15,16 @@ export default class FurnitureLoader {
         this.load.start()
     }
 
-    loadFurniture(item, crate = null, x, y, frame = 1, rotation = 1) {
+    loadFurniture(item, crate = null, x, y, rotation = 1, frame = 1) {
         // todo: check if item exists in crumbs
         let key = `${this.prefix}/${item}`
 
         if (this.scene.textures.exists(key)) {
-            return this.onFileComplete(key, crate, x, y, frame, rotation)
+            return this.onFileComplete(key, crate, x, y, rotation, frame)
         }
 
         this.load.once(`filecomplete-json-${key}`, () => {
-            this.onFileComplete(key, crate, x, y, frame, rotation)
+            this.onFileComplete(key, crate, x, y, rotation, frame)
         })
 
         this.load.multiatlas({
@@ -34,10 +34,10 @@ export default class FurnitureLoader {
         })
     }
 
-    onFileComplete(key, crate, x, y, frame, rotation) {
+    onFileComplete(key, crate, x, y, rotation, frame) {
         if (!this.scene.textures.exists(key)) return
 
-        let sprite = new FurnitureSprite(this.scene, crate, x, y, key, frame, rotation)
+        let sprite = new FurnitureSprite(this.scene, crate, x, y, key, rotation, frame)
         this.scene.add.existing(sprite)
     }
 

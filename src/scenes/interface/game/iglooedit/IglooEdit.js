@@ -242,6 +242,8 @@ class IglooEdit extends BaseScene {
     }
 
     onSaveClick() {
+        this.saveIgloo()
+
         this.interface.showInterface()
         this.world.room.hideEditBg()
         this.world.room.showPenguins()
@@ -258,6 +260,20 @@ class IglooEdit extends BaseScene {
     showGridView(type = 'all') {
         this.gridView.visible = true
         this.gridView.startGrid()
+    }
+
+    saveIgloo() {
+        let furniture = this.world.room.furniture.map(f => {
+            return {
+                furnitureId: parseInt(f.texture.key.split('/')[1]),
+                x: f.x,
+                y: f.y,
+                rotation: parseInt(f.currentFrame[0]),
+                frame: parseInt(f.currentFrame[1])
+            }
+        })
+
+        this.network.send('update_furniture', { furniture: furniture })
     }
 
     /* END-USER-CODE */
