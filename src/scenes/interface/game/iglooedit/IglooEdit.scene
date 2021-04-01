@@ -176,7 +176,9 @@
                     "type": "Image",
                     "id": "2bd10636-619d-4a21-b3e1-38055658a1f3",
                     "label": "list",
-                    "components": [],
+                    "components": [
+                        "Interactive"
+                    ],
                     "texture": {
                         "key": "iglooedit",
                         "frame": "list"

@@ -1,6 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import { Button, ShowHint, SimpleButton } from '@components/components'
+import { Button, Interactive, ShowHint, SimpleButton } from '@components/components'
 
 import GridView from './gridview/GridView'
 
@@ -177,6 +177,9 @@ class IglooEdit extends BaseScene {
         const button_musicButton = new Button(button_music);
         button_musicButton.spriteName = "button/music";
         button_musicButton.activeFrame = false;
+
+        // list (components)
+        new Interactive(list);
 
         // iglooButton (components)
         const iglooButtonButton = new Button(iglooButton);
