@@ -31,6 +31,9 @@ export default class IglooScene extends RoomScene {
         this.id = data.args.igloo
         this.loader = new FurnitureLoader(this)
 
+        // Active furniture quantities
+        this.quantities = {}
+
         this.load.once('start', () => this.onStart())
         this.events.once('shutdown', () => this.onShutdown())
     }
@@ -59,8 +62,15 @@ export default class IglooScene extends RoomScene {
         return this.interface.iglooEdit.controls.visible
     }
 
-    get furniture() {
+    get furnitureSprites() {
         return this.children.list.filter(f => f instanceof FurnitureSprite)
+    }
+
+    getQuantity(item) {
+        let inventoryQuantity = this.world.client.furniture[item]
+        let activeQuantity = (this.quantities[item]) ? this.quantities[item] : 0
+
+        return Math.max(inventoryQuantity - activeQuantity, 0)
     }
 
     onStart() {
@@ -143,6 +153,7 @@ export default class IglooScene extends RoomScene {
 
     loadAllFurniture() {
         for (let f of this.args.furniture) {
+            this.updateQuantity(f.furnitureId)
             this.loader.loadFurniture(f.furnitureId, null, f.x, f.y, f.rotation, f.frame)
         }
         this.loader.start()
@@ -153,8 +164,17 @@ export default class IglooScene extends RoomScene {
                         ? this.wallCrate
                         : this.roomCrate
 
+        this.updateQuantity(item)
         this.loader.loadFurniture(item, crate, crate.defaultX, crate.defaultY)
         this.loader.start()
+    }
+
+    updateQuantity(item) {
+        if (item in this.quantities) {
+            this.quantities[item]++
+        } else {
+            this.quantities[item] = 1
+        }
     }
 
     /*========== Physics ==========*/

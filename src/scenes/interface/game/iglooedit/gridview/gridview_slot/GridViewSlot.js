@@ -48,7 +48,8 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
         icon.id = item
         this.item = icon
 
-        this.setQuantity(1)
+        let quantity = this.world.room.getQuantity(item)
+        this.setQuantity(quantity)
     }
 
     addError(item) {
@@ -73,10 +74,26 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
     setQuantity(value) {
         let quantity = (this.quantity) ? this.quantity : this.addQuantity()
 
+        if (value < 1) {
+            this.disable()
+        } else {
+            this.enable()
+        }
+
         quantity.text = value
         quantity.visible = true
 
         this.gridView.container.bringToTop(quantity)
+    }
+
+    disable() {
+        this.disableInteractive()
+        this.setFrame('box/box-disabled')
+    }
+
+    enable() {
+        this.setInteractive()
+        this.setFrame('box/box')
     }
 
 }

@@ -263,9 +263,9 @@ class IglooEdit extends BaseScene {
     }
 
     saveIgloo() {
-        let furniture = this.world.room.furniture.map(f => {
+        let furniture = this.world.room.furnitureSprites.map(f => {
             return {
-                furnitureId: parseInt(f.texture.key.split('/')[1]),
+                furnitureId: f.id,
                 x: f.x,
                 y: f.y,
                 rotation: parseInt(f.currentFrame[0]),

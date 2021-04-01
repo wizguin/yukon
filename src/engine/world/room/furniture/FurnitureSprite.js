@@ -3,6 +3,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, crate, x, y, texture, rotation, frame) {
         super(scene, x, y, texture, '1_1_1')
 
+        this.id = parseInt(texture.split('/')[1])
         this.frames = this.texture.getFrameNames()
         this.visible = !crate
         this.crumb = scene.crumbs.furniture[texture.split('/')[1]]
@@ -229,6 +230,9 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     sendToTrash() {
+        // Update furniture quantity
+        this.scene.quantities[this.id]--
+
         this.trashIcon.destroy()
 
         this.scene.tweens.add({
