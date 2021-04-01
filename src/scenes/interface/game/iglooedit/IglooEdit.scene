@@ -230,6 +230,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/small",
+                    "Button.callback": "() => this.showGridView(4)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",
@@ -257,6 +258,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/small",
+                    "Button.callback": "() => this.showGridView(2)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",
@@ -284,6 +286,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/small",
+                    "Button.callback": "() => this.showGridView(1)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",
@@ -312,6 +315,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/small",
+                    "Button.callback": "() => this.showGridView(3)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",

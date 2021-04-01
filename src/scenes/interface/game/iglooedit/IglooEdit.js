@@ -186,21 +186,25 @@ class IglooEdit extends BaseScene {
         // puffleButton (components)
         const puffleButtonButton = new Button(puffleButton);
         puffleButtonButton.spriteName = "button/small";
+        puffleButtonButton.callback = () => this.showGridView(4);
         puffleButtonButton.activeFrame = false;
 
         // wallButton (components)
         const wallButtonButton = new Button(wallButton);
         wallButtonButton.spriteName = "button/small";
+        wallButtonButton.callback = () => this.showGridView(2);
         wallButtonButton.activeFrame = false;
 
         // roomButton (components)
         const roomButtonButton = new Button(roomButton);
         roomButtonButton.spriteName = "button/small";
+        roomButtonButton.callback = () => this.showGridView(1);
         roomButtonButton.activeFrame = false;
 
         // floorButton (components)
         const floorButtonButton = new Button(floorButton);
         floorButtonButton.spriteName = "button/small";
+        floorButtonButton.callback = () => this.showGridView(3);
         floorButtonButton.activeFrame = false;
 
         // allButton (components)
@@ -257,7 +261,8 @@ class IglooEdit extends BaseScene {
         this.furniture.visible = !this.furniture.visible
     }
 
-    showGridView(type = 'all') {
+    showGridView(filter = null) {
+        this.gridView.filter = filter
         this.gridView.visible = true
         this.gridView.startGrid()
     }

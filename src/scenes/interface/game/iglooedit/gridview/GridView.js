@@ -100,7 +100,12 @@ class GridView extends BaseContainer {
     /* START-USER-CODE */
 
     get items() {
-        return Object.keys(this.world.client.furniture).map(item => parseInt(item))
+        let items = Object.keys(this.world.client.furniture).map(item => parseInt(item))
+        if (!this.filter) return items
+
+        return items.filter(item => {
+            if (this.crumbs.furniture[item].sort == this.filter) return item
+        })
     }
 
     get pageSize() {
