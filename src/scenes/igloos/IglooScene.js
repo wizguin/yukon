@@ -170,11 +170,7 @@ export default class IglooScene extends RoomScene {
     }
 
     updateQuantity(item) {
-        if (item in this.quantities) {
-            this.quantities[item]++
-        } else {
-            this.quantities[item] = 1
-        }
+        this.quantities[item] = (this.quantities[item]) ? this.quantities[item] + 1 : 1
     }
 
     /*========== Physics ==========*/

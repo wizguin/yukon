@@ -30,7 +30,6 @@ export default class FurnitureIconLoader {
 
             if (item) {
                 slot.setInteractive()
-                slot.setFrame('box/box')
                 slot.visible = true
                 this.loadItem(item, scale)
 
