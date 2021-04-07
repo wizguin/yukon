@@ -15,10 +15,6 @@ export default class RoomScene extends BaseScene {
 
     init(data) {
         this.id = data.id
-        this.load.on('start', this.onStart, this)
-    }
-
-    onStart() {
         this.interface.showLoading(`Loading ${this.key}`)
     }
 

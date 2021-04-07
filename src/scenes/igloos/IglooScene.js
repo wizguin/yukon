@@ -34,7 +34,7 @@ export default class IglooScene extends RoomScene {
         // Active furniture quantities
         this.quantities = {}
 
-        this.load.once('start', () => this.onStart())
+        this.interface.showLoading('Loading Igloo')
         this.events.once('shutdown', () => this.onShutdown())
     }
 
@@ -43,19 +43,7 @@ export default class IglooScene extends RoomScene {
 
         this.load.image(`locations/${this.args.location}`, `/assets/media/igloos/locations/${this.args.location}.png`)
 
-        if (this.args.flooring) this.preloadFlooring(this.args.flooring)
-    }
-
-    preloadFlooring(flooring) {
-        if (this.textures.exists(`flooring/${flooring}`)) return
-
-        let path = '/assets/media/igloos/flooring/sprites'
-
-        this.load.multiatlas({
-            key: `flooring/${flooring}`,
-            atlasURL: `${path}/${flooring}.json`,
-            path: path
-        })
+        if (this.args.flooring) this.loadFlooring(this.args.flooring)
     }
 
     get editing() {
@@ -73,10 +61,6 @@ export default class IglooScene extends RoomScene {
         return Math.max(inventoryQuantity - activeQuantity, 0)
     }
 
-    onStart() {
-        this.interface.showLoading('Loading Igloo')
-    }
-
     onShutdown() {
         this.interface.hideIglooEdit()
     }
@@ -92,7 +76,7 @@ export default class IglooScene extends RoomScene {
         super.create()
         this.floor.depth = -2
 
-        if (this.args.flooring) this.addFlooring()
+        if (this.args.flooring) this.addFlooring(this.args.flooring)
         this.addLocation()
         this.loadAllFurniture()
     }
@@ -114,12 +98,14 @@ export default class IglooScene extends RoomScene {
         this.add.existing(this.wallCrate)
     }
 
-    addFlooring() {
-        let flooring = this.add.image(0, 0, `flooring/${this.args.flooring}`, `${this.floorFrame}_1`)
-        flooring.depth = -1
+    addFlooring(flooring) {
+        if (this.flooring) this.flooring.destroy()
+
+        this.flooring = this.add.image(0, 0, `flooring/${flooring}`, `${this.floorFrame}_1`)
+        this.flooring.depth = -1
 
         let mask = this.mask.createBitmapMask()
-        flooring.setMask(mask)
+        this.flooring.setMask(mask)
     }
 
     addLocation() {
@@ -149,6 +135,31 @@ export default class IglooScene extends RoomScene {
             penguin.visible = true
             penguin.nameTag.visible = true
         }
+    }
+
+    loadFlooring(flooring) {
+        if (this.textures.exists(`flooring/${flooring}`)) return
+        let path = '/assets/media/igloos/flooring'
+
+        this.load.multiatlas({
+            key: `flooring/${flooring}`,
+            atlasURL: `${path}/${flooring}.json`,
+            path: path
+        })
+    }
+
+    updateFlooring(flooring) {
+        if (flooring == 0 && this.flooring) return this.flooring.destroy()
+
+        if (this.textures.exists(`flooring/${flooring}`)) {
+            return this.addFlooring(flooring)
+        }
+
+        this.loadFlooring(flooring)
+        this.load.start()
+        this.load.once(`filecomplete-json-flooring/${flooring}`, () => {
+            this.addFlooring(flooring)
+        })
     }
 
     loadAllFurniture() {
