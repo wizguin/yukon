@@ -37,7 +37,7 @@ class Load extends BaseScene {
         // text
         const text = this.add.text(760, 520, "", {});
         text.setOrigin(0.5, 0);
-        text.setStyle({"fontFamily":"Arial","fontSize":"32px"});
+        text.setStyle({"align":"center","fixedWidth":800,"fixedHeight":40,"fontFamily":"Arial","fontSize":"32px"});
 
         // bar
         const bar = this.add.container(760, 480);

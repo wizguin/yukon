@@ -36,6 +36,9 @@
             "x": 760,
             "y": 520,
             "originY": 0,
+            "fixedWidth": 800,
+            "fixedHeight": 40,
+            "align": "center",
             "fontFamily": "Arial",
             "fontSize": "32px"
         },
