@@ -34,7 +34,6 @@ export default class IglooScene extends RoomScene {
         // Active furniture quantities
         this.quantities = {}
 
-        this.interface.showLoading('Loading Igloo')
         this.events.once('shutdown', () => this.onShutdown())
     }
 
@@ -47,7 +46,9 @@ export default class IglooScene extends RoomScene {
     }
 
     get editing() {
-        return this.interface.iglooEdit.controls.visible
+        if (this.interface.iglooEdit.controls) {
+            return this.interface.iglooEdit.controls.visible
+        }
     }
 
     get furnitureSprites() {
@@ -178,6 +179,13 @@ export default class IglooScene extends RoomScene {
         this.updateQuantity(item)
         this.loader.loadFurniture(item, crate, crate.defaultX, crate.defaultY)
         this.loader.start()
+    }
+
+    updateIgloo(type) {
+        if (this.id == this.world.client.id && this.args.type != type) {
+            this.interface.showLoading('Joining Igloo')
+            this.network.send('update_igloo', { type: type })
+        }
     }
 
     updateQuantity(item) {

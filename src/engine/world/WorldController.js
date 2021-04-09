@@ -26,27 +26,29 @@ export default class WorldController extends BaseScene {
     }
 
     joinRoom(id, users) {
-        if (this.room) {
-            // Prevents joining active room
-            if (this.room.key == this.crumbs.rooms[id].name) return
+        this.interface.showLoading(`Loading ${this.crumbs.rooms[id].name}`)
+        if (!this.room) return this.createRoom(id, users)
 
-            this.interface.main.snowballFactory.clearBalls()
-            this.room.scene.stop()
-        }
+        this.interface.main.snowballFactory.clearBalls()
+        this.room.events.once('shutdown', () => this.createRoom(id, users))
+        this.room.scene.stop()
+    }
 
+    createRoom(id, users) {
         this.room = this.roomFactory.createRoom(id)
         this.room.events.once('create', () => this.addPenguins(users))
     }
 
     joinIgloo(args) {
-        if (this.room) {
-            // Prevents joining active room
-            if (this.room.id == args.igloo) return
+        this.interface.showLoading('Loading Igloo')
+        if (!this.room) return this.createIgloo(args)
 
-            this.interface.main.snowballFactory.clearBalls()
-            this.room.scene.stop()
-        }
+        this.interface.main.snowballFactory.clearBalls()
+        this.room.events.once('shutdown', () => this.createIgloo(args))
+        this.room.scene.stop()
+    }
 
+    createIgloo(args) {
         this.room = this.iglooFactory.createIgloo(args)
         this.room.events.once('create', () => this.addPenguins(args.users))
     }

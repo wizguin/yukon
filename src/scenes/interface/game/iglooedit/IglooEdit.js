@@ -228,6 +228,8 @@ class IglooEdit extends BaseScene {
     create() {
         this._create()
 
+        this.events.on('sleep', () => this.onSleep())
+
         // Furniture list close hit area
         let poly = new Phaser.Geom.Polygon([0,0, 1520,0, 1520,413, 1370,200, 1130,200, 1130,900, 1370,900, 1370,570, 1520,535, 1520,960, 0,960])
         Phaser.Geom.Polygon.Translate(poly, -this.furniture.x, -this.furniture.y)
@@ -239,29 +241,39 @@ class IglooEdit extends BaseScene {
         closeArea.on('pointerover', () => this.furniture.visible = false)
     }
 
+    onSleep() {
+        this.hideControls()
+    }
+
     onEditClick() {
         this.interface.hideInterface()
         this.world.room.showEditBg()
         this.world.room.hidePenguins()
-
-        this.defaultControls.visible = false
-        this.controls.visible = true
+        this.showControls()
     }
 
     onSaveClick() {
         this.saveIgloo()
-
         this.interface.showInterface()
         this.world.room.hideEditBg()
         this.world.room.showPenguins()
-
-        this.controls.visible = false
-        this.defaultControls.visible = true
-        this.furniture.visible = false
+        this.hideControls()
     }
 
     onFurnitureClick() {
         this.furniture.visible = !this.furniture.visible
+    }
+
+    showControls() {
+        this.defaultControls.visible = false
+        this.controls.visible = true
+    }
+
+    hideControls() {
+        this.defaultControls.visible = true
+        this.controls.visible = false
+        this.furniture.visible = false
+        this.gridView.visible = false
     }
 
     showGridView(filter = null) {
