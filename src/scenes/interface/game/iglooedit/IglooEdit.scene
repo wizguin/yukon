@@ -205,6 +205,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/small",
+                    "Button.callback": "() => this.showGridView('igloo')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",

@@ -182,10 +182,16 @@ export default class IglooScene extends RoomScene {
     }
 
     updateIgloo(type) {
-        if (this.id == this.world.client.id && this.args.type != type) {
+        if (this.id != this.world.client.id || this.args.type == type) return
+
+        let text = 'Are you sure you want to change your igloo? Your flooring will be lost. Igloo items will be saved in your inventory.'
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
             this.interface.showLoading('Joining Igloo')
             this.network.send('update_igloo', { type: type })
-        }
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     updateQuantity(item) {

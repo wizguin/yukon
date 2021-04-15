@@ -11,6 +11,7 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
 
         this.item
         this.quantity
+        this.filter
 
         this.textStyle = {
             fontFamily: 'Arial',
@@ -35,7 +36,11 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
         this.gridView.visible = false
         this.scene.furniture.visible = false
 
-        this.world.room.loadFurniture(this.item.id)
+        if (this.filter == 'igloo') {
+            this.world.room.updateIgloo(this.item.id)
+        } else {
+            this.world.room.loadFurniture(this.item.id)
+        }
     }
 
     addIcon(key, item) {
@@ -48,8 +53,13 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
         icon.id = item
         this.item = icon
 
-        let quantity = this.world.room.getQuantity(item)
-        this.setQuantity(quantity)
+        if (this.filter != 'igloo') {
+            let quantity = this.world.room.getQuantity(item)
+            return this.setQuantity(quantity)
+        }
+
+        // Set igloo enable
+        this.setEnable(this.world.room.args.type != item)
     }
 
     addError(item) {
@@ -74,11 +84,7 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
     setQuantity(value) {
         let quantity = (this.quantity) ? this.quantity : this.addQuantity()
 
-        if (value < 1) {
-            this.disable()
-        } else {
-            this.enable()
-        }
+        this.setEnable(value > 0)
 
         quantity.text = value
         quantity.visible = true
@@ -86,14 +92,22 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
         this.gridView.container.bringToTop(quantity)
     }
 
-    disable() {
-        this.disableInteractive()
-        this.setFrame('box/box-disabled')
+    setEnable(check) {
+        if (check) {
+            this.enable()
+        } else {
+            this.disable()
+        }
     }
 
     enable() {
         this.setInteractive()
         this.setFrame('box/box')
+    }
+
+    disable() {
+        this.disableInteractive()
+        this.setFrame('box/box-disabled')
     }
 
 }

@@ -184,6 +184,7 @@ class IglooEdit extends BaseScene {
         // iglooButton (components)
         const iglooButtonButton = new Button(iglooButton);
         iglooButtonButton.spriteName = "button/small";
+        iglooButtonButton.callback = () => this.showGridView('igloo');
         iglooButtonButton.activeFrame = false;
 
         // puffleButton (components)
@@ -277,9 +278,8 @@ class IglooEdit extends BaseScene {
     }
 
     showGridView(filter = null) {
-        this.gridView.filter = filter
         this.gridView.visible = true
-        this.gridView.startGrid()
+        this.gridView.startGrid(filter)
     }
 
     saveIgloo() {

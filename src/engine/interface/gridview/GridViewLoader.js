@@ -1,28 +1,40 @@
-export default class FurnitureIconLoader {
+export default class GridViewLoader {
 
     constructor(gridView) {
         this.gridView = gridView
         this.scene = gridView.scene
 
         this.page = null // Current page
+        this.filter
 
         this.load = new Phaser.Loader.LoaderPlugin(this.scene)
-        this.url = '/assets/media/furniture/icon'
-        this.prefix = 'furniture/icon'
 
         this.load.on('filecomplete', this.onFileComplete, this)
         this.load.on('loaderror', this.onLoadError, this)
+    }
+
+    get url() {
+        return (this.filter == 'igloo')
+            ? '/assets/media/igloos/buildings/icon'
+            : '/assets/media/furniture/icon'
+    }
+
+    get prefix() {
+        return (this.filter == 'igloo') ? 'igloo/icon' : 'furniture/icon'
     }
 
     get slots() {
         return this.gridView.slots
     }
 
-    loadPage(page) {
+    loadPage(filter, page) {
+        this.filter = filter
         this.page = page
+
         let scale = (this.slots.length > 15) ? '@2.5x' : '@5x'
 
         for (let [index, slot] of this.slots.entries()) {
+            slot.filter = filter
             if (slot.item) slot.item.destroy()
             if (slot.quantity) slot.quantity.visible = false
 
@@ -47,9 +59,14 @@ export default class FurnitureIconLoader {
 
         if (this.scene.textures.exists(key)) return this.onFileComplete(key)
 
+        // Ignore scale on igloo icon url
+        let url = (this.filter == 'igloo')
+            ? `${this.url}/${item}.png`
+            : `${this.url}/${scale}/${item}.png`
+
         this.load.image({
             key: key,
-            url: `${this.url}/${scale}/${item}.png`,
+            url: url
         })
     }
 

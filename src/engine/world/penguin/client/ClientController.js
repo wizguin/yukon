@@ -9,6 +9,7 @@ export default class ClientController {
         this.buddies = client.buddies
         this.ignores = client.ignores
         this.inventory = client.inventory
+        this.igloos = client.igloos
         this.furniture = client.furniture
 
         this.coins = client.user.coins

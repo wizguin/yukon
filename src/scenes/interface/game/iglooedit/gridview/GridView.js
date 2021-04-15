@@ -2,7 +2,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, Interactive } from '@components/components'
 
-import FurnitureIconLoader from '@engine/interface/gridview/FurnitureIconLoader'
+import GridViewLoader from '@engine/interface/gridview/GridViewLoader'
 import GridViewSlot from './gridview_slot/GridViewSlot'
 
 
@@ -90,7 +90,7 @@ class GridView extends BaseContainer {
         this.filter
         this.lastSize
 
-        this.loader = new FurnitureIconLoader(this)
+        this.loader = new GridViewLoader(this)
 
         block.on('pointerup', () => this.visible = false)
 
@@ -101,7 +101,9 @@ class GridView extends BaseContainer {
 
     get items() {
         let items = Object.keys(this.world.client.furniture).map(item => parseInt(item))
+
         if (!this.filter) return items
+        if (this.filter == 'igloo') return this.world.client.igloos
 
         return items.filter(item => {
             if (this.crumbs.furniture[item].sort == this.filter) return item
@@ -109,14 +111,19 @@ class GridView extends BaseContainer {
     }
 
     get pageSize() {
-        return Math.min(this.items.length, 54)
+        return Math.min(this.items.length, this.maxPageSize)
     }
 
     get maxPage() {
         return Math.ceil(this.items.length / this.pageSize)
     }
 
-    startGrid() {
+    get maxPageSize() {
+        return (this.filter == 'igloo') ? 6 : 54
+    }
+
+    startGrid(filter) {
+        this.filter = filter
         this.page = 1
 
         if (this.pageSize == this.lastSize) return this.showPage()
@@ -128,8 +135,6 @@ class GridView extends BaseContainer {
         let cols = this.getColumns(this.pageSize)
         let rows = Math.ceil(this.pageSize / cols)
 
-        this.pageButtons.visible = this.pageSize >= 54
-
         this.createGrid(cols, rows)
         this.showPage()
     }
@@ -137,8 +142,10 @@ class GridView extends BaseContainer {
     showPage() {
         if (!this.visible) return
 
+        this.pageButtons.visible = this.pageSize >= this.maxPageSize
+
         let page = this.items.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
-        this.loader.loadPage(page)
+        this.loader.loadPage(this.filter, page)
     }
 
     prevPage() {
