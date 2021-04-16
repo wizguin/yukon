@@ -211,6 +211,18 @@ export default class IglooScene extends RoomScene {
 
     /*========== Furniture input ==========*/
 
+    enableFurnitureInput() {
+        for (let f of this.furnitureSprites) {
+            f.setInteractive()
+        }
+    }
+
+    disableFurnitureInput() {
+        for (let f of this.furnitureSprites) {
+            f.disableInteractive()
+        }
+    }
+
     addInput() {
         this.input.dragDistanceThreshold = 1
 

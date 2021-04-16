@@ -46,8 +46,11 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         }
         this.updateFrame(1, frame, true)
 
+        // Set input
         this.setInteractive({ draggable: true, pixelPerfect: true })
         this.on('dragend', () => this.drop())
+        // Input disabled initially if not editing
+        if (!this.editing) this.disableInteractive()
 
         if (crate) crate.drop(this)
     }
@@ -57,6 +60,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     get editing() {
+        if (!this.iglooEdit || !this.iglooEdit.controls) return false
         return this.iglooEdit.controls.visible
     }
 

@@ -250,6 +250,7 @@ class IglooEdit extends BaseScene {
         this.interface.hideInterface()
         this.world.room.showEditBg()
         this.world.room.hidePenguins()
+        this.world.room.enableFurnitureInput()
         this.showControls()
     }
 
@@ -258,6 +259,7 @@ class IglooEdit extends BaseScene {
         this.interface.showInterface()
         this.world.room.hideEditBg()
         this.world.room.showPenguins()
+        this.world.room.disableFurnitureInput()
         this.hideControls()
     }
 
