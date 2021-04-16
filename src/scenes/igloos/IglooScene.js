@@ -212,7 +212,7 @@ export default class IglooScene extends RoomScene {
     /*========== Furniture input ==========*/
 
     addInput() {
-        this.input.dragDistanceThreshold = 10
+        this.input.dragDistanceThreshold = 1
 
         this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
         this.input.on('pointerdown', (pointer, target) => this.onPointerDown(pointer, target))
