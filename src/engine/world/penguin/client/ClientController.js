@@ -14,7 +14,7 @@ export default class ClientController {
 
         this.coins = client.user.coins
 
-        this.penguin = null // Reference to ClientPenguin object
+        this.penguin // Reference to ClientPenguin object
         this.input = new ClientInput(this) // Input handling
     }
 

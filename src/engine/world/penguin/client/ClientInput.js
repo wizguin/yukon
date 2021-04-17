@@ -3,6 +3,10 @@ export default class ClientInput {
     constructor(client) {
         this.client = client
         this.room = null
+
+        // Forced x and y coordinates for movement,
+        // used by MoveTo component to move penguin to doors etc
+        this.moveTo
     }
 
     get actions() {
@@ -43,7 +47,14 @@ export default class ClientInput {
 
     onUp(pointer) {
         if (!this.movementEnabled || !this.visible) return
-        this.actions.movePenguin(pointer.x, pointer.y)
+
+        // Checks moveTo coordinates
+        let x = (this.moveTo) ? this.moveTo[0] : pointer.x
+        let y = (this.moveTo) ? this.moveTo[1] : pointer.y
+        // Reset moveTo
+        this.moveTo = null
+
+        this.actions.movePenguin(x, y)
     }
 
     onMove(pointer) {
