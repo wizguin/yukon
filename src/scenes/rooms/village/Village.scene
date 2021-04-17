@@ -31,7 +31,15 @@
             "type": "Image",
             "id": "8f355d69-ebb4-4d3a-88da-8435a41f5dee",
             "label": "lodge_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "lodge_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1070,
+            "MoveTo.y": 330,
             "texture": {
                 "key": "village",
                 "frame": "lodge_door"
@@ -97,7 +105,15 @@
             "type": "Image",
             "id": "482889f5-4705-4747-ada5-8711b4fe9935",
             "label": "phone_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "phone_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1340,
+            "MoveTo.y": 480,
             "texture": {
                 "key": "village",
                 "frame": "phone_door"
@@ -134,10 +150,14 @@
             "y": 200
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "fdecd243-800b-4abf-b11f-d1bd9eddb82b",
             "label": "smoke0001",
-            "components": [],
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "smoke",
+            "Animation.end": 5,
             "texture": {
                 "key": "village",
                 "frame": "smoke0001"
@@ -198,6 +218,23 @@
             "x": 794,
             "y": 505.2201404552512,
             "originY": 3.9212529261510674
+        },
+        {
+            "type": "Sprite",
+            "id": "afa23f89-e095-4594-9ade-31a3e78ae5ae",
+            "label": "chair0001",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "chair",
+            "Animation.end": 179,
+            "Animation.repeatDelay": 1500,
+            "texture": {
+                "key": "village",
+                "frame": "chair0001"
+            },
+            "x": 292,
+            "y": 150
         }
     ],
     "plainObjects": [],

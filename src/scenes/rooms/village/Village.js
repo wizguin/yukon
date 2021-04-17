@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -12,7 +14,6 @@ class Village extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
-        // Write your code here.
         /* END-USER-CTR-CODE */
     }
 
@@ -57,7 +58,7 @@ class Village extends RoomScene {
         this.add.image(348, 200, "village", "lift");
 
         // smoke0001
-        this.add.image(1110, 32, "village", "smoke0001");
+        const smoke0001 = this.add.sprite(1110, 32, "village", "smoke0001");
 
         // left_sign
         const left_sign = this.add.image(133, 677, "village", "left_sign");
@@ -75,8 +76,40 @@ class Village extends RoomScene {
         const tours_text = this.add.image(794, 505.2201404552512, "village", "tours_text");
         tours_text.setOrigin(0.5, 3.9212529261510674);
 
+        // chair0001
+        const chair0001 = this.add.sprite(292, 150, "village", "chair0001");
+
         // lists
         const sort = [tours, tours_text]
+
+        // lodge_door (components)
+        const lodge_doorButton = new Button(lodge_door);
+        lodge_doorButton.spriteName = "lodge_door";
+        lodge_doorButton.activeFrame = false;
+        lodge_doorButton.pixelPerfect = true;
+        const lodge_doorMoveTo = new MoveTo(lodge_door);
+        lodge_doorMoveTo.x = 1070;
+        lodge_doorMoveTo.y = 330;
+
+        // phone_door (components)
+        const phone_doorButton = new Button(phone_door);
+        phone_doorButton.spriteName = "phone_door";
+        phone_doorButton.activeFrame = false;
+        phone_doorButton.pixelPerfect = true;
+        const phone_doorMoveTo = new MoveTo(phone_door);
+        phone_doorMoveTo.x = 1340;
+        phone_doorMoveTo.y = 480;
+
+        // smoke0001 (components)
+        const smoke0001Animation = new Animation(smoke0001);
+        smoke0001Animation.key = "smoke";
+        smoke0001Animation.end = 5;
+
+        // chair0001 (components)
+        const chair0001Animation = new Animation(chair0001);
+        chair0001Animation.key = "chair";
+        chair0001Animation.end = 179;
+        chair0001Animation.repeatDelay = 1500;
 
         this.sort = sort;
     }
