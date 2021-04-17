@@ -247,7 +247,14 @@
             "type": "Image",
             "id": "d6f0a2d4-34b0-4c24-8506-20a07c09702d",
             "label": "hut",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "hut",
+            "Button.activeFrame": false,
+            "MoveTo.x": 1250,
+            "MoveTo.y": 500,
             "texture": {
                 "key": "cove",
                 "frame": "hut"
@@ -328,10 +335,14 @@
             "originY": 0
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "0cb1447f-047f-4855-9a43-c5d4a3bbf32c",
             "label": "fire0001",
-            "components": [],
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "fire",
+            "Animation.end": 10,
             "texture": {
                 "key": "cove",
                 "frame": "fire0001"

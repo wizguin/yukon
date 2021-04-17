@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -8,7 +10,7 @@ class Cove extends RoomScene {
     constructor() {
         super("Cove");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -115,7 +117,7 @@ class Cove extends RoomScene {
         log_1.setOrigin(0, 0);
 
         // fire0001
-        const fire0001 = this.add.image(435, 600, "cove", "fire0001");
+        const fire0001 = this.add.sprite(435, 600, "cove", "fire0001");
         fire0001.setOrigin(0.5029239766081871, 0.7318840579710145);
 
         // chair_arm
@@ -148,6 +150,19 @@ class Cove extends RoomScene {
 
         // lists
         const sort = [water_water_15, water_water_1, water_water_2, water_water_3, water_water_4, water_water_5, water_water_6, water_water_7, water_water_8, water_water_9, water_water_10, water_water_11, water_water_12, water_water_13, water_water_14, hut_wall, boards, rock_1, fire0001, chair_arm, binoculars0001, silver_board, rock_3, rock_2, rock_4, fg]
+
+        // hut (components)
+        const hutButton = new Button(hut);
+        hutButton.spriteName = "hut";
+        hutButton.activeFrame = false;
+        const hutMoveTo = new MoveTo(hut);
+        hutMoveTo.x = 1250;
+        hutMoveTo.y = 500;
+
+        // fire0001 (components)
+        const fire0001Animation = new Animation(fire0001);
+        fire0001Animation.key = "fire";
+        fire0001Animation.end = 10;
 
         this.sort = sort;
     }
