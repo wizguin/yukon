@@ -1,7 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import animations from '../animations.json'
-import { Animated, Button, SimpleButton } from '@components/components'
+import { Animation, Button, SimpleButton } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
 import Checks from '../checks/Checks'
@@ -53,18 +52,21 @@ class PenguinLogin extends BaseScene {
         backText.setOrigin(0.5, 0.5);
         backText.text = "Login as a different penguin";
         backText.setStyle({"align":"center","color":"#ffffffff","fixedWidth":400,"fontFamily":"Arial Narrow","fontSize":"30px"});
+        backText.setLineSpacing(25);
 
         // forgotText_1
         const forgotText_1 = this.add.text(929, 661, "", {});
         forgotText_1.setOrigin(0.5, 0.5);
         forgotText_1.text = "Forget my penguin";
         forgotText_1.setStyle({"color":"#ffffffff","fixedWidth":300,"fontFamily":"Arial Narrow","fontSize":"30px"});
+        forgotText_1.setLineSpacing(25);
 
         // forgotText
         const forgotText = this.add.text(929, 604, "", {});
         forgotText.setOrigin(0.5, 0.5);
         forgotText.text = "Forgot your password?";
         forgotText.setStyle({"color":"#ffffffff","fixedWidth":300,"fontFamily":"Arial Narrow","fontSize":"30px"});
+        forgotText.setLineSpacing(25);
 
         // loginButton
         const loginButton = this.add.sprite(935, 487, "login", "login-button");
@@ -74,12 +76,14 @@ class PenguinLogin extends BaseScene {
         loginText.setOrigin(0.5, 0.5);
         loginText.text = "Login";
         loginText.setStyle({"align":"center","color":"#ffffffff","fixedWidth":100,"fontFamily":"Arial Narrow","fontSize":"38px"});
+        loginText.setLineSpacing(25);
 
         // passwordText
         const passwordText = this.add.text(783, 194, "", {});
         passwordText.setOrigin(0, 0.5);
         passwordText.text = "Password:";
         passwordText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        passwordText.setLineSpacing(25);
 
         // input
         this.add.image(973, 249, "login", "input");
@@ -104,22 +108,28 @@ class PenguinLogin extends BaseScene {
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
-        const backButtonAnimated = new Animated(backButton);
-        backButtonAnimated.animation = "larger-button";
-        backButtonAnimated.onHover = true;
+        const backButtonAnimation = new Animation(backButton);
+        backButtonAnimation.key = "small-button";
+        backButtonAnimation.end = 3;
+        backButtonAnimation.repeat = 0;
+        backButtonAnimation.onHover = true;
 
         // forgetButton (components)
         const forgetButtonSimpleButton = new SimpleButton(forgetButton);
         forgetButtonSimpleButton.callback = () => this.onForgetClick();
-        const forgetButtonAnimated = new Animated(forgetButton);
-        forgetButtonAnimated.animation = "small-button";
-        forgetButtonAnimated.onHover = true;
+        const forgetButtonAnimation = new Animation(forgetButton);
+        forgetButtonAnimation.key = "small-button";
+        forgetButtonAnimation.end = 3;
+        forgetButtonAnimation.repeat = 0;
+        forgetButtonAnimation.onHover = true;
 
         // forgotButton (components)
         new SimpleButton(forgotButton);
-        const forgotButtonAnimated = new Animated(forgotButton);
-        forgotButtonAnimated.animation = "small-button";
-        forgotButtonAnimated.onHover = true;
+        const forgotButtonAnimation = new Animation(forgotButton);
+        forgotButtonAnimation.key = "small-button";
+        forgotButtonAnimation.end = 3;
+        forgotButtonAnimation.repeat = 0;
+        forgotButtonAnimation.onHover = true;
 
         // loginButton (components)
         const loginButtonButton = new Button(loginButton);
@@ -142,8 +152,6 @@ class PenguinLogin extends BaseScene {
         // Todo: change to depth component
         this.waitPrompt.depth = 1
         this.savePrompt.depth = 1
-
-        this.anims.fromJSON(animations)
 
         this.checks.enable(this.checks.username)
 

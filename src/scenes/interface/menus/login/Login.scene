@@ -30,11 +30,13 @@
             "label": "backButton",
             "components": [
                 "SimpleButton",
-                "Animated"
+                "Animation"
             ],
             "SimpleButton.callback": "() => this.onBackClick()",
-            "Animated.animation": "small-button",
-            "Animated.onHover": true,
+            "Animation.key": "small-button",
+            "Animation.end": 3,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
             "texture": {
                 "key": "login",
                 "frame": "small-button"
@@ -48,10 +50,12 @@
             "label": "createButton",
             "components": [
                 "SimpleButton",
-                "Animated"
+                "Animation"
             ],
-            "Animated.animation": "large-button",
-            "Animated.onHover": true,
+            "Animation.key": "large-button",
+            "Animation.end": 3,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
             "texture": {
                 "key": "login",
                 "frame": "large-button"
@@ -65,10 +69,12 @@
             "label": "forgotButton",
             "components": [
                 "SimpleButton",
-                "Animated"
+                "Animation"
             ],
-            "Animated.animation": "small-button",
-            "Animated.onHover": true,
+            "Animation.key": "small-button",
+            "Animation.end": 3,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
             "texture": {
                 "key": "login",
                 "frame": "small-button"

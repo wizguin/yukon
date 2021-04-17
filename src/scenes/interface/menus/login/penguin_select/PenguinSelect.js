@@ -1,7 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import animations from '../animations.json'
-import { Animated, NineSlice, SimpleButton } from '@components/components'
+import { Animation, NineSlice, SimpleButton } from '@components/components'
 
 import PenguinLarge from '../card/PenguinLarge'
 import PenguinSmall from '../card/PenguinSmall'
@@ -57,6 +56,7 @@ class PenguinSelect extends BaseScene {
         backText.setOrigin(0.5, 0.5);
         backText.text = "Login as a different penguin";
         backText.setStyle({"align":"center","color":"#ffffffff","fixedWidth":400,"fontFamily":"Arial Narrow","fontSize":"30px"});
+        backText.setLineSpacing(25);
 
         // container
         const container = this.add.container(0, 0);
@@ -68,9 +68,11 @@ class PenguinSelect extends BaseScene {
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
-        const backButtonAnimated = new Animated(backButton);
-        backButtonAnimated.animation = "larger-button";
-        backButtonAnimated.onHover = true;
+        const backButtonAnimation = new Animation(backButton);
+        backButtonAnimation.key = "small-button";
+        backButtonAnimation.end = 3;
+        backButtonAnimation.repeat = 0;
+        backButtonAnimation.onHover = true;
 
         this.largeBg = largeBg;
         this.smallBgBack = smallBgBack;
@@ -82,8 +84,6 @@ class PenguinSelect extends BaseScene {
 
     create() {
         this._create()
-
-        this.anims.fromJSON(animations)
 
         this.container.depth = 1
         this.smallBg.depth = 2

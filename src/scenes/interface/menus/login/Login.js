@@ -1,7 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import animations from './animations.json'
-import { Animated, Button, SimpleButton } from '@components/components'
+import { Animation, Button, SimpleButton } from '@components/components'
 import TextInput from '@engine/interface/text/TextInput'
 
 import Checks from './checks/Checks'
@@ -50,24 +49,28 @@ class Login extends BaseScene {
         backText.setOrigin(0.5, 0.5);
         backText.text = "Back";
         backText.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        backText.setLineSpacing(25);
 
         // registerText2
         const registerText2 = this.add.text(760, 747, "", {});
         registerText2.setOrigin(0.5, 0.5);
         registerText2.text = "Create a free account now";
         registerText2.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"35px"});
+        registerText2.setLineSpacing(25);
 
         // registerText
         const registerText = this.add.text(760, 713, "", {});
         registerText.setOrigin(0.5, 0.5);
         registerText.text = "Don't have a penguin?";
         registerText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        registerText.setLineSpacing(25);
 
         // forgotText
         const forgotText = this.add.text(760, 604, "", {});
         forgotText.setOrigin(0.5, 0.5);
         forgotText.text = "Forgot your password?";
         forgotText.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        forgotText.setLineSpacing(25);
 
         // loginButton
         const loginButton = this.add.sprite(760, 483, "login", "login-button");
@@ -77,18 +80,21 @@ class Login extends BaseScene {
         loginText.setOrigin(0.5, 0.5);
         loginText.text = "Login";
         loginText.setStyle({"align":"right","color":"#ffffffff","fontFamily":"Arial Narrow","fontSize":"38px"});
+        loginText.setLineSpacing(25);
 
         // passwordText
         const passwordText = this.add.text(503, 258, "", {});
         passwordText.setOrigin(0, 0.5);
         passwordText.text = "Password:";
         passwordText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        passwordText.setLineSpacing(25);
 
         // usernameText
         const usernameText = this.add.text(448, 200, "", {});
         usernameText.setOrigin(0, 0.5);
         usernameText.text = "Penguin Name:";
         usernameText.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        usernameText.setLineSpacing(25);
 
         // password
         this.add.image(815, 258, "login", "input");
@@ -113,21 +119,27 @@ class Login extends BaseScene {
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
-        const backButtonAnimated = new Animated(backButton);
-        backButtonAnimated.animation = "small-button";
-        backButtonAnimated.onHover = true;
+        const backButtonAnimation = new Animation(backButton);
+        backButtonAnimation.key = "small-button";
+        backButtonAnimation.end = 3;
+        backButtonAnimation.repeat = 0;
+        backButtonAnimation.onHover = true;
 
         // createButton (components)
         new SimpleButton(createButton);
-        const createButtonAnimated = new Animated(createButton);
-        createButtonAnimated.animation = "large-button";
-        createButtonAnimated.onHover = true;
+        const createButtonAnimation = new Animation(createButton);
+        createButtonAnimation.key = "large-button";
+        createButtonAnimation.end = 3;
+        createButtonAnimation.repeat = 0;
+        createButtonAnimation.onHover = true;
 
         // forgotButton (components)
         new SimpleButton(forgotButton);
-        const forgotButtonAnimated = new Animated(forgotButton);
-        forgotButtonAnimated.animation = "small-button";
-        forgotButtonAnimated.onHover = true;
+        const forgotButtonAnimation = new Animation(forgotButton);
+        forgotButtonAnimation.key = "small-button";
+        forgotButtonAnimation.end = 3;
+        forgotButtonAnimation.repeat = 0;
+        forgotButtonAnimation.onHover = true;
 
         // loginButton (components)
         const loginButtonButton = new Button(loginButton);
@@ -149,8 +161,6 @@ class Login extends BaseScene {
         // Todo: change to depth component
         this.waitPrompt.depth = 1
         this.savePrompt.depth = 1
-
-        this.anims.fromJSON(animations)
 
         // Login form
         let style = {

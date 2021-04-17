@@ -77,11 +77,13 @@
             "label": "backButton",
             "components": [
                 "SimpleButton",
-                "Animated"
+                "Animation"
             ],
             "SimpleButton.callback": "() => this.onBackClick()",
-            "Animated.animation": "larger-button",
-            "Animated.onHover": true,
+            "Animation.key": "small-button",
+            "Animation.end": 3,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
             "texture": {
                 "key": "login",
                 "frame": "larger-button"
