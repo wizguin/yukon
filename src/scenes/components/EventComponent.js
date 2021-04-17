@@ -12,12 +12,12 @@ class EventComponent {
 
         this.scene = gameObject.scene
 
-        // First time the scene is updated, call the `start` method
-        this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
+        // First time the scene is created, call the `start` method
+        this.scene.events.once('create', this.start, this)
         // Each time the scene is updated, call the `update` method
-        this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this)
+        this.scene.events.on('update', this.update, this)
         // If the object is destroyed, call the `destroy` method
-        gameObject.on(Phaser.GameObjects.Events.DESTROY, this.destroy, this)
+        gameObject.on('destroy', this.destroy, this)
 
         /* END-USER-CTR-CODE */
     }
@@ -39,8 +39,8 @@ class EventComponent {
 
     destroy() {
         // The object is destroyed, so we remove all the event handlers
-        this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.start, this)
-        this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this)
+        this.scene.events.off('create', this.start, this)
+        this.scene.events.off('update', this.update, this)
     }
 
     /* END-USER-CODE */

@@ -20,13 +20,10 @@ class Button extends SimpleButton {
         this.callback = () => {};
         /** @type {boolean} */
         this.activeFrame = true;
+        /** @type {boolean} */
+        this.pixelPerfect = false;
 
         /* START-USER-CTR-CODE */
-
-        this.gameObject.on('pointerover', () => { this.onOver() })
-        this.gameObject.on('pointerout', () => { this.onOut() })
-        this.gameObject.on('pointerdown', () => { this.onDown() })
-
         /* END-USER-CTR-CODE */
     }
 
@@ -36,6 +33,14 @@ class Button extends SimpleButton {
     }
 
     /* START-USER-CODE */
+
+    start() {
+        super.start()
+
+        this.gameObject.on('pointerover', () => this.onOver())
+        this.gameObject.on('pointerout', () => this.onOut())
+        this.gameObject.on('pointerdown', () => this.onDown())
+    }
 
     onOver() {
         this.gameObject.setFrame(`${this.spriteName}-hover`)
