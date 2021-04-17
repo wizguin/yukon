@@ -53,18 +53,22 @@ class ChatLog extends BaseContainer {
         this.open = false
         this.dragging = false
 
-        handle.input.draggable = true
-        // Drag is not detected until cursor moves 10px
-        scene.input.dragDistanceThreshold = 10
-
-        handle.on('dragstart', () => { this.onTabDragStart() })
-        handle.on('drag', (pointer) => { this.onTabDrag(pointer.y) })
-        handle.on('dragend', () => { this.onTabDragEnd() })
+        scene.events.once('update', () => this.addInput())
 
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    addInput() {
+        this.handle.input.draggable = true
+        // Drag is not detected until cursor moves 10px
+        this.scene.input.dragDistanceThreshold = 10
+
+        this.handle.on('dragstart', () => this.onTabDragStart())
+        this.handle.on('drag', (pointer) => this.onTabDrag(pointer.y))
+        this.handle.on('dragend', () => this.onTabDragEnd())
+    }
 
     createContainers() {
         let containers = []
