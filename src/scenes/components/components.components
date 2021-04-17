@@ -1,6 +1,76 @@
 {
     "components": [
         {
+            "name": "Animation",
+            "baseClass": "EventComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "key",
+                    "label": "Animation key",
+                    "tooltip": "Animation key",
+                    "defValue": "",
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "start",
+                    "label": "Frame Start",
+                    "tooltip": "Frame Start",
+                    "defValue": 1,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "end",
+                    "label": "Frame End",
+                    "tooltip": "Frame End",
+                    "defValue": 1,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "frameRate",
+                    "label": "Frame Rate",
+                    "tooltip": "Frame Rate",
+                    "defValue": 24,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "repeat",
+                    "label": "Repeat",
+                    "tooltip": "Repeat",
+                    "defValue": -1,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "repeatDelay",
+                    "label": "Repeat Delay",
+                    "tooltip": "Delay before repeating",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "onHover",
+                    "label": "On Hover",
+                    "tooltip": "Only show on hover?",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Button",
             "baseClass": "SimpleButton",
             "gameObjectType": "Phaser.GameObjects.Sprite",
@@ -42,12 +112,21 @@
                     "type": {
                         "id": "boolean"
                     }
+                },
+                {
+                    "name": "pixelPerfect",
+                    "label": "Pixel Perfect",
+                    "tooltip": "Pixel Perfect",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
         },
         {
             "name": "SimpleButton",
-            "baseClass": "",
+            "baseClass": "EventComponent",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": [
                 {
@@ -59,27 +138,11 @@
                         "id": "expression",
                         "expressionType": "any"
                     }
-                }
-            ]
-        },
-        {
-            "name": "Animated",
-            "baseClass": "EventComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
-            "properties": [
-                {
-                    "name": "animation",
-                    "label": "Animation",
-                    "tooltip": "Animation",
-                    "defValue": "",
-                    "type": {
-                        "id": "string"
-                    }
                 },
                 {
-                    "name": "onHover",
-                    "label": "On Hover",
-                    "tooltip": "Only show on hover?",
+                    "name": "pixelPerfect",
+                    "label": "Pixel Perfect",
+                    "tooltip": "Pixel Perfect",
                     "defValue": false,
                     "type": {
                         "id": "boolean"
