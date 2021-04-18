@@ -37,7 +37,6 @@ class Button extends SimpleButton {
     start() {
         super.start()
 
-        this.gameObject.on('pointerover', () => this.onOver())
         this.gameObject.on('pointerout', () => this.onOut())
         this.gameObject.on('pointerdown', () => this.onDown())
     }

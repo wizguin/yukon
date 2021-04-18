@@ -13,6 +13,8 @@ class SimpleButton extends EventComponent {
         /** @type {Phaser.GameObjects.Sprite} */
         this.gameObject = gameObject;
         /** @type {any} */
+        this.hoverCallback = null;
+        /** @type {any} */
         this.callback = () => {};
         /** @type {boolean} */
         this.pixelPerfect = false;
@@ -34,7 +36,12 @@ class SimpleButton extends EventComponent {
             pixelPerfect: this.pixelPerfect
         })
 
+        this.gameObject.on('pointerover', () => this.onOver())
         this.gameObject.on('pointerup', () => this.onUp())
+    }
+
+    onOver() {
+        if (this.hoverCallback) this.hoverCallback()
     }
 
     onUp() {
