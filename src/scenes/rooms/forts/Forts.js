@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -8,7 +10,7 @@ class Forts extends RoomScene {
     constructor() {
         super("Forts");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -70,16 +72,31 @@ class Forts extends RoomScene {
         const snowballs = this.add.image(676, 786, "forts", "snowballs");
         snowballs.setOrigin(0.49230769, 0.57777778);
 
-        // blue_flag0001
-        const blue_flag0001 = this.add.image(966, 334, "forts", "blue_flag0001");
-        blue_flag0001.setOrigin(0.5, 1.85185185);
+        // blue_flag
+        const blue_flag = this.add.sprite(966, 334, "forts", "blue_flag0001");
+        blue_flag.setOrigin(0.5, 1.85185185);
 
-        // red_flag0001
-        const red_flag0001 = this.add.image(626, 524, "forts", "red_flag0001");
-        red_flag0001.setOrigin(0.5, 1.73913043);
+        // red_flag
+        const red_flag = this.add.sprite(626, 524, "forts", "red_flag0001");
+        red_flag.setOrigin(0.5, 1.73913043);
 
         // lists
-        const sort = [red_flag0001, red_pole, blue_pole, blue_flag0001, blue_fort, red_fort_front, red_fort, snowballs]
+        const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs]
+
+        // sign (components)
+        const signButton = new Button(sign);
+        signButton.spriteName = "sign";
+        signButton.activeFrame = false;
+
+        // blue_flag (components)
+        const blue_flagAnimation = new Animation(blue_flag);
+        blue_flagAnimation.key = "blue_flag";
+        blue_flagAnimation.end = 16;
+
+        // red_flag (components)
+        const red_flagAnimation = new Animation(red_flag);
+        red_flagAnimation.key = "red_flag";
+        red_flagAnimation.end = 16;
 
         this.sort = sort;
     }

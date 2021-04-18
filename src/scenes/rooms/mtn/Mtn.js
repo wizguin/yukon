@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -26,9 +28,9 @@ class Mtn extends RoomScene {
         const bg = this.add.image(-21, -19, "mtn", "bg");
         bg.setOrigin(0, 0);
 
-        // chair_chair0001
-        const chair_chair0001 = this.add.image(846, 75, "mtn", "chair/chair0001");
-        chair_chair0001.setOrigin(0, 0);
+        // chair
+        const chair = this.add.sprite(846, 75, "mtn", "chair/chair0001");
+        chair.setOrigin(0, 0);
 
         // mountain
         const mountain = this.add.image(-21, 214, "mtn", "mountain");
@@ -86,6 +88,11 @@ class Mtn extends RoomScene {
 
         // lists
         const sort = [penguin_run, express, pole]
+
+        // chair (components)
+        const chairAnimation = new Animation(chair);
+        chairAnimation.key = "chair/chair";
+        chairAnimation.end = 87;
 
         this.sort = sort;
     }

@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, SimpleButton, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -8,7 +10,7 @@ class Dock extends RoomScene {
     constructor() {
         super("Dock");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -62,9 +64,9 @@ class Dock extends RoomScene {
         const bollard_2 = this.add.image(279, 732, "dock", "bollard_2");
         bollard_2.setOrigin(0.5, 0.9215686274509803);
 
-        // rings0001
-        const rings0001 = this.add.image(632, 668, "dock", "rings0001");
-        rings0001.setOrigin(0.4975124378109453, 0.8127659574468085);
+        // rings
+        const rings = this.add.sprite(632, 668, "dock", "rings0001");
+        rings.setOrigin(0.4975124378109453, 0.8127659574468085);
 
         // right_sign
         this.add.image(1366, 270, "dock", "right_sign");
@@ -77,7 +79,16 @@ class Dock extends RoomScene {
         boards.setOrigin(0.5, 0.7721088435374149);
 
         // lists
-        const sort = [post_3, post_4, post_1, post_2, rings0001, bollard_2, bollard_1, dock, box, boards]
+        const sort = [post_3, post_4, post_1, post_2, rings, bollard_2, bollard_1, dock, box, boards]
+
+        // rings (components)
+        new SimpleButton(rings);
+        const ringsAnimation = new Animation(rings);
+        ringsAnimation.key = "rings";
+        ringsAnimation.end = 34;
+        ringsAnimation.repeat = 0;
+        ringsAnimation.onHover = true;
+        ringsAnimation.stopOnOut = false;
 
         this.sort = sort;
     }

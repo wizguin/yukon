@@ -57,8 +57,8 @@ class Village extends RoomScene {
         // lift
         this.add.image(348, 200, "village", "lift");
 
-        // smoke0001
-        const smoke0001 = this.add.sprite(1110, 32, "village", "smoke0001");
+        // smoke
+        const smoke = this.add.sprite(1110, 32, "village", "smoke0001");
 
         // left_sign
         const left_sign = this.add.image(133, 677, "village", "left_sign");
@@ -76,8 +76,8 @@ class Village extends RoomScene {
         const tours_text = this.add.image(794, 505.2201404552512, "village", "tours_text");
         tours_text.setOrigin(0.5, 3.9212529261510674);
 
-        // chair0001
-        const chair0001 = this.add.sprite(292, 150, "village", "chair0001");
+        // chair
+        const chair = this.add.sprite(292, 150, "village", "chair0001");
 
         // lists
         const sort = [tours, tours_text]
@@ -100,16 +100,16 @@ class Village extends RoomScene {
         phone_doorMoveTo.x = 1340;
         phone_doorMoveTo.y = 480;
 
-        // smoke0001 (components)
-        const smoke0001Animation = new Animation(smoke0001);
-        smoke0001Animation.key = "smoke";
-        smoke0001Animation.end = 5;
+        // smoke (components)
+        const smokeAnimation = new Animation(smoke);
+        smokeAnimation.key = "smoke";
+        smokeAnimation.end = 5;
 
-        // chair0001 (components)
-        const chair0001Animation = new Animation(chair0001);
-        chair0001Animation.key = "chair";
-        chair0001Animation.end = 179;
-        chair0001Animation.repeatDelay = 1500;
+        // chair (components)
+        const chairAnimation = new Animation(chair);
+        chairAnimation.key = "chair";
+        chairAnimation.end = 179;
+        chairAnimation.repeatDelay = 1500;
 
         this.sort = sort;
     }

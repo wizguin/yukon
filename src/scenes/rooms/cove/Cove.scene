@@ -337,7 +337,7 @@
         {
             "type": "Sprite",
             "id": "0cb1447f-047f-4855-9a43-c5d4a3bbf32c",
-            "label": "fire0001",
+            "label": "fire",
             "components": [
                 "Animation"
             ],
@@ -369,7 +369,7 @@
         {
             "type": "Image",
             "id": "d38ba832-8548-492f-b4bb-f3dbc74ee343",
-            "label": "binoculars0001",
+            "label": "binoculars",
             "components": [],
             "texture": {
                 "key": "cove",

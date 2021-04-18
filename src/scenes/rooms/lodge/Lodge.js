@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -37,18 +39,18 @@ class Lodge extends RoomScene {
         // chair
         const chair = this.add.image(1365, 763, "lodge", "chair");
 
-        // fire0001
-        const fire0001 = this.add.image(1294, 439, "lodge", "fire0001");
-        fire0001.setOrigin(0, 0);
+        // fire
+        const fire = this.add.sprite(1334, 473, "lodge", "fire0001");
 
         // fishing_door
-        this.add.image(1000, 294, "lodge", "fishing-door");
+        const fishing_door = this.add.image(880, 114, "lodge", "fishing_door");
+        fishing_door.setOrigin(0, 0);
 
         // rods
         this.add.image(819, 328, "lodge", "rods");
 
         // bait
-        this.add.image(838, 416, "lodge", "bait");
+        const bait = this.add.image(838, 416, "lodge", "bait");
 
         // catalog_small
         this.add.image(853, 261, "lodge", "catalog-small");
@@ -65,12 +67,56 @@ class Lodge extends RoomScene {
         const table4 = this.add.image(1020, 812, "lodge", "table4");
         table4.setOrigin(0.48502994, 0.77272727);
 
-        // candle0001
-        const candle0001 = this.add.image(453, 276, "lodge", "candle0001");
-        candle0001.setOrigin(0, 0.5);
+        // candle
+        const candle = this.add.image(453, 276, "lodge", "candle0001");
+        candle.setOrigin(0, 0.5);
 
         // lists
         const sort = [door, table3, table2, table4, footrest, chair]
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        const doorMoveTo = new MoveTo(door);
+        doorMoveTo.x = 184;
+        doorMoveTo.y = 626;
+
+        // fire (components)
+        const fireAnimation = new Animation(fire);
+        fireAnimation.key = "fire";
+        fireAnimation.end = 10;
+
+        // fishing_door (components)
+        const fishing_doorButton = new Button(fishing_door);
+        fishing_doorButton.spriteName = "fishing_door";
+        fishing_doorButton.activeFrame = false;
+        const fishing_doorMoveTo = new MoveTo(fishing_door);
+        fishing_doorMoveTo.x = 960;
+        fishing_doorMoveTo.y = 460;
+
+        // bait (components)
+        const baitButton = new Button(bait);
+        baitButton.spriteName = "bait";
+        baitButton.activeFrame = false;
+
+        // table3 (components)
+        const table3Button = new Button(table3);
+        table3Button.spriteName = "table3";
+        table3Button.activeFrame = false;
+        new MoveTo(table3);
+
+        // table2 (components)
+        const table2Button = new Button(table2);
+        table2Button.spriteName = "table2";
+        table2Button.activeFrame = false;
+        new MoveTo(table2);
+
+        // table4 (components)
+        const table4Button = new Button(table4);
+        table4Button.spriteName = "table4";
+        table4Button.activeFrame = false;
+        new MoveTo(table4);
 
         this.sort = sort;
     }

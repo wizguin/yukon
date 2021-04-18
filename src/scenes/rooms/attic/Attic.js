@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -8,7 +10,7 @@ class Attic extends RoomScene {
     constructor() {
         super("Attic");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -30,9 +32,9 @@ class Attic extends RoomScene {
         const arm = this.add.image(225, 611, "attic", "arm");
         arm.setOrigin(0.497143, 0.649402);
 
-        // horse0001
-        const horse0001 = this.add.image(1369, 639, "attic", "horse0001");
-        horse0001.setOrigin(0.544, 0.503185);
+        // horse
+        const horse = this.add.sprite(1369, 639, "attic", "horse0001");
+        horse.setOrigin(0.544, 0.503185);
 
         // table2
         const table2 = this.add.image(438, 751, "attic", "table2");
@@ -59,7 +61,46 @@ class Attic extends RoomScene {
         box.setOrigin(0, 1);
 
         // lists
-        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse0001]
+        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse]
+
+        // horse (components)
+        new SimpleButton(horse);
+        const horseAnimation = new Animation(horse);
+        horseAnimation.key = "horse";
+        horseAnimation.end = 67;
+        horseAnimation.repeat = 0;
+        horseAnimation.onHover = true;
+        horseAnimation.stopOnOut = false;
+
+        // table2 (components)
+        const table2Button = new Button(table2);
+        table2Button.spriteName = "table2";
+        table2Button.activeFrame = false;
+        new MoveTo(table2);
+
+        // table1 (components)
+        const table1Button = new Button(table1);
+        table1Button.spriteName = "table1";
+        table1Button.activeFrame = false;
+        new MoveTo(table1);
+
+        // table3 (components)
+        const table3Button = new Button(table3);
+        table3Button.spriteName = "table3";
+        table3Button.activeFrame = false;
+        new MoveTo(table3);
+
+        // table1_1 (components)
+        const table1_1Button = new Button(table1_1);
+        table1_1Button.spriteName = "table1";
+        table1_1Button.activeFrame = false;
+        new MoveTo(table1_1);
+
+        // table4 (components)
+        const table4Button = new Button(table4);
+        table4Button.spriteName = "table4";
+        table4Button.activeFrame = false;
+        new MoveTo(table4);
 
         this.sort = sort;
     }

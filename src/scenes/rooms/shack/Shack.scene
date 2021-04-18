@@ -59,7 +59,14 @@
             "type": "Image",
             "id": "43d346f4-3000-4ed0-a8f2-b4bd8fc16119",
             "label": "plant_doors",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "plant_doors",
+            "Button.activeFrame": false,
+            "MoveTo.x": 70,
+            "MoveTo.y": 450,
             "texture": {
                 "key": "shack",
                 "frame": "plant_doors"
@@ -254,7 +261,7 @@
         {
             "type": "Image",
             "id": "81dacd10-d79b-45be-8105-9626ee126513",
-            "label": "pipe_10001",
+            "label": "pipe_1",
             "components": [],
             "texture": {
                 "key": "shack",
@@ -268,7 +275,7 @@
         {
             "type": "Image",
             "id": "53559ae5-dc78-47be-852f-e0a590982e1f",
-            "label": "pipe_20001",
+            "label": "pipe_2",
             "components": [],
             "texture": {
                 "key": "shack",

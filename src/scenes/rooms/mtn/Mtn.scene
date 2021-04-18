@@ -28,10 +28,14 @@
             "originY": 0
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "eaf9e9be-ca78-4327-be22-3bddc6fb28a7",
-            "label": "chair_chair0001",
-            "components": [],
+            "label": "chair",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "chair/chair",
+            "Animation.end": 87,
             "texture": {
                 "key": "mtn",
                 "frame": "chair/chair0001"

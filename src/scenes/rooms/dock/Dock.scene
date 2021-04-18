@@ -151,10 +151,18 @@
             "originY": 0.9215686274509803
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "c811c8ad-ce91-436c-b8b8-74a4e57fb0aa",
-            "label": "rings0001",
-            "components": [],
+            "label": "rings",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "Animation.key": "rings",
+            "Animation.end": 34,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
+            "Animation.stopOnOut": false,
             "texture": {
                 "key": "dock",
                 "frame": "rings0001"

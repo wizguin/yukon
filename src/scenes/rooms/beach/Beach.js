@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animated, Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -74,12 +76,20 @@ class Beach extends RoomScene {
         const chair_1_front = this.add.image(943, 542, "beach", "chair_1_front");
         chair_1_front.setOrigin(0.4, 0.67054264);
 
-        // bucket_bucket0001
-        const bucket_bucket0001 = this.add.image(1078, 612, "beach", "bucket/bucket0001");
-        bucket_bucket0001.setOrigin(0.8863109, 0.94611727);
+        // bucket
+        const bucket = this.add.image(1078, 612, "beach", "bucket/bucket0001");
+        bucket.setOrigin(0.8863109, 0.94611727);
 
         // lists
-        const sort = [bucket_bucket0001, chair_1_front, chair_1, chair_2_front, chair_2, net, fish, buoy, cage]
+        const sort = [bucket, chair_1_front, chair_1, chair_2_front, chair_2, net, fish, buoy, cage]
+
+        // lighthouse_door (components)
+        const lighthouse_doorButton = new Button(lighthouse_door);
+        lighthouse_doorButton.spriteName = "lighthouse_door";
+        lighthouse_doorButton.activeFrame = false;
+        const lighthouse_doorMoveTo = new MoveTo(lighthouse_door);
+        lighthouse_doorMoveTo.x = 480;
+        lighthouse_doorMoveTo.y = 400;
 
         this.sort = sort;
     }

@@ -31,7 +31,15 @@
             "type": "Image",
             "id": "924c61e4-abb7-4066-8ec9-f7a98abdba1a",
             "label": "pet_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "pet_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 340,
+            "MoveTo.y": 540,
             "texture": {
                 "key": "plaza",
                 "frame": "pet_door"
@@ -45,7 +53,15 @@
             "type": "Image",
             "id": "8765e580-25dd-483f-8083-9cff48de2f75",
             "label": "cave_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "cave_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 560,
+            "MoveTo.y": 500,
             "texture": {
                 "key": "plaza",
                 "frame": "cave_door"
@@ -59,7 +75,15 @@
             "type": "Image",
             "id": "b523771a-425c-42a3-8512-8209c7bc2d7a",
             "label": "pizza_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "pizza_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1152,
+            "MoveTo.y": 500,
             "texture": {
                 "key": "plaza",
                 "frame": "pizza_door"
@@ -70,10 +94,14 @@
             "originY": 0.442211
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "4cbdd610-b504-42d8-8743-1fbda48c3c9b",
-            "label": "stage_lights_back0001",
-            "components": [],
+            "label": "stage_lights_back",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "stage_lights_back",
+            "Animation.end": 16,
             "texture": {
                 "key": "plaza",
                 "frame": "stage_lights_back0001"
@@ -95,10 +123,14 @@
             "y": 221
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "bc77f388-6cf6-4a0d-a2e2-aa77337d24e0",
-            "label": "stage_lights_front0001",
-            "components": [],
+            "label": "stage_lights_front",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "stage_lights_front",
+            "Animation.end": 16,
             "texture": {
                 "key": "plaza",
                 "frame": "stage_lights_front0001"
@@ -138,7 +170,14 @@
             "type": "Image",
             "id": "51061cdc-f70a-4e59-b0f3-2a5aa91e8040",
             "label": "stage_door_1",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "stage_door_1",
+            "Button.activeFrame": false,
+            "MoveTo.x": 730,
+            "MoveTo.y": 460,
             "texture": {
                 "key": "plaza",
                 "frame": "stage_door_1"
@@ -152,7 +191,14 @@
             "type": "Image",
             "id": "50a9ce54-f89e-4569-b0b8-86b834c33508",
             "label": "stage_door_2",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "stage_door_2",
+            "Button.activeFrame": false,
+            "MoveTo.x": 960,
+            "MoveTo.y": 460,
             "texture": {
                 "key": "plaza",
                 "frame": "stage_door_2"
@@ -166,7 +212,12 @@
             "type": "Image",
             "id": "e6064661-b8d1-44d5-baa6-27a0f534f6a5",
             "label": "tickets",
-            "components": [],
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "MoveTo.x": 846,
+            "MoveTo.y": 426,
             "texture": {
                 "key": "plaza",
                 "frame": "tickets"

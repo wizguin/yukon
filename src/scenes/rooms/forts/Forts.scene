@@ -154,7 +154,11 @@
             "type": "Image",
             "id": "0b4516d5-7e71-4a28-90f7-821cb7f3bf3f",
             "label": "sign",
-            "components": [],
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "sign",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "forts",
                 "frame": "sign"
@@ -179,10 +183,14 @@
             "originY": 0.57777778
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "561077bd-3695-4418-a10f-aa6fb315f3ae",
-            "label": "blue_flag0001",
-            "components": [],
+            "label": "blue_flag",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "blue_flag",
+            "Animation.end": 16,
             "texture": {
                 "key": "forts",
                 "frame": "blue_flag0001"
@@ -192,10 +200,14 @@
             "originY": 1.85185185
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "9c369ed2-959a-40ca-b717-cd7ab77b82d1",
-            "label": "red_flag0001",
-            "components": [],
+            "label": "red_flag",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "red_flag",
+            "Animation.end": 16,
             "texture": {
                 "key": "forts",
                 "frame": "red_flag0001"

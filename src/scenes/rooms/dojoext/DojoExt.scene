@@ -73,7 +73,14 @@
             "type": "Image",
             "id": "62861faa-03f5-4327-848a-b027fa8e15b1",
             "label": "dojo_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "dojo_door",
+            "Button.activeFrame": false,
+            "MoveTo.x": 780,
+            "MoveTo.y": 610,
             "texture": {
                 "key": "dojoext",
                 "frame": "dojo_door"
@@ -86,7 +93,7 @@
         {
             "type": "Image",
             "id": "766aeda6-ec13-432e-9022-62e1fed978bc",
-            "label": "ninja_door_locked0001",
+            "label": "ninja_door_locked",
             "components": [],
             "texture": {
                 "key": "dojoext",

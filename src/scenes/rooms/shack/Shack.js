@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -90,20 +92,28 @@ class Shack extends RoomScene {
         const house = this.add.image(1291, 500, "shack", "house");
         house.setOrigin(0.08679245283018867, 0.8169014084507042);
 
-        // pipe_10001
-        const pipe_10001 = this.add.image(1004, 588, "shack", "pipe_10001");
-        pipe_10001.setOrigin(0.44106463878326996, 0.40707964601769914);
+        // pipe_1
+        const pipe_1 = this.add.image(1004, 588, "shack", "pipe_10001");
+        pipe_1.setOrigin(0.44106463878326996, 0.40707964601769914);
 
-        // pipe_20001
-        const pipe_20001 = this.add.image(1268, 681, "shack", "pipe_20001");
-        pipe_20001.setOrigin(0.054945054945054944, 0.3333333333333333);
+        // pipe_2
+        const pipe_2 = this.add.image(1268, 681, "shack", "pipe_20001");
+        pipe_2.setOrigin(0.054945054945054944, 0.3333333333333333);
 
         // trees_2
         const trees_2 = this.add.image(1204, 968, "shack", "trees_2");
         trees_2.setOrigin(0, 1);
 
         // lists
-        const sort = [house, pipe_10001, pipe_20001, trees_2, barrel, flowers_1, bear, bag, barrel_2, shovel, fence, cart_1, cart_2, tree, flowers, trees_1]
+        const sort = [house, pipe_1, pipe_2, trees_2, barrel, flowers_1, bear, bag, barrel_2, shovel, fence, cart_1, cart_2, tree, flowers, trees_1]
+
+        // plant_doors (components)
+        const plant_doorsButton = new Button(plant_doors);
+        plant_doorsButton.spriteName = "plant_doors";
+        plant_doorsButton.activeFrame = false;
+        const plant_doorsMoveTo = new MoveTo(plant_doors);
+        plant_doorsMoveTo.x = 70;
+        plant_doorsMoveTo.y = 450;
 
         this.sort = sort;
     }

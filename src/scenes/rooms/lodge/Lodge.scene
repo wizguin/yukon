@@ -31,7 +31,14 @@
             "type": "Image",
             "id": "88448b99-23ca-4433-82a8-40b75fe91423",
             "label": "door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "MoveTo.x": 184,
+            "MoveTo.y": 626,
             "texture": {
                 "key": "lodge",
                 "frame": "door"
@@ -66,30 +73,41 @@
             "y": 763
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "043cb8a8-f3ae-44fd-ad07-20c2ca07c4a2",
-            "label": "fire0001",
-            "components": [],
+            "label": "fire",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "fire",
+            "Animation.end": 10,
             "texture": {
                 "key": "lodge",
                 "frame": "fire0001"
             },
-            "x": 1294,
-            "y": 439,
-            "originX": 0,
-            "originY": 0
+            "x": 1334,
+            "y": 473
         },
         {
             "type": "Image",
             "id": "a63ca841-5066-4bac-9805-f6730b8850a4",
             "label": "fishing_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "fishing_door",
+            "Button.activeFrame": false,
+            "MoveTo.x": 960,
+            "MoveTo.y": 460,
             "texture": {
                 "key": "lodge",
-                "frame": "fishing-door"
+                "frame": "fishing_door"
             },
-            "x": 1000,
-            "y": 294
+            "x": 880,
+            "y": 114,
+            "originX": 0,
+            "originY": 0
         },
         {
             "type": "Image",
@@ -107,7 +125,11 @@
             "type": "Image",
             "id": "62189c22-d3e4-4dbd-9c11-3402e58a1215",
             "label": "bait",
-            "components": [],
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "bait",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "lodge",
                 "frame": "bait"
@@ -131,7 +153,12 @@
             "type": "Image",
             "id": "815121c9-6c0c-4a5c-9bfa-44290eeb376c",
             "label": "table3",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table3",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "lodge",
                 "frame": "table3"
@@ -145,7 +172,12 @@
             "type": "Image",
             "id": "116a3627-102f-4436-ade3-2a3a1d84b925",
             "label": "table2",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table2",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "lodge",
                 "frame": "table2"
@@ -159,7 +191,12 @@
             "type": "Image",
             "id": "92344cad-eff7-4748-9a84-6ce047322bc4",
             "label": "table4",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table4",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "lodge",
                 "frame": "table4"
@@ -172,7 +209,7 @@
         {
             "type": "Image",
             "id": "0503fb33-c16c-42c7-8a78-de9df070e30f",
-            "label": "candle0001",
+            "label": "candle",
             "components": [],
             "texture": {
                 "key": "lodge",
@@ -183,6 +220,7 @@
             "originX": 0
         }
     ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

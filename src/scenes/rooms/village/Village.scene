@@ -152,7 +152,7 @@
         {
             "type": "Sprite",
             "id": "fdecd243-800b-4abf-b11f-d1bd9eddb82b",
-            "label": "smoke0001",
+            "label": "smoke",
             "components": [
                 "Animation"
             ],
@@ -222,7 +222,7 @@
         {
             "type": "Sprite",
             "id": "afa23f89-e095-4594-9ade-31a3e78ae5ae",
-            "label": "chair0001",
+            "label": "chair",
             "components": [
                 "Animation"
             ],

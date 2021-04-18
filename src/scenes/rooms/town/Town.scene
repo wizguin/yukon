@@ -72,7 +72,15 @@
             "type": "Image",
             "id": "b0692d84-8da0-4b15-bbb2-751704bee709",
             "label": "coffee_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "coffee_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 550,
+            "MoveTo.y": 450,
             "texture": {
                 "key": "town",
                 "frame": "coffee_door"
@@ -86,7 +94,15 @@
             "type": "Image",
             "id": "5c2f7dd4-607f-4d1d-afcd-cb7b37bdbe0f",
             "label": "gift_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "gift_door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1010,
+            "MoveTo.y": 466,
             "texture": {
                 "key": "town",
                 "frame": "gift_door"
@@ -100,7 +116,12 @@
             "type": "Image",
             "id": "bfabdf1f-c4c7-4ece-8599-ca93c8326447",
             "label": "canopy",
-            "components": [],
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "MoveTo.x": 684,
+            "MoveTo.y": 410,
             "texture": {
                 "key": "town",
                 "frame": "canopy"
@@ -139,10 +160,15 @@
             "originY": 0
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "c7026824-f8f6-4305-8fe6-dc81d73f5d02",
-            "label": "lights0001",
-            "components": [],
+            "label": "lights",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "lights",
+            "Animation.end": 69,
+            "Animation.repeatDelay": 1,
             "texture": {
                 "key": "town",
                 "frame": "lights0001"

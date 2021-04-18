@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Button, MoveTo } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -43,9 +45,9 @@ class DojoExt extends RoomScene {
         const dojo_door = this.add.image(682, 425, "dojoext", "dojo_door");
         dojo_door.setOrigin(0, 0);
 
-        // ninja_door_locked0001
-        const ninja_door_locked0001 = this.add.image(221, 562, "dojoext", "ninja_door_locked0001");
-        ninja_door_locked0001.setOrigin(0, 0);
+        // ninja_door_locked
+        const ninja_door_locked = this.add.image(221, 562, "dojoext", "ninja_door_locked0001");
+        ninja_door_locked.setOrigin(0, 0);
 
         // door_top
         const door_top = this.add.image(689, 430, "dojoext", "door_top");
@@ -57,6 +59,14 @@ class DojoExt extends RoomScene {
 
         // lists
         const sort = [puffles, fence, trees]
+
+        // dojo_door (components)
+        const dojo_doorButton = new Button(dojo_door);
+        dojo_doorButton.spriteName = "dojo_door";
+        dojo_doorButton.activeFrame = false;
+        const dojo_doorMoveTo = new MoveTo(dojo_door);
+        dojo_doorMoveTo.x = 780;
+        dojo_doorMoveTo.y = 610;
 
         this.sort = sort;
     }

@@ -31,7 +31,14 @@
             "type": "Image",
             "id": "4012baa0-518e-4853-9e83-d20c84ba503d",
             "label": "lighthouse_door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "lighthouse_door",
+            "Button.activeFrame": false,
+            "MoveTo.x": 480,
+            "MoveTo.y": 400,
             "texture": {
                 "key": "beach",
                 "frame": "lighthouse_door"
@@ -194,7 +201,7 @@
         {
             "type": "Image",
             "id": "88cb8488-1341-4273-9776-5481d3092d3b",
-            "label": "bucket_bucket0001",
+            "label": "bucket",
             "components": [],
             "texture": {
                 "key": "beach",

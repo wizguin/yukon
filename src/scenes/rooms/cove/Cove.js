@@ -116,17 +116,17 @@ class Cove extends RoomScene {
         const log_1 = this.add.image(108, 285, "cove", "log_1");
         log_1.setOrigin(0, 0);
 
-        // fire0001
-        const fire0001 = this.add.sprite(435, 600, "cove", "fire0001");
-        fire0001.setOrigin(0.5029239766081871, 0.7318840579710145);
+        // fire
+        const fire = this.add.sprite(435, 600, "cove", "fire0001");
+        fire.setOrigin(0.5029239766081871, 0.7318840579710145);
 
         // chair_arm
         const chair_arm = this.add.image(633, 283, "cove", "chair_arm");
         chair_arm.setOrigin(0.40298507462686567, 0.7115384615384616);
 
-        // binoculars0001
-        const binoculars0001 = this.add.image(651, 300, "cove", "binoculars0001");
-        binoculars0001.setOrigin(1.0597014925373134, 1.1666666666666667);
+        // binoculars
+        const binoculars = this.add.image(651, 300, "cove", "binoculars0001");
+        binoculars.setOrigin(1.0597014925373134, 1.1666666666666667);
 
         // silver_board
         const silver_board = this.add.image(1463, 557, "cove", "silver_board");
@@ -149,7 +149,7 @@ class Cove extends RoomScene {
         hut_stool.setOrigin(0.5, 0.5185185185185185);
 
         // lists
-        const sort = [water_water_15, water_water_1, water_water_2, water_water_3, water_water_4, water_water_5, water_water_6, water_water_7, water_water_8, water_water_9, water_water_10, water_water_11, water_water_12, water_water_13, water_water_14, hut_wall, boards, rock_1, fire0001, chair_arm, binoculars0001, silver_board, rock_3, rock_2, rock_4, fg]
+        const sort = [water_water_15, water_water_1, water_water_2, water_water_3, water_water_4, water_water_5, water_water_6, water_water_7, water_water_8, water_water_9, water_water_10, water_water_11, water_water_12, water_water_13, water_water_14, hut_wall, boards, rock_1, fire, chair_arm, binoculars, silver_board, rock_3, rock_2, rock_4, fg]
 
         // hut (components)
         const hutButton = new Button(hut);
@@ -159,10 +159,10 @@ class Cove extends RoomScene {
         hutMoveTo.x = 1250;
         hutMoveTo.y = 500;
 
-        // fire0001 (components)
-        const fire0001Animation = new Animation(fire0001);
-        fire0001Animation.key = "fire";
-        fire0001Animation.end = 10;
+        // fire (components)
+        const fireAnimation = new Animation(fire);
+        fireAnimation.key = "fire";
+        fireAnimation.end = 10;
 
         this.sort = sort;
     }

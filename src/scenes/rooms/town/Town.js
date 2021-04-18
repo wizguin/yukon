@@ -1,5 +1,7 @@
 import RoomScene from '../RoomScene'
 
+import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
+
 
 /* START OF COMPILED CODE */
 
@@ -58,9 +60,9 @@ class Town extends RoomScene {
         const disco = this.add.image(648, 229, "town", "disco");
         disco.setOrigin(0, 0);
 
-        // lights0001
-        const lights0001 = this.add.image(518, -75, "town", "lights0001");
-        lights0001.setOrigin(0, 0);
+        // lights
+        const lights = this.add.sprite(518, -75, "town", "lights0001");
+        lights.setOrigin(0, 0);
 
         // box_1
         const box_1 = this.add.image(973, 432, "town", "box_1");
@@ -92,6 +94,36 @@ class Town extends RoomScene {
 
         // lists
         const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2]
+
+        // coffee_door (components)
+        const coffee_doorButton = new Button(coffee_door);
+        coffee_doorButton.spriteName = "coffee_door";
+        coffee_doorButton.activeFrame = false;
+        coffee_doorButton.pixelPerfect = true;
+        const coffee_doorMoveTo = new MoveTo(coffee_door);
+        coffee_doorMoveTo.x = 550;
+        coffee_doorMoveTo.y = 450;
+
+        // gift_door (components)
+        const gift_doorButton = new Button(gift_door);
+        gift_doorButton.spriteName = "gift_door";
+        gift_doorButton.activeFrame = false;
+        gift_doorButton.pixelPerfect = true;
+        const gift_doorMoveTo = new MoveTo(gift_door);
+        gift_doorMoveTo.x = 1010;
+        gift_doorMoveTo.y = 466;
+
+        // canopy (components)
+        new SimpleButton(canopy);
+        const canopyMoveTo = new MoveTo(canopy);
+        canopyMoveTo.x = 684;
+        canopyMoveTo.y = 410;
+
+        // lights (components)
+        const lightsAnimation = new Animation(lights);
+        lightsAnimation.key = "lights";
+        lightsAnimation.end = 69;
+        lightsAnimation.repeatDelay = 1;
 
         this.sort = sort;
     }

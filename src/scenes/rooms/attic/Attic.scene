@@ -40,10 +40,18 @@
             "originY": 0.649402
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "744bf6b7-7721-40a8-9619-6d45e1fc6b44",
-            "label": "horse0001",
-            "components": [],
+            "label": "horse",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "Animation.key": "horse",
+            "Animation.end": 67,
+            "Animation.repeat": 0,
+            "Animation.onHover": true,
+            "Animation.stopOnOut": false,
             "texture": {
                 "key": "attic",
                 "frame": "horse0001"
@@ -57,7 +65,12 @@
             "type": "Image",
             "id": "eb9018e6-d7b8-40e4-8e0b-0f8c6a08db5b",
             "label": "table2",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table2",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "attic",
                 "frame": "table2"
@@ -71,7 +84,12 @@
             "type": "Image",
             "id": "8e5fef97-e7e0-46e9-8668-1b8ef5527023",
             "label": "table1",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table1",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -85,7 +103,12 @@
             "type": "Image",
             "id": "e48b31c6-05cd-452f-81cb-1b43bd460e71",
             "label": "table3",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table3",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "attic",
                 "frame": "table3"
@@ -99,7 +122,12 @@
             "type": "Image",
             "id": "7101e17b-61ef-4a77-ad1c-57ad61bbe582",
             "label": "table1_1",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table1",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -113,7 +141,12 @@
             "type": "Image",
             "id": "018928c6-2420-48ef-8ec4-88803c1b610a",
             "label": "table4",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "table4",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "attic",
                 "frame": "table4"
@@ -138,6 +171,7 @@
             "originY": 1
         }
     ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
