@@ -22,6 +22,7 @@ export default class RoomScene extends BaseScene {
         this.sortChildren()
 
         if (this.roomPhysics) this.addPhysics()
+        if (this.roomAnims) this.addAnims()
 
         this.interface.showInterface()
     }
@@ -98,6 +99,21 @@ export default class RoomScene extends BaseScene {
 
         let random = this.world.client.penguin.randomizePos(x, y, 40)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })
+    }
+
+    /*========== Animations ==========*/
+
+    /**
+     * Loads complex animations from JSON room anims file,
+     * simpler animations should use the Animation component instead.
+     * To trigger this add a roomAnims get property to the room, and
+     * set it to return true.
+     */
+    addAnims() {
+        let key = this.key.toLowerCase()
+        let anims = this.cache.json.get(`${key}-anims`)
+
+        this.anims.fromJSON(anims)
     }
 
 }
