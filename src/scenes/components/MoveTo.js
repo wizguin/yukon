@@ -14,6 +14,10 @@ class MoveTo {
 
         /* START-USER-CTR-CODE */
 
+        // If x/y is 0 then use gameObject coordinate
+        this.x = (this.x) ? this.x : gameObject.x
+        this.y = (this.y) ? this.y : gameObject.y
+
         this.gameObject.on('pointerdown', () => this.setMoveTo())
         this.gameObject.on('pointerup', () => this.setMoveTo())
 

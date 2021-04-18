@@ -26,6 +26,8 @@ class Animation extends EventComponent {
         this.repeatDelay = 0;
         /** @type {boolean} */
         this.onHover = false;
+        /** @type {boolean} */
+        this.stopOnOut = true;
 
         /* START-USER-CTR-CODE */
 
@@ -56,14 +58,17 @@ class Animation extends EventComponent {
     }
 
     createAnim() {
+        // Prevent clashing keys across scenes
+        let localKey = `${this.atlas}/${this.key}`
+
         // If animation already exists
-        if (this.scene.anims.exists(this.key)) {
-            return this.scene.anims.get(this.key)
+        if (this.scene.anims.exists(localKey)) {
+            return this.scene.anims.get(localKey)
         }
 
         // Create animation
         return this.scene.anims.create({
-            key: this.key,
+            key: localKey,
             frames: this.scene.anims.generateFrameNames(this.atlas, {
                 prefix: `${this.key}`,
                 start: this.start,
@@ -81,8 +86,10 @@ class Animation extends EventComponent {
     }
 
     onOut() {
-        this.gameObject.anims.stop()
-        this.gameObject.setFrame(this.initialFrame)
+        if (this.stopOnOut) {
+            this.gameObject.anims.stop()
+            this.gameObject.setFrame(this.initialFrame)
+        }
     }
 
     /* END-USER-CODE */

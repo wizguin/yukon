@@ -67,6 +67,15 @@
                     "type": {
                         "id": "boolean"
                     }
+                },
+                {
+                    "name": "stopOnOut",
+                    "label": "Stop on Out",
+                    "tooltip": "Stop animation on hover out?",
+                    "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
         },
