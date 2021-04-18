@@ -28,6 +28,9 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
         component.spriteName = 'box/box'
         component.callback = () => this.onClick()
         component.activeFrame = false
+
+        // Manually start component
+        component.start()
     }
 
     onClick() {
