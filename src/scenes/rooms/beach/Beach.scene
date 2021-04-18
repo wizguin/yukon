@@ -199,10 +199,15 @@
             "originY": 0.67054264
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "88cb8488-1341-4273-9776-5481d3092d3b",
             "label": "bucket",
-            "components": [],
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onBucketOver()",
+            "SimpleButton.pixelPerfect": true,
             "texture": {
                 "key": "beach",
                 "frame": "bucket/bucket0001"

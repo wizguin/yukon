@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animated, Button, MoveTo } from '@components/components'
+import { Button, MoveTo, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -10,7 +10,9 @@ class Beach extends RoomScene {
     constructor() {
         super("Beach");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.bucket;
+        /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -77,7 +79,7 @@ class Beach extends RoomScene {
         chair_1_front.setOrigin(0.4, 0.67054264);
 
         // bucket
-        const bucket = this.add.image(1078, 612, "beach", "bucket/bucket0001");
+        const bucket = this.add.sprite(1078, 612, "beach", "bucket/bucket0001");
         bucket.setOrigin(0.8863109, 0.94611727);
 
         // lists
@@ -91,6 +93,12 @@ class Beach extends RoomScene {
         lighthouse_doorMoveTo.x = 480;
         lighthouse_doorMoveTo.y = 400;
 
+        // bucket (components)
+        const bucketSimpleButton = new SimpleButton(bucket);
+        bucketSimpleButton.hoverCallback = () => this.onBucketOver();
+        bucketSimpleButton.pixelPerfect = true;
+
+        this.bucket = bucket;
         this.sort = sort;
     }
 
@@ -111,6 +119,36 @@ class Beach extends RoomScene {
                 callback : () => { this.triggerRoom(800, 240, 420) }
             }
         ]
+    }
+
+    get roomAnims() {
+        return true
+    }
+
+    onBucketOver() {
+        let frame = this.bucket.frame.name
+        frame = frame.substr(frame.length - 4)
+
+        switch (frame) {
+            case '0001':
+            case '0346':
+                this.bucket.play('bucket1')
+                break
+            case '0070':
+                this.bucket.play('bucket2')
+                break
+            case '0137':
+                this.bucket.play('bucket3')
+                break
+            case '0210':
+                this.bucket.play('bucket4')
+                break
+            case '0269':
+                this.bucket.play('bucket5')
+                break
+            default:
+                break
+        }
     }
 
     /* END-USER-CODE */
