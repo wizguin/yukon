@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, SimpleButton, MoveTo } from '@components/components'
+import { Animation, Button, SimpleButton, MoveTo, ShowHint } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -10,6 +10,8 @@ class Dock extends RoomScene {
     constructor() {
         super("Dock");
 
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.boat;
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
@@ -32,9 +34,9 @@ class Dock extends RoomScene {
         const post_1 = this.add.image(443, 592, "dock", "post_1");
         post_1.setOrigin(0.55, 0.54782609);
 
-        // boat0001
-        const boat0001 = this.add.image(233, 636, "dock", "boat0001");
-        boat0001.setOrigin(0.6858407079646017, 0.8487282463186078);
+        // boat
+        const boat = this.add.sprite(231, 639, "dock", "boat");
+        boat.setOrigin(0.49477351916376305, 0.5091743119266054);
 
         // dock
         const dock = this.add.image(187, 593, "dock", "dock");
@@ -81,6 +83,15 @@ class Dock extends RoomScene {
         // lists
         const sort = [post_3, post_4, post_1, post_2, rings, bollard_2, bollard_1, dock, box, boards]
 
+        // boat (components)
+        const boatButton = new Button(boat);
+        boatButton.spriteName = "boat";
+        boatButton.activeFrame = false;
+        boatButton.pixelPerfect = true;
+        new MoveTo(boat);
+        const boatShowHint = new ShowHint(boat);
+        boatShowHint.text = "Hydro Hopper";
+
         // rings (components)
         new SimpleButton(rings);
         const ringsAnimation = new Animation(rings);
@@ -90,10 +101,23 @@ class Dock extends RoomScene {
         ringsAnimation.onHover = true;
         ringsAnimation.stopOnOut = false;
 
+        this.boat = boat;
         this.sort = sort;
     }
 
     /* START-USER-CODE */
+
+    create() {
+        super.create()
+
+        this.up = false
+
+        this.time.addEvent({
+            delay: 1500,
+            callback: () => this.floatBoat(),
+            loop: true
+        })
+    }
 
     get roomTriggers() {
         return [
@@ -116,6 +140,12 @@ class Dock extends RoomScene {
                 callback : () => { this.triggerRoom(100, 368, 640) }
             }
         ]
+    }
+
+    floatBoat() {
+        let value = (this.up) ? -2 : 2
+        this.boat.y += value
+        this.up = !this.up
     }
 
     /* END-USER-CODE */

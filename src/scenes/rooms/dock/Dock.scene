@@ -41,18 +41,27 @@
             "originY": 0.54782609
         },
         {
-            "type": "Image",
-            "id": "14fdf146-1816-4c50-9b9f-0e48a8ff8458",
-            "label": "boat0001",
-            "components": [],
+            "type": "Sprite",
+            "id": "b11c535d-a296-47fc-8cdd-62d7a7fca857",
+            "label": "boat",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "boat",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Hydro Hopper",
             "texture": {
                 "key": "dock",
-                "frame": "boat0001"
+                "frame": "boat"
             },
-            "x": 233,
-            "y": 636,
-            "originX": 0.6858407079646017,
-            "originY": 0.8487282463186078
+            "x": 231,
+            "y": 639,
+            "originX": 0.49477351916376305,
+            "originY": 0.5091743119266054
         },
         {
             "type": "Image",
