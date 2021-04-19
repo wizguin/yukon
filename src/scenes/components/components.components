@@ -60,6 +60,15 @@
                     }
                 },
                 {
+                    "name": "autoPlay",
+                    "label": "Auto Play",
+                    "tooltip": "Auto Play",
+                    "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
                     "name": "onHover",
                     "label": "On Hover",
                     "tooltip": "Only show on hover?",
@@ -73,6 +82,24 @@
                     "label": "Stop on Out",
                     "tooltip": "Stop animation on hover out?",
                     "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "showOnStart",
+                    "label": "Show on Start",
+                    "tooltip": "Show on Start",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "hideOnComplete",
+                    "label": "Hide on Complete",
+                    "tooltip": "Hide on Complete",
+                    "defValue": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -97,6 +124,16 @@
                     "name": "hoverCallback",
                     "label": "Hover Callback",
                     "tooltip": "Hover Callback",
+                    "defValue": "null",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "hoverOutCallback",
+                    "label": "Hover Out Callback",
+                    "tooltip": "Hover Out Callback",
                     "defValue": "null",
                     "type": {
                         "id": "expression",
@@ -142,6 +179,16 @@
                     "name": "hoverCallback",
                     "label": "Hover Callback",
                     "tooltip": "Hover Callback",
+                    "defValue": "null",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "hoverOutCallback",
+                    "label": "Hover Out Callback",
+                    "tooltip": "Hover Out Callback",
                     "defValue": "null",
                     "type": {
                         "id": "expression",

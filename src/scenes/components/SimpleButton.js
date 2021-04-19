@@ -15,6 +15,8 @@ class SimpleButton extends EventComponent {
         /** @type {any} */
         this.hoverCallback = null;
         /** @type {any} */
+        this.hoverOutCallback = null;
+        /** @type {any} */
         this.callback = () => {};
         /** @type {boolean} */
         this.pixelPerfect = false;
@@ -37,11 +39,16 @@ class SimpleButton extends EventComponent {
         })
 
         this.gameObject.on('pointerover', () => this.onOver())
+        this.gameObject.on('pointerout', () => this.onOut())
         this.gameObject.on('pointerup', () => this.onUp())
     }
 
     onOver() {
         if (this.hoverCallback) this.hoverCallback()
+    }
+
+    onOut() {
+        if (this.hoverOutCallback) this.hoverOutCallback()
     }
 
     onUp() {

@@ -17,6 +17,8 @@ class Button extends SimpleButton {
         /** @type {any} */
         this.hoverCallback = null;
         /** @type {any} */
+        this.hoverOutCallback = null;
+        /** @type {any} */
         this.callback = () => {};
         /** @type {boolean} */
         this.activeFrame = true;
@@ -36,19 +38,17 @@ class Button extends SimpleButton {
 
     start() {
         super.start()
-
-        this.gameObject.on('pointerout', () => this.onOut())
         this.gameObject.on('pointerdown', () => this.onDown())
     }
 
     onOver() {
         this.gameObject.setFrame(`${this.spriteName}-hover`)
-
-        if (this.hoverCallback) this.hoverCallback()
+        super.onOver()
     }
 
     onOut() {
         this.gameObject.setFrame(this.spriteName)
+        super.onOut()
     }
 
     onDown() {
@@ -66,7 +66,7 @@ class Button extends SimpleButton {
             this.gameObject.setFrame(`${this.spriteName}-hover`)
         }
 
-        this.callback()
+        super.onUp()
     }
 
     /* END-USER-CODE */
