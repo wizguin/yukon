@@ -1,5 +1,9 @@
 import EventComponent from './EventComponent'
 
+const GetValue = Phaser.Utils.Objects.GetValue
+const NumberArray = Phaser.Utils.Array.NumberArray
+const Pad = Phaser.Utils.String.Pad
+
 
 /* START OF COMPILED CODE */
 
@@ -25,9 +29,15 @@ class Animation extends EventComponent {
         /** @type {number} */
         this.repeatDelay = 0;
         /** @type {boolean} */
+        this.autoPlay = true;
+        /** @type {boolean} */
         this.onHover = false;
         /** @type {boolean} */
         this.stopOnOut = true;
+        /** @type {boolean} */
+        this.showOnStart = false;
+        /** @type {boolean} */
+        this.hideOnComplete = false;
 
         /* START-USER-CTR-CODE */
 
@@ -52,8 +62,31 @@ class Animation extends EventComponent {
         if (this.onHover) {
             this.gameObject.on('pointerover', () => this.onOver())
             this.gameObject.on('pointerout', () => this.onOut())
-        } else {
-            this.gameObject.play(this.animation)
+        } else if (this.autoPlay) {
+            this.play()
+        }
+    }
+
+    onOver() {
+        this.play()
+    }
+
+    onOut() {
+        if (this.stopOnOut) {
+            this.stop()
+            this.gameObject.setFrame(this.initialFrame)
+        }
+    }
+
+    play() {
+        this.gameObject.play(this.animation)
+    }
+
+    stop() {
+        this.gameObject.anims.stop()
+
+        if (this.hideOnComplete) {
+            this.gameObject.visible = false
         }
     }
 
@@ -69,7 +102,7 @@ class Animation extends EventComponent {
         // Create animation
         return this.scene.anims.create({
             key: localKey,
-            frames: this.scene.anims.generateFrameNames(this.atlas, {
+            frames: this.generateFrameNames(this.atlas, {
                 prefix: `${this.key}`,
                 start: this.start,
                 end: this.end,
@@ -77,19 +110,42 @@ class Animation extends EventComponent {
             }),
             frameRate: this.frameRate,
             repeat: this.repeat,
-            repeatDelay: this.repeatDelay
+            repeatDelay: this.repeatDelay,
+            showOnStart: this.showOnStart,
+            hideOnComplete: this.hideOnComplete
         })
     }
 
-    onOver() {
-        this.gameObject.play(this.animation)
-    }
+    generateFrameNames(key, config) {
+        let prefix = GetValue(config, 'prefix', '')
+        let start = GetValue(config, 'start', 0)
+        let end = GetValue(config, 'end', 0)
+        let suffix = GetValue(config, 'suffix', '')
+        let zeroPad = GetValue(config, 'zeroPad', 0)
+        let out = GetValue(config, 'outputArray', [])
+        let frames = GetValue(config, 'frames', false)
 
-    onOut() {
-        if (this.stopOnOut) {
-            this.gameObject.anims.stop()
-            this.gameObject.setFrame(this.initialFrame)
+        let texture = this.scene.anims.textureManager.get(key)
+
+        if (!texture) {
+            return out
         }
+
+        if (!frames) {
+            frames = NumberArray(start, end)
+        }
+
+        for (let i = 0; i < frames.length; i++) {
+            let frame = prefix + Pad(frames[i], zeroPad, '0', 1) + suffix
+
+            if (texture.has(frame)) {
+                out.push({ key: key, frame: frame })
+            } else {
+                out.push({ key: '__DEFAULT', frame: '__BASE' })
+            }
+        }
+
+        return out
     }
 
     /* END-USER-CODE */
