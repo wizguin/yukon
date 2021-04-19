@@ -10,7 +10,13 @@ class Town extends RoomScene {
     constructor() {
         super("Town");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.canopy_lights;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.disco_lights;
+        /** @type {Phaser.GameObjects.Image} */
+        this.disco;
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
         /* START-USER-CTR-CODE */
@@ -52,9 +58,19 @@ class Town extends RoomScene {
         const canopy = this.add.image(692, 464, "town", "canopy");
         canopy.setOrigin(0.49606299212598426, 0.9403669724770642);
 
+        // canopy_lights
+        const canopy_lights = this.add.sprite(648, 548, "town", "canopy_lights0001");
+        canopy_lights.setOrigin(0, 7.142857142857143);
+        canopy_lights.visible = false;
+
         // canopy_stars
-        const canopy_stars = this.add.image(647, 348, "town", "canopy_stars");
-        canopy_stars.setOrigin(0, 0);
+        const canopy_stars = this.add.image(647, 548, "town", "canopy_stars");
+        canopy_stars.setOrigin(0, 7.142857142857143);
+
+        // disco_lights
+        const disco_lights = this.add.sprite(766, 332, "town", "disco_lights0007");
+        disco_lights.setOrigin(0, 0);
+        disco_lights.visible = false;
 
         // disco
         const disco = this.add.image(648, 229, "town", "disco");
@@ -93,7 +109,7 @@ class Town extends RoomScene {
         table_1.setOrigin(0.49572649572649574, 0.7830188679245284);
 
         // lists
-        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2]
+        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2, canopy, canopy_stars, canopy_lights]
 
         // coffee_door (components)
         const coffee_doorButton = new Button(coffee_door);
@@ -114,10 +130,28 @@ class Town extends RoomScene {
         gift_doorMoveTo.y = 466;
 
         // canopy (components)
-        new SimpleButton(canopy);
+        const canopySimpleButton = new SimpleButton(canopy);
+        canopySimpleButton.hoverCallback = () => this.onCanopyOver();
+        canopySimpleButton.hoverOutCallback = () => this.onCanopyOut();
         const canopyMoveTo = new MoveTo(canopy);
         canopyMoveTo.x = 684;
         canopyMoveTo.y = 410;
+
+        // canopy_lights (components)
+        const canopy_lightsAnimation = new Animation(canopy_lights);
+        canopy_lightsAnimation.key = "canopy_lights";
+        canopy_lightsAnimation.end = 57;
+        canopy_lightsAnimation.autoPlay = false;
+        canopy_lightsAnimation.showOnStart = true;
+        canopy_lightsAnimation.hideOnComplete = true;
+
+        // disco_lights (components)
+        const disco_lightsAnimation = new Animation(disco_lights);
+        disco_lightsAnimation.key = "disco_lights";
+        disco_lightsAnimation.end = 57;
+        disco_lightsAnimation.autoPlay = false;
+        disco_lightsAnimation.showOnStart = true;
+        disco_lightsAnimation.hideOnComplete = true;
 
         // lights (components)
         const lightsAnimation = new Animation(lights);
@@ -125,6 +159,9 @@ class Town extends RoomScene {
         lightsAnimation.end = 69;
         lightsAnimation.repeatDelay = 1;
 
+        this.canopy_lights = canopy_lights;
+        this.disco_lights = disco_lights;
+        this.disco = disco;
         this.sort = sort;
     }
 
@@ -145,6 +182,18 @@ class Town extends RoomScene {
                 callback : () => { this.triggerRoom(801, 360, 520) }
             }
         ]
+    }
+
+    onCanopyOver() {
+        this.disco.setFrame('disco-hover')
+        this.canopy_lights.__Animation.play()
+        this.disco_lights.__Animation.play()
+    }
+
+    onCanopyOut() {
+        this.disco.setFrame('disco')
+        this.canopy_lights.__Animation.stop()
+        this.disco_lights.__Animation.stop()
     }
 
     /* END-USER-CODE */
