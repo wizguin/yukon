@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -77,30 +77,40 @@ class Attic extends RoomScene {
         table2Button.spriteName = "table2";
         table2Button.activeFrame = false;
         new MoveTo(table2);
+        const table2ShowHint = new ShowHint(table2);
+        table2ShowHint.text = "Play Find Four";
 
         // table1 (components)
         const table1Button = new Button(table1);
         table1Button.spriteName = "table1";
         table1Button.activeFrame = false;
         new MoveTo(table1);
+        const table1ShowHint = new ShowHint(table1);
+        table1ShowHint.text = "Play Find Four";
 
         // table3 (components)
         const table3Button = new Button(table3);
         table3Button.spriteName = "table3";
         table3Button.activeFrame = false;
         new MoveTo(table3);
+        const table3ShowHint = new ShowHint(table3);
+        table3ShowHint.text = "Play Find Four";
 
         // table1_1 (components)
         const table1_1Button = new Button(table1_1);
         table1_1Button.spriteName = "table1";
         table1_1Button.activeFrame = false;
         new MoveTo(table1_1);
+        const table1_1ShowHint = new ShowHint(table1_1);
+        table1_1ShowHint.text = "Play Find Four";
 
         // table4 (components)
         const table4Button = new Button(table4);
         table4Button.spriteName = "table4";
         table4Button.activeFrame = false;
         new MoveTo(table4);
+        const table4ShowHint = new ShowHint(table4);
+        table4ShowHint.text = "Play Find Four";
 
         this.sort = sort;
     }

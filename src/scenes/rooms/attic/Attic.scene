@@ -67,10 +67,12 @@
             "label": "table2",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "table2",
             "Button.activeFrame": false,
+            "ShowHint.text": "Play Find Four",
             "texture": {
                 "key": "attic",
                 "frame": "table2"
@@ -86,10 +88,12 @@
             "label": "table1",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "table1",
             "Button.activeFrame": false,
+            "ShowHint.text": "Play Find Four",
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -105,10 +109,12 @@
             "label": "table3",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "table3",
             "Button.activeFrame": false,
+            "ShowHint.text": "Play Find Four",
             "texture": {
                 "key": "attic",
                 "frame": "table3"
@@ -124,10 +130,12 @@
             "label": "table1_1",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "table1",
             "Button.activeFrame": false,
+            "ShowHint.text": "Play Find Four",
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -143,10 +151,12 @@
             "label": "table4",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "table4",
             "Button.activeFrame": false,
+            "ShowHint.text": "Play Find Four",
             "texture": {
                 "key": "attic",
                 "frame": "table4"
