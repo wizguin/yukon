@@ -28,10 +28,19 @@
             "originY": 0
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "0f7a085f-d758-4ba2-98d1-1de608d7e4bf",
-            "label": "aqua0001",
-            "components": [],
+            "label": "aqua",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onAquaOver()",
+            "SimpleButton.callback": "() => this.onAquaClick()",
+            "SimpleButton.pixelPerfect": true,
+            "ShowHint.text": "Aqua Grabber",
             "texture": {
                 "key": "berg",
                 "frame": "aqua0001"
