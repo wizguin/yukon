@@ -87,7 +87,6 @@ class Forts extends RoomScene {
         // hitbox
         const hitbox = this.add.rectangle(1347, 156, 70, 75);
         hitbox.visible = false;
-        hitbox.isFilled = true;
 
         // lists
         const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs]

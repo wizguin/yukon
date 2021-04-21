@@ -9,7 +9,7 @@ export default class SnowballFactory {
         this.maxHeight = 425
         this.minHeight = 350
 
-        this.world.events.on('snowballcomplete', (x, y) => this.world.room.onSnowballComplete(x, y))
+        world.events.on('snowballcomplete', (x, y) => world.room.onSnowballComplete(x, y))
     }
 
     throwBall(id, x, y) {
