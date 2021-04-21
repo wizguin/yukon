@@ -55,6 +55,10 @@ export default class RoomScene extends BaseScene {
         this.interface.main.buddy.showPage()
     }
 
+    onSnowballComplete(x, y) {
+        // To be overridden in derived classes
+    }
+
     /*========== Physics ==========*/
 
     get roomPhysics() {
