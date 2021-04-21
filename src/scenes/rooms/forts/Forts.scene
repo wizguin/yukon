@@ -109,10 +109,17 @@
             "originY": 0
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "1502a63b-6cb6-4f1e-bab6-e4b217577883",
-            "label": "tower0001",
-            "components": [],
+            "label": "tower",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "tower",
+            "Animation.end": 24,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
             "texture": {
                 "key": "forts",
                 "frame": "tower0001"
@@ -215,6 +222,19 @@
             "x": 626,
             "y": 524,
             "originY": 1.73913043
+        },
+        {
+            "type": "Rectangle",
+            "id": "6f93abab-6009-4afb-b0ed-a744f686a16d",
+            "label": "hitbox",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1347,
+            "y": 156,
+            "visible": false,
+            "isFilled": true,
+            "width": 70,
+            "height": 75
         }
     ],
     "plainObjects": [],

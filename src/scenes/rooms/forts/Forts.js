@@ -10,6 +10,10 @@ class Forts extends RoomScene {
     constructor() {
         super("Forts");
 
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.tower;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.hitbox;
         /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
 
@@ -52,9 +56,9 @@ class Forts extends RoomScene {
         const tower_shadow = this.add.image(1065, 304, "forts", "tower_shadow");
         tower_shadow.setOrigin(0, 0);
 
-        // tower0001
-        const tower0001 = this.add.image(1046, -13, "forts", "tower0001");
-        tower0001.setOrigin(0, 0);
+        // tower
+        const tower = this.add.sprite(1046, -13, "forts", "tower0001");
+        tower.setOrigin(0, 0);
 
         // clock
         const clock = this.add.image(1082, 104, "forts", "clock");
@@ -80,8 +84,20 @@ class Forts extends RoomScene {
         const red_flag = this.add.sprite(626, 524, "forts", "red_flag0001");
         red_flag.setOrigin(0.5, 1.73913043);
 
+        // hitbox
+        const hitbox = this.add.rectangle(1347, 156, 70, 75);
+        hitbox.visible = false;
+        hitbox.isFilled = true;
+
         // lists
         const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs]
+
+        // tower (components)
+        const towerAnimation = new Animation(tower);
+        towerAnimation.key = "tower";
+        towerAnimation.end = 24;
+        towerAnimation.repeat = 0;
+        towerAnimation.autoPlay = false;
 
         // sign (components)
         const signButton = new Button(sign);
@@ -98,10 +114,19 @@ class Forts extends RoomScene {
         red_flagAnimation.key = "red_flag";
         red_flagAnimation.end = 16;
 
+        this.tower = tower;
+        this.hitbox = hitbox;
         this.sort = sort;
     }
 
     /* START-USER-CODE */
+
+    create() {
+        super.create()
+
+        this.bounds = this.hitbox.getBounds()
+        this.tower.on('animationcomplete', () => this.onTowerAnimComplete())
+    }
 
     get roomTriggers() {
         return [
@@ -124,6 +149,16 @@ class Forts extends RoomScene {
                 callback : () => { this.triggerRoom(300, 340, 660) }
             }
         ]
+    }
+
+    onSnowballComplete(x, y) {
+        if (this.bounds.contains(x, y)) {
+            this.tower.__Animation.play()
+        }
+    }
+
+    onTowerAnimComplete() {
+        this.tower.setFrame('tower0001')
     }
 
     /* END-USER-CODE */
