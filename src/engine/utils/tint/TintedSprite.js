@@ -11,6 +11,8 @@ export default class TintedSprite extends Phaser.GameObjects.Sprite {
     }
 
     renderCanvas(renderer, src, camera, parentMatrix) {
+        camera.addToRenderList(src)
+
         CanvasTint.batchSprite(renderer, src, src.frame, camera, parentMatrix)
     }
 
