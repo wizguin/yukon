@@ -13,7 +13,9 @@ export default class Actions extends Plugin {
     }
 
     sendPosition(args) {
-        this.world.room.penguins[args.id].move(args.x, args.y)
+        if (this.world.client.id != args.id) {
+            this.world.room.penguins[args.id].move(args.x, args.y)
+        }
     }
 
     sendFrame(args) {

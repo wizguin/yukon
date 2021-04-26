@@ -58,8 +58,10 @@ export default class WorldController extends BaseScene {
     }
 
     addPenguin(user) {
-        let penguin = this.penguinFactory.createPenguin(user, this.room)
-        this.room.addPenguin(user.id, penguin)
+        if (!(user.id in this.room.penguins)) {
+            let penguin = this.penguinFactory.createPenguin(user, this.room)
+            this.room.addPenguin(user.id, penguin)
+        }
     }
 
     removePenguin(id) {
