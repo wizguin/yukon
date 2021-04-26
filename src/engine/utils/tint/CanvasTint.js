@@ -1,4 +1,4 @@
-export default class Tint {
+export default class CanvasTint {
 
     static getTintedCanvas(frame, color) {
         let texture = frame.texture
