@@ -21,22 +21,6 @@
             "list": [
                 {
                     "type": "Image",
-                    "id": "c8cfd096-2e07-472e-b1e0-a11a86e0efd2",
-                    "label": "body",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "paperdoll/body"
-                    },
-                    "tintTopLeft": "#003366",
-                    "tintTopRight": "#003366",
-                    "tintBottomLeft": "#003366",
-                    "tintBottomRight": "#003366",
-                    "tintFill": true
-                },
-                {
-                    "type": "Image",
                     "id": "74e2da01-371c-4d43-8319-d06c0236ab6b",
                     "label": "paperdoll",
                     "scope": "CLASS",

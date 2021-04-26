@@ -1,6 +1,7 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
 import PaperDollLoader from './PaperDollLoader'
+import TintedImage from '@engine/utils/tint/TintedImage'
 
 
 /* START OF COMPILED CODE */
@@ -10,20 +11,10 @@ class PaperDoll extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x, y);
 
-        // body
-        const body = scene.add.image(0, 0, "main", "paperdoll/body");
-        body.tintFill = true;
-        body.tintTopLeft = 13158;
-        body.tintTopRight = 13158;
-        body.tintBottomLeft = 13158;
-        body.tintBottomRight = 13158;
-        this.add(body);
-
         // paperdoll
         const paperdoll = scene.add.image(0, 0, "main", "paperdoll/paperdoll");
         this.add(paperdoll);
 
-        this.body = body;
         this.paperdoll = paperdoll;
 
         /** @type {boolean} */
@@ -33,8 +24,15 @@ class PaperDoll extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        body.depth = 1
-        paperdoll.depth = 2
+        // Tinted body
+        this.body = new TintedImage(scene, 0, 0, 'main', 'paperdoll/body')
+        this.body.tint = this.crumbs.colors[0]
+
+        scene.add.existing(this.body)
+        this.addAt(this.body, 0)
+
+        this.body.depth = 1
+        this.paperdoll.depth = 2
 
         // Slots ordered by depth
         // '' representing paperdoll

@@ -18,7 +18,7 @@ export default class PaperDollLoader {
     }
 
     setColor(id) {
-        this.paperDoll.body.tint = this.paperDoll.crumbs.colors[id - 1]
+        this.paperDoll.body.tint = this.scene.world.getColor(id)
     }
 
     loadItems(penguin) {
