@@ -22,6 +22,9 @@ class SimpleButton extends EventComponent {
         this.pixelPerfect = false;
 
         /* START-USER-CTR-CODE */
+
+        gameObject.isButton = true
+
         /* END-USER-CTR-CODE */
     }
 

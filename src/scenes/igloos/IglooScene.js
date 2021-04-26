@@ -70,7 +70,6 @@ export default class IglooScene extends RoomScene {
         if (this.id == this.world.client.id) {
             this.addEditBg()
             this.addCrates()
-            this.addInput()
             this.interface.showIglooEdit()
         }
 
@@ -224,15 +223,20 @@ export default class IglooScene extends RoomScene {
     }
 
     addInput() {
+        super.addInput()
+
+        // Only add editor input in client igloo
+        if (this.id != this.world.client.id) return
+
         this.input.dragDistanceThreshold = 1
 
-        this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
         this.input.on('pointerdown', (pointer, target) => this.onPointerDown(pointer, target))
+        this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
 
-        this.input.keyboard.on('keydown-LEFT', () => this.updateFrame(0, 1))
-        this.input.keyboard.on('keydown-RIGHT', () => this.updateFrame(0, -1))
         this.input.keyboard.on('keydown-UP', () => this.updateFrame(1, 1))
+        this.input.keyboard.on('keydown-LEFT', () => this.updateFrame(0, 1))
         this.input.keyboard.on('keydown-DOWN', () => this.updateFrame(1, -1))
+        this.input.keyboard.on('keydown-RIGHT', () => this.updateFrame(0, -1))
     }
 
     onPointerMove(pointer) {
@@ -244,7 +248,7 @@ export default class IglooScene extends RoomScene {
     onPointerDown(pointer, target) {
         if (!this.editing) return
 
-        if (!this.selected && target && target[0] instanceof FurnitureSprite) {
+        if (!this.selected && target[0] && target[0] instanceof FurnitureSprite) {
             target[0].hover(pointer)
         } else if (this.selected) {
             this.selected.drop()

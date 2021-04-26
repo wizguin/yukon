@@ -49,7 +49,6 @@ export default class PenguinLoader extends SpriteLoader {
         return nameTag
     }
 
-    // Bug: when penguin leaves room movement/rotation is still locked
     addInput(penguin) {
         let hitArea = new Phaser.Geom.Ellipse(0, -20, 70, 90)
 
@@ -59,19 +58,7 @@ export default class PenguinLoader extends SpriteLoader {
             hitAreaCallback: Phaser.Geom.Ellipse.Contains
         })
 
-        penguin.on('pointerover', () => { this.onPenguinOver() })
-        penguin.on('pointerout', () => { this.onPenguinOut() })
-        penguin.on('pointerup', () => { this.onPenguinClick(penguin.id) })
-    }
-
-    onPenguinOver() {
-        this.world.client.penguin.movementEnabled = false
-        this.world.client.penguin.rotationEnabled = false
-    }
-
-    onPenguinOut() {
-        this.world.client.penguin.movementEnabled = true
-        this.world.client.penguin.rotationEnabled = true
+        penguin.on('pointerup', () => this.onPenguinClick(penguin.id))
     }
 
     onPenguinClick(id) {

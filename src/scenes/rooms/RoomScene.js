@@ -13,6 +13,10 @@ export default class RoomScene extends BaseScene {
         this.triggers = null // Trigger collision bodies
     }
 
+    get client() {
+        return this.world.client
+    }
+
     init(data) {
         this.id = data.id
     }
@@ -23,6 +27,7 @@ export default class RoomScene extends BaseScene {
 
         if (this.roomPhysics) this.addPhysics()
         if (this.roomAnims) this.addAnims()
+        this.addInput()
 
         this.interface.showInterface()
     }
@@ -44,7 +49,7 @@ export default class RoomScene extends BaseScene {
     removePenguin(id) {
         let penguin = this.penguins[id]
 
-        if (penguin.isTweening) penguin.actions.movement.removeTween()
+        if (penguin.isTweening) penguin.removeTween()
 
         if (penguin.balloon) penguin.balloon.destroy()
         penguin.nameTag.destroy()
@@ -53,6 +58,26 @@ export default class RoomScene extends BaseScene {
         delete this.penguins[id]
 
         this.interface.main.buddy.showPage()
+    }
+
+    addInput() {
+        // Movement
+        this.input.on('pointerup', (pointer, target) => this.client.onPointerUp(pointer, target))
+        this.input.on('pointermove', (pointer) => this.client.onPointerMove(pointer))
+
+        // Actions
+        this.input.keyboard.on('keydown-UP', () => this.client.onKeyDownFrame(21))
+        this.input.keyboard.on('keydown-LEFT', () => this.client.onKeyDownFrame(19))
+        this.input.keyboard.on('keydown-DOWN', () => this.client.onKeyDownFrame(17))
+        this.input.keyboard.on('keydown-RIGHT', () => this.client.onKeyDownFrame(23))
+        this.input.keyboard.on('keydown-W', () => this.client.onKeyDownFrame(25, false))
+        this.input.keyboard.on('keydown-D', () => this.client.onKeyDownFrame(26))
+
+        // Sitting to pointer
+        this.input.keyboard.on('keydown-S', () => this.client.onKeyDownS(this.game.input.mousePointer))
+
+        // Crosshair
+        this.input.keyboard.on('keydown-T', () => this.client.onKeyDownT())
     }
 
     onSnowballComplete(x, y) {
@@ -101,8 +126,7 @@ export default class RoomScene extends BaseScene {
         let room = this.crumbs.rooms[id]
         this.interface.showLoading(`Joining ${room.name}`)
 
-        let random = this.world.client.penguin.randomizePos(x, y, 40)
-        this.network.send('join_room', { room: id, x: random.x, y: random.y })
+        this.world.client.sendJoinRoom(id, x, y)
     }
 
     /*========== Animations ==========*/

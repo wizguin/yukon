@@ -4,8 +4,7 @@ export default class PenguinItems {
         this.penguin = penguin
 
         // Slots ordered by depth
-        this.slots = [ 'photo', 'flag', 'color', 'feet', 'body', 'neck', 'hand', 'face', 'head' ]
-
+        this.slots = ['photo', 'flag', 'color', 'feet', 'body', 'neck', 'hand', 'face', 'head']
         // All items
         this.all = this.setAll()
     }
@@ -34,16 +33,16 @@ export default class PenguinItems {
     }
 
     setAll() {
-        let items = {}
+        let all = {}
 
         for (let slot of this.slots) {
-            items[slot] = {
-                id: this.penguin.user[slot],
+            all[slot] = {
+                id: this.penguin[slot],
                 depth: this.slots.indexOf(slot)
             }
         }
 
-        return items
+        return all
     }
 
     setItem(item, slot) {

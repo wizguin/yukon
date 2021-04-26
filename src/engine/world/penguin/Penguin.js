@@ -1,49 +1,40 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
 import ItemLoader from './loader/ItemLoader'
-import PenguinActions from './actions/PenguinActions'
+import PathEngine from './pathfinding/PathEngine'
 import PenguinItems from './PenguinItems'
 
 
 export default class Penguin extends BaseContainer {
 
-    constructor(user, room, x, y, penguinLoader) {
-        super(room, x, y)
+    constructor(user, room, penguinLoader) {
+        super(room, user.x, user.y)
 
-        this.user = user // User attributes
+        // Assign user attributes
+        Object.assign(this, user)
         this.room = room
         this.penguinLoader = penguinLoader
 
-        this.actions = this.setActions()
         this.items = new PenguinItems(this)
         this.itemLoader = new ItemLoader(this)
+        this.bodySprite
 
-        this.x = this.movement.getValidX(x)
-        this.y = this.movement.getValidY(y)
-        this.validatePos(this.x, this.y)
-
-        this.id = user.id
-        this.coins = user.coins
-        this.username = user.username
-        this.nameTag = penguinLoader.addName(this)
-        this.balloon = null // Chat balloon
-
+        PathEngine.setStartPos(this)
         this.depth = this.y
-        this.frame = 1
-        this.scale = 1
+        this.tween
+        this.direction
 
-        this.savedPenguins = this.network.savedPenguins
-        this.save = this.savedPenguins[this.username.toLowerCase()]
+        this.nameTag = penguinLoader.addName(this)
+        this.balloon
 
-        this.loadPenguin()
-    }
+        this.on('destroy', () => this.onDestroy())
+        this.isButton = true
 
-    get movement() {
-        return this.actions.movement
+        this.load()
     }
 
     get isTweening() {
-        return (this.movement.tween) ? true : false
+        return (this.tween) ? true : false
     }
 
     get pos() {
@@ -58,27 +49,26 @@ export default class Penguin extends BaseContainer {
         return this.playerCard.paperDoll.paperDollLoader
     }
 
-    setActions() {
-        return new PenguinActions(this)
+    /**
+     * this.body is a Phaser property and will result in an error on destruction,
+     * so it must be deleted manually first.
+     */
+    onDestroy() {
+        delete this.body
     }
 
-    loadPenguin() {
+    load() {
         this.penguinLoader.loadPenguin(this)
         this.itemLoader.loadItems()
 
         this.room.add.existing(this)
     }
 
-    movePenguin(x, y) {
-        this.actions.movePenguin(x, y)
-    }
-
-    updatePenguin(item, slot) {
+    update(item, slot) {
         this.items.setItem(item, slot)
 
-        if (this.save && slot in this.save) {
-            this.save[slot] = item
-            localStorage.setItem('saved_penguins', JSON.stringify(this.savedPenguins))
+        if (slot == 'color' && this.bodySprite) {
+            this.bodySprite.tint = this.world.getColor(item)
         }
 
         // Load item sprite
@@ -88,55 +78,98 @@ export default class Penguin extends BaseContainer {
         }
 
         // Load item paper, only if card is active
-        if (this.playerCard.visible && this.playerCard.id == this.user.id) {
+        if (this.playerCard.visible && this.playerCard.id == this.id) {
             this.paperDollLoader.loadItem(item, slot)
             this.paperDollLoader.load.start()
         }
     }
 
-    playFrame(frame, loop = true) {
-        this.actions.playFrame(frame, loop)
-    }
-
-    /**
-     * Validates player position upon loading, to prevent player from
-     * joining into the block layer.
-     */
-    validatePos(x, y) {
-        if (!this.movement.blockTest(x, y)) return
-
-        let room
-        let random
-
-        if (this.room.isIgloo) {
-            room = this.crumbs.igloos[this.room.args.type]
-        } else {
-            room = this.crumbs.rooms[this.room.id]
-        }
-
-        // 25 attempts to generate a new pos that is not blocked
-        for (let i = 0; i < 25; i++) {
-            random = this.randomizePos(room.x, room.y, 80)
-
-            if (!this.movement.blockTest(random.x, random.y)) {
-                return this.setPos(random.x, random.y)
-            }
-        }
-
-        // If all attempts fail just use room default x and y
-        this.setPos(room.x, room.y)
-    }
-
-    randomizePos(x, y, range) {
-        let randX = this.movement.getValidX(x + Phaser.Math.Between(-range, range))
-        let randY = this.movement.getValidY(y + Phaser.Math.Between(-range, range))
-
-        return { x: randX, y: randY }
+    move(x, y) {
+        let path = PathEngine.getPath(this, { x: x, y: y })
+        if (path) this.addMoveTween(path)
     }
 
     setPos(x, y) {
         this.x = x
         this.y = y
+    }
+
+    /*========== Frames ==========*/
+
+    playFrame(frame) {
+        // Moving penguin can only update when frames are movement frames (9-16)
+        if (this.isTweening && (frame < 9 || frame > 16)) return
+
+        // Filters out shadow and ring
+        let sprites = this.list.filter(child => child.type == 'Sprite')
+
+        for (let sprite of sprites) {
+            let key = `${sprite.texture.key}_${frame}`
+
+            if (this.checkFrames(sprite, key)) {
+                sprite.visible = true
+                sprite.anims.play(key)
+            } else {
+                sprite.visible = false
+            }
+        }
+
+        this.frame = frame
+    }
+
+    checkFrames(sprite, key) {
+        let animation = sprite.anims.animationManager.anims.entries[key]
+        return (animation.frames.length > 0)
+    }
+
+    /*========== Tweening ==========*/
+
+    addMoveTween(path) {
+        if (this.tween) this.removeTween(false)
+
+        this.playFrame(this.direction + 8) // + 8 for walking frame id
+
+        this.tween = this.room.tweens.add({
+            targets: this,
+            duration: path.duration,
+
+            x: Math.round(path.target.x),
+            y: Math.round(path.target.y),
+
+            onUpdate: () => this.onMoveUpdate(),
+            onComplete: () => this.onMoveComplete()
+        })
+    }
+
+    onMoveUpdate() {
+        this.depth = this.y
+
+        if (this.nameTag) this.updateNameTag()
+        if (this.balloon) this.updateBalloon()
+    }
+
+    onMoveComplete() {
+        this.removeTween()
+    }
+
+    updateNameTag() {
+        this.nameTag.x = this.x
+        this.nameTag.y = this.y + 40
+        this.nameTag.depth = this.depth + 2000
+    }
+
+    updateBalloon() {
+        this.balloon.x = this.x
+        this.balloon.y = this.y - 95
+    }
+
+    removeTween(playFrame = true) {
+        if (!this.tween) return
+
+        this.tween.remove()
+        this.tween = null
+
+        if (playFrame) this.playFrame(this.direction)
     }
 
 }

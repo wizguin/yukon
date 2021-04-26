@@ -112,14 +112,8 @@ class ActionsMenu extends FloatingMenu {
 
     /* START-USER-CODE */
 
-    onActionClick(frame, loop = true) {
-        let penguin = this.world.client.penguin
-
-        if (penguin.isTweening) return
-
-        penguin.playFrame(frame, loop)
-        this.network.send('send_frame', { loop: loop, frame: frame })
-
+    onActionClick(frame, set = true) {
+        this.world.client.onKeyDownFrame(frame, set)
         this.visible = false
     }
 

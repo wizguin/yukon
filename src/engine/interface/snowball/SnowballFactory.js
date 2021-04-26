@@ -1,10 +1,13 @@
+import PathEngine from '@engine/world/penguin/pathfinding/PathEngine'
+
+
 export default class SnowballFactory {
 
     constructor(world) {
         this.world = world
 
         this.balls = []
-        this.speed = 800 // 875
+        this.speed = 800
         this.startHeight = -12
         this.maxHeight = 425
         this.minHeight = 350
@@ -50,8 +53,8 @@ export default class SnowballFactory {
     }
 
     playAnimation(penguin, x, y) {
-        let angle = penguin.movement.getAngle({ x: penguin.x, y: penguin.y }, { x: x, y: y })
-        let direction = Math.max(Math.round(penguin.movement.getDirection(angle) / 2), 1)
+        let angle = PathEngine.getAngle({ x: penguin.x, y: penguin.y }, { x: x, y: y })
+        let direction = Math.max(Math.round(PathEngine.getDirection(angle) / 2), 1)
         let frame = direction + 26 // + 26 for throwing frame id
 
         penguin.playFrame(frame, false)
@@ -59,7 +62,7 @@ export default class SnowballFactory {
 
     addTween(ball, x, y) {
         let distance = Phaser.Math.Distance.Between(ball.x, ball.y, x, y)
-        let duration = (distance / this.speed) * 1000
+        let duration = PathEngine.getDuration(distance, this.speed)
 
         let peak = this.getPeak(duration)
         let control = this.getMidPoint([ball.x, ball.y], [x, y])

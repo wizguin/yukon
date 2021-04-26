@@ -20,7 +20,7 @@ export default class Item extends Plugin {
     }
 
     updatePlayer(args) {
-        this.world.room.penguins[args.id].updatePenguin(args.item, args.slot)
+        this.world.room.penguins[args.id].update(args.item, args.slot)
     }
 
     addItem(args) {

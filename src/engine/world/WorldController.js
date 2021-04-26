@@ -1,6 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import ClientController from './penguin/client/ClientController'
+import ClientController from './penguin/ClientController'
 import PenguinFactory from './penguin/PenguinFactory'
 import RoomFactory from './room/RoomFactory'
 import IglooFactory from './room/IglooFactory'
@@ -11,8 +11,8 @@ export default class WorldController extends BaseScene {
     constructor(key) {
         super(key)
 
-        this.client = null
-        this.room = null
+        this.client
+        this.room
     }
 
     create() {
@@ -22,7 +22,7 @@ export default class WorldController extends BaseScene {
     }
 
     setClient(args) {
-        this.client = new ClientController(args)
+        this.client = new ClientController(this, args)
     }
 
     joinRoom(id, users) {
@@ -59,7 +59,6 @@ export default class WorldController extends BaseScene {
 
     addPenguin(user) {
         let penguin = this.penguinFactory.createPenguin(user, this.room)
-
         this.room.addPenguin(user.id, penguin)
     }
 
@@ -92,6 +91,10 @@ export default class WorldController extends BaseScene {
     isOnline(id) {
         let buddy = this.client.buddies.find(obj => obj.id == id)
         return buddy.online
+    }
+
+    getColor(id) {
+        return this.crumbs.colors[id - 1] || this.crumbs.colors[0]
     }
 
 }

@@ -13,11 +13,11 @@ export default class Actions extends Plugin {
     }
 
     sendPosition(args) {
-        this.world.room.penguins[args.id].movePenguin(args.x, args.y)
+        this.world.room.penguins[args.id].move(args.x, args.y)
     }
 
     sendFrame(args) {
-        this.world.room.penguins[args.id].playFrame(args.frame, args.loop)
+        this.world.room.penguins[args.id].playFrame(args.frame)
     }
 
     snowball(args) {

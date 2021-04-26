@@ -1,4 +1,4 @@
-import ClientPenguin from './client/ClientPenguin'
+import ClientPenguin from './ClientPenguin'
 import Penguin from './Penguin'
 import PenguinLoader from './loader/PenguinLoader'
 
@@ -15,13 +15,11 @@ export default class PenguinFactory {
         let client = this.world.client
 
         if (user.id == client.id) {
-            client.penguin = new ClientPenguin(user, room, user.x, user.y, this.penguinLoader)
-            client.setInput(room)
-
+            client.penguin = new ClientPenguin(user, room, this.penguinLoader)
             return client.penguin
 
         } else {
-            return new Penguin(user, room, user.x, user.y, this.penguinLoader)
+            return new Penguin(user, room, this.penguinLoader)
         }
     }
 

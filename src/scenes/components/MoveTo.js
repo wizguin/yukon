@@ -18,8 +18,7 @@ class MoveTo {
         this.x = (this.x) ? this.x : gameObject.x
         this.y = (this.y) ? this.y : gameObject.y
 
-        this.gameObject.on('pointerdown', () => this.setMoveTo())
-        this.gameObject.on('pointerup', () => this.setMoveTo())
+        this.gameObject.on('pointerup', () => this.onPointerUp())
 
         /* END-USER-CTR-CODE */
     }
@@ -31,8 +30,8 @@ class MoveTo {
 
     /* START-USER-CODE */
 
-    setMoveTo() {
-        this.gameObject.scene.world.client.input.moveTo = [this.x, this.y]
+    onPointerUp() {
+        this.gameObject.scene.world.client.penguin.move(this.x, this.y)
     }
 
     /* END-USER-CODE */
