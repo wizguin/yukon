@@ -86,7 +86,6 @@ class Village extends RoomScene {
         const lodge_doorButton = new Button(lodge_door);
         lodge_doorButton.spriteName = "lodge_door";
         lodge_doorButton.activeFrame = false;
-        lodge_doorButton.pixelPerfect = true;
         const lodge_doorMoveTo = new MoveTo(lodge_door);
         lodge_doorMoveTo.x = 1070;
         lodge_doorMoveTo.y = 330;
@@ -95,7 +94,6 @@ class Village extends RoomScene {
         const phone_doorButton = new Button(phone_door);
         phone_doorButton.spriteName = "phone_door";
         phone_doorButton.activeFrame = false;
-        phone_doorButton.pixelPerfect = true;
         const phone_doorMoveTo = new MoveTo(phone_door);
         phone_doorMoveTo.x = 1340;
         phone_doorMoveTo.y = 480;

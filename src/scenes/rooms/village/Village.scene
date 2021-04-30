@@ -37,7 +37,6 @@
             ],
             "Button.spriteName": "lodge_door",
             "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
             "MoveTo.x": 1070,
             "MoveTo.y": 330,
             "texture": {
@@ -111,7 +110,6 @@
             ],
             "Button.spriteName": "phone_door",
             "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
             "MoveTo.x": 1340,
             "MoveTo.y": 480,
             "texture": {
