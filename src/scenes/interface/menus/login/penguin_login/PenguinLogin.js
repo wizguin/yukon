@@ -182,7 +182,7 @@ class PenguinLogin extends BaseScene {
         if (token) {
             this.passwordInput.setText('password')
             // Update password edited on password input
-            this.passwordInput.node.addEventListener('keypress', () => this.passwordEdited = true, { once: true })
+            this.passwordInput.node.addEventListener('keydown', () => this.passwordEdited = true, { once: true })
 
             this.checks.enable(this.checks.password)
         }
