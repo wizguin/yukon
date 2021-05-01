@@ -128,26 +128,11 @@ class Forts extends RoomScene {
     }
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.town,
-                x: 270,
-                y: 460,
-                callback : () => { this.triggerRoom(100, 1240, 660) }
-            },
-            {
-                body: this.roomPhysics.rink,
-                x: 520,
-                y: 320,
-                callback : () => { this.triggerRoom(802, 780, 340) }
-            },
-            {
-                body: this.roomPhysics.plaza,
-                x: 1455,
-                y: 670,
-                callback : () => { this.triggerRoom(300, 340, 660) }
-            }
-        ]
+        return {
+            'town': () => this.triggerRoom(100, 1240, 660),
+            'rink': () => this.triggerRoom(802, 780, 340),
+            'plaza': () => this.triggerRoom(300, 340, 660)
+        }
     }
 
     onSnowballComplete(x, y) {

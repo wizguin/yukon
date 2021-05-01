@@ -120,26 +120,11 @@ class Dock extends RoomScene {
     }
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.beach,
-                x: 90,
-                y: 420,
-                callback : () => { this.triggerRoom(400, 950, 430) }
-            },
-            {
-                body: this.roomPhysics.village,
-                x: 330,
-                y: 220,
-                callback : () => { this.triggerRoom(200, 1300, 760) }
-            },
-            {
-                body: this.roomPhysics.town,
-                x: 1350,
-                y: 360,
-                callback : () => { this.triggerRoom(100, 368, 640) }
-            }
-        ]
+        return {
+            'beach': () => this.triggerRoom(400, 950, 430),
+            'village': () => this.triggerRoom(200, 1300, 760),
+            'town': () => this.triggerRoom(100, 368, 640)
+        }
     }
 
     floatBoat() {

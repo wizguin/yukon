@@ -105,20 +105,12 @@ class Beach extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.village,
-                x: 940,
-                y: 290,
-                callback : () => { this.triggerRoom(200, 450, 750) }
-            },
-            {
-                body: this.roomPhysics.dock,
-                x: 1250,
-                y: 450,
-                callback : () => { this.triggerRoom(800, 240, 420) }
-            }
-        ]
+        return {
+            'village': () => this.triggerRoom(200, 450, 750),
+            'dock': () => this.triggerRoom(800, 240, 420),
+            'lighthouse': null,
+            'ship': null
+        }
     }
 
     get roomAnims() {

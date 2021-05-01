@@ -118,14 +118,9 @@ class Attic extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.lodge,
-                x: 1150,
-                y: 646,
-                callback : () => { this.triggerRoom(220, 1146, 562) }
-            }
-        ]
+        return {
+            'lodge': () => this.triggerRoom(220, 1146, 562)
+        }
     }
 
     /* END-USER-CODE */

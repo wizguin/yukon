@@ -63,26 +63,12 @@ class Forest extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.plaza,
-                x: 130,
-                y: 330,
-                callback : () => { this.triggerRoom(300, 1240, 660) }
-            },
-            {
-                body: this.roomPhysics.shack,
-                x: 1330,
-                y: 280,
-                callback : () => { this.triggerRoom(807, 500, 800) }
-            },
-            {
-                body: this.roomPhysics.cove,
-                x: 1320,
-                y: 900,
-                callback : () => { this.triggerRoom(810, 520, 416) }
-            }
-        ]
+        return {
+            'plaza': () => this.triggerRoom(300, 1240, 660),
+            'shack': () => this.triggerRoom(807, 500, 800),
+            'cove': () => this.triggerRoom(810, 520, 416),
+            'lake': null
+        }
     }
 
     /* END-USER-CODE */

@@ -96,15 +96,22 @@ export default class RoomScene extends BaseScene {
     addPhysics() {
         this.matter.world.setBounds(0, 0, this.game.config.width, this.game.config.height)
 
-        this.block = this.addBody('block')
+        this.block = this.addBody('block', 0x111111)
         this.triggers = this.addTriggers()
     }
 
-    addBody(key) {
+    addBody(key, color = null) {
         if (!this.roomPhysics[key]) return null
 
         let body = this.matter.add.fromPhysicsEditor(0, 0, this.roomPhysics[key])
         this.matter.body.setPosition(body, body.centerOffset) // Centers body in room
+
+        // Debug color
+        color = (color) ? color : body.render.fillColor
+
+        body.render.lineColor = color
+        body.render.fillColor = color
+        body.render.fillOpacity = 0.5
 
         return body
     }
@@ -114,8 +121,10 @@ export default class RoomScene extends BaseScene {
 
         let triggers = []
 
-        for (let trigger of this.roomTriggers) {
-            trigger.body = this.matter.add.fromPhysicsEditor(trigger.x, trigger.y, trigger.body)
+        for (let t in this.roomTriggers) {
+            let trigger = this.addBody(t, 0x00FF00)
+
+            trigger.callback = this.roomTriggers[t]
             triggers.push(trigger)
         }
 

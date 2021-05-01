@@ -63,8 +63,8 @@ export default class ClientPenguin extends Penguin {
         if (!this.room.triggers) return
 
         for (let trigger of this.room.triggers) {
-            if (this.room.matter.containsPoint(trigger.body, this.x, this.y)) {
-                if (trigger.callback) trigger.callback()
+            if (this.room.matter.containsPoint(trigger, this.x, this.y)) {
+                if (trigger.callback) return trigger.callback()
             }
         }
     }

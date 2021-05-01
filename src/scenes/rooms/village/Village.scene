@@ -37,8 +37,8 @@
             ],
             "Button.spriteName": "lodge_door",
             "Button.activeFrame": false,
-            "MoveTo.x": 1070,
-            "MoveTo.y": 330,
+            "MoveTo.x": 1000,
+            "MoveTo.y": 400,
             "texture": {
                 "key": "village",
                 "frame": "lodge_door"

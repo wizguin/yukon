@@ -100,14 +100,9 @@ class Mtn extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.village,
-                x: 950,
-                y: 270,
-                callback : () => { this.triggerRoom(200, 480, 560) }
-            }
-        ]
+        return {
+            'village': () => this.triggerRoom(200, 480, 560)
+        }
     }
 
     /* END-USER-CODE */

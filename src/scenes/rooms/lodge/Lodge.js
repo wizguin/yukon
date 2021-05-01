@@ -207,20 +207,10 @@ class Lodge extends RoomScene {
     }
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.attic,
-                x: 1214,
-                y: 466,
-                callback: () => { this.triggerRoom(221, 966, 560) }
-            },
-            {
-                body: this.roomPhysics.village,
-                x: 180,
-                y: 640,
-                callback: () => { this.triggerRoom(200, 940, 540) }
-            }
-        ]
+        return {
+            'attic': () => this.triggerRoom(221, 966, 560),
+            'village': () => this.triggerRoom(200, 940, 540)
+        }
     }
 
     onCandleOver() {

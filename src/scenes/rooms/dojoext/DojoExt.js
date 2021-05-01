@@ -14,7 +14,6 @@ class DojoExt extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
-        // Write your code here.
         /* END-USER-CTR-CODE */
     }
 
@@ -74,14 +73,11 @@ class DojoExt extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.map,
-                x: 784,
-                y: 896,
-                callback : () => { this.interface.main.map.visible = true }
-            }
-        ]
+        return {
+            'map': () => this.interface.main.map.visible = true,
+            'dojo': null,
+            'dojohide': null
+        }
     }
 
     /* END-USER-CODE */

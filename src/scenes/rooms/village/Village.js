@@ -87,8 +87,8 @@ class Village extends RoomScene {
         lodge_doorButton.spriteName = "lodge_door";
         lodge_doorButton.activeFrame = false;
         const lodge_doorMoveTo = new MoveTo(lodge_door);
-        lodge_doorMoveTo.x = 1070;
-        lodge_doorMoveTo.y = 330;
+        lodge_doorMoveTo.x = 1000;
+        lodge_doorMoveTo.y = 400;
 
         // phone_door (components)
         const phone_doorButton = new Button(phone_door);
@@ -115,32 +115,13 @@ class Village extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.lodge,
-                x: 1044,
-                y: 406,
-                callback : () => { this.triggerRoom(220, 320, 640) }
-            },
-            {
-                body: this.roomPhysics.dock,
-                x: 1440,
-                y: 760,
-                callback : () => { this.triggerRoom(800, 436, 280) }
-            },
-            {
-                body: this.roomPhysics.beach,
-                x: 320,
-                y: 880,
-                callback : () => { this.triggerRoom(400, 920, 360) }
-            },
-            {
-                body: this.roomPhysics.mtn,
-                x: 410,
-                y: 430,
-                callback : () => { this.triggerRoom(230, 840, 320) }
-            }
-        ]
+        return {
+            'lodge': () => this.triggerRoom(220, 320, 640),
+            'dock': () => this.triggerRoom(800, 436, 280),
+            'beach': () => this.triggerRoom(400, 920, 360),
+            'mtn': () => this.triggerRoom(230, 840, 320),
+            'phone': null
+        }
     }
 
     /* END-USER-CODE */

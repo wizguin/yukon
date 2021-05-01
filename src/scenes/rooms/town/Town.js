@@ -168,20 +168,13 @@ class Town extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.dock,
-                x: 130,
-                y: 580,
-                callback : () => { this.triggerRoom(800, 1200, 400) }
-            },
-            {
-                body: this.roomPhysics.forts,
-                x: 1380,
-                y: 580,
-                callback : () => { this.triggerRoom(801, 360, 520) }
-            }
-        ]
+        return {
+            'dock': () => this.triggerRoom(800, 1200, 400),
+            'forts': () => this.triggerRoom(801, 360, 520),
+            'coffee': null,
+            'dance': null,
+            'gift': null
+        }
     }
 
     onCanopyOver() {

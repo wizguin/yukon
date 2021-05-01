@@ -121,14 +121,11 @@ class Shack extends RoomScene {
     /* START-USER-CODE */
 
     get roomTriggers() {
-        return [
-            {
-                body: this.roomPhysics.forest,
-                x: 230,
-                y: 890,
-                callback : () => { this.triggerRoom(809, 1234, 410) }
-            }
-        ]
+        return {
+            'forest': () => this.triggerRoom(809, 1234, 410),
+            'eco': null,
+            'mine': null
+        }
     }
 
     /* END-USER-CODE */
