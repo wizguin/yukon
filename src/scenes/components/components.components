@@ -325,6 +325,43 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Zone",
+            "baseClass": "SimpleButton",
+            "gameObjectType": "Phaser.GameObjects.Rectangle",
+            "properties": [
+                {
+                    "name": "hoverCallback",
+                    "label": "Hover Callback",
+                    "tooltip": "Hover Callback",
+                    "defValue": "null",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "hoverOutCallback",
+                    "label": "Hover Out Callback",
+                    "tooltip": "Hover Out Callback",
+                    "defValue": "null",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                },
+                {
+                    "name": "callback",
+                    "label": "Callback",
+                    "tooltip": "Callback",
+                    "defValue": "() => {}",
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "any"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
