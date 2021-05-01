@@ -325,6 +325,22 @@
             "originX": 0,
             "originY": 0,
             "visible": false
+        },
+        {
+            "type": "Rectangle",
+            "id": "5769c896-bdcb-4fa6-b7e7-e2d1871577be",
+            "label": "zone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.callback": "() => this.onZoneClick()",
+            "x": 1227,
+            "y": 215,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 115,
+            "height": 430
         }
     ],
     "plainObjects": [],

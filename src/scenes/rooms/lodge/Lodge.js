@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint, SimpleButton, Zone } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -105,6 +105,12 @@ class Lodge extends RoomScene {
         fish.setOrigin(0, 0);
         fish.visible = false;
 
+        // zone
+        const zone = this.add.rectangle(1227, 215, 115, 430);
+        zone.alpha = 0.5;
+        zone.isFilled = true;
+        zone.fillColor = 65280;
+
         // lists
         const sort = [door, table3, table2, table4, footrest, chair]
 
@@ -199,6 +205,10 @@ class Lodge extends RoomScene {
         fishAnimation.autoPlay = false;
         fishAnimation.showOnStart = true;
 
+        // zone (components)
+        const zoneZone = new Zone(zone);
+        zoneZone.callback = () => this.onZoneClick();
+
         this.flame = flame;
         this.flame_out = flame_out;
         this.fish = fish;
@@ -230,6 +240,10 @@ class Lodge extends RoomScene {
     onFishOut() {
         this.fish.__Animation.stop()
         this.fish.visible = false
+    }
+
+    onZoneClick() {
+        this.world.client.penguin.move(1210, 460)
     }
 
     /* END-USER-CODE */
