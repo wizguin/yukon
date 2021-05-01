@@ -14,6 +14,11 @@ class Attic extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'lodge': () => this.triggerRoom(220, 1146, 562)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -116,13 +121,6 @@ class Attic extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'lodge': () => this.triggerRoom(220, 1146, 562)
-        }
-    }
-
     /* END-USER-CODE */
 }
 

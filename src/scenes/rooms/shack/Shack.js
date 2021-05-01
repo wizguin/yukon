@@ -14,6 +14,13 @@ class Shack extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'forest': () => this.triggerRoom(809, 1234, 410),
+            'eco': null,
+            'mine': null
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -119,15 +126,6 @@ class Shack extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'forest': () => this.triggerRoom(809, 1234, 410),
-            'eco': null,
-            'mine': null
-        }
-    }
-
     /* END-USER-CODE */
 }
 

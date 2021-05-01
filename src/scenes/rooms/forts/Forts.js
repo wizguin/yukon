@@ -18,6 +18,13 @@ class Forts extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'town': () => this.triggerRoom(100, 1240, 660),
+            'rink': () => this.triggerRoom(802, 780, 340),
+            'plaza': () => this.triggerRoom(300, 340, 660)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -125,14 +132,6 @@ class Forts extends RoomScene {
 
         this.bounds = this.hitbox.getBounds()
         this.tower.on('animationcomplete', () => this.onTowerAnimComplete())
-    }
-
-    get roomTriggers() {
-        return {
-            'town': () => this.triggerRoom(100, 1240, 660),
-            'rink': () => this.triggerRoom(802, 780, 340),
-            'plaza': () => this.triggerRoom(300, 340, 660)
-        }
     }
 
     onSnowballComplete(x, y) {

@@ -16,6 +16,15 @@ class Beach extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'village': () => this.triggerRoom(200, 450, 750),
+            'dock': () => this.triggerRoom(800, 240, 420),
+            'lighthouse': null,
+            'ship': null
+        }
+        this.roomAnims = true
+
         /* END-USER-CTR-CODE */
     }
 
@@ -103,19 +112,6 @@ class Beach extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'village': () => this.triggerRoom(200, 450, 750),
-            'dock': () => this.triggerRoom(800, 240, 420),
-            'lighthouse': null,
-            'ship': null
-        }
-    }
-
-    get roomAnims() {
-        return true
-    }
 
     onBucketOver() {
         let frame = this.bucket.frame.name

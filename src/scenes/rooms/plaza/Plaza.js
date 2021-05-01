@@ -14,6 +14,17 @@ class Plaza extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'forts': () => this.triggerRoom(801, 1284, 720),
+            'pet': null,
+            'cave': null,
+            'stage1': null,
+            'stage2': null,
+            'pizza': null,
+            'forest': () => this.triggerRoom(809, 270, 430)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -140,19 +151,6 @@ class Plaza extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'forts': () => this.triggerRoom(801, 1284, 720),
-            'pet': null,
-            'cave': null,
-            'stage1': null,
-            'stage2': null,
-            'pizza': null,
-            'forest': () => this.triggerRoom(809, 270, 430)
-        }
-    }
-
     /* END-USER-CODE */
 }
 

@@ -14,6 +14,11 @@ class Cove extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers =  {
+            'forest': () => this.triggerRoom(809, 1190, 750)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -168,13 +173,6 @@ class Cove extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'forest': () => this.triggerRoom(809, 1190, 750)
-        }
-    }
-
     /* END-USER-CODE */
 }
 

@@ -14,6 +14,9 @@ class Berg extends RoomScene {
         this.aqua;
 
         /* START-USER-CTR-CODE */
+
+        this.roomAnims = true
+
         /* END-USER-CTR-CODE */
     }
 
@@ -45,10 +48,6 @@ class Berg extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomAnims() {
-        return true
-    }
 
     get aquaFrame() {
         let frame = this.aqua.frame.name

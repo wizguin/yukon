@@ -14,6 +14,15 @@ class Village extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'lodge': () => this.triggerRoom(220, 320, 640),
+            'dock': () => this.triggerRoom(800, 436, 280),
+            'beach': () => this.triggerRoom(400, 920, 360),
+            'mtn': () => this.triggerRoom(230, 840, 320),
+            'phone': null
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -113,17 +122,6 @@ class Village extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'lodge': () => this.triggerRoom(220, 320, 640),
-            'dock': () => this.triggerRoom(800, 436, 280),
-            'beach': () => this.triggerRoom(400, 920, 360),
-            'mtn': () => this.triggerRoom(230, 840, 320),
-            'phone': null
-        }
-    }
-
     /* END-USER-CODE */
 }
 

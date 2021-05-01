@@ -12,6 +12,14 @@ class Forest extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'plaza': () => this.triggerRoom(300, 1240, 660),
+            'shack': () => this.triggerRoom(807, 500, 800),
+            'cove': () => this.triggerRoom(810, 520, 416),
+            'lake': null
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -61,16 +69,6 @@ class Forest extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'plaza': () => this.triggerRoom(300, 1240, 660),
-            'shack': () => this.triggerRoom(807, 500, 800),
-            'cove': () => this.triggerRoom(810, 520, 416),
-            'lake': null
-        }
-    }
-
     /* END-USER-CODE */
 }
 

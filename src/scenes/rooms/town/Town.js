@@ -20,6 +20,15 @@ class Town extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'dock': () => this.triggerRoom(800, 1200, 400),
+            'forts': () => this.triggerRoom(801, 360, 520),
+            'coffee': () => this.triggerRoom(110, 700, 450),
+            'dance': null,
+            'gift': null
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -166,16 +175,6 @@ class Town extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'dock': () => this.triggerRoom(800, 1200, 400),
-            'forts': () => this.triggerRoom(801, 360, 520),
-            'coffee': () => this.triggerRoom(110, 700, 450),
-            'dance': null,
-            'gift': null
-        }
-    }
 
     onCanopyOver() {
         this.disco.setFrame('disco-hover')

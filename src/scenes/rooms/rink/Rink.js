@@ -12,6 +12,11 @@ class Rink extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'forts': () => this.triggerRoom(801, 560, 400)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -122,13 +127,6 @@ class Rink extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'forts': () => this.triggerRoom(801, 560, 400)
-        }
-    }
-
     /* END-USER-CODE */
 }
 

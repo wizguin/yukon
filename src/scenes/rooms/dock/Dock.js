@@ -16,6 +16,13 @@ class Dock extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'beach': () => this.triggerRoom(400, 950, 430),
+            'village': () => this.triggerRoom(200, 1300, 760),
+            'town': () => this.triggerRoom(100, 368, 640)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -117,14 +124,6 @@ class Dock extends RoomScene {
             callback: () => this.floatBoat(),
             loop: true
         })
-    }
-
-    get roomTriggers() {
-        return {
-            'beach': () => this.triggerRoom(400, 950, 430),
-            'village': () => this.triggerRoom(200, 1300, 760),
-            'town': () => this.triggerRoom(100, 368, 640)
-        }
     }
 
     floatBoat() {

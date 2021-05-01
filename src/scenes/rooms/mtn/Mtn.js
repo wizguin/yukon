@@ -14,6 +14,11 @@ class Mtn extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'village': () => this.triggerRoom(200, 480, 560)
+        }
+
         /* END-USER-CTR-CODE */
     }
 
@@ -98,13 +103,6 @@ class Mtn extends RoomScene {
     }
 
     /* START-USER-CODE */
-
-    get roomTriggers() {
-        return {
-            'village': () => this.triggerRoom(200, 480, 560)
-        }
-    }
-
     /* END-USER-CODE */
 }
 
