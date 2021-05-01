@@ -29,9 +29,8 @@ export default class WorldController extends BaseScene {
         this.interface.showLoading(`Loading ${this.crumbs.rooms[id].name}`)
         if (!this.room) return this.createRoom(id, users)
 
-        this.interface.main.snowballFactory.clearBalls()
         this.room.events.once('shutdown', () => this.createRoom(id, users))
-        this.room.scene.stop()
+        this.room.stop()
     }
 
     createRoom(id, users) {
@@ -43,9 +42,8 @@ export default class WorldController extends BaseScene {
         this.interface.showLoading('Loading Igloo')
         if (!this.room) return this.createIgloo(args)
 
-        this.interface.main.snowballFactory.clearBalls()
         this.room.events.once('shutdown', () => this.createIgloo(args))
-        this.room.scene.stop()
+        this.room.stop()
     }
 
     createIgloo(args) {

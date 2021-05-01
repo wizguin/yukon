@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -22,8 +22,8 @@ class Coffee extends RoomScene {
             'beans': () => null,
             'book': () => null
         }
-
         this.roomAnims = true
+        this.music = 'MUS_Evergreen_KingofKingston_CoffeeShop'
 
         this.boardToggle = true
 
@@ -124,6 +124,8 @@ class Coffee extends RoomScene {
         beansButton.activeFrame = false;
         beansButton.pixelPerfect = true;
         new MoveTo(beans);
+        const beansShowHint = new ShowHint(beans);
+        beansShowHint.text = "Play Beans";
 
         // stairs (components)
         const stairsButton = new Button(stairs);

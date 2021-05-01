@@ -208,11 +208,13 @@
             "label": "beans",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "beans",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Beans",
             "texture": {
                 "key": "coffee",
                 "frame": "beans"

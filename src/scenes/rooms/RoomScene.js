@@ -29,6 +29,9 @@ export default class RoomScene extends BaseScene {
         if (this.roomAnims) this.addAnims()
         this.addInput()
 
+        this.sound.pauseOnBlur = false
+        if (this.music) this.addMusic()
+
         this.interface.showInterface()
     }
 
@@ -80,8 +83,18 @@ export default class RoomScene extends BaseScene {
         this.input.keyboard.on('keydown-T', () => this.client.onKeyDownT())
     }
 
+    addMusic() {
+        this.sound.play(this.music, { loop: true })
+    }
+
     onSnowballComplete(x, y) {
         // To be overridden in derived classes
+    }
+
+    stop() {
+        this.interface.main.snowballFactory.clearBalls()
+        this.sound.stopAll()
+        this.scene.stop()
     }
 
     /*========== Physics ==========*/
