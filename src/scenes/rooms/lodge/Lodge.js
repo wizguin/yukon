@@ -20,6 +20,13 @@ class Lodge extends RoomScene {
         this.sort;
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            'attic': () => this.triggerRoom(221, 966, 560),
+            'village': () => this.triggerRoom(200, 940, 540)
+        }
+        this.music = '589'
+
         /* END-USER-CTR-CODE */
     }
 
@@ -204,13 +211,6 @@ class Lodge extends RoomScene {
         super.create()
 
         this.flame_out.on('animationcomplete', () => this.onFlameOutComplete())
-    }
-
-    get roomTriggers() {
-        return {
-            'attic': () => this.triggerRoom(221, 966, 560),
-            'village': () => this.triggerRoom(200, 940, 540)
-        }
     }
 
     onCandleOver() {
