@@ -163,14 +163,14 @@
             "type": "Sprite",
             "id": "c811c8ad-ce91-436c-b8b8-74a4e57fb0aa",
             "label": "rings",
+            "scope": "CLASS",
             "components": [
-                "SimpleButton",
                 "Animation"
             ],
             "Animation.key": "rings",
             "Animation.end": 34,
             "Animation.repeat": 0,
-            "Animation.onHover": true,
+            "Animation.autoPlay": false,
             "Animation.stopOnOut": false,
             "texture": {
                 "key": "dock",
@@ -217,6 +217,22 @@
             "x": 740,
             "y": 746,
             "originY": 0.7721088435374149
+        },
+        {
+            "type": "Rectangle",
+            "id": "97333811-9daf-44d0-8367-89eb06ec21d3",
+            "label": "zone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.onRingsOver()",
+            "x": 631,
+            "y": 633,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 135,
+            "height": 160
         }
     ],
     "plainObjects": [],

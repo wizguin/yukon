@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo, SimpleButton, ShowHint } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint, Zone } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -12,6 +12,8 @@ class Dock extends RoomScene {
 
         /** @type {Phaser.GameObjects.Sprite} */
         this.boat;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.rings;
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
@@ -87,6 +89,12 @@ class Dock extends RoomScene {
         const boards = this.add.image(740, 746, "dock", "boards");
         boards.setOrigin(0.5, 0.7721088435374149);
 
+        // zone
+        const zone = this.add.rectangle(631, 633, 135, 160);
+        zone.alpha = 0.5;
+        zone.isFilled = true;
+        zone.fillColor = 65280;
+
         // lists
         const sort = [post_3, post_4, post_1, post_2, rings, bollard_2, bollard_1, dock, box, boards]
 
@@ -100,15 +108,19 @@ class Dock extends RoomScene {
         boatShowHint.text = "Hydro Hopper";
 
         // rings (components)
-        new SimpleButton(rings);
         const ringsAnimation = new Animation(rings);
         ringsAnimation.key = "rings";
         ringsAnimation.end = 34;
         ringsAnimation.repeat = 0;
-        ringsAnimation.onHover = true;
+        ringsAnimation.autoPlay = false;
         ringsAnimation.stopOnOut = false;
 
+        // zone (components)
+        const zoneZone = new Zone(zone);
+        zoneZone.hoverCallback = () => this.onRingsOver();
+
         this.boat = boat;
+        this.rings = rings;
         this.sort = sort;
     }
 
@@ -124,6 +136,10 @@ class Dock extends RoomScene {
             callback: () => this.floatBoat(),
             loop: true
         })
+    }
+
+    onRingsOver() {
+        this.rings.__Animation.play()
     }
 
     floatBoat() {
