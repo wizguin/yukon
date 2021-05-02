@@ -1,0 +1,241 @@
+{
+    "id": "df2b8f6e-3879-4e7f-9478-1d779dd8a41d",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/book/book-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Book",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "8fc441d9-2cd2-4728-8d28-e81bc40d58c1",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "book",
+                "frame": "bg"
+            },
+            "y": -6,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "3c785f09-b7ca-43cf-bf8b-b57183a3bea0",
+            "label": "books",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "books",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "book",
+                "frame": "books"
+            },
+            "x": 241,
+            "y": 267,
+            "originX": 0.35501355013550134,
+            "originY": 0.28205128205128205
+        },
+        {
+            "type": "Image",
+            "id": "3f068263-f4f5-4b66-88b0-078006583a4c",
+            "label": "chair_back",
+            "components": [],
+            "texture": {
+                "key": "book",
+                "frame": "chair_back"
+            },
+            "x": 175,
+            "y": 590,
+            "originX": 0.5052631578947369,
+            "originY": 0.46808510638297873
+        },
+        {
+            "type": "Image",
+            "id": "587577af-f9ef-471a-849a-09a07bc115b1",
+            "label": "chair_front",
+            "components": [],
+            "texture": {
+                "key": "book",
+                "frame": "chair_front"
+            },
+            "x": 180,
+            "y": 652,
+            "originX": 0.5022026431718062,
+            "originY": 0.5178571428571429
+        },
+        {
+            "type": "Image",
+            "id": "c9532f84-c85e-4dc4-bae4-aaaf8557e69e",
+            "label": "chair_table",
+            "components": [],
+            "texture": {
+                "key": "book",
+                "frame": "chair_table"
+            },
+            "x": 132,
+            "y": 722,
+            "originX": 0.5069124423963134,
+            "originY": 0.5103734439834025
+        },
+        {
+            "type": "Image",
+            "id": "b90ced99-35ae-410a-8a7c-e6fd81b16608",
+            "label": "poster",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "poster",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "book",
+                "frame": "poster"
+            },
+            "x": 720,
+            "y": 97,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "3121adc6-b8d0-49cc-80b9-fb0f907a2521",
+            "label": "table",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "table",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Mancala",
+            "texture": {
+                "key": "book",
+                "frame": "table"
+            },
+            "x": 951,
+            "y": 446,
+            "originX": 0.5043478260869565,
+            "originY": 0.46
+        },
+        {
+            "type": "Image",
+            "id": "7c76f0f6-08ce-42ce-95ce-ee2bf30214e8",
+            "label": "table_1",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "table",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Mancala",
+            "texture": {
+                "key": "book",
+                "frame": "table"
+            },
+            "x": 652,
+            "y": 444,
+            "originX": 0.5043478260869565,
+            "originY": 0.46
+        },
+        {
+            "type": "Image",
+            "id": "69f50215-4fae-4002-ab73-5ae417038520",
+            "label": "table_2",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "table",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Mancala",
+            "texture": {
+                "key": "book",
+                "frame": "table"
+            },
+            "x": 426,
+            "y": 646,
+            "originX": 0.5043478260869565,
+            "originY": 0.46
+        },
+        {
+            "type": "Image",
+            "id": "83d3b05f-42f9-41da-afe7-f1970727b41c",
+            "label": "table_3",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "table",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Mancala",
+            "texture": {
+                "key": "book",
+                "frame": "table"
+            },
+            "x": 806,
+            "y": 684,
+            "originX": 0.5043478260869565,
+            "originY": 0.46
+        },
+        {
+            "type": "Image",
+            "id": "2f6c3924-ae43-4b24-b896-637751ef5008",
+            "label": "table_4",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "table",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "ShowHint.text": "Play Mancala",
+            "texture": {
+                "key": "book",
+                "frame": "table"
+            },
+            "x": 1208,
+            "y": 748,
+            "originX": 0.5043478260869565,
+            "originY": 0.46
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "8bce6f73-b3e7-48cf-9a02-7e5412e5397d",
+            "label": "sort",
+            "objectIds": [
+                "2f6c3924-ae43-4b24-b896-637751ef5008",
+                "83d3b05f-42f9-41da-afe7-f1970727b41c",
+                "69f50215-4fae-4002-ab73-5ae417038520",
+                "7c76f0f6-08ce-42ce-95ce-ee2bf30214e8",
+                "3121adc6-b8d0-49cc-80b9-fb0f907a2521",
+                "c9532f84-c85e-4dc4-bae4-aaaf8557e69e",
+                "587577af-f9ef-471a-849a-09a07bc115b1",
+                "3f068263-f4f5-4b66-88b0-078006583a4c"
+            ]
+        }
+    ]
+}

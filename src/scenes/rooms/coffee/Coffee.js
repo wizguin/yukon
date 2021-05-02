@@ -20,7 +20,7 @@ class Coffee extends RoomScene {
         this.roomTriggers = {
             'town': () => this.triggerRoom(100, 580, 520),
             'beans': () => null,
-            'book': () => null
+            'book': () => this.triggerRoom(111, 1200, 580)
         }
         this.roomAnims = true
         this.music = 'MUS_Evergreen_KingofKingston_CoffeeShop'
