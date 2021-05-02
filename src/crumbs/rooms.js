@@ -17,6 +17,12 @@ const rooms = {
         x: 1260,
         y: 560
     },
+    120: {
+        name: 'Dance',
+        scene: require('@rooms/dance/Dance').default,
+        x: 360,
+        y: 560
+    },
     200: {
         name: 'Village',
         scene: require('@rooms/village/Village').default,

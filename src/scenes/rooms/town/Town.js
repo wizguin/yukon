@@ -25,7 +25,7 @@ class Town extends RoomScene {
             'dock': () => this.triggerRoom(800, 1200, 400),
             'forts': () => this.triggerRoom(801, 360, 520),
             'coffee': () => this.triggerRoom(110, 700, 450),
-            'dance': null,
+            'dance': () => this.triggerRoom(120, 300, 560),
             'gift': null
         }
 
