@@ -74,7 +74,6 @@ class Animation extends EventComponent {
     onOut() {
         if (this.stopOnOut) {
             this.stop()
-            this.gameObject.setFrame(this.initialFrame)
         }
     }
 
@@ -87,6 +86,8 @@ class Animation extends EventComponent {
 
         if (this.hideOnComplete) {
             this.gameObject.visible = false
+        } else if (this.stopOnOut) {
+            this.gameObject.setFrame(this.initialFrame)
         }
     }
 
