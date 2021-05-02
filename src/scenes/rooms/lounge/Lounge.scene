@@ -1,0 +1,328 @@
+{
+    "id": "9f53078e-cc13-4086-8d48-db6cb24aae01",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/lounge/lounge-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Lounge",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "c9d8a072-5746-43ad-99db-a0707d77be3a",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "bg"
+            },
+            "x": -2,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "a1e9f797-d571-4134-b86e-b6fec7486917",
+            "label": "astro",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "astro",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 940,
+            "MoveTo.y": 520,
+            "ShowHint.text": "Astro Barrier",
+            "texture": {
+                "key": "lounge",
+                "frame": "astro"
+            },
+            "x": 1033,
+            "y": 380,
+            "originX": 0.5022222222222222,
+            "originY": 0.501577287066246
+        },
+        {
+            "type": "Image",
+            "id": "3396b008-0eaa-4b47-8d21-f2c6056f64c1",
+            "label": "ice",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "ice",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 672,
+            "MoveTo.y": 512,
+            "ShowHint.text": "Thin Ice",
+            "texture": {
+                "key": "lounge",
+                "frame": "ice"
+            },
+            "x": 626,
+            "y": 377,
+            "originX": 0.5026178010471204
+        },
+        {
+            "type": "Image",
+            "id": "da775854-13dc-41bc-8d75-dc350847eb90",
+            "label": "plant",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "plant"
+            },
+            "x": 30,
+            "y": 701,
+            "originX": 0.45652173913043476,
+            "originY": 0.9061224489795918
+        },
+        {
+            "type": "Image",
+            "id": "acf8e866-b719-4a94-94e1-899322db2b4a",
+            "label": "chair_1",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 488,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_1"
+            },
+            "x": 264,
+            "y": 478,
+            "originX": 0.5225225225225225,
+            "originY": 0.4567901234567901
+        },
+        {
+            "type": "Image",
+            "id": "3661acca-77f6-4faa-b5da-8105ab82118a",
+            "label": "chair_2",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 466,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_2"
+            },
+            "x": 431,
+            "y": 456,
+            "originX": 0.3867924528301887,
+            "originY": 0.38181818181818183
+        },
+        {
+            "type": "Image",
+            "id": "bff848fe-51ca-467e-a12d-e16ebee675e5",
+            "label": "table_1",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "table_1"
+            },
+            "x": 356,
+            "y": 540,
+            "originY": 0.6330935251798561
+        },
+        {
+            "type": "Image",
+            "id": "9571ee18-a150-41b4-bc41-0115cf9189db",
+            "label": "chair_1_1",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 690,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_1"
+            },
+            "x": 164,
+            "y": 680,
+            "originX": 0.5225225225225225,
+            "originY": 0.4567901234567901
+        },
+        {
+            "type": "Image",
+            "id": "606ff56e-cfcb-4333-95aa-e407be181b27",
+            "label": "chair_2_1",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 667,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_2"
+            },
+            "x": 371,
+            "y": 657,
+            "originX": 0.3867924528301887,
+            "originY": 0.38181818181818183
+        },
+        {
+            "type": "Image",
+            "id": "e9b341be-b019-4c84-95b3-59a1d2c8277d",
+            "label": "table_2",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "table_2"
+            },
+            "x": 274,
+            "y": 761,
+            "originX": 0.4824120603015075,
+            "originY": 0.7052631578947368
+        },
+        {
+            "type": "Image",
+            "id": "88625929-070a-459f-a34d-a84cd8232ea1",
+            "label": "chair_1_2",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 728,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_1"
+            },
+            "x": 627,
+            "y": 718,
+            "originX": 0.5225225225225225,
+            "originY": 0.4567901234567901
+        },
+        {
+            "type": "Image",
+            "id": "bdb0be30-f3d8-4277-bcca-8906f4c7f884",
+            "label": "chair_1_3",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.y": 739,
+            "texture": {
+                "key": "lounge",
+                "frame": "chair_1"
+            },
+            "x": 841,
+            "y": 729,
+            "originX": 0.5225225225225225,
+            "originY": 0.4567901234567901,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "3494e81b-643b-4756-927a-23d08ea4f2ff",
+            "label": "table_3",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "table_3"
+            },
+            "x": 733,
+            "y": 778,
+            "originX": 0.4691358024691358,
+            "originY": 0.5379310344827586
+        },
+        {
+            "type": "Image",
+            "id": "71108d45-7bfb-4447-bd20-66a33691e012",
+            "label": "rail_2",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "rail_2"
+            },
+            "x": 1512,
+            "y": 698,
+            "originX": 0.5142857142857142
+        },
+        {
+            "type": "Image",
+            "id": "5d9a6895-145f-4097-b222-3c834ae23e32",
+            "label": "rail_3",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "rail_3"
+            },
+            "x": 1419,
+            "y": 627,
+            "originY": 0.5038167938931297
+        },
+        {
+            "type": "Image",
+            "id": "7f2a52f5-cc21-422d-8d37-dab1fb490290",
+            "label": "rail_4",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "rail_4"
+            },
+            "x": 1343,
+            "y": 573,
+            "originX": 0.5121951219512195
+        },
+        {
+            "type": "Image",
+            "id": "0f779640-c5cb-4432-a51d-6fdff91bba81",
+            "label": "rail_1",
+            "components": [],
+            "texture": {
+                "key": "lounge",
+                "frame": "rail_1"
+            },
+            "x": 1438,
+            "y": 636,
+            "originX": 0.5027932960893855,
+            "originY": 1
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "1deb63f7-8547-4b4f-baeb-5ff892618e32",
+            "label": "sort",
+            "objectIds": [
+                "88625929-070a-459f-a34d-a84cd8232ea1",
+                "bdb0be30-f3d8-4277-bcca-8906f4c7f884",
+                "3494e81b-643b-4756-927a-23d08ea4f2ff",
+                "e9b341be-b019-4c84-95b3-59a1d2c8277d",
+                "606ff56e-cfcb-4333-95aa-e407be181b27",
+                "9571ee18-a150-41b4-bc41-0115cf9189db",
+                "acf8e866-b719-4a94-94e1-899322db2b4a",
+                "bff848fe-51ca-467e-a12d-e16ebee675e5",
+                "3661acca-77f6-4faa-b5da-8105ab82118a",
+                "da775854-13dc-41bc-8d75-dc350847eb90",
+                "7f2a52f5-cc21-422d-8d37-dab1fb490290",
+                "5d9a6895-145f-4097-b222-3c834ae23e32",
+                "71108d45-7bfb-4447-bd20-66a33691e012",
+                "0f779640-c5cb-4432-a51d-6fdff91bba81"
+            ]
+        }
+    ]
+}
