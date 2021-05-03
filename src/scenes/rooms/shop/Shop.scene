@@ -1,0 +1,207 @@
+{
+    "id": "ff968ca9-1120-4c82-a657-7584e672fe61",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/shop/shop-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Shop",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "46f71fe7-03d6-4683-a9e5-320b6461a1ee",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "shop",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "3bfa42c0-a436-44cf-86a8-37b091f9fda0",
+            "label": "box",
+            "components": [],
+            "texture": {
+                "key": "shop",
+                "frame": "box"
+            },
+            "x": 22,
+            "y": 933,
+            "originX": 0.4098360655737705,
+            "originY": 0.7272727272727273
+        },
+        {
+            "type": "Image",
+            "id": "3cd503be-8016-4426-ad8e-3c7518a4a732",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1080,
+            "MoveTo.y": 466,
+            "texture": {
+                "key": "shop",
+                "frame": "door"
+            },
+            "x": 1028,
+            "y": 132,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "02dc49d0-9606-4307-98f3-627e2f056f2c",
+            "label": "speaker",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "Animation.key": "speaker/speaker",
+            "Animation.end": 30,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "Animation.onHover": true,
+            "Animation.stopOnOut": false,
+            "texture": {
+                "key": "shop",
+                "frame": "speaker/speaker0003"
+            },
+            "x": -2,
+            "y": 175,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Container",
+            "id": "0fa846db-53ed-4ef1-a4f3-ed6f5e9df94c",
+            "label": "container",
+            "components": [],
+            "x": 1324.9695028627973,
+            "y": 663.5011002882876,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "78314dc0-d6d0-4aef-a1c6-28389cb7b71d",
+                    "label": "counter",
+                    "components": [],
+                    "texture": {
+                        "key": "shop",
+                        "frame": "counter"
+                    },
+                    "x": 0.030536885885567244,
+                    "y": 1.4989092534428892,
+                    "originX": 0.4,
+                    "originY": 0.8102766798418972
+                },
+                {
+                    "type": "Sprite",
+                    "id": "a9db8d0e-fb78-4440-a758-1a2a61b0413a",
+                    "label": "phone",
+                    "scope": "CLASS",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "phone/phone",
+                    "Animation.end": 55,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "Animation.stopOnOut": false,
+                    "texture": {
+                        "key": "shop",
+                        "frame": "phone/phone0001"
+                    },
+                    "x": 63.03053688588557,
+                    "y": -177.5010907465571,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Sprite",
+                    "id": "0e8b50c3-2b5a-4d04-bc0d-ae79c0ecf2a9",
+                    "label": "register",
+                    "scope": "CLASS",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "register/register",
+                    "Animation.end": 35,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "Animation.stopOnOut": false,
+                    "texture": {
+                        "key": "shop",
+                        "frame": "register/register0001"
+                    },
+                    "x": -102.96946311411443,
+                    "y": -289.5010907465571,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "1390e2df-c976-4d52-90a4-521ccaffd0d4",
+            "label": "registerZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.register.__Animation.play()",
+            "x": 1292,
+            "y": 467,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 110,
+            "height": 100
+        },
+        {
+            "type": "Rectangle",
+            "id": "205fb8aa-d568-472e-bd38-6fc33cdca4e4",
+            "label": "phoneZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.phone.__Animation.play()",
+            "x": 1428,
+            "y": 541,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 75,
+            "height": 60
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "74808b14-d54a-4e8f-8e73-510aada4154f",
+            "label": "sort",
+            "objectIds": [
+                "0fa846db-53ed-4ef1-a4f3-ed6f5e9df94c",
+                "3bfa42c0-a436-44cf-86a8-37b091f9fda0"
+            ]
+        }
+    ]
+}
