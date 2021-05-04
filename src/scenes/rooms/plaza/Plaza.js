@@ -17,7 +17,7 @@ class Plaza extends RoomScene {
 
         this.roomTriggers = {
             'forts': () => this.triggerRoom(801, 1284, 720),
-            'pet': null,
+            'pet': () => this.triggerRoom(310, 818, 520),
             'cave': null,
             'stage1': null,
             'stage2': null,

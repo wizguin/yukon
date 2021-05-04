@@ -65,6 +65,12 @@ const rooms = {
         x: 760,
         y: 680
     },
+    310: {
+        name: 'Pet',
+        scene: require('@rooms/pet/Pet').default,
+        x: 828,
+        y: 520
+    },
     321: {
         name: 'DojoExt',
         scene: require('@rooms/dojoext/DojoExt').default,

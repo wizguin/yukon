@@ -1,0 +1,558 @@
+{
+    "id": "8448ee75-5fa9-4d36-91f8-ebf2bcdd6cca",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 25,
+        "snapHeight": 20,
+        "superClassName": "RoomScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/pet/pet-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Pet",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "e88724c5-a30a-4168-a286-ca17ac9c4180",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "bg"
+            },
+            "x": -4,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "cbd0d9a5-cd03-449a-a668-57a6ac47f32a",
+            "label": "black",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "black/black0001"
+            },
+            "x": 92,
+            "y": 375,
+            "originX": 0.56875,
+            "originY": 0.9064039408866995
+        },
+        {
+            "type": "Image",
+            "id": "761bd4ac-b103-4f1f-a969-9cd62098769a",
+            "label": "post",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "post"
+            },
+            "x": 1084,
+            "y": 439,
+            "originX": 0.5220125786163522,
+            "originY": 0.8860103626943006
+        },
+        {
+            "type": "Image",
+            "id": "fb1dca20-69ae-437e-a665-3da3b89718c9",
+            "label": "bowls",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "bowls"
+            },
+            "x": 1104,
+            "y": 499,
+            "originX": 0.5116279069767442,
+            "originY": 0.7614678899082569
+        },
+        {
+            "type": "Image",
+            "id": "b2ef29ac-0b56-45c7-96d3-4f364c54b24e",
+            "label": "sack",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "sack"
+            },
+            "x": 1427,
+            "y": 602,
+            "originX": 0.4557823129251701,
+            "originY": 0.660377358490566
+        },
+        {
+            "type": "Sprite",
+            "id": "4e7f9204-8bd5-4b1f-a255-f4cb4912c0b4",
+            "label": "os",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "Animation.key": "os/os",
+            "Animation.end": 74,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "Animation.onHover": true,
+            "Animation.stopOnOut": false,
+            "texture": {
+                "key": "pet",
+                "frame": "os/os0001"
+            },
+            "x": 1423,
+            "y": 688,
+            "originX": 0.395,
+            "originY": 0.6936619718309859
+        },
+        {
+            "type": "Image",
+            "id": "b37b2069-f913-4234-a962-ddbbe5d0255d",
+            "label": "employees",
+            "components": [
+                "Button",
+                "MoveTo",
+                "ShowHint"
+            ],
+            "Button.spriteName": "employees",
+            "Button.activeFrame": false,
+            "MoveTo.x": 1328,
+            "MoveTo.y": 572,
+            "ShowHint.text": "Puffle Roundup",
+            "texture": {
+                "key": "pet",
+                "frame": "employees"
+            },
+            "x": 1423,
+            "y": 352,
+            "originY": 0.5015479876160991
+        },
+        {
+            "type": "Image",
+            "id": "a61c8143-4e72-49dd-ad31-6e24133d848c",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "MoveTo.x": 808,
+            "MoveTo.y": 380,
+            "texture": {
+                "key": "pet",
+                "frame": "door"
+            },
+            "x": 639,
+            "y": 58,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "b757dc27-6d71-4f31-b2ca-3cbaad9ffb98",
+            "label": "puffles",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "puffles"
+            },
+            "x": 369,
+            "y": 325,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "4bc8849a-4aa7-4298-9443-f1c9393128db",
+            "label": "jump",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "jump/jump",
+            "Animation.end": 89,
+            "texture": {
+                "key": "pet",
+                "frame": "jump/jump0001"
+            },
+            "x": 432,
+            "y": 288,
+            "originX": 0,
+            "originY": 0,
+            "visible": false
+        },
+        {
+            "type": "Sprite",
+            "id": "f5aa0dde-b746-419f-829e-93c3f515d5b3",
+            "label": "red",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onRedOver()",
+            "texture": {
+                "key": "pet",
+                "frame": "red/red0001"
+            },
+            "x": -243,
+            "y": -280,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "1d132305-e2e7-4740-97be-ca630fa53880",
+            "label": "yellow",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "yellow/yellow",
+            "Animation.end": 11,
+            "Animation.autoPlay": false,
+            "texture": {
+                "key": "pet",
+                "frame": "yellow/yellow"
+            },
+            "x": 554,
+            "y": 172,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "775562cb-7343-4413-bc37-14cf491452e4",
+            "label": "eyesBlack",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/black/black",
+            "Animation.end": 54,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/black/black0001"
+            },
+            "x": 600,
+            "y": 383,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "4e7b4258-e9a0-4e2e-ba33-71b902178160",
+            "label": "eyesPink",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/pink/pink",
+            "Animation.end": 50,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/pink/pink0001"
+            },
+            "x": 503,
+            "y": 408,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "6cdb4477-429b-4aa9-98b5-0ae047e7dd35",
+            "label": "eyesBlue",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/blue/blue",
+            "Animation.end": 54,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/blue/blue0001"
+            },
+            "x": 438,
+            "y": 390,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "a4312f77-6b66-445e-8aad-4ec994c9c20c",
+            "label": "eyesGreen",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/green/green",
+            "Animation.end": 56,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/green/green0001"
+            },
+            "x": 528,
+            "y": 365,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "933514a5-a714-4cf6-add8-65d2393f90c3",
+            "label": "eyesPurple",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/purple/purple",
+            "Animation.end": 62,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/purple/purple0001"
+            },
+            "x": 481,
+            "y": 354,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "6d1f6f64-d092-47ca-bceb-22547290f889",
+            "label": "eyesYellow",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/green/green",
+            "Animation.end": 56,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/green/green0001"
+            },
+            "x": 570,
+            "y": 241,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "8df55129-8dbe-464f-ac5b-5123133563e0",
+            "label": "pen",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onPenOver()",
+            "SimpleButton.hoverOutCallback": "() => this.onPenOut()",
+            "MoveTo.x": 590,
+            "MoveTo.y": 490,
+            "texture": {
+                "key": "pet",
+                "frame": "pen_front"
+            },
+            "x": 370,
+            "y": 323,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "22e15ec4-192a-4adb-abad-623ada05eb08",
+            "label": "fish",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onFishOver()",
+            "SimpleButton.pixelPerfect": true,
+            "Animation.key": "fish/fish",
+            "Animation.start": 2,
+            "Animation.end": 32,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "texture": {
+                "key": "pet",
+                "frame": "fish/fish0001"
+            },
+            "x": 363,
+            "y": 473,
+            "originX": 0.8174807197943444,
+            "originY": 0.8061420345489443
+        },
+        {
+            "type": "Sprite",
+            "id": "e6ea8f42-57ba-4fa0-9c61-b49f8ccae2ec",
+            "label": "fishIdle",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "fish/idle/idle",
+            "Animation.end": 95,
+            "texture": {
+                "key": "pet",
+                "frame": "fish/idle/idle0001"
+            },
+            "x": 316,
+            "y": 380,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "e454a7f6-e81e-4665-8125-f4e5b6398d4c",
+            "label": "house3",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "house_3"
+            },
+            "x": 178,
+            "y": 581,
+            "originX": 0.4897959183673469,
+            "originY": 0.7444933920704846
+        },
+        {
+            "type": "Image",
+            "id": "e7a60d84-41d3-44b5-b973-721f84a2c866",
+            "label": "house2",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "house_2"
+            },
+            "x": 280,
+            "y": 652,
+            "originX": 0.4724137931034483,
+            "originY": 0.6473029045643154
+        },
+        {
+            "type": "Image",
+            "id": "53dc0206-2ea3-40a7-85e7-4a22b8e1a4de",
+            "label": "house1",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "house_1"
+            },
+            "x": 170,
+            "y": 710,
+            "originX": 0.5288135593220339,
+            "originY": 0.6590038314176245
+        },
+        {
+            "type": "Image",
+            "id": "05b754ff-4859-407c-8f1b-898903a8b89a",
+            "label": "bedBack",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "bed_back"
+            },
+            "x": 182,
+            "y": 781,
+            "originX": 0.5020080321285141
+        },
+        {
+            "type": "Image",
+            "id": "802aa5e7-aef2-4431-96c1-1b63044c3b92",
+            "label": "bedFront",
+            "components": [],
+            "texture": {
+                "key": "pet",
+                "frame": "bed_front"
+            },
+            "x": 182,
+            "y": 860,
+            "originX": 0.5020242914979757,
+            "originY": 0.6495726495726496
+        },
+        {
+            "type": "Sprite",
+            "id": "a5f73ea6-6bad-4ebd-9d2e-6b64c26eab65",
+            "label": "eyesRed",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "eyes/green/green",
+            "Animation.end": 56,
+            "texture": {
+                "key": "pet",
+                "frame": "eyes/green/green0001"
+            },
+            "x": 293,
+            "y": 112,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Rectangle",
+            "id": "e694ffc0-c8ce-4072-86b4-33ce71de365b",
+            "label": "yellowZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.onYellowOver()",
+            "Zone.hoverOutCallback": "() => this.onYellowOut()",
+            "x": 585,
+            "y": 248,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 60,
+            "height": 50
+        },
+        {
+            "type": "Rectangle",
+            "id": "1ad54d6e-f590-4845-a633-f80495cb45ba",
+            "label": "blackZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.onBlackOver()",
+            "x": 92,
+            "y": 356,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 150,
+            "height": 120
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "ffa743ec-f661-48bd-82e4-076e20f85b1d",
+            "label": "penEyes",
+            "objectIds": [
+                "4e7b4258-e9a0-4e2e-ba33-71b902178160",
+                "6cdb4477-429b-4aa9-98b5-0ae047e7dd35",
+                "933514a5-a714-4cf6-add8-65d2393f90c3",
+                "a4312f77-6b66-445e-8aad-4ec994c9c20c",
+                "775562cb-7343-4413-bc37-14cf491452e4"
+            ]
+        },
+        {
+            "id": "479b788d-9380-4553-9c47-adac09b27579",
+            "label": "sort",
+            "objectIds": [
+                "802aa5e7-aef2-4431-96c1-1b63044c3b92",
+                "05b754ff-4859-407c-8f1b-898903a8b89a",
+                "53dc0206-2ea3-40a7-85e7-4a22b8e1a4de",
+                "e7a60d84-41d3-44b5-b973-721f84a2c866",
+                "e454a7f6-e81e-4665-8125-f4e5b6398d4c",
+                "fb1dca20-69ae-437e-a665-3da3b89718c9",
+                "761bd4ac-b103-4f1f-a969-9cd62098769a",
+                "b2ef29ac-0b56-45c7-96d3-4f364c54b24e",
+                "4e7f9204-8bd5-4b1f-a255-f4cb4912c0b4"
+            ]
+        }
+    ]
+}
