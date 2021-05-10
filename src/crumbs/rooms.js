@@ -107,6 +107,12 @@ const rooms = {
         x: 652,
         y: 448
     },
+    806: {
+        name: 'Cave',
+        scene: require('@rooms/cave/Cave').default,
+        x: 780,
+        y: 700
+    },
     807: {
         name: 'Shack',
         scene: require('@rooms/shack/Shack').default,
