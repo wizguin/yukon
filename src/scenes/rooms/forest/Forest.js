@@ -39,11 +39,11 @@ class Forest extends RoomScene {
         rock0001.setOrigin(0.6005747126436781, 0.7300884955752213);
 
         // tree
-        const tree = this.add.image(-16, 272, "forest", "tree");
+        const tree = this.add.image(-17, 272, "forest", "tree");
         tree.setOrigin(0, 0);
 
         // fg
-        const fg = this.add.image(0, 969, "forest", "fg");
+        const fg = this.add.image(-1, 969, "forest", "fg");
         fg.setOrigin(0, 1);
 
         // middle
