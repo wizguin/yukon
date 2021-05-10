@@ -10,8 +10,6 @@ class Candy extends IglooScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -34,11 +32,6 @@ class Candy extends IglooScene {
         const floor = this.add.image(765, 639, "candy", "floor");
         floor.setOrigin(0.5006337135614702, 0.5);
 
-        // mask
-        const mask = this.add.image(765, 636, "candy", "mask");
-        mask.setOrigin(0.5006402048655569, 0.5015015015015015);
-        mask.visible = false;
-
         // wall_1
         const wall_1 = this.add.image(570, 378, "candy", "wall_1");
         wall_1.setOrigin(0.5010266940451745, 0.5);
@@ -58,7 +51,6 @@ class Candy extends IglooScene {
         this.add.image(491, 467, "candy", "door");
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */

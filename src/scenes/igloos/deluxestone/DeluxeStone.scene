@@ -31,22 +31,6 @@
         },
         {
             "type": "Image",
-            "id": "adc022b3-1711-4e5d-8897-4bb0415764a4",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "deluxestone",
-                "frame": "mask"
-            },
-            "x": 760,
-            "y": 647,
-            "originX": 0.500395256916996,
-            "originY": 0.5014749262536873,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "d56de95b-2701-4ad1-b8b4-fcd2e06cb60f",
             "label": "door",
             "components": [],

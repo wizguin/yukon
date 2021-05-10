@@ -10,8 +10,6 @@ class DeluxeBlue extends IglooScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -33,11 +31,6 @@ class DeluxeBlue extends IglooScene {
         // floor
         const floor = this.add.image(760, 636, "deluxeblue", "floor");
         floor.setOrigin(0.5003940110323088, 0.5013477088948787);
-
-        // mask
-        const mask = this.add.image(760, 647, "deluxeblue", "mask");
-        mask.setOrigin(0.500395256916996, 0.5014749262536873);
-        mask.visible = false;
 
         // door
         this.add.image(243, 478, "deluxeblue", "door");
@@ -67,7 +60,6 @@ class DeluxeBlue extends IglooScene {
         chimney.setOrigin(0.5050505050505051, 0.5);
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */

@@ -67,20 +67,6 @@
         },
         {
             "type": "Image",
-            "id": "0c082f0a-f217-4fba-9fcd-345c5af3894a",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "gym",
-                "frame": "mask"
-            },
-            "x": 760,
-            "y": 744,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "e413acaa-e002-4866-85c2-a1c04ef15653",
             "label": "wall",
             "components": [],

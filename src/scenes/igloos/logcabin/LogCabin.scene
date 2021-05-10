@@ -50,20 +50,6 @@
         },
         {
             "type": "Image",
-            "id": "281ab5f2-8483-45cb-b479-52d2961d0629",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "logcabin",
-                "frame": "mask"
-            },
-            "x": 757,
-            "y": 740,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "e414dbe5-fc7a-4203-9c06-71ee34f2a1da",
             "label": "wall",
             "components": [],

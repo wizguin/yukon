@@ -30,22 +30,6 @@
         },
         {
             "type": "Image",
-            "id": "8ce22a60-95e5-49cb-870f-2b3faa879881",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "stone",
-                "frame": "mask"
-            },
-            "x": 765,
-            "y": 636,
-            "originX": 0.5006402048655569,
-            "originY": 0.5015015015015015,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "2db06e46-6b0d-4fab-8a45-a512d5ae6faf",
             "label": "wall_1",
             "components": [],

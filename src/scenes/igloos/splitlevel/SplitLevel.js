@@ -10,8 +10,6 @@ class SplitLevel extends IglooScene {
 
         /** @type {Phaser.GameObjects.Layer} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -43,10 +41,6 @@ class SplitLevel extends IglooScene {
         stairs_top.setOrigin(0.5, 0.5035971223021583);
         floor.add(stairs_top);
 
-        // mask
-        const mask = this.add.image(759, 635, "splitlevel", "mask");
-        mask.visible = false;
-
         // door
         this.add.image(235, 556, "splitlevel", "door");
 
@@ -62,7 +56,6 @@ class SplitLevel extends IglooScene {
         wall_2.setOrigin(0.5, 0.5015197568389058);
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */

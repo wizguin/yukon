@@ -31,21 +31,6 @@
         },
         {
             "type": "Image",
-            "id": "93deeb5b-4ea3-4051-b98f-941a318d3b81",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "bamboohut",
-                "frame": "mask"
-            },
-            "x": 767,
-            "y": 688,
-            "originX": 0.5004524886877828,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "06fe3266-0d8b-4b51-8183-45d6455d6abe",
             "label": "door",
             "components": [],

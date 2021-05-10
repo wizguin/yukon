@@ -10,8 +10,6 @@ class DeluxeSnow extends IglooScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -34,11 +32,6 @@ class DeluxeSnow extends IglooScene {
         const floor = this.add.image(760, 636, "deluxesnow", "floor");
         floor.setOrigin(0.5003940110323088, 0.5013477088948787);
 
-        // mask
-        const mask = this.add.image(760, 647, "deluxesnow", "mask");
-        mask.setOrigin(0.500395256916996, 0.5014749262536873);
-        mask.visible = false;
-
         // door
         this.add.image(243, 478, "deluxesnow", "door");
 
@@ -54,7 +47,6 @@ class DeluxeSnow extends IglooScene {
         this.add.image(1210, 401, "deluxesnow", "wall_3");
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */

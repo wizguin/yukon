@@ -10,8 +10,6 @@ class BambooHut extends IglooScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -34,11 +32,6 @@ class BambooHut extends IglooScene {
         const floor = this.add.image(769, 691, "bamboohut", "floor");
         floor.setOrigin(0.5004468275245755, 0.5017421602787456);
 
-        // mask
-        const mask = this.add.image(767, 688, "bamboohut", "mask");
-        mask.setOrigin(0.5004524886877828, 0.5);
-        mask.visible = false;
-
         // door
         const door = this.add.image(424, 474, "bamboohut", "door");
         door.setOrigin(0.5054945054945055, 0.5);
@@ -48,7 +41,6 @@ class BambooHut extends IglooScene {
         wall.setOrigin(0.5004101722723544, 0.5);
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */

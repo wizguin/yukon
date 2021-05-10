@@ -51,20 +51,6 @@
         },
         {
             "type": "Image",
-            "id": "03e02e11-48a4-42ef-83a4-2fa1b5365a9a",
-            "label": "mask",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "splitlevel",
-                "frame": "mask"
-            },
-            "x": 759,
-            "y": 635,
-            "visible": false
-        },
-        {
-            "type": "Image",
             "id": "3331b290-70cf-49b2-aadd-fe156d47370b",
             "label": "door",
             "components": [],

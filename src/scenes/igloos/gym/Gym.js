@@ -10,8 +10,6 @@ class Gym extends IglooScene {
 
         /** @type {Phaser.GameObjects.Layer} */
         this.floor;
-        /** @type {Phaser.GameObjects.Image} */
-        this.mask;
 
         /* START-USER-CTR-CODE */
 
@@ -49,10 +47,6 @@ class Gym extends IglooScene {
         floor_1.setOrigin(0.5004095004095004, 0.5);
         floor.add(floor_1);
 
-        // mask
-        const mask = this.add.image(760, 744, "gym", "mask");
-        mask.visible = false;
-
         // wall
         const wall = this.add.image(760, 400, "gym", "wall");
         wall.setOrigin(0.5003903200624512, 0.5);
@@ -62,7 +56,6 @@ class Gym extends IglooScene {
         door.setOrigin(0.5084745762711864, 0.5);
 
         this.floor = floor;
-        this.mask = mask;
     }
 
     /* START-USER-CODE */
