@@ -2,6 +2,7 @@ import RoomScene from '../rooms/RoomScene'
 
 import FurnitureLoader from '@engine/world/room/loader/FurnitureLoader'
 import FurnitureSprite from '@engine/world/room/furniture/FurnitureSprite'
+import PhysicsMaskGraphics from '@engine/utils/mask/PhysicsMaskGraphics'
 import RoomCrate from './crates/RoomCrate'
 import WallCrate from './crates/WallCrate'
 
@@ -104,8 +105,11 @@ export default class IglooScene extends RoomScene {
         this.flooring = this.add.image(0, 0, `flooring/${flooring}`, `${this.floorFrame}_1`)
         this.flooring.depth = -1
 
-        let mask = this.mask.createBitmapMask()
-        this.flooring.setMask(mask)
+        if (this.roomPhysics.mask) {
+            let mask = this.createMask()
+
+            this.flooring.setMask(mask)
+        }
     }
 
     addLocation() {
@@ -206,6 +210,13 @@ export default class IglooScene extends RoomScene {
         this.room = this.addBody('room')
         this.trash = this.addBody('trash')
         this.wall = this.addBody('wall')
+    }
+
+    createMask() {
+        let fixtures = this.roomPhysics.mask.fixtures
+        let graphics = new PhysicsMaskGraphics(this, fixtures)
+
+        return graphics.createGeometryMask()
     }
 
     /*========== Furniture input ==========*/
