@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, EventListener, MoveTo, ShowHint, SimpleButton, Zone } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint, SimpleButton, Zone } from '@components/components'
 
 
 /* START OF COMPILED CODE */
