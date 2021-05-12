@@ -16,8 +16,6 @@ class PenguinSelect extends BaseScene {
         /** @type {Phaser.GameObjects.Rectangle} */
         this.largeBg;
         /** @type {Phaser.GameObjects.Rectangle} */
-        this.smallBgBack;
-        /** @type {Phaser.GameObjects.Image} */
         this.smallBg;
         /** @type {Phaser.GameObjects.Container} */
         this.container;
@@ -38,15 +36,11 @@ class PenguinSelect extends BaseScene {
         largeBg.isFilled = true;
         largeBg.fillColor = 164045;
 
-        // smallBgBack
-        const smallBgBack = this.add.rectangle(760, 430, 1250, 680);
-        smallBgBack.visible = false;
-        smallBgBack.isFilled = true;
-        smallBgBack.fillColor = 164045;
-
         // smallBg
-        const smallBg = this.add.image(760, 430, "login", "small-bg");
+        const smallBg = this.add.rectangle(760, 430, 1308, 728);
         smallBg.visible = false;
+        smallBg.isFilled = true;
+        smallBg.fillColor = 164045;
 
         // backButton
         const backButton = this.add.sprite(760, 876, "login", "larger-button");
@@ -65,6 +59,10 @@ class PenguinSelect extends BaseScene {
         const largeBgNineSlice = new NineSlice(largeBg);
         largeBgNineSlice.corner = 50;
 
+        // smallBg (components)
+        const smallBgNineSlice = new NineSlice(smallBg);
+        smallBgNineSlice.corner = 50;
+
         // backButton (components)
         const backButtonSimpleButton = new SimpleButton(backButton);
         backButtonSimpleButton.callback = () => this.onBackClick();
@@ -75,7 +73,6 @@ class PenguinSelect extends BaseScene {
         backButtonAnimation.onHover = true;
 
         this.largeBg = largeBg;
-        this.smallBgBack = smallBgBack;
         this.smallBg = smallBg;
         this.container = container;
     }
@@ -95,7 +92,6 @@ class PenguinSelect extends BaseScene {
         let hideBg = ([3, 5, 6].includes(numSaved)) ? true : false
 
         if (size == PenguinSmall && hideBg) {
-            this.smallBgBack.visible = true
             this.smallBg.visible = true
         }
         if (size == PenguinLarge && hideBg) {
@@ -126,6 +122,10 @@ class PenguinSelect extends BaseScene {
             default:
                 this.onError()
                 break
+        }
+
+        if (size == PenguinSmall) {
+            this.updateMasks()
         }
     }
 
@@ -160,6 +160,20 @@ class PenguinSelect extends BaseScene {
         this.container.x = remainingWidth / 2
         // Offset y position by -50
         this.container.y = remainingHeight / 2 - 50
+    }
+
+    updateMasks() {
+        for (let card of this.container.getAll()) {
+            let mask = card.paperDoll.mask.geometryMask
+            if (!mask) continue
+
+            // Get global coordinates of card button
+            let matrix = card.penguinSmall.getWorldTransformMatrix()
+
+            // Set correct mask position
+            mask.x = matrix.getX(0, 0) - (card.penguinSmall.width / 2)
+            mask.y = matrix.getY(0, 0) - (card.penguinSmall.height / 2)
+        }
     }
 
     onPenguinClick(penguin) {

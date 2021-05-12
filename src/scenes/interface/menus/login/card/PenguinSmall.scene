@@ -20,9 +20,24 @@
             "y": 480,
             "list": [
                 {
+                    "type": "Rectangle",
+                    "id": "de67d3fc-aa41-437c-9dc0-1e019dc3fabc",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 688,
+                    "height": 288
+                },
+                {
                     "type": "Image",
                     "id": "e469efd7-0729-4668-8049-287496c7c11e",
-                    "label": "penguin_small",
+                    "label": "penguinSmall",
+                    "scope": "CLASS",
                     "components": [
                         "Button"
                     ],
@@ -31,22 +46,18 @@
                     "texture": {
                         "key": "login",
                         "frame": "player_small"
-                    },
-                    "scaleX": 1.01,
-                    "scaleY": 1.01
+                    }
                 },
                 {
                     "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
                     "id": "1d48cf54-9599-4b49-8743-2aabc7c8948d",
                     "unlock": [
                         "visible",
-                        "fadeIn",
-                        "crop"
+                        "fadeIn"
                     ],
                     "label": "paperDoll",
                     "scope": "CLASS",
                     "fadeIn": false,
-                    "crop": true,
                     "components": [],
                     "x": -212,
                     "y": 60
@@ -66,18 +77,6 @@
                     "stroke": "#003366",
                     "strokeThickness": 10,
                     "shadow.color": "#000000ff"
-                },
-                {
-                    "type": "Image",
-                    "id": "0927bfbc-f58f-4cb9-9965-a247ad43deea",
-                    "label": "bg",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "login",
-                        "frame": "card_small"
-                    },
-                    "x": 1
                 }
             ]
         }

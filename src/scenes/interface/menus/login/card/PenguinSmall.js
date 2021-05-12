@@ -12,11 +12,15 @@ class PenguinSmall extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x, y);
 
-        // penguin_small
-        const penguin_small = scene.add.image(0, 0, "login", "player_small");
-        penguin_small.scaleX = 1.01;
-        penguin_small.scaleY = 1.01;
-        this.add(penguin_small);
+        // bg
+        const bg = scene.add.rectangle(0, 0, 688, 288);
+        bg.isFilled = true;
+        bg.fillColor = 164045;
+        this.add(bg);
+
+        // penguinSmall
+        const penguinSmall = scene.add.image(0, 0, "login", "player_small");
+        this.add(penguinSmall);
 
         // paperDoll
         const paperDoll = new PaperDoll(scene, -212, 60);
@@ -28,26 +32,32 @@ class PenguinSmall extends BaseContainer {
         username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"CCFaceFront","fontSize":"48px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
         this.add(username);
 
-        // bg
-        const bg = scene.add.image(1, 0, "login", "card_small");
-        this.add(bg);
+        // bg (components)
+        const bgNineSlice = new NineSlice(bg);
+        bgNineSlice.corner = 50;
 
-        // penguin_small (components)
-        const penguin_smallButton = new Button(penguin_small);
-        penguin_smallButton.spriteName = "player_small";
-        penguin_smallButton.activeFrame = false;
+        // penguinSmall (components)
+        const penguinSmallButton = new Button(penguinSmall);
+        penguinSmallButton.spriteName = "player_small";
+        penguinSmallButton.activeFrame = false;
 
         // paperDoll (prefab fields)
         paperDoll.fadeIn = false;
-        paperDoll.crop = true;
 
+        this.bg = bg;
+        this.penguinSmall = penguinSmall;
         this.paperDoll = paperDoll;
         this.username = username;
-        this.bg = bg;
 
         /* START-USER-CTR-CODE */
 
-        this.button = penguin_smallButton
+        this.button = penguinSmallButton
+
+        let shape = scene.make.graphics()
+        shape.fillRoundedRect(0, 0, 600, 196, 20)
+
+        let mask = shape.createGeometryMask()
+        paperDoll.mask = mask
 
         /* END-USER-CTR-CODE */
     }

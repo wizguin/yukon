@@ -48,15 +48,6 @@
             "type": {
                 "id": "boolean"
             }
-        },
-        {
-            "name": "crop",
-            "label": "Crop",
-            "tooltip": "Crop",
-            "defValue": false,
-            "type": {
-                "id": "boolean"
-            }
         }
     ]
 }

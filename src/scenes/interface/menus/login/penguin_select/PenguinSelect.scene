@@ -45,31 +45,20 @@
         },
         {
             "type": "Rectangle",
-            "id": "9f9f4600-ce90-4d06-baa1-7af0946104a1",
-            "label": "smallBgBack",
+            "id": "a6304f2c-b1dc-47c2-8630-12408a35a725",
+            "label": "smallBg",
             "scope": "CLASS",
-            "components": [],
+            "components": [
+                "NineSlice"
+            ],
+            "NineSlice.corner": 50,
             "x": 760,
             "y": 430,
             "visible": false,
             "isFilled": true,
             "fillColor": "#0280CD",
-            "width": 1250,
-            "height": 680
-        },
-        {
-            "type": "Image",
-            "id": "a6902721-8ff4-4e8b-bc7f-f010cf2713d6",
-            "label": "smallBg",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "login",
-                "frame": "small-bg"
-            },
-            "x": 760,
-            "y": 430,
-            "visible": false
+            "width": 1308,
+            "height": 728
         },
         {
             "type": "Sprite",

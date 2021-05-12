@@ -90,7 +90,6 @@ export default class PaperDollLoader {
 
     loadPaper(key, slot, depth, scale = this.scale) {
         let paper = this.scene.add.image(0, 0, key)
-        if (this.paperDoll.crop) paper.setCrop(170, 80, 360, 280)
 
         paper.scale = scale
         paper.depth = depth

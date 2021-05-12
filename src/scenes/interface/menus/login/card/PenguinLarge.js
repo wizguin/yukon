@@ -18,9 +18,13 @@ class PenguinLarge extends BaseContainer {
         bg.fillColor = 164045;
         this.add(bg);
 
-        // penguin_large
-        const penguin_large = scene.add.image(0, 0, "login", "player_large");
-        this.add(penguin_large);
+        // penguinLarge
+        const penguinLarge = scene.add.image(0, 0, "login", "player_large");
+        this.add(penguinLarge);
+
+        // paperDoll
+        const paperDoll = new PaperDoll(scene, 0, -45);
+        this.add(paperDoll);
 
         // username
         const username = scene.add.text(0, 215, "", {});
@@ -28,29 +32,25 @@ class PenguinLarge extends BaseContainer {
         username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"CCFaceFront","fontSize":"44px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
         this.add(username);
 
-        // paperDoll
-        const paperDoll = new PaperDoll(scene, 0, -45);
-        this.add(paperDoll);
-
         // bg (components)
         const bgNineSlice = new NineSlice(bg);
         bgNineSlice.corner = 50;
 
-        // penguin_large (components)
-        const penguin_largeButton = new Button(penguin_large);
-        penguin_largeButton.spriteName = "player_large";
-        penguin_largeButton.activeFrame = false;
+        // penguinLarge (components)
+        const penguinLargeButton = new Button(penguinLarge);
+        penguinLargeButton.spriteName = "player_large";
+        penguinLargeButton.activeFrame = false;
 
         // paperDoll (prefab fields)
         paperDoll.fadeIn = false;
 
         this.bg = bg;
-        this.username = username;
         this.paperDoll = paperDoll;
+        this.username = username;
 
         /* START-USER-CTR-CODE */
 
-        this.button = penguin_largeButton
+        this.button = penguinLargeButton
 
         /* END-USER-CTR-CODE */
     }
