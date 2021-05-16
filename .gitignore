@@ -116,8 +116,8 @@ dist
 .pnp.*
 
 # fonts
-*.woff
-*.woff2
+assets/fonts/*
+!assets/fonts/fontawesome/
 
 # bundles
 assets/scripts/client/

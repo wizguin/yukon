@@ -17,4 +17,6 @@ export default class Game extends Phaser.Game {
 
 }
 
-window.onload = new Game(game)
+window.onload = () => {
+    new Game(game)
+}

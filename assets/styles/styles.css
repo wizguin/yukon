@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500');
+
 
 :root {
-    --bg-color: #22a4f3;
+    --bg-color: #2ca1e9;
     --text-color: #ffffff;
     --accent-color: #ffcc00;
     --button-color: #117bd1;
@@ -29,7 +30,7 @@ header {
 }
 
 header a {
-    font-family: Lato, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     color: var(--text-color);
 }
@@ -45,7 +46,7 @@ nav a {
 nav a:hover {
     border-bottom: 3px solid var(--accent-color);
     color: var(--accent-color);
-    transition: all ease 300ms;
+    transition: all ease 200ms;
 }
 
 .logout {
@@ -53,7 +54,7 @@ nav a:hover {
     padding: 5px 15px;
     border-radius: 5px;
     background-color: var(--button-color);
-    transition: background ease .3s;
+    transition: background ease 300ms;
 }
 
 .logout:hover {
@@ -73,29 +74,12 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.icon-home {
-    width: 20px;
-    height: 19px;
-    background: url(../images/icons.png) -49px -1px;
+.fa-chevron-right {
+    color: var(--button-color)
 }
 
-.icon-arrow {
-    width: 8px;
-    height: 12px;
-    background: url(../images/icons.png) -1px -49px;
-}
-
-.icon-logout {
-    width: 16px;
-    height: 14px;
+.fa-sign-out-alt {
     margin-right: 10px;
-    background: url(../images/icons.png) -49px -22px;
-}
-
-.icon-close {
-    width: 46px;
-    height: 46px;
-    background: url(../images/icons.png) -1px -1px;
 }
 
 input  {
