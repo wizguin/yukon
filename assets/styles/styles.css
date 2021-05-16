@@ -2,11 +2,11 @@
 
 
 :root {
-    --bg-color: #2ca1e9;
-    --text-color: #ffffff;
-    --accent-color: #ffcc00;
-    --button-color: #117bd1;
-    --button-hover-color: #0052af;
+    --bg-color: #369ddd;
+    --text-color: #fafafa;
+    --accent-color: #f2c40d;
+    --button-color: #1c79c4;
+    --button-hover-color: #0951a5;
 }
 
 body {
