@@ -19,6 +19,12 @@ export default class Item extends Plugin {
         return this.interface.main.playerCard
     }
 
+    get books() {
+        return this.world.scene.manager.getScenes().filter(
+            scene => Object.getPrototypeOf(scene.constructor).name == 'Book'
+        )
+    }
+
     updatePlayer(args) {
         this.world.room.penguins[args.id].update(args.item, args.slot)
     }
@@ -36,6 +42,13 @@ export default class Item extends Plugin {
         if (this.playerCard.visible && this.playerCard.id == this.client.id) {
             this.interface.showCard(this.client.id, true)
         }
+
+        // Update catalog coins
+        this.books.map(book => {
+            if (book.coins) {
+                book.setCoins(args.coins)
+            }
+        })
 
         // Show prompt
         let text = `${args.name}\nhas been added to your inventory.`

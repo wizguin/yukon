@@ -32,6 +32,11 @@
 }
 
 @font-face {
+    font-family: 'CCComiccrazy';
+    src: url('../fonts/CCComicrazy-Roman.woff2');
+}
+
+@font-face {
     font-family: 'CCFaceFront';
     font-style: italic;
     font-weight: bold;

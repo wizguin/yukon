@@ -21,8 +21,9 @@ class Shop extends RoomScene {
 
         this.roomTriggers = {
             'town': () => this.triggerRoom(100, 932, 560),
-            'catalog': null
+            'catalog': () => this.interface.loadExternal('ClothingCatalog')
         }
+        this.music = 'MUS_Evergreen_Fashion_GiftShopAmb'
 
         /* END-USER-CTR-CODE */
     }
@@ -80,8 +81,12 @@ class Shop extends RoomScene {
         phoneZone.isFilled = true;
         phoneZone.fillColor = 65280;
 
+        // catalog
+        const catalog = this.add.image(1340, 1055, "shop", "catalog");
+        catalog.setOrigin(0, 2);
+
         // lists
-        const sort = [container, box]
+        const sort = [container, box, catalog]
 
         // door (components)
         const doorButton = new Button(door);
@@ -128,6 +133,13 @@ class Shop extends RoomScene {
         // phoneZone (components)
         const phoneZoneZone = new Zone(phoneZone);
         phoneZoneZone.hoverCallback = () => this.phone.__Animation.play();
+
+        // catalog (components)
+        const catalogButton = new Button(catalog);
+        catalogButton.spriteName = "catalog";
+        catalogButton.callback = () => this.interface.loadExternal('ClothingCatalog');
+        catalogButton.activeFrame = false;
+        catalogButton.pixelPerfect = true;
 
         this.phone = phone;
         this.register = register;

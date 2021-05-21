@@ -186,6 +186,26 @@
             "fillColor": "#00ff00",
             "width": 75,
             "height": 60
+        },
+        {
+            "type": "Image",
+            "id": "d9d3f441-7715-4324-826e-6839691ce8d1",
+            "label": "catalog",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "catalog",
+            "Button.callback": "() => this.interface.loadExternal('ClothingCatalog')",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "shop",
+                "frame": "catalog"
+            },
+            "x": 1340,
+            "y": 1055,
+            "originX": 0,
+            "originY": 2
         }
     ],
     "plainObjects": [],
@@ -200,7 +220,8 @@
             "label": "sort",
             "objectIds": [
                 "0fa846db-53ed-4ef1-a4f3-ed6f5e9df94c",
-                "3bfa42c0-a436-44cf-86a8-37b091f9fda0"
+                "3bfa42c0-a436-44cf-86a8-37b091f9fda0",
+                "d9d3f441-7715-4324-826e-6839691ce8d1"
             ]
         }
     ]

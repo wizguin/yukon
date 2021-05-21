@@ -1,0 +1,46 @@
+{
+    "id": "c0258f97-d78b-4395-bd8f-031992f11244",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "94c767a4-d43a-480a-b7f6-485e10e81c5e",
+            "label": "flag",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "flag",
+            "Button.callback": "() => this.scene.buy(this.item)",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "clothingcatalog",
+                "frame": "flag"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "item",
+            "label": "item",
+            "tooltip": "item",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
