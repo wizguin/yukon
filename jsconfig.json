@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es6",
+        "baseUrl": "./",
+        "paths": {
+            "@engine/*": ["src/engine/*"],
+            "@scenes/*": ["src/scenes/*"],
+            "@components/*": ["src/scenes/components/*"],
+            "@rooms/*": ["src/scenes/rooms/*"],
+            "@igloos/*": ["src/scenes/igloos/*"],
+        }
+    },
+    "exclude": [
+        "node_modules/**/*"
+    ]
+}
