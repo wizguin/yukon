@@ -1,12 +1,15 @@
 import BaseScene from '@scenes/base/BaseScene'
 
 import PromptController from './prompt/PromptController'
+import interfaceScenes from './interfaceScenes'
 
 
 export default class InterfaceController extends BaseScene {
 
     create() {
         this.prompt = new PromptController(this)
+
+        this.externalScenes = []
     }
 
     get loading() {
@@ -38,7 +41,9 @@ export default class InterfaceController extends BaseScene {
     }
 
     hideLoading() {
-        if (this.loading && this.loading.scene.isActive()) this.scene.sleep('Load')
+        if (this.loading && this.loading.scene.isActive()) {
+            this.scene.sleep('Load')
+        }
     }
 
     showInterface() {
@@ -55,7 +60,12 @@ export default class InterfaceController extends BaseScene {
     }
 
     hideInterface() {
-        if (this.main && this.main.scene.isActive()) this.scene.sleep('Main')
+        if (this.main && this.main.scene.isActive()) {
+            this.scene.sleep('Main')
+
+            // Stop external scenes
+            this.stopExternals()
+        }
     }
 
     showIglooEdit() {
@@ -70,7 +80,9 @@ export default class InterfaceController extends BaseScene {
     }
 
     hideIglooEdit() {
-        if (this.iglooEdit && this.iglooEdit.scene.isActive()) this.scene.sleep('IglooEdit')
+        if (this.iglooEdit && this.iglooEdit.scene.isActive()) {
+            this.scene.sleep('IglooEdit')
+        }
     }
 
     showEmoteBalloon(id, emote) {
@@ -92,6 +104,50 @@ export default class InterfaceController extends BaseScene {
         if (this.main.scene.isActive()) {
             this.main.playerCard.updateButtons()
             this.main.buddy.showPage()
+        }
+    }
+
+    /**
+     * Loads an external interface scene, e.g catalog, newspaper, telescope.
+     *
+     * @param {string} key - Scene key
+     */
+     loadExternal(key) {
+        if (!(key in interfaceScenes) || this.prompt.loading.visible) {
+            return
+        }
+
+        if (!(key in this.scene.manager.keys)) {
+            // Create scene
+            this.scene.add(key, interfaceScenes[key], true)
+            return this.externalScenes.push(key)
+        }
+
+        if (!this.scene.isVisible(key)) {
+            // Scene stopped
+            this.scene.launch(key)
+        } else {
+            // Scene still preloading
+            this.scene.get(key).events.emit('showloading')
+        }
+
+        this.scene.bringToTop(key)
+    }
+
+    /**
+     * Stop external interface scenes, called when hiding interface on room change.
+     */
+    stopExternals() {
+        for (let key of this.externalScenes) {
+            let scene = this.scene.get(key)
+
+            if (scene.scene.isActive()) {
+                scene.scene.stop()
+
+            } else if (scene.scene.isVisible()) {
+                // Scene still preloading
+                scene.events.once('create', () => scene.scene.stop())
+            }
         }
     }
 

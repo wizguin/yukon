@@ -1,0 +1,148 @@
+{
+    "id": "318eb8e3-18fa-4013-801d-af1500acd1aa",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "0dbce095-60e3-4417-b7f4-134ce284e792",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a96b67e4-f468-4eac-bdf1-84b7bd3c3720",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a2690579-843d-41be-8a00-04c147f1eb69",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "y": -40,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 708,
+                    "height": 584
+                },
+                {
+                    "type": "Image",
+                    "id": "5678bc6d-ff73-443e-a89d-232c55ebca28",
+                    "label": "blueButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 295,
+                    "y": -273
+                },
+                {
+                    "type": "Image",
+                    "id": "96a157d2-67c9-4770-9590-c2e44605885c",
+                    "label": "blueX",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 295,
+                    "y": -275
+                },
+                {
+                    "type": "Container",
+                    "id": "578b374e-371d-43b9-9898-9e203a556891",
+                    "label": "bar",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -21,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "0740f5e9-0961-4c9d-bbde-926a6ac50726",
+                            "label": "outline",
+                            "components": [],
+                            "strokeColor": "#006699",
+                            "lineWidth": 4,
+                            "isStroked": true,
+                            "width": 200,
+                            "height": 40
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "6f6dacbc-3648-4ba1-955b-1638f5db2b86",
+                            "label": "progress",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": -90,
+                            "scaleX": 0,
+                            "originX": 0,
+                            "isFilled": true,
+                            "width": 180,
+                            "height": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "aa6732d4-6cf7-46f1-bfd1-bfae968b52f7",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 19,
+                    "originY": 0,
+                    "fixedWidth": 800,
+                    "fixedHeight": 40,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px"
+                },
+                {
+                    "type": "Image",
+                    "id": "3249e9f3-3394-4340-be97-9c6fe1f04575",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "load",
+                        "frame": "spinner"
+                    },
+                    "y": -101
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
