@@ -36,7 +36,9 @@ export default class Preload extends BaseScene {
         }
 
         // Set crumbs
+        this.crumbs.flooring = this.cache.json.get('flooring')
         this.crumbs.furniture = this.cache.json.get('furniture')
+        this.crumbs.items = this.cache.json.get('items')
 
         // Start
         this.interface.hideLoading()

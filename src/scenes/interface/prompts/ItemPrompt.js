@@ -68,12 +68,25 @@ class ItemPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(item, name, cost) {
+    show(item) {
+        if (this.inventoryIncludes(item)) {
+            return this.interface.prompt.showError('You already have this item.')
+        }
+
         this.item = item
+
+        let name = this.crumbs.items[item].name
+        let cost = this.crumbs.items[item].cost
+
         this.text.text = this.getText(name, cost)
         this.visible = true
 
         this.loadIcon(item)
+    }
+
+    inventoryIncludes(item) {
+        let flat = Object.values(this.world.client.inventory).flat()
+        return flat.includes(item)
     }
 
     getText(name, cost) {

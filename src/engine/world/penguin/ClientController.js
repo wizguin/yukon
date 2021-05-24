@@ -6,14 +6,21 @@ export default class ClientController {
     constructor(world, args) {
         this.interface = world.interface
         this.network = world.network
+        this.crumbs = world.crumbs
 
+        // Assign user attributes
         let { user, ...attributes } = args
         Object.assign(this, attributes)
 
         this.id = args.user.id
         this.coins = args.user.coins
 
-        this.penguin // Reference to ClientPenguin object
+        // Item inventory
+        this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
+        this.inventory = this.initInventory()
+
+        // Reference to ClientPenguin object
+        this.penguin
     }
 
     get isTweening() {
@@ -22,6 +29,21 @@ export default class ClientController {
 
     get visible() {
         return this.penguin.visible
+    }
+
+    initInventory() {
+         // Generates object from slots in format: { color: [], head: [], ... }
+        let inventory = Object.fromEntries(this.slots.map(slot => [slot, []]))
+
+        // Assigns inventory list to slots
+        for (let item of this.inventory) {
+            let type = this.crumbs.items[item].type
+            let slot = this.slots[type - 1]
+
+            inventory[slot].push(item)
+        }
+
+        return inventory
     }
 
     onPointerMove(pointer) {
