@@ -98,16 +98,6 @@ export default class InterfaceController extends BaseScene {
     }
 
     /**
-     * Refreshes buddy list and player card to reflect changes from the server.
-     */
-    updateBuddies() {
-        if (this.main.scene.isActive()) {
-            this.main.playerCard.updateButtons()
-            this.main.buddy.showPage()
-        }
-    }
-
-    /**
      * Loads an external interface scene, e.g catalog, newspaper, telescope.
      *
      * @param {string} key - Scene key
@@ -149,6 +139,34 @@ export default class InterfaceController extends BaseScene {
                 scene.events.once('create', () => scene.scene.stop())
             }
         }
+    }
+
+    /**
+     * Refreshes buddy list and player card to reflect changes from the server.
+     */
+    updateBuddies() {
+        if (this.main.scene.isActive()) {
+            this.main.playerCard.updateButtons()
+            this.main.buddy.showPage()
+        }
+    }
+
+    refreshPlayerCard() {
+        if (this.main.playerCard.visible && this.main.playerCard.id == this.world.client.id) {
+            this.showCard(this.world.client.id, true)
+        }
+    }
+
+    updateCatalogCoins(coins) {
+        let books = this.scene.manager.getScenes().filter(
+            scene => Object.getPrototypeOf(scene.constructor).name == 'Book'
+        )
+
+        books.map(book => {
+            if (book.coins) {
+                book.setCoins(coins)
+            }
+        })
     }
 
 }

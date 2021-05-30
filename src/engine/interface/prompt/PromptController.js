@@ -26,7 +26,12 @@ export default class PromptController {
     }
 
     showItem(item) {
-        this.item.show(item)
+        this.item.showItem(item)
+        this.bringToTop()
+    }
+
+    showFurniture(item) {
+        this.item.showFurniture(item)
         this.bringToTop()
     }
 

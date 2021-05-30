@@ -6,6 +6,7 @@ export default class Igloo extends Plugin {
     constructor(network) {
         super(network)
         this.events = {
+            'add_furniture': this.addFurniture,
             'update_flooring': this.updateFlooring
         }
     }
@@ -14,8 +15,27 @@ export default class Igloo extends Plugin {
         return this.world.client
     }
 
-    get playerCard() {
-        return this.interface.main.playerCard
+    addFurniture(args) {
+        let inventory = this.client.furniture
+
+        // Update player data
+        this.client.coins = args.coins
+        inventory[args.furniture] = inventory[args.furniture] + 1 || 1
+
+        // Update player card
+        this.interface.refreshPlayerCard()
+
+        // Update gridview
+        if (this.interface.iglooEdit.gridView.visible) {
+            this.interface.iglooEdit.showGridView()
+        }
+
+        // Update catalog coins
+        this.interface.updateCatalogCoins(args.coins)
+
+        // Show prompt
+        let text = `${this.crumbs.furniture[args.furniture].name}\nhas been added to your inventory.`
+        this.interface.prompt.showWindow(text, 'single')
     }
 
     updateFlooring(args) {
@@ -25,9 +45,7 @@ export default class Igloo extends Plugin {
         this.client.coins = args.coins
 
         // Update player card
-        if (this.playerCard.visible && this.playerCard.id == this.client.id) {
-            this.interface.showCard(this.client.id, true)
-        }
+        this.interface.refreshPlayerCard()
     }
 
 }

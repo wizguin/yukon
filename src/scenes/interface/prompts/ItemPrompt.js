@@ -55,10 +55,9 @@ class ItemPrompt extends BaseContainer {
 
         this.item = null // Active item ID
         this.icon = null // Icon sprite
-        this.iconScale = 0.75
+        this.type
 
         this.load = new Phaser.Loader.LoaderPlugin(this.scene)
-        this.url = '/assets/media/clothing/icon/large'
         this.prefix = 'icon/large'
 
         this.load.on('filecomplete', this.onFileComplete, this)
@@ -68,20 +67,50 @@ class ItemPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(item) {
+    get url() {
+        switch (this.type) {
+            case 'clothing':
+                return '/assets/media/clothing/icon/large'
+            case 'furniture':
+                return '/assets/media/furniture/icon/@5x'
+            default:
+                break
+        }
+    }
+
+    get iconScale() {
+        switch (this.type) {
+            case 'clothing':
+                return 0.75
+            case 'furniture':
+                return 0.65
+            default:
+                return 1
+        }
+    }
+
+    showItem(item) {
         if (this.inventoryIncludes(item)) {
             return this.interface.prompt.showError('You already have this item.')
         }
 
+        this.show(item, this.crumbs.items[item], 'clothing')
+    }
+
+    showFurniture(item) {
+        this.show(item, this.crumbs.furniture[item], 'furniture')
+    }
+
+    show(item, crumb, type) {
+        if (!crumb) return
+
         this.item = item
+        this.type = type
 
-        let name = this.crumbs.items[item].name
-        let cost = this.crumbs.items[item].cost
-
-        this.text.text = this.getText(name, cost)
+        this.text.text = this.getText(crumb.name, crumb.cost)
         this.visible = true
 
-        this.loadIcon(item)
+        this.loadIcon()
     }
 
     inventoryIncludes(item) {
@@ -97,16 +126,16 @@ class ItemPrompt extends BaseContainer {
         }
     }
 
-    loadIcon(item) {
+    loadIcon() {
         if (this.icon) this.icon.destroy()
 
-        let key = `${this.prefix}/${item}`
+        let key = `${this.type}/${this.prefix}/${this.item}`
 
         if (this.scene.textures.exists(key)) return this.onFileComplete(key)
 
         this.load.image({
             key: key,
-            url: `${this.url}/${item}.png`,
+            url: `${this.url}/${this.item}.png`,
         })
 
         this.load.start()
@@ -116,7 +145,7 @@ class ItemPrompt extends BaseContainer {
         if (!this.visible) return
         if (!this.scene.textures.exists(key)) return
 
-        let item = parseInt(key.split('/')[2])
+        let item = parseInt(key.split('/')[3])
         if (item != this.item) return
 
         let icon = this.scene.add.image(0, -182, key)
@@ -128,13 +157,27 @@ class ItemPrompt extends BaseContainer {
 
     callback() {
         if (this.item) {
-            this.network.send('add_item', { item: this.item })
+            this.sendAddItem()
         }
+
         this.visible = false
     }
 
     noCallback() {
         this.visible = false
+    }
+
+    sendAddItem() {
+        switch (this.type) {
+            case 'clothing':
+                this.network.send('add_item', { item: this.item })
+                break
+            case 'furniture':
+                this.network.send('add_furniture', { furniture: this.item })
+                break
+            default:
+                break
+        }
     }
 
     /* END-USER-CODE */
