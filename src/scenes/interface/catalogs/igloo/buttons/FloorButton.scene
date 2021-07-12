@@ -1,0 +1,47 @@
+{
+    "id": "6e965915-678f-4e07-a0b9-422fe360b8a0",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "c0ae5321-b53a-48aa-89a0-9ece81ba7451",
+            "label": "buy",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "buy",
+            "Button.callback": "() => this.scene.buyFloor(this.floor)",
+            "texture": {
+                "key": "igloocatalog",
+                "frame": "buy"
+            },
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "floor",
+            "label": "floor",
+            "tooltip": "floor",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "id": "dd2cf1b5-b2d6-447c-8482-206fa3c10657",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "62c8ca3f-ad63-4bb1-bb56-44f832353eeb",
+            "label": "upgrade0001",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "upgrade",
+            "Button.callback": "() => this.scene.buyIgloo(this.igloo)",
+            "texture": {
+                "key": "igloocatalog",
+                "frame": "upgrade"
+            },
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "igloo",
+            "label": "igloo",
+            "tooltip": "igloo",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
