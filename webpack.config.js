@@ -1,7 +1,6 @@
 const path = require('path')
 
-
-module.exports = {
+let config = {
     mode: 'development',
     entry: './src/Game.js',
     output: {
@@ -36,4 +35,13 @@ module.exports = {
             }
         ]
     }
+}
+
+module.exports = (env, argv) => {
+    if (argv.mode === 'production') {
+        config.output.filename = 'yukon.min.js'
+        config.optimization.minimize = true
+    }
+
+    return config
 }
