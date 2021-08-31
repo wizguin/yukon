@@ -1,4 +1,5 @@
 const path = require('path')
+const WebpackObfuscator = require('webpack-obfuscator')
 
 let config = {
     mode: 'development',
@@ -13,7 +14,9 @@ let config = {
     devServer: {
         contentBase: path.join(__dirname),
         publicPath: '/',
-        writeToDisk: true
+        writeToDisk: true,
+        host: '0.0.0.0',
+        port: 8080
     },
     resolve: {
         alias: {
@@ -41,6 +44,13 @@ module.exports = (env, argv) => {
     if (argv.mode === 'production') {
         config.output.filename = 'yukon.min.js'
         config.optimization.minimize = true
+
+        config.plugins = [
+            new WebpackObfuscator({
+                rotateStringArray: true,
+                reservedStrings: ['\s*']
+            }, [])
+        ]
     }
 
     return config
