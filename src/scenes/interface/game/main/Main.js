@@ -14,6 +14,7 @@ import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Lobby from '../lobby/Lobby'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
+import Settings from '../settings/Settings'
 
 
 /* START OF COMPILED CODE */
@@ -47,6 +48,8 @@ class Main extends BaseScene {
         this.emotesMenu;
         /** @type {Map} */
         this.map;
+        /** @type {Settings} */
+        this.settings;
         /** @type {Array<PlayerCard|Buddy|Map>} */
         this.hideOnSleep;
 
@@ -184,6 +187,11 @@ class Main extends BaseScene {
         this.add.existing(map);
         map.visible = false;
 
+        // settings
+        const settings = new Settings(this, 760, 480);
+        this.add.existing(settings);
+        settings.visible = false;
+
         // lists
         const hideOnSleep = [playerCard, buddy, map]
 
@@ -251,6 +259,7 @@ class Main extends BaseScene {
         // help_button (components)
         const help_buttonButton = new Button(help_button);
         help_buttonButton.spriteName = "blue-button";
+        help_buttonButton.callback = () => this.settings.visible = true;
         const help_buttonShowHint = new ShowHint(help_button);
         help_buttonShowHint.text = "Edit Account";
 
@@ -297,6 +306,7 @@ class Main extends BaseScene {
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
         this.map = map;
+        this.settings = settings;
         this.hideOnSleep = hideOnSleep;
     }
 

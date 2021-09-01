@@ -1,0 +1,212 @@
+{
+    "id": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8bb89fb5-8fd3-4d6d-a8b9-f11a53a7735f",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "9d274e25-df95-406f-883b-f4102166d431",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4e000c0f-ca29-40d6-955a-108ebfdb90f7",
+                    "label": "rectangle",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "y": -22,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 708,
+                    "height": 600
+                },
+                {
+                    "type": "Text",
+                    "id": "8d1cc4d7-9fc2-476a-9a7f-1f4a77c03434",
+                    "label": "buddies",
+                    "components": [],
+                    "x": 69,
+                    "y": 173,
+                    "text": "88/100 Buddies",
+                    "fixedWidth": 300,
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Image",
+                    "id": "03a270a0-f16e-4e4d-914b-61bfd7ab3bf2",
+                    "label": "icon",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/icon-online"
+                    },
+                    "x": -132,
+                    "y": 171
+                },
+                {
+                    "type": "Image",
+                    "id": "601cc5f2-06bb-4a01-a439-462f0b4932d6",
+                    "label": "button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "help-button",
+                    "texture": {
+                        "key": "main",
+                        "frame": "help-button"
+                    },
+                    "y": 67
+                },
+                {
+                    "type": "Text",
+                    "id": "d8459f02-8216-49b8-9a56-e9a7ff51b303",
+                    "label": "account",
+                    "components": [],
+                    "x": 21,
+                    "y": 66,
+                    "text": "Manage Account",
+                    "fixedWidth": 562,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "color": "#ffffffff"
+                },
+                {
+                    "type": "Text",
+                    "id": "8bb0b24c-3cd7-434d-8d31-c69ac4ae9981",
+                    "label": "music",
+                    "components": [],
+                    "x": 131,
+                    "y": -37,
+                    "text": "Mute Music",
+                    "fixedWidth": 348,
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Text",
+                    "id": "0a157de1-3931-40c1-89c2-df8717cc7928",
+                    "label": "age",
+                    "components": [],
+                    "y": -108,
+                    "text": "Your penguin is 0 days old",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Text",
+                    "id": "502ffa53-fbc7-4cf2-bc81-43262b4d1979",
+                    "label": "server",
+                    "components": [],
+                    "y": -156,
+                    "text": "You're on Server Name",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "30px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Text",
+                    "id": "049efdf7-a9e9-4774-81b7-5a3c6b0e7c7e",
+                    "label": "settings",
+                    "components": [],
+                    "y": -238,
+                    "text": "SETTINGS",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "40px",
+                    "fontStyle": "bold italic",
+                    "stroke": "#003366",
+                    "strokeThickness": 10
+                },
+                {
+                    "type": "Image",
+                    "id": "3723c077-1983-4f49-8883-847b483312d2",
+                    "label": "checkbox",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onMuteClick()",
+                    "texture": {
+                        "key": "login",
+                        "frame": "checkbox"
+                    },
+                    "x": -76,
+                    "y": -39,
+                    "originX": 0.41509,
+                    "originY": 0.5849
+                },
+                {
+                    "type": "Image",
+                    "id": "e656c20c-78a6-4d94-917f-6cf411b1f4d4",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => { this.visible = false }",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 300,
+                    "y": -268
+                },
+                {
+                    "type": "Image",
+                    "id": "56d93af1-ac83-4be9-a548-efd7ba743bf2",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 300,
+                    "y": -270
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

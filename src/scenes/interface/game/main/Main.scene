@@ -290,6 +290,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => this.settings.visible = true",
             "ShowHint.text": "Edit Account",
             "texture": {
                 "key": "main",
@@ -529,6 +530,15 @@
             "x": 760,
             "y": 460,
             "visible": false
+        },
+        {
+            "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
+            "id": "4904443b-abe1-429f-9557-f064db674790",
+            "label": "settings",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480
         }
     ],
     "plainObjects": [],
