@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo } from '@components/components'
+import { Animation, Zone } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -16,7 +16,11 @@ class Mtn extends RoomScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            'village': () => this.triggerRoom(200, 480, 560)
+            'village': () => this.triggerRoom(200, 480, 560),
+            'sled1': () => this.triggerSled(1),
+            'sled2': () => this.triggerSled(2),
+            'sled3': () => this.triggerSled(3),
+            'sled4': () => this.triggerSled(4),
         }
 
         /* END-USER-CTR-CODE */
@@ -91,6 +95,33 @@ class Mtn extends RoomScene {
         const penguin_run = this.add.image(524, 606, "mtn", "penguin_run");
         penguin_run.setOrigin(0.6390977443609023, 0.943089430894309);
 
+        // zone4
+        const zone4 = this.add.rectangle(1127, 657, 180, 90);
+        zone4.angle = -33;
+        zone4.alpha = 0.5;
+        zone4.isFilled = true;
+        zone4.fillColor = 65280;
+
+        // zone3
+        const zone3 = this.add.rectangle(899, 753, 180, 90);
+        zone3.alpha = 0.5;
+        zone3.isFilled = true;
+        zone3.fillColor = 65280;
+
+        // zone2
+        const zone2 = this.add.rectangle(633, 709, 200, 90);
+        zone2.angle = 11;
+        zone2.alpha = 0.5;
+        zone2.isFilled = true;
+        zone2.fillColor = 65280;
+
+        // zone1
+        const zone1 = this.add.rectangle(334, 568, 230, 90);
+        zone1.angle = 33;
+        zone1.alpha = 0.5;
+        zone1.isFilled = true;
+        zone1.fillColor = 65280;
+
         // lists
         const sort = [penguin_run, express, pole]
 
@@ -99,10 +130,27 @@ class Mtn extends RoomScene {
         chairAnimation.key = "chair/chair";
         chairAnimation.end = 87;
 
+        // zone4 (components)
+        new Zone(zone4);
+
+        // zone3 (components)
+        new Zone(zone3);
+
+        // zone2 (components)
+        new Zone(zone2);
+
+        // zone1 (components)
+        new Zone(zone1);
+
         this.sort = sort;
     }
 
     /* START-USER-CODE */
+
+    triggerSled(id) {
+        this.interface.main.lobby.visible = true
+    }
+
     /* END-USER-CODE */
 }
 

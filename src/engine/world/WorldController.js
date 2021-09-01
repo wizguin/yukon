@@ -56,6 +56,10 @@ export default class WorldController extends BaseScene {
     }
 
     addPenguin(user) {
+        // Bug: if addPenguin called before room is created penguin won't be added
+        // if room isnt ready add penguin to queue and then merge queue with users in addPenguins?
+        // check moveplayer etc too
+
         if (!(user.id in this.room.penguins)) {
             let penguin = this.penguinFactory.createPenguin(user, this.room)
             this.room.addPenguin(user.id, penguin)

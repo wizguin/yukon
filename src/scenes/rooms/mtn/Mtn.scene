@@ -223,6 +223,69 @@
             "y": 606,
             "originX": 0.6390977443609023,
             "originY": 0.943089430894309
+        },
+        {
+            "type": "Rectangle",
+            "id": "ef9b8944-1657-4c42-93e1-635ccc3f68d1",
+            "label": "zone4",
+            "components": [
+                "Zone"
+            ],
+            "x": 1127,
+            "y": 657,
+            "angle": -33,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 180,
+            "height": 90
+        },
+        {
+            "type": "Rectangle",
+            "id": "d637b1ba-4403-4f67-8df7-3e2a39c20182",
+            "label": "zone3",
+            "components": [
+                "Zone"
+            ],
+            "x": 899,
+            "y": 753,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 180,
+            "height": 90
+        },
+        {
+            "type": "Rectangle",
+            "id": "fae5d3e7-f9ac-4eb1-af04-c7191621bab5",
+            "label": "zone2",
+            "components": [
+                "Zone"
+            ],
+            "x": 633,
+            "y": 709,
+            "angle": 11,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 200,
+            "height": 90
+        },
+        {
+            "type": "Rectangle",
+            "id": "e7292dc1-8f98-4fc6-b456-4d5a059a7447",
+            "label": "zone1",
+            "components": [
+                "Zone"
+            ],
+            "x": 334,
+            "y": 568,
+            "angle": 33,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 230,
+            "height": 90
         }
     ],
     "plainObjects": [],

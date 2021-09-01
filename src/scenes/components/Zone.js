@@ -35,6 +35,7 @@ class Zone extends SimpleButton {
 
         let zone = this.scene.add.zone(this.gameObject.x, this.gameObject.y, this.gameObject.width, this.gameObject.height)
         zone.isButton = true
+        zone.angle = this.gameObject.angle
 
         zone.setInteractive({
             cursor: 'pointer'

@@ -457,6 +457,15 @@
             "y": 69
         },
         {
+            "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
+            "id": "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
+            "label": "lobby",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1099,
+            "y": 332
+        },
+        {
             "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
             "id": "9acd4a58-cbf9-4751-b96a-2822f121af9c",
             "unlock": [
