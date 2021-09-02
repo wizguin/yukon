@@ -11,7 +11,7 @@ import ActionsMenu from '../floating/actions/ActionsMenu'
 import Buddy from '../buddy/Buddy'
 import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
-import Lobby from '../lobby/Lobby'
+import Waddle from '../waddle/Waddle'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
 import Settings from '../settings/Settings'
@@ -36,8 +36,8 @@ class Main extends BaseScene {
         this.crosshair;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
-        /** @type {Lobby} */
-        this.lobby;
+        /** @type {Waddle} */
+        this.waddle;
         /** @type {Buddy} */
         this.buddy;
         /** @type {PlayerCard} */
@@ -157,10 +157,10 @@ class Main extends BaseScene {
         // mod_button
         const mod_button = this.add.image(1434, 69, "main", "mod-button");
 
-        // lobby
-        const lobby = new Lobby(this, 1099, 332);
-        this.add.existing(lobby);
-        lobby.visible = false;
+        // waddle
+        const waddle = new Waddle(this, 1099, 332);
+        this.add.existing(waddle);
+        waddle.visible = false;
 
         // buddy
         const buddy = new Buddy(this, 1140, 436);
@@ -300,7 +300,7 @@ class Main extends BaseScene {
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
-        this.lobby = lobby;
+        this.waddle = waddle;
         this.buddy = buddy;
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;

@@ -2,12 +2,12 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, DraggableContainer, NineSlice } from '@components/components'
 
-import LobbyItem from './lobby_item/LobbyItem'
+import WaddleItem from './waddle_item/WaddleItem'
 
 
 /* START OF COMPILED CODE */
 
-class Lobby extends BaseContainer {
+class Waddle extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y);
@@ -22,21 +22,21 @@ class Lobby extends BaseContainer {
         const tab_2 = scene.add.image(0, -190, "main", "tab-2");
         this.add(tab_2);
 
-        // lobby_item_3
-        const lobby_item_3 = new LobbyItem(scene, 0, 100);
-        this.add(lobby_item_3);
+        // waddle_item_3
+        const waddle_item_3 = new WaddleItem(scene, 0, 100);
+        this.add(waddle_item_3);
 
-        // lobby_item_2
-        const lobby_item_2 = new LobbyItem(scene, 0, 48);
-        this.add(lobby_item_2);
+        // waddle_item_2
+        const waddle_item_2 = new WaddleItem(scene, 0, 48);
+        this.add(waddle_item_2);
 
-        // lobby_item_1
-        const lobby_item_1 = new LobbyItem(scene, 0, -4);
-        this.add(lobby_item_1);
+        // waddle_item_1
+        const waddle_item_1 = new WaddleItem(scene, 0, -4);
+        this.add(waddle_item_1);
 
-        // lobby_item
-        const lobby_item = new LobbyItem(scene, 0, -56);
-        this.add(lobby_item);
+        // waddle_item
+        const waddle_item = new WaddleItem(scene, 0, -56);
+        this.add(waddle_item);
 
         // text
         const text = scene.add.text(0, -122, "", {});
@@ -78,4 +78,4 @@ class Lobby extends BaseContainer {
 
 /* END OF COMPILED CODE */
 
-export default Lobby
+export default Waddle

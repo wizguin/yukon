@@ -17,10 +17,10 @@ class Mtn extends RoomScene {
 
         this.roomTriggers = {
             'village': () => this.triggerRoom(200, 480, 560),
-            'sled1': () => this.triggerSled(1),
-            'sled2': () => this.triggerSled(2),
-            'sled3': () => this.triggerSled(3),
-            'sled4': () => this.triggerSled(4),
+            'waddle100': () => this.triggerWaddle(100),
+            'waddle101': () => this.triggerWaddle(101),
+            'waddle102': () => this.triggerWaddle(102),
+            'waddle103': () => this.triggerWaddle(103),
         }
 
         /* END-USER-CTR-CODE */
@@ -79,7 +79,7 @@ class Mtn extends RoomScene {
         barrier_2.setOrigin(0.48, 0.47761194029850745);
 
         // barrier_2_1
-        const barrier_2_1 = this.add.image(903, 747, "mtn", "barrier_2");
+        const barrier_2_1 = this.add.image(902, 747, "mtn", "barrier_2");
         barrier_2_1.setOrigin(0.48, 0.47761194029850745);
 
         // barrier_1_4
@@ -87,8 +87,52 @@ class Mtn extends RoomScene {
         barrier_1_4.setOrigin(0.5, 0.45901639344262296);
         barrier_1_4.flipX = true;
 
+        // seat_11
+        const seat_11 = this.add.image(1163, 625, "mtn", "seat");
+        seat_11.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_10
+        const seat_10 = this.add.image(1100, 664, "mtn", "seat");
+        seat_10.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_9
+        const seat_9 = this.add.image(961, 733, "mtn", "seat");
+        seat_9.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_8
+        const seat_8 = this.add.image(862, 733, "mtn", "seat");
+        seat_8.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_7
+        const seat_7 = this.add.image(705, 691, "mtn", "seat");
+        seat_7.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_6
+        const seat_6 = this.add.image(567, 662, "mtn", "seat");
+        seat_6.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_5
+        const seat_5 = this.add.image(618, 701, "mtn", "seat");
+        seat_5.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_4
+        const seat_4 = this.add.image(258, 506, "mtn", "seat");
+        seat_4.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_3
+        const seat_3 = this.add.image(314, 538, "mtn", "seat");
+        seat_3.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_2
+        const seat_2 = this.add.image(376, 578, "mtn", "seat");
+        seat_2.setOrigin(0.5544554455445545, 0.35064935064935066);
+
+        // seat_1
+        const seat_1 = this.add.image(439, 606, "mtn", "seat");
+        seat_1.setOrigin(0.5544554455445545, 0.35064935064935066);
+
         // express
-        const express = this.add.image(1061, 809, "mtn", "express");
+        const express = this.add.image(1065, 809, "mtn", "express");
         express.setOrigin(0.4647887323943662, 0.875);
 
         // penguin_run
@@ -98,12 +142,14 @@ class Mtn extends RoomScene {
         // zone4
         const zone4 = this.add.rectangle(1127, 657, 180, 90);
         zone4.angle = -33;
+        zone4.visible = false;
         zone4.alpha = 0.5;
         zone4.isFilled = true;
         zone4.fillColor = 65280;
 
         // zone3
         const zone3 = this.add.rectangle(899, 753, 180, 90);
+        zone3.visible = false;
         zone3.alpha = 0.5;
         zone3.isFilled = true;
         zone3.fillColor = 65280;
@@ -111,6 +157,7 @@ class Mtn extends RoomScene {
         // zone2
         const zone2 = this.add.rectangle(633, 709, 200, 90);
         zone2.angle = 11;
+        zone2.visible = false;
         zone2.alpha = 0.5;
         zone2.isFilled = true;
         zone2.fillColor = 65280;
@@ -118,6 +165,7 @@ class Mtn extends RoomScene {
         // zone1
         const zone1 = this.add.rectangle(334, 568, 230, 90);
         zone1.angle = 33;
+        zone1.visible = false;
         zone1.alpha = 0.5;
         zone1.isFilled = true;
         zone1.fillColor = 65280;
@@ -147,8 +195,8 @@ class Mtn extends RoomScene {
 
     /* START-USER-CODE */
 
-    triggerSled(id) {
-        this.interface.main.lobby.visible = true
+    triggerWaddle(id) {
+        this.network.send('join_waddle', { id: id })
     }
 
     /* END-USER-CODE */

@@ -22,7 +22,7 @@
                 {
                     "type": "Image",
                     "id": "13a92a5e-3ca1-4352-a27b-7613c2243d6b",
-                    "label": "lobby_item",
+                    "label": "waddle_item",
                     "components": [],
                     "texture": {
                         "key": "main",

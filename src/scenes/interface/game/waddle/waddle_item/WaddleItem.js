@@ -5,14 +5,14 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class LobbyItem extends BaseContainer {
+class WaddleItem extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y);
 
-        // lobby_item
-        const lobby_item = scene.add.image(0, 0, "main", "buddy/item");
-        this.add(lobby_item);
+        // waddle_item
+        const waddle_item = scene.add.image(0, 0, "main", "buddy/item");
+        this.add(waddle_item);
 
         // icon
         const icon = scene.add.image(-137, 0, "main", "buddy/icon-load");
@@ -68,4 +68,4 @@ class LobbyItem extends BaseContainer {
 
 /* END OF COMPILED CODE */
 
-export default LobbyItem
+export default WaddleItem

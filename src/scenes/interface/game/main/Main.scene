@@ -460,7 +460,7 @@
         {
             "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
             "id": "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
-            "label": "lobby",
+            "label": "waddle",
             "scope": "CLASS",
             "components": [],
             "x": 1099,

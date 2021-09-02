@@ -49,28 +49,28 @@
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "bbf90d57-ecc8-4fb3-8815-2baa1aec66a7",
-                    "label": "lobby_item_3",
+                    "label": "waddle_item_3",
                     "components": [],
                     "y": 100
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "3588c486-0906-4565-b511-30925e03b354",
-                    "label": "lobby_item_2",
+                    "label": "waddle_item_2",
                     "components": [],
                     "y": 48
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "d72de3b8-e1eb-4a3d-9f4a-438af119150a",
-                    "label": "lobby_item_1",
+                    "label": "waddle_item_1",
                     "components": [],
                     "y": -4
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "7fb1cdfc-e641-4100-8c14-86058fbefa78",
-                    "label": "lobby_item",
+                    "label": "waddle_item",
                     "components": [],
                     "y": -56
                 },

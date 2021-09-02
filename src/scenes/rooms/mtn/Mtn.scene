@@ -177,7 +177,7 @@
                 "key": "mtn",
                 "frame": "barrier_2"
             },
-            "x": 903,
+            "x": 902,
             "y": 747,
             "originX": 0.48,
             "originY": 0.47761194029850745
@@ -198,6 +198,160 @@
         },
         {
             "type": "Image",
+            "id": "7f51ac37-4294-43ad-821e-7daf07cb243b",
+            "label": "seat_11",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 1163,
+            "y": 625,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "012f384f-237c-4773-a67d-840cde4750c0",
+            "label": "seat_10",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 1100,
+            "y": 664,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "89d10de3-c69b-4564-befc-8d76607da64a",
+            "label": "seat_9",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 961,
+            "y": 733,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "862ceeb9-9628-4487-bd53-bd069db2e081",
+            "label": "seat_8",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 862,
+            "y": 733,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "11024668-5301-4b31-8630-1490dc514b8d",
+            "label": "seat_7",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 705,
+            "y": 691,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "b3796887-7e27-41f4-89b0-e0e68b61193b",
+            "label": "seat_6",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 567,
+            "y": 662,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "a27213e9-5e2e-404f-8162-ed08ee7fbd4b",
+            "label": "seat_5",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 618,
+            "y": 701,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "395516f3-f98a-429b-b32d-d9a0ed590da5",
+            "label": "seat_4",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 258,
+            "y": 506,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "d032a0a8-e839-44de-bab7-48cee35c8f44",
+            "label": "seat_3",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 314,
+            "y": 538,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "ee249828-2648-40c9-bcc0-907119827269",
+            "label": "seat_2",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 376,
+            "y": 578,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
+            "id": "542dfbcf-fdd8-4140-943c-002fa76b1a36",
+            "label": "seat_1",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 439,
+            "y": 606,
+            "originX": 0.5544554455445545,
+            "originY": 0.35064935064935066
+        },
+        {
+            "type": "Image",
             "id": "85cf3723-7671-4140-a0c0-d0f430f57910",
             "label": "express",
             "components": [],
@@ -205,7 +359,7 @@
                 "key": "mtn",
                 "frame": "express"
             },
-            "x": 1061,
+            "x": 1065,
             "y": 809,
             "originX": 0.4647887323943662,
             "originY": 0.875
@@ -234,6 +388,7 @@
             "x": 1127,
             "y": 657,
             "angle": -33,
+            "visible": false,
             "alpha": 0.5,
             "isFilled": true,
             "fillColor": "#00ff00",
@@ -249,6 +404,7 @@
             ],
             "x": 899,
             "y": 753,
+            "visible": false,
             "alpha": 0.5,
             "isFilled": true,
             "fillColor": "#00ff00",
@@ -265,6 +421,7 @@
             "x": 633,
             "y": 709,
             "angle": 11,
+            "visible": false,
             "alpha": 0.5,
             "isFilled": true,
             "fillColor": "#00ff00",
@@ -281,6 +438,7 @@
             "x": 334,
             "y": 568,
             "angle": 33,
+            "visible": false,
             "alpha": 0.5,
             "isFilled": true,
             "fillColor": "#00ff00",
