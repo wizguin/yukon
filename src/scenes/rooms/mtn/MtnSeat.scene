@@ -1,0 +1,63 @@
+{
+    "id": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "cbcb1ec8-e7e2-4e4b-b3fc-5c03bfa1e1de",
+            "label": "seat",
+            "components": [],
+            "texture": {
+                "key": "mtn",
+                "frame": "seat"
+            },
+            "x": 760,
+            "y": 480,
+            "originX": 0.49504950495049505,
+            "originY": 0.5064935064935064
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "sitFrame",
+            "label": "sitFrame",
+            "tooltip": "Penguin sitting frame",
+            "defValue": 17,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "offsetX",
+            "label": "offsetX",
+            "tooltip": "Offset X for penguin exit",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "offsetY",
+            "label": "offsetY",
+            "tooltip": "Offset Y for penguin exit",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

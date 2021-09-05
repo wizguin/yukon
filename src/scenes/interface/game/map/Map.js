@@ -243,9 +243,8 @@ class Map extends BaseContainer {
         if (this.world.room.key == room.name) return
 
         this.visible = false
-        this.interface.showLoading(`Joining ${room.name}`)
 
-        this.world.client.sendJoinRoom(id, room.x, room.y, 80)
+        this.world.client.sendJoinRoom(id, room.name, room.x, room.y, 80)
     }
 
     /* END-USER-CODE */

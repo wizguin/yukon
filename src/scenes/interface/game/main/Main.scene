@@ -460,11 +460,15 @@
         {
             "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
             "id": "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
+            "unlock": [
+                "visible"
+            ],
             "label": "waddle",
             "scope": "CLASS",
             "components": [],
             "x": 1099,
-            "y": 332
+            "y": 332,
+            "visible": false
         },
         {
             "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
@@ -534,11 +538,15 @@
         {
             "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
             "id": "4904443b-abe1-429f-9557-f064db674790",
+            "unlock": [
+                "visible"
+            ],
             "label": "settings",
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 480
+            "y": 480,
+            "visible": false
         }
     ],
     "plainObjects": [],

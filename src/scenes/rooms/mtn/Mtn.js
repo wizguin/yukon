@@ -2,6 +2,8 @@ import RoomScene from '../RoomScene'
 
 import { Animation, Zone } from '@components/components'
 
+import MtnSeat from './MtnSeat'
+
 
 /* START OF COMPILED CODE */
 
@@ -12,6 +14,14 @@ class Mtn extends RoomScene {
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+        /** @type {MtnSeat[]} */
+        this.seats100;
+        /** @type {MtnSeat[]} */
+        this.seats101;
+        /** @type {MtnSeat[]} */
+        this.seats102;
+        /** @type {MtnSeat[]} */
+        this.seats103;
 
         /* START-USER-CTR-CODE */
 
@@ -22,6 +32,8 @@ class Mtn extends RoomScene {
             'waddle102': () => this.triggerWaddle(102),
             'waddle103': () => this.triggerWaddle(103),
         }
+
+        this.waddles = {}
 
         /* END-USER-CTR-CODE */
     }
@@ -87,49 +99,60 @@ class Mtn extends RoomScene {
         barrier_1_4.setOrigin(0.5, 0.45901639344262296);
         barrier_1_4.flipX = true;
 
-        // seat_11
-        const seat_11 = this.add.image(1163, 625, "mtn", "seat");
-        seat_11.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat11
+        const mtnSeat11 = new MtnSeat(this, 1155, 638);
+        this.add.existing(mtnSeat11);
+        mtnSeat11.visible = false;
 
-        // seat_10
-        const seat_10 = this.add.image(1100, 664, "mtn", "seat");
-        seat_10.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat10
+        const mtnSeat10 = new MtnSeat(this, 1093, 676);
+        this.add.existing(mtnSeat10);
+        mtnSeat10.visible = false;
 
-        // seat_9
-        const seat_9 = this.add.image(961, 733, "mtn", "seat");
-        seat_9.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat9
+        const mtnSeat9 = new MtnSeat(this, 955, 744);
+        this.add.existing(mtnSeat9);
+        mtnSeat9.visible = false;
 
-        // seat_8
-        const seat_8 = this.add.image(862, 733, "mtn", "seat");
-        seat_8.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat8
+        const mtnSeat8 = new MtnSeat(this, 857, 745);
+        this.add.existing(mtnSeat8);
+        mtnSeat8.visible = false;
 
-        // seat_7
-        const seat_7 = this.add.image(705, 691, "mtn", "seat");
-        seat_7.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat7
+        const mtnSeat7 = new MtnSeat(this, 698, 703);
+        this.add.existing(mtnSeat7);
+        mtnSeat7.visible = false;
 
-        // seat_6
-        const seat_6 = this.add.image(567, 662, "mtn", "seat");
-        seat_6.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat6
+        const mtnSeat6 = new MtnSeat(this, 561, 673);
+        this.add.existing(mtnSeat6);
+        mtnSeat6.visible = false;
 
-        // seat_5
-        const seat_5 = this.add.image(618, 701, "mtn", "seat");
-        seat_5.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat5
+        const mtnSeat5 = new MtnSeat(this, 612, 713);
+        this.add.existing(mtnSeat5);
+        mtnSeat5.visible = false;
 
-        // seat_4
-        const seat_4 = this.add.image(258, 506, "mtn", "seat");
-        seat_4.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat4
+        const mtnSeat4 = new MtnSeat(this, 252, 519);
+        this.add.existing(mtnSeat4);
+        mtnSeat4.visible = false;
 
-        // seat_3
-        const seat_3 = this.add.image(314, 538, "mtn", "seat");
-        seat_3.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat3
+        const mtnSeat3 = new MtnSeat(this, 307, 550);
+        this.add.existing(mtnSeat3);
+        mtnSeat3.visible = false;
 
-        // seat_2
-        const seat_2 = this.add.image(376, 578, "mtn", "seat");
-        seat_2.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat2
+        const mtnSeat2 = new MtnSeat(this, 369, 590);
+        this.add.existing(mtnSeat2);
+        mtnSeat2.visible = false;
 
-        // seat_1
-        const seat_1 = this.add.image(439, 606, "mtn", "seat");
-        seat_1.setOrigin(0.5544554455445545, 0.35064935064935066);
+        // mtnSeat1
+        const mtnSeat1 = new MtnSeat(this, 433, 618);
+        this.add.existing(mtnSeat1);
+        mtnSeat1.visible = false;
 
         // express
         const express = this.add.image(1065, 809, "mtn", "express");
@@ -172,11 +195,68 @@ class Mtn extends RoomScene {
 
         // lists
         const sort = [penguin_run, express, pole]
+        const seats100 = [mtnSeat4, mtnSeat3, mtnSeat2, mtnSeat1]
+        const seats101 = [mtnSeat6, mtnSeat5, mtnSeat7]
+        const seats102 = [mtnSeat8, mtnSeat9]
+        const seats103 = [mtnSeat10, mtnSeat11]
 
         // chair (components)
         const chairAnimation = new Animation(chair);
         chairAnimation.key = "chair/chair";
         chairAnimation.end = 87;
+
+        // mtnSeat11 (prefab fields)
+        mtnSeat11.sitFrame = 24;
+        mtnSeat11.offsetX = -100;
+        mtnSeat11.offsetY = -70;
+
+        // mtnSeat10 (prefab fields)
+        mtnSeat10.sitFrame = 24;
+        mtnSeat10.offsetX = -100;
+        mtnSeat10.offsetY = -70;
+
+        // mtnSeat9 (prefab fields)
+        mtnSeat9.offsetX = -10;
+        mtnSeat9.offsetY = -90;
+
+        // mtnSeat8 (prefab fields)
+        mtnSeat8.offsetX = -10;
+        mtnSeat8.offsetY = -90;
+
+        // mtnSeat7 (prefab fields)
+        mtnSeat7.sitFrame = 18;
+        mtnSeat7.offsetX = 10;
+        mtnSeat7.offsetY = -70;
+
+        // mtnSeat6 (prefab fields)
+        mtnSeat6.sitFrame = 18;
+        mtnSeat6.offsetX = 10;
+        mtnSeat6.offsetY = -70;
+
+        // mtnSeat5 (prefab fields)
+        mtnSeat5.sitFrame = 18;
+        mtnSeat5.offsetX = 10;
+        mtnSeat5.offsetY = -110;
+
+        // mtnSeat4 (prefab fields)
+        mtnSeat4.sitFrame = 18;
+        mtnSeat4.offsetX = 90;
+        mtnSeat4.offsetY = -70;
+
+        // mtnSeat3 (prefab fields)
+        mtnSeat3.sitFrame = 18;
+        mtnSeat3.offsetX = 90;
+        mtnSeat3.offsetY = -70;
+
+        // mtnSeat2 (prefab fields)
+        mtnSeat2.sitFrame = 18;
+        mtnSeat2.offsetX = 90;
+        mtnSeat2.offsetY = -70;
+
+        // mtnSeat1 (prefab fields)
+        mtnSeat1.sitFrame = 18;
+        mtnSeat1.offsetX = 90;
+        mtnSeat1.offsetY = -70;
 
         // zone4 (components)
         new Zone(zone4);
@@ -191,12 +271,27 @@ class Mtn extends RoomScene {
         new Zone(zone1);
 
         this.sort = sort;
+        this.seats100 = seats100;
+        this.seats101 = seats101;
+        this.seats102 = seats102;
+        this.seats103 = seats103;
     }
 
     /* START-USER-CODE */
 
     triggerWaddle(id) {
-        this.network.send('join_waddle', { id: id })
+        if (this.world.client.activeSeat) {
+            return
+        }
+
+        let text = 'Would you like to join this\nSled race?'
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('join_waddle', { id: id })
+
+            this.interface.prompt.window.visible = false
+        })
+
     }
 
     /* END-USER-CODE */

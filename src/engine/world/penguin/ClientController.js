@@ -31,6 +31,10 @@ export default class ClientController {
         return this.penguin.visible
     }
 
+    get activeSeat() {
+        return this.interface.main.waddle.activeSeat
+    }
+
     initInventory() {
          // Generates object from slots in format: { color: [], head: [], ... }
         let inventory = Object.fromEntries(this.slots.map(slot => [slot, []]))
@@ -53,7 +57,7 @@ export default class ClientController {
     }
 
     onPointerUp(pointer, target) {
-        if (!this.visible) return
+        if (!this.visible || this.activeSeat) return
         // Block movement when clicking a button
         if (target[0] && target[0].isButton) return
 
@@ -79,7 +83,13 @@ export default class ClientController {
         this.interface.main.onSnowballClick()
     }
 
-    sendJoinRoom(id, x, y, randomRange = 40) {
+    sendJoinRoom(id, name, x, y, randomRange = 40) {
+        if (this.activeSeat) {
+            return this.interface.prompt.showError('Please exit your game before leaving the room')
+        }
+
+        this.interface.showLoading(`Joining ${name}`)
+
         let random = PathEngine.getRandomPos(x, y, randomRange)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })
     }

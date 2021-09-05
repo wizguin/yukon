@@ -84,9 +84,9 @@ export default class Penguin extends BaseContainer {
         }
     }
 
-    move(x, y) {
+    move(x, y, endFrame) {
         let path = PathEngine.getPath(this, { x: x, y: y })
-        if (path) this.addMoveTween(path)
+        if (path) this.addMoveTween(path, endFrame)
     }
 
     setPos(x, y) {
@@ -124,7 +124,7 @@ export default class Penguin extends BaseContainer {
 
     /*========== Tweening ==========*/
 
-    addMoveTween(path) {
+    addMoveTween(path, endFrame) {
         if (this.tween) this.removeTween(false)
 
         this.playFrame(this.direction + 8) // + 8 for walking frame id
@@ -137,7 +137,7 @@ export default class Penguin extends BaseContainer {
             y: Math.round(path.target.y),
 
             onUpdate: () => this.onMoveUpdate(),
-            onComplete: () => this.onMoveComplete()
+            onComplete: () => this.onMoveComplete(endFrame)
         })
     }
 
@@ -148,8 +148,12 @@ export default class Penguin extends BaseContainer {
         if (this.balloon) this.updateBalloon()
     }
 
-    onMoveComplete() {
-        this.removeTween()
+    onMoveComplete(endFrame) {
+        this.removeTween(endFrame == null)
+
+        if (endFrame) {
+            this.playFrame(endFrame)
+        }
     }
 
     updateNameTag() {

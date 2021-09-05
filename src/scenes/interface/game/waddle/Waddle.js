@@ -53,6 +53,9 @@ class Waddle extends BaseContainer {
         const blue_x = scene.add.image(178, -128, "main", "blue-x");
         this.add(blue_x);
 
+        // lists
+        const items = [waddle_item, waddle_item_1, waddle_item_2, waddle_item_3]
+
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = bg;
@@ -64,15 +67,78 @@ class Waddle extends BaseContainer {
         // x_button (components)
         const x_buttonButton = new Button(x_button);
         x_buttonButton.spriteName = "blue-button";
-        x_buttonButton.callback = () => { this.visible = false };
+        x_buttonButton.callback = () => this.onClose();
 
         this.text = text;
+        this.items = items;
 
         /* START-USER-CTR-CODE */
+
+        this.activeWaddleId
+        this.activeSeat
+
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    get activeWaddle() {
+        return this.world.room.waddles[this.activeWaddleId]
+    }
+
+    getSeat(waddle, seat) {
+        return this.world.room[`seats${waddle}`][seat]
+    }
+
+    onClose() {
+        this.network.send('leave_waddle')
+
+        this.leaveSeat()
+
+        this.activeWaddleId = null
+        this.visible = false
+    }
+
+    showWaddle(waddle, seat) {
+        this.activeWaddleId = waddle
+
+        this.enterSeat(waddle, seat)
+
+        this.items.map(item => item.hideItem())
+
+        for (let [index, username] of this.activeWaddle.entries()) {
+            this.items[index].setItem(username)
+        }
+
+        this.visible = true
+    }
+
+    updateWaddle(waddle, seat, username) {
+        let sprite = this.getSeat(waddle, seat)
+        sprite.visible = username != null
+
+        this.world.room.waddles[waddle][seat] = username
+
+        if (waddle == this.activeWaddleId) {
+            this.items[seat].setItem(username)
+        }
+    }
+
+    enterSeat(waddle, seat) {
+        this.activeSeat = this.getSeat(waddle, seat)
+
+        this.world.client.penguin.move(this.activeSeat.x, this.activeSeat.y, this.activeSeat.sitFrame)
+    }
+
+    leaveSeat() {
+        let x = this.activeSeat.x + this.activeSeat.offsetX
+        let y = this.activeSeat.y + this.activeSeat.offsetY
+
+        this.activeSeat = null
+
+        this.world.client.penguin.move(x, y)
+    }
+
     /* END-USER-CODE */
 }
 

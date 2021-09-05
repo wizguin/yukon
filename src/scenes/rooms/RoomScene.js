@@ -32,6 +32,8 @@ export default class RoomScene extends BaseScene {
         this.sound.pauseOnBlur = false
         if (this.music) this.addMusic()
 
+        if (this.waddles) this.getWaddles()
+
         this.interface.showInterface()
     }
 
@@ -87,8 +89,28 @@ export default class RoomScene extends BaseScene {
         this.sound.play(this.music, { loop: true })
     }
 
+    getWaddles() {
+        this.network.send('get_waddles')
+    }
+
+    setWaddles(waddles) {
+        this.waddles = waddles
+
+        for (let [id, seats] of Object.entries(waddles)) {
+            this.setSeats(id, seats)
+        }
+    }
+
+    setSeats(id, seats) {
+        for (let [index, seat] of seats.entries()) {
+            if (seat) {
+                this.world.room[`seats${id}`][index].visible = true
+            }
+        }
+    }
+
     onSnowballComplete(x, y) {
-        // To be overridden in derived classes
+        // To be overridden in derived class
     }
 
     stop() {
@@ -146,9 +168,12 @@ export default class RoomScene extends BaseScene {
 
     triggerRoom(id, x, y) {
         let room = this.crumbs.rooms[id]
-        this.interface.showLoading(`Joining ${room.name}`)
 
-        this.world.client.sendJoinRoom(id, x, y)
+        this.world.client.sendJoinRoom(id, room.name, x, y)
+    }
+
+    triggerWaddle(id) {
+        // To be overridden in derived class
     }
 
     /*========== Animations ==========*/

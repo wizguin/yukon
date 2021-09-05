@@ -45,22 +45,40 @@ class WaddleItem extends BaseContainer {
 
     /* START-USER-CODE */
 
-    setItem(buddy) {
-        if (!buddy) return this.clearItem()
+    setItem(username) {
+        this.visible = true
 
-        this.id = buddy.id
-        this.username.text = buddy.username
+        this.username.text = (username) ? username : 'Empty'
 
-        let relationship = this.world.getRelationship(buddy.id)
-        let texture = `buddy/icon-${relationship}`
+        if (username) {
+            this.stopSpinner()
 
-        this.icon.setTexture('main', texture)
+            let texture = (username.toLowerCase() == this.world.client.penguin.username.toLowerCase())
+                ? 'player'
+                : 'none'
+
+            this.icon.setTexture('main', `buddy/icon-${texture}`)
+
+        } else {
+            this.startSpinner()
+
+            this.icon.setTexture('main', 'buddy/icon-load')
+        }
     }
 
-    clearItem() {
-        this.id = null
-        this.username.text = ''
-        this.icon.setTexture('main', 'buddy/icon-offline')
+    hideItem() {
+        this.visible = false
+        this.stopSpinner()
+    }
+
+    startSpinner() {
+        this.spinnerTween.seek(0)
+        this.spinnerTween.resume()
+    }
+
+    stopSpinner() {
+        this.spinnerTween.pause()
+        this.icon.angle = 0
     }
 
     /* END-USER-CODE */

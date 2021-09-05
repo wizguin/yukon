@@ -45,17 +45,17 @@ export default class ClientPenguin extends Penguin {
         this.network.send('send_frame', { set: true, frame: frame })
     }
 
-    move(x, y) {
+    move(x, y, endFrame = null) {
         let path = PathEngine.getPath(this, { x, y })
 
         if (path) {
-            this.addMoveTween(path)
-            this.network.send('send_position', { x: path.target.x, y: path.target.y })
+            this.addMoveTween(path, endFrame)
+            this.network.send('send_position', { x: path.target.x, y: path.target.y, endFrame: endFrame })
         }
     }
 
-    onMoveComplete() {
-        super.onMoveComplete()
+    onMoveComplete(endFrame) {
+        super.onMoveComplete(endFrame)
         this.isTrigger()
     }
 

@@ -96,7 +96,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.callback": "() => { this.visible = false }",
+                    "Button.callback": "() => this.onClose()",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -124,5 +124,17 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+    },
+    "lists": [
+        {
+            "id": "17823bb3-1f2a-4ce2-9ec2-ca96304c0105",
+            "label": "items",
+            "objectIds": [
+                "7fb1cdfc-e641-4100-8c14-86058fbefa78",
+                "d72de3b8-e1eb-4a3d-9f4a-438af119150a",
+                "3588c486-0906-4565-b511-30925e03b354",
+                "bbf90d57-ecc8-4fb3-8815-2baa1aec66a7"
+            ]
+        }
+    ]
 }
