@@ -1,0 +1,71 @@
+{
+    "id": "847139cb-5cc3-48bc-be0b-14aabf820c56",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "superClassName": "FloatingMenu",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8de76374-f1ae-4616-acee-a1b220852ee6",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a45dd184-31c9-468c-8448-97c11f188aa1",
+                    "label": "close",
+                    "scope": "CLASS",
+                    "components": [],
+                    "isFilled": true,
+                    "fillColor": "#00ffff",
+                    "fillAlpha": 0.5,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "c64b44b0-8eb8-4b32-9707-0d40281431d8",
+                    "label": "safe",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -50,
+                    "isFilled": true,
+                    "fillColor": "#00ffff",
+                    "fillAlpha": 0.5,
+                    "width": 256,
+                    "height": 40
+                },
+                {
+                    "type": "Image",
+                    "id": "01d2ab22-aad2-46dc-a663-b43de42367a6",
+                    "label": "inventory_list_item",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "inventory/list-item",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "inventory/list-item"
+                    },
+                    "y": -90
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

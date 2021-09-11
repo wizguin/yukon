@@ -51,6 +51,7 @@
                 "ShowHint"
             ],
             "Button.spriteName": "blue-button",
+            "Button.callback": "() => this.safe.visible = true",
             "ShowHint.text": "Messages",
             "texture": {
                 "key": "main",
@@ -520,6 +521,19 @@
             "components": [],
             "x": 306,
             "y": 872,
+            "visible": false
+        },
+        {
+            "prefabId": "847139cb-5cc3-48bc-be0b-14aabf820c56",
+            "id": "63f32401-55ee-489b-ada3-a0f4df778b29",
+            "unlock": [
+                "visible"
+            ],
+            "label": "safe",
+            "scope": "CLASS",
+            "components": [],
+            "x": 246,
+            "y": 933,
             "visible": false
         },
         {

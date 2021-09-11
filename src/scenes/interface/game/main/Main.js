@@ -14,6 +14,7 @@ import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Waddle from '../waddle/Waddle'
 import Map from '../map/Map'
 import PlayerCard from '../playercard/PlayerCard'
+import Safe from '../floating/safe/Safe'
 import Settings from '../settings/Settings'
 
 
@@ -46,6 +47,8 @@ class Main extends BaseScene {
         this.actionsMenu;
         /** @type {EmotesMenu} */
         this.emotesMenu;
+        /** @type {Safe} */
+        this.safe;
         /** @type {Map} */
         this.map;
         /** @type {Settings} */
@@ -182,6 +185,11 @@ class Main extends BaseScene {
         this.add.existing(emotesMenu);
         emotesMenu.visible = false;
 
+        // safe
+        const safe = new Safe(this, 246, 933);
+        this.add.existing(safe);
+        safe.visible = false;
+
         // map
         const map = new Map(this, 760, 460);
         this.add.existing(map);
@@ -204,6 +212,7 @@ class Main extends BaseScene {
         // chat_button (components)
         const chat_buttonButton = new Button(chat_button);
         chat_buttonButton.spriteName = "blue-button";
+        chat_buttonButton.callback = () => this.safe.visible = true;
         const chat_buttonShowHint = new ShowHint(chat_button);
         chat_buttonShowHint.text = "Messages";
 
@@ -305,6 +314,7 @@ class Main extends BaseScene {
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
+        this.safe = safe;
         this.map = map;
         this.settings = settings;
         this.hideOnSleep = hideOnSleep;
