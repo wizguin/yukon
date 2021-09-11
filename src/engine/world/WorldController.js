@@ -25,7 +25,7 @@ export default class WorldController extends BaseScene {
         this.client = new ClientController(this, args)
     }
 
-    joinRoom(id, users) {
+    joinRoom(id, users = null) {
         this.interface.showLoading(`Loading ${this.crumbs.rooms[id].name}`)
         if (!this.room) return this.createRoom(id, users)
 
@@ -35,7 +35,10 @@ export default class WorldController extends BaseScene {
 
     createRoom(id, users) {
         this.room = this.roomFactory.createRoom(id)
-        this.room.events.once('create', () => this.addPenguins(users))
+
+        if (users) {
+            this.room.events.once('create', () => this.addPenguins(users))
+        }
     }
 
     joinIgloo(args) {

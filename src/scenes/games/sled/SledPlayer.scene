@@ -1,0 +1,121 @@
+{
+    "id": "cd931a76-a78b-4a03-a5bf-4eb875dffa3f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9334ff58-067c-40e2-9b3d-1b299b91db6c",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "523eb17a-5183-41e2-9689-839e81be5d45",
+                    "label": "shadow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sled",
+                        "frame": "player/shadow"
+                    }
+                },
+                {
+                    "type": "Container",
+                    "id": "316e4e92-d640-4231-8de8-b1a6ad3bf6c2",
+                    "label": "art",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -3,
+                    "y": -61,
+                    "list": [
+                        {
+                            "type": "Sprite",
+                            "id": "2285862c-5e53-4a2f-ae24-0d7addbfe60e",
+                            "label": "sled",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/1/1/sled"
+                            },
+                            "x": 3.26910400390625,
+                            "y": 60.5771484375
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "e3403213-b444-4c18-914b-eaee4bcab592",
+                            "label": "body",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/1/1/body"
+                            },
+                            "y": 49,
+                            "originY": 0.5070422535211268,
+                            "tintTopLeft": "#333333",
+                            "tintTopRight": "#333333",
+                            "tintBottomLeft": "#333333",
+                            "tintBottomRight": "#333333",
+                            "tintFill": true
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "c9f5b708-bac1-4b8d-82d7-457c1fdbc914",
+                            "label": "penguin",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/1/1/penguin"
+                            },
+                            "y": 49
+                        },
+                        {
+                            "type": "Text",
+                            "id": "2d63e98f-8336-41a3-9ddf-836d891f04d4",
+                            "label": "username",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": 3,
+                            "originY": 1,
+                            "text": "Username",
+                            "fixedWidth": 200,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000ff"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "prefabProperties": [
+        {
+            "name": "fixedX",
+            "label": "fixedX",
+            "tooltip": "fixedX",
+            "defValue": 0,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
