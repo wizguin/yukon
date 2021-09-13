@@ -145,33 +145,6 @@ class Sled extends GameScene {
             ease: 'Cubic'
         })
 
-        // // updatePlayers test
-        // this.updatePlayers({
-        //     maxPlayers: 2,
-        //     players: [
-        //         {
-        //             username: 'Username',
-        //             color: 5,
-        //             hand: 413
-        //         },
-        //         {
-        //             username: 'Test',
-        //             color: 6,
-        //             hand: 413
-        //         },
-        //         {
-        //             username: 'Test2',
-        //             color: 6,
-        //             hand: 413
-        //         },
-        //         {
-        //             username: 'Test3',
-        //             color: 6,
-        //             hand: 413
-        //         }
-        //     ]
-        // })
-
         this.startGame()
     }
 
@@ -230,6 +203,8 @@ class Sled extends GameScene {
         for (let i = 0; i < 4; i++) {
             this.addTile()
         }
+
+        this.network.send('start_game')
     }
 
     addTile() {
@@ -286,10 +261,10 @@ class Sled extends GameScene {
         this.hill.sort('depth')
     }
 
-    updatePlayers(args) {
-        this.maxPlayers = args.maxPlayers
+    handleStartGame(args) {
+        this.maxPlayers = args.seats
 
-        args.players.map(player => this.addPlayer(player))
+        args.users.map(player => this.addPlayer(player))
 
         if (this.myPlayer) {
             this.progress.bringToTop(this.myPlayer.icon)
@@ -304,6 +279,7 @@ class Sled extends GameScene {
         player.fixedX = this.startX -= 80
         player.username.text = p.username
         player.icon = this.add.image(0, 0, 'sled', 'progress/icon_1')
+        player.body.tint = this.world.getColor(p.color)
 
         this.hill.add(player)
         this.progress.add(player.icon)
@@ -311,7 +287,7 @@ class Sled extends GameScene {
 
         player.move()
 
-        if (p.username == 'Username') {
+        if (p.username.toLowerCase() == this.client.penguin.username.toLowerCase()) {
             player.icon.setTexture('sled', 'progress/icon_2')
 
             this.myPlayer = player
