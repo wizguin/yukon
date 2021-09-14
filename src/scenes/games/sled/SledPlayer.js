@@ -1,6 +1,9 @@
+import BaseContainer from '@scenes/base/BaseContainer'
+
+
 /* START OF COMPILED CODE */
 
-class SledPlayer extends Phaser.GameObjects.Container {
+class SledPlayer extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y);
@@ -51,6 +54,10 @@ class SledPlayer extends Phaser.GameObjects.Container {
         /* START-USER-CTR-CODE */
 
         this.fixedY = 0
+        this.currentX = 0
+
+        this.id
+        this.isClient = false
 
         this.scene = scene
 
@@ -106,18 +113,6 @@ class SledPlayer extends Phaser.GameObjects.Container {
 
     get percentComplete() {
         return this.mapY / this.myMap.length
-    }
-
-    moveUp() {
-        if (!this.isCrashed) {
-            this.fixedX = Math.min(this.fixedX + this.turnSpeed, 360)
-        }
-    }
-
-    moveDown() {
-        if (!this.isCrashed) {
-            this.fixedX = Math.max(this.fixedX - this.turnSpeed, 0)
-        }
     }
 
     update() {
@@ -259,6 +254,32 @@ class SledPlayer extends Phaser.GameObjects.Container {
         this.sled.setFrame(`player/1/${frame}/sled`)
         this.body.setFrame(`player/1/${frame}/body`)
         this.penguin.setFrame(`player/1/${frame}/penguin`)
+    }
+
+    /* myPlayer input */
+
+    moveUp() {
+        if (!this.isCrashed) {
+            this.fixedX = Math.min(this.fixedX + this.turnSpeed, 360)
+            this.sendMove()
+        }
+    }
+
+    moveDown() {
+        if (!this.isCrashed) {
+            this.fixedX = Math.max(this.fixedX - this.turnSpeed, 0)
+            this.sendMove()
+        }
+    }
+
+    sendMove() {
+        if (!this.isClient || this.fixedX == this.currentX) {
+            return
+        }
+
+        this.currentX = this.fixedX
+
+        this.network.send('send_move', { id: this.id, x: this.fixedX, y: this.fixedY })
     }
 
     /* END-USER-CODE */

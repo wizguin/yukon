@@ -261,20 +261,10 @@ class Sled extends GameScene {
         this.hill.sort('depth')
     }
 
-    handleStartGame(args) {
-        this.maxPlayers = args.seats
-
-        args.users.map(player => this.addPlayer(player))
-
-        if (this.myPlayer) {
-            this.progress.bringToTop(this.myPlayer.icon)
-        }
-
-        this.playText()
-    }
-
-    addPlayer(p) {
+    addPlayer(p, id) {
         let player = new SledPlayer(this, -500, 0)
+
+        player.id = id
 
         player.fixedX = this.startX -= 80
         player.username.text = p.username
@@ -291,6 +281,7 @@ class Sled extends GameScene {
             player.icon.setTexture('sled', 'progress/icon_2')
 
             this.myPlayer = player
+            player.isClient = true
         }
     }
 
@@ -350,6 +341,27 @@ class Sled extends GameScene {
     onTextComplete() {
         this.text.visible = false
         this.isWaiting = false
+    }
+
+    /* Networking */
+
+    handleStartGame(args) {
+        this.maxPlayers = args.seats
+
+        args.users.map((player, id) => this.addPlayer(player, id))
+
+        if (this.myPlayer) {
+            this.progress.bringToTop(this.myPlayer.icon)
+        }
+
+        this.playText()
+    }
+
+    handleSendMove(args) {
+        let player = this.players[args.id]
+
+        player.fixedX = args.x
+        player.fixedY = args.y
     }
 
     /* END-USER-CODE */
