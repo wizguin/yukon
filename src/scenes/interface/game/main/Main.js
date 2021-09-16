@@ -53,7 +53,7 @@ class Main extends BaseScene {
         this.map;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<PlayerCard|Buddy|Map>} */
+        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings>} */
         this.hideOnSleep;
 
         /* START-USER-CTR-CODE */
@@ -201,7 +201,7 @@ class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map]
+        const hideOnSleep = [playerCard, buddy, map, waddle, settings]
 
         // dock (components)
         new Interactive(dock);
@@ -369,6 +369,8 @@ class Main extends BaseScene {
         if (this.chatLog.open) this.chatLog.onTabClick()
 
         this.stopCrosshair()
+
+        this.waddle.activeSeat = null
 
         this.interface.prompt.hideAll()
 

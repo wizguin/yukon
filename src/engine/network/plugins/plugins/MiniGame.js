@@ -7,7 +7,8 @@ export default class MiniGame extends Plugin {
         super(network)
         this.events = {
             'start_game': this.startGame,
-            'send_move': this.sendMove
+            'send_move': this.sendMove,
+            'game_over': this.gameOver
         }
     }
 
@@ -17,6 +18,11 @@ export default class MiniGame extends Plugin {
 
     sendMove(args) {
         this.world.room.handleSendMove(args)
+    }
+
+    gameOver(args) {
+        // Temporary
+        this.world.client.sendJoinRoom(230, 'Ski Hill', 0, 0)
     }
 
 }

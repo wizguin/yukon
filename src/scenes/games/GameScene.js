@@ -22,6 +22,8 @@ export default class GameScene extends BaseScene {
 
         this.sound.pauseOnBlur = false
         if (this.music) this.addMusic()
+
+        this.interface.hideLoading()
     }
 
     addMusic() {

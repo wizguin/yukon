@@ -30,26 +30,6 @@ class Sled extends GameScene {
         this.note;
 
         /* START-USER-CTR-CODE */
-
-        this.music = 117
-
-        this.isWaiting = true
-
-        this.players = []
-        this.maxPlayers
-        this.myPlayer
-
-        // fixedX start position for player sprites
-        this.startX = 400
-
-        this.currentTime
-        this.lastTime
-        this.startTime
-        this.gameTime
-
-        this.currentTile = 0
-        this.lastTileY = 0
-
         /* END-USER-CTR-CODE */
     }
 
@@ -110,23 +90,42 @@ class Sled extends GameScene {
     create() {
         super.create()
 
+        this.music = 117
+
+        this.isWaiting = true
+
+        this.players = []
+        this.maxPlayers = 0
+        this.myPlayer = null
+
+        // fixedX start position for player sprites
+        this.startX = 400
+
+        this.currentTime = 0
+        this.lastTime = 0
+        this.startTime = 0
+        this.gameTime = 0
+
+        this.currentTile = 0
+        this.lastTileY = 0
+
         this.isGameHidden = false
 
         // Events
-        this.game.events.on('hidden', () => {
-            console.log('hidden')
-            this.isGameHidden = true
-        })
+        // this.game.events.on('hidden', () => {
+        //     console.log('hidden')
+        //     this.isGameHidden = true
+        // })
 
-        this.game.events.on('visible', () => {
-            console.log('visible')
-            this.isGameHidden = false
-        })
+        // this.game.events.on('visible', () => {
+        //     console.log('visible')
+        //     this.isGameHidden = false
+        // })
 
         this.anims.fromJSON(this.cache.json.get('sled-anims'))
 
         // Map data
-        this.myHill = this.cache.json.get('map').hills['105']
+        this.myHill = this.cache.json.get('map').hills['106']
         this.myMap = this.createMap()
 
         // Input
@@ -165,11 +164,11 @@ class Sled extends GameScene {
         }
     }
 
-    update() {
+    update(time, delta) {
         this.currentTime = Date.now()
         this.gameTime = this.currentTime - this.startTime
 
-        this.players.map(player => this.updatePlayer(player))
+        this.players.map(player => this.updatePlayer(player, delta))
 
         if (this.myPlayer) {
             this.updateHill()
@@ -253,8 +252,8 @@ class Sled extends GameScene {
         }
     }
 
-    updatePlayer(player) {
-        player.update()
+    updatePlayer(player, delta) {
+        player.update(delta)
     }
 
     sortHill() {
@@ -343,7 +342,7 @@ class Sled extends GameScene {
         this.isWaiting = false
     }
 
-    /* Networking */
+    // Events
 
     handleStartGame(args) {
         this.maxPlayers = args.seats

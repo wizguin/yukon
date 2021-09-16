@@ -115,7 +115,7 @@ class SledPlayer extends BaseContainer {
         return this.mapY / this.myMap.length
     }
 
-    update() {
+    update(delta) {
         if (!this.isWaiting && !this.isStopped) {
             this.updateSpeed()
             this.updatePosition()
@@ -147,6 +147,8 @@ class SledPlayer extends BaseContainer {
 
         if (this.speed < 1) {
             this.isStopped = true
+
+            this.sendGameOver()
         }
     }
 
@@ -256,30 +258,34 @@ class SledPlayer extends BaseContainer {
         this.penguin.setFrame(`player/1/${frame}/penguin`)
     }
 
-    /* myPlayer input */
+    // myPlayer input
 
     moveUp() {
-        if (!this.isCrashed) {
+        if (!this.isCrashed && !this.isFinished) {
             this.fixedX = Math.min(this.fixedX + this.turnSpeed, 360)
             this.sendMove()
         }
     }
 
     moveDown() {
-        if (!this.isCrashed) {
+        if (!this.isCrashed && !this.isFinished) {
             this.fixedX = Math.max(this.fixedX - this.turnSpeed, 0)
             this.sendMove()
         }
     }
 
     sendMove() {
-        if (!this.isClient || this.fixedX == this.currentX) {
-            return
+        if (this.isClient && this.fixedX != this.currentX) {
+            this.currentX = this.fixedX
+
+            this.network.send('send_move', { id: this.id, x: this.fixedX, y: this.fixedY, time: this.scene.gameTime })
         }
+    }
 
-        this.currentX = this.fixedX
-
-        this.network.send('send_move', { id: this.id, x: this.fixedX, y: this.fixedY })
+    sendGameOver() {
+        if (this.isClient) {
+            this.network.send('game_over', { score: 0 })
+        }
     }
 
     /* END-USER-CODE */
