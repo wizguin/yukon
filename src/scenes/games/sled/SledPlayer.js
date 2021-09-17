@@ -284,8 +284,10 @@ class SledPlayer extends BaseContainer {
 
     sendGameOver() {
         if (this.isClient) {
-            this.network.send('game_over', { score: 0 })
+            this.network.send('game_over', { score: this.scene.finishPos })
         }
+
+        this.scene.finishPos++
     }
 
     /* END-USER-CODE */

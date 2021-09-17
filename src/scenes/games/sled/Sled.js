@@ -98,6 +98,8 @@ class Sled extends GameScene {
         this.maxPlayers = 0
         this.myPlayer = null
 
+        this.finishPos = 0
+
         // fixedX start position for player sprites
         this.startX = 400
 
@@ -359,8 +361,10 @@ class Sled extends GameScene {
     handleSendMove(args) {
         let player = this.players[args.id]
 
-        player.fixedX = args.x
-        player.fixedY = args.y
+        if (player) {
+            player.fixedX = args.x
+            player.fixedY = args.y
+        }
     }
 
     /* END-USER-CODE */
