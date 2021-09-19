@@ -16,4 +16,8 @@ export default class BaseContainer extends Phaser.GameObjects.Container {
         return this.scene.world
     }
 
+    getString(...args) {
+        return this.scene.getString(...args)
+    }
+
 }

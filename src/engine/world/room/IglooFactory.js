@@ -10,13 +10,13 @@ export default class IglooFactory {
     createIgloo(args) {
         let config = this.igloos[args.type]
 
-        if (config.name in this.scene.manager.keys) {
-            this.scene.start(config.name, { args: args })
+        if (config.key in this.scene.manager.keys) {
+            this.scene.start(config.key, { args: args })
 
-            return this.scene.get(config.name)
+            return this.scene.get(config.key)
 
         } else {
-            return this.scene.add(config.name, config.scene, true, { args: args })
+            return this.scene.add(config.key, config.scene, true, { args: args })
         }
     }
 

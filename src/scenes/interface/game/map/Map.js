@@ -240,11 +240,11 @@ class Map extends BaseContainer {
 
     onRoomClick(id) {
         let room = this.crumbs.rooms[id]
-        if (this.world.room.key == room.name) return
+        if (this.world.room.key == room.key) return
 
         this.visible = false
 
-        this.world.client.sendJoinRoom(id, room.name, room.x, room.y, 80)
+        this.world.client.sendJoinRoom(id, room.key, room.x, room.y, 80)
     }
 
     /* END-USER-CODE */

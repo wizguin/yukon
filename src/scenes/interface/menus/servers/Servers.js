@@ -84,7 +84,7 @@ class Servers extends BaseScene {
     }
 
     onServerClick(world, username, key) {
-        this.interface.showLoading(`Joining ${world}`)
+        this.interface.showLoading(`${this.getString('joining')} ${world}`)
         this.scene.stop()
         this.network.connectGame(world, username, key)
     }

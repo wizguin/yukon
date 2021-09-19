@@ -106,7 +106,7 @@ class LoadingPrompt extends BaseContainer {
         this.externalScene = scene
 
         // Updates prompt content
-        this.text.text = `Loading ${scene.sys.config}`
+        this.text.text = this.getString('loading', scene.sys.config)
         this.progress.scaleX = progress
 
         // Removes create event if it was previously added by close

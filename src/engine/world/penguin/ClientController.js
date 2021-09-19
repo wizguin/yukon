@@ -7,6 +7,7 @@ export default class ClientController {
         this.interface = world.interface
         this.network = world.network
         this.crumbs = world.crumbs
+        this.getString = world.getString
 
         // Assign user attributes
         let { user, ...attributes } = args
@@ -88,7 +89,7 @@ export default class ClientController {
             return this.interface.prompt.showError('Please exit your game before leaving the room')
         }
 
-        this.interface.showLoading(`Joining ${name}`)
+        this.interface.showLoading(this.getString('joining', name))
 
         let random = PathEngine.getRandomPos(x, y, randomRange)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })

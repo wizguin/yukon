@@ -169,7 +169,7 @@ export default class RoomScene extends BaseScene {
     triggerRoom(id, x, y) {
         let room = this.crumbs.rooms[id]
 
-        this.world.client.sendJoinRoom(id, room.name, x, y)
+        this.world.client.sendJoinRoom(id, room.key, x, y)
     }
 
     triggerWaddle(id) {

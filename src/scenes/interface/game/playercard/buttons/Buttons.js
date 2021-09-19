@@ -209,7 +209,7 @@ class Buttons extends BaseContainer {
     onIglooClick() {
         if (this.world.room.id == this.parentContainer.id) return
 
-        this.interface.showLoading('Joining Igloo')
+        this.interface.showLoading(this.getString('joining', 'igloo'))
         this.network.send('join_igloo', { igloo: this.parentContainer.id, x: 0, y: 0 })
     }
 

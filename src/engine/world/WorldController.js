@@ -26,8 +26,11 @@ export default class WorldController extends BaseScene {
     }
 
     joinRoom(id, users = null) {
-        this.interface.showLoading(`Loading ${this.crumbs.rooms[id].name}`)
-        if (!this.room) return this.createRoom(id, users)
+        this.interface.showLoading(this.getString('loading', this.crumbs.rooms[id].key))
+
+        if (!this.room) {
+            return this.createRoom(id, users)
+        }
 
         this.room.events.once('shutdown', () => this.createRoom(id, users))
         this.room.stop()
@@ -42,8 +45,11 @@ export default class WorldController extends BaseScene {
     }
 
     joinIgloo(args) {
-        this.interface.showLoading('Loading Igloo')
-        if (!this.room) return this.createIgloo(args)
+        this.interface.showLoading(this.getString('loading', 'igloo'))
+
+        if (!this.room) {
+            return this.createIgloo(args)
+        }
 
         this.room.events.once('shutdown', () => this.createIgloo(args))
         this.room.stop()

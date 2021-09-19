@@ -192,7 +192,7 @@ export default class IglooScene extends RoomScene {
         let text = 'Are you sure you want to change your igloo? Your flooring will be lost. Igloo items will be saved in your inventory.'
 
         this.interface.prompt.showWindow(text, 'dual', () => {
-            this.interface.showLoading('Joining Igloo')
+            this.interface.showLoading(this.getString('joining', 'igloo'))
             this.network.send('update_igloo', { type: type })
 
             this.interface.prompt.window.visible = false
