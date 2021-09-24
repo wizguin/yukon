@@ -19,7 +19,6 @@
             "type": "Image",
             "id": "e6a09201-5058-43f0-abbc-1da2babd448b",
             "label": "sky",
-            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "sled",
@@ -29,24 +28,57 @@
             "originY": 0
         },
         {
-            "type": "Image",
-            "id": "c72641ae-1dcb-4f5e-be57-3cf33588a5e4",
+            "type": "Container",
+            "id": "89eed3bf-202b-4c9f-98d1-c668d9ae2e7f",
             "label": "bg",
             "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "sled",
-                "frame": "bg"
-            },
             "y": 101,
-            "originX": 0,
-            "originY": 0
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e3334027-a4a1-468c-9fb0-edc7d2b8fb41",
+                    "label": "bg3",
+                    "components": [],
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_3"
+                    },
+                    "x": 4142,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "9ebf6c7b-96c3-4290-9bd3-53e952d9fc31",
+                    "label": "bg2",
+                    "components": [],
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_2"
+                    },
+                    "x": 2071,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "c72641ae-1dcb-4f5e-be57-3cf33588a5e4",
+                    "label": "bg1",
+                    "components": [],
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_1"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
         },
         {
             "type": "Image",
             "id": "52f6b861-9e28-405a-a512-50ebb31eeb09",
             "label": "fg",
-            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "sled",

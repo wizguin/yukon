@@ -13,6 +13,10 @@ export default class GameScene extends BaseScene {
         return this.world.client
     }
 
+    getColor(color) {
+        return this.world.getColor(color)
+    }
+
     init(data) {
         this.id = data.id
     }

@@ -16,8 +16,8 @@
             "id": "9334ff58-067c-40e2-9b3d-1b299b91db6c",
             "label": "container_1",
             "components": [],
-            "x": 760,
-            "y": 480,
+            "x": 762.7999091536982,
+            "y": 493.71355027564255,
             "list": [
                 {
                     "type": "Image",
@@ -28,7 +28,9 @@
                     "texture": {
                         "key": "sled",
                         "frame": "player/shadow"
-                    }
+                    },
+                    "x": -2.799923880965366,
+                    "y": -13.713563346765511
                 },
                 {
                     "type": "Container",
@@ -36,8 +38,8 @@
                     "label": "art",
                     "scope": "CLASS",
                     "components": [],
-                    "x": -3,
-                    "y": -61,
+                    "x": -2.799923880965366,
+                    "y": -13.713563346765511,
                     "list": [
                         {
                             "type": "Sprite",
@@ -47,28 +49,20 @@
                             "components": [],
                             "texture": {
                                 "key": "sled",
-                                "frame": "player/1/1/sled"
+                                "frame": "player/tube/1/sled"
                             },
-                            "x": 3.26910400390625,
-                            "y": 60.5771484375
+                            "visible": false
                         },
                         {
                             "type": "Sprite",
-                            "id": "e3403213-b444-4c18-914b-eaee4bcab592",
+                            "id": "b3e4973f-7ee3-45f4-b2d1-092b08057f26",
                             "label": "body",
                             "scope": "CLASS",
                             "components": [],
                             "texture": {
                                 "key": "sled",
-                                "frame": "player/1/1/body"
-                            },
-                            "y": 49,
-                            "originY": 0.5070422535211268,
-                            "tintTopLeft": "#333333",
-                            "tintTopRight": "#333333",
-                            "tintBottomLeft": "#333333",
-                            "tintBottomRight": "#333333",
-                            "tintFill": true
+                                "frame": "player/tube/1/body"
+                            }
                         },
                         {
                             "type": "Sprite",
@@ -78,9 +72,8 @@
                             "components": [],
                             "texture": {
                                 "key": "sled",
-                                "frame": "player/1/1/penguin"
-                            },
-                            "y": 49
+                                "frame": "player/tube/1/penguin"
+                            }
                         },
                         {
                             "type": "Text",
@@ -89,6 +82,7 @@
                             "scope": "CLASS",
                             "components": [],
                             "x": 3,
+                            "y": -50,
                             "originY": 1,
                             "text": "Username",
                             "fixedWidth": 200,

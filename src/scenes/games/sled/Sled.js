@@ -10,12 +10,8 @@ class Sled extends GameScene {
     constructor() {
         super("Sled");
 
-        /** @type {Phaser.GameObjects.Image} */
-        this.sky;
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {Phaser.GameObjects.Container} */
         this.bg;
-        /** @type {Phaser.GameObjects.Image} */
-        this.fg;
         /** @type {Phaser.GameObjects.Container} */
         this.hill;
         /** @type {Phaser.GameObjects.Container} */
@@ -45,8 +41,22 @@ class Sled extends GameScene {
         sky.setOrigin(0, 0);
 
         // bg
-        const bg = this.add.image(0, 101, "sled", "bg");
-        bg.setOrigin(0, 0);
+        const bg = this.add.container(0, 101);
+
+        // bg3
+        const bg3 = this.add.image(4142, 0, "sled", "bg_3");
+        bg3.setOrigin(0, 0);
+        bg.add(bg3);
+
+        // bg2
+        const bg2 = this.add.image(2071, 0, "sled", "bg_2");
+        bg2.setOrigin(0, 0);
+        bg.add(bg2);
+
+        // bg1
+        const bg1 = this.add.image(0, 0, "sled", "bg_1");
+        bg1.setOrigin(0, 0);
+        bg.add(bg1);
 
         // fg
         const fg = this.add.image(0, 240, "sled", "fg");
@@ -74,9 +84,7 @@ class Sled extends GameScene {
         const note = this.add.image(1253, 783, "sled", "note");
         note.setOrigin(0.5, 0.4050179211469534);
 
-        this.sky = sky;
         this.bg = bg;
-        this.fg = fg;
         this.hill = hill;
         this.progress = progress;
         this.bar = bar;
@@ -103,31 +111,24 @@ class Sled extends GameScene {
         // fixedX start position for player sprites
         this.startX = 400
 
-        this.currentTime = 0
         this.lastTime = 0
         this.startTime = 0
         this.gameTime = 0
+        this.delta
 
         this.currentTile = 0
         this.lastTileY = 0
 
         this.isGameHidden = false
 
-        // Events
-        // this.game.events.on('hidden', () => {
-        //     console.log('hidden')
-        //     this.isGameHidden = true
-        // })
-
-        // this.game.events.on('visible', () => {
-        //     console.log('visible')
-        //     this.isGameHidden = false
-        // })
+        // Events (remove on game over)
+        // this.game.events.on('hidden', this.onHidden)
+        // this.game.events.on('visible', this.onVisible)
 
         this.anims.fromJSON(this.cache.json.get('sled-anims'))
 
         // Map data
-        this.myHill = this.cache.json.get('map').hills['106']
+        this.myHill = this.cache.json.get('map').hills['105']
         this.myMap = this.createMap()
 
         // Input
@@ -167,25 +168,30 @@ class Sled extends GameScene {
     }
 
     update(time, delta) {
-        this.currentTime = Date.now()
-        this.gameTime = this.currentTime - this.startTime
+        let currentTime = Date.now()
 
-        this.players.map(player => this.updatePlayer(player, delta))
+        this.gameTime = currentTime - this.startTime
+        //this.delta = currentTime - this.lastTime
+
+        // Prevents changes if game has been in the background
+        this.delta = delta
+
+        this.players.map(player => player.update())
 
         if (this.myPlayer) {
             this.updateHill()
         }
 
-        this.lastTime = this.currentTime
-
         this.sortHill()
+
+        this.lastTime = currentTime
     }
 
     updateHill() {
         this.hill.x = 200 - this.myPlayer.fixedY
         this.hill.y = 400 - (this.myPlayer.fixedY * 0.6)
 
-        this.bg.x = (-this.myPlayer.fixedY) / 12.5
+        this.bg.x = (-this.myPlayer.fixedY) / 25
 
         let tileY = Math.round(this.myPlayer.fixedY / 400)
 
@@ -254,10 +260,6 @@ class Sled extends GameScene {
         }
     }
 
-    updatePlayer(player, delta) {
-        player.update(delta)
-    }
-
     sortHill() {
         this.hill.sort('depth')
     }
@@ -268,9 +270,9 @@ class Sled extends GameScene {
         player.id = id
 
         player.fixedX = this.startX -= 80
-        player.username.text = p.username
         player.icon = this.add.image(0, 0, 'sled', 'progress/icon_1')
-        player.body.tint = this.world.getColor(p.color)
+
+        player.setSled(p.username, p.hand, p.color)
 
         this.hill.add(player)
         this.progress.add(player.icon)
