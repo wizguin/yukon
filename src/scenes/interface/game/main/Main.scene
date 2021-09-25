@@ -450,6 +450,7 @@
                 "Button"
             ],
             "Button.spriteName": "mod-button",
+            "Button.callback": "() => this.moderator.visible = true",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
@@ -550,6 +551,15 @@
             "visible": false
         },
         {
+            "prefabId": "d44a536e-8824-4c11-8cdd-649f5629a29c",
+            "id": "7b10953c-f288-40da-8b3f-44af0dea100d",
+            "label": "moderator",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480
+        },
+        {
             "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
             "id": "4904443b-abe1-429f-9557-f064db674790",
             "unlock": [
@@ -578,7 +588,8 @@
                 "9acd4a58-cbf9-4751-b96a-2822f121af9c",
                 "75179079-5eb1-4135-9798-34cea7db0f09",
                 "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
-                "4904443b-abe1-429f-9557-f064db674790"
+                "4904443b-abe1-429f-9557-f064db674790",
+                "7b10953c-f288-40da-8b3f-44af0dea100d"
             ]
         }
     ]

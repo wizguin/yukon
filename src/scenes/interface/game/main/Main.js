@@ -13,6 +13,7 @@ import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
 import Waddle from '../waddle/Waddle'
 import Map from '../map/Map'
+import Moderator from '../moderator/Moderator'
 import PlayerCard from '../playercard/PlayerCard'
 import Safe from '../floating/safe/Safe'
 import Settings from '../settings/Settings'
@@ -51,9 +52,11 @@ class Main extends BaseScene {
         this.safe;
         /** @type {Map} */
         this.map;
+        /** @type {Moderator} */
+        this.moderator;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings>} */
+        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings|Moderator>} */
         this.hideOnSleep;
 
         /* START-USER-CTR-CODE */
@@ -195,13 +198,18 @@ class Main extends BaseScene {
         this.add.existing(map);
         map.visible = false;
 
+        // moderator
+        const moderator = new Moderator(this, 760, 480);
+        this.add.existing(moderator);
+        moderator.visible = false;
+
         // settings
         const settings = new Settings(this, 760, 480);
         this.add.existing(settings);
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map, waddle, settings]
+        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator]
 
         // dock (components)
         new Interactive(dock);
@@ -301,6 +309,7 @@ class Main extends BaseScene {
         // mod_button (components)
         const mod_buttonButton = new Button(mod_button);
         mod_buttonButton.spriteName = "mod-button";
+        mod_buttonButton.callback = () => this.moderator.visible = true;
         mod_buttonButton.activeFrame = false;
 
         this.onlinePopup = onlinePopup;
@@ -316,6 +325,7 @@ class Main extends BaseScene {
         this.emotesMenu = emotesMenu;
         this.safe = safe;
         this.map = map;
+        this.moderator = moderator;
         this.settings = settings;
         this.hideOnSleep = hideOnSleep;
     }
