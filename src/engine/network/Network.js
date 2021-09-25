@@ -18,6 +18,8 @@ export default class Network {
 
         // Used to switch back to correct login scene on an error
         this.lastLoginScene = null
+
+        this.worldName
     }
 
     connectLogin(saveUsername, savePassword, onConnect) {
@@ -43,6 +45,8 @@ export default class Network {
 
         this.connect(this.crumbs.worlds.game[world], () => {
             this.send('game_auth', response)
+            this.worldName = world
+
         }, () => {
             this.onConnectionLost()
         })

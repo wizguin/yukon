@@ -112,6 +112,7 @@ class Settings extends BaseContainer {
 
         checkbox.checked = false
 
+        server.text = `You're on ${this.network.worldName}`
         buddies.text = `${this.world.client.buddies.length}/100 Buddies`
 
         /* END-USER-CTR-CODE */
