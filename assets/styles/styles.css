@@ -7,12 +7,18 @@
     --accent-color: #f2c40d;
     --button-color: #1c79c4;
     --button-hover-color: #0951a5;
+
+    --bg-color-dark: #2e3440;
+    --text-color-dark: #eceff4;
+    --accent-color-dark: #88c0d0;
+    --button-color-dark: #5e81ac;
+    --button-hover-color-dark: #49688d;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-dark);
 }
 
 a {
@@ -32,7 +38,7 @@ header {
 header a {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    color: var(--text-color);
+    color: var(--text-color-dark);
 }
 
 header i {
@@ -44,8 +50,8 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 3px solid var(--accent-color);
-    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color-dark);
+    color: var(--accent-color-dark);
     transition: all ease 200ms;
 }
 
@@ -53,12 +59,12 @@ nav a:hover {
     margin-left: auto;
     padding: 5px 15px;
     border-radius: 5px;
-    background-color: var(--button-color);
+    background-color: var(--button-color-dark);
     transition: background ease 300ms;
 }
 
 .logout:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--button-hover-color-dark);
 }
 
 #game {
@@ -75,13 +81,13 @@ nav a:hover {
 }
 
 .fa-chevron-right {
-    color: var(--button-color)
+    color: var(--button-color-dark)
 }
 
 .fa-sign-out-alt {
     margin-right: 10px;
 }
 
-input  {
+input {
     background: none !important;
 }
