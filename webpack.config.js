@@ -25,7 +25,8 @@ let config = {
             '@components': path.resolve(__dirname, 'src/scenes/components'),
             '@rooms': path.resolve(__dirname, 'src/scenes/rooms'),
             '@games': path.resolve(__dirname, 'src/scenes/games'),
-            '@igloos': path.resolve(__dirname, 'src/scenes/igloos')
+            '@igloos': path.resolve(__dirname, 'src/scenes/igloos'),
+            '@parties': path.resolve(__dirname, 'src/scenes/parties')
         }
     },
     module: {

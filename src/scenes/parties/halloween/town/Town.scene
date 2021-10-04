@@ -1,11 +1,11 @@
 {
-    "id": "9aa925e5-f17f-4b82-8ae8-641c3aac7998",
+    "id": "d705c268-14a3-4d0a-8f68-c20241bfcdf9",
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
         "superClassName": "RoomScene",
         "preloadPackFiles": [
-            "yukon/assets/media/rooms/town/town-pack.json"
+            "yukon/assets/media/parties/halloween/town/halloween-town-pack.json"
         ],
         "createMethodName": "_create",
         "sceneKey": "Town",
@@ -22,7 +22,8 @@
                 "key": "town",
                 "frame": "bg"
             },
-            "x": -10,
+            "x": -109,
+            "y": -80,
             "originX": 0,
             "originY": 0
         },
@@ -85,7 +86,7 @@
                 "key": "town",
                 "frame": "coffee_door"
             },
-            "x": 449,
+            "x": 435,
             "y": 305,
             "originX": 0,
             "originY": 0
@@ -108,7 +109,25 @@
                 "frame": "gift_door"
             },
             "x": 995,
-            "y": 294,
+            "y": 297,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "b8746c28-e3e4-4c75-82c1-c524e84fd3f2",
+            "label": "halloween_lights",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "halloween_lights/halloween_lights",
+            "Animation.end": 80,
+            "texture": {
+                "key": "town",
+                "frame": "halloween_lights/halloween_lights0001"
+            },
+            "x": 657,
+            "y": 281,
             "originX": 0,
             "originY": 0
         },
@@ -172,6 +191,39 @@
         },
         {
             "type": "Sprite",
+            "id": "c7026824-f8f6-4305-8fe6-dc81d73f5d02",
+            "label": "lights",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "lights",
+            "Animation.end": 69,
+            "Animation.repeatDelay": 1,
+            "texture": {
+                "key": "town",
+                "frame": "lights0001"
+            },
+            "x": 518,
+            "y": -75,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "1c2db27e-862d-40c0-9a3c-22a01931c236",
+            "label": "movie_sign",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "movie_sign"
+            },
+            "x": 627,
+            "y": 158,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
             "id": "b0d00512-60c5-428b-b7ad-5146af3ba382",
             "label": "disco_lights",
             "scope": "CLASS",
@@ -205,25 +257,6 @@
             },
             "x": 648,
             "y": 229,
-            "originX": 0,
-            "originY": 0
-        },
-        {
-            "type": "Sprite",
-            "id": "c7026824-f8f6-4305-8fe6-dc81d73f5d02",
-            "label": "lights",
-            "components": [
-                "Animation"
-            ],
-            "Animation.key": "lights",
-            "Animation.end": 69,
-            "Animation.repeatDelay": 1,
-            "texture": {
-                "key": "town",
-                "frame": "lights0001"
-            },
-            "x": 518,
-            "y": -75,
             "originX": 0,
             "originY": 0
         },
@@ -279,7 +312,7 @@
                 "frame": "chair_2"
             },
             "x": 436,
-            "y": 462,
+            "y": 465,
             "originX": 0.49382716049382713,
             "originY": 0.27358490566037735
         },
@@ -293,7 +326,7 @@
                 "frame": "table_2"
             },
             "x": 485,
-            "y": 523,
+            "y": 526,
             "originY": 0.7864077669902912
         },
         {
@@ -306,7 +339,7 @@
                 "frame": "chair_1"
             },
             "x": 402,
-            "y": 511,
+            "y": 514,
             "originX": 0.49411764705882355,
             "originY": 0.2857142857142857
         },
@@ -320,9 +353,37 @@
                 "frame": "table_1"
             },
             "x": 455,
-            "y": 575,
+            "y": 578,
             "originX": 0.49572649572649574,
             "originY": 0.7830188679245284
+        },
+        {
+            "type": "Image",
+            "id": "e12e62ea-a31c-45ee-be50-2c26c3eb82fb",
+            "label": "pumpkin",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "pumpkin"
+            },
+            "x": 598,
+            "y": 429,
+            "originX": 0.4583333333333333,
+            "originY": 0.5773195876288659
+        },
+        {
+            "type": "Image",
+            "id": "5fdbd80e-9451-424a-9960-f62f26ed61f6",
+            "label": "disco_middle",
+            "components": [],
+            "texture": {
+                "key": "town",
+                "frame": "disco_middle"
+            },
+            "x": 801,
+            "y": 276,
+            "originX": 0,
+            "originY": 0
         }
     ],
     "plainObjects": [],
