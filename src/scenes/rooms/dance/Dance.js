@@ -46,7 +46,7 @@ class Dance extends RoomScene {
             'mix': null
         }
         this.roomAnims = true
-        this.music = 'MUS_Evergreen_CrossingOver_NightClub'
+        this.music = 'MUS_Halloween_HauntedDisco_NightClub'
 
         /* END-USER-CTR-CODE */
     }
