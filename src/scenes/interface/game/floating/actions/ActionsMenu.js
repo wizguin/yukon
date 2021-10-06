@@ -113,7 +113,7 @@ class ActionsMenu extends FloatingMenu {
     /* START-USER-CODE */
 
     onActionClick(frame, set = true) {
-        this.world.client.onKeyDownFrame(frame, set)
+        this.world.client.sendFrame(frame, set)
         this.visible = false
     }
 
