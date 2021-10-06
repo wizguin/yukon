@@ -363,13 +363,13 @@ class Main extends BaseScene {
             color: '#fff'
         }
 
-        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => { this.onChatSend() }, 48)
+        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => this.onChatSend(), 48)
         this.add.existing(this.chatInput)
 
         // Input
 
-        this.input.keyboard.on('keydown-TAB', (event) => { this.onChatKeyDown(event) })
-        this.input.keyboard.on('keydown-ENTER', (event) => { this.onChatKeyDown(event) })
+        this.input.keyboard.on('keydown-TAB', (event) => this.onChatKeyDown(event))
+        this.input.keyboard.on('keydown-ENTER', (event) => this.onChatKeyDown(event))
     }
 
     onSleep() {
@@ -393,8 +393,6 @@ class Main extends BaseScene {
         this.crosshair.visible = true
         this.crosshair.x = this.input.x
         this.crosshair.y = this.input.y
-
-        this.input.on('pointermove', (pointer) => this.onCrosshairMove(pointer))
     }
 
     onCrosshairMove(pointer) {
@@ -404,12 +402,12 @@ class Main extends BaseScene {
 
     onCrosshairClick() {
         this.stopCrosshair()
+
         this.network.send('snowball', { x: this.crosshair.x, y: this.crosshair.y })
         this.snowballFactory.throwBall(this.world.client.id, this.crosshair.x, this.crosshair.y)
     }
 
     stopCrosshair() {
-        this.input.off('pointermove')
         this.crosshair.visible = false
     }
 

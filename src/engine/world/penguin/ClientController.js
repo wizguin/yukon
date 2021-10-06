@@ -22,6 +22,28 @@ export default class ClientController {
 
         // Reference to ClientPenguin object
         this.penguin
+
+        // If expecting emote key combo
+        this.emoteKeyPressed = false
+
+        // Input
+        this.keys = this.crumbs.quickKeys.keys
+        this.emotes = this.crumbs.quickKeys.emotes
+
+        this.keyActions = {
+            'send_frame': (id) => this.sendFrame(id),
+            'send_wave': () => this.sendFrame(25, false),
+            'send_sit': () => this.sendSit(this.input.mousePointer),
+
+            'show_crosshair': () => this.showCrosshair(),
+
+            'emote_key': () => this.emoteKeyPressed = true,
+            'send_emote': (id) => this.sendEmote(id)
+        }
+
+        this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
+
+        this.input.keyboard.on('keydown', (event) => this.onKeyDown(event))
     }
 
     get isTweening() {
@@ -34,6 +56,10 @@ export default class ClientController {
 
     get activeSeat() {
         return this.interface.main.waddle.activeSeat
+    }
+
+    get input() {
+        return this.interface.main.input
     }
 
     initInventory() {
@@ -52,34 +78,82 @@ export default class ClientController {
     }
 
     onPointerMove(pointer) {
-        if (!this.visible || this.isTweening) return
+        if (this.interface.main.crosshair.visible) {
+            this.interface.main.onCrosshairMove(pointer)
+        }
+
+        if (!this.visible || this.isTweening) {
+            return
+        }
 
         this.penguin.rotate(pointer.x, pointer.y)
     }
 
     onPointerUp(pointer, target) {
-        if (!this.visible || this.activeSeat) return
+        if (!this.visible || this.activeSeat) {
+            return
+        }
+
         // Block movement when clicking a button
-        if (target[0] && target[0].isButton) return
+        if (target[0] && target[0].isButton) {
+            return
+        }
 
         this.penguin.move(pointer.x, pointer.y)
     }
 
-    onKeyDownFrame(frame, set = true) {
-        if (!this.visible || this.isTweening) return
+    onKeyDown(event) {
+        let key = event.key.toLowerCase()
+
+        if (this.emoteKeyPressed) {
+            this.processEmote(key)
+        } else {
+            this.processKey(key)
+        }
+    }
+
+    processEmote(key) {
+        this.emoteKeyPressed = false
+
+        if (key in this.emotes) {
+            this.sendEmote(this.emotes[key])
+        }
+    }
+
+    processKey(key) {
+        if (key in this.keys) {
+            let k = this.keys[key]
+
+            this.keyActions[k.action](k.value || null)
+        }
+    }
+
+    sendFrame(frame, set = true) {
+        if (!this.visible || this.isTweening) {
+             return
+        }
 
         this.penguin.playFrame(frame)
         this.network.send('send_frame', { set: set, frame: frame })
     }
 
-    onKeyDownS(pointer) {
-        if (!this.visible || this.isTweening) return
+    sendSit(pointer) {
+        if (!this.visible || this.isTweening) {
+            return
+        }
 
         this.penguin.sit(pointer.x, pointer.y)
     }
 
-    onKeyDownT() {
-        if (!this.interface.main || !this.visible) return
+    sendEmote(emote) {
+        this.interface.showEmoteBalloon(this.id, emote)
+        this.network.send('send_emote', { emote: emote })
+    }
+
+    showCrosshair() {
+        if (!this.interface.main || !this.visible) {
+            return
+        }
 
         this.interface.main.onSnowballClick()
     }

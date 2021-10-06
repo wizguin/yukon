@@ -68,21 +68,6 @@ export default class RoomScene extends BaseScene {
     addInput() {
         // Movement
         this.input.on('pointerup', (pointer, target) => this.client.onPointerUp(pointer, target))
-        this.input.on('pointermove', (pointer) => this.client.onPointerMove(pointer))
-
-        // Actions
-        this.input.keyboard.on('keydown-UP', () => this.client.onKeyDownFrame(21))
-        this.input.keyboard.on('keydown-LEFT', () => this.client.onKeyDownFrame(19))
-        this.input.keyboard.on('keydown-DOWN', () => this.client.onKeyDownFrame(17))
-        this.input.keyboard.on('keydown-RIGHT', () => this.client.onKeyDownFrame(23))
-        this.input.keyboard.on('keydown-W', () => this.client.onKeyDownFrame(25, false))
-        this.input.keyboard.on('keydown-D', () => this.client.onKeyDownFrame(26))
-
-        // Sitting to pointer
-        this.input.keyboard.on('keydown-S', () => this.client.onKeyDownS(this.game.input.mousePointer))
-
-        // Crosshair
-        this.input.keyboard.on('keydown-T', () => this.client.onKeyDownT())
     }
 
     addMusic() {

@@ -78,10 +78,12 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
     }
 
     onFocus() {
+        this.clearEmoteKey()
         this.scene.game.input.keyboard.enabled = false
     }
 
     onBlur() {
+        this.clearEmoteKey()
         this.scene.game.input.keyboard.enabled = true
     }
 
@@ -123,6 +125,12 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
 
     clearText() {
         this.setText('')
+    }
+
+    clearEmoteKey() {
+        if (this.scene.world.client) {
+            this.scene.world.client.emoteKeyPressed = false
+        }
     }
 
 }
