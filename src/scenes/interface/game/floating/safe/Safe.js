@@ -80,7 +80,7 @@ class Safe extends FloatingMenu {
         }
     }
 
-    closeLists(column) {
+    closeLists(column = 0) {
         for (let item of this.subItems) {
             if (item.column > column) {
                 item.visible = false
@@ -100,8 +100,9 @@ class Safe extends FloatingMenu {
     }
 
     onBackOver() {
-        this.timer = this.scene.time.delayedCall(2000, () => {
+        this.timer = this.scene.time.delayedCall(500, () => {
             this.visible = false
+            this.closeLists()
         })
     }
 

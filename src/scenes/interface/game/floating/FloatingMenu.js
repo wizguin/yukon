@@ -35,6 +35,7 @@ export default class FloatingMenu extends BaseContainer {
 
         back.on('pointerover', () => this.onBackOver())
         back.on('pointerout', () => this.onBackOut())
+        back.on('pointerup', () => this.onBackUp())
     }
 
     onBackOver() {
@@ -43,6 +44,10 @@ export default class FloatingMenu extends BaseContainer {
 
     onBackOut() {
 
+    }
+
+    onBackUp() {
+        this.visible = false
     }
 
 }
