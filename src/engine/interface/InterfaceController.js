@@ -10,6 +10,9 @@ export default class InterfaceController extends BaseScene {
         this.prompt = new PromptController(this)
 
         this.externalScenes = []
+
+        // Cached font metrics
+        this.metrics = {}
     }
 
     get loading() {

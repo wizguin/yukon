@@ -46,13 +46,10 @@
                 },
                 {
                     "type": "Image",
-                    "id": "01d2ab22-aad2-46dc-a663-b43de42367a6",
-                    "label": "inventory_list_item",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.activeFrame": false,
+                    "id": "a3c3354a-59b1-4172-9d5b-8a05f67eece4",
+                    "label": "start",
+                    "scope": "CLASS",
+                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "inventory/list-item"
