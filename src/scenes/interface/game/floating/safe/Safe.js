@@ -26,6 +26,7 @@ class Safe extends FloatingMenu {
 
         // start
         const start = scene.add.image(0, -90, "main", "inventory/list-item");
+        start.visible = false;
         this.add(start);
 
         this.close = close;
@@ -40,6 +41,10 @@ class Safe extends FloatingMenu {
         this.subItems = []
 
         this.cellHeight = 64
+        this.cellWidth = {
+            1: 268,
+            2: 532
+        }
 
         this.timer
 
@@ -50,16 +55,16 @@ class Safe extends FloatingMenu {
 
     /* START-USER-CODE */
 
-    createSafeList(list, column = 0, _y = 0) {
+    createSafeList(list, column = 0, wide = 1, parentX = 0, parentY = 0, parentWidth = 0) {
         let group = []
 
-        let x = this.start.width * column
-        let y = this.getListY(_y, list.length - 1)
+        let x = this.getListX(column, wide, parentX, parentWidth)
+        let y = this.getListY(list.length - 1, parentY)
 
         for (let item of list) {
             let safeItem = new SafeItem(this.scene, x, y)
 
-            safeItem.init(item, column)
+            safeItem.init(item, column, wide)
 
             if (column > 0) {
                 this.subItems.push(safeItem)
@@ -88,8 +93,18 @@ class Safe extends FloatingMenu {
         }
     }
 
-    getListY(_y, length) {
-        let y = (_y) ? _y : this.start.y - (this.cellHeight * length)
+    getListX(column, wide, parentX, parentWidth) {
+        if (column < 1) {
+            return 0
+        } else {
+            let cellWidth = this.cellWidth[wide]
+
+            return parentX + (parentWidth / 2) + (cellWidth / 2)
+        }
+    }
+
+    getListY(length, parentY) {
+        let y = (parentY) ? parentY : this.start.y - (this.cellHeight * length)
         let lastY = y + (this.cellHeight * length)
 
         if (lastY > this.start.y) {

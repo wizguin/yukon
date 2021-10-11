@@ -1,6 +1,3 @@
-import { Button } from '@components/components'
-
-
 /* START OF COMPILED CODE */
 
 class SafeItem extends Phaser.GameObjects.Container {
@@ -19,7 +16,7 @@ class SafeItem extends Phaser.GameObjects.Container {
         let nameStyle = {
             align: 'center',
             color: '#000000',
-            fixedWidth: 300,
+            fixedWidth: 532,
             fontFamily: 'Arial',
             fontSize: '28px',
             metrics: scene.interface.metrics.Arial28
@@ -39,8 +36,6 @@ class SafeItem extends Phaser.GameObjects.Container {
         this.safeList
         this.frameName = 'list/small'
 
-        item.setInteractive({ cursor: 'pointer' })
-
         item.on('pointerover', () => this.onOver())
         item.on('pointerout', () => this.onOut())
 
@@ -53,7 +48,7 @@ class SafeItem extends Phaser.GameObjects.Container {
         return this.parentContainer
     }
 
-    init(item, column) {
+    init(item, column, wide) {
         this.data = item
         this.column = column
 
@@ -61,10 +56,23 @@ class SafeItem extends Phaser.GameObjects.Container {
         // Center name vertically instead of using origin to fix blurry text
         this.name.y = -Math.floor(this.name.height / 2)
 
-        if (item.menu) {
-            this.frameName = 'list/small_arrow'
-            this.resetFrame()
-        }
+        this.updateFrameName(item.menu, wide)
+    }
+
+    updateFrameName(menu, wide) {
+        let first = (wide > 1) ? 'list/wide' : 'list/small'
+        let last = (menu) ? '_arrow': ''
+
+        this.frameName = `${first}${last}`
+
+        this.resetFrame()
+
+        // Set interactive after set frame so bounds are correct
+        this.item.setInteractive({ cursor: 'pointer' })
+    }
+
+    resetFrame() {
+        this.item.setFrame(this.frameName)
     }
 
     onOver() {
@@ -79,16 +87,12 @@ class SafeItem extends Phaser.GameObjects.Container {
         if (this.safeList) {
             this.safe.showSafeList(this.safeList)
         } else {
-            this.safeList = this.safe.createSafeList(this.data.menu, this.column + 1, this.y)
+            this.safeList = this.safe.createSafeList(this.data.menu, this.column + 1, this.data.wide, this.x, this.y, this.item.width)
         }
     }
 
     onOut() {
         this.resetFrame()
-    }
-
-    resetFrame() {
-        this.item.setFrame(this.frameName)
     }
 
     /* END-USER-CODE */

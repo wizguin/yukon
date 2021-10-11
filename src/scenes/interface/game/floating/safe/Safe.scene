@@ -54,7 +54,8 @@
                         "key": "main",
                         "frame": "inventory/list-item"
                     },
-                    "y": -90
+                    "y": -90,
+                    "visible": false
                 }
             ]
         }
