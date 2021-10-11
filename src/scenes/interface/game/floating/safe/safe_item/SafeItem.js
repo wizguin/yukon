@@ -16,7 +16,6 @@ class SafeItem extends Phaser.GameObjects.Container {
         let nameStyle = {
             align: 'center',
             color: '#000000',
-            fixedWidth: 532,
             fontFamily: 'Arial',
             fontSize: '28px',
             metrics: scene.interface.metrics.Arial28
@@ -52,11 +51,8 @@ class SafeItem extends Phaser.GameObjects.Container {
         this.data = item
         this.column = column
 
-        this.name.text = item.name
-        // Center name vertically instead of using origin to fix blurry text
-        this.name.y = -Math.floor(this.name.height / 2)
-
         this.updateFrameName(item.menu, wide)
+        this.updateNameText(item.name)
     }
 
     updateFrameName(menu, wide) {
@@ -73,6 +69,23 @@ class SafeItem extends Phaser.GameObjects.Container {
 
     resetFrame() {
         this.item.setFrame(this.frameName)
+    }
+
+    updateNameText(name) {
+        this.name.text = name
+
+        let availableWidth = this.item.width - 30
+
+        // Text too long
+        if (this.name.width > availableWidth) {
+            this.name.setFontSize(24)
+        }
+
+        // Center name vertically instead of using origin to fix blurry text
+        this.name.y = -Math.floor(this.name.height / 2)
+
+        // Set fixed width
+        this.name.setFixedSize(availableWidth, 0)
     }
 
     onOver() {
