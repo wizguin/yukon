@@ -37,7 +37,10 @@ class Safe extends FloatingMenu {
 
         this.initMenu()
 
-        this.safeMessages = this.crumbs.safeMessages
+        // Map of message ids to message text, used by networking and hotkeys
+        this.safeMessagesMap = {}
+        this.setSafeMessagesMap(this.crumbs.safeMessages)
+
         this.subItems = []
 
         this.cellHeight = 64
@@ -48,12 +51,22 @@ class Safe extends FloatingMenu {
 
         this.timer
 
-        this.createSafeList(this.safeMessages)
+        this.createSafeList(this.crumbs.safeMessages)
 
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    setSafeMessagesMap(messages) {
+        for (let list of messages) {
+            this.safeMessagesMap[list.id] = list.name
+
+            if (list.menu) {
+                this.setSafeMessagesMap(list.menu)
+            }
+        }
+    }
 
     createSafeList(list, column = 0, wide = 1, parentX = 0, parentY = 0, parentWidth = 0) {
         let group = []

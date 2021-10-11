@@ -20,7 +20,7 @@ export default class TextBalloon extends Balloon {
             wordWrap: { width: textWidth, useAdvancedWrap: true },
             lineSpacing: -5
         }
-        this.maxLength = 48
+        this.maxLength = 60
 
         let textSprite = this.createText(text)
 
