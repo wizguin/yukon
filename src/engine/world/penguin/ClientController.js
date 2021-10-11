@@ -26,6 +26,9 @@ export default class ClientController {
         // If expecting emote key combo
         this.emoteKeyPressed = false
 
+        this.lastBalloon = Date.now()
+        this.throttleDelay = 100
+
         // Input
         this.keys = this.crumbs.quickKeys.keys
         this.emotes = this.crumbs.quickKeys.emotes
@@ -61,6 +64,18 @@ export default class ClientController {
 
     get input() {
         return this.interface.main.input
+    }
+
+    get isBalloonThrottled() {
+        let time = Date.now()
+
+        if (time - this.lastBalloon < this.throttleDelay) {
+            return true
+        }
+
+        this.lastBalloon = time
+
+        return false
     }
 
     initInventory() {
@@ -147,11 +162,19 @@ export default class ClientController {
     }
 
     sendEmote(emote) {
+        if (!this.visible || this.isBalloonThrottled) {
+            return
+        }
+
         this.interface.showEmoteBalloon(this.id, emote)
         this.network.send('send_emote', { emote: emote })
     }
 
     sendSafe(safe) {
+        if (!this.visible || this.isBalloonThrottled) {
+            return
+        }
+
         let message = this.interface.main.safe.safeMessagesMap[safe]
 
         this.interface.showTextBalloon(this.id, message)
@@ -159,7 +182,7 @@ export default class ClientController {
     }
 
     showCrosshair() {
-        if (!this.interface.main || !this.visible) {
+        if (!this.visible || !this.interface.main) {
             return
         }
 
