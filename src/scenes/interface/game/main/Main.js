@@ -56,7 +56,7 @@ class Main extends BaseScene {
         this.moderator;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings|Moderator>} */
+        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings|Moderator|Safe>} */
         this.hideOnSleep;
 
         /* START-USER-CTR-CODE */
@@ -209,7 +209,7 @@ class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator]
+        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator, safe]
 
         // dock (components)
         new Interactive(dock);

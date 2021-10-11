@@ -553,11 +553,15 @@
         {
             "prefabId": "d44a536e-8824-4c11-8cdd-649f5629a29c",
             "id": "7b10953c-f288-40da-8b3f-44af0dea100d",
+            "unlock": [
+                "visible"
+            ],
             "label": "moderator",
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 480
+            "y": 480,
+            "visible": false
         },
         {
             "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
@@ -589,7 +593,8 @@
                 "75179079-5eb1-4135-9798-34cea7db0f09",
                 "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
                 "4904443b-abe1-429f-9557-f064db674790",
-                "7b10953c-f288-40da-8b3f-44af0dea100d"
+                "7b10953c-f288-40da-8b3f-44af0dea100d",
+                "63f32401-55ee-489b-ada3-a0f4df778b29"
             ]
         }
     ]
