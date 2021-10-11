@@ -115,10 +115,7 @@ class Safe extends FloatingMenu {
     }
 
     onBackOver() {
-        this.timer = this.scene.time.delayedCall(500, () => {
-            this.visible = false
-            this.closeLists()
-        })
+        this.timer = this.scene.time.delayedCall(500, () => this.closeMenu())
     }
 
     onBackOut() {
@@ -127,6 +124,11 @@ class Safe extends FloatingMenu {
             this.scene.time.removeEvent(this.timer)
             this.timer = null
         }
+    }
+
+    closeMenu() {
+        this.visible = false
+        this.closeLists()
     }
 
     /* END-USER-CODE */

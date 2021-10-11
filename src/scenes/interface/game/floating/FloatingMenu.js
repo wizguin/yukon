@@ -19,9 +19,7 @@ export default class FloatingMenu extends BaseContainer {
         this.close.isFilled = false
         this.close.setInteractive({ cursor: 'pointer' })
 
-        this.close.on('pointerup', () => {
-            this.visible = false
-        })
+        this.close.on('pointerup', () => this.closeMenu())
     }
 
     createBack() {
@@ -39,7 +37,7 @@ export default class FloatingMenu extends BaseContainer {
     }
 
     onBackOver() {
-        this.visible = false
+        this.closeMenu()
     }
 
     onBackOut() {
@@ -47,6 +45,10 @@ export default class FloatingMenu extends BaseContainer {
     }
 
     onBackUp() {
+        this.closeMenu()
+    }
+
+    closeMenu() {
         this.visible = false
     }
 

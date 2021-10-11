@@ -1,6 +1,9 @@
+import BaseContainer from '@scenes/base/BaseContainer'
+
+
 /* START OF COMPILED CODE */
 
-class SafeItem extends Phaser.GameObjects.Container {
+class SafeItem extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x, y);
@@ -37,6 +40,7 @@ class SafeItem extends Phaser.GameObjects.Container {
 
         item.on('pointerover', () => this.onOver())
         item.on('pointerout', () => this.onOut())
+        item.on('pointerup', () => this.onUp())
 
         /* END-USER-CTR-CODE */
     }
@@ -106,6 +110,10 @@ class SafeItem extends Phaser.GameObjects.Container {
 
     onOut() {
         this.resetFrame()
+    }
+
+    onUp() {
+        this.safe.closeMenu()
     }
 
     /* END-USER-CODE */
