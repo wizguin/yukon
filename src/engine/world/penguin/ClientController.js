@@ -38,7 +38,8 @@ export default class ClientController {
             'show_crosshair': () => this.showCrosshair(),
 
             'emote_key': () => this.emoteKeyPressed = true,
-            'send_emote': (id) => this.sendEmote(id)
+            'send_emote': (id) => this.sendEmote(id),
+            'send_safe': (id) => this.sendSafe(id)
         }
 
         this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
@@ -148,6 +149,13 @@ export default class ClientController {
     sendEmote(emote) {
         this.interface.showEmoteBalloon(this.id, emote)
         this.network.send('send_emote', { emote: emote })
+    }
+
+    sendSafe(safe) {
+        let message = this.interface.main.safe.safeMessagesMap[safe]
+
+        this.interface.showTextBalloon(this.id, message)
+        this.network.send('send_safe', { safe: safe })
     }
 
     showCrosshair() {

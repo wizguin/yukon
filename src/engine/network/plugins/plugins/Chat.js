@@ -12,16 +12,12 @@ export default class Chat extends Plugin {
         }
     }
 
-    get safeMessagesMap() {
-        return this.interface.main.safe.safeMessagesMap
-    }
-
     sendMessage(args) {
         this.interface.showTextBalloon(args.id, args.message)
     }
 
     sendSafe(args) {
-        let message = this.safeMessagesMap[args.safe]
+        let message = this.interface.main.safe.safeMessagesMap[args.safe]
 
         this.interface.showTextBalloon(args.id, message)
     }

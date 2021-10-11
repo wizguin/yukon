@@ -114,10 +114,7 @@ class SafeItem extends BaseContainer {
 
     onUp() {
         this.safe.closeMenu()
-
-        this.interface.showTextBalloon(this.world.client.id, this.data.name)
-
-        this.network.send('send_safe', { safe: this.data.id })
+        this.world.client.sendSafe(this.data.id)
     }
 
     /* END-USER-CODE */
