@@ -155,6 +155,8 @@ class PlayerCard extends BaseContainer {
             this.inventory.visible = false
         }
 
+        this.inventorySort.closeMenu()
+
         this.id = penguin.id
         // Update buttons
         this.updateButtons()
