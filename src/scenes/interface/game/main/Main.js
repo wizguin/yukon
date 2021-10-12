@@ -38,6 +38,8 @@ class Main extends BaseScene {
         this.crosshair;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.mod_m;
         /** @type {Waddle} */
         this.waddle;
         /** @type {Buddy} */
@@ -161,7 +163,10 @@ class Main extends BaseScene {
         const news_button = this.add.image(70, 61, "main", "news-button");
 
         // mod_button
-        const mod_button = this.add.image(1434, 69, "main", "mod-button");
+        const mod_button = this.add.image(1434, 69, "main", "mod/button");
+
+        // mod_m
+        const mod_m = this.add.sprite(1434, 69, "main", "mod/m");
 
         // waddle
         const waddle = new Waddle(this, 1099, 332);
@@ -307,10 +312,10 @@ class Main extends BaseScene {
         news_buttonButton.activeFrame = false;
 
         // mod_button (components)
-        const mod_buttonButton = new Button(mod_button);
-        mod_buttonButton.spriteName = "mod-button";
-        mod_buttonButton.callback = () => this.moderator.visible = true;
-        mod_buttonButton.activeFrame = false;
+        const mod_buttonSimpleButton = new SimpleButton(mod_button);
+        mod_buttonSimpleButton.hoverCallback = () => this.onModOver();
+        mod_buttonSimpleButton.hoverOutCallback = () => this.onModOut();
+        mod_buttonSimpleButton.callback = () => this.onModClick();
 
         this.onlinePopup = onlinePopup;
         this.popup = popup;
@@ -318,6 +323,7 @@ class Main extends BaseScene {
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
+        this.mod_m = mod_m;
         this.waddle = waddle;
         this.buddy = buddy;
         this.playerCard = playerCard;
@@ -370,6 +376,11 @@ class Main extends BaseScene {
 
         this.input.keyboard.on('keydown-TAB', (event) => this.onChatKeyDown(event))
         this.input.keyboard.on('keydown-ENTER', (event) => this.onChatKeyDown(event))
+
+        // Anims
+
+        let anims = this.cache.json.get('main-anims')
+        this.anims.fromJSON(anims)
     }
 
     onSleep() {
@@ -511,6 +522,20 @@ class Main extends BaseScene {
             ease: 'Bounce',
             duration: 200
         })
+    }
+
+    onModOver() {
+        this.mod_m.play('mod_button')
+    }
+
+    onModOut() {
+        this.mod_m.stop()
+        this.mod_m.setFrame('mod/m')
+    }
+
+    onModClick() {
+        this.onModOut()
+        this.moderator.visible = true
     }
 
     /* END-USER-CODE */

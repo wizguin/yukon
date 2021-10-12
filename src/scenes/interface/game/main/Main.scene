@@ -444,17 +444,30 @@
         },
         {
             "type": "Image",
-            "id": "5dce1a5e-0a11-4e37-a002-99517e8f72bf",
+            "id": "3d799d81-5005-4dfc-820b-ddeb0ea8307e",
             "label": "mod_button",
             "components": [
-                "Button"
+                "SimpleButton"
             ],
-            "Button.spriteName": "mod-button",
-            "Button.callback": "() => this.moderator.visible = true",
-            "Button.activeFrame": false,
+            "SimpleButton.hoverCallback": "() => this.onModOver()",
+            "SimpleButton.hoverOutCallback": "() => this.onModOut()",
+            "SimpleButton.callback": "() => this.onModClick()",
             "texture": {
                 "key": "main",
-                "frame": "mod-button"
+                "frame": "mod/button"
+            },
+            "x": 1434,
+            "y": 69
+        },
+        {
+            "type": "Sprite",
+            "id": "6dca3f2a-91a7-4ed4-8cf2-5a0ddf89d4c9",
+            "label": "mod_m",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "main",
+                "frame": "mod/m"
             },
             "x": 1434,
             "y": 69
