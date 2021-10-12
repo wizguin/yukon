@@ -3,7 +3,6 @@ import BaseContainer from '@scenes/base/BaseContainer'
 import { Button, Interactive, SimpleButton } from '@components/components'
 
 import InventoryLoader from '@engine/interface/inventory/InventoryLoader'
-import InventorySort from '../inventory_sort/InventorySort'
 
 
 /* START OF COMPILED CODE */
@@ -116,11 +115,6 @@ class Inventory extends BaseContainer {
         arrow.angle = -90;
         tab.add(arrow);
 
-        // inventorySort
-        const inventorySort = new InventorySort(scene, 74, 282);
-        inventorySort.visible = false;
-        this.add(inventorySort);
-
         // lists
         const slots = [slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12]
 
@@ -212,7 +206,7 @@ class Inventory extends BaseContainer {
         // inventory_sort_button (components)
         const inventory_sort_buttonButton = new Button(inventory_sort_button);
         inventory_sort_buttonButton.spriteName = "inventory/sort-button";
-        inventory_sort_buttonButton.callback = () => { inventorySort.visible = true };
+        inventory_sort_buttonButton.callback = () => this.parentContainer.inventorySort.showMenu();
         inventory_sort_buttonButton.activeFrame = false;
 
         // tab_handle (components)
@@ -222,7 +216,6 @@ class Inventory extends BaseContainer {
         this.container = container;
         this.active_text = active_text;
         this.arrow = arrow;
-        this.inventorySort = inventorySort;
         this.slots = slots;
 
         /* START-USER-CTR-CODE */
@@ -279,7 +272,7 @@ class Inventory extends BaseContainer {
     onTabClick() {
         if (this.container.visible) {
             this.parentContainer.bringToTop(this)
-            this.inventorySort.visible = false
+            this.parentContainer.inventorySort.closeMenu()
             this.x -= 495
 
         } else {

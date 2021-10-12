@@ -3,6 +3,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 import { Button, DraggableContainer, Interactive } from '@components/components'
 
 import Inventory from './inventory/Inventory'
+import InventorySort from './inventory_sort/InventorySort'
 import Buttons from './buttons/Buttons'
 import PaperDoll from './paperdoll/PaperDoll'
 
@@ -65,6 +66,11 @@ class PlayerCard extends BaseContainer {
         const blue_x = scene.add.image(177, -239, "main", "blue-x");
         this.add(blue_x);
 
+        // inventorySort
+        const inventorySort = new InventorySort(scene, 434, 315);
+        inventorySort.visible = false;
+        this.add(inventorySort);
+
         // inventory
         const inventory = new Inventory(scene, -135, 33);
         this.add(inventory);
@@ -86,6 +92,7 @@ class PlayerCard extends BaseContainer {
         this.stats = stats;
         this.coins = coins;
         this.username = username;
+        this.inventorySort = inventorySort;
         this.inventory = inventory;
 
         /* START-USER-CTR-CODE */

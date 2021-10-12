@@ -321,7 +321,7 @@
                                 "Button"
                             ],
                             "Button.spriteName": "inventory/sort-button",
-                            "Button.callback": "() => { inventorySort.visible = true }",
+                            "Button.callback": "() => this.parentContainer.inventorySort.showMenu()",
                             "Button.activeFrame": false,
                             "texture": {
                                 "key": "main",
@@ -384,19 +384,6 @@
                             "angle": -90
                         }
                     ]
-                },
-                {
-                    "prefabId": "676b9d5e-1fcd-4a27-8667-0f19254fc582",
-                    "id": "fc186fd8-eb1f-4dd8-9831-487f0f88fe29",
-                    "unlock": [
-                        "visible"
-                    ],
-                    "label": "inventorySort",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": 74,
-                    "y": 282,
-                    "visible": false
                 }
             ]
         }

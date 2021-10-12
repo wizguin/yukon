@@ -158,6 +158,19 @@
                     "y": -239
                 },
                 {
+                    "prefabId": "676b9d5e-1fcd-4a27-8667-0f19254fc582",
+                    "id": "1e195136-b37b-4455-8b80-df6580175885",
+                    "unlock": [
+                        "visible"
+                    ],
+                    "label": "inventorySort",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 434,
+                    "y": 315,
+                    "visible": false
+                },
+                {
                     "prefabId": "092e5111-82e2-4289-8f29-b8d9568e9497",
                     "id": "2c78d474-38e5-4639-85d4-0191679ebb81",
                     "label": "inventory",

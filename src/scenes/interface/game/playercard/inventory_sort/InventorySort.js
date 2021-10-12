@@ -125,6 +125,7 @@ class InventorySort extends FloatingMenu {
 
         // other_container
         const other_container = scene.add.container(264, -198);
+        other_container.visible = false;
         this.add(other_container);
 
         // inventory_list_item_9
@@ -254,13 +255,27 @@ class InventorySort extends FloatingMenu {
 
     /* START-USER-CODE */
 
+    get inventory() {
+        return this.parentContainer.inventory
+    }
+
     filterInventory(text, slot) {
-        this.parentContainer.active_text.text = text
-        this.parentContainer.filter = slot
-        this.parentContainer.page = 1
-        this.parentContainer.showPage()
+        this.inventory.active_text.text = text
+        this.inventory.filter = slot
+        this.inventory.page = 1
+        this.inventory.showPage()
 
         this.closeMenu()
+    }
+
+    showMenu() {
+        // Move back to fill entire canvas
+        let matrix = this.getWorldTransformMatrix()
+
+        this.back.x = -matrix.getX(0, 0)
+        this.back.y = -matrix.getY(0, 0)
+
+        this.visible = true
     }
 
     closeMenu() {

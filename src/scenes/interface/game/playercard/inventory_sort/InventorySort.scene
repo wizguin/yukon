@@ -18,6 +18,8 @@
             "id": "a571d894-2bbb-424f-9b81-7152272e220e",
             "label": "container_1",
             "components": [],
+            "x": 760,
+            "y": 480,
             "list": [
                 {
                     "type": "Rectangle",
@@ -321,6 +323,7 @@
                     "components": [],
                     "x": 264,
                     "y": -198,
+                    "visible": false,
                     "list": [
                         {
                             "type": "Image",
