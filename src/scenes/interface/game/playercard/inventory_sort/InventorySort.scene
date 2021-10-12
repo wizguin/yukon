@@ -50,13 +50,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('All Items', null) }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('All Items', null)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -70
                 },
@@ -80,13 +80,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item-arrow",
-                    "Button.hoverCallback": "() => { other_container.visible = true }",
-                    "Button.callback": "() => { this.filterInventory('Other Items', 'other') }",
+                    "Button.spriteName": "list/small_arrow",
+                    "Button.hoverCallback": "() => other_container.visible = true",
+                    "Button.callback": "() => this.filterInventory('Other Items', 'other')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item-arrow"
+                        "frame": "list/small_arrow"
                     },
                     "y": -134
                 },
@@ -110,13 +110,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Colors', 'color') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Colors', 'color')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -198
                 },
@@ -140,13 +140,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Feet Items', 'feet') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Feet Items', 'feet')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -262
                 },
@@ -170,13 +170,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Hand Items', 'hand') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Hand Items', 'hand')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -326
                 },
@@ -200,13 +200,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Body Items', 'body') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Body Items', 'body')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -390
                 },
@@ -230,13 +230,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Neck Items', 'neck') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Neck Items', 'neck')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -454
                 },
@@ -260,13 +260,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Face Items', 'face') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Face Items', 'face')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -518
                 },
@@ -290,13 +290,13 @@
                     "components": [
                         "Button"
                     ],
-                    "Button.spriteName": "inventory/list-item",
-                    "Button.hoverCallback": "() => { other_container.visible = false }",
-                    "Button.callback": "() => { this.filterInventory('Head Items', 'head') }",
+                    "Button.spriteName": "list/small",
+                    "Button.hoverCallback": "() => other_container.visible = false",
+                    "Button.callback": "() => this.filterInventory('Head Items', 'head')",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -582
                 },
@@ -317,6 +317,7 @@
                     "type": "Container",
                     "id": "3cf02094-87a6-4f5e-a56a-0a9c81b3ad5a",
                     "label": "other_container",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 264,
                     "y": -198,
@@ -328,12 +329,12 @@
                             "components": [
                                 "Button"
                             ],
-                            "Button.spriteName": "inventory/list-item",
-                            "Button.callback": "() => { this.filterInventory('Pins/Flags', 'flag') }",
+                            "Button.spriteName": "list/small",
+                            "Button.callback": "() => this.filterInventory('Pins/Flags', 'flag')",
                             "Button.activeFrame": false,
                             "texture": {
                                 "key": "main",
-                                "frame": "inventory/list-item"
+                                "frame": "list/small"
                             }
                         },
                         {
@@ -343,12 +344,12 @@
                             "components": [
                                 "Button"
                             ],
-                            "Button.spriteName": "inventory/list-item",
-                            "Button.callback": "() => { this.filterInventory('Awards', 'award') }",
+                            "Button.spriteName": "list/small",
+                            "Button.callback": "() => this.filterInventory('Awards', 'award')",
                             "Button.activeFrame": false,
                             "texture": {
                                 "key": "main",
-                                "frame": "inventory/list-item"
+                                "frame": "list/small"
                             },
                             "y": 64
                         },
@@ -359,12 +360,12 @@
                             "components": [
                                 "Button"
                             ],
-                            "Button.spriteName": "inventory/list-item",
-                            "Button.callback": "() => { this.filterInventory('Backgrounds', 'photo') }",
+                            "Button.spriteName": "list/small",
+                            "Button.callback": "() => this.filterInventory('Backgrounds', 'photo')",
                             "Button.activeFrame": false,
                             "texture": {
                                 "key": "main",
-                                "frame": "inventory/list-item"
+                                "frame": "list/small"
                             },
                             "y": 128
                         },

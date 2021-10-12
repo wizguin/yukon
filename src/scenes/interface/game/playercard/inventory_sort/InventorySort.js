@@ -25,7 +25,7 @@ class InventorySort extends FloatingMenu {
         this.add(close);
 
         // all
-        const all = scene.add.image(0, -70, "main", "inventory/list-item");
+        const all = scene.add.image(0, -70, "main", "list/small");
         this.add(all);
 
         // all_text
@@ -36,7 +36,7 @@ class InventorySort extends FloatingMenu {
         this.add(all_text);
 
         // other
-        const other = scene.add.image(0, -134, "main", "inventory/list-item-arrow");
+        const other = scene.add.image(0, -134, "main", "list/small_arrow");
         this.add(other);
 
         // other_text
@@ -47,7 +47,7 @@ class InventorySort extends FloatingMenu {
         this.add(other_text);
 
         // colors
-        const colors = scene.add.image(0, -198, "main", "inventory/list-item");
+        const colors = scene.add.image(0, -198, "main", "list/small");
         this.add(colors);
 
         // colors_text
@@ -58,7 +58,7 @@ class InventorySort extends FloatingMenu {
         this.add(colors_text);
 
         // feet
-        const feet = scene.add.image(0, -262, "main", "inventory/list-item");
+        const feet = scene.add.image(0, -262, "main", "list/small");
         this.add(feet);
 
         // feet_text
@@ -69,7 +69,7 @@ class InventorySort extends FloatingMenu {
         this.add(feet_text);
 
         // hand
-        const hand = scene.add.image(0, -326, "main", "inventory/list-item");
+        const hand = scene.add.image(0, -326, "main", "list/small");
         this.add(hand);
 
         // hand_text
@@ -80,7 +80,7 @@ class InventorySort extends FloatingMenu {
         this.add(hand_text);
 
         // body
-        const body = scene.add.image(0, -390, "main", "inventory/list-item");
+        const body = scene.add.image(0, -390, "main", "list/small");
         this.add(body);
 
         // body_text
@@ -91,7 +91,7 @@ class InventorySort extends FloatingMenu {
         this.add(body_text);
 
         // neck
-        const neck = scene.add.image(0, -454, "main", "inventory/list-item");
+        const neck = scene.add.image(0, -454, "main", "list/small");
         this.add(neck);
 
         // neck_text
@@ -102,7 +102,7 @@ class InventorySort extends FloatingMenu {
         this.add(neck_text);
 
         // face
-        const face = scene.add.image(0, -518, "main", "inventory/list-item");
+        const face = scene.add.image(0, -518, "main", "list/small");
         this.add(face);
 
         // face_text
@@ -113,7 +113,7 @@ class InventorySort extends FloatingMenu {
         this.add(face_text);
 
         // head
-        const head = scene.add.image(0, -582, "main", "inventory/list-item");
+        const head = scene.add.image(0, -582, "main", "list/small");
         this.add(head);
 
         // head_text
@@ -128,15 +128,15 @@ class InventorySort extends FloatingMenu {
         this.add(other_container);
 
         // inventory_list_item_9
-        const inventory_list_item_9 = scene.add.image(0, 0, "main", "inventory/list-item");
+        const inventory_list_item_9 = scene.add.image(0, 0, "main", "list/small");
         other_container.add(inventory_list_item_9);
 
         // inventory_list_item_10
-        const inventory_list_item_10 = scene.add.image(0, 64, "main", "inventory/list-item");
+        const inventory_list_item_10 = scene.add.image(0, 64, "main", "list/small");
         other_container.add(inventory_list_item_10);
 
         // inventory_list_item_11
-        const inventory_list_item_11 = scene.add.image(0, 128, "main", "inventory/list-item");
+        const inventory_list_item_11 = scene.add.image(0, 128, "main", "list/small");
         other_container.add(inventory_list_item_11);
 
         // pins_text
@@ -162,87 +162,88 @@ class InventorySort extends FloatingMenu {
 
         // all (components)
         const allButton = new Button(all);
-        allButton.spriteName = "inventory/list-item";
-        allButton.hoverCallback = () => { other_container.visible = false };
-        allButton.callback = () => { this.filterInventory('All Items', null) };
+        allButton.spriteName = "list/small";
+        allButton.hoverCallback = () => other_container.visible = false;
+        allButton.callback = () => this.filterInventory('All Items', null);
         allButton.activeFrame = false;
 
         // other (components)
         const otherButton = new Button(other);
-        otherButton.spriteName = "inventory/list-item-arrow";
-        otherButton.hoverCallback = () => { other_container.visible = true };
-        otherButton.callback = () => { this.filterInventory('Other Items', 'other') };
+        otherButton.spriteName = "list/small_arrow";
+        otherButton.hoverCallback = () => other_container.visible = true;
+        otherButton.callback = () => this.filterInventory('Other Items', 'other');
         otherButton.activeFrame = false;
 
         // colors (components)
         const colorsButton = new Button(colors);
-        colorsButton.spriteName = "inventory/list-item";
-        colorsButton.hoverCallback = () => { other_container.visible = false };
-        colorsButton.callback = () => { this.filterInventory('Colors', 'color') };
+        colorsButton.spriteName = "list/small";
+        colorsButton.hoverCallback = () => other_container.visible = false;
+        colorsButton.callback = () => this.filterInventory('Colors', 'color');
         colorsButton.activeFrame = false;
 
         // feet (components)
         const feetButton = new Button(feet);
-        feetButton.spriteName = "inventory/list-item";
-        feetButton.hoverCallback = () => { other_container.visible = false };
-        feetButton.callback = () => { this.filterInventory('Feet Items', 'feet') };
+        feetButton.spriteName = "list/small";
+        feetButton.hoverCallback = () => other_container.visible = false;
+        feetButton.callback = () => this.filterInventory('Feet Items', 'feet');
         feetButton.activeFrame = false;
 
         // hand (components)
         const handButton = new Button(hand);
-        handButton.spriteName = "inventory/list-item";
-        handButton.hoverCallback = () => { other_container.visible = false };
-        handButton.callback = () => { this.filterInventory('Hand Items', 'hand') };
+        handButton.spriteName = "list/small";
+        handButton.hoverCallback = () => other_container.visible = false;
+        handButton.callback = () => this.filterInventory('Hand Items', 'hand');
         handButton.activeFrame = false;
 
         // body (components)
         const bodyButton = new Button(body);
-        bodyButton.spriteName = "inventory/list-item";
-        bodyButton.hoverCallback = () => { other_container.visible = false };
-        bodyButton.callback = () => { this.filterInventory('Body Items', 'body') };
+        bodyButton.spriteName = "list/small";
+        bodyButton.hoverCallback = () => other_container.visible = false;
+        bodyButton.callback = () => this.filterInventory('Body Items', 'body');
         bodyButton.activeFrame = false;
 
         // neck (components)
         const neckButton = new Button(neck);
-        neckButton.spriteName = "inventory/list-item";
-        neckButton.hoverCallback = () => { other_container.visible = false };
-        neckButton.callback = () => { this.filterInventory('Neck Items', 'neck') };
+        neckButton.spriteName = "list/small";
+        neckButton.hoverCallback = () => other_container.visible = false;
+        neckButton.callback = () => this.filterInventory('Neck Items', 'neck');
         neckButton.activeFrame = false;
 
         // face (components)
         const faceButton = new Button(face);
-        faceButton.spriteName = "inventory/list-item";
-        faceButton.hoverCallback = () => { other_container.visible = false };
-        faceButton.callback = () => { this.filterInventory('Face Items', 'face') };
+        faceButton.spriteName = "list/small";
+        faceButton.hoverCallback = () => other_container.visible = false;
+        faceButton.callback = () => this.filterInventory('Face Items', 'face');
         faceButton.activeFrame = false;
 
         // head (components)
         const headButton = new Button(head);
-        headButton.spriteName = "inventory/list-item";
-        headButton.hoverCallback = () => { other_container.visible = false };
-        headButton.callback = () => { this.filterInventory('Head Items', 'head') };
+        headButton.spriteName = "list/small";
+        headButton.hoverCallback = () => other_container.visible = false;
+        headButton.callback = () => this.filterInventory('Head Items', 'head');
         headButton.activeFrame = false;
 
         // inventory_list_item_9 (components)
         const inventory_list_item_9Button = new Button(inventory_list_item_9);
-        inventory_list_item_9Button.spriteName = "inventory/list-item";
-        inventory_list_item_9Button.callback = () => { this.filterInventory('Pins/Flags', 'flag') };
+        inventory_list_item_9Button.spriteName = "list/small";
+        inventory_list_item_9Button.callback = () => this.filterInventory('Pins/Flags', 'flag');
         inventory_list_item_9Button.activeFrame = false;
 
         // inventory_list_item_10 (components)
         const inventory_list_item_10Button = new Button(inventory_list_item_10);
-        inventory_list_item_10Button.spriteName = "inventory/list-item";
-        inventory_list_item_10Button.callback = () => { this.filterInventory('Awards', 'award') };
+        inventory_list_item_10Button.spriteName = "list/small";
+        inventory_list_item_10Button.callback = () => this.filterInventory('Awards', 'award');
         inventory_list_item_10Button.activeFrame = false;
 
         // inventory_list_item_11 (components)
         const inventory_list_item_11Button = new Button(inventory_list_item_11);
-        inventory_list_item_11Button.spriteName = "inventory/list-item";
-        inventory_list_item_11Button.callback = () => { this.filterInventory('Backgrounds', 'photo') };
+        inventory_list_item_11Button.spriteName = "list/small";
+        inventory_list_item_11Button.callback = () => this.filterInventory('Backgrounds', 'photo');
         inventory_list_item_11Button.activeFrame = false;
 
         this.safe = safe;
         this.close = close;
+        this.other_container = other_container;
 
         /* START-USER-CTR-CODE */
 
@@ -259,6 +260,11 @@ class InventorySort extends FloatingMenu {
         this.parentContainer.page = 1
         this.parentContainer.showPage()
 
+        this.closeMenu()
+    }
+
+    closeMenu() {
+        this.other_container.visible = false
         this.visible = false
     }
 
