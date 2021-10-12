@@ -52,7 +52,7 @@
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "inventory/list-item"
+                        "frame": "list/small"
                     },
                     "y": -90,
                     "visible": false

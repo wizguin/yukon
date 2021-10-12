@@ -25,7 +25,7 @@ class Safe extends FloatingMenu {
         this.add(safe);
 
         // start
-        const start = scene.add.image(0, -90, "main", "inventory/list-item");
+        const start = scene.add.image(0, -90, "main", "list/small");
         start.visible = false;
         this.add(start);
 
