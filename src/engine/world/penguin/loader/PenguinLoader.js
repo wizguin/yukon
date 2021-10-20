@@ -22,18 +22,18 @@ export default class PenguinLoader extends SpriteLoader {
     }
 
     addPenguin(penguin) {
-        this.loadSprite(penguin, 'penguin-body', 1)
+        this.loadSprite(penguin, 'penguin_body', 1)
         this.loadSprite(penguin, 'penguin', 2)
     }
 
     addShadow(penguin) {
-        let shadow = penguin.room.add.image(0, 0, 'penguin-base', 'shadow')
+        let shadow = penguin.room.add.image(0, 0, 'penguin_base', 'shadow')
 
         penguin.addAt(shadow, 0)
     }
 
     addRing(penguin) {
-        let ring = penguin.room.add.image(0, 0, 'penguin-base', 'ring')
+        let ring = penguin.room.add.image(0, 0, 'penguin_base', 'ring')
 
         penguin.addAt(ring, 0)
     }

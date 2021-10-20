@@ -98,7 +98,9 @@ export default class Penguin extends BaseContainer {
 
     playFrame(frame) {
         // Moving penguin can only update when frames are movement frames (9-16)
-        if (this.isTweening && (frame < 9 || frame > 16)) return
+        if (this.isTweening && (frame < 9 || frame > 16)) {
+            return
+        }
 
         // Filters out shadow and ring
         let sprites = this.list.filter(child => child.type == 'Sprite')
@@ -106,7 +108,11 @@ export default class Penguin extends BaseContainer {
         for (let sprite of sprites) {
             let key = `${sprite.texture.key}_${frame}`
 
-            if (this.checkFrames(sprite, key)) {
+            if (!this.world.anims.exists(key)) {
+                this.createAnim(sprite.texture.key, frame)
+            }
+
+            if (this.checkAnim(key)) {
                 sprite.visible = true
                 sprite.anims.play(key)
             } else {
@@ -117,15 +123,45 @@ export default class Penguin extends BaseContainer {
         this.frame = frame
     }
 
-    checkFrames(sprite, key) {
-        let animation = sprite.anims.animationManager.anims.entries[key]
-        return (animation.frames.length > 0)
+    createAnim(key, frame) {
+        let animation = this.crumbs.penguin[frame]
+        let frames = this.generateFrames(key, frame, animation)
+
+        this.world.anims.create({
+            key: `${key}_${frame}`,
+            frames: frames,
+            frameRate: 24,
+            repeat: animation.repeat || 0
+        })
+    }
+
+    generateFrames(key, frame, animation) {
+        let config = {
+            prefix: `${frame}_`,
+            frames: animation.frames || Phaser.Utils.Array.NumberArray(animation.start || 1, animation.end)
+        }
+
+        let textureFrames = this.world.textures.get(key).getFrameNames(false)
+
+        // Filter out null frames
+        config.frames = config.frames.filter((i) => {
+            return textureFrames.includes(`${frame}_${i}`)
+        })
+
+        return this.world.anims.generateFrameNames(key, config)
+    }
+
+    checkAnim(key) {
+        let animation = this.world.anims.get(key)
+        return animation && animation.frames.length > 0
     }
 
     /*========== Tweening ==========*/
 
     addMoveTween(path, endFrame) {
-        if (this.tween) this.removeTween(false)
+        if (this.tween) {
+            this.removeTween(false)
+        }
 
         this.playFrame(this.direction + 8) // + 8 for walking frame id
 
@@ -144,8 +180,13 @@ export default class Penguin extends BaseContainer {
     onMoveUpdate() {
         this.depth = this.y
 
-        if (this.nameTag) this.updateNameTag()
-        if (this.balloon) this.updateBalloon()
+        if (this.nameTag) {
+            this.updateNameTag()
+        }
+
+        if (this.balloon) {
+            this.updateBalloon()
+        }
     }
 
     onMoveComplete(endFrame) {
@@ -168,12 +209,16 @@ export default class Penguin extends BaseContainer {
     }
 
     removeTween(playFrame = true) {
-        if (!this.tween) return
+        if (!this.tween) {
+            return
+        }
 
         this.tween.remove()
         this.tween = null
 
-        if (playFrame) this.playFrame(this.direction)
+        if (playFrame) {
+            this.playFrame(this.direction)
+        }
     }
 
 }
