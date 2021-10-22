@@ -4,7 +4,8 @@
   "description": "A rewrite of the Club Penguin client in HTML5",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "build-crumbs": "node ./utils/build-crumbs.js"
   },
   "repository": {
     "type": "git",
