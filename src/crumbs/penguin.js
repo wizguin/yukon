@@ -97,6 +97,174 @@ const penguin = {
     },
     30: {
         end: 28
+    },
+    31: {
+        end: 28
+        //check
+    },
+    32: {
+        end: 56,
+        repeat: -1
+    },
+    33: {
+        end: 20,
+        repeat: -1
+    },
+    34: {
+        end: 25
+    },
+    35: {
+        end: 21,
+        repeat: -1
+    },
+    36: {
+        end: 33
+        // fix
+    },
+    37: {
+        end: 12,
+        repeat: -1
+    },
+    38: {
+        end: 12
+        // fix
+    },
+    39: {
+        end: 1
+    },
+    40: {
+        end: 12,
+        repeat: -1
+    },
+    41: {
+        end: 16
+        // fix
+    },
+    42: {
+        end: 28,
+        repeat: -1
+    },
+    43: {
+        end: 8,
+        repeat: -1
+    },
+    44: {
+        end: 12,
+        repeat: -1
+    },
+    45: {
+        end: 12,
+        repeat: -1
+    },
+    46: {
+        end: 6,
+        repeat: -1
+        // fix firefighter
+    },
+    47: {
+        end: 21,
+        repeat: -1
+        // check birthday hat/ghost
+    },
+    48: {
+        end: 1
+        // fix camera
+    },
+    49: {
+        end: 1
+    },
+    50: {
+        end: 13,
+        repeat: -1
+    },
+    51: {
+        end: 18,
+        repeat: -1
+    },
+    52: {
+        end: 16,
+        repeat: -1
+    },
+    53: {
+        end: 25,
+        repeat: -1
+    },
+    54: {
+        end: 19
+    },
+    55: {
+        end: 11
+    },
+    56: {
+        end: 20,
+        repeat: -1
+    },
+    57: {
+        end: 44,
+        repeat: -1
+    },
+    58: {
+        end: 14,
+        repeat: -1
+    },
+    59: {
+        end: 14
+    },
+    60: {
+        end: 12,
+        repeat: -1
+    },
+    61: {
+        end: 33
+    },
+    62: {
+        end: 30
+    },
+    63: {
+        end: 8
+    },
+    64: {
+        end: 1
+    },
+    65: {
+        end: 1
+    },
+    66: {
+        end: 1
+    },
+    67: {
+        end: 1
+    },
+    68: {
+        end: 39
+    },
+    69: {
+        end: 31
+    },
+    70: {
+        end: 32
+    },
+    71: {
+        end: 45,
+        repeat: -1
+        // fix
+    },
+    72: {
+        end: 84
+        // fix
+    },
+    73: {
+        end: 30
+    },
+    74: {
+        end: 51
+    },
+    75: {
+        end: 107
+        // fix
+    },
+    76: {
+        end: 42
     }
 }
 

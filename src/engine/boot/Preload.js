@@ -41,6 +41,7 @@ export default class Preload extends BaseScene {
         this.crumbs.items = this.cache.json.get('items')
         this.crumbs.quickKeys = this.cache.json.get('quick_keys')
         this.crumbs.safeMessages = this.cache.json.get('safe_messages')
+        this.crumbs.secretFrames = this.cache.json.get('secret_frames')
         this.crumbs.strings = this.cache.json.get('strings')
 
         // Start

@@ -105,6 +105,11 @@ export default class Penguin extends BaseContainer {
         // Filters out shadow and ring
         let sprites = this.list.filter(child => child.type == 'Sprite')
 
+        // Secret frames
+        if ([25, 26].includes(frame)) {
+            frame = this.getSecretFrame(frame)
+        }
+
         for (let sprite of sprites) {
             let key = `${sprite.texture.key}_${frame}`
 
@@ -154,6 +159,29 @@ export default class Penguin extends BaseContainer {
     checkAnim(key) {
         let animation = this.world.anims.get(key)
         return animation && animation.frames.length > 0
+    }
+
+    getSecretFrame(frame) {
+        let equipped = this.items.equippedFlat
+
+        for (let secret of this.crumbs.secretFrames[frame]) {
+            if (this.checkSecretFrames(equipped, secret)) {
+                return secret.secret_frame
+            }
+        }
+
+        return frame
+    }
+
+    checkSecretFrames(equipped, secret) {
+        for (let item in equipped) {
+            if (equipped[item] !== secret[item]) {
+                return false
+            }
+        }
+
+        // Only return true if frame is found in crumbs
+        return secret.secret_frame in this.crumbs.penguin
     }
 
     /*========== Tweening ==========*/
