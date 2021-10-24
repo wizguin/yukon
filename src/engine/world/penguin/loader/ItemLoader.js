@@ -63,16 +63,7 @@ export default class ItemLoader extends SpriteLoader {
 
     onComplete() {
         this.penguin.sort('depth')
-
-        let frame = this.penguin.frame
-
-        // Frames above dancing will be set to frame 1
-        if (frame > 26) {
-            this.penguin.playFrame(1)
-        } else {
-            this.penguin.playFrame(frame)
-        }
-
+        this.penguin.playFrame(this.penguin.frame)
     }
 
     removeItem(slot) {

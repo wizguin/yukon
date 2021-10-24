@@ -45,6 +45,8 @@ export default class ClientController {
             'send_safe': (id) => this.sendSafe(id)
         }
 
+        this.lockRotation = false
+
         this.input.on('pointermove', (pointer) => this.onPointerMove(pointer))
 
         this.input.keyboard.on('keydown', (event) => this.onKeyDown(event))
@@ -98,7 +100,7 @@ export default class ClientController {
             this.interface.main.onCrosshairMove(pointer)
         }
 
-        if (!this.visible || this.isTweening) {
+        if (!this.visible || this.isTweening || this.lockRotation) {
             return
         }
 
@@ -149,7 +151,9 @@ export default class ClientController {
              return
         }
 
-        this.penguin.playFrame(frame)
+        this.lockRotation = true
+
+        this.penguin.playFrame(frame, set)
         this.network.send('send_frame', { set: set, frame: frame })
     }
 
@@ -158,7 +162,20 @@ export default class ClientController {
             return
         }
 
+        this.lockRotation = true
+
         this.penguin.sit(pointer.x, pointer.y)
+    }
+
+    sendSnowball(x, y) {
+        if (!this.visible || this.isTweening) {
+            return
+        }
+
+        this.lockRotation = true
+
+        this.interface.main.snowballFactory.throwBall(this.id, x, y)
+        this.network.send('snowball', { x: x, y: y })
     }
 
     sendEmote(emote) {
@@ -195,6 +212,8 @@ export default class ClientController {
         }
 
         this.interface.showLoading(this.getString('joining', name))
+
+        this.lockRotation = false
 
         let random = PathEngine.getRandomPos(x, y, randomRange)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })

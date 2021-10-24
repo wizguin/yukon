@@ -96,7 +96,7 @@ export default class Penguin extends BaseContainer {
 
     /*========== Frames ==========*/
 
-    playFrame(frame) {
+    playFrame(_frame, set = true) {
         // Moving penguin can only update when frames are movement frames (9-16)
         if (this.isTweening && (frame < 9 || frame > 16)) {
             return
@@ -105,10 +105,10 @@ export default class Penguin extends BaseContainer {
         // Filters out shadow and ring
         let sprites = this.list.filter(child => child.type == 'Sprite')
 
-        // Secret frames
-        if ([25, 26].includes(frame)) {
-            frame = this.getSecretFrame(frame)
-        }
+        // Get correct frame id
+        let frame = ([25, 26].includes(_frame))
+            ? this.getSecretFrame(_frame)
+            : _frame
 
         for (let sprite of sprites) {
             let key = `${sprite.texture.key}_${frame}`
@@ -125,7 +125,8 @@ export default class Penguin extends BaseContainer {
             }
         }
 
-        this.frame = frame
+        // Frames that aren't set get set to 1
+        this.frame = (set) ? _frame : 1
     }
 
     createAnim(key, frame) {

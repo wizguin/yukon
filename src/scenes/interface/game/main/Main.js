@@ -413,9 +413,7 @@ class Main extends BaseScene {
 
     onCrosshairClick() {
         this.stopCrosshair()
-
-        this.network.send('snowball', { x: this.crosshair.x, y: this.crosshair.y })
-        this.snowballFactory.throwBall(this.world.client.id, this.crosshair.x, this.crosshair.y)
+        this.world.client.sendSnowball(this.crosshair.x, this.crosshair.y)
     }
 
     stopCrosshair() {

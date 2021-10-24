@@ -27,9 +27,6 @@ export default class ClientPenguin extends Penguin {
     }
 
     rotate(x, y) {
-        // Only rotate on standing frames
-        if (this.frame > 8) return
-
         let angle = PathEngine.getAngle(this.pos, { x: x, y: y + 80 })
         let direction = PathEngine.getDirection(angle)
 
@@ -56,7 +53,9 @@ export default class ClientPenguin extends Penguin {
 
     onMoveComplete(endFrame) {
         super.onMoveComplete(endFrame)
+
         this.isTrigger()
+        this.world.client.lockRotation = false
     }
 
     isTrigger() {
