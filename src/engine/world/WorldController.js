@@ -38,10 +38,9 @@ export default class WorldController extends BaseScene {
 
     createRoom(id, users) {
         this.room = this.roomFactory.createRoom(id)
+        this.room.waiting = users
 
-        if (users) {
-            this.room.events.once('create', () => this.addPenguins(users))
-        }
+        this.room.events.once('create', () => this.addPenguins())
     }
 
     joinIgloo(args) {
@@ -57,17 +56,21 @@ export default class WorldController extends BaseScene {
 
     createIgloo(args) {
         this.room = this.iglooFactory.createIgloo(args)
-        this.room.events.once('create', () => this.addPenguins(args.users))
+        this.room.waiting = args.users
+
+        this.room.events.once('create', () => this.addPenguins())
     }
 
-    addPenguins(users) {
-        this.room.penguins = this.penguinFactory.createPenguins(users, this.room)
+    addPenguins() {
+        this.room.penguins = this.penguinFactory.createPenguins(this.room.waiting, this.room)
+        this.room.isReady = true
     }
 
     addPenguin(user) {
-        // Bug: if addPenguin called before room is created penguin won't be added
-        // if room isnt ready add penguin to queue and then merge queue with users in addPenguins?
-        // check moveplayer etc too
+        // If room isn't ready then user gets added into waiting array
+        if (!this.room.isReady && !this.room.inWaiting(user.id)) {
+            return this.room.waiting.push(user)
+        }
 
         if (!(user.id in this.room.penguins)) {
             let penguin = this.penguinFactory.createPenguin(user, this.room)

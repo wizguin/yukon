@@ -9,8 +9,16 @@ export default class RoomScene extends BaseScene {
         this.key = key
 
         this.penguins = null
-        this.block = null // Block collision body
-        this.triggers = null // Trigger collision bodies
+
+        // Block collision body
+        this.block = null
+        // Trigger collision bodies
+        this.triggers = null
+
+        // If room is fully loaded
+        this.isReady = false
+        // Array of users to be added once ready
+        this.waiting = []
     }
 
     get client() {
@@ -102,6 +110,14 @@ export default class RoomScene extends BaseScene {
         this.interface.main.snowballFactory.clearBalls()
         this.sound.stopAll()
         this.scene.stop()
+    }
+
+    inWaiting(id) {
+        if (this.waiting.find(user => user.id == id)) {
+            return true
+        } else {
+            return false
+        }
     }
 
     /*========== Physics ==========*/
