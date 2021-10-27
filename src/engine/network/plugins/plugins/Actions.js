@@ -12,18 +12,37 @@ export default class Actions extends Plugin {
         }
     }
 
+    get room() {
+        return this.world.room
+    }
+
     sendPosition(args) {
-        if (this.world.client.id != args.id) {
-            this.world.room.penguins[args.id].move(args.x, args.y, args.endFrame)
+        if (this.room.isReady) {
+            this.room.penguins[args.id].move(args.x, args.y, args.endFrame)
+        }
+
+        let user = this.room.getWaiting(args.id)
+        if (user) {
+            user.x = args.x
+            user.y = args.y
         }
     }
 
     sendFrame(args) {
-        this.world.room.penguins[args.id].playFrame(args.frame, args.set)
+        if (this.room.isReady) {
+            return this.room.penguins[args.id].playFrame(args.frame, args.set)
+        }
+
+        let user = this.room.getWaiting(args.id)
+        if (user) {
+            user.frame = (args.set) ? args.frame : 1
+        }
     }
 
     snowball(args) {
-        this.interface.main.snowballFactory.throwBall(args.id, args.x, args.y)
+        if (this.room.isReady) {
+            this.interface.main.snowballFactory.throwBall(args.id, args.x, args.y)
+        }
     }
 
 }

@@ -112,12 +112,8 @@ export default class RoomScene extends BaseScene {
         this.scene.stop()
     }
 
-    inWaiting(id) {
-        if (this.waiting.find(user => user.id == id)) {
-            return true
-        } else {
-            return false
-        }
+    getWaiting(id) {
+        return this.waiting.find(user => user.id == id)
     }
 
     /*========== Physics ==========*/

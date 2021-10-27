@@ -68,7 +68,7 @@ export default class WorldController extends BaseScene {
 
     addPenguin(user) {
         // If room isn't ready then user gets added into waiting array
-        if (!this.room.isReady && !this.room.inWaiting(user.id)) {
+        if (!this.room.isReady && !this.room.getWaiting(user.id)) {
             return this.room.waiting.push(user)
         }
 
