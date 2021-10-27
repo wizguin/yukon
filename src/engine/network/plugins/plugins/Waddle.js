@@ -21,7 +21,9 @@ export default class Waddle extends Plugin {
     }
 
     updateWaddle(args) {
-        this.interface.main.waddle.updateWaddle(args.waddle, args.seat, args.username)
+        if (this.world.room.isReady) {
+            this.interface.main.waddle.updateWaddle(args.waddle, args.seat, args.username)
+        }
     }
 
 }
