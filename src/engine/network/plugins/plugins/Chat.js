@@ -13,17 +13,23 @@ export default class Chat extends Plugin {
     }
 
     sendMessage(args) {
-        this.interface.showTextBalloon(args.id, args.message)
+        if (this.world.room.isReady) {
+            this.interface.showTextBalloon(args.id, args.message)
+        }
     }
 
     sendSafe(args) {
-        let message = this.interface.main.safe.safeMessagesMap[args.safe]
+        if (this.world.room.isReady) {
+            let message = this.interface.main.safe.safeMessagesMap[args.safe]
 
-        this.interface.showTextBalloon(args.id, message)
+            this.interface.showTextBalloon(args.id, message)
+        }
     }
 
     sendEmote(args) {
-        this.interface.showEmoteBalloon(args.id, args.emote)
+        if (this.world.room.isReady) {
+            this.interface.showEmoteBalloon(args.id, args.emote)
+        }
     }
 
 }
