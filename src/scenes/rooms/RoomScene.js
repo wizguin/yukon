@@ -116,6 +116,14 @@ export default class RoomScene extends BaseScene {
         return this.waiting.find(user => user.id == id)
     }
 
+    updateWaiting(id, attributes) {
+        let user = this.getWaiting(id)
+
+        if (user) {
+            user = Object.assign(user, attributes)
+        }
+    }
+
     /*========== Physics ==========*/
 
     get roomPhysics() {
