@@ -124,6 +124,10 @@ export default class RoomScene extends BaseScene {
         }
     }
 
+    removeWaiting(id) {
+        this.waiting = this.waiting.filter(user => user.id != id)
+    }
+
     /*========== Physics ==========*/
 
     get roomPhysics() {

@@ -79,6 +79,10 @@ export default class WorldController extends BaseScene {
     }
 
     removePenguin(id) {
+        if (!this.room.isReady) {
+            return this.room.removeWaiting(id)
+        }
+
         this.room.removePenguin(id)
     }
 
