@@ -16,14 +16,11 @@ export default class Item extends Plugin {
     }
 
     updatePlayer(args) {
-        if (this.world.room.isReady) {
-            this.world.room.penguins[args.id].update(args.item, args.slot)
+        if (!this.world.room.isReady) {
+            return this.world.room.updateWaiting(args.id, { [args.slot]: args.item })
         }
 
-        let user = this.world.room.getWaiting(args.id)
-        if (user) {
-            user[args.slot] = args.item
-        }
+        this.world.room.penguins[args.id].update(args.item, args.slot)
     }
 
     addItem(args) {
