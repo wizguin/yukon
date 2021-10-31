@@ -30,6 +30,9 @@ export default class Penguin extends BaseContainer {
         this.on('destroy', () => this.onDestroy())
         this.isButton = true
 
+        // Function that is called after move completes, used to set a frame after move etc
+        this.afterMove
+
         this.load()
     }
 
@@ -84,9 +87,9 @@ export default class Penguin extends BaseContainer {
         }
     }
 
-    move(x, y, endFrame) {
+    move(x, y) {
         let path = PathEngine.getPath(this, { x: x, y: y })
-        if (path) this.addMoveTween(path, endFrame)
+        if (path) this.addMoveTween(path)
     }
 
     setPos(x, y) {
@@ -187,7 +190,7 @@ export default class Penguin extends BaseContainer {
 
     /*========== Tweening ==========*/
 
-    addMoveTween(path, endFrame) {
+    addMoveTween(path) {
         if (this.tween) {
             this.removeTween(false)
         }
@@ -202,7 +205,7 @@ export default class Penguin extends BaseContainer {
             y: Math.round(path.target.y),
 
             onUpdate: () => this.onMoveUpdate(),
-            onComplete: () => this.onMoveComplete(endFrame)
+            onComplete: () => this.onMoveComplete()
         })
     }
 
@@ -218,11 +221,12 @@ export default class Penguin extends BaseContainer {
         }
     }
 
-    onMoveComplete(endFrame) {
-        this.removeTween(endFrame == null)
+    onMoveComplete() {
+        this.removeTween()
 
-        if (endFrame) {
-            this.playFrame(endFrame)
+        if (this.afterMove) {
+            this.afterMove()
+            this.afterMove = null
         }
     }
 
