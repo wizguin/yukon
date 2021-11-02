@@ -13,8 +13,9 @@ export default class ClientController {
         let { user, ...attributes } = args
         Object.assign(this, attributes)
 
-        this.id = args.user.id
-        this.coins = args.user.coins
+        this.id = user.id
+        this.coins = user.coins
+        this.rank = user.rank
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
@@ -78,6 +79,10 @@ export default class ClientController {
         this.lastBalloon = time
 
         return false
+    }
+
+    get isModerator() {
+        return this.rank > 1
     }
 
     initInventory() {

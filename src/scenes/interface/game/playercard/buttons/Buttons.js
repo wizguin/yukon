@@ -61,6 +61,7 @@ class Buttons extends BaseContainer {
         // report_button (components)
         const report_buttonButton = new Button(report_button);
         report_buttonButton.spriteName = "blue-button";
+        report_buttonButton.callback = () => this.onReportClick();
         const report_buttonShowHint = new ShowHint(report_button);
         report_buttonShowHint.text = "Report Player";
 
@@ -163,6 +164,12 @@ class Buttons extends BaseContainer {
                 this.enableButtons(['buddy', 'mail', 'ignore', 'report'])
                 break
         }
+
+        if (this.world.client.isModerator) {
+            this.enableButton('profile', 'mute-icon', 'Mute Player')
+            this.enableButton('ignore', 'ignore-icon', 'Kick Player')
+            this.enableButton('report', 'mod-icon', 'Ban Player')
+        }
     }
 
     resetButtons() {
@@ -203,7 +210,11 @@ class Buttons extends BaseContainer {
     }
 
     onFindClick() {
-        this.network.send('buddy_find', { id: this.parentContainer.id })
+        if (this.world.client.isModerator) {
+            this.showMute()
+        } else {
+            this.network.send('buddy_find', { id: this.parentContainer.id })
+        }
     }
 
     onIglooClick() {
@@ -214,10 +225,18 @@ class Buttons extends BaseContainer {
     }
 
     onIgnoreClick() {
-        if (this.ignore_icon.frame.name == 'ignore-remove-icon') {
+        if (this.world.client.isModerator) {
+            this.showKick()
+        } else if (this.ignore_icon.frame.name == 'ignore-remove-icon') {
             this.showRemoveIgnore()
         } else {
             this.showAddIgnore()
+        }
+    }
+
+    onReportClick() {
+        if (this.world.client.isModerator) {
+            this.showBan()
         }
     }
 
@@ -258,6 +277,36 @@ class Buttons extends BaseContainer {
             this.network.send('ignore_remove', { id: this.parentContainer.id })
 
             this.interface.prompt.showWindow('Done', 'single')
+        })
+    }
+
+    showMute() {
+        let text = `Mute Player: ${this.username}`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('mute_player', { id: this.parentContainer.id })
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    showKick() {
+        let text = `Kick Player: ${this.username}`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('kick_player', { id: this.parentContainer.id })
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    showBan() {
+        let text = `Ban Player: ${this.username}`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('ban_player', { id: this.parentContainer.id })
+
+            this.interface.prompt.window.visible = false
         })
     }
 

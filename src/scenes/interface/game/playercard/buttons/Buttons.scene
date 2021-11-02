@@ -29,6 +29,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onReportClick()",
                     "ShowHint.text": "Report Player",
                     "texture": {
                         "key": "main",
