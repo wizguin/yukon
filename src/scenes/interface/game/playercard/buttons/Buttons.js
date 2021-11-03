@@ -166,7 +166,7 @@ class Buttons extends BaseContainer {
         }
 
         if (this.world.client.isModerator) {
-            this.enableButton('profile', 'mute-icon', 'Mute Player')
+            //this.enableButton('profile', 'mute-icon', 'Mute Player')
             this.enableButton('ignore', 'ignore-icon', 'Kick Player')
             this.enableButton('report', 'mod-icon', 'Ban Player')
         }
