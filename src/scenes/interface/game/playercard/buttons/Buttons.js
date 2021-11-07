@@ -210,11 +210,7 @@ class Buttons extends BaseContainer {
     }
 
     onFindClick() {
-        if (this.world.client.isModerator) {
-            this.showMute()
-        } else {
-            this.network.send('buddy_find', { id: this.parentContainer.id })
-        }
+        this.network.send('buddy_find', { id: this.parentContainer.id })
     }
 
     onIglooClick() {
