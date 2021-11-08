@@ -112,7 +112,12 @@ class Settings extends BaseContainer {
 
         checkbox.checked = false
 
+        let oneDay = 1000 * 60 * 60 * 24
+        let timeDiff = Date.now() - Date.parse(this.world.client.joinTime)
+        let daysDiff = Math.round(timeDiff / oneDay)
+
         server.text = `You're on ${this.network.worldName}`
+        age.text = `Your penguin is ${daysDiff} days old`
         buddies.text = `${this.world.client.buddies.length}/100 Buddies`
 
         /* END-USER-CTR-CODE */
