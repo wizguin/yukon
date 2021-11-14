@@ -2,23 +2,34 @@
 
 
 :root {
-    --bg-color: #369ddd;
-    --text-color: #fafafa;
-    --accent-color: #f2c40d;
-    --button-color: #1c79c4;
-    --button-hover-color: #0951a5;
+    /* --bg: #369ddd;
+    --text: #fafafa;
+    --accent: #f2c40d;
+    --button: #1c79c4;
+    --button-hover: #0951a5;
+    --input: #fafafa;
+    --input-text: #000000;
+    --danger: #dc3545;
+    */
 
-    --bg-color-dark: #2e3440;
-    --text-color-dark: #eceff4;
-    --accent-color-dark: #88c0d0;
-    --button-color-dark: #5e81ac;
-    --button-hover-color-dark: #49688d;
+    --bg: #2e3440;
+    --text: #eceff4;
+    --accent: #88c0d0;
+    --button: #5e81ac;
+    --button-hover: #49688d;
+    --input: #242931;
+    --input-text: #fafafa;
+    --danger: #dc3545;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color-dark);
+    background-color: var(--bg);
 }
 
 a {
@@ -38,7 +49,7 @@ header {
 header a {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    color: var(--text-color-dark);
+    color: var(--text);
 }
 
 header i {
@@ -50,21 +61,13 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 3px solid var(--accent-color-dark);
-    color: var(--accent-color-dark);
-    transition: all ease 200ms;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+    transition: all ease 100ms;
 }
 
 .logout {
     margin-left: auto;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background-color: var(--button-color-dark);
-    transition: background ease 300ms;
-}
-
-.logout:hover {
-    background-color: var(--button-hover-color-dark);
 }
 
 #game {
@@ -81,13 +84,39 @@ nav a:hover {
 }
 
 .fa-chevron-right {
-    color: var(--button-color-dark)
+    color: var(--button)
 }
 
 .fa-sign-out-alt {
     margin-right: 10px;
 }
 
-input {
+#game input {
     background: none !important;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    color: var(--text)
+}
+
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--text);
+    background-color: var(--button);
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    transition: background ease 200ms;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--button-hover);
 }

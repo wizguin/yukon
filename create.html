@@ -1,0 +1,64 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Create Account</title>
+
+        <link rel="stylesheet" href="assets/styles/styles.css" type="text/css">
+        <link rel="stylesheet" href="assets/styles/create.css" type="text/css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
+
+        <!-- Scripts -->
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+        <script src="assets/scripts/create.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="/" class="fas fa-home fa-lg"></a>
+            <i class="fas fa-chevron-right"></i>
+            <nav>
+                <a href="/">Play Now</a>
+                <a href="create.html">Create Account</a>
+            </nav>
+        </header>
+
+        <form class="create-form">
+            <h1>Create an Account</h1>
+
+            <div class="form-group">
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" autocomplete="new-password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordRepeat" class="sr-only">Repeat Password</label>
+                <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" autocomplete="new-password" required>
+            </div>
+
+            <div class="form-group">
+                <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
+            </div>
+
+            <div class="form-group">
+                <button class="button" type="submit">Create</button>
+            </div>
+        </form>
+    </body>
+
+</html>
