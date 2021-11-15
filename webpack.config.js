@@ -12,11 +12,19 @@ let config = {
         minimize: false
     },
     devServer: {
-        contentBase: path.join(__dirname),
-        publicPath: '/',
-        writeToDisk: true,
+        static: {
+            directory: path.join(__dirname),
+            publicPath: '/'
+        },
+        devMiddleware: {
+            writeToDisk: true
+        },
+        proxy: {
+            '/assets/scripts/php/': 'http://localhost:80'
+        },
         host: '0.0.0.0',
-        port: 8080
+        port: 8080,
+        hot: false
     },
     resolve: {
         alias: {
