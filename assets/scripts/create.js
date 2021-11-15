@@ -25,18 +25,16 @@ function handleResponse(request) {
     updateFeedback(response)
 
     if (response.success) {
-        document.querySelector('.create-form').reset()
+        showSuccess()
     }
 }
 
 function updateFeedback(feedback) {
-    let fields = document.querySelector('.create-form').querySelectorAll('input')
+    let fields = document.getElementById('modal-form').querySelectorAll('input')
 
     for (let field of fields) {
         setFeedback(field, feedback[field.id])
     }
-
-    document.querySelector('.feedback.success').innerHTML = feedback.success || ''
 }
 
 function setFeedback(field, feedback = null) {
@@ -49,6 +47,34 @@ function setFeedback(field, feedback = null) {
     field.nextElementSibling.innerHTML = feedback || ''
 }
 
+function showSuccess() {
+    updateModal(
+        'Account Created',
+        '<p>Your account has been successfully created.</p>',
+        'Play Now',
+        () => window.location.href = '/'
+    )
+}
+
+function updateModal(title, content, button, onclick) {
+    document.getElementById('modal-title').innerHTML = title
+    document.getElementById('modal-content').innerHTML = content
+
+    let modalButton = document.getElementById('modal-button')
+
+    modalButton.innerHTML = button
+    modalButton.onclick = onclick
+
+    // Replay fade animation
+    let element = document.getElementById('modal')
+    element.classList.remove('fade')
+
+    // trigger a DOM reflow
+    void element.offsetWidth
+
+    element.classList.add('fade')
+}
+
 window.onload = function() {
-    document.querySelector('.create-form').addEventListener('submit', onSubmit)
+    document.getElementById('modal-form').addEventListener('submit', onSubmit)
 }

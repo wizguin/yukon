@@ -8,7 +8,6 @@
         <title>Create Account</title>
 
         <link rel="stylesheet" href="assets/styles/styles.css" type="text/css">
-        <link rel="stylesheet" href="assets/styles/create.css" type="text/css">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
@@ -19,46 +18,48 @@
     </head>
 
     <body>
-        <header>
-            <a href="/" class="fas fa-home fa-lg"></a>
-            <i class="fas fa-chevron-right"></i>
-            <nav>
-                <a href="/">Play Now</a>
-                <a href="create.html">Create Account</a>
-            </nav>
-        </header>
+        <section class="modal-container">
+            <div id="modal" class="modal fade">
+                <h1 id="modal-title">Create an Account</h1>
 
-        <form class="create-form">
-            <h1>Create an Account</h1>
+                <div id="modal-content">
+                    <form id="modal-form">
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Username</label>
+                            <input type="text" name="username" id="username" placeholder="Username" maxlength="12" required autofocus>
+                            <div class="feedback"></div>
+                        </div>
 
-            <div class="form-group">
-                <label for="username" class="sr-only">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username" required autofocus>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="Email Address" maxlength="254" required>
+                            <div class="feedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Password" autocomplete="new-password" maxlength="60" required>
+                            <div class="feedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="passwordRepeat" class="sr-only">Repeat Password</label>
+                            <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" autocomplete="new-password" maxlength="60" required>
+                            <div class="feedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
+                            <div class="feedback"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <button id="modal-button" class="button" type="submit" form="modal-form">Create</button>
+
+                <a href="/" class="modal-close">×</a>
             </div>
-
-            <div class="form-group">
-                <label for="email" class="sr-only">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="Email Address" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="sr-only">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" autocomplete="new-password" required>
-            </div>
-
-            <div class="form-group">
-                <label for="passwordRepeat" class="sr-only">Repeat Password</label>
-                <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" autocomplete="new-password" required>
-            </div>
-
-            <div class="form-group">
-                <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
-            </div>
-
-            <div class="form-group">
-                <button class="button" type="submit">Create</button>
-            </div>
-        </form>
+        </section>
     </body>
 
 </html>
