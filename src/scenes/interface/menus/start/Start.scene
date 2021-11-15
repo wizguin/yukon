@@ -81,6 +81,7 @@
                 "Button"
             ],
             "Button.spriteName": "create-button",
+            "Button.callback": "() => this.onCreateClick()",
             "Button.activeFrame": false,
             "texture": {
                 "key": "start",

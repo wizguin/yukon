@@ -60,6 +60,7 @@ class Start extends BaseScene {
         // createButton (components)
         const createButtonButton = new Button(createButton);
         createButtonButton.spriteName = "create-button";
+        createButtonButton.callback = () => this.onCreateClick();
         createButtonButton.activeFrame = false;
 
         // memberButton (components)
@@ -76,13 +77,17 @@ class Start extends BaseScene {
     /* START-USER-CODE */
 
     onBlogClick() {
-        console.log('Blog clicked')
+
     }
 
     onStartClick() {
         if (this.network.isSavedPenguins) return this.scene.start('PenguinSelect')
 
         this.scene.start('Login')
+    }
+
+    onCreateClick() {
+        window.location.href = '/create.html'
     }
 
     /* END-USER-CODE */
