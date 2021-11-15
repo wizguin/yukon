@@ -13,7 +13,6 @@
 .form-group .button {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    font-weight: 100;
     width: 100%;
     padding: 13px 15px;
     line-height: 1.5;
@@ -22,6 +21,7 @@
 }
 
 .form-group input {
+    font-weight: 400;
     color: var(--input-text);
     background-color: var(--input);
 }
@@ -29,17 +29,21 @@
 .form-group input:focus {
     color: var(--input-text);
     background-color: var(--input);
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    border-color: #eceff4;
+    box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%);
     outline: 0;
 }
 
 .form-group .feedback {
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 100;
+    font-size: 14px;
+    font-weight: 400;
     color: var(--danger);
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.feedback.success {
+    color: var(--success);
 }
 
 .form-group .invalid {
