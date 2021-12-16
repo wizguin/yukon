@@ -52,6 +52,7 @@
                 "SimpleButton",
                 "Animation"
             ],
+            "SimpleButton.callback": "() => this.onCreateClick()",
             "Animation.key": "large-button",
             "Animation.end": 3,
             "Animation.repeat": 0,

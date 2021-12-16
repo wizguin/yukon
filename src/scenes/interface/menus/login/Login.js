@@ -126,7 +126,8 @@ class Login extends BaseScene {
         backButtonAnimation.onHover = true;
 
         // createButton (components)
-        new SimpleButton(createButton);
+        const createButtonSimpleButton = new SimpleButton(createButton);
+        createButtonSimpleButton.callback = () => this.onCreateClick();
         const createButtonAnimation = new Animation(createButton);
         createButtonAnimation.key = "large-button";
         createButtonAnimation.end = 3;
@@ -193,6 +194,10 @@ class Login extends BaseScene {
         this.network.connectLogin(this.checks.username.checked, this.checks.password.checked, () => {
             this.network.send('login', { username: username, password: password })
         })
+    }
+
+    onCreateClick() {
+        window.location.href = '/create.html'
     }
 
     onBackClick() {
