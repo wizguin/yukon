@@ -167,6 +167,7 @@ nav a:hover {
 .modal p {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
+    font-weight: 400;
     margin: 0 0 15px 0;
 }
 
