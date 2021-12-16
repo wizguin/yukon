@@ -30,21 +30,28 @@ function handleResponse(request) {
 }
 
 function updateFeedback(feedback) {
-    let fields = document.getElementById('modal-form').querySelectorAll('input')
+    let groups = document.querySelectorAll('.form-group')
 
-    for (let field of fields) {
-        setFeedback(field, feedback[field.id])
+    for (let group of groups) {
+        setFeedback(group, feedback[group.id.replace('-group', '')])
     }
 }
 
-function setFeedback(field, feedback = null) {
-    if (feedback) {
-        field.classList.add('invalid')
-    } else {
-        field.classList.remove('invalid')
+function setFeedback(group, message = null) {
+    let input = group.querySelector('input')
+    let feedback = group.querySelector('.feedback')
+
+    if (input) {
+        if (message) {
+            input.classList.add('invalid')
+        } else {
+            input.classList.remove('invalid')
+        }
     }
 
-    field.nextElementSibling.innerHTML = feedback || ''
+    if (feedback) {
+        feedback.innerText = message || ''
+    }
 }
 
 function showSuccess() {
