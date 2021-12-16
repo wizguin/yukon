@@ -24,34 +24,32 @@
 
                 <div id="modal-content">
                     <form id="modal-form">
-                        <div class="form-group">
-                            <label for="username" class="sr-only">Username</label>
-                            <input type="text" name="username" id="username" placeholder="Username" maxlength="12" required autofocus>
+
+                        <div class="form-group" id="username-group">
+                            <input type="text" name="username" placeholder="Username" maxlength="12" required autofocus>
                             <div class="feedback"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email Address</label>
-                            <input type="email" name="email" id="email" placeholder="Email Address" maxlength="254" required>
+                        <div class="form-group" id="email-group">
+                            <input type="email" name="email" placeholder="Email Address" maxlength="254" required>
                             <div class="feedback"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password" class="sr-only">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password" autocomplete="new-password" maxlength="60" required>
+                        <div class="form-group" id="password-group">
+                            <input type="password" name="password" placeholder="Password" autocomplete="new-password" maxlength="60" required>
                             <div class="feedback"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="passwordRepeat" class="sr-only">Repeat Password</label>
-                            <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" autocomplete="new-password" maxlength="60" required>
+                        <div class="form-group" id="password-repeat-group">
+                            <input type="password" name="password-repeat" placeholder="Repeat Password" autocomplete="new-password" maxlength="60" required>
                             <div class="feedback"></div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="h-captcha-response-group">
                             <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
                             <div class="feedback"></div>
                         </div>
+
                     </form>
                 </div>
 
