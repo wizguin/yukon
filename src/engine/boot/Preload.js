@@ -12,6 +12,8 @@ import IglooEdit from '@scenes/interface/game/iglooedit/IglooEdit'
 export default class Preload extends BaseScene {
 
     preload() {
+        this.load.cacheBuster = VERSION
+
         this.load.on('progress', this.onProgress, this)
 
         WebFont.load(this.crumbs.fonts)

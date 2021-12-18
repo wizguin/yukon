@@ -1,5 +1,7 @@
 const path = require('path')
 const WebpackObfuscator = require('webpack-obfuscator')
+const DefinePlugin = require('webpack').DefinePlugin
+
 
 let config = {
     mode: 'development',
@@ -47,7 +49,12 @@ let config = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new DefinePlugin({
+            VERSION: JSON.stringify(require('./package.json').version)
+        })
+    ]
 }
 
 module.exports = (env, argv) => {
@@ -55,12 +62,12 @@ module.exports = (env, argv) => {
         config.output.filename = 'yukon.min.js'
         config.optimization.minimize = true
 
-        config.plugins = [
+        config.plugins.push(
             new WebpackObfuscator({
                 rotateStringArray: true,
                 reservedStrings: ['\s*']
             }, [])
-        ]
+        )
     }
 
     return config
