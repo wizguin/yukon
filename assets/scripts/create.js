@@ -26,6 +26,8 @@ function handleResponse(request) {
 
     if (response.success) {
         showSuccess()
+    } else {
+        hcaptcha.reset()
     }
 }
 
