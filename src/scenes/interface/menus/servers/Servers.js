@@ -51,6 +51,7 @@ class Servers extends BaseScene {
         // more
         const more = this.add.image(1300, 630, "servers", "more");
         more.setOrigin(0.5, 0.5027322404371585);
+        more.visible = false;
 
         // suggested
         const suggested = this.add.text(760, 85, "", {});
@@ -73,10 +74,12 @@ class Servers extends BaseScene {
 
         for (let [world, config] of worlds) {
             y += 102
+
             let server = new Server(this, 760, y)
 
             server.name.text = world
             server.safe.visible = config.safe
+
             server.button.callback = () => this.onServerClick(world, data.username, data.key)
 
             this.add.existing(server)

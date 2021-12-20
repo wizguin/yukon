@@ -3,7 +3,6 @@ import fonts from './fonts'
 import igloos from './igloos'
 import penguin from './penguin'
 import rooms from './rooms'
-import worlds from './worlds'
 
 
 const game = {
@@ -45,8 +44,7 @@ const game = {
         fonts: fonts,
         igloos: igloos,
         penguin: penguin,
-        rooms: rooms,
-        worlds: worlds
+        rooms: rooms
     }
 }
 
