@@ -41,7 +41,10 @@ export default class Network {
         // If a token exists for the user add the token selector to response,
         // so that the token can be deleted/refreshed by the server
         let token = this.getToken(username)
-        if (token) response.token = token.split(':')[0]
+
+        if (token) {
+            response.token = token.split(':')[0]
+        }
 
         this.connect(this.crumbs.worlds.game[world], () => {
             this.send('game_auth', response)
@@ -59,11 +62,14 @@ export default class Network {
 
         this.client.once('connect', onConnect)
         this.client.once('disconnect', onDisconnect)
-        this.client.on('message', (message) => { this.onMessage(message) })
+        this.client.on('connect_error', () => this.onConnectionLost())
+        this.client.on('message', (message) => this.onMessage(message))
     }
 
     disconnect() {
-        if (this.client) this.client.disconnect()
+        if (this.client) {
+            this.client.disconnect()
+        }
     }
 
     send(action, args = {}) {
@@ -95,7 +101,10 @@ export default class Network {
 
     get savedPenguins() {
         let savedPenguins = localStorage.getItem('saved_penguins')
-        if (!savedPenguins) return {}
+
+        if (!savedPenguins) {
+            return {}
+        }
 
         try {
             return JSON.parse(savedPenguins)
