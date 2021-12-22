@@ -55,6 +55,15 @@ class Server extends BaseContainer {
         name.setStyle({"fixedWidth":350,"fontFamily":"Arial","fontSize":"50px"});
         this.add(name);
 
+        // full
+        const full = scene.add.image(240, 0, "servers", "full");
+        full.setOrigin(0.5, 0.5076923076923077);
+        full.visible = false;
+        this.add(full);
+
+        // lists
+        const bars = [bar_1, bar_2, bar_3, bar_4, bar_5]
+
         // server (components)
         const serverButton = new Button(server);
         serverButton.spriteName = "server";
@@ -64,13 +73,28 @@ class Server extends BaseContainer {
         this.buddy = buddy;
         this.safe = safe;
         this.name = name;
+        this.full = full;
+        this.bars = bars;
 
         /* START-USER-CTR-CODE */
+
         this.button = serverButton
+
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    setPopulation(population) {
+        for (let [index, bar] of this.bars.entries()) {
+            let frame = (index + 1 <= population) ? 'bar_full' : 'bar_empty'
+
+            bar.setFrame(frame)
+
+            this.full.visible = population >= 6
+        }
+    }
+
     /* END-USER-CODE */
 }
 

@@ -143,6 +143,20 @@
                     "fixedWidth": 350,
                     "fontFamily": "Arial",
                     "fontSize": "50px"
+                },
+                {
+                    "type": "Image",
+                    "id": "8d848832-3ab6-49cf-9c4b-7e92f8e9dcdd",
+                    "label": "full",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "servers",
+                        "frame": "full"
+                    },
+                    "x": 240,
+                    "originY": 0.5076923076923077,
+                    "visible": false
                 }
             ]
         }
@@ -153,6 +167,19 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
     },
+    "lists": [
+        {
+            "id": "95088356-c712-4c8c-ab52-987cd6965253",
+            "label": "bars",
+            "objectIds": [
+                "7af4d2f7-a137-4126-976b-827dcf54d0c5",
+                "a32b7b1a-b9f9-4898-a387-ff92538a010d",
+                "1e645747-e731-4af5-a4aa-d34917b0581a",
+                "944bf383-8195-423f-af1f-dc5d20e30348",
+                "0beddcfb-533b-4b7b-8b7b-2d4846cfebc4"
+            ]
+        }
+    ],
     "prefabProperties": [
         {
             "name": "name",

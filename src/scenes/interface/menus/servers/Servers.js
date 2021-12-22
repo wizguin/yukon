@@ -80,13 +80,21 @@ class Servers extends BaseScene {
             server.name.text = world
             server.safe.visible = config.safe
 
-            server.button.callback = () => this.onServerClick(world, data.username, data.key)
+            let population = data.populations[world] || 1
+
+            server.setPopulation(population)
+
+            server.button.callback = () => this.onServerClick(world, data.username, data.key, population >= 6)
 
             this.add.existing(server)
         }
     }
 
-    onServerClick(world, username, key) {
+    onServerClick(world, username, key, isFull) {
+        if (isFull) {
+            return this.interface.prompt.showError('Sorry this server is full. Please select another server.')
+        }
+
         this.interface.showLoading(`${this.getString('joining')} ${world}`)
         this.scene.stop()
         this.network.connectGame(world, username, key)
