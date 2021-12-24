@@ -236,7 +236,10 @@ const penguin = {
         end: 1
     },
     68: {
-        end: 39
+        start: 13,
+        end: 39,
+        repeat: -1
+        // fix
     },
     69: {
         end: 31
