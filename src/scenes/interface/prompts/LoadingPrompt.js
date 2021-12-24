@@ -113,7 +113,11 @@ class LoadingPrompt extends BaseContainer {
         scene.events.off('create')
 
         scene.load.on('progress', (progress) => this.progress.scaleX = progress)
-        scene.events.once('create', () => this.visible = false)
+
+        scene.events.once('create', () => {
+            this.visible = false
+            this.scene.bringToTop()
+        })
 
         this.visible = true
     }
