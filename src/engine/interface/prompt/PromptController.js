@@ -22,39 +22,26 @@ export default class PromptController {
 
     showError(text, buttonText = 'Okay', callback = () => this.error.visible = false) {
         this.error.show(text, buttonText, callback)
-        this.bringToTop()
     }
 
     showItem(item) {
         this.item.showItem(item)
-        this.bringToTop()
     }
 
     showFurniture(item) {
         this.item.showFurniture(item)
-        this.bringToTop()
     }
 
     showLoading(scene, progress = 0) {
         this.loading.show(scene, progress)
-        this.bringToTop()
     }
 
     showWindow(text, buttonLayout = 'single', callback = () => {}, noCallback = () => this.window.visible = false) {
         this.window.show(text, buttonLayout, callback, noCallback)
-        this.bringToTop()
-    }
-
-    bringToTop() {
-        this.interface.scene.bringToTop()
-        this.interface.input.setDefaultCursor('default')
     }
 
     hideAll() {
-        this.error.visible = false
-        this.item.visible = false
         this.loading.visible = false
-        this.window.visible = false
     }
 
 }

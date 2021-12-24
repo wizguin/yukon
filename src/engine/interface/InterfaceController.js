@@ -40,7 +40,7 @@ export default class InterfaceController extends BaseScene {
             this.scene.launch('Load', { text: text, showBar: showBar })
         }
 
-        this.scene.bringToTop('Load')
+        this.bringToTop('Load')
     }
 
     hideLoading() {
@@ -59,7 +59,7 @@ export default class InterfaceController extends BaseScene {
             this.scene.launch('Main')
         }
 
-        this.scene.bringToTop('Main')
+        this.bringToTop('Main')
     }
 
     hideInterface() {
@@ -79,7 +79,16 @@ export default class InterfaceController extends BaseScene {
             this.scene.launch('IglooEdit')
         }
 
-        this.scene.bringToTop('IglooEdit')
+        this.bringToTop('IglooEdit')
+    }
+
+    bringToTop(key) {
+        this.scene.bringToTop(key)
+
+        // Keeps InterfaceController scene always on top, for prompts
+        this.scene.bringToTop()
+
+        this.input.setDefaultCursor('default')
     }
 
     hideIglooEdit() {
@@ -124,7 +133,7 @@ export default class InterfaceController extends BaseScene {
             this.scene.get(key).events.emit('showloading')
         }
 
-        this.scene.bringToTop(key)
+        this.bringToTop(key)
     }
 
     /**

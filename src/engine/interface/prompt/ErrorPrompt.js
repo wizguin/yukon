@@ -38,5 +38,4 @@ class ErrorPrompt extends Prompt {
 
 }
 
-
 export default ErrorPrompt
