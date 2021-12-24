@@ -287,6 +287,10 @@ class IglooEdit extends BaseScene {
     }
 
     saveIgloo() {
+        if (this.world.room.selected) {
+            this.world.room.selected.drop()
+        }
+
         let furniture = this.world.room.furnitureSprites.map(f => {
             return {
                 furnitureId: f.id,
