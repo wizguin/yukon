@@ -36,7 +36,7 @@ const game = {
         parent: 'game',
         mode: Phaser.Scale.FIT,
         autoRound: true,
-        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+        autoCenter: Phaser.Scale.CENTER_BOTH
     },
 
     crumbs: {

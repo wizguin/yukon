@@ -197,7 +197,7 @@ class Login extends BaseScene {
     }
 
     onCreateClick() {
-        window.location.href = '/create.html'
+        window.location.href = '/create'
     }
 
     onBackClick() {

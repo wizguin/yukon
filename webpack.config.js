@@ -22,7 +22,7 @@ let config = {
             writeToDisk: true
         },
         proxy: {
-            '/assets/scripts/php/': 'http://localhost:80'
+            '/create/scripts/php/': 'http://localhost:80'
         },
         host: '0.0.0.0',
         port: 8080,

@@ -7,7 +7,7 @@ function onSubmit(event) {
 
     let formData = new FormData(event.target)
 
-    request.open('POST', '/assets/scripts/php/create.php')
+    request.open('POST', '/create/scripts/php/create.php')
     request.send(formData)
 }
 
