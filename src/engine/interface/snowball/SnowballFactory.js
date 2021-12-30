@@ -101,8 +101,10 @@ export default class SnowballFactory {
     }
 
     onTweenComplete(ball) {
-        ball.setTexture('main', 'snowball/ground')
-        this.world.events.emit('snowballcomplete', ball.x, ball.y)
+        if (ball.active) {
+            ball.setTexture('main', 'snowball/ground')
+            this.world.events.emit('snowballcomplete', ball.x, ball.y)
+        }
     }
 
     getPeak(duration) {
