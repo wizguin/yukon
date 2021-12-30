@@ -26,7 +26,7 @@ export default class Network {
         this.saveUsername = saveUsername
         this.savePassword = savePassword
 
-        this.connect(this.crumbs.worlds.login, () => {
+        this.connect('Login', () => {
             onConnect()
         }, () => {
             this.disconnect()
@@ -46,7 +46,7 @@ export default class Network {
             response.token = token.split(':')[0]
         }
 
-        this.connect(this.crumbs.worlds.game[world], () => {
+        this.connect(world, () => {
             this.send('game_auth', response)
             this.worldName = world
 
@@ -58,7 +58,9 @@ export default class Network {
     connect(world, onConnect, onDisconnect) {
         this.disconnect()
 
-        this.client = io.connect(`${world.host}:${world.port}`)
+        let config = this.crumbs.worlds[world]
+
+        this.client = io.connect(config.host, { path: config.path })
 
         this.client.once('connect', onConnect)
         this.client.once('disconnect', onDisconnect)

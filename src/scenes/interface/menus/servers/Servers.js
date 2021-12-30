@@ -70,7 +70,7 @@ class Servers extends BaseScene {
 
     createServers(data) {
         let y = 122
-        let worlds = Object.entries(this.crumbs.worlds.game).slice(0, 5)
+        let worlds = Object.entries(this.crumbs.worlds).slice(0, 5).filter(world => !world[1].login)
 
         for (let [world, config] of worlds) {
             y += 102

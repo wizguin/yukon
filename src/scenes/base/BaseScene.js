@@ -17,7 +17,6 @@ export default class BaseScene extends Phaser.Scene {
     }
 
     getString(...args) {
-        console.log(args.map(id => this.crumbs.strings[id.toLowerCase()]))
         return args.map(id => this.crumbs.strings[id.toLowerCase()]).join(' ')
     }
 

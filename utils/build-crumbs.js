@@ -13,8 +13,7 @@ const crumbs = {
     quick_keys: require(`${assets}/quick_keys.json`),
     safe_messages: require(`${assets}/safe_messages.json`),
     secret_frames: require(`${assets}/secret_frames.json`),
-    strings: require(`${assets}/strings.json`),
-    worlds: require(`${assets}/worlds.json`)
+    strings: require(`${assets}/strings.json`)
 }
 
 try {

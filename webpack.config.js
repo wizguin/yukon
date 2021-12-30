@@ -22,7 +22,18 @@ let config = {
             writeToDisk: true
         },
         proxy: {
-            '/create/scripts/php/': 'http://localhost:80'
+            '/login': {
+                target: 'http://localhost:6111',
+                pathRewrite: { '^/login': '' },
+                ws: true
+            },
+            '/blizzard': {
+                target: 'http://localhost:6112',
+                pathRewrite: { '^/blizzard': '' },
+                ws: true
+            },
+
+            '/create/scripts/php': 'http://localhost:80'
         },
         host: '0.0.0.0',
         port: 8080,
