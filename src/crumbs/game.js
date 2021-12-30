@@ -8,7 +8,7 @@ import rooms from './rooms'
 const game = {
     width: 1520,
     height: 960,
-    type: Phaser.CANVAS,
+    type: (localStorage.webgl == 'true') ? Phaser.WEBGL : Phaser.CANVAS,
     transparent: true,
     roundPixels: true,
 
