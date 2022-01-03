@@ -255,8 +255,10 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     onTrashComplete() {
-        this.iglooEdit.button_furniture.setFrame('button/furniture')
-        this.destroy()
+        if (this.active) {
+            this.iglooEdit.button_furniture.setFrame('button/furniture')
+            this.destroy()
+        }
     }
 
     /*========== Animations ==========*/
