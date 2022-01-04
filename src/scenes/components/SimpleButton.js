@@ -43,7 +43,7 @@ class SimpleButton extends EventComponent {
 
         this.gameObject.on('pointerover', () => this.onOver())
         this.gameObject.on('pointerout', () => this.onOut())
-        this.gameObject.on('pointerup', () => this.onUp())
+        this.gameObject.on('pointerup', (pointer) => this.onUp(pointer))
     }
 
     onOver() {
@@ -54,7 +54,11 @@ class SimpleButton extends EventComponent {
         if (this.hoverOutCallback) this.hoverOutCallback()
     }
 
-    onUp() {
+    onUp(pointer) {
+        if (pointer.button != 0) {
+            return
+        }
+
         this.callback()
     }
 

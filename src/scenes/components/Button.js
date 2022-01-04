@@ -38,7 +38,7 @@ class Button extends SimpleButton {
 
     start() {
         super.start()
-        this.gameObject.on('pointerdown', () => this.onDown())
+        this.gameObject.on('pointerdown', (pointer) => this.onDown(pointer))
     }
 
     onOver() {
@@ -51,7 +51,11 @@ class Button extends SimpleButton {
         super.onOut()
     }
 
-    onDown() {
+    onDown(pointer) {
+        if (pointer.button != 0) {
+            return
+        }
+
         if (this.activeFrame) {
             this.gameObject.setFrame(`${this.spriteName}-active`)
         } else {
@@ -59,14 +63,18 @@ class Button extends SimpleButton {
         }
     }
 
-    onUp() {
+    onUp(pointer) {
+        if (pointer.button != 0) {
+            return
+        }
+
         if (this.activeFrame) {
             this.gameObject.setFrame(this.spriteName)
         } else {
             this.gameObject.setFrame(`${this.spriteName}-hover`)
         }
 
-        super.onUp()
+        super.onUp(pointer)
     }
 
     /* END-USER-CODE */

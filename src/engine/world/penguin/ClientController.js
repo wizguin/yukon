@@ -113,7 +113,7 @@ export default class ClientController {
     }
 
     onPointerUp(pointer, target) {
-        if (!this.visible || this.activeSeat) {
+        if (pointer.button != 0 || !this.visible || this.activeSeat) {
             return
         }
 

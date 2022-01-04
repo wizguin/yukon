@@ -43,7 +43,7 @@ class Zone extends SimpleButton {
 
         zone.on('pointerover', () => this.onOver())
         zone.on('pointerout', () => this.onOut())
-        zone.on('pointerup', () => this.onUp())
+        zone.on('pointerup', (pointer) => this.onUp(pointer))
     }
 
     /* END-USER-CODE */

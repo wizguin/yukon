@@ -40,7 +40,7 @@ class SafeItem extends BaseContainer {
 
         item.on('pointerover', () => this.onOver())
         item.on('pointerout', () => this.onOut())
-        item.on('pointerup', () => this.onUp())
+        item.on('pointerup', (pointer) => this.onUp(pointer))
 
         /* END-USER-CTR-CODE */
     }
@@ -112,7 +112,11 @@ class SafeItem extends BaseContainer {
         this.resetFrame()
     }
 
-    onUp() {
+    onUp(pointer) {
+        if (pointer.button != 0) {
+            return
+        }
+
         this.safe.closeMenu()
         this.world.client.sendSafe(this.data.id)
     }
