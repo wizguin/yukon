@@ -274,4 +274,9 @@ export default class IglooScene extends RoomScene {
         }
     }
 
+    setSelected(furniture = null) {
+        this.selected = furniture
+        this.interface.iglooEdit.setControlsInteractive(furniture == null)
+    }
+
 }

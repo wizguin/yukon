@@ -272,6 +272,8 @@ class IglooEdit extends BaseScene {
     showControls() {
         this.defaultControls.visible = false
         this.controls.visible = true
+
+        this.setControlsInteractive(true)
     }
 
     hideControls() {
@@ -302,6 +304,14 @@ class IglooEdit extends BaseScene {
         })
 
         this.network.send('update_furniture', { furniture: furniture })
+    }
+
+    setControlsInteractive(interactive) {
+        let set = (interactive) ? 'setInteractive' : 'disableInteractive'
+
+        for (let control of this.controls.list) {
+            control[set]()
+        }
     }
 
     /* END-USER-CODE */

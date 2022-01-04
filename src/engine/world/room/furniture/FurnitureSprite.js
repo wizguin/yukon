@@ -136,12 +136,12 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.offsetX = this.x - pointer.x
         this.offsetY = this.y - pointer.y
 
-        this.scene.selected = this
+        this.scene.setSelected(this)
     }
 
     drop() {
         if (!this.editing) return
-        this.scene.selected = null
+        this.scene.setSelected()
 
         if (!this.isSafe) {
             if (this.isTrash) return this.sendToTrash()
