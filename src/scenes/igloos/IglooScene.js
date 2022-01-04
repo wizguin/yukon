@@ -259,7 +259,9 @@ export default class IglooScene extends RoomScene {
     }
 
     onPointerDown(pointer, target) {
-        if (!this.editing) return
+        if (pointer.button != 0 || !this.editing) {
+            return
+        }
 
         if (!this.selected && target[0] && target[0] instanceof FurnitureSprite) {
             target[0].hover(pointer)
