@@ -442,7 +442,9 @@ class Main extends BaseScene {
     }
 
     onIglooClick() {
-        if (this.world.room.id == this.world.client.id) return
+        if (this.world.room.isIgloo && this.world.room.id == this.world.client.id) {
+            return
+        }
 
         this.interface.showLoading(this.getString('joining', 'igloo'))
         this.network.send('join_igloo', { igloo: this.world.client.id, x: 0, y: 0 })
