@@ -81,9 +81,9 @@ class Start extends BaseScene {
     }
 
     onStartClick() {
-        if (this.network.isSavedPenguins) return this.scene.start('PenguinSelect')
+        if (this.network.isSavedPenguins) return this.scene.switch('PenguinSelect')
 
-        this.scene.start('Login')
+        this.scene.switch('Login')
     }
 
     onCreateClick() {

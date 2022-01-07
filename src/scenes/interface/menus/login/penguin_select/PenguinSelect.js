@@ -177,16 +177,16 @@ class PenguinSelect extends BaseScene {
     }
 
     onPenguinClick(penguin) {
-        this.scene.start('PenguinLogin', { penguin: penguin })
+        this.switchData('PenguinLogin', { penguin: penguin })
     }
 
     onBackClick() {
-        this.scene.start('Login')
+        this.scene.switch('Login')
     }
 
     onError() {
         localStorage.removeItem('saved_penguins')
-        this.scene.start('Login')
+        this.scene.switch('Login')
     }
 
     /* END-USER-CODE */
