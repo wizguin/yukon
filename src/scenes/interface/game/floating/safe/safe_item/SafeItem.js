@@ -20,18 +20,13 @@ class SafeItem extends BaseContainer {
             align: 'center',
             color: '#000000',
             fontFamily: 'Arial',
-            fontSize: '28px',
-            metrics: scene.interface.metrics.Arial28
+            fontSize: '28px'
         }
 
         // name
         this.name = scene.add.text(0, -15, '', nameStyle)
         this.name.setOrigin(0.5, 0)
         this.add(this.name)
-
-        if (!scene.interface.metrics.Arial28) {
-            scene.interface.metrics.Arial28 = this.name.getTextMetrics()
-        }
 
         this.data
         this.column

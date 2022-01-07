@@ -1,18 +1,18 @@
 import BaseScene from '@scenes/base/BaseScene'
 
+import MetricsManager from './metrics/MetricsManager'
 import PromptController from './prompt/PromptController'
 import interfaceScenes from './interfaceScenes'
 
 
 export default class InterfaceController extends BaseScene {
 
+    metricsManager = new MetricsManager()
+
     create() {
         this.prompt = new PromptController(this)
 
         this.externalScenes = []
-
-        // Cached font metrics
-        this.metrics = {}
     }
 
     get loading() {
