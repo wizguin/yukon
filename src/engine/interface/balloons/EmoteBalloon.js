@@ -3,26 +3,36 @@ import Balloon from './Balloon'
 
 export default class EmoteBalloon extends Balloon {
 
-    constructor(scene, x, y, emote) {
-        super(scene, x, y)
+    constructor(penguin) {
+        super(penguin)
 
         let width = 128
         let height = 68
 
+        this.emote = this.addEmote()
+
         this.addBalloon(width, height)
         this.addPointer(width, 'balloon-emote')
-        this.addEmote(emote)
+        this.add(this.emote)
     }
 
-    addEmote(emote) {
+    addEmote() {
+        let emoteSprite = this.scene.add.image(0, -25, 'main', 'emotes/1')
+
+        return emoteSprite
+    }
+
+    setContent(emote) {
+        this.updatePosition()
+
         let frame = `emotes/${emote}`
 
         // If emote frame doesn't exist, set to 1
-        if (!this.world.textures.get('main').has(frame)) frame = 'emotes/1'
+        if (!this.world.textures.get('main').has(frame)) {
+            frame = 'emotes/1'
+        }
 
-        let emoteSprite = this.scene.add.image(0, -25, 'main', frame)
-
-        this.add(emoteSprite)
+        this.emote.setFrame(frame)
     }
 
 }

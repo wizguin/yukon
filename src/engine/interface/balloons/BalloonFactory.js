@@ -5,9 +5,17 @@ import TextBalloon from './TextBalloon'
 export default class BalloonFactory {
 
     constructor(main) {
-        this.main = main // Main interface
+        // Main interface
+        this.main = main
 
-        this.delay = 4500 // Balloon destruction delay
+        // Balloon destruction delay
+        this.delay = 4500
+
+        this.offsetY = -95
+    }
+
+    get penguins() {
+        return this.main.world.room.penguins
     }
 
     /**
@@ -17,13 +25,22 @@ export default class BalloonFactory {
      * @param {number} emote - Emote ID
      */
     showEmoteBalloon(id, emote) {
-        if (!emote) return
+        if (!emote) {
+            return
+        }
 
-        let penguin = this.main.world.room.penguins[id]
-        if (!penguin) return
+        let penguin = this.penguins[id]
+        if (!penguin) {
+            return
+        }
 
-        let balloon = new EmoteBalloon(this.main.world.room, penguin.x, penguin.y - 95, emote)
-        this.addBalloon(penguin, balloon)
+        if (!penguin.emoteBalloon) {
+            penguin.emoteBalloon = new EmoteBalloon(penguin)
+            penguin.room.add.existing(penguin.emoteBalloon)
+        }
+
+        penguin.emoteBalloon.setContent(emote)
+        this.updateBalloon(penguin, penguin.emoteBalloon)
     }
 
     /**
@@ -33,48 +50,55 @@ export default class BalloonFactory {
      * @param {string} text - Message to be displayed
      */
     showTextBalloon(id, text) {
-        if (!text) return
+        if (!text) {
+            return
+        }
 
-        let penguin = this.main.world.room.penguins[id]
-        if (!penguin) return
+        let penguin = this.penguins[id]
+        if (!penguin) {
+            return
+        }
 
-        let balloon = new TextBalloon(this.main.world.room, penguin.x, penguin.y - 95, text)
-        this.addBalloon(penguin, balloon)
+        if (!penguin.textBalloon) {
+            penguin.textBalloon = new TextBalloon(penguin)
+            penguin.room.add.existing(penguin.textBalloon)
+        }
+
+        penguin.textBalloon.setContent(text)
+        this.updateBalloon(penguin, penguin.textBalloon)
+
         this.main.chatLog.addMessage(penguin.id, penguin.username, text)
     }
 
-    addBalloon(penguin, balloon) {
-        if (penguin.balloon) penguin.balloon.destroy() // Destroy existing balloon
+    updateBalloon(penguin, balloon) {
+        if (penguin.balloon) {
+            penguin.balloon.visible = false
+        }
 
-        balloon.depth = (penguin.isClient) ? 3001 : 3000 // Client balloons sorted higher
+        // Client balloons sorted higher
+        balloon.depth = (penguin.isClient) ? 3001 : 3000
 
-        penguin.room.add.existing(balloon)
+        balloon.visible = true
         penguin.balloon = balloon
 
         this.addTimer(penguin, balloon)
     }
 
     addTimer(penguin, balloon) {
-        let timer = penguin.room.time.addEvent({
+        let config = {
             delay: this.delay,
-            callback: () => { this.removeBalloon(penguin, balloon) }
-        })
+            callback: () => this.removeBalloon(penguin, balloon)
+        }
 
-        balloon.on('destroy', () => { this.removeTimer(timer) })
-    }
+        if (penguin.balloonTimer) {
+            return penguin.balloonTimer.reset(config)
+        }
 
-    /**
-     * Removes a timer.
-     * This will prevent timers on destroyed balloons from firing.
-     *
-     * @param {Phaser.Time.TimerEvent} timer - The balloon timer to be destroyed
-     */
-    removeTimer(timer) {
-        timer.remove()
+        penguin.balloonTimer = penguin.room.time.addEvent(config)
     }
 
     removeBalloon(penguin, balloon) {
-        balloon.destroy()
+        balloon.visible = false
         penguin.balloon = null
     }
 

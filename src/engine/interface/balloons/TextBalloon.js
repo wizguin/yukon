@@ -3,13 +3,15 @@ import Balloon from './Balloon'
 
 export default class TextBalloon extends Balloon {
 
-    constructor(scene, x, y, text) {
-        super(scene, x, y)
+    constructor(penguin) {
+        super(penguin)
 
         let width = 256
         let paddingX = 28
-        let paddingY = 16
         let textWidth = width - paddingX
+
+        this.maxLength = 60
+        this.paddingY = 16
 
         this.textStyle = {
             fontFamily: 'Burbank Small',
@@ -20,22 +22,29 @@ export default class TextBalloon extends Balloon {
             wordWrap: { width: textWidth, useAdvancedWrap: true },
             lineSpacing: -5
         }
-        this.maxLength = 60
 
-        let textSprite = this.createText(text)
+        this.text = this.addText()
 
-        this.addBalloon(width, textSprite.height + paddingY)
+        this.addBalloon(width, this.text.height + this.paddingY)
         this.addPointer(width, 'balloon-text')
-        this.add(textSprite)
+        this.add(this.text)
     }
 
-    createText(text) {
-        text = text.substring(0, this.maxLength)
-        let textSprite = this.scene.add.text(0, 0, text, this.textStyle)
+    addText() {
+        let textSprite = this.scene.add.text(0, 0, '', this.textStyle)
 
         textSprite.setOrigin(0.5, 1)
 
         return textSprite
+    }
+
+    setContent(text) {
+        this.updatePosition()
+
+        text = text.substring(0, this.maxLength)
+        this.text.text = text
+
+        this.resizeBalloon(this.balloon.width, this.text.height + this.paddingY)
     }
 
 }

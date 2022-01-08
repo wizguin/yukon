@@ -25,7 +25,13 @@ export default class Penguin extends BaseContainer {
         this.direction
 
         this.nameTag = penguinLoader.addName(this)
+
+        // Active balloon
         this.balloon
+
+        this.balloonTimer
+        this.textBalloon
+        this.emoteBalloon
 
         this.on('destroy', () => this.onDestroy())
         this.isButton = true
