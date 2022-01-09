@@ -189,7 +189,7 @@ class Login extends BaseScene {
         let password = this.passwordInput.text
 
         this.interface.showLoading(`Logging in ${username}`)
-        this.scene.sleep()
+        this.scene.stop()
 
         this.network.connectLogin(this.checks.username.checked, this.checks.password.checked, () => {
             this.network.send('login', { username: username, password: password })
@@ -202,7 +202,7 @@ class Login extends BaseScene {
 
     onBackClick() {
         this.network.disconnect()
-        this.scene.switch('Start')
+        this.scene.start('Start')
     }
 
     /* END-USER-CODE */

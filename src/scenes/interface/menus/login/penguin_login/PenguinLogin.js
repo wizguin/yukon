@@ -199,7 +199,7 @@ class PenguinLogin extends BaseScene {
         let onConnect
 
         this.interface.showLoading(`Logging in ${username}`)
-        this.scene.sleep()
+        this.scene.stop()
 
         if (token && !this.passwordEdited) {
             onConnect = () => this.network.send('token_login', { username: username, token: token })
@@ -216,12 +216,12 @@ class PenguinLogin extends BaseScene {
         delete savedPenguins[this.penguin.username.toLowerCase()]
         localStorage.setItem('saved_penguins', JSON.stringify(savedPenguins))
 
-        this.scene.switch('PenguinSelect')
+        this.scene.start('PenguinSelect')
     }
 
     onBackClick() {
         this.network.disconnect()
-        this.scene.switch('PenguinSelect')
+        this.scene.start('PenguinSelect')
     }
 
     /* END-USER-CODE */

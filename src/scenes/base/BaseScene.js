@@ -20,14 +20,4 @@ export default class BaseScene extends Phaser.Scene {
         return args.map(id => this.crumbs.strings[id.toLowerCase()]).join(' ')
     }
 
-    switchData(key, data) {
-        this.scene.sleep()
-
-        if (this.scene.isSleeping(key)) {
-            this.scene.wake(key, data)
-        } else {
-            this.scene.start(key, data)
-        }
-    }
-
 }
