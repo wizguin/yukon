@@ -41,17 +41,6 @@
                 $this->dieWithMessage('username', 'There was an error.');
             }
 
-            $this->insertIgloo($statement->insert_id);
-        }
-
-        function insertIgloo($id) {
-            $statement = $this->db->prepare('INSERT INTO user_igloos (userId) VALUES (?)');
-            $statement->bind_param('s', $id);
-
-            if (!$statement->execute()) {
-                $this->dieWithMessage('username', 'There was an error.');
-            }
-
             $this->dieWithMessage('success', true);
         }
 
