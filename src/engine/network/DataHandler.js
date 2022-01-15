@@ -10,7 +10,11 @@ export default class DataHandler {
     handle(message) {
         try {
             let parsed = JSON.parse(message)
-            console.log('[DataHandler] Message received:', parsed.action, parsed.args)
+
+            if (localStorage.logging == 'true') {
+                console.log('[DataHandler] Message received:', parsed.action, parsed.args)
+            }
+
             this.fireEvent(parsed.action, parsed.args)
 
         } catch(error) {
