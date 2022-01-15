@@ -1,6 +1,6 @@
 {
   "name": "yukon",
-  "version": "1.1-beta",
+  "version": "1.1.0-beta",
   "description": "A rewrite of the Club Penguin client in HTML5",
   "scripts": {
     "dev": "webpack serve",
