@@ -10,6 +10,8 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
         this.isWall = this.crumb.type == 2
         this.trashIcon
 
+        this.trashed = false
+
         // Physics body that the furniture is allowed inside
         this.safeArea = (this.isWall) ? scene['wall'] : scene['room']
 
@@ -126,6 +128,10 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     hover(pointer) {
+        if (this.trashed) {
+            return
+        }
+
         // Can't hover wall items
         if (!this.isWall) {
             let frame = this.currentFrame
@@ -140,7 +146,10 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     drop() {
-        if (!this.editing) return
+        if (!this.editing || this.trashed) {
+            return
+        }
+
         this.scene.setSelected()
 
         if (!this.isSafe) {
@@ -234,6 +243,8 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
     }
 
     sendToTrash() {
+        this.trashed = true
+
         // Update furniture quantity
         this.scene.quantities[this.id]--
 
