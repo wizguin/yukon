@@ -22,14 +22,9 @@ let config = {
             writeToDisk: true
         },
         proxy: {
-            '/login': {
-                target: 'http://localhost:6111',
-                pathRewrite: { '^/login': '' },
-                ws: true
-            },
-            '/blizzard': {
-                target: 'http://localhost:6112',
-                pathRewrite: { '^/blizzard': '' },
+            '/api': {
+                target: 'http://localhost:8000',
+                pathRewrite: { '^/api': '' },
                 ws: true
             },
 
