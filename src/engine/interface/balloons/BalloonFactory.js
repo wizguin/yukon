@@ -91,7 +91,10 @@ export default class BalloonFactory {
         }
 
         if (penguin.balloonTimer) {
-            return penguin.balloonTimer.reset(config)
+            penguin.balloonTimer.reset(config)
+            penguin.room.time.addEvent(penguin.balloonTimer)
+
+            return
         }
 
         penguin.balloonTimer = penguin.room.time.addEvent(config)
