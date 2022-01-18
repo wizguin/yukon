@@ -8,6 +8,10 @@ export default class SpriteLoader {
     }
 
     loadSprite(penguin, id, depth) {
+        if (!penguin.active) {
+            return
+        }
+
         let sprite
 
         if (id == 'penguin_body') {
