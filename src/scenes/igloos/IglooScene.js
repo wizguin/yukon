@@ -130,7 +130,7 @@ export default class IglooScene extends RoomScene {
             penguin.visible = false
             penguin.nameTag.visible = false
 
-            if (penguin.balloon) penguin.balloon.destroy()
+            if (penguin.balloon) penguin.balloon.visible = false
         }
     }
 

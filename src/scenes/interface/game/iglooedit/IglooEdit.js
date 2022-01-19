@@ -249,7 +249,7 @@ class IglooEdit extends BaseScene {
     }
 
     onEditClick() {
-        this.interface.hideInterface()
+        this.interface.hideInterface(false)
         this.world.room.showEditBg()
         this.world.room.hidePenguins()
         this.world.room.enableFurnitureInput()

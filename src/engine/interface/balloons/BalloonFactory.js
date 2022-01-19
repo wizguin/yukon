@@ -30,7 +30,7 @@ export default class BalloonFactory {
         }
 
         let penguin = this.penguins[id]
-        if (!penguin) {
+        if (!penguin || !penguin.visible) {
             return
         }
 
@@ -59,6 +59,12 @@ export default class BalloonFactory {
             return
         }
 
+        this.main.chatLog.addMessage(penguin.id, penguin.username, text)
+
+        if (!penguin.visible) {
+            return
+        }
+
         if (!penguin.textBalloon) {
             penguin.textBalloon = new TextBalloon(penguin)
             penguin.room.add.existing(penguin.textBalloon)
@@ -66,8 +72,6 @@ export default class BalloonFactory {
 
         penguin.textBalloon.setContent(text)
         this.updateBalloon(penguin, penguin.textBalloon)
-
-        this.main.chatLog.addMessage(penguin.id, penguin.username, text)
     }
 
     updateBalloon(penguin, balloon) {

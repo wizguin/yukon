@@ -62,9 +62,9 @@ export default class InterfaceController extends BaseScene {
         this.bringToTop('Main')
     }
 
-    hideInterface() {
+    hideInterface(clearChat = true) {
         if (this.main && this.main.scene.isActive()) {
-            this.scene.sleep('Main')
+            this.scene.sleep('Main', { clearChat: clearChat })
 
             // Stop external scenes
             this.stopExternals()

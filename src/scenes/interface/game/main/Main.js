@@ -383,11 +383,15 @@ class Main extends BaseScene {
         this.anims.fromJSON(anims)
     }
 
-    onSleep() {
-        this.chatInput.clearText()
+    onSleep(sys, data) {
+        if (data.clearChat) {
+            this.chatInput.clearText()
+            this.chatLog.clearMessages()
+        }
 
-        this.chatLog.clearMessages()
-        if (this.chatLog.open) this.chatLog.onTabClick()
+        if (this.chatLog.open) {
+            this.chatLog.onTabClick()
+        }
 
         this.stopCrosshair()
 
