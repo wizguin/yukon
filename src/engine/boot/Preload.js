@@ -47,8 +47,7 @@ export default class Preload extends BaseScene {
         this.crumbs.safeMessages = crumbs.safe_messages
         this.crumbs.secretFrames = crumbs.secret_frames
         this.crumbs.strings = crumbs.strings
-
-        this.crumbs.worlds = this.cache.json.get('worlds')
+        this.crumbs.worlds = crumbs.worlds
 
         // Start
         this.interface.hideLoading()
