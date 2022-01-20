@@ -52,7 +52,7 @@ npm run dev
 npm run build
 ```
 
-* Building crumbs. This will merge files in assets/media/crumbs/ into a single json file, you only need to run this when modifying crumbs.
+* Building crumbs. This will merge files in "/assets/media/crumbs/en" into a single json file, you only need to run this when modifying crumbs.
 
 ```console
 npm run build-crumbs
@@ -61,6 +61,20 @@ npm run build-crumbs
 ### Scene Editing
 
 Editing .scene files requires a copy of [Phaser Editor](https://phasereditor2d.com/).
+
+### Account creation
+
+The easiest way to create accounts locally would be to simply enter them manually. Make sure to use a bcrypt hashed password, a tool such as [this](https://www.browserling.com/tools/bcrypt) can be used to generate one.
+
+```console
+$2a$10$nAxC5GXU0i/dacalTX.iZuRrtpmwmZ9ZzL.U3Zroh0jeSXiswFsne
+```
+
+If you'd like to use the included PHP account registration, you must host it on a PHP supported web server running locally on port 80 at the path "/create/scripts/php". Webpack dev server will proxy requests accordingly.
+
+```console
+'/create/scripts/php': 'http://localhost:80'
+```
 
 ## Production Usage
 
