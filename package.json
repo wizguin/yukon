@@ -4,6 +4,7 @@
   "description": "A rewrite of the Club Penguin client in HTML5",
   "scripts": {
     "dev": "webpack serve",
+    "editor": "phasereditor2d-launcher -project .",
     "build": "webpack --mode production",
     "build-crumbs": "node ./utils/build-crumbs.js"
   },
@@ -23,6 +24,7 @@
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.4",
     "javascript-obfuscator": "^3.0.0",
+    "phasereditor2d-launcher": "^3.32.0",
     "socket.io-client": "^4.4.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
