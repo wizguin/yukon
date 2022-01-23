@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, SimpleButton, Zone } from '@components/compo
 
 /* START OF COMPILED CODE */
 
-class Dance extends RoomScene {
+export default class Dance extends RoomScene {
 
     constructor() {
         super("Dance");
@@ -37,6 +37,7 @@ class Dance extends RoomScene {
         /** @type {Phaser.GameObjects.Sprite[]} */
         this.animate;
 
+
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
@@ -51,11 +52,13 @@ class Dance extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("dance-pack", "assets/media/rooms/dance/dance-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -245,8 +248,8 @@ class Dance extends RoomScene {
         zone.fillColor = 65280;
 
         // lists
-        const sort = [speaker_3, speaker_1, boiler, box, dj_speaker, mixer, puffle_speaker]
-        const animate = [dj_box_headphones_front, dj_box_lights, dj_mixer_slider, dj_mixer_lights, dj_mixer_tables, dj_mixer_tables_under, dj_speaker_sound, dj_box_headphones_back]
+        const sort = [speaker_3, speaker_1, boiler, box, dj_speaker, mixer, puffle_speaker];
+        const animate = [dj_box_headphones_front, dj_box_lights, dj_mixer_slider, dj_mixer_lights, dj_mixer_tables, dj_mixer_tables_under, dj_speaker_sound, dj_box_headphones_back];
 
         // floor (components)
         const floorAnimation = new Animation(floor);
@@ -390,7 +393,10 @@ class Dance extends RoomScene {
         this.dj_box_headphones_front = dj_box_headphones_front;
         this.sort = sort;
         this.animate = animate;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -445,5 +451,3 @@ class Dance extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Dance

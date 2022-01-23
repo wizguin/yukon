@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -138,6 +140,8 @@
                     "label": "text",
                     "components": [],
                     "y": -280,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "If you save your password here, anyone who uses this\ncomputer could access your account.",
                     "fixedWidth": 900,
                     "fixedHeight": 80,
@@ -156,6 +160,8 @@
                     "components": [],
                     "x": -303,
                     "y": 285,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Save Password",
                     "fixedWidth": 300,
                     "align": "center",
@@ -170,6 +176,8 @@
                     "components": [],
                     "x": 21,
                     "y": 285,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Don't Save\nPassword",
                     "fixedWidth": 300,
                     "align": "center",
@@ -184,6 +192,8 @@
                     "components": [],
                     "x": 343,
                     "y": 285,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Learn More",
                     "fixedWidth": 300,
                     "align": "center",
@@ -198,8 +208,6 @@
                     "components": [],
                     "x": -404,
                     "y": -175,
-                    "originX": 0,
-                    "originY": 0,
                     "text": "They could spend\nyour coins!",
                     "fixedWidth": 600,
                     "fontFamily": "Burbank Small",
@@ -217,6 +225,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -102,6 +104,8 @@
             "components": [],
             "x": 760,
             "y": 876,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Back",
             "lineSpacing": 25,
             "align": "right",
@@ -116,6 +120,8 @@
             "components": [],
             "x": 760,
             "y": 747,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Create a free account now",
             "lineSpacing": 25,
             "align": "right",
@@ -130,6 +136,8 @@
             "components": [],
             "x": 760,
             "y": 713,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Don't have a penguin?",
             "lineSpacing": 25,
             "align": "right",
@@ -144,6 +152,8 @@
             "components": [],
             "x": 760,
             "y": 604,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Forgot your password?",
             "lineSpacing": 25,
             "align": "right",
@@ -174,6 +184,8 @@
             "components": [],
             "x": 760,
             "y": 483,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Login",
             "lineSpacing": 25,
             "align": "right",
@@ -188,7 +200,7 @@
             "components": [],
             "x": 503,
             "y": 258,
-            "originX": 0,
+            "originY": 0.5,
             "text": "Password:",
             "lineSpacing": 25,
             "align": "right",
@@ -203,7 +215,7 @@
             "components": [],
             "x": 448,
             "y": 200,
-            "originX": 0,
+            "originY": 0.5,
             "text": "Penguin Name:",
             "lineSpacing": 25,
             "align": "right",
@@ -238,43 +250,55 @@
         {
             "prefabId": "1a09293b-d8f0-454f-ad6c-dc0364729549",
             "id": "759943e1-d192-45c9-8562-671e6d1d788a",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "checks",
             "scope": "CLASS",
             "components": [],
             "x": 568,
-            "y": 328
+            "y": 328,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "b1f49bb5-b7f5-4eb9-81d7-21aa125e487f",
             "id": "71f5ebab-c88b-4516-881b-0ac2f1827416",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "waitPrompt",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "4a66782f-1b3a-41da-b0c3-3d9d3c24217c",
             "id": "864618dc-5334-40ca-af06-f3fb878ca5b1",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "savePrompt",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

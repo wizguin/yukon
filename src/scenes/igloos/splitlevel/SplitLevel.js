@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class SplitLevel extends IglooScene {
+export default class SplitLevel extends IglooScene {
 
     constructor() {
         super("SplitLevel");
 
         /** @type {Phaser.GameObjects.Layer} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class SplitLevel extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("splitlevel-pack", "assets/media/igloos/buildings/sprites/splitlevel/splitlevel-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -56,12 +59,13 @@ class SplitLevel extends IglooScene {
         wall_2.setOrigin(0.5, 0.5015197568389058);
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default SplitLevel

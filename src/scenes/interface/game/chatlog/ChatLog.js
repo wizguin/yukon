@@ -5,10 +5,18 @@ import { Button, Interactive, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class ChatLog extends BaseContainer {
+export default class ChatLog extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.bg;
+        /** @type {Phaser.GameObjects.Image} */
+        this.handle;
+        /** @type {Phaser.GameObjects.Image} */
+        this.arrow;
+
 
         // bg
         const bg = scene.add.image(0, -440, "main", "chatlog/bg");
@@ -57,6 +65,7 @@ class ChatLog extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -167,5 +176,3 @@ class ChatLog extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default ChatLog

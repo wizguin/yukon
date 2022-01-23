@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -26,11 +28,16 @@
         {
             "prefabId": "ad6f3593-431e-4451-9b81-a589ddd72242",
             "id": "6a557e30-f782-45f1-bb56-983d09b9eea0",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "container",
             "scope": "CLASS",
             "components": [],
             "x": 475,
-            "y": 430
+            "y": 430,
+            "nestedPrefabs": []
         },
         {
             "type": "Sprite",
@@ -98,6 +105,8 @@
             "components": [],
             "x": 760,
             "y": 876,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Login as a different penguin",
             "fixedWidth": 400,
             "lineSpacing": 25,
@@ -113,6 +122,8 @@
             "components": [],
             "x": 929,
             "y": 661,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Forget my penguin",
             "fixedWidth": 300,
             "lineSpacing": 25,
@@ -127,6 +138,8 @@
             "components": [],
             "x": 929,
             "y": 604,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Forgot your password?",
             "fixedWidth": 300,
             "lineSpacing": 25,
@@ -157,6 +170,8 @@
             "components": [],
             "x": 935,
             "y": 487,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Login",
             "fixedWidth": 100,
             "lineSpacing": 25,
@@ -172,7 +187,7 @@
             "components": [],
             "x": 783,
             "y": 194,
-            "originX": 0,
+            "originY": 0.5,
             "text": "Password:",
             "lineSpacing": 25,
             "align": "right",
@@ -207,43 +222,55 @@
         {
             "prefabId": "1a09293b-d8f0-454f-ad6c-dc0364729549",
             "id": "0675aa2e-5fb6-48a7-b8b3-f855c5a5e015",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "checks",
             "scope": "CLASS",
             "components": [],
             "x": 806,
-            "y": 330
+            "y": 330,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "4a66782f-1b3a-41da-b0c3-3d9d3c24217c",
             "id": "5a909a7f-4488-4135-8504-236229928934",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "savePrompt",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "b1f49bb5-b7f5-4eb9-81d7-21aa125e487f",
             "id": "c54783e2-b3a0-4e41-9fd3-508f9ba42d23",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "waitPrompt",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

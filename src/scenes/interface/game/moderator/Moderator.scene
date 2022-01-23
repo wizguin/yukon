@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -53,7 +55,7 @@
                     "components": [],
                     "x": -44,
                     "y": 86,
-                    "originY": 0,
+                    "originX": 0.5,
                     "text": "to ignore them.",
                     "fixedWidth": 220,
                     "fixedHeight": 60,
@@ -73,7 +75,7 @@
                     "components": [],
                     "x": 226,
                     "y": -22,
-                    "originY": 0,
+                    "originX": 0.5,
                     "text": "to report",
                     "fixedWidth": 200,
                     "fixedHeight": 60,
@@ -93,7 +95,7 @@
                     "components": [],
                     "x": 21,
                     "y": -76,
-                    "originY": 0,
+                    "originX": 0.5,
                     "text": "If someone is breaking the rules, click on\ntheir penguin then click\nthem to a moderator. You can also click\non",
                     "fixedWidth": 562,
                     "fixedHeight": 220,
@@ -113,7 +115,7 @@
                     "label": "safe",
                     "components": [],
                     "y": -151,
-                    "originY": 0,
+                    "originX": 0.5,
                     "text": "Help keep the island safe!",
                     "fixedWidth": 600,
                     "align": "center",
@@ -223,6 +225,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

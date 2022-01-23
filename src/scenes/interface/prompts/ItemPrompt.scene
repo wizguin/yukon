@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -54,6 +56,8 @@
                     "label": "text",
                     "scope": "CLASS",
                     "components": [],
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "You have found a party hat.\nWould you like to pick it up?",
                     "fixedWidth": 628,
                     "fixedHeight": 136,
@@ -65,10 +69,16 @@
                 {
                     "prefabId": "c8bd80b3-7ef6-4945-950c-2ab697bd77e3",
                     "id": "74c604c9-66ff-4ef2-9a0a-5f8dd1e503a9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "dual",
                     "scope": "CLASS",
                     "components": [],
-                    "y": 130
+                    "x": 0,
+                    "y": 130,
+                    "nestedPrefabs": []
                 }
             ]
         }
@@ -77,6 +87,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

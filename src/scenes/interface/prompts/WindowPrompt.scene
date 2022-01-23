@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -55,6 +57,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "y": -161,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Message goes here\nMessage goes here",
                     "fixedWidth": 628,
                     "align": "center",
@@ -65,22 +69,32 @@
                 {
                     "prefabId": "48dfbf63-271b-4c3d-9fcc-6406eb7a0754",
                     "id": "941db4ad-218b-43e5-a7b0-71d4206ff3ab",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "single",
                     "scope": "CLASS",
                     "components": [],
-                    "y": -35
+                    "x": 0,
+                    "y": -35,
+                    "nestedPrefabs": []
                 },
                 {
                     "prefabId": "c8bd80b3-7ef6-4945-950c-2ab697bd77e3",
                     "id": "a4eca45d-2e90-4105-bfd3-27e5c5c30117",
                     "unlock": [
-                        "visible"
+                        "visible",
+                        "x",
+                        "y"
                     ],
                     "label": "dual",
                     "scope": "CLASS",
                     "components": [],
+                    "x": 0,
                     "y": -36,
-                    "visible": false
+                    "visible": false,
+                    "nestedPrefabs": []
                 }
             ]
         }
@@ -89,6 +103,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

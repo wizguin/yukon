@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "RoomScene",
         "preloadPackFiles": [
             "yukon/assets/media/rooms/mtn/mtn-pack.json"
@@ -203,7 +205,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat11",
             "sitFrame": 24,
@@ -211,7 +216,8 @@
             "offsetY": -70,
             "components": [],
             "x": 1155,
-            "y": 638
+            "y": 638,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -220,7 +226,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat10",
             "sitFrame": 24,
@@ -228,7 +237,8 @@
             "offsetY": -70,
             "components": [],
             "x": 1093,
-            "y": 676
+            "y": 676,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -237,14 +247,19 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat9",
+            "sitFrame": 17,
             "offsetX": -10,
             "offsetY": -90,
             "components": [],
             "x": 955,
-            "y": 744
+            "y": 744,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -253,14 +268,19 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat8",
+            "sitFrame": 17,
             "offsetX": -10,
             "offsetY": -90,
             "components": [],
             "x": 857,
-            "y": 745
+            "y": 745,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -269,7 +289,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat7",
             "sitFrame": 18,
@@ -277,7 +300,8 @@
             "offsetY": -70,
             "components": [],
             "x": 698,
-            "y": 703
+            "y": 703,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -286,7 +310,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat6",
             "sitFrame": 18,
@@ -294,7 +321,8 @@
             "offsetY": -70,
             "components": [],
             "x": 561,
-            "y": 673
+            "y": 673,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -303,7 +331,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat5",
             "sitFrame": 18,
@@ -311,7 +342,8 @@
             "offsetY": -110,
             "components": [],
             "x": 612,
-            "y": 713
+            "y": 713,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -320,7 +352,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat4",
             "sitFrame": 18,
@@ -328,7 +363,8 @@
             "offsetY": -70,
             "components": [],
             "x": 252,
-            "y": 519
+            "y": 519,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -337,7 +373,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat3",
             "sitFrame": 18,
@@ -345,7 +384,8 @@
             "offsetY": -70,
             "components": [],
             "x": 307,
-            "y": 550
+            "y": 550,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -354,7 +394,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat2",
             "sitFrame": 18,
@@ -362,7 +405,8 @@
             "offsetY": -70,
             "components": [],
             "x": 369,
-            "y": 590
+            "y": 590,
+            "visible": false
         },
         {
             "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
@@ -371,7 +415,10 @@
                 "frame",
                 "sitFrame",
                 "offsetX",
-                "offsetY"
+                "offsetY",
+                "x",
+                "y",
+                "visible"
             ],
             "label": "mtnSeat1",
             "sitFrame": 18,
@@ -379,7 +426,8 @@
             "offsetY": -70,
             "components": [],
             "x": 433,
-            "y": 618
+            "y": 618,
+            "visible": false
         },
         {
             "type": "Image",
@@ -481,7 +529,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

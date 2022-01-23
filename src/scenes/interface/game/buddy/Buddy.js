@@ -7,10 +7,18 @@ import BuddyItem from './buddy_item/BuddyItem'
 
 /* START OF COMPILED CODE */
 
-class Buddy extends BaseContainer {
+export default class Buddy extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+        /** @type {Phaser.GameObjects.Text} */
+        this.total;
+        /** @type {BuddyItem[]} */
+        this.items;
+
 
         // card_bg
         const card_bg = scene.add.image(0, 0, "main", "card-bg");
@@ -20,7 +28,7 @@ class Buddy extends BaseContainer {
         const text = scene.add.text(0, -236, "", {});
         text.setOrigin(0.5, 0.5);
         text.text = "Your Friends";
-        text.setStyle({"align":"center","color":"#000000","fixedWidth":420,"fontFamily":"Arial Narrow","fontSize":"32px"});
+        text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":420,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         this.add(text);
 
         // x_button
@@ -111,11 +119,11 @@ class Buddy extends BaseContainer {
         // total
         const total = scene.add.text(-132, 273, "", {});
         total.setOrigin(0.5, 0.5);
-        total.setStyle({"color":"#003366","fixedWidth":100,"fixedHeight":64,"fontFamily":"Arial Narrow","fontSize":"24px"});
+        total.setStyle({ "color": "#003366", "fixedWidth":100,"fixedHeight":64,"fontFamily": "Arial Narrow", "fontSize": "24px" });
         this.add(total);
 
         // lists
-        const items = [buddy_item, buddy_item_1, buddy_item_2, buddy_item_3, buddy_item_4, buddy_item_5, buddy_item_6, buddy_item_7]
+        const items = [buddy_item, buddy_item_1, buddy_item_2, buddy_item_3, buddy_item_4, buddy_item_5, buddy_item_6, buddy_item_7];
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -173,6 +181,7 @@ class Buddy extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -277,5 +286,3 @@ class Buddy extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Buddy

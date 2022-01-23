@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, SimpleButton, Zone } from '@components/compo
 
 /* START OF COMPILED CODE */
 
-class Shop extends RoomScene {
+export default class Shop extends RoomScene {
 
     constructor() {
         super("Shop");
@@ -16,6 +16,7 @@ class Shop extends RoomScene {
         this.register;
         /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -28,11 +29,13 @@ class Shop extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("shop-pack", "assets/media/rooms/shop/shop-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -86,7 +89,7 @@ class Shop extends RoomScene {
         catalog.setOrigin(0, 2);
 
         // lists
-        const sort = [container, box, catalog]
+        const sort = [container, box, catalog];
 
         // door (components)
         const doorButton = new Button(door);
@@ -144,12 +147,13 @@ class Shop extends RoomScene {
         this.phone = phone;
         this.register = register;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Shop

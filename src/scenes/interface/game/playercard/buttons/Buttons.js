@@ -5,10 +5,36 @@ import { Button, ShowHint } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Buttons extends BaseContainer {
+export default class Buttons extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.report_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.ignore_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.mail_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.igloo_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.profile_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.buddy_button;
+        /** @type {Phaser.GameObjects.Image} */
+        this.report_icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.ignore_icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.mail_icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.igloo_icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.profile_icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.buddy_icon;
+
 
         // report_button
         const report_button = scene.add.image(150, 0, "main", "blue-button-disabled");
@@ -119,6 +145,7 @@ class Buttons extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -312,5 +339,3 @@ class Buttons extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Buttons

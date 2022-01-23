@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class BambooHut extends IglooScene {
+export default class BambooHut extends IglooScene {
 
     constructor() {
         super("BambooHut");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class BambooHut extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("bamboohut-pack", "assets/media/igloos/buildings/sprites/bamboohut/bamboohut-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -41,12 +44,13 @@ class BambooHut extends IglooScene {
         wall.setOrigin(0.5004101722723544, 0.5);
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default BambooHut

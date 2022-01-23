@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -53,6 +55,8 @@
                     "components": [],
                     "x": 69,
                     "y": 173,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "88/100 Buddies",
                     "fixedWidth": 300,
                     "fontFamily": "Arial Narrow",
@@ -92,6 +96,8 @@
                     "components": [],
                     "x": 21,
                     "y": 66,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Manage Account",
                     "fixedWidth": 562,
                     "align": "center",
@@ -107,6 +113,8 @@
                     "components": [],
                     "x": 131,
                     "y": -37,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Mute Music",
                     "fixedWidth": 348,
                     "fontFamily": "Arial Narrow",
@@ -119,6 +127,8 @@
                     "label": "age",
                     "components": [],
                     "y": -108,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Your penguin is 0 days old",
                     "fixedWidth": 600,
                     "align": "center",
@@ -132,6 +142,8 @@
                     "label": "server",
                     "components": [],
                     "y": -156,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "You're on Server Name",
                     "fixedWidth": 600,
                     "align": "center",
@@ -145,6 +157,8 @@
                     "label": "settings",
                     "components": [],
                     "y": -238,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "SETTINGS",
                     "fixedWidth": 600,
                     "align": "center",
@@ -207,6 +221,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

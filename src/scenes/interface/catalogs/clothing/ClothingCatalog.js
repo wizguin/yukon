@@ -10,7 +10,7 @@ import Tag2 from './buttons/Tag2'
 
 /* START OF COMPILED CODE */
 
-class ClothingCatalog extends Book {
+export default class ClothingCatalog extends Book {
 
     constructor() {
         super("ClothingCatalog");
@@ -46,15 +46,18 @@ class ClothingCatalog extends Book {
         /** @type {Phaser.GameObjects.Container[]} */
         this.pages;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("clothingcatalog-pack", "assets/media/interface/catalogs/clothing/clothingcatalog-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // block
@@ -546,10 +549,12 @@ class ClothingCatalog extends Book {
 
         // tag1_29
         const tag1_29 = new Tag1(this, 223, 182);
+        tag1_29.angle = 0;
         page10.add(tag1_29);
 
         // tag1_30
         const tag1_30 = new Tag1(this, 894, 639);
+        tag1_30.angle = 0;
         page10.add(tag1_30);
 
         // tag1_31
@@ -653,6 +658,7 @@ class ClothingCatalog extends Book {
         const tag2_21 = new Tag2(this, 1081, 170);
         tag2_21.scaleX = 1.3;
         tag2_21.scaleY = 1.3;
+        tag2_21.angle = 0;
         page8.add(tag2_21);
 
         // page7
@@ -931,6 +937,7 @@ class ClothingCatalog extends Book {
 
         // lime
         const lime = new ColorButton(this, 1100, 525);
+        lime.tintFill = false;
         lime.tintTopLeft = 7536384;
         lime.tintTopRight = 7536384;
         lime.tintBottomLeft = 7536384;
@@ -939,6 +946,7 @@ class ClothingCatalog extends Book {
 
         // purple
         const purple = new ColorButton(this, 1000, 525);
+        purple.tintFill = false;
         purple.tintTopLeft = 6619289;
         purple.tintTopRight = 6619289;
         purple.tintBottomLeft = 6619289;
@@ -947,6 +955,7 @@ class ClothingCatalog extends Book {
 
         // darkGreen
         const darkGreen = new ColorButton(this, 900, 525);
+        darkGreen.tintFill = false;
         darkGreen.tintTopLeft = 25856;
         darkGreen.tintTopRight = 25856;
         darkGreen.tintBottomLeft = 25856;
@@ -955,6 +964,7 @@ class ClothingCatalog extends Book {
 
         // pink
         const pink = new ColorButton(this, 800, 525);
+        pink.tintFill = false;
         pink.tintTopLeft = 16724633;
         pink.tintTopRight = 16724633;
         pink.tintBottomLeft = 16724633;
@@ -963,6 +973,7 @@ class ClothingCatalog extends Book {
 
         // lightblue
         const lightblue = new ColorButton(this, 1146, 425);
+        lightblue.tintFill = false;
         lightblue.tintTopLeft = 39372;
         lightblue.tintTopRight = 39372;
         lightblue.tintBottomLeft = 39372;
@@ -971,6 +982,7 @@ class ClothingCatalog extends Book {
 
         // yellow
         const yellow = new ColorButton(this, 1046, 425);
+        yellow.tintFill = false;
         yellow.tintTopLeft = 16763904;
         yellow.tintTopRight = 16763904;
         yellow.tintBottomLeft = 16763904;
@@ -979,6 +991,7 @@ class ClothingCatalog extends Book {
 
         // peach
         const peach = new ColorButton(this, 946, 425);
+        peach.tintFill = false;
         peach.tintTopLeft = 16737637;
         peach.tintTopRight = 16737637;
         peach.tintBottomLeft = 16737637;
@@ -987,6 +1000,7 @@ class ClothingCatalog extends Book {
 
         // brown
         const brown = new ColorButton(this, 846, 425);
+        brown.tintFill = false;
         brown.tintTopLeft = 10052864;
         brown.tintTopRight = 10052864;
         brown.tintBottomLeft = 10052864;
@@ -995,6 +1009,7 @@ class ClothingCatalog extends Book {
 
         // orange
         const orange = new ColorButton(this, 1200, 325);
+        orange.tintFill = false;
         orange.tintTopLeft = 16737536;
         orange.tintTopRight = 16737536;
         orange.tintBottomLeft = 16737536;
@@ -1003,6 +1018,7 @@ class ClothingCatalog extends Book {
 
         // green
         const green = new ColorButton(this, 1100, 325);
+        green.tintFill = false;
         green.tintTopLeft = 39168;
         green.tintTopRight = 39168;
         green.tintBottomLeft = 39168;
@@ -1011,6 +1027,7 @@ class ClothingCatalog extends Book {
 
         // red
         const red = new ColorButton(this, 1000, 325);
+        red.tintFill = false;
         red.tintTopLeft = 13369344;
         red.tintTopRight = 13369344;
         red.tintBottomLeft = 13369344;
@@ -1019,6 +1036,7 @@ class ClothingCatalog extends Book {
 
         // blue
         const blue = new ColorButton(this, 900, 325);
+        blue.tintFill = false;
         blue.tintTopLeft = 12901;
         blue.tintTopRight = 12901;
         blue.tintBottomLeft = 12901;
@@ -1027,6 +1045,7 @@ class ClothingCatalog extends Book {
 
         // black
         const black = new ColorButton(this, 800, 325);
+        black.tintFill = false;
         black.tintTopLeft = 3289650;
         black.tintTopRight = 3289650;
         black.tintBottomLeft = 3289650;
@@ -1075,11 +1094,11 @@ class ClothingCatalog extends Book {
         const coins = this.add.text(1130, 790, "", {});
         coins.setOrigin(1, 0);
         coins.text = "YOUR COINS:";
-        coins.setStyle({"align":"right","fixedWidth":600,"fontFamily":"CCComiccrazy","fontSize":"32px","stroke":"#000","strokeThickness":9});
+        coins.setStyle({ "align": "right", "fixedWidth":600,"fontFamily": "CCComiccrazy", "fontSize": "32px", "stroke": "#000", "strokeThickness":9});
         buttons.add(coins);
 
         // lists
-        const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16]
+        const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16];
 
         // block (components)
         new Interactive(block);
@@ -1582,7 +1601,10 @@ class ClothingCatalog extends Book {
         this.buttons = buttons;
         this.coins = coins;
         this.pages = pages;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -1604,5 +1626,3 @@ class ClothingCatalog extends Book {
 }
 
 /* END OF COMPILED CODE */
-
-export default ClothingCatalog

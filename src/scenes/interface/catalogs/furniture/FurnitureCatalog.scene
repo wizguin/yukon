@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "Book",
         "preloadPackFiles": [
             "yukon/assets/media/interface/catalogs/furniture/furniturecatalog-pack.json"
@@ -111,7 +113,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "86d43d38-1387-4a51-96bd-d0bd4af5c307",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_29",
                     "item": 546,
@@ -123,7 +127,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "9f9132cc-a6c2-4df4-acf5-cf12e6dce9c6",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_30",
                     "item": 547,
@@ -135,7 +141,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "6db980e1-6c9a-4185-b217-c0d6885f3802",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_31",
                     "item": 548,
@@ -147,7 +155,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "c5bc91dc-a3b2-4c4e-802e-f473501863b6",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_32",
                     "item": 311,
@@ -159,7 +169,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "6f18507d-f0cb-4dda-a0b7-7fd5b3937025",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_33",
                     "item": 84,
@@ -171,7 +183,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "cd4f1180-a945-4508-9a8f-dd68df3e06a1",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_34",
                     "item": 544,
@@ -204,7 +218,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "270cf695-fc33-4be6-8d8d-68c6a5fa5b4d",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_23",
                     "item": 562,
@@ -216,7 +232,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "3c00db8d-71da-4856-871f-0ff01e509479",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_24",
                     "item": 563,
@@ -228,7 +246,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "973ec436-ae04-4797-9203-5af5ac09abf5",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_25",
                     "item": 564,
@@ -240,7 +260,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "7d4f3e1a-a479-48e1-9ee3-b6e79b9ff991",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_26",
                     "item": 83,
@@ -252,7 +274,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "cdda4b79-b413-4675-8d2a-61563c2236f1",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_27",
                     "item": 81,
@@ -264,7 +288,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "44061db5-7765-45d4-98c9-e803eac7e2bb",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_28",
                     "item": 82,
@@ -297,7 +323,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "fe538bb8-90c3-4131-b3c1-5c566f3c0455",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_15",
                     "item": 551,
@@ -309,7 +337,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "87a99769-4963-4c13-8581-cdaa0f893c3e",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_16",
                     "item": 552,
@@ -321,7 +351,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "b00b6cdd-abc1-4344-903f-136496cd1f83",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_17",
                     "item": 553,
@@ -333,7 +365,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "0402e0be-3468-462b-b6a8-bbd3a8a91f2b",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_18",
                     "item": 550,
@@ -345,7 +379,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "5984d5f4-1fe6-4dbd-9f1a-fe8e6d7341df",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_19",
                     "item": 355,
@@ -357,7 +393,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "77f77240-8bd0-48fd-a575-0ac7acb3f1ec",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_20",
                     "item": 354,
@@ -369,7 +407,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "a942eec6-1968-4eeb-8d90-85841c05f9bf",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_21",
                     "item": 177,
@@ -381,7 +421,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "71ce8e26-3a3a-4af8-ba9f-a4a7e6feff3a",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_22",
                     "item": 178,
@@ -414,7 +456,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "e65a6b7e-0e13-4198-85c2-9807763acfc9",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_10",
                     "item": 560,
@@ -426,7 +470,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "aaea8ab2-3856-46fb-a0bb-5a1465b4592f",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_11",
                     "item": 561,
@@ -438,7 +484,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "e0cfc846-21de-4796-add5-94d9fff6c9e5",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_12",
                     "item": 75,
@@ -450,7 +498,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "2b05e0e2-4110-4997-b4b8-1f4bf31fff43",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_13",
                     "item": 73,
@@ -462,7 +512,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "e2bc0b44-7a8a-4fee-b64b-6981ca26eb16",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_14",
                     "item": 74,
@@ -495,7 +547,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "cf9d3237-1108-478c-aaca-708dafd165d9",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_5",
                     "item": 441,
@@ -507,7 +561,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "a1412eb8-cc35-4309-af8e-32ff1e19a60e",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_6",
                     "item": 440,
@@ -519,7 +575,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "a1850f5d-c732-407e-86ee-b34cdd34aacf",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_7",
                     "item": 443,
@@ -531,7 +589,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "397c2234-5f77-4d45-b736-1843ee577fc4",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_8",
                     "item": 367,
@@ -543,7 +603,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "cbc64893-edb0-4299-b818-31bb116ba39a",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_9",
                     "item": 366,
@@ -576,7 +638,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "5813ffa7-d6d3-4315-9106-7e74ca3addaf",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton",
                     "item": 570,
@@ -588,7 +652,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "e33344bd-9a54-4aac-ad7b-ab6664c351de",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_1",
                     "item": 575,
@@ -600,7 +666,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "84e0a135-5c11-46c7-99c6-8e27832956f9",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_2",
                     "item": 572,
@@ -612,7 +680,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "18392c3a-b5b6-487c-b3ec-2539fd5d45fe",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_3",
                     "item": 571,
@@ -624,7 +694,9 @@
                     "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
                     "id": "6ab7fdb9-8c6f-4bfe-95d3-0e0823baf143",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "buyButton_4",
                     "item": 186,
@@ -769,7 +841,6 @@
                     "x": 1130,
                     "y": 790,
                     "originX": 1,
-                    "originY": 0,
                     "text": "YOUR COINS:",
                     "fixedWidth": 600,
                     "align": "right",
@@ -785,7 +856,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

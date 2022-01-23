@@ -5,10 +5,16 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class BuddyItem extends BaseContainer {
+export default class BuddyItem extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.icon;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+
 
         // buddy_item
         const buddy_item = scene.add.image(0, 0, "main", "buddy/item");
@@ -21,7 +27,7 @@ class BuddyItem extends BaseContainer {
         // username
         const username = scene.add.text(25, 0, "", {});
         username.setOrigin(0.5, 0.5);
-        username.setStyle({"fixedWidth":270,"fontFamily":"Arial","fontSize":"24px"});
+        username.setStyle({ "fixedWidth":270,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(username);
 
         // buddy_item (components)
@@ -39,6 +45,7 @@ class BuddyItem extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -70,5 +77,3 @@ class BuddyItem extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default BuddyItem

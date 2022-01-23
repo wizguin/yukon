@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, ShowHint, SimpleButton, Zone } from '@compon
 
 /* START OF COMPILED CODE */
 
-class Lodge extends RoomScene {
+export default class Lodge extends RoomScene {
 
     constructor() {
         super("Lodge");
@@ -19,6 +19,7 @@ class Lodge extends RoomScene {
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
 
+
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
@@ -30,11 +31,13 @@ class Lodge extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("lodge-pack", "assets/media/rooms/lodge/lodge-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -112,7 +115,7 @@ class Lodge extends RoomScene {
         zone.fillColor = 65280;
 
         // lists
-        const sort = [door, table3, table2, table4, footrest, chair]
+        const sort = [door, table3, table2, table4, footrest, chair];
 
         // door (components)
         const doorButton = new Button(door);
@@ -213,7 +216,10 @@ class Lodge extends RoomScene {
         this.flame_out = flame_out;
         this.fish = fish;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -250,5 +256,3 @@ class Lodge extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Lodge

@@ -5,7 +5,7 @@ import { Button, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Start extends BaseScene {
+export default class Start extends BaseScene {
 
     constructor() {
         super("Start");
@@ -14,6 +14,7 @@ class Start extends BaseScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     create() {
 
         // bg
@@ -72,6 +73,8 @@ class Start extends BaseScene {
         const startButtonButton = new Button(startButton);
         startButtonButton.spriteName = "start-button";
         startButtonButton.callback = () => this.onStartClick();
+
+        this.events.emit("scene-awake");
     }
 
     /* START-USER-CODE */
@@ -94,5 +97,3 @@ class Start extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Start

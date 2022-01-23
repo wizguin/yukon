@@ -10,6 +10,7 @@
                     "label": "Animation key",
                     "tooltip": "Animation key",
                     "defValue": "",
+                    "customDefinition": false,
                     "type": {
                         "id": "string"
                     }
@@ -19,6 +20,7 @@
                     "label": "Frame Start",
                     "tooltip": "Frame Start",
                     "defValue": 1,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -28,6 +30,7 @@
                     "label": "Frame End",
                     "tooltip": "Frame End",
                     "defValue": 1,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -37,6 +40,7 @@
                     "label": "Frame Rate",
                     "tooltip": "Frame Rate",
                     "defValue": 24,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -46,6 +50,7 @@
                     "label": "Repeat",
                     "tooltip": "Repeat",
                     "defValue": -1,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -55,6 +60,7 @@
                     "label": "Repeat Delay",
                     "tooltip": "Delay before repeating",
                     "defValue": 0,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -64,6 +70,7 @@
                     "label": "Auto Play",
                     "tooltip": "Auto Play",
                     "defValue": true,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -73,6 +80,7 @@
                     "label": "On Hover",
                     "tooltip": "Only show on hover?",
                     "defValue": false,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -82,6 +90,7 @@
                     "label": "Stop on Out",
                     "tooltip": "Stop animation on hover out?",
                     "defValue": true,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -91,6 +100,7 @@
                     "label": "Show on Start",
                     "tooltip": "Show on Start",
                     "defValue": false,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -100,6 +110,7 @@
                     "label": "Hide on Complete",
                     "tooltip": "Hide on Complete",
                     "defValue": false,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -116,6 +127,7 @@
                     "label": "Sprite Name",
                     "tooltip": "Sprite Name",
                     "defValue": "",
+                    "customDefinition": false,
                     "type": {
                         "id": "string"
                     }
@@ -125,6 +137,7 @@
                     "label": "Hover Callback",
                     "tooltip": "Hover Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -135,6 +148,7 @@
                     "label": "Hover Out Callback",
                     "tooltip": "Hover Out Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -145,6 +159,7 @@
                     "label": "Callback",
                     "tooltip": "Callback",
                     "defValue": "() => {}",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -155,6 +170,7 @@
                     "label": "Active Frame",
                     "tooltip": "Active Frame",
                     "defValue": true,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -164,6 +180,7 @@
                     "label": "Pixel Perfect",
                     "tooltip": "Pixel Perfect",
                     "defValue": false,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -180,6 +197,7 @@
                     "label": "Hover Callback",
                     "tooltip": "Hover Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -190,6 +208,7 @@
                     "label": "Hover Out Callback",
                     "tooltip": "Hover Out Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -200,6 +219,7 @@
                     "label": "Callback",
                     "tooltip": "Callback",
                     "defValue": "() => {}",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -210,6 +230,7 @@
                     "label": "Pixel Perfect",
                     "tooltip": "Pixel Perfect",
                     "defValue": false,
+                    "customDefinition": false,
                     "type": {
                         "id": "boolean"
                     }
@@ -244,6 +265,7 @@
                     "label": "Handle",
                     "tooltip": "Draggable handle",
                     "defValue": "",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "Phaser.GameObjects.GameObject"
@@ -254,6 +276,7 @@
                     "label": "Depth",
                     "tooltip": "Depth of created zone",
                     "defValue": 0,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -270,6 +293,7 @@
                     "label": "Hint Text",
                     "tooltip": "Hint Text",
                     "defValue": "",
+                    "customDefinition": false,
                     "type": {
                         "id": "string"
                     }
@@ -286,6 +310,7 @@
                     "label": "Texture",
                     "tooltip": "Texture",
                     "defValue": "{\"key\":\"prompt\",\"frame\":\"window\"}",
+                    "customDefinition": false,
                     "type": {
                         "id": "texture-config"
                     }
@@ -295,6 +320,7 @@
                     "label": "Corner Slice",
                     "tooltip": "Corner Slice",
                     "defValue": 10,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -311,6 +337,7 @@
                     "label": "x",
                     "tooltip": "x",
                     "defValue": 0,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -320,6 +347,7 @@
                     "label": "y",
                     "tooltip": "y",
                     "defValue": 0,
+                    "customDefinition": false,
                     "type": {
                         "id": "number"
                     }
@@ -336,6 +364,7 @@
                     "label": "Hover Callback",
                     "tooltip": "Hover Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -346,6 +375,7 @@
                     "label": "Hover Out Callback",
                     "tooltip": "Hover Out Callback",
                     "defValue": "null",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -356,6 +386,7 @@
                     "label": "Callback",
                     "tooltip": "Callback",
                     "defValue": "() => {}",
+                    "customDefinition": false,
                     "type": {
                         "id": "expression",
                         "expressionType": "any"
@@ -369,5 +400,7 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
     },
-    "insertSpaces": true
+    "javaScriptInitFieldsInConstructor": true,
+    "insertSpaces": true,
+    "exportClass": true
 }

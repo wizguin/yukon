@@ -5,23 +5,31 @@ import { SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Checks extends BaseContainer {
+export default class Checks extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.password;
+        /** @type {Phaser.GameObjects.Image} */
+        this.username;
+
 
         // text_2
         const text_2 = scene.add.text(34, 56, "", {});
         text_2.setOrigin(0, 0.5);
         text_2.text = "Remember my password";
-        text_2.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        text_2.setStyle({ "align": "right", "color": "#000000ff", "fontFamily": "Arial Narrow", "fontSize": "30px" });
+        text_2.setLineSpacing(25);
         this.add(text_2);
 
         // text_1
         const text_1 = scene.add.text(34, 1, "", {});
         text_1.setOrigin(0, 0.5);
         text_1.text = "Remember me on this computer";
-        text_1.setStyle({"align":"right","color":"#000000ff","fontFamily":"Arial Narrow","fontSize":"30px"});
+        text_1.setStyle({ "align": "right", "color": "#000000ff", "fontFamily": "Arial Narrow", "fontSize": "30px" });
+        text_1.setLineSpacing(25);
         this.add(text_1);
 
         // password
@@ -54,6 +62,7 @@ class Checks extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -94,5 +103,3 @@ class Checks extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Checks

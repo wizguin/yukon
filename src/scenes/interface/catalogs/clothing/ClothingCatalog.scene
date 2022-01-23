@@ -5,6 +5,8 @@
         "compilerInsertSpaces": true,
         "snapWidth": 260,
         "snapHeight": 260,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "Book",
         "preloadPackFiles": [
             "yukon/assets/media/interface/catalogs/clothing/clothingcatalog-pack.json"
@@ -113,7 +115,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "9df8f2b1-2cbd-4482-8b26-bbc0d81372db",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "us",
                     "item": 501,
@@ -125,7 +129,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "4b91bf27-a277-4cb1-ae55-bb260ac153bc",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "turkey",
                     "item": 521,
@@ -137,7 +143,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "cb0a15fd-a82e-4f5f-a31d-1f17989c17b2",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "switzerland",
                     "item": 520,
@@ -149,7 +157,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "008fcd20-d7b6-4245-a939-cb0cca0b2fe2",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "sweden",
                     "item": 519,
@@ -161,7 +171,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "3323256f-22de-4f5a-a9b5-f95fe84827c8",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "spain",
                     "item": 518,
@@ -173,7 +185,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "60e6a664-8f90-4a6f-a711-817a6154aa30",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "sa",
                     "item": 526,
@@ -185,7 +199,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "0bf95672-ed84-4786-87af-9140d87fc6d9",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "russia",
                     "item": 517,
@@ -197,7 +213,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "681ff5bf-b692-4267-bebf-ed2b67fc0691",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "portugal",
                     "item": 525,
@@ -209,7 +227,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "c86159f4-c1a1-4d88-b603-326d54c5ede1",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "poland",
                     "item": 516,
@@ -221,7 +241,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "f8bfeac4-6e5c-4271-aedf-68f947462b9d",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "norway",
                     "item": 515,
@@ -233,7 +255,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "73d119d5-f50b-456a-b153-144eb81a27f2",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "nz",
                     "item": 523,
@@ -245,7 +269,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "28af178b-af3d-46c9-8859-aef646354d34",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "netherlands",
                     "item": 514,
@@ -257,7 +283,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "c3b7d520-cf44-4a36-8d59-7a2222e1e3e6",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "mexico",
                     "item": 522,
@@ -269,7 +297,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "b4e996fc-b19e-4dac-b537-beb7f451b6ba",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "korea",
                     "item": 513,
@@ -281,7 +311,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "e3683d9f-0728-4634-8559-b72203f0ad7f",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "japan",
                     "item": 512,
@@ -293,7 +325,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "fa8d5b8e-f783-4cf8-bb51-d7b8d771a6c9",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "jamaica",
                     "item": 534,
@@ -305,7 +339,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "fa0600b0-5d8e-4933-b33d-57053b952017",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "italy",
                     "item": 528,
@@ -317,7 +353,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "fcc54f5a-8d8e-43bb-af26-7aa3e8192496",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "israel",
                     "item": 511,
@@ -329,7 +367,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "27c69229-356c-425a-883f-5e9f047b2361",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "ireland",
                     "item": 524,
@@ -341,7 +381,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "4e42a924-b170-4864-8261-266b58d685e8",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "india",
                     "item": 527,
@@ -353,7 +395,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "37b25253-5431-48e2-a384-7112606b18a0",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "hungary",
                     "item": 531,
@@ -365,7 +409,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "6c296b85-3c34-435f-b0e4-d1d3bd50ba9c",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "uk",
                     "item": 503,
@@ -377,7 +423,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "930c8b49-3122-4b21-853d-d3ddde269052",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "germany",
                     "item": 510,
@@ -389,7 +437,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "d619ecfa-caba-48d6-b15f-bd2daf168121",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "france",
                     "item": 509,
@@ -401,7 +451,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "265318da-5f0f-40ed-9232-5460d3a18481",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "finland",
                     "item": 508,
@@ -413,7 +465,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "55c78ca0-7d40-40bf-9798-7fbbe7a5f490",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "egypt",
                     "item": 530,
@@ -425,7 +479,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "b3c142ce-d92a-4224-83ed-12f89245bc9d",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "denmark",
                     "item": 507,
@@ -437,7 +493,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "f111feab-35bc-4b2c-95e8-6c87454bc74d",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "colombia",
                     "item": 536,
@@ -449,7 +507,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "efc9f123-4c75-4452-aee8-315d29115c01",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "china",
                     "item": 506,
@@ -461,7 +521,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "0a76b206-3b11-4979-af97-2cb1484c21ed",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "chile",
                     "item": 535,
@@ -473,7 +535,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "a10810d4-6c8a-43f1-93db-92840baa499f",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "canada",
                     "item": 500,
@@ -485,7 +549,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "a00b7bb7-876d-4fae-9989-b7e158dc4960",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "brazil",
                     "item": 505,
@@ -497,7 +563,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "9178b17f-7bdc-4b41-b6cb-a5abb17226d4",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "belize",
                     "item": 529,
@@ -509,7 +577,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "62c6e2cd-97ce-4132-b8ec-cd9a5158bddb",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "belgium",
                     "item": 504,
@@ -521,7 +591,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "5aebc471-528f-44d9-aabf-68fd72e71807",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "australia",
                     "item": 502,
@@ -533,7 +605,9 @@
                     "prefabId": "c0258f97-d78b-4395-bd8f-031992f11244",
                     "id": "5cf741cd-4240-437a-b5fa-f259c7311eac",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "argentina",
                     "item": 533,
@@ -566,7 +640,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "148f1609-7d1f-46d9-8790-190523a56631",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton12",
                     "item": 982,
@@ -578,7 +654,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "c30ac26e-182b-47a3-af67-59443b923f2c",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton11",
                     "item": 969,
@@ -590,7 +668,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "d16e145c-9f62-416f-b261-955a0bb746e7",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton10",
                     "item": 9032,
@@ -602,7 +682,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "1f1cc6f8-bd56-4979-adfd-f89057d8eca3",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton9",
                     "item": 9031,
@@ -714,7 +796,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "9ed3facb-0265-42d9-a6b5-aec440cd89e3",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton8",
                     "item": 994,
@@ -726,7 +810,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "db124768-d1cb-4cdb-9093-e128e0fad792",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton7",
                     "item": 9035,
@@ -738,7 +824,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "c1643fc0-34e4-4f3a-8d13-8d895f8f5698",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton6",
                     "item": 9034,
@@ -750,7 +838,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "79a0e5ae-e65b-46b2-b5cc-2e29580c963a",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton5",
                     "item": 9033,
@@ -884,7 +974,9 @@
                     "id": "9e458dfb-63b7-4ce8-9597-93cf0445669d",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_44",
                     "item": 3022,
@@ -898,7 +990,9 @@
                     "id": "fd944642-16cd-46f7-8b46-f3cb0ed3555a",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_45",
                     "item": 1058,
@@ -912,7 +1006,9 @@
                     "id": "3aff608a-cdda-48ec-871d-aeef048dc8c5",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_36",
                     "item": 6021,
@@ -926,7 +1022,9 @@
                     "id": "760eab61-f38e-4d50-9b96-49d2f784bf1d",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_37",
                     "item": 5032,
@@ -939,7 +1037,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "6ba0f34a-562e-4086-9b90-10f4ce6fd881",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton4",
                     "item": 976,
@@ -951,7 +1051,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "999816c1-3a80-45dc-bca3-034de5977351",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton3",
                     "item": 985,
@@ -963,7 +1065,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "25d2f16f-541f-48d0-ba37-fe967026e331",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton2",
                     "item": 9038,
@@ -975,7 +1079,9 @@
                     "prefabId": "d9f4da97-c017-415a-aec7-cd283c0992b6",
                     "id": "31b29ee2-fbca-425d-b29e-ef94f46aff56",
                     "unlock": [
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "photoButton1",
                     "item": 9037,
@@ -1109,7 +1215,9 @@
                     "id": "1566b70e-ee02-4040-823f-df758614c41e",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_40",
                     "item": 3020,
@@ -1123,7 +1231,9 @@
                     "id": "7ab8443c-d6e1-4ffd-a3da-2976c348bccf",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_41",
                     "item": 6019,
@@ -1137,7 +1247,9 @@
                     "id": "2013ae66-fa89-4695-ab9c-9017658ce398",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_42",
                     "item": 794,
@@ -1151,7 +1263,9 @@
                     "id": "f31d49a8-9633-4ecd-8620-10a1db6ea3b9",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_43",
                     "item": 762,
@@ -1165,7 +1279,9 @@
                     "id": "935d34b5-ea86-4648-9f16-1984fa85e1dc",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_33",
                     "item": 4084,
@@ -1179,7 +1295,9 @@
                     "id": "dd8831dc-bda8-44d9-a811-d7676ff8b4c5",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_34",
                     "item": 668,
@@ -1193,7 +1311,9 @@
                     "id": "30e70dd8-ae93-440f-a131-5a983fdaa42f",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_35",
                     "item": 477,
@@ -1228,7 +1348,9 @@
                     "id": "18714352-0fcc-4a33-a411-c28beb8cba43",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_34",
                     "item": 4083,
@@ -1242,7 +1364,9 @@
                     "id": "2db6627f-fd03-4373-af70-080229ee9d84",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_35",
                     "item": 4079,
@@ -1256,7 +1380,9 @@
                     "id": "002f0c1a-3a61-4110-ad2a-8832b04fea09",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_36",
                     "item": 793,
@@ -1270,7 +1396,9 @@
                     "id": "8e8c2735-2417-4ba8-8248-ae6e005aa95d",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_37",
                     "item": 4081,
@@ -1284,7 +1412,9 @@
                     "id": "2ec44077-160c-4f93-af55-7eb005107079",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_38",
                     "item": 796,
@@ -1298,7 +1428,9 @@
                     "id": "f621532e-ae91-4eb4-886b-bd28fef6152e",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_39",
                     "item": 4080,
@@ -1312,7 +1444,9 @@
                     "id": "f180ad31-ee89-4f44-86c2-6ff4918c5066",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_28",
                     "item": 1055,
@@ -1326,7 +1460,9 @@
                     "id": "76c68254-4c89-4717-bc8e-7afddd2ccf9b",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_29",
                     "item": 667,
@@ -1340,7 +1476,9 @@
                     "id": "b2c386c4-f2af-4d44-9995-dbef05b2fa23",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_30",
                     "item": 1054,
@@ -1354,7 +1492,9 @@
                     "id": "9517b497-8ce7-4646-a17f-ae968b2cd7c4",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_31",
                     "item": 673,
@@ -1368,7 +1508,9 @@
                     "id": "f567dfc5-bf6d-4e78-a794-4e2bd371b5b8",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_32",
                     "item": 1053,
@@ -1403,7 +1545,9 @@
                     "id": "f6e26ec6-33e7-421c-8b1a-ac18da809a71",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_27",
                     "item": 831,
@@ -1417,7 +1561,9 @@
                     "id": "e354897c-2c8d-4d07-b6fa-9e5cffd1cb7b",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_28",
                     "item": 4097,
@@ -1431,33 +1577,41 @@
                     "id": "96839d8a-57f3-4ab2-970e-95a288b43b19",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_29",
                     "item": 117,
                     "components": [],
                     "x": 223,
-                    "y": 182
+                    "y": 182,
+                    "angle": 0
                 },
                 {
                     "prefabId": "fdabdf4b-9d2e-4a40-a724-14fda606e501",
                     "id": "9f083480-05fa-4b0a-a375-12e5c4a64485",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_30",
                     "item": 830,
                     "components": [],
                     "x": 894,
-                    "y": 639
+                    "y": 639,
+                    "angle": 0
                 },
                 {
                     "prefabId": "fdabdf4b-9d2e-4a40-a724-14fda606e501",
                     "id": "c45bf317-5308-47f0-a010-48efc10bc122",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_31",
                     "item": 363,
@@ -1471,7 +1625,9 @@
                     "id": "e5dddfc5-b105-43f0-9868-f219e3b92537",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_32",
                     "item": 4096,
@@ -1485,7 +1641,9 @@
                     "id": "fc68e65a-85fd-47eb-84e0-7b79460f22ab",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_33",
                     "item": 656,
@@ -1499,7 +1657,9 @@
                     "id": "550004eb-3361-432f-901b-69738e97cd13",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_26",
                     "item": 671,
@@ -1513,7 +1673,9 @@
                     "id": "80441529-7eaa-413a-b00e-10ff52714ef0",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_27",
                     "item": 1022,
@@ -1548,7 +1710,9 @@
                     "id": "ffdcba72-dbbb-4078-9690-2ab65b9d7222",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_24",
                     "item": 108,
@@ -1562,7 +1726,9 @@
                     "id": "7bfef63d-b110-4cb8-9b9a-f6c00c824d99",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_25",
                     "item": 1060,
@@ -1576,7 +1742,9 @@
                     "id": "6a32f919-5b01-413b-a4e1-5a7ef2f1e868",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_26",
                     "item": 375,
@@ -1590,7 +1758,9 @@
                     "id": "cc8b763e-a998-4120-ac86-451b1b9d8c48",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_22",
                     "item": 4093,
@@ -1604,7 +1774,9 @@
                     "id": "ae161b3d-8b51-48cc-abd2-f33a4a6a37c1",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_23",
                     "item": 1061,
@@ -1618,7 +1790,9 @@
                     "id": "5f29e24e-b1d4-46d5-9ff6-5276cfc75b11",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_24",
                     "item": 4095,
@@ -1632,7 +1806,9 @@
                     "id": "9a1c4cac-b472-42a4-b24e-54c61a338ff9",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_25",
                     "item": 4092,
@@ -1669,7 +1845,9 @@
                         "item",
                         "angle",
                         "scaleX",
-                        "scaleY"
+                        "scaleY",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_21",
                     "item": 263,
@@ -1685,7 +1863,9 @@
                     "id": "765e731d-cbff-4117-8beb-3e52a84d7633",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_22",
                     "item": 424,
@@ -1701,7 +1881,9 @@
                         "item",
                         "angle",
                         "scaleX",
-                        "scaleY"
+                        "scaleY",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_23",
                     "item": 4094,
@@ -1719,7 +1901,9 @@
                         "item",
                         "angle",
                         "scaleX",
-                        "scaleY"
+                        "scaleY",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_21",
                     "item": 1059,
@@ -1727,7 +1911,8 @@
                     "x": 1081,
                     "y": 170,
                     "scaleX": 1.3,
-                    "scaleY": 1.3
+                    "scaleY": 1.3,
+                    "angle": 0
                 }
             ]
         },
@@ -1755,7 +1940,9 @@
                     "id": "1b4f6084-2516-4cce-a880-4318ca415cb1",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_19",
                     "item": 1063,
@@ -1769,7 +1956,9 @@
                     "id": "f455670e-a6f4-4418-90a4-7d37cc9c93f5",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_20",
                     "item": 1065,
@@ -1783,7 +1972,9 @@
                     "id": "5cac5c9f-9b09-4b8f-8b70-69233fd03f05",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_17",
                     "item": 4098,
@@ -1797,7 +1988,9 @@
                     "id": "16cfb394-ef79-4863-b34d-300826884863",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_18",
                     "item": 732,
@@ -1811,7 +2004,9 @@
                     "id": "2a20b50d-b450-4334-a48e-22782499afe9",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_19",
                     "item": 118,
@@ -1825,7 +2020,9 @@
                     "id": "e3778646-8a4c-453a-b9f9-dd395586d46d",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_20",
                     "item": 4101,
@@ -1860,7 +2057,9 @@
                     "id": "88fbc824-ebba-4d85-9623-1304ac01f540",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_13",
                     "item": 4103,
@@ -1874,7 +2073,9 @@
                     "id": "4d5323c5-13d6-4c11-abe6-e56dabb94724",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_14",
                     "item": 1067,
@@ -1888,7 +2089,9 @@
                     "id": "b87d5540-f688-49ff-94f9-55c23b56bc0b",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_15",
                     "item": 234,
@@ -1902,7 +2105,9 @@
                     "id": "114536d3-0e9c-4ab0-82f2-41270a4019bc",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_16",
                     "item": 843,
@@ -1916,7 +2121,9 @@
                     "id": "117762ee-bc63-41f0-81a9-63e5c52510f8",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_17",
                     "item": 433,
@@ -1930,7 +2137,9 @@
                     "id": "f2190182-2da5-4493-b5c6-f9a497696306",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_18",
                     "item": 125,
@@ -1944,7 +2153,9 @@
                     "id": "d4060012-4c71-4c85-a1fd-21cc9be4ffd3",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_14",
                     "item": 6022,
@@ -1958,7 +2169,9 @@
                     "id": "b4c4a0dd-da1f-48e0-967a-baf80d4f4a53",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_15",
                     "item": 1066,
@@ -1972,7 +2185,9 @@
                     "id": "80c4d868-dfec-4a6f-be6c-56eb50f645f0",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_16",
                     "item": 4102,
@@ -2007,7 +2222,9 @@
                     "id": "5a78d48e-a0dd-4a46-96fc-46579fafdf10",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_9",
                     "item": 4099,
@@ -2021,7 +2238,9 @@
                     "id": "5b5d9bb7-59f3-480c-8006-206506ca19fe",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_10",
                     "item": 728,
@@ -2035,7 +2254,9 @@
                     "id": "77f5b54b-f5fe-4f73-b6b2-af7c85ea19a9",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_11",
                     "item": 4100,
@@ -2049,7 +2270,9 @@
                     "id": "0254c67a-3f0a-45d4-8b72-36101df9589b",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_12",
                     "item": 651,
@@ -2063,7 +2286,9 @@
                     "id": "1135cfb3-f608-4265-95a4-843e45522f40",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_11",
                     "item": 1064,
@@ -2077,7 +2302,9 @@
                     "id": "e51f33d3-b12c-41dc-b0ab-338abdaeae4b",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_12",
                     "item": 6004,
@@ -2091,7 +2318,9 @@
                     "id": "92163e57-91c4-4f21-b3c4-90109f947274",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_13",
                     "item": 233,
@@ -2126,7 +2355,9 @@
                     "id": "40ef2e32-a309-4d98-9395-9f7b4e95ec3d",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_4",
                     "item": 4108,
@@ -2140,7 +2371,9 @@
                     "id": "dec18dbc-af0a-4736-83e3-611a233e64eb",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_5",
                     "item": 670,
@@ -2154,7 +2387,9 @@
                     "id": "598728fd-6d2d-4bbf-9f2b-dd692da238ac",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_6",
                     "item": 5043,
@@ -2168,7 +2403,9 @@
                     "id": "7e18eded-0bc5-465f-9117-6d55468d940f",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_7",
                     "item": 784,
@@ -2182,7 +2419,9 @@
                     "id": "2166c673-e6c0-4873-b2c1-40d79861a457",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_8",
                     "item": 357,
@@ -2196,7 +2435,9 @@
                     "id": "2f671914-842c-4c00-b1c2-af8fce1ca04e",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_4",
                     "item": 2010,
@@ -2212,7 +2453,9 @@
                         "item",
                         "angle",
                         "scaleX",
-                        "scaleY"
+                        "scaleY",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_5",
                     "item": 4109,
@@ -2228,7 +2471,9 @@
                     "id": "7c7bcc56-529a-4448-b4d2-5c89e7540443",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_6",
                     "item": 657,
@@ -2242,7 +2487,9 @@
                     "id": "0f65d09c-cd12-4cd7-bf6e-d24ffa6d5843",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_7",
                     "item": 184,
@@ -2256,7 +2503,9 @@
                     "id": "fda8bb4d-e5a1-4f5a-9524-13044a9ccefc",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_8",
                     "item": 5042,
@@ -2270,7 +2519,9 @@
                     "id": "bbd17ea0-19da-4dee-a0f1-f01f41a2dcbb",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_9",
                     "item": 1074,
@@ -2284,7 +2535,9 @@
                     "id": "09cb551b-4a78-4474-b2bf-47ee1d2c9f89",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_10",
                     "item": 251,
@@ -2319,7 +2572,9 @@
                     "id": "8c939974-84f5-420e-b4c1-da739f4091fd",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1",
                     "item": 1073,
@@ -2333,7 +2588,9 @@
                     "id": "e8b088de-a288-4b7b-8d29-02e524e308cb",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_1",
                     "item": 4106,
@@ -2347,7 +2604,9 @@
                     "id": "404abf9d-229e-4f02-bf68-c8a05becdf90",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_2",
                     "item": 1072,
@@ -2361,7 +2620,9 @@
                     "id": "76bea19f-34ca-42ca-a73c-3c9ddfed834e",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag1_3",
                     "item": 2011,
@@ -2375,7 +2636,9 @@
                     "id": "1b2ccf06-10f8-49ef-b2ad-774e3be220df",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2",
                     "item": 3026,
@@ -2389,7 +2652,9 @@
                     "id": "d480a1a3-2757-45b7-ae7c-362db99455a2",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_1",
                     "item": 3027,
@@ -2403,7 +2668,9 @@
                     "id": "2b4926b8-6e95-4c1e-aead-13ad1522e945",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_2",
                     "item": 3025,
@@ -2417,7 +2684,9 @@
                     "id": "3e444bbb-1bc6-45ac-8837-5c8284266bde",
                     "unlock": [
                         "item",
-                        "angle"
+                        "angle",
+                        "x",
+                        "y"
                     ],
                     "label": "tag2_3",
                     "item": 4107,
@@ -2455,7 +2724,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "aqua",
                     "item": 15,
@@ -2476,7 +2747,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "lime",
                     "item": 13,
@@ -2486,7 +2759,8 @@
                     "tintTopLeft": "#72FF00",
                     "tintTopRight": "#72FF00",
                     "tintBottomLeft": "#72FF00",
-                    "tintBottomRight": "#72FF00"
+                    "tintBottomRight": "#72FF00",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2497,7 +2771,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "purple",
                     "item": 8,
@@ -2507,7 +2783,8 @@
                     "tintTopLeft": "#650099",
                     "tintTopRight": "#650099",
                     "tintBottomLeft": "#650099",
-                    "tintBottomRight": "#650099"
+                    "tintBottomRight": "#650099",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2518,7 +2795,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "darkGreen",
                     "item": 11,
@@ -2528,7 +2807,8 @@
                     "tintTopLeft": "#006500",
                     "tintTopRight": "#006500",
                     "tintBottomLeft": "#006500",
-                    "tintBottomRight": "#006500"
+                    "tintBottomRight": "#006500",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2539,7 +2819,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "pink",
                     "item": 3,
@@ -2549,7 +2831,8 @@
                     "tintTopLeft": "#FF3299",
                     "tintTopRight": "#FF3299",
                     "tintBottomLeft": "#FF3299",
-                    "tintBottomRight": "#FF3299"
+                    "tintBottomRight": "#FF3299",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2560,7 +2843,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "lightblue",
                     "item": 12,
@@ -2570,7 +2855,8 @@
                     "tintTopLeft": "#0099CC",
                     "tintTopRight": "#0099CC",
                     "tintBottomLeft": "#0099CC",
-                    "tintBottomRight": "#0099CC"
+                    "tintBottomRight": "#0099CC",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2581,7 +2867,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "yellow",
                     "item": 7,
@@ -2591,7 +2879,8 @@
                     "tintTopLeft": "#FFCC00",
                     "tintTopRight": "#FFCC00",
                     "tintBottomLeft": "#FFCC00",
-                    "tintBottomRight": "#FFCC00"
+                    "tintBottomRight": "#FFCC00",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2602,7 +2891,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "peach",
                     "item": 10,
@@ -2612,7 +2903,8 @@
                     "tintTopLeft": "#FF6565",
                     "tintTopRight": "#FF6565",
                     "tintBottomLeft": "#FF6565",
-                    "tintBottomRight": "#FF6565"
+                    "tintBottomRight": "#FF6565",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2623,7 +2915,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "brown",
                     "item": 9,
@@ -2633,7 +2927,8 @@
                     "tintTopLeft": "#996500",
                     "tintTopRight": "#996500",
                     "tintBottomLeft": "#996500",
-                    "tintBottomRight": "#996500"
+                    "tintBottomRight": "#996500",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2644,7 +2939,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "orange",
                     "item": 6,
@@ -2654,7 +2951,8 @@
                     "tintTopLeft": "#FF6500",
                     "tintTopRight": "#FF6500",
                     "tintBottomLeft": "#FF6500",
-                    "tintBottomRight": "#FF6500"
+                    "tintBottomRight": "#FF6500",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2665,7 +2963,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "green",
                     "item": 2,
@@ -2675,7 +2975,8 @@
                     "tintTopLeft": "#009900",
                     "tintTopRight": "#009900",
                     "tintBottomLeft": "#009900",
-                    "tintBottomRight": "#009900"
+                    "tintBottomRight": "#009900",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2686,7 +2987,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "red",
                     "item": 5,
@@ -2696,7 +2999,8 @@
                     "tintTopLeft": "#CC0000",
                     "tintTopRight": "#CC0000",
                     "tintBottomLeft": "#CC0000",
-                    "tintBottomRight": "#CC0000"
+                    "tintBottomRight": "#CC0000",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2707,7 +3011,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "blue",
                     "item": 1,
@@ -2717,7 +3023,8 @@
                     "tintTopLeft": "#003265",
                     "tintTopRight": "#003265",
                     "tintBottomLeft": "#003265",
-                    "tintBottomRight": "#003265"
+                    "tintBottomRight": "#003265",
+                    "tintFill": false
                 },
                 {
                     "prefabId": "47156044-4e99-49f8-a229-f7d46dbd9624",
@@ -2728,7 +3035,9 @@
                         "tintTopRight",
                         "tintBottomLeft",
                         "tintBottomRight",
-                        "item"
+                        "item",
+                        "x",
+                        "y"
                     ],
                     "label": "black",
                     "item": 4,
@@ -2738,7 +3047,8 @@
                     "tintTopLeft": "#323232",
                     "tintTopRight": "#323232",
                     "tintBottomLeft": "#323232",
-                    "tintBottomRight": "#323232"
+                    "tintBottomRight": "#323232",
+                    "tintFill": false
                 }
             ]
         },
@@ -2877,7 +3187,6 @@
                     "x": 1130,
                     "y": 790,
                     "originX": 1,
-                    "originY": 0,
                     "text": "YOUR COINS:",
                     "fixedWidth": 600,
                     "align": "right",
@@ -2893,7 +3202,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

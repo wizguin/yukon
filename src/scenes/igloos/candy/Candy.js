@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class Candy extends IglooScene {
+export default class Candy extends IglooScene {
 
     constructor() {
         super("Candy");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class Candy extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("candy-pack", "assets/media/igloos/buildings/sprites/candy/candy-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -51,12 +54,13 @@ class Candy extends IglooScene {
         this.add.image(491, 467, "candy", "door");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Candy

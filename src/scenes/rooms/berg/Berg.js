@@ -5,13 +5,14 @@ import { MoveTo, SimpleButton, ShowHint } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Berg extends RoomScene {
+export default class Berg extends RoomScene {
 
     constructor() {
         super("Berg");
 
         /** @type {Phaser.GameObjects.Sprite} */
         this.aqua;
+
 
         /* START-USER-CTR-CODE */
 
@@ -20,11 +21,13 @@ class Berg extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("berg-pack", "assets/media/rooms/berg/berg-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -45,7 +48,10 @@ class Berg extends RoomScene {
         aquaShowHint.text = "Aqua Grabber";
 
         this.aqua = aqua;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -92,5 +98,3 @@ class Berg extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Berg

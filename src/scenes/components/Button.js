@@ -3,15 +3,13 @@ import SimpleButton from './SimpleButton'
 
 /* START OF COMPILED CODE */
 
-class Button extends SimpleButton {
+export default class Button extends SimpleButton {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__Button"] = this;
-
         /** @type {Phaser.GameObjects.Sprite} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {string} */
         this.spriteName = "";
         /** @type {any} */
@@ -25,6 +23,10 @@ class Button extends SimpleButton {
         /** @type {boolean} */
         this.pixelPerfect = false;
 
+
+        this.gameObject = gameObject;
+        gameObject["__Button"] = this;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -33,6 +35,7 @@ class Button extends SimpleButton {
     static getComponent(gameObject) {
         return gameObject["__Button"];
     }
+
 
     /* START-USER-CODE */
 
@@ -81,5 +84,3 @@ class Button extends SimpleButton {
 }
 
 /* END OF COMPILED CODE */
-
-export default Button

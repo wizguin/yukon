@@ -5,13 +5,14 @@ import { Button, MoveTo } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class DojoExt extends RoomScene {
+export default class DojoExt extends RoomScene {
 
     constructor() {
         super("DojoExt");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -24,11 +25,13 @@ class DojoExt extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("dojoext-pack", "assets/media/rooms/dojoext/dojoext-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -64,7 +67,7 @@ class DojoExt extends RoomScene {
         tree.setOrigin(0, 0);
 
         // lists
-        const sort = [puffles, fence, trees]
+        const sort = [puffles, fence, trees];
 
         // dojo_door (components)
         const dojo_doorButton = new Button(dojo_door);
@@ -75,12 +78,13 @@ class DojoExt extends RoomScene {
         dojo_doorMoveTo.y = 610;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default DojoExt

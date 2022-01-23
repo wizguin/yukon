@@ -5,10 +5,16 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class WaddleItem extends BaseContainer {
+export default class WaddleItem extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.icon;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+
 
         // waddle_item
         const waddle_item = scene.add.image(0, 0, "main", "buddy/item");
@@ -22,7 +28,7 @@ class WaddleItem extends BaseContainer {
         const username = scene.add.text(25, 0, "", {});
         username.setOrigin(0.5, 0.5);
         username.text = "Empty";
-        username.setStyle({"fixedWidth":270,"fontFamily":"Arial","fontSize":"24px"});
+        username.setStyle({ "fixedWidth":270,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(username);
 
         this.icon = icon;
@@ -42,6 +48,7 @@ class WaddleItem extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -85,5 +92,3 @@ class WaddleItem extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default WaddleItem

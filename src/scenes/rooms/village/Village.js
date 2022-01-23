@@ -5,13 +5,14 @@ import { Animation, Button, MoveTo } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Village extends RoomScene {
+export default class Village extends RoomScene {
 
     constructor() {
         super("Village");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -26,11 +27,13 @@ class Village extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("village-pack", "assets/media/rooms/village/village-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -89,7 +92,7 @@ class Village extends RoomScene {
         const chair = this.add.sprite(292, 150, "village", "chair0001");
 
         // lists
-        const sort = [tours, tours_text]
+        const sort = [tours, tours_text];
 
         // lodge_door (components)
         const lodge_doorButton = new Button(lodge_door);
@@ -119,12 +122,13 @@ class Village extends RoomScene {
         chairAnimation.repeatDelay = 1500;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Village

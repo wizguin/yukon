@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class Basic extends IglooScene {
+export default class Basic extends IglooScene {
 
     constructor() {
         super("Basic");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class Basic extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("basic-pack", "assets/media/igloos/buildings/sprites/basic/basic-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -51,12 +54,13 @@ class Basic extends IglooScene {
         this.add.image(491, 467, "basic", "door");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Basic

@@ -8,10 +8,20 @@ import SingleButton from './buttons/SingleButton'
 
 /* START OF COMPILED CODE */
 
-class WindowPrompt extends BaseContainer {
+export default class WindowPrompt extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.bg;
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+        /** @type {SingleButton} */
+        this.single;
+        /** @type {DualButtons} */
+        this.dual;
+
 
         this.visible = false;
 
@@ -32,7 +42,7 @@ class WindowPrompt extends BaseContainer {
         const text = scene.add.text(0, -161, "", {});
         text.setOrigin(0.5, 0.5);
         text.text = "Message goes here\nMessage goes here";
-        text.setStyle({"align":"center","color":"#000000","fixedWidth":628,"fontFamily":"Arial Narrow","fontSize":"32px"});
+        text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":628,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         this.add(text);
 
         // single
@@ -60,6 +70,7 @@ class WindowPrompt extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     show(text, buttonLayout, callback, noCallback) {
@@ -82,5 +93,3 @@ class WindowPrompt extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default WindowPrompt

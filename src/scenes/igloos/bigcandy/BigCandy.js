@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class BigCandy extends IglooScene {
+export default class BigCandy extends IglooScene {
 
     constructor() {
         super("BigCandy");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class BigCandy extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("bigcandy-pack", "assets/media/igloos/buildings/sprites/bigcandy/bigcandy-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -60,12 +63,13 @@ class BigCandy extends IglooScene {
         chimney.setOrigin(0.5050505050505051, 0.5);
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default BigCandy

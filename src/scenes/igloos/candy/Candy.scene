@@ -5,6 +5,8 @@
         "compilerInsertSpaces": true,
         "snapWidth": 353,
         "snapHeight": 442,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "IglooScene",
         "preloadMethodName": "_preload",
         "preloadPackFiles": [
@@ -98,6 +100,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

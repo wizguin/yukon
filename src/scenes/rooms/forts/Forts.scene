@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "RoomScene",
         "preloadPackFiles": [
             "yukon/assets/media/rooms/forts/forts-pack.json"
@@ -240,7 +242,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

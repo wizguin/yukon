@@ -5,7 +5,7 @@ import { Button, MoveTo, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Beach extends RoomScene {
+export default class Beach extends RoomScene {
 
     constructor() {
         super("Beach");
@@ -14,6 +14,7 @@ class Beach extends RoomScene {
         this.bucket;
         /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -28,11 +29,13 @@ class Beach extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("beach-pack", "assets/media/rooms/beach/beach-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -92,7 +95,7 @@ class Beach extends RoomScene {
         bucket.setOrigin(0.8863109, 0.94611727);
 
         // lists
-        const sort = [bucket, chair_1_front, chair_1, chair_2_front, chair_2, net, fish, buoy, cage]
+        const sort = [bucket, chair_1_front, chair_1, chair_2_front, chair_2, net, fish, buoy, cage];
 
         // lighthouse_door (components)
         const lighthouse_doorButton = new Button(lighthouse_door);
@@ -109,7 +112,10 @@ class Beach extends RoomScene {
 
         this.bucket = bucket;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -143,5 +149,3 @@ class Beach extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Beach

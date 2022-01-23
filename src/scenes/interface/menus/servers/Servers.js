@@ -5,7 +5,7 @@ import Server from './server/Server'
 
 /* START OF COMPILED CODE */
 
-class Servers extends BaseScene {
+export default class Servers extends BaseScene {
 
     constructor() {
         super("Servers");
@@ -14,6 +14,7 @@ class Servers extends BaseScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -24,7 +25,7 @@ class Servers extends BaseScene {
         const text_2 = this.add.text(1095, 908, "", {});
         text_2.setOrigin(0, 0.5);
         text_2.text = "Ultimate safe chat";
-        text_2.setStyle({"fixedWidth":200,"fontFamily":"Arial Narrow","fontSize":"28px"});
+        text_2.setStyle({ "fixedWidth":200,"fontFamily": "Arial Narrow", "fontSize": "28px" });
 
         // safe_small
         const safe_small = this.add.image(1070, 908, "servers", "safe_small");
@@ -34,7 +35,7 @@ class Servers extends BaseScene {
         const text_1 = this.add.text(645, 908, "", {});
         text_1.setOrigin(0, 0.5);
         text_1.text = "Amount of penguins online";
-        text_1.setStyle({"fixedWidth":300,"fontFamily":"Arial Narrow","fontSize":"28px"});
+        text_1.setStyle({ "fixedWidth":300,"fontFamily": "Arial Narrow", "fontSize": "28px" });
 
         // bar_full_small
         this.add.image(620, 908, "servers", "bar_full_small");
@@ -43,7 +44,7 @@ class Servers extends BaseScene {
         const text = this.add.text(277, 908, "", {});
         text.setOrigin(0, 0.5);
         text.text = "Buddies online";
-        text.setStyle({"fixedWidth":200,"fontFamily":"Arial Narrow","fontSize":"28px"});
+        text.setStyle({ "fixedWidth":200,"fontFamily": "Arial Narrow", "fontSize": "28px" });
 
         // online_small
         this.add.image(252, 908, "servers", "online_small");
@@ -57,7 +58,9 @@ class Servers extends BaseScene {
         const suggested = this.add.text(760, 85, "", {});
         suggested.setOrigin(0.5, 0.5);
         suggested.text = "YOUR SUGGESTED SERVERS";
-        suggested.setStyle({"align":"center","fixedWidth":1200,"fontFamily":"CCFaceFront","fontSize":"40px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
+        suggested.setStyle({ "align": "center", "fixedWidth":1200,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":10,"shadow.color": "#000000ff" });
+
+        this.events.emit("scene-awake");
     }
 
     /* START-USER-CODE */
@@ -104,5 +107,3 @@ class Servers extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Servers

@@ -5,10 +5,10 @@ import { Button, Interactive, NineSlice } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Moderator extends BaseContainer {
+export default class Moderator extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
 
         // block
         const block = scene.add.rectangle(0, 0, 1520, 960);
@@ -27,21 +27,21 @@ class Moderator extends BaseContainer {
         const text3 = scene.add.text(-44, 86, "", {});
         text3.setOrigin(0.5, 0);
         text3.text = "to ignore them.";
-        text3.setStyle({"color":"#ffffffff","fixedWidth":220,"fixedHeight":60,"fontFamily":"Burbank Small","fontSize":"28px","fontStyle":"bold","shadow.offsetX":2,"shadow.offsetY":2,"shadow.color":"#003366","shadow.fill":true});
+        text3.setStyle({ "color": "#ffffffff", "fixedWidth":220,"fixedHeight":60,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
         this.add(text3);
 
         // text2
         const text2 = scene.add.text(226, -22, "", {});
         text2.setOrigin(0.5, 0);
         text2.text = "to report";
-        text2.setStyle({"color":"#ffffffff","fixedWidth":200,"fixedHeight":60,"fontFamily":"Burbank Small","fontSize":"28px","fontStyle":"bold","shadow.offsetX":2,"shadow.offsetY":2,"shadow.color":"#003366","shadow.fill":true});
+        text2.setStyle({ "color": "#ffffffff", "fixedWidth":200,"fixedHeight":60,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
         this.add(text2);
 
         // text1
         const text1 = scene.add.text(21, -76, "", {});
         text1.setOrigin(0.5, 0);
         text1.text = "If someone is breaking the rules, click on\ntheir penguin then click\nthem to a moderator. You can also click\non";
-        text1.setStyle({"color":"#ffffffff","fixedWidth":562,"fixedHeight":220,"fontFamily":"Burbank Small","fontSize":"28px","fontStyle":"bold","shadow.offsetX":2,"shadow.offsetY":2,"shadow.color":"#003366","shadow.fill":true});
+        text1.setStyle({ "color": "#ffffffff", "fixedWidth":562,"fixedHeight":220,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
         text1.setLineSpacing(20);
         this.add(text1);
 
@@ -49,7 +49,7 @@ class Moderator extends BaseContainer {
         const safe = scene.add.text(0, -151, "", {});
         safe.setOrigin(0.5, 0);
         safe.text = "Help keep the island safe!";
-        safe.setStyle({"align":"center","fixedWidth":600,"fontFamily":"CCFaceFront","fontSize":"40px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10});
+        safe.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":10});
         this.add(safe);
 
         // x_button
@@ -109,5 +109,3 @@ class Moderator extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Moderator

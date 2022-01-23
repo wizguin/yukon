@@ -8,7 +8,7 @@ import PenguinSmall from '../card/PenguinSmall'
 
 /* START OF COMPILED CODE */
 
-class PenguinSelect extends BaseScene {
+export default class PenguinSelect extends BaseScene {
 
     constructor() {
         super("PenguinSelect");
@@ -20,10 +20,12 @@ class PenguinSelect extends BaseScene {
         /** @type {Phaser.GameObjects.Container} */
         this.container;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -49,7 +51,7 @@ class PenguinSelect extends BaseScene {
         const backText = this.add.text(760, 876, "", {});
         backText.setOrigin(0.5, 0.5);
         backText.text = "Login as a different penguin";
-        backText.setStyle({"align":"center","color":"#ffffffff","fixedWidth":400,"fontFamily":"Arial Narrow","fontSize":"30px"});
+        backText.setStyle({ "align": "center", "color": "#ffffffff", "fixedWidth":400,"fontFamily": "Arial Narrow", "fontSize": "30px" });
         backText.setLineSpacing(25);
 
         // container
@@ -75,7 +77,10 @@ class PenguinSelect extends BaseScene {
         this.largeBg = largeBg;
         this.smallBg = smallBg;
         this.container = container;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -193,5 +198,3 @@ class PenguinSelect extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default PenguinSelect

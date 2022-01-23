@@ -7,10 +7,20 @@ import InventoryLoader from '@engine/interface/inventory/InventoryLoader'
 
 /* START OF COMPILED CODE */
 
-class Inventory extends BaseContainer {
+export default class Inventory extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 460);
+
+        /** @type {Phaser.GameObjects.Container} */
+        this.container;
+        /** @type {Phaser.GameObjects.Text} */
+        this.active_text;
+        /** @type {Phaser.GameObjects.Image} */
+        this.arrow;
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.slots;
+
 
         // container
         const container = scene.add.container(-56, -272);
@@ -98,7 +108,7 @@ class Inventory extends BaseContainer {
         const active_text = scene.add.text(130, 553, "", {});
         active_text.setOrigin(0.5, 0.5);
         active_text.text = "All Items";
-        active_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        active_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         container.add(active_text);
 
         // tab
@@ -116,7 +126,7 @@ class Inventory extends BaseContainer {
         tab.add(arrow);
 
         // lists
-        const slots = [slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12]
+        const slots = [slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12];
 
         // inventory_bg (components)
         new Interactive(inventory_bg);
@@ -229,6 +239,7 @@ class Inventory extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     get inventory() {
@@ -296,5 +307,3 @@ class Inventory extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Inventory

@@ -5,13 +5,14 @@ import { Animation, Button, MoveTo, Zone } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Cave extends RoomScene {
+export default class Cave extends RoomScene {
 
     constructor() {
         super("Cave");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -24,11 +25,13 @@ class Cave extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("cave-pack", "assets/media/rooms/cave/cave-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // window
@@ -146,7 +149,7 @@ class Cave extends RoomScene {
         zone.fillColor = 65280;
 
         // lists
-        const sort = [line, water_water_11, water_water_10, water_water_9, water_water_8, water_water_7, water_water_6, water_water_5, water_water_4, water_water_3, water_water_2, water_water_1, ladder_front, ladder_back, chair_front, fg_2, ceiling, fg_3, fg_1]
+        const sort = [line, water_water_11, water_water_10, water_water_9, water_water_8, water_water_7, water_water_6, water_water_5, water_water_4, water_water_3, water_water_2, water_water_1, ladder_front, ladder_back, chair_front, fg_2, ceiling, fg_3, fg_1];
 
         // door (components)
         const doorButton = new Button(door);
@@ -161,7 +164,10 @@ class Cave extends RoomScene {
         zoneZone.callback = () => this.onZoneClick();
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -173,5 +179,3 @@ class Cave extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Cave

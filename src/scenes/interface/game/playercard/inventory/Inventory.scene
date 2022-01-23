@@ -5,6 +5,8 @@
         "compilerInsertSpaces": true,
         "snapWidth": 132,
         "snapHeight": 132,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -338,6 +340,8 @@
                             "components": [],
                             "x": 130,
                             "y": 553,
+                            "originX": 0.5,
+                            "originY": 0.5,
                             "text": "All Items",
                             "fixedWidth": 268,
                             "align": "center",
@@ -392,7 +396,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

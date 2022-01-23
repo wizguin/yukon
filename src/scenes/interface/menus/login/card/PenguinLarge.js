@@ -7,10 +7,18 @@ import PaperDoll from '@scenes/interface/game/playercard/paperdoll/PaperDoll'
 
 /* START OF COMPILED CODE */
 
-class PenguinLarge extends BaseContainer {
+export default class PenguinLarge extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.bg;
+        /** @type {PaperDoll} */
+        this.paperDoll;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+
 
         // bg
         const bg = scene.add.rectangle(0, 0, 488, 664);
@@ -29,7 +37,7 @@ class PenguinLarge extends BaseContainer {
         // username
         const username = scene.add.text(0, 215, "", {});
         username.setOrigin(0.5, 0.5);
-        username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"CCFaceFront","fontSize":"44px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
+        username.setStyle({ "align": "center", "fixedWidth":420,"fontFamily": "CCFaceFront", "fontSize": "44px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":10,"shadow.color": "#000000ff" });
         this.add(username);
 
         // bg (components)
@@ -55,10 +63,9 @@ class PenguinLarge extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default PenguinLarge

@@ -7,10 +7,18 @@ import DualButtons from './buttons/DualButtons'
 
 /* START OF COMPILED CODE */
 
-class ItemPrompt extends BaseContainer {
+export default class ItemPrompt extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.bg;
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+        /** @type {DualButtons} */
+        this.dual;
+
 
         this.visible = false;
 
@@ -31,7 +39,7 @@ class ItemPrompt extends BaseContainer {
         const text = scene.add.text(0, 0, "", {});
         text.setOrigin(0.5, 0.5);
         text.text = "You have found a party hat.\nWould you like to pick it up?";
-        text.setStyle({"align":"center","color":"#000000","fixedWidth":628,"fixedHeight":136,"fontFamily":"Arial Narrow","fontSize":"32px"});
+        text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":628,"fixedHeight":136,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         this.add(text);
 
         // dual
@@ -64,6 +72,7 @@ class ItemPrompt extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -184,5 +193,3 @@ class ItemPrompt extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default ItemPrompt

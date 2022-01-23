@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class DeluxeBlue extends IglooScene {
+export default class DeluxeBlue extends IglooScene {
 
     constructor() {
         super("DeluxeBlue");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class DeluxeBlue extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("deluxeblue-pack", "assets/media/igloos/buildings/sprites/deluxeblue/deluxeblue-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -60,12 +63,13 @@ class DeluxeBlue extends IglooScene {
         chimney.setOrigin(0.5050505050505051, 0.5);
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default DeluxeBlue

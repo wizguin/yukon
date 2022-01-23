@@ -3,19 +3,21 @@ import EventComponent from './EventComponent'
 
 /* START OF COMPILED CODE */
 
-class DraggableContainer extends EventComponent {
+export default class DraggableContainer extends EventComponent {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__DraggableContainer"] = this;
-
         /** @type {Phaser.GameObjects.Container} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {Phaser.GameObjects.GameObject} */
         this.handle;
         /** @type {number} */
         this.depth = 0;
+
+
+        this.gameObject = gameObject;
+        gameObject["__DraggableContainer"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -30,6 +32,7 @@ class DraggableContainer extends EventComponent {
     static getComponent(gameObject) {
         return gameObject["__DraggableContainer"];
     }
+
 
     /* START-USER-CODE */
 
@@ -58,5 +61,3 @@ class DraggableContainer extends EventComponent {
 }
 
 /* END OF COMPILED CODE */
-
-export default DraggableContainer

@@ -3,19 +3,21 @@ import EventComponent from './EventComponent'
 
 /* START OF COMPILED CODE */
 
-class NineSlice extends EventComponent {
+export default class NineSlice extends EventComponent {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__NineSlice"] = this;
-
         /** @type {Phaser.GameObjects.GameObject} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {{key:string,frame?:string|number}} */
         this.texture = {"key":"prompt","frame":"window"};
         /** @type {number} */
         this.corner = 10;
+
+
+        this.gameObject = gameObject;
+        gameObject["__NineSlice"] = this;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -25,6 +27,7 @@ class NineSlice extends EventComponent {
     static getComponent(gameObject) {
         return gameObject["__NineSlice"];
     }
+
 
     /* START-USER-CODE */
 
@@ -55,5 +58,3 @@ class NineSlice extends EventComponent {
 }
 
 /* END OF COMPILED CODE */
-
-export default NineSlice

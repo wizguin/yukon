@@ -5,10 +5,10 @@ import { Button, Interactive, ShowHint } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Map extends BaseContainer {
+export default class Map extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 460);
 
         // block
         const block = scene.add.rectangle(0, 20, 1520, 960);
@@ -251,5 +251,3 @@ class Map extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Map

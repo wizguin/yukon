@@ -3,10 +3,14 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 /* START OF COMPILED CODE */
 
-class SafeItem extends BaseContainer {
+export default class SafeItem extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.item;
+
 
         // item
         const item = scene.add.image(0, 0, "main", "list/small");
@@ -39,6 +43,7 @@ class SafeItem extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -120,5 +125,3 @@ class SafeItem extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default SafeItem

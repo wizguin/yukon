@@ -5,13 +5,14 @@ import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/c
 
 /* START OF COMPILED CODE */
 
-class Attic extends RoomScene {
+export default class Attic extends RoomScene {
 
     constructor() {
         super("Attic");
 
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -22,11 +23,13 @@ class Attic extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("attic-pack", "assets/media/rooms/attic/attic-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -66,7 +69,7 @@ class Attic extends RoomScene {
         box.setOrigin(0, 1);
 
         // lists
-        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse]
+        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse];
 
         // horse (components)
         new SimpleButton(horse);
@@ -118,12 +121,13 @@ class Attic extends RoomScene {
         table4ShowHint.text = "Play Find Four";
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Attic

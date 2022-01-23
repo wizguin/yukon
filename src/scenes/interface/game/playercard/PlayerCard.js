@@ -10,10 +10,26 @@ import PaperDoll from './paperdoll/PaperDoll'
 
 /* START OF COMPILED CODE */
 
-class PlayerCard extends BaseContainer {
+export default class PlayerCard extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 460);
+
+        /** @type {PaperDoll} */
+        this.paperDoll;
+        /** @type {Buttons} */
+        this.buttons;
+        /** @type {Phaser.GameObjects.Container} */
+        this.stats;
+        /** @type {Phaser.GameObjects.Text} */
+        this.coins;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+        /** @type {InventorySort} */
+        this.inventorySort;
+        /** @type {Inventory} */
+        this.inventory;
+
 
         // card_photo
         const card_photo = scene.add.image(0, -2, "main", "card-photo");
@@ -44,14 +60,14 @@ class PlayerCard extends BaseContainer {
         const coins = scene.add.text(0, 0, "", {});
         coins.setOrigin(0.5, 0.5);
         coins.text = "Your Coins: 000000";
-        coins.setStyle({"align":"right","color":"#000000ff","fixedWidth":300,"fontFamily":"Arial","fontSize":"24px"});
+        coins.setStyle({ "align": "right", "color": "#000000ff", "fixedWidth":300,"fontFamily": "Arial", "fontSize": "24px" });
         stats.add(coins);
 
         // username
         const username = scene.add.text(0, -238, "", {});
         username.setOrigin(0.5, 0.5);
         username.text = "Username";
-        username.setStyle({"align":"center","color":"#000000ff","fixedWidth":360,"fontFamily":"Arial","fontSize":"32px","fontStyle":"bold"});
+        username.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":360,"fontFamily": "Arial", "fontSize": "32px", "fontStyle": "bold" });
         this.add(username);
 
         // card_badge_member
@@ -102,6 +118,7 @@ class PlayerCard extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -174,5 +191,3 @@ class PlayerCard extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default PlayerCard

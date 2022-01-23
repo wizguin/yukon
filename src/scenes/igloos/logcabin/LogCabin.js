@@ -2,13 +2,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class LogCabin extends IglooScene {
+export default class LogCabin extends IglooScene {
 
     constructor() {
         super("LogCabin");
 
         /** @type {Phaser.GameObjects.Layer} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -20,11 +21,13 @@ class LogCabin extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("logcabin-pack", "assets/media/igloos/buildings/sprites/logcabin/logcabin-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -47,12 +50,13 @@ class LogCabin extends IglooScene {
         this.add.image(421, 555, "logcabin", "door");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default LogCabin

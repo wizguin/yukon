@@ -5,7 +5,7 @@ import { Interactive } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Load extends BaseScene {
+export default class Load extends BaseScene {
 
     constructor() {
         super("Load");
@@ -19,15 +19,18 @@ class Load extends BaseScene {
         /** @type {Phaser.GameObjects.Image} */
         this.spinner;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("load-pack", "assets/media/interface/menus/load/load-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -37,7 +40,7 @@ class Load extends BaseScene {
         // text
         const text = this.add.text(760, 520, "", {});
         text.setOrigin(0.5, 0);
-        text.setStyle({"align":"center","fixedWidth":800,"fixedHeight":40,"fontFamily":"Arial","fontSize":"32px"});
+        text.setStyle({ "align": "center", "fixedWidth":800,"fixedHeight":40,"fontFamily": "Arial", "fontSize": "32px" });
 
         // bar
         const bar = this.add.container(760, 480);
@@ -66,7 +69,10 @@ class Load extends BaseScene {
         this.bar = bar;
         this.progress = progress;
         this.spinner = spinner;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -108,5 +114,3 @@ class Load extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Load

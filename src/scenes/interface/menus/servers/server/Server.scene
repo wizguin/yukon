@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -140,6 +142,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": -125,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "fixedWidth": 350,
                     "fontFamily": "Arial",
                     "fontSize": "50px"
@@ -165,7 +169,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {
@@ -186,6 +191,7 @@
             "label": "Name",
             "tooltip": "Name",
             "defValue": "",
+            "customDefinition": false,
             "type": {
                 "id": "string"
             }
@@ -195,6 +201,7 @@
             "label": "Safe",
             "tooltip": "Property 1",
             "defValue": false,
+            "customDefinition": false,
             "type": {
                 "id": "boolean"
             }

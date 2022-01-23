@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Town extends RoomScene {
+export default class Town extends RoomScene {
 
     constructor() {
         super("Town");
@@ -18,6 +18,7 @@ class Town extends RoomScene {
         this.disco;
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -32,11 +33,13 @@ class Town extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("town-pack", "assets/media/rooms/town/town-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -118,7 +121,7 @@ class Town extends RoomScene {
         table_1.setOrigin(0.49572649572649574, 0.7830188679245284);
 
         // lists
-        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2, canopy, canopy_stars, canopy_lights]
+        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2, canopy, canopy_stars, canopy_lights];
 
         // coffee_door (components)
         const coffee_doorButton = new Button(coffee_door);
@@ -172,7 +175,10 @@ class Town extends RoomScene {
         this.disco_lights = disco_lights;
         this.disco = disco;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -192,5 +198,3 @@ class Town extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Town

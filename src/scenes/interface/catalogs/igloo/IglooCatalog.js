@@ -7,7 +7,7 @@ import UpgradeButton from './buttons/UpgradeButton'
 
 /* START OF COMPILED CODE */
 
-class IglooCatalog extends Book {
+export default class IglooCatalog extends Book {
 
     constructor() {
         super("IglooCatalog");
@@ -19,15 +19,18 @@ class IglooCatalog extends Book {
         /** @type {Phaser.GameObjects.Container[]} */
         this.pages;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("igloocatalog-pack", "assets/media/interface/catalogs/igloo/igloocatalog-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // block
@@ -184,6 +187,8 @@ class IglooCatalog extends Book {
 
         // floorButton_3_4
         const floorButton_3_4 = new FloorButton(this, 841, 660);
+        floorButton_3_4.scaleX = 1;
+        floorButton_3_4.scaleY = 1;
         page3.add(floorButton_3_4);
 
         // page2
@@ -261,11 +266,11 @@ class IglooCatalog extends Book {
         const coins = this.add.text(1130, 790, "", {});
         coins.setOrigin(1, 0);
         coins.text = "YOUR COINS:";
-        coins.setStyle({"align":"right","fixedWidth":600,"fontFamily":"CCComiccrazy","fontSize":"32px","stroke":"#000","strokeThickness":9});
+        coins.setStyle({ "align": "right", "fixedWidth":600,"fontFamily": "CCComiccrazy", "fontSize": "32px", "stroke": "#000", "strokeThickness":9});
         buttons.add(coins);
 
         // lists
-        const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10]
+        const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10];
 
         // block (components)
         new Interactive(block);
@@ -294,6 +299,9 @@ class IglooCatalog extends Book {
 
         // floorButton_3_3 (prefab fields)
         floorButton_3_3.floor = 14;
+
+        // floorButton_3_4 (prefab fields)
+        floorButton_3_4.floor = 0;
 
         // floorButton (prefab fields)
         floorButton.floor = 19;
@@ -349,7 +357,10 @@ class IglooCatalog extends Book {
         this.buttons = buttons;
         this.coins = coins;
         this.pages = pages;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -391,5 +402,3 @@ class IglooCatalog extends Book {
 }
 
 /* END OF COMPILED CODE */
-
-export default IglooCatalog

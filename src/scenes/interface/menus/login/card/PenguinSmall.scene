@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -53,14 +55,18 @@
                     "id": "1d48cf54-9599-4b49-8743-2aabc7c8948d",
                     "unlock": [
                         "visible",
-                        "fadeIn"
+                        "fadeIn",
+                        "x",
+                        "y"
                     ],
                     "label": "paperDoll",
                     "scope": "CLASS",
                     "fadeIn": false,
                     "components": [],
                     "x": -212,
-                    "y": 60
+                    "y": 60,
+                    "visible": true,
+                    "nestedPrefabs": []
                 },
                 {
                     "type": "Text",
@@ -69,6 +75,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 90,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "fixedWidth": 420,
                     "align": "center",
                     "fontFamily": "CCFaceFront",
@@ -85,6 +93,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

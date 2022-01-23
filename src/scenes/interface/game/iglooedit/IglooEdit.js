@@ -7,7 +7,7 @@ import GridView from './gridview/GridView'
 
 /* START OF COMPILED CODE */
 
-class IglooEdit extends BaseScene {
+export default class IglooEdit extends BaseScene {
 
     constructor() {
         super("IglooEdit");
@@ -23,10 +23,12 @@ class IglooEdit extends BaseScene {
         /** @type {GridView} */
         this.gridView;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _create() {
 
         // defaultControls
@@ -224,7 +226,10 @@ class IglooEdit extends BaseScene {
         this.button_furniture = button_furniture;
         this.furniture = furniture;
         this.gridView = gridView;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -318,5 +323,3 @@ class IglooEdit extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default IglooEdit

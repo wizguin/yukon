@@ -3,13 +3,14 @@ import RoomScene from '../RoomScene'
 
 /* START OF COMPILED CODE */
 
-class Forest extends RoomScene {
+export default class Forest extends RoomScene {
 
     constructor() {
         super("Forest");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -23,11 +24,13 @@ class Forest extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("forest-pack", "assets/media/rooms/forest/forest-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -63,15 +66,16 @@ class Forest extends RoomScene {
         sign.setOrigin(0.4794520547945205, 0.9397590361445783);
 
         // lists
-        const sort = [sign, rail, middle, fg, tree, rock0001]
+        const sort = [sign, rail, middle, fg, tree, rock0001];
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Forest

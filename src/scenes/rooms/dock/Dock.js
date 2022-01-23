@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, ShowHint, Zone } from '@components/component
 
 /* START OF COMPILED CODE */
 
-class Dock extends RoomScene {
+export default class Dock extends RoomScene {
 
     constructor() {
         super("Dock");
@@ -16,6 +16,7 @@ class Dock extends RoomScene {
         this.rings;
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -28,11 +29,13 @@ class Dock extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("dock-pack", "assets/media/rooms/dock/dock-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -96,7 +99,7 @@ class Dock extends RoomScene {
         zone.fillColor = 65280;
 
         // lists
-        const sort = [post_3, post_4, post_1, post_2, rings, bollard_2, bollard_1, dock, box, boards]
+        const sort = [post_3, post_4, post_1, post_2, rings, bollard_2, bollard_1, dock, box, boards];
 
         // boat (components)
         const boatButton = new Button(boat);
@@ -122,7 +125,10 @@ class Dock extends RoomScene {
         this.boat = boat;
         this.rings = rings;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -152,5 +158,3 @@ class Dock extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Dock

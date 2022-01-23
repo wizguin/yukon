@@ -1,12 +1,14 @@
 /* START OF COMPILED CODE */
 
-class Interactive {
+export default class Interactive {
 
     constructor(gameObject) {
-        gameObject["__Interactive"] = this;
 
         /** @type {Phaser.GameObjects.Image} */
+        this.gameObject;
+
         this.gameObject = gameObject;
+        gameObject["__Interactive"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -20,10 +22,9 @@ class Interactive {
         return gameObject["__Interactive"];
     }
 
+
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Interactive

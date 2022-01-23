@@ -5,13 +5,14 @@ import { Button, MoveTo, ShowHint, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Lounge extends RoomScene {
+export default class Lounge extends RoomScene {
 
     constructor() {
         super("Lounge");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -24,11 +25,13 @@ class Lounge extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("lounge-pack", "assets/media/rooms/lounge/lounge-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -101,7 +104,7 @@ class Lounge extends RoomScene {
         rail_1.setOrigin(0.5027932960893855, 1);
 
         // lists
-        const sort = [chair_1_2, chair_1_3, table_3, table_2, chair_2_1, chair_1_1, chair_1, table_1, chair_2, plant, rail_4, rail_3, rail_2, rail_1]
+        const sort = [chair_1_2, chair_1_3, table_3, table_2, chair_2_1, chair_1_1, chair_1, table_1, chair_2, plant, rail_4, rail_3, rail_2, rail_1];
 
         // astro (components)
         const astroButton = new Button(astro);
@@ -162,12 +165,13 @@ class Lounge extends RoomScene {
         chair_1_3MoveTo.y = 739;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Lounge

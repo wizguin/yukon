@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "TintedImage",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -33,7 +35,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "prefabProperties": [
         {
@@ -41,6 +44,7 @@
             "label": "item",
             "tooltip": "item",
             "defValue": 0,
+            "customDefinition": false,
             "type": {
                 "id": "number"
             }

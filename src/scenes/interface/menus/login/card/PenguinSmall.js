@@ -7,10 +7,20 @@ import PaperDoll from '@scenes/interface/game/playercard/paperdoll/PaperDoll'
 
 /* START OF COMPILED CODE */
 
-class PenguinSmall extends BaseContainer {
+export default class PenguinSmall extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.bg;
+        /** @type {Phaser.GameObjects.Image} */
+        this.penguinSmall;
+        /** @type {PaperDoll} */
+        this.paperDoll;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+
 
         // bg
         const bg = scene.add.rectangle(0, 0, 688, 288);
@@ -24,12 +34,13 @@ class PenguinSmall extends BaseContainer {
 
         // paperDoll
         const paperDoll = new PaperDoll(scene, -212, 60);
+        paperDoll.visible = true;
         this.add(paperDoll);
 
         // username
         const username = scene.add.text(90, 0, "", {});
         username.setOrigin(0.5, 0.5);
-        username.setStyle({"align":"center","fixedWidth":420,"fontFamily":"CCFaceFront","fontSize":"48px","fontStyle":"bold italic","stroke":"#003366","strokeThickness":10,"shadow.color":"#000000ff"});
+        username.setStyle({ "align": "center", "fixedWidth":420,"fontFamily": "CCFaceFront", "fontSize": "48px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":10,"shadow.color": "#000000ff" });
         this.add(username);
 
         // bg (components)
@@ -62,10 +73,9 @@ class PenguinSmall extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default PenguinSmall

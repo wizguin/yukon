@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -29,7 +31,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "prefabProperties": [
         {
@@ -37,6 +40,7 @@
             "label": "sitFrame",
             "tooltip": "Penguin sitting frame",
             "defValue": 17,
+            "customDefinition": false,
             "type": {
                 "id": "number"
             }
@@ -46,6 +50,7 @@
             "label": "offsetX",
             "tooltip": "Offset X for penguin exit",
             "defValue": 0,
+            "customDefinition": false,
             "type": {
                 "id": "number"
             }
@@ -55,6 +60,7 @@
             "label": "offsetY",
             "tooltip": "Offset Y for penguin exit",
             "defValue": 0,
+            "customDefinition": false,
             "type": {
                 "id": "number"
             }

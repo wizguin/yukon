@@ -3,10 +3,16 @@ import Crate from './Crate'
 
 /* START OF COMPILED CODE */
 
-class RoomCrate extends Crate {
+export default class RoomCrate extends Crate {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.crate;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.spinner;
+
 
         // crate
         const crate = scene.add.image(0, -44, "iglooedit", "crate/room_box");
@@ -41,6 +47,7 @@ class RoomCrate extends Crate {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -83,5 +90,3 @@ class RoomCrate extends Crate {
 }
 
 /* END OF COMPILED CODE */
-
-export default RoomCrate

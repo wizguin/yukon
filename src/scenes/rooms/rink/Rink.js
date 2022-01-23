@@ -3,13 +3,14 @@ import RoomScene from '../RoomScene'
 
 /* START OF COMPILED CODE */
 
-class Rink extends RoomScene {
+export default class Rink extends RoomScene {
 
     constructor() {
         super("Rink");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -20,11 +21,13 @@ class Rink extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("rink-pack", "assets/media/rooms/rink/rink-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -121,15 +124,16 @@ class Rink extends RoomScene {
         this.add.image(1250, 200, "rink", "snacks_ring");
 
         // lists
-        const sort = [fg, ball, goal_back, goal, goal_back_1, goal_1, snacks, sports_door0001, sports, right_bleachers, bleachers_rail_1, bleachers_rail, left_bleachers, fish_dogs, stand_middle, stand_base, stand_top, trash, rink_border]
+        const sort = [fg, ball, goal_back, goal, goal_back_1, goal_1, snacks, sports_door0001, sports, right_bleachers, bleachers_rail_1, bleachers_rail, left_bleachers, fish_dogs, stand_middle, stand_base, stand_top, trash, rink_border];
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Rink

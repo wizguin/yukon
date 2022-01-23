@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class Gym extends IglooScene {
+export default class Gym extends IglooScene {
 
     constructor() {
         super("Gym");
 
         /** @type {Phaser.GameObjects.Layer} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class Gym extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("gym-pack", "assets/media/igloos/buildings/sprites/gym/gym-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -56,12 +59,13 @@ class Gym extends IglooScene {
         door.setOrigin(0.5084745762711864, 0.5);
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Gym

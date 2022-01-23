@@ -5,10 +5,28 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Server extends BaseContainer {
+export default class Server extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.server;
+        /** @type {Phaser.GameObjects.Image} */
+        this.buddy;
+        /** @type {Phaser.GameObjects.Image} */
+        this.safe;
+        /** @type {Phaser.GameObjects.Text} */
+        this.name;
+        /** @type {Phaser.GameObjects.Image} */
+        this.full;
+        /** @type {Phaser.GameObjects.Image[]} */
+        this.bars;
+        /** @type {string} */
+        this.name = "";
+        /** @type {boolean} */
+        this.safe = false;
+
 
         // server
         const server = scene.add.image(0, 0, "servers", "server");
@@ -52,7 +70,7 @@ class Server extends BaseContainer {
         // name
         const name = scene.add.text(-125, 0, "", {});
         name.setOrigin(0.5, 0.5);
-        name.setStyle({"fixedWidth":350,"fontFamily":"Arial","fontSize":"50px"});
+        name.setStyle({ "fixedWidth":350,"fontFamily": "Arial", "fontSize": "50px" });
         this.add(name);
 
         // full
@@ -62,7 +80,7 @@ class Server extends BaseContainer {
         this.add(full);
 
         // lists
-        const bars = [bar_1, bar_2, bar_3, bar_4, bar_5]
+        const bars = [bar_1, bar_2, bar_3, bar_4, bar_5];
 
         // server (components)
         const serverButton = new Button(server);
@@ -83,6 +101,7 @@ class Server extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     setPopulation(population) {
@@ -99,5 +118,3 @@ class Server extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Server

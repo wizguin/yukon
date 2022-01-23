@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class Snow extends IglooScene {
+export default class Snow extends IglooScene {
 
     constructor() {
         super("Snow");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class Snow extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("snow-pack", "assets/media/igloos/buildings/sprites/snow/snow-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -43,12 +46,13 @@ class Snow extends IglooScene {
         this.add.image(491, 467, "snow", "door");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Snow

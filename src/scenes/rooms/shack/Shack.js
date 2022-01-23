@@ -5,13 +5,14 @@ import { Button, MoveTo } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Shack extends RoomScene {
+export default class Shack extends RoomScene {
 
     constructor() {
         super("Shack");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -24,11 +25,13 @@ class Shack extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("shack-pack", "assets/media/rooms/shack/shack-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -112,7 +115,7 @@ class Shack extends RoomScene {
         trees_2.setOrigin(0, 1);
 
         // lists
-        const sort = [house, pipe_1, pipe_2, trees_2, barrel, flowers_1, bear, bag, barrel_2, shovel, fence, cart_1, cart_2, tree, flowers, trees_1]
+        const sort = [house, pipe_1, pipe_2, trees_2, barrel, flowers_1, bear, bag, barrel_2, shovel, fence, cart_1, cart_2, tree, flowers, trees_1];
 
         // plant_doors (components)
         const plant_doorsButton = new Button(plant_doors);
@@ -123,12 +126,13 @@ class Shack extends RoomScene {
         plant_doorsMoveTo.y = 450;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Shack

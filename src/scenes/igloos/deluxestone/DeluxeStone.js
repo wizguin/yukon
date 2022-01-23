@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class DeluxeStone extends IglooScene {
+export default class DeluxeStone extends IglooScene {
 
     constructor() {
         super("DeluxeStone");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class DeluxeStone extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("deluxestone-pack", "assets/media/igloos/buildings/sprites/deluxestone/deluxestone-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -47,12 +50,13 @@ class DeluxeStone extends IglooScene {
         this.add.image(1210, 401, "deluxestone", "wall_3");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default DeluxeStone

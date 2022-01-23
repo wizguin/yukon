@@ -3,21 +3,23 @@ import SimpleButton from './SimpleButton'
 
 /* START OF COMPILED CODE */
 
-class Zone extends SimpleButton {
+export default class Zone extends SimpleButton {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__Zone"] = this;
-
         /** @type {Phaser.GameObjects.Rectangle} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {any} */
         this.hoverCallback = null;
         /** @type {any} */
         this.hoverOutCallback = null;
         /** @type {any} */
         this.callback = () => {};
+
+
+        this.gameObject = gameObject;
+        gameObject["__Zone"] = this;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -27,6 +29,7 @@ class Zone extends SimpleButton {
     static getComponent(gameObject) {
         return gameObject["__Zone"];
     }
+
 
     /* START-USER-CODE */
 
@@ -50,5 +53,3 @@ class Zone extends SimpleButton {
 }
 
 /* END OF COMPILED CODE */
-
-export default Zone

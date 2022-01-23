@@ -5,13 +5,14 @@ import { Button, MoveTo, ShowHint } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Book extends RoomScene {
+export default class Book extends RoomScene {
 
     constructor() {
         super("Book");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -23,11 +24,13 @@ class Book extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("book-pack", "assets/media/rooms/book/book-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -75,7 +78,7 @@ class Book extends RoomScene {
         table_4.setOrigin(0.5043478260869565, 0.46);
 
         // lists
-        const sort = [table_4, table_3, table_2, table_1, table, chair_table, chair_front, chair_back]
+        const sort = [table_4, table_3, table_2, table_1, table, chair_table, chair_front, chair_back];
 
         // books (components)
         const booksButton = new Button(books);
@@ -134,12 +137,13 @@ class Book extends RoomScene {
         table_4ShowHint.text = "Play Mancala";
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Book

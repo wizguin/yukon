@@ -5,10 +5,18 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class InventorySort extends FloatingMenu {
+export default class InventorySort extends FloatingMenu {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.safe;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.close;
+        /** @type {Phaser.GameObjects.Container} */
+        this.other_container;
+
 
         // safe
         const safe = scene.add.rectangle(0, 0, 320, 80);
@@ -32,7 +40,7 @@ class InventorySort extends FloatingMenu {
         const all_text = scene.add.text(0, -70, "", {});
         all_text.setOrigin(0.5, 0.5);
         all_text.text = "All Items";
-        all_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        all_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(all_text);
 
         // other
@@ -43,7 +51,7 @@ class InventorySort extends FloatingMenu {
         const other_text = scene.add.text(0, -134, "", {});
         other_text.setOrigin(0.5, 0.5);
         other_text.text = "Other Items";
-        other_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        other_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(other_text);
 
         // colors
@@ -54,7 +62,7 @@ class InventorySort extends FloatingMenu {
         const colors_text = scene.add.text(0, -198, "", {});
         colors_text.setOrigin(0.5, 0.5);
         colors_text.text = "Colors";
-        colors_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        colors_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(colors_text);
 
         // feet
@@ -65,7 +73,7 @@ class InventorySort extends FloatingMenu {
         const feet_text = scene.add.text(0, -262, "", {});
         feet_text.setOrigin(0.5, 0.5);
         feet_text.text = "Feet Items";
-        feet_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        feet_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(feet_text);
 
         // hand
@@ -76,7 +84,7 @@ class InventorySort extends FloatingMenu {
         const hand_text = scene.add.text(0, -326, "", {});
         hand_text.setOrigin(0.5, 0.5);
         hand_text.text = "Hand Items";
-        hand_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        hand_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(hand_text);
 
         // body
@@ -87,7 +95,7 @@ class InventorySort extends FloatingMenu {
         const body_text = scene.add.text(0, -390, "", {});
         body_text.setOrigin(0.5, 0.5);
         body_text.text = "Body Items";
-        body_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        body_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(body_text);
 
         // neck
@@ -98,7 +106,7 @@ class InventorySort extends FloatingMenu {
         const neck_text = scene.add.text(0, -454, "", {});
         neck_text.setOrigin(0.5, 0.5);
         neck_text.text = "Neck Items";
-        neck_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        neck_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(neck_text);
 
         // face
@@ -109,7 +117,7 @@ class InventorySort extends FloatingMenu {
         const face_text = scene.add.text(0, -518, "", {});
         face_text.setOrigin(0.5, 0.5);
         face_text.text = "Face Items";
-        face_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        face_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(face_text);
 
         // head
@@ -120,7 +128,7 @@ class InventorySort extends FloatingMenu {
         const head_text = scene.add.text(0, -582, "", {});
         head_text.setOrigin(0.5, 0.5);
         head_text.text = "Head Items";
-        head_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        head_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(head_text);
 
         // other_container
@@ -144,21 +152,21 @@ class InventorySort extends FloatingMenu {
         const pins_text = scene.add.text(0, 0, "", {});
         pins_text.setOrigin(0.5, 0.5);
         pins_text.text = "Pins/Flags";
-        pins_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        pins_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         other_container.add(pins_text);
 
         // awards_text
         const awards_text = scene.add.text(0, 64, "", {});
         awards_text.setOrigin(0.5, 0.5);
         awards_text.text = "Awards";
-        awards_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        awards_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         other_container.add(awards_text);
 
         // backgrounds_text
         const backgrounds_text = scene.add.text(0, 128, "", {});
         backgrounds_text.setOrigin(0.5, 0.5);
         backgrounds_text.text = "Backgrounds";
-        backgrounds_text.setStyle({"align":"center","color":"#000000ff","fixedWidth":268,"fontFamily":"Arial","fontSize":"24px"});
+        backgrounds_text.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":268,"fontFamily": "Arial", "fontSize": "24px" });
         other_container.add(backgrounds_text);
 
         // all (components)
@@ -253,6 +261,7 @@ class InventorySort extends FloatingMenu {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     get inventory() {
@@ -287,5 +296,3 @@ class InventorySort extends FloatingMenu {
 }
 
 /* END OF COMPILED CODE */
-
-export default InventorySort

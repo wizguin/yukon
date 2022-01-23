@@ -6,7 +6,7 @@ import BuyButton from './buttons/BuyButton'
 
 /* START OF COMPILED CODE */
 
-class FurnitureCatalog extends Book {
+export default class FurnitureCatalog extends Book {
 
     constructor() {
         super("FurnitureCatalog");
@@ -18,15 +18,18 @@ class FurnitureCatalog extends Book {
         /** @type {Phaser.GameObjects.Container[]} */
         this.pages;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("furniturecatalog-pack", "assets/media/interface/catalogs/furniture/furniturecatalog-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // block
@@ -290,11 +293,11 @@ class FurnitureCatalog extends Book {
         const coins = this.add.text(1130, 790, "", {});
         coins.setOrigin(1, 0);
         coins.text = "YOUR COINS:";
-        coins.setStyle({"align":"right","fixedWidth":600,"fontFamily":"CCComiccrazy","fontSize":"32px","stroke":"#000","strokeThickness":9});
+        coins.setStyle({ "align": "right", "fixedWidth":600,"fontFamily": "CCComiccrazy", "fontSize": "32px", "stroke": "#000", "strokeThickness":9});
         buttons.add(coins);
 
         // lists
-        const pages = [page1, page2, page3, page4, page5, page6, page7, page8]
+        const pages = [page1, page2, page3, page4, page5, page6, page7, page8];
 
         // block (components)
         new Interactive(block);
@@ -452,7 +455,10 @@ class FurnitureCatalog extends Book {
         this.buttons = buttons;
         this.coins = coins;
         this.pages = pages;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -474,5 +480,3 @@ class FurnitureCatalog extends Book {
 }
 
 /* END OF COMPILED CODE */
-
-export default FurnitureCatalog

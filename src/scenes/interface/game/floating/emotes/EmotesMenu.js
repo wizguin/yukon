@@ -5,10 +5,16 @@ import { Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class EmotesMenu extends FloatingMenu {
+export default class EmotesMenu extends FloatingMenu {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.safe;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.close;
+
 
         // safe
         const safe = scene.add.rectangle(0, -229, 280, 520);
@@ -332,6 +338,7 @@ class EmotesMenu extends FloatingMenu {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     onEmoteClick(emote) {
@@ -343,5 +350,3 @@ class EmotesMenu extends FloatingMenu {
 }
 
 /* END OF COMPILED CODE */
-
-export default EmotesMenu

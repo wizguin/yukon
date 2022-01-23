@@ -5,10 +5,18 @@ import SafeItem from './safe_item/SafeItem'
 
 /* START OF COMPILED CODE */
 
-class Safe extends FloatingMenu {
+export default class Safe extends FloatingMenu {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.close;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.safe;
+        /** @type {Phaser.GameObjects.Image} */
+        this.start;
+
 
         // close
         const close = scene.add.rectangle(0, 0, 80, 80);
@@ -55,6 +63,7 @@ class Safe extends FloatingMenu {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -148,5 +157,3 @@ class Safe extends FloatingMenu {
 }
 
 /* END OF COMPILED CODE */
-
-export default Safe

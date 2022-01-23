@@ -1,16 +1,18 @@
 /* START OF COMPILED CODE */
 
-class MoveTo {
+export default class MoveTo {
 
     constructor(gameObject) {
-        gameObject["__MoveTo"] = this;
 
         /** @type {Phaser.GameObjects.GameObject} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {number} */
         this.x = 0;
         /** @type {number} */
         this.y = 0;
+
+        this.gameObject = gameObject;
+        gameObject["__MoveTo"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -28,6 +30,7 @@ class MoveTo {
         return gameObject["__MoveTo"];
     }
 
+
     /* START-USER-CODE */
 
     onPointerUp(pointer) {
@@ -42,5 +45,3 @@ class MoveTo {
 }
 
 /* END OF COMPILED CODE */
-
-export default MoveTo

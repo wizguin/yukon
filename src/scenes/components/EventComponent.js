@@ -1,12 +1,14 @@
 /* START OF COMPILED CODE */
 
-class EventComponent {
+export default class EventComponent {
 
     constructor(gameObject) {
-        gameObject["__EventComponent"] = this;
 
         /** @type {Phaser.GameObjects.GameObject} */
+        this.gameObject;
+
         this.gameObject = gameObject;
+        gameObject["__EventComponent"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -26,6 +28,7 @@ class EventComponent {
     static getComponent(gameObject) {
         return gameObject["__EventComponent"];
     }
+
 
     /* START-USER-CODE */
 
@@ -47,5 +50,3 @@ class EventComponent {
 }
 
 /* END OF COMPILED CODE */
-
-export default EventComponent

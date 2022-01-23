@@ -5,13 +5,14 @@ import { Animation, Button, MoveTo, SimpleButton } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Plaza extends RoomScene {
+export default class Plaza extends RoomScene {
 
     constructor() {
         super("Plaza");
 
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -28,11 +29,13 @@ class Plaza extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("plaza-pack", "assets/media/rooms/plaza/plaza-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -86,7 +89,7 @@ class Plaza extends RoomScene {
         text.setOrigin(0.5, 0.49333333333333335);
 
         // lists
-        const sort = [lamp, tickets]
+        const sort = [lamp, tickets];
 
         // pet_door (components)
         const pet_doorButton = new Button(pet_door);
@@ -148,12 +151,13 @@ class Plaza extends RoomScene {
         ticketsMoveTo.y = 426;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Plaza

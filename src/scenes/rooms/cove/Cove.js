@@ -5,13 +5,14 @@ import { Animation, Button, MoveTo } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Cove extends RoomScene {
+export default class Cove extends RoomScene {
 
     constructor() {
         super("Cove");
 
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -22,11 +23,13 @@ class Cove extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("cove-pack", "assets/media/rooms/cove/cove-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -154,7 +157,7 @@ class Cove extends RoomScene {
         hut_stool.setOrigin(0.5, 0.5185185185185185);
 
         // lists
-        const sort = [water_water_15, water_water_1, water_water_2, water_water_3, water_water_4, water_water_5, water_water_6, water_water_7, water_water_8, water_water_9, water_water_10, water_water_11, water_water_12, water_water_13, water_water_14, hut_wall, boards, rock_1, fire, chair_arm, binoculars, silver_board, rock_3, rock_2, rock_4, fg]
+        const sort = [water_water_15, water_water_1, water_water_2, water_water_3, water_water_4, water_water_5, water_water_6, water_water_7, water_water_8, water_water_9, water_water_10, water_water_11, water_water_12, water_water_13, water_water_14, hut_wall, boards, rock_1, fire, chair_arm, binoculars, silver_board, rock_3, rock_2, rock_4, fg];
 
         // hut (components)
         const hutButton = new Button(hut);
@@ -170,12 +173,13 @@ class Cove extends RoomScene {
         fireAnimation.end = 10;
 
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Cove

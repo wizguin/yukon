@@ -3,10 +3,14 @@ import Crate from './Crate'
 
 /* START OF COMPILED CODE */
 
-class WallCrate extends Crate {
+export default class WallCrate extends Crate {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.crate;
+
 
         // crate
         const crate = scene.add.sprite(0, 0, "iglooedit", "crate/wall_box0001");
@@ -32,6 +36,7 @@ class WallCrate extends Crate {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -66,5 +71,3 @@ class WallCrate extends Crate {
 }
 
 /* END OF COMPILED CODE */
-
-export default WallCrate

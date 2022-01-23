@@ -5,7 +5,7 @@ import { Animation, Button } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class Forts extends RoomScene {
+export default class Forts extends RoomScene {
 
     constructor() {
         super("Forts");
@@ -16,6 +16,7 @@ class Forts extends RoomScene {
         this.hitbox;
         /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -28,11 +29,13 @@ class Forts extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("forts-pack", "assets/media/rooms/forts/forts-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -96,7 +99,7 @@ class Forts extends RoomScene {
         hitbox.visible = false;
 
         // lists
-        const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs]
+        const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs];
 
         // tower (components)
         const towerAnimation = new Animation(tower);
@@ -123,7 +126,10 @@ class Forts extends RoomScene {
         this.tower = tower;
         this.hitbox = hitbox;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -148,5 +154,3 @@ class Forts extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Forts

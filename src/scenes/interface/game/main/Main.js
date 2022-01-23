@@ -21,7 +21,7 @@ import Settings from '../settings/Settings'
 
 /* START OF COMPILED CODE */
 
-class Main extends BaseScene {
+export default class Main extends BaseScene {
 
     constructor() {
         super("Main");
@@ -61,10 +61,12 @@ class Main extends BaseScene {
         /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings|Moderator>} */
         this.hideOnSleep;
 
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _create() {
 
         // dock
@@ -138,7 +140,7 @@ class Main extends BaseScene {
         // popupText
         const popupText = this.add.text(-6, 0, "", {});
         popupText.setOrigin(0.5, 0.5);
-        popupText.setStyle({"align":"center","color":"#000000","fixedWidth":380,"fontFamily":"Arial","fontSize":"24px"});
+        popupText.setStyle({ "align": "center", "color": "#000000", "fixedWidth":380,"fontFamily": "Arial", "fontSize": "24px" });
         onlinePopup.add(popupText);
 
         // chatLog
@@ -214,7 +216,7 @@ class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator]
+        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator];
 
         // dock (components)
         new Interactive(dock);
@@ -334,7 +336,10 @@ class Main extends BaseScene {
         this.moderator = moderator;
         this.settings = settings;
         this.hideOnSleep = hideOnSleep;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -546,5 +551,3 @@ class Main extends BaseScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Main

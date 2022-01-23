@@ -5,10 +5,22 @@ import { Button, Interactive, NineSlice } from '@components/components'
 
 /* START OF COMPILED CODE */
 
-class LoadingPrompt extends BaseContainer {
+export default class LoadingPrompt extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.bg;
+        /** @type {Phaser.GameObjects.Container} */
+        this.bar;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.progress;
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
+
 
         this.visible = false;
 
@@ -54,7 +66,7 @@ class LoadingPrompt extends BaseContainer {
         // text
         const text = scene.add.text(0, 19, "", {});
         text.setOrigin(0.5, 0);
-        text.setStyle({"align":"center","fixedWidth":800,"fixedHeight":40,"fontFamily":"Arial","fontSize":"32px"});
+        text.setStyle({ "align": "center", "fixedWidth":800,"fixedHeight":40,"fontFamily": "Arial", "fontSize": "32px" });
         this.add(text);
 
         // spinner
@@ -97,6 +109,7 @@ class LoadingPrompt extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     show(scene, progress = 0) {
@@ -135,5 +148,3 @@ class LoadingPrompt extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default LoadingPrompt

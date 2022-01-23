@@ -4,6 +4,8 @@
     "settings": {
         "compilerInsertSpaces": true,
         "snapEnabled": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -60,6 +62,8 @@
                     "label": "text_2",
                     "components": [],
                     "x": 110,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "No",
                     "fixedWidth": 150,
                     "align": "center",
@@ -73,6 +77,8 @@
                     "label": "text_1",
                     "components": [],
                     "x": -110,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Yes",
                     "fixedWidth": 150,
                     "align": "center",
@@ -87,6 +93,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

@@ -7,15 +7,13 @@ const Pad = Phaser.Utils.String.Pad
 
 /* START OF COMPILED CODE */
 
-class Animation extends EventComponent {
+export default class Animation extends EventComponent {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__Animation"] = this;
-
         /** @type {Phaser.GameObjects.Sprite} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {string} */
         this.key = "";
         /** @type {number} */
@@ -39,6 +37,10 @@ class Animation extends EventComponent {
         /** @type {boolean} */
         this.hideOnComplete = false;
 
+
+        this.gameObject = gameObject;
+        gameObject["__Animation"] = this;
+
         /* START-USER-CTR-CODE */
 
         this.scene = gameObject.scene
@@ -53,6 +55,7 @@ class Animation extends EventComponent {
     static getComponent(gameObject) {
         return gameObject["__Animation"];
     }
+
 
     /* START-USER-CODE */
 
@@ -153,5 +156,3 @@ class Animation extends EventComponent {
 }
 
 /* END OF COMPILED CODE */
-
-export default Animation

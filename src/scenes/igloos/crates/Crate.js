@@ -1,9 +1,13 @@
 /* START OF COMPILED CODE */
 
-class Crate extends Phaser.GameObjects.Container {
+export default class Crate extends Phaser.GameObjects.Container {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.explosion;
+
 
         // explosion
         const explosion = scene.add.sprite(0, -35, "iglooedit", "crate/explode0001");
@@ -40,6 +44,7 @@ class Crate extends Phaser.GameObjects.Container {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
 
     explode() {
@@ -56,5 +61,3 @@ class Crate extends Phaser.GameObjects.Container {
 }
 
 /* END OF COMPILED CODE */
-
-export default Crate

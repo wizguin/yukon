@@ -3,15 +3,13 @@ import EventComponent from './EventComponent'
 
 /* START OF COMPILED CODE */
 
-class SimpleButton extends EventComponent {
+export default class SimpleButton extends EventComponent {
 
     constructor(gameObject) {
         super(gameObject);
 
-        gameObject["__SimpleButton"] = this;
-
         /** @type {Phaser.GameObjects.Sprite} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {any} */
         this.hoverCallback = null;
         /** @type {any} */
@@ -20,6 +18,10 @@ class SimpleButton extends EventComponent {
         this.callback = () => {};
         /** @type {boolean} */
         this.pixelPerfect = false;
+
+
+        this.gameObject = gameObject;
+        gameObject["__SimpleButton"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -32,6 +34,7 @@ class SimpleButton extends EventComponent {
     static getComponent(gameObject) {
         return gameObject["__SimpleButton"];
     }
+
 
     /* START-USER-CODE */
 
@@ -66,5 +69,3 @@ class SimpleButton extends EventComponent {
 }
 
 /* END OF COMPILED CODE */
-
-export default SimpleButton

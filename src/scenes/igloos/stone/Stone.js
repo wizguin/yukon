@@ -3,13 +3,14 @@ import IglooScene from '../IglooScene'
 
 /* START OF COMPILED CODE */
 
-class Stone extends IglooScene {
+export default class Stone extends IglooScene {
 
     constructor() {
         super("Stone");
 
         /** @type {Phaser.GameObjects.Image} */
         this.floor;
+
 
         /* START-USER-CTR-CODE */
 
@@ -21,11 +22,13 @@ class Stone extends IglooScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     _preload() {
 
         this.load.pack("stone-pack", "assets/media/igloos/buildings/sprites/stone/stone-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // floor
@@ -43,12 +46,13 @@ class Stone extends IglooScene {
         this.add.image(491, 467, "stone", "door");
 
         this.floor = floor;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-export default Stone

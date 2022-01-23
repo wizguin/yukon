@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/c
 
 /* START OF COMPILED CODE */
 
-class Coffee extends RoomScene {
+export default class Coffee extends RoomScene {
 
     constructor() {
         super("Coffee");
@@ -14,6 +14,7 @@ class Coffee extends RoomScene {
         this.board;
         /** @type {Phaser.GameObjects.Image[]} */
         this.sort;
+
 
         /* START-USER-CTR-CODE */
 
@@ -30,11 +31,13 @@ class Coffee extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("coffee-pack", "assets/media/rooms/coffee/coffee-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -106,7 +109,7 @@ class Coffee extends RoomScene {
         door.setOrigin(0, 0);
 
         // lists
-        const sort = [beans, bag, sign_front, sign_back, counter_front, counter_back, table]
+        const sort = [beans, bag, sign_front, sign_back, counter_front, counter_back, table];
 
         // smoke (components)
         const smokeAnimation = new Animation(smoke);
@@ -146,7 +149,10 @@ class Coffee extends RoomScene {
 
         this.board = board;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -161,5 +167,3 @@ class Coffee extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Coffee

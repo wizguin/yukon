@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [
             "yukon/assets/media/interface/menus/load/load-pack.json"
@@ -35,7 +37,7 @@
             "components": [],
             "x": 760,
             "y": 520,
-            "originY": 0,
+            "originX": 0.5,
             "fixedWidth": 800,
             "fixedHeight": 40,
             "align": "center",
@@ -95,6 +97,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

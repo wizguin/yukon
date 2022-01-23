@@ -6,6 +6,8 @@
         "snapEnabled": true,
         "snapWidth": 1,
         "snapHeight": 1,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -341,6 +343,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": -6,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "fixedWidth": 380,
                     "align": "center",
                     "fontFamily": "Arial",
@@ -352,11 +356,16 @@
         {
             "prefabId": "cd6b92e2-56e2-4e72-a90d-c4edead84679",
             "id": "4040e412-ba63-4812-bbe9-fc4ba0f76672",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "chatLog",
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 2
+            "y": 2,
+            "nestedPrefabs": []
         },
         {
             "type": "Image",
@@ -476,125 +485,153 @@
             "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
             "id": "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "waddle",
             "scope": "CLASS",
             "components": [],
             "x": 1099,
             "y": 332,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
             "id": "9acd4a58-cbf9-4751-b96a-2822f121af9c",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "buddy",
             "scope": "CLASS",
             "components": [],
             "x": 1140,
             "y": 436,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
             "id": "9770a528-0c5a-4720-a6db-eabd53c787e1",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "playerCard",
             "scope": "CLASS",
             "components": [],
             "x": 446,
             "y": 436,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "c0278f51-86ed-479c-93d8-d832408669c2",
             "id": "9e95fb34-42e7-4212-ac8d-9eb39e13f9bf",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "actionsMenu",
             "scope": "CLASS",
             "components": [],
             "x": 366,
             "y": 872,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "0dee3174-7c8b-4158-b686-0fbea0d0c1f1",
             "id": "ac9c272b-08ad-4e66-8146-0cbd3207ee0a",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "emotesMenu",
             "scope": "CLASS",
             "components": [],
             "x": 306,
             "y": 872,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "847139cb-5cc3-48bc-be0b-14aabf820c56",
             "id": "63f32401-55ee-489b-ada3-a0f4df778b29",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "safe",
             "scope": "CLASS",
             "components": [],
             "x": 246,
             "y": 933,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "dc649c7a-1824-4b21-8431-e3d1168a4506",
             "id": "75179079-5eb1-4135-9798-34cea7db0f09",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "map",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 460,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "d44a536e-8824-4c11-8cdd-649f5629a29c",
             "id": "7b10953c-f288-40da-8b3f-44af0dea100d",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "moderator",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
             "id": "4904443b-abe1-429f-9557-f064db674790",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "settings",
             "scope": "CLASS",
             "components": [],
             "x": 760,
             "y": 480,
-            "visible": false
+            "visible": false,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

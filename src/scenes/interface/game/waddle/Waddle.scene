@@ -3,6 +3,8 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -49,30 +51,54 @@
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "bbf90d57-ecc8-4fb3-8815-2baa1aec66a7",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "waddle_item_3",
                     "components": [],
-                    "y": 100
+                    "x": 0,
+                    "y": 100,
+                    "nestedPrefabs": []
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "3588c486-0906-4565-b511-30925e03b354",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "waddle_item_2",
                     "components": [],
-                    "y": 48
+                    "x": 0,
+                    "y": 48,
+                    "nestedPrefabs": []
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "d72de3b8-e1eb-4a3d-9f4a-438af119150a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "waddle_item_1",
                     "components": [],
-                    "y": -4
+                    "x": 0,
+                    "y": -4,
+                    "nestedPrefabs": []
                 },
                 {
                     "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
                     "id": "7fb1cdfc-e641-4100-8c14-86058fbefa78",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "waddle_item",
                     "components": [],
-                    "y": -56
+                    "x": 0,
+                    "y": -56,
+                    "nestedPrefabs": []
                 },
                 {
                     "type": "Text",
@@ -81,6 +107,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "y": -122,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Sled Racing",
                     "fixedWidth": 420,
                     "align": "center",
@@ -123,7 +151,8 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     },
     "lists": [
         {

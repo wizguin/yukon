@@ -5,7 +5,7 @@ import { Animation, Button, MoveTo, ShowHint, SimpleButton, Zone } from '@compon
 
 /* START OF COMPILED CODE */
 
-class Pet extends RoomScene {
+export default class Pet extends RoomScene {
 
     constructor() {
         super("Pet");
@@ -33,6 +33,7 @@ class Pet extends RoomScene {
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
+
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
@@ -45,11 +46,13 @@ class Pet extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("pet-pack", "assets/media/rooms/pet/pet-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -174,8 +177,8 @@ class Pet extends RoomScene {
         blackZone.fillColor = 65280;
 
         // lists
-        const penEyes = [eyesPink, eyesBlue, eyesPurple, eyesGreen, eyesBlack]
-        const sort = [bedFront, bedBack, house1, house2, house3, bowls, post, sack, os]
+        const penEyes = [eyesPink, eyesBlue, eyesPurple, eyesGreen, eyesBlack];
+        const sort = [bedFront, bedBack, house1, house2, house3, bowls, post, sack, os];
 
         // os (components)
         const osSimpleButton = new SimpleButton(os);
@@ -300,7 +303,10 @@ class Pet extends RoomScene {
         this.eyesRed = eyesRed;
         this.penEyes = penEyes;
         this.sort = sort;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -417,5 +423,3 @@ class Pet extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Pet

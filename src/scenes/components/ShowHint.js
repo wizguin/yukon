@@ -1,14 +1,16 @@
 /* START OF COMPILED CODE */
 
-class ShowHint {
+export default class ShowHint {
 
     constructor(gameObject) {
-        gameObject["__ShowHint"] = this;
 
         /** @type {Phaser.GameObjects.GameObject} */
-        this.gameObject = gameObject;
+        this.gameObject;
         /** @type {string} */
         this.text = "";
+
+        this.gameObject = gameObject;
+        gameObject["__ShowHint"] = this;
 
         /* START-USER-CTR-CODE */
 
@@ -23,6 +25,7 @@ class ShowHint {
     static getComponent(gameObject) {
         return gameObject["__ShowHint"];
     }
+
 
     /* START-USER-CODE */
 
@@ -42,5 +45,3 @@ class ShowHint {
 }
 
 /* END OF COMPILED CODE */
-
-export default ShowHint

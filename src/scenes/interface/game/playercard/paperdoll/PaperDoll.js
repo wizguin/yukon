@@ -6,19 +6,22 @@ import TintedImage from '@engine/utils/tint/TintedImage'
 
 /* START OF COMPILED CODE */
 
-class PaperDoll extends BaseContainer {
+export default class PaperDoll extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Image} */
+        this.paperdoll;
+        /** @type {boolean} */
+        this.fadeIn = true;
+
 
         // paperdoll
         const paperdoll = scene.add.image(0, 0, "main", "paperdoll/paperdoll");
         this.add(paperdoll);
 
         this.paperdoll = paperdoll;
-
-        /** @type {boolean} */
-        this.fadeIn = true;
 
         /* START-USER-CTR-CODE */
 
@@ -42,6 +45,7 @@ class PaperDoll extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -106,5 +110,3 @@ class PaperDoll extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default PaperDoll

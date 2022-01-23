@@ -6,6 +6,8 @@
         "snapEnabled": true,
         "snapWidth": 10,
         "snapHeight": 10,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -87,6 +89,8 @@
             "components": [],
             "x": 760,
             "y": 876,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "Login as a different penguin",
             "fixedWidth": 400,
             "lineSpacing": 25,
@@ -108,6 +112,7 @@
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

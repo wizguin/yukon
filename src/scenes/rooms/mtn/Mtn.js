@@ -7,7 +7,7 @@ import MtnSeat from './MtnSeat'
 
 /* START OF COMPILED CODE */
 
-class Mtn extends RoomScene {
+export default class Mtn extends RoomScene {
 
     constructor() {
         super("Mtn");
@@ -22,6 +22,7 @@ class Mtn extends RoomScene {
         this.seats102;
         /** @type {MtnSeat[]} */
         this.seats103;
+
 
         /* START-USER-CTR-CODE */
 
@@ -38,11 +39,13 @@ class Mtn extends RoomScene {
         /* END-USER-CTR-CODE */
     }
 
+    /** @returns {void} */
     preload() {
 
         this.load.pack("mtn-pack", "assets/media/rooms/mtn/mtn-pack.json");
     }
 
+    /** @returns {void} */
     _create() {
 
         // bg
@@ -194,11 +197,11 @@ class Mtn extends RoomScene {
         zone1.fillColor = 65280;
 
         // lists
-        const sort = [penguin_run, express, pole]
-        const seats100 = [mtnSeat4, mtnSeat3, mtnSeat2, mtnSeat1]
-        const seats101 = [mtnSeat6, mtnSeat5, mtnSeat7]
-        const seats102 = [mtnSeat8, mtnSeat9]
-        const seats103 = [mtnSeat10, mtnSeat11]
+        const sort = [penguin_run, express, pole];
+        const seats100 = [mtnSeat4, mtnSeat3, mtnSeat2, mtnSeat1];
+        const seats101 = [mtnSeat6, mtnSeat5, mtnSeat7];
+        const seats102 = [mtnSeat8, mtnSeat9];
+        const seats103 = [mtnSeat10, mtnSeat11];
 
         // chair (components)
         const chairAnimation = new Animation(chair);
@@ -216,10 +219,12 @@ class Mtn extends RoomScene {
         mtnSeat10.offsetY = -70;
 
         // mtnSeat9 (prefab fields)
+        mtnSeat9.sitFrame = 17;
         mtnSeat9.offsetX = -10;
         mtnSeat9.offsetY = -90;
 
         // mtnSeat8 (prefab fields)
+        mtnSeat8.sitFrame = 17;
         mtnSeat8.offsetX = -10;
         mtnSeat8.offsetY = -90;
 
@@ -275,7 +280,10 @@ class Mtn extends RoomScene {
         this.seats101 = seats101;
         this.seats102 = seats102;
         this.seats103 = seats103;
+
+        this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
@@ -298,5 +306,3 @@ class Mtn extends RoomScene {
 }
 
 /* END OF COMPILED CODE */
-
-export default Mtn

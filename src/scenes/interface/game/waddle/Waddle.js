@@ -7,10 +7,16 @@ import WaddleItem from './waddle_item/WaddleItem'
 
 /* START OF COMPILED CODE */
 
-class Waddle extends BaseContainer {
+export default class Waddle extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 760, y ?? 480);
+
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+        /** @type {WaddleItem[]} */
+        this.items;
+
 
         // bg
         const bg = scene.add.rectangle(0, 0, 464, 360);
@@ -42,7 +48,7 @@ class Waddle extends BaseContainer {
         const text = scene.add.text(0, -122, "", {});
         text.setOrigin(0.5, 0.5);
         text.text = "Sled Racing";
-        text.setStyle({"align":"center","color":"#000000","fixedWidth":420,"fontFamily":"Arial Narrow","fontSize":"32px"});
+        text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":420,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         this.add(text);
 
         // x_button
@@ -54,7 +60,7 @@ class Waddle extends BaseContainer {
         this.add(blue_x);
 
         // lists
-        const items = [waddle_item, waddle_item_1, waddle_item_2, waddle_item_3]
+        const items = [waddle_item, waddle_item_1, waddle_item_2, waddle_item_3];
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -79,6 +85,7 @@ class Waddle extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -143,5 +150,3 @@ class Waddle extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default Waddle

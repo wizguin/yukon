@@ -5,6 +5,8 @@
         "compilerInsertSpaces": true,
         "snapWidth": 1000,
         "snapHeight": 1000,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -371,18 +373,24 @@
             "prefabId": "5e67778f-f6b1-47c7-a8e0-fccf4a610c82",
             "id": "f749e1e6-e14e-4503-8aed-0e0d28e0ef65",
             "unlock": [
-                "visible"
+                "visible",
+                "x",
+                "y"
             ],
             "label": "gridView",
             "scope": "CLASS",
             "components": [],
-            "visible": false
+            "x": 0,
+            "y": 0,
+            "visible": false,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

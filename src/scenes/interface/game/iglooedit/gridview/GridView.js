@@ -8,10 +8,16 @@ import GridViewSlot from './gridview_slot/GridViewSlot'
 
 /* START OF COMPILED CODE */
 
-class GridView extends BaseContainer {
+export default class GridView extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y);
+        super(scene, x ?? 0, y ?? 0);
+
+        /** @type {Phaser.GameObjects.Container} */
+        this.container;
+        /** @type {Phaser.GameObjects.Container} */
+        this.pageButtons;
+
 
         // block
         const block = scene.add.rectangle(760, 480, 1520, 960);
@@ -96,6 +102,7 @@ class GridView extends BaseContainer {
 
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -243,5 +250,3 @@ class GridView extends BaseContainer {
 }
 
 /* END OF COMPILED CODE */
-
-export default GridView
