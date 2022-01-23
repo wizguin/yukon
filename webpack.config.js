@@ -74,12 +74,14 @@ module.exports = (env, argv) => {
         config.output.filename = 'yukon.min.js'
         config.optimization.minimize = true
 
-        config.plugins.push(
-            new WebpackObfuscator({
-                rotateStringArray: true,
-                reservedStrings: ['\s*']
-            }, [])
-        )
+        if (env.obfuscate === 'true') {
+            config.plugins.push(
+                new WebpackObfuscator({
+                    rotateStringArray: true,
+                    reservedStrings: ['\s*']
+                }, [])
+            )
+        }
     }
 
     return config
