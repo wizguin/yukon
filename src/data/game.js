@@ -1,7 +1,6 @@
-import colors from './colors'
 import fonts from './fonts'
 import igloos from './igloos'
-import penguin from './penguin'
+import interfaces from './interfaces'
 import rooms from './rooms'
 
 
@@ -40,10 +39,9 @@ const game = {
     },
 
     crumbs: {
-        colors: colors,
         fonts: fonts,
         igloos: igloos,
-        penguin: penguin,
+        interfaces: interfaces,
         rooms: rooms
     }
 }

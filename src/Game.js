@@ -1,7 +1,7 @@
 import Boot from '@engine/boot/Boot'
 import Network from '@engine/network/Network'
 
-import game from './crumbs/game'
+import game from './data/game'
 
 
 export default class Game extends Phaser.Game {

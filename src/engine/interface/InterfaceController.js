@@ -2,7 +2,6 @@ import BaseScene from '@scenes/base/BaseScene'
 
 import MetricsManager from './metrics/MetricsManager'
 import PromptController from './prompt/PromptController'
-import interfaceScenes from './interfaceScenes'
 
 
 export default class InterfaceController extends BaseScene {
@@ -12,7 +11,9 @@ export default class InterfaceController extends BaseScene {
     create() {
         this.prompt = new PromptController(this)
 
-        this.externalScenes = []
+        // External interface scenes
+        this.interfaces = this.crumbs.interfaces
+        this.loadedScenes = []
     }
 
     get loading() {
@@ -115,14 +116,14 @@ export default class InterfaceController extends BaseScene {
      * @param {string} key - Scene key
      */
      loadExternal(key) {
-        if (!(key in interfaceScenes) || this.prompt.loading.visible) {
+        if (!(key in this.interfaces) || this.prompt.loading.visible) {
             return
         }
 
         if (!(key in this.scene.manager.keys)) {
             // Create scene
-            this.scene.add(key, interfaceScenes[key], true)
-            return this.externalScenes.push(key)
+            this.scene.add(key, this.interfaces[key], true)
+            return this.loadedScenes.push(key)
         }
 
         if (!this.scene.isVisible(key)) {
@@ -140,7 +141,7 @@ export default class InterfaceController extends BaseScene {
      * Stop external interface scenes, called when hiding interface on room change.
      */
     stopExternals() {
-        for (let key of this.externalScenes) {
+        for (let key of this.loadedScenes) {
             let scene = this.scene.get(key)
 
             if (scene.scene.isActive()) {

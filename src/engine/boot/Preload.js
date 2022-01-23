@@ -40,9 +40,11 @@ export default class Preload extends BaseScene {
         // Set crumbs
         let crumbs = this.cache.json.get('crumbs')
 
+        this.crumbs.colors = crumbs.colors
         this.crumbs.flooring = crumbs.flooring
         this.crumbs.furniture = crumbs.furniture
         this.crumbs.items = crumbs.items
+        this.crumbs.penguin = crumbs.penguin
         this.crumbs.quickKeys = crumbs.quick_keys
         this.crumbs.safeMessages = crumbs.safe_messages
         this.crumbs.secretFrames = crumbs.secret_frames
