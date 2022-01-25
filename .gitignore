@@ -124,3 +124,4 @@ assets/scripts/client/
 
 # media
 assets/media/**
+assets/.gitignore
