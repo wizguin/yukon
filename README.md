@@ -76,7 +76,7 @@ If you'd like to use the included PHP account registration locally, you must hos
 '/create/scripts/php': 'http://localhost:80'
 ```
 
-See [this](https://github.com/wizguin/yukon-server#account-creation) for a simpler way to create accounts locally.
+See [here](https://github.com/wizguin/yukon-server#account-creation) for a simpler way to create accounts locally.
 
 ## Production Usage
 
