@@ -37,13 +37,18 @@
                 },
                 {
                     "type": "Image",
-                    "id": "2d3790c2-7862-4b7e-b730-5e6142ba7401",
+                    "id": "fd626561-19ec-4045-b0d8-e5b52f1871cd",
                     "label": "illustration",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "login",
                         "frame": "illustration1"
-                    }
+                    },
+                    "x": -440,
+                    "y": -216,
+                    "originX": 0.01327433628318584,
+                    "originY": 0
                 },
                 {
                     "type": "Image",
@@ -136,25 +141,6 @@
                 },
                 {
                     "type": "Text",
-                    "id": "334992e9-15ce-4a27-bdbf-370c566f3789",
-                    "label": "text",
-                    "components": [],
-                    "y": -280,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "If you save your password here, anyone who uses this\ncomputer could access your account.",
-                    "fixedWidth": 900,
-                    "fixedHeight": 80,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "34px",
-                    "fontStyle": "bold",
-                    "shadow.offsetX": 3,
-                    "shadow.offsetY": 3,
-                    "shadow.fill": true,
-                    "shadow.color": "#003366"
-                },
-                {
-                    "type": "Text",
                     "id": "22dc8d89-bcdd-4bc2-b319-2c1eab43e724",
                     "label": "text_1",
                     "components": [],
@@ -200,23 +186,6 @@
                     "fontFamily": "Burbank Small",
                     "fontSize": "24px",
                     "fontStyle": "bold"
-                },
-                {
-                    "type": "Text",
-                    "id": "f5f17a23-f3ba-4c4e-9223-9688596122e9",
-                    "label": "illustration_text",
-                    "components": [],
-                    "x": -404,
-                    "y": -175,
-                    "text": "They could spend\nyour coins!",
-                    "fixedWidth": 600,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "44px",
-                    "fontStyle": "bold",
-                    "color": "#000000",
-                    "shadow.offsetX": 3,
-                    "shadow.offsetY": 3,
-                    "shadow.color": "#003366"
                 }
             ]
         }

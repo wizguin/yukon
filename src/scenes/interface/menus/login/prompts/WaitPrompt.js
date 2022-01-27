@@ -83,6 +83,8 @@ export default class WaitPrompt extends BaseContainer {
 	onYesClick() {
 		this.visible = false
 		this.scene.savePrompt.visible = true
+
+		this.scene.savePrompt.startTimer()
 	}
 
 	/* END-USER-CODE */

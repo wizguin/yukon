@@ -10,6 +10,10 @@ export default class SavePrompt extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.illustration;
+
+
         // block
         const block = scene.add.rectangle(-1, 0, 1520, 960);
         block.isFilled = true;
@@ -18,7 +22,8 @@ export default class SavePrompt extends BaseContainer {
         this.add(block);
 
         // illustration
-        const illustration = scene.add.image(0, 0, "login", "illustration1");
+        const illustration = scene.add.image(-440, -216, "login", "illustration1");
+        illustration.setOrigin(0.01327433628318584, 0);
         this.add(illustration);
 
         // save_bg
@@ -45,13 +50,6 @@ export default class SavePrompt extends BaseContainer {
         const blue_x = scene.add.image(487, -336, "main", "blue-x");
         this.add(blue_x);
 
-        // text
-        const text = scene.add.text(0, -280, "", {});
-        text.setOrigin(0.5, 0.5);
-        text.text = "If you save your password here, anyone who uses this\ncomputer could access your account.";
-        text.setStyle({ "fixedWidth":900,"fixedHeight":80,"fontFamily": "Burbank Small", "fontSize": "34px", "fontStyle": "bold", "shadow.offsetX":3,"shadow.offsetY":3,"shadow.color": "#003366", "shadow.fill":true});
-        this.add(text);
-
         // text_1
         const text_1 = scene.add.text(-303, 285, "", {});
         text_1.setOrigin(0.5, 0.5);
@@ -72,12 +70,6 @@ export default class SavePrompt extends BaseContainer {
         text_3.text = "Learn More";
         text_3.setStyle({ "align": "center", "fixedWidth":300,"fontFamily": "Burbank Small", "fontSize": "24px", "fontStyle": "bold" });
         this.add(text_3);
-
-        // illustration_text
-        const illustration_text = scene.add.text(-404, -175, "", {});
-        illustration_text.text = "They could spend\nyour coins!";
-        illustration_text.setStyle({ "color": "#000000", "fixedWidth":600,"fontFamily": "Burbank Small", "fontSize": "44px", "fontStyle": "bold", "shadow.offsetX":3,"shadow.offsetY":3,"shadow.color": "#003366" });
-        this.add(illustration_text);
 
         // block (components)
         new Interactive(block);
@@ -105,12 +97,28 @@ export default class SavePrompt extends BaseContainer {
         blue_buttonButton.spriteName = "blue-button";
         blue_buttonButton.callback = () => this.close();
 
+        this.illustration = illustration;
+
         /* START-USER-CTR-CODE */
 
         this.scene = scene
 
+        this.timerConfig = {
+            delay: 2800,
+            callback: this.nextIllustration,
+            callbackScope: this,
+            loop: true,
+            paused: true
+        }
+
+        this.timer = scene.time.addEvent(this.timerConfig)
+
+        this.currentIllustration = 1
+        this.maxIllustration = 3
+
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 
@@ -123,7 +131,33 @@ export default class SavePrompt extends BaseContainer {
     close() {
         this.visible = false
 
+        this.stopTimer()
+
         this.scene.events.emit('showinput')
+    }
+
+    nextIllustration() {
+        if (!this.visible) {
+            return
+        }
+
+        this.currentIllustration++
+
+        if (this.currentIllustration > this.maxIllustration) {
+            this.currentIllustration = 1
+        }
+
+        this.illustration.setFrame(`illustration${this.currentIllustration}`)
+    }
+
+    startTimer() {
+        this.illustration.setFrame('illustration1')
+
+        this.timer.paused = false
+    }
+
+    stopTimer() {
+        this.timer.reset(this.timerConfig)
     }
 
     /* END-USER-CODE */
