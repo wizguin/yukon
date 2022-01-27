@@ -36,7 +36,7 @@ let config = {
 
             '/create/scripts/php': 'http://localhost:80'
         },
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 8080,
         hot: false
     },
