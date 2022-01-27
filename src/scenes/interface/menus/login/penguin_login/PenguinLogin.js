@@ -172,7 +172,7 @@ export default class PenguinLogin extends BaseScene {
             height: 53,
             padding: '0 6px 0 6px',
             filter: 'none',
-            fontFamily: 'Arial',
+            fontFamily: 'Asterisk',
             fontSize: 35,
             color: '#000'
         }

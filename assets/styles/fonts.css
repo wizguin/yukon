@@ -21,6 +21,11 @@
 }
 
 @font-face {
+    font-family: 'Asterisk';
+    src: url('../fonts/Asterisk.woff2');
+}
+
+@font-face {
     font-family: 'Burbank Small';
     src: url('../fonts/Burbank Small Medium.woff2');
 }

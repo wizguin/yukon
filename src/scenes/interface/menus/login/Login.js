@@ -179,8 +179,13 @@ export default class Login extends BaseScene {
             color: '#000'
         }
 
+        let passwordStyle = {
+            ...style,
+            fontFamily: 'Asterisk'
+        }
+
         this.usernameInput = new TextInput(this, 815, 200, 'text', style, () => this.onLoginSubmit(), 12, false)
-        this.passwordInput = new TextInput(this, 815, 259, 'password', style, () => this.onLoginSubmit(), 128, false)
+        this.passwordInput = new TextInput(this, 815, 259, 'password', passwordStyle, () => this.onLoginSubmit(), 128, false)
 
         this.add.existing(this.usernameInput)
         this.add.existing(this.passwordInput)
