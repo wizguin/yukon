@@ -27,17 +27,36 @@
             "y": 460,
             "list": [
                 {
+                    "type": "Container",
+                    "id": "ae5ef1eb-31ba-4fb6-b949-c7cdbb0f48f4",
+                    "label": "photo",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -2,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
+                            "label": "card_photo",
+                            "components": [
+                                "Interactive"
+                            ],
+                            "texture": {
+                                "key": "main",
+                                "frame": "card-photo"
+                            }
+                        }
+                    ]
+                },
+                {
                     "type": "Image",
-                    "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
-                    "label": "card_photo",
-                    "components": [
-                        "Interactive"
-                    ],
+                    "id": "fe294108-b9df-4ff7-8a4c-2b4ee0d81d76",
+                    "label": "card_bg",
+                    "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "card-photo"
-                    },
-                    "y": -2
+                        "frame": "card-bg-player"
+                    }
                 },
                 {
                     "prefabId": "7b4017c1-c8f3-4f6b-9aae-61bbce16ce08",
@@ -50,18 +69,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 0,
-                    "y": -2,
+                    "y": -7,
                     "nestedPrefabs": []
-                },
-                {
-                    "type": "Image",
-                    "id": "fe294108-b9df-4ff7-8a4c-2b4ee0d81d76",
-                    "label": "card_bg",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "card-bg-player"
-                    }
                 },
                 {
                     "prefabId": "8808181a-7877-4aef-982e-f4ba2441da75",

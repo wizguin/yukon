@@ -15,6 +15,8 @@ export default class PlayerCard extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 460);
 
+        /** @type {Phaser.GameObjects.Container} */
+        this.photo;
         /** @type {PaperDoll} */
         this.paperDoll;
         /** @type {Buttons} */
@@ -31,17 +33,21 @@ export default class PlayerCard extends BaseContainer {
         this.inventory;
 
 
-        // card_photo
-        const card_photo = scene.add.image(0, -2, "main", "card-photo");
-        this.add(card_photo);
+        // photo
+        const photo = scene.add.container(0, -2);
+        this.add(photo);
 
-        // paperDoll
-        const paperDoll = new PaperDoll(scene, 0, -2);
-        this.add(paperDoll);
+        // card_photo
+        const card_photo = scene.add.image(0, 0, "main", "card-photo");
+        photo.add(card_photo);
 
         // card_bg
         const card_bg = scene.add.image(0, 0, "main", "card-bg-player");
         this.add(card_bg);
+
+        // paperDoll
+        const paperDoll = new PaperDoll(scene, 0, -7);
+        this.add(paperDoll);
 
         // buttons
         const buttons = new Buttons(scene, 0, 255);
@@ -103,6 +109,7 @@ export default class PlayerCard extends BaseContainer {
         x_buttonButton.spriteName = "blue-button";
         x_buttonButton.callback = () => { this.visible = false };
 
+        this.photo = photo;
         this.paperDoll = paperDoll;
         this.buttons = buttons;
         this.stats = stats;

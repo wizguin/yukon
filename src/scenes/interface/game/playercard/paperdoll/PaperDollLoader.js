@@ -96,7 +96,11 @@ export default class PaperDollLoader {
 
         if (this.paperDoll.fadeIn) this.fadeIn(paper)
 
-        this.paperDoll.add(paper)
+        if (slot == 'photo') {
+            this.scene.playerCard.photo.add(paper)
+        } else {
+            this.paperDoll.add(paper)
+        }
 
         if (this.paperDoll.isInputEnabled) this.addInput(slot, paper)
 
