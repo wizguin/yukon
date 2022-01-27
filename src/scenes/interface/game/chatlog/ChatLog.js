@@ -117,6 +117,8 @@ export default class ChatLog extends BaseContainer {
             container.id = message.id
             container.text.text = message.message
         }
+
+        this.checkContainers()
     }
 
     clearMessages() {
@@ -141,11 +143,13 @@ export default class ChatLog extends BaseContainer {
         if (this.open) {
             this.y = 2
         } else {
-            this.y = 222
+            this.y = 220
         }
 
         this.open = !this.open
         this.arrow.toggleFlipY()
+
+        this.checkContainers()
     }
 
     onTabDragStart() {
@@ -166,10 +170,30 @@ export default class ChatLog extends BaseContainer {
     }
 
     onTabDragEnd() {
+        this.checkContainers()
+
         // Wait 200ms before drag ends to prevent pointerup from firing immediately after drag
         setTimeout(() => {
             this.dragging = false
         }, 200)
+    }
+
+    checkContainers() {
+        for (let container of this.containers) {
+            this.checkContainer(container)
+        }
+    }
+
+    checkContainer(container) {
+        // Get global coordinates of container
+        let matrix = container.getWorldTransformMatrix()
+        let y = matrix.getY(0, 0)
+
+        // 23 is half of the container height
+        let visible = y - 23 > 0
+
+        container.visible = visible
+        container.text.visible = visible
     }
 
     /* END-USER-CODE */
