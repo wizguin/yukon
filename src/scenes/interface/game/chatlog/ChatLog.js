@@ -118,7 +118,9 @@ export default class ChatLog extends BaseContainer {
             container.text.text = message.message
         }
 
-        this.checkContainers()
+        if (this.dragging) {
+            this.checkContainers()
+        }
     }
 
     clearMessages() {
