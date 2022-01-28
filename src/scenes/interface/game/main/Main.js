@@ -40,6 +40,8 @@ export default class Main extends BaseScene {
         this.request_button;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
+        /** @type {Phaser.GameObjects.Layer} */
+        this.widgetLayer;
         /** @type {Waddle} */
         this.waddle;
         /** @type {Buddy} */
@@ -170,20 +172,23 @@ export default class Main extends BaseScene {
         // mod_m
         const mod_m = this.add.sprite(1434, 69, "main", "mod/m");
 
+        // widgetLayer
+        const widgetLayer = this.add.layer();
+
         // waddle
         const waddle = new Waddle(this, 1099, 332);
-        this.add.existing(waddle);
         waddle.visible = false;
+        widgetLayer.add(waddle);
 
         // buddy
         const buddy = new Buddy(this, 1140, 436);
-        this.add.existing(buddy);
         buddy.visible = false;
+        widgetLayer.add(buddy);
 
         // playerCard
         const playerCard = new PlayerCard(this, 446, 436);
-        this.add.existing(playerCard);
         playerCard.visible = false;
+        widgetLayer.add(playerCard);
 
         // actionsMenu
         const actionsMenu = new ActionsMenu(this, 366, 872);
@@ -262,7 +267,7 @@ export default class Main extends BaseScene {
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
-        player_buttonButton.callback = () => this.playerCard.showCard(this.world.client.id);
+        player_buttonButton.callback = () => this.onPlayerClick();
         const player_buttonShowHint = new ShowHint(player_button);
         player_buttonShowHint.text = "Edit Player";
 
@@ -326,6 +331,7 @@ export default class Main extends BaseScene {
         this.crosshair = crosshair;
         this.request_button = request_button;
         this.mod_m = mod_m;
+        this.widgetLayer = widgetLayer;
         this.waddle = waddle;
         this.buddy = buddy;
         this.playerCard = playerCard;
@@ -347,6 +353,8 @@ export default class Main extends BaseScene {
         this._create()
 
         this.events.on('sleep', this.onSleep, this)
+
+        this.setupWidgets()
 
         // Factories
 
@@ -409,6 +417,19 @@ export default class Main extends BaseScene {
         }
     }
 
+    setupWidgets() {
+        for (let widget of this.widgetLayer.list) {
+            if (widget.__DraggableContainer) {
+                widget.__DraggableContainer.widgetLayer = this.widgetLayer
+            }
+        }
+    }
+
+    showWidget(widget) {
+        this.widgetLayer.bringToTop(widget)
+        widget.visible = true
+    }
+
     onSnowballClick() {
         this.crosshair.visible = true
         this.crosshair.x = this.input.x
@@ -445,8 +466,12 @@ export default class Main extends BaseScene {
         this.network.send('send_message', { message: text })
     }
 
+    onPlayerClick() {
+        this.playerCard.showCard(this.world.client.id)
+    }
+
     onBuddyClick() {
-        this.buddy.visible = true
+        this.showWidget(this.buddy)
         this.buddy.showPage()
     }
 

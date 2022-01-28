@@ -25,6 +25,8 @@ export default class DraggableContainer extends EventComponent {
         this.offsetX = 0
         this.offsetY = 0
 
+        this.widgetLayer
+
         /* END-USER-CTR-CODE */
     }
 
@@ -43,8 +45,15 @@ export default class DraggableContainer extends EventComponent {
 
         zone.setInteractive({ draggable: true })
 
-        zone.on('dragstart', (pointer) => { this.onDragStart(pointer) })
-        zone.on('drag', (pointer) => { this.onDrag(pointer) })
+        zone.on('pointerdown', (pointer) => this.onDown(pointer))
+        zone.on('dragstart', (pointer) => this.onDragStart(pointer))
+        zone.on('drag', (pointer) => this.onDrag(pointer))
+    }
+
+    onDown(pointer) {
+        if (this.widgetLayer && pointer.button == 0) {
+            this.widgetLayer.bringToTop(this.gameObject)
+        }
     }
 
     onDragStart(pointer) {

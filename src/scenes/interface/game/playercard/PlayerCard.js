@@ -138,7 +138,10 @@ export default class PlayerCard extends BaseContainer {
      */
     showCard(id, refresh = false) {
         // Don't open player's card if it's already open
-        if (id == this.id && this.visible && !refresh) return
+        if (id == this.id && this.visible && !refresh) {
+            this.interface.main.showWidget(this)
+            return
+        }
 
         if (id in this.world.room.penguins) {
             let penguin = this.world.room.penguins[id]
@@ -184,7 +187,8 @@ export default class PlayerCard extends BaseContainer {
         this.id = penguin.id
         // Update buttons
         this.updateButtons()
-        this.visible = true
+
+        this.interface.main.showWidget(this)
     }
 
     updateButtons() {
