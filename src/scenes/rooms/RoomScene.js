@@ -79,7 +79,7 @@ export default class RoomScene extends BaseScene {
     }
 
     addMusic() {
-        if (localStorage.muteMusic == 'false') this.sound.play(this.music, { loop: true })
+        if (localStorage.muteMusic != 'true') this.sound.play(this.music, { loop: true })
     }
 
     getWaddles() {
