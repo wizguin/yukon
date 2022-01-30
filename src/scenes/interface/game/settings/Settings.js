@@ -114,7 +114,13 @@ export default class Settings extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        checkbox.checked = false
+	if (localStorage.muteMusic != 'true') {
+            this.checkbox.checked = false
+            this.checkbox.setTexture('login', 'checkbox')
+        } else {
+            this.checkbox.checked = true
+            this.checkbox.setTexture('login', 'checkbox-active')
+        }
 
         let oneDay = 1000 * 60 * 60 * 24
         let timeDiff = Date.now() - Date.parse(this.world.client.joinTime)
@@ -132,6 +138,14 @@ export default class Settings extends BaseContainer {
 
     onMuteClick() {
         this.toggle(this.checkbox)
+	    
+        if (localStorage.muteMusic != 'true') {
+            localStorage.muteMusic = true
+            this.world.room.sound.stopAll()
+        } else {
+            localStorage.muteMusic = false
+            this.world.room.addMusic()
+        }
     }
 
     toggle(checkbox) {
