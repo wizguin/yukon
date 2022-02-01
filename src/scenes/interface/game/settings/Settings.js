@@ -114,11 +114,9 @@ export default class Settings extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-	if (localStorage.muteMusic != 'true') {
-            this.checkbox.checked = false
-            this.checkbox.setTexture('login', 'checkbox')
-        } else {
-            this.checkbox.checked = true
+        this.checkbox.checked = this.world.muteMusic
+
+        if (this.checkbox.checked) {
             this.checkbox.setTexture('login', 'checkbox-active')
         }
 
@@ -138,12 +136,16 @@ export default class Settings extends BaseContainer {
 
     onMuteClick() {
         this.toggle(this.checkbox)
-	    
-        if (localStorage.muteMusic != 'true') {
-            localStorage.muteMusic = true
-            this.world.room.sound.stopAll()
+
+        this.world.muteMusic = this.checkbox.checked
+
+        if (!this.world.room.music) {
+            return
+        }
+
+        if (this.world.muteMusic) {
+            this.world.room.sound.stopByKey(this.world.room.music)
         } else {
-            localStorage.muteMusic = false
             this.world.room.addMusic()
         }
     }
