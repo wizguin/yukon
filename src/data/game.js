@@ -40,9 +40,12 @@ const game = {
 
     crumbs: {
         fonts: fonts,
-        igloos: igloos,
-        interfaces: interfaces,
-        rooms: rooms
+
+        scenes: {
+            igloos: igloos,
+            interfaces: interfaces,
+            rooms: rooms
+        }
     }
 }
 

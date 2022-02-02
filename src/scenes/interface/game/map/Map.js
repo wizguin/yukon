@@ -239,7 +239,7 @@ export default class Map extends BaseContainer {
     /* START-USER-CODE */
 
     onRoomClick(id) {
-        let room = this.crumbs.rooms[id]
+        let room = this.crumbs.scenes.rooms[id]
         if (this.world.room.key == room.key) return
 
         this.visible = false

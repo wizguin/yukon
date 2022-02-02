@@ -178,7 +178,7 @@ export default class RoomScene extends BaseScene {
     }
 
     triggerRoom(id, x, y) {
-        let room = this.crumbs.rooms[id]
+        let room = this.crumbs.scenes.rooms[id]
 
         this.world.client.sendJoinRoom(id, room.key, x, y)
     }

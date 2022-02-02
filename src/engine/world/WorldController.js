@@ -28,7 +28,7 @@ export default class WorldController extends BaseScene {
     }
 
     joinRoom(id, users = null) {
-        this.interface.showLoading(this.getString('loading', this.crumbs.rooms[id].key))
+        this.interface.showLoading(this.getString('loading', this.crumbs.scenes.rooms[id].key))
 
         if (!this.room) {
             return this.createRoom(id, users)

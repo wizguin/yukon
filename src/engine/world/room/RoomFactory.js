@@ -4,7 +4,7 @@ export default class RoomFactory {
         this.world = world
 
         this.scene = world.scene
-        this.rooms = world.crumbs.rooms
+        this.rooms = world.crumbs.scenes.rooms
     }
 
     createRoom(id) {

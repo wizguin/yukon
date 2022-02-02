@@ -6,6 +6,7 @@ export default class Igloo extends Plugin {
     constructor(network) {
         super(network)
         this.events = {
+            'add_igloo': this.addIgloo,
             'add_furniture': this.addFurniture,
             'update_flooring': this.updateFlooring
         }
@@ -15,25 +16,39 @@ export default class Igloo extends Plugin {
         return this.world.client
     }
 
-    addFurniture(args) {
-        let inventory = this.client.furniture
+    addIgloo(args) {
+        let inventory = this.client.igloos
 
-        // Update player data
         this.client.coins = args.coins
-        inventory[args.furniture] = inventory[args.furniture] + 1 || 1
+        inventory.push(args.igloo)
+        inventory.sort((a, b) => a - b)
 
-        // Update player card
         this.interface.refreshPlayerCard()
 
-        // Update gridview
         if (this.interface.iglooEdit.gridView.visible) {
             this.interface.iglooEdit.showGridView()
         }
 
-        // Update catalog coins
         this.interface.updateCatalogCoins(args.coins)
 
-        // Show prompt
+        let text = `${this.crumbs.igloos[args.igloo].name}\nhas been added to your inventory.`
+        this.interface.prompt.showWindow(text, 'single')
+    }
+
+    addFurniture(args) {
+        let inventory = this.client.furniture
+
+        this.client.coins = args.coins
+        inventory[args.furniture] = inventory[args.furniture] + 1 || 1
+
+        this.interface.refreshPlayerCard()
+
+        if (this.interface.iglooEdit.gridView.visible) {
+            this.interface.iglooEdit.showGridView()
+        }
+
+        this.interface.updateCatalogCoins(args.coins)
+
         let text = `${this.crumbs.furniture[args.furniture].name}\nhas been added to your inventory.`
         this.interface.prompt.showWindow(text, 'single')
     }
@@ -44,7 +59,6 @@ export default class Igloo extends Plugin {
         this.world.room.updateFlooring(args.flooring)
         this.client.coins = args.coins
 
-        // Update player card
         this.interface.refreshPlayerCard()
     }
 

@@ -4,7 +4,7 @@ export default class IglooFactory {
         this.world = world
 
         this.scene = world.scene
-        this.igloos = world.crumbs.igloos
+        this.igloos = world.crumbs.scenes.igloos
     }
 
     createIgloo(args) {

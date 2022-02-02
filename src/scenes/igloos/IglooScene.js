@@ -187,7 +187,9 @@ export default class IglooScene extends RoomScene {
     }
 
     updateIgloo(type) {
-        if (this.id != this.world.client.id || this.args.type == type) return
+        if (this.id != this.world.client.id || this.args.type == type || !(type in this.crumbs.scenes.igloos)) {
+            return
+        }
 
         let text = 'Are you sure you want to change your igloo? Your flooring will be lost. Igloo items will be saved in your inventory.'
 

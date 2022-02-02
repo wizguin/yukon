@@ -43,6 +43,7 @@ export default class Preload extends BaseScene {
         this.crumbs.colors = crumbs.colors
         this.crumbs.flooring = crumbs.flooring
         this.crumbs.furniture = crumbs.furniture
+        this.crumbs.igloos = crumbs.igloos
         this.crumbs.items = crumbs.items
         this.crumbs.penguin = crumbs.penguin
         this.crumbs.quickKeys = crumbs.quick_keys

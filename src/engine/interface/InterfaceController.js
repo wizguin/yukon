@@ -12,7 +12,7 @@ export default class InterfaceController extends BaseScene {
         this.prompt = new PromptController(this)
 
         // External interface scenes
-        this.interfaces = this.crumbs.interfaces
+        this.interfaces = this.crumbs.scenes.interfaces
         this.loadedScenes = []
     }
 

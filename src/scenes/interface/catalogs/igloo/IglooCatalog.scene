@@ -114,9 +114,11 @@
                     "id": "9f8db99f-edae-4cdc-809d-c980a9fbbd90",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_10",
+                    "igloo": 9,
                     "components": [],
                     "x": 291,
                     "y": 536
@@ -126,9 +128,11 @@
                     "id": "823da132-f95e-41fb-83c0-8ddb1cab02a9",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_11",
+                    "igloo": 6,
                     "components": [],
                     "x": 865,
                     "y": 532
@@ -159,9 +163,11 @@
                     "id": "873c7084-39cf-45bf-aee2-11e9bbfd8ad3",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_8",
+                    "igloo": 14,
                     "components": [],
                     "x": 291,
                     "y": 574
@@ -171,9 +177,11 @@
                     "id": "1a93624b-eafb-4fed-a910-b7d9a9e4a074",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_9",
+                    "igloo": 2,
                     "components": [],
                     "x": 862,
                     "y": 533
@@ -204,9 +212,11 @@
                     "id": "70dde830-f699-4abd-9279-e30e80893256",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_6",
+                    "igloo": 21,
                     "components": [],
                     "x": 291,
                     "y": 533
@@ -216,9 +226,11 @@
                     "id": "e01f51a2-58ba-41b7-b8ab-81776ab729f4",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_7",
+                    "igloo": 1,
                     "components": [],
                     "x": 864,
                     "y": 533
@@ -249,9 +261,11 @@
                     "id": "a37e4224-a4ca-41c6-92c5-99c3a714d4c6",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_4",
+                    "igloo": 16,
                     "components": [],
                     "x": 292,
                     "y": 529
@@ -261,9 +275,11 @@
                     "id": "9c8cef9b-977c-4950-9fa2-88dbc14dd280",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_5",
+                    "igloo": 13,
                     "components": [],
                     "x": 864,
                     "y": 573
@@ -294,9 +310,11 @@
                     "id": "09a074a7-f7de-461c-a4d5-78609827d01b",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_2",
+                    "igloo": 27,
                     "components": [],
                     "x": 291,
                     "y": 572
@@ -306,9 +324,11 @@
                     "id": "1bf7c77b-6c52-4aba-8313-ca9b0a74f353",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_3",
+                    "igloo": 26,
                     "components": [],
                     "x": 866,
                     "y": 586
@@ -339,9 +359,11 @@
                     "id": "07d4086b-9832-4bbf-87f3-adabcea72ce1",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton",
+                    "igloo": 20,
                     "components": [],
                     "x": 298,
                     "y": 540
@@ -351,9 +373,11 @@
                     "id": "97d56eda-f6fb-4fc4-ae1a-344f9ff4cce1",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "igloo"
                     ],
                     "label": "upgradeButton_1",
+                    "igloo": 28,
                     "components": [],
                     "x": 866,
                     "y": 573

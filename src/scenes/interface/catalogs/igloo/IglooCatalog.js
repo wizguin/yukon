@@ -288,6 +288,42 @@ export default class IglooCatalog extends Book {
         pageLeft_1Button.activeFrame = false;
         pageLeft_1Button.pixelPerfect = true;
 
+        // upgradeButton_10 (prefab fields)
+        upgradeButton_10.igloo = 9;
+
+        // upgradeButton_11 (prefab fields)
+        upgradeButton_11.igloo = 6;
+
+        // upgradeButton_8 (prefab fields)
+        upgradeButton_8.igloo = 14;
+
+        // upgradeButton_9 (prefab fields)
+        upgradeButton_9.igloo = 2;
+
+        // upgradeButton_6 (prefab fields)
+        upgradeButton_6.igloo = 21;
+
+        // upgradeButton_7 (prefab fields)
+        upgradeButton_7.igloo = 1;
+
+        // upgradeButton_4 (prefab fields)
+        upgradeButton_4.igloo = 16;
+
+        // upgradeButton_5 (prefab fields)
+        upgradeButton_5.igloo = 13;
+
+        // upgradeButton_2 (prefab fields)
+        upgradeButton_2.igloo = 27;
+
+        // upgradeButton_3 (prefab fields)
+        upgradeButton_3.igloo = 26;
+
+        // upgradeButton (prefab fields)
+        upgradeButton.igloo = 20;
+
+        // upgradeButton_1 (prefab fields)
+        upgradeButton_1.igloo = 28;
+
         // floorButton_3 (prefab fields)
         floorButton_3.floor = 16;
 
@@ -379,23 +415,33 @@ export default class IglooCatalog extends Book {
             return this.interface.prompt.showError('You already have this flooring.')
         }
 
-        let name = this.crumbs.flooring[floor].name
-        let cost = this.crumbs.flooring[floor].cost
-
-        let text = `Would you like to buy ${name} for ${cost} coins. You currently have ${this.world.client.coins} coins.`
-
-        this.interface.prompt.showWindow(text, 'dual', () => {
+        this.showPrompt(floor, 'flooring', () => {
             this.network.send('update_flooring', { flooring: floor })
             this.interface.prompt.window.visible = false
             this.close()
-
-        }, () => {
-            this.interface.prompt.window.visible = false
         })
     }
 
     buyIgloo(igloo) {
+        if (this.world.client.igloos.includes(igloo)) {
+            return this.interface.prompt.showError('You already have this igloo.')
+        }
 
+        this.showPrompt(igloo, 'igloos', () => {
+            this.network.send('add_igloo', { igloo: igloo })
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    showPrompt(id, type, callback) {
+        let name = this.crumbs[type][id].name
+        let cost = this.crumbs[type][id].cost
+
+        let text = `Would you like to buy ${name} for ${cost} coins. You currently have ${this.world.client.coins} coins.`
+
+        this.interface.prompt.showWindow(text, 'dual', callback, () => {
+            this.interface.prompt.window.visible = false
+        })
     }
 
     /* END-USER-CODE */
