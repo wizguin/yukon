@@ -40,7 +40,7 @@ export default class Mtn extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("mtn-pack", "assets/media/rooms/mtn/mtn-pack.json");
     }

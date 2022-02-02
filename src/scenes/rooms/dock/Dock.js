@@ -30,7 +30,7 @@ export default class Dock extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("dock-pack", "assets/media/rooms/dock/dock-pack.json");
     }

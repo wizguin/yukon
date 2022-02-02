@@ -24,7 +24,7 @@ export default class Attic extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("attic-pack", "assets/media/rooms/attic/attic-pack.json");
     }

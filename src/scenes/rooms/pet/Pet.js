@@ -47,7 +47,7 @@ export default class Pet extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("pet-pack", "assets/media/rooms/pet/pet-pack.json");
     }

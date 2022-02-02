@@ -53,7 +53,7 @@ export default class Dance extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("dance-pack", "assets/media/rooms/dance/dance-pack.json");
     }

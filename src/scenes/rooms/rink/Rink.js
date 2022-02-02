@@ -22,7 +22,7 @@ export default class Rink extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("rink-pack", "assets/media/rooms/rink/rink-pack.json");
     }

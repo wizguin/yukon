@@ -26,7 +26,7 @@ export default class DojoExt extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("dojoext-pack", "assets/media/rooms/dojoext/dojoext-pack.json");
     }

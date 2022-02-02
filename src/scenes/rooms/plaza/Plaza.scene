@@ -6,6 +6,7 @@
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
         "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
         "preloadPackFiles": [
             "yukon/assets/media/rooms/plaza/plaza-pack.json"
         ],

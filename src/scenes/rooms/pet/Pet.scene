@@ -8,6 +8,7 @@
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
         "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
         "preloadPackFiles": [
             "yukon/assets/media/rooms/pet/pet-pack.json"
         ],
