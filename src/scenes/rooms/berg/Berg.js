@@ -22,7 +22,7 @@ export default class Berg extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("berg-pack", "assets/media/rooms/berg/berg-pack.json");
     }

@@ -30,7 +30,7 @@ export default class Shop extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("shop-pack", "assets/media/rooms/shop/shop-pack.json");
     }

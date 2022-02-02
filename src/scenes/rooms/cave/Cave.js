@@ -26,7 +26,7 @@ export default class Cave extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("cave-pack", "assets/media/rooms/cave/cave-pack.json");
     }

@@ -25,7 +25,7 @@ export default class Forest extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("forest-pack", "assets/media/rooms/forest/forest-pack.json");
     }

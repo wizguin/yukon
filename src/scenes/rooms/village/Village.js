@@ -28,7 +28,7 @@ export default class Village extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("village-pack", "assets/media/rooms/village/village-pack.json");
     }

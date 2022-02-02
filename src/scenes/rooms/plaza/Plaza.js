@@ -30,7 +30,7 @@ export default class Plaza extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("plaza-pack", "assets/media/rooms/plaza/plaza-pack.json");
     }
