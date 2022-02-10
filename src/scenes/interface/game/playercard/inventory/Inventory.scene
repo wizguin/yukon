@@ -37,9 +37,8 @@
                             "type": "Image",
                             "id": "f20da11a-78aa-4baf-ac70-37e03e3cd66c",
                             "label": "inventory_bg",
-                            "components": [
-                                "Interactive"
-                            ],
+                            "scope": "CLASS",
+                            "components": [],
                             "texture": {
                                 "key": "main",
                                 "frame": "inventory/bg"

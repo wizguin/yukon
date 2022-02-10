@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, Interactive, SimpleButton } from '@components/components'
+import { Button, SimpleButton } from '@components/components'
 
 import InventoryLoader from '@engine/interface/inventory/InventoryLoader'
 
@@ -14,6 +14,8 @@ export default class Inventory extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Container} */
         this.container;
+        /** @type {Phaser.GameObjects.Image} */
+        this.inventory_bg;
         /** @type {Phaser.GameObjects.Text} */
         this.active_text;
         /** @type {Phaser.GameObjects.Image} */
@@ -128,9 +130,6 @@ export default class Inventory extends BaseContainer {
         // lists
         const slots = [slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12];
 
-        // inventory_bg (components)
-        new Interactive(inventory_bg);
-
         // down_button (components)
         const down_buttonButton = new Button(down_button);
         down_buttonButton.spriteName = "grey-button";
@@ -224,6 +223,7 @@ export default class Inventory extends BaseContainer {
         tab_handleSimpleButton.callback = () => { this.onTabClick() };
 
         this.container = container;
+        this.inventory_bg = inventory_bg;
         this.active_text = active_text;
         this.arrow = arrow;
         this.slots = slots;
@@ -235,6 +235,8 @@ export default class Inventory extends BaseContainer {
         this.filter = null
 
         this.inventoryLoader = new InventoryLoader(this, this.slots)
+
+        this.inventory_bg.setInteractive({ pixelPerfect: true })
 
         /* END-USER-CTR-CODE */
     }
