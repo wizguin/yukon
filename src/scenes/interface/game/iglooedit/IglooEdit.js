@@ -3,6 +3,7 @@ import BaseScene from '@scenes/base/BaseScene'
 import { Button, Interactive, ShowHint, SimpleButton } from '@components/components'
 
 import GridView from './gridview/GridView'
+import IglooMusic from './igloomusic/IglooMusic'
 
 
 /* START OF COMPILED CODE */
@@ -22,6 +23,8 @@ export default class IglooEdit extends BaseScene {
         this.button_furniture;
         /** @type {Phaser.GameObjects.Container} */
         this.furniture;
+        /** @type {IglooMusic} */
+        this.iglooMusic;
         /** @type {GridView} */
         this.gridView;
 
@@ -143,6 +146,11 @@ export default class IglooEdit extends BaseScene {
         icon_all.setOrigin(0.5076923076923077, 0.5);
         furniture.add(icon_all);
 
+        // iglooMusic
+        const iglooMusic = new IglooMusic(this, 760, 480);
+        this.add.existing(iglooMusic);
+        iglooMusic.visible = false;
+
         // gridView
         const gridView = new GridView(this, 0, 0);
         this.add.existing(gridView);
@@ -188,6 +196,7 @@ export default class IglooEdit extends BaseScene {
         // button_music (components)
         const button_musicButton = new Button(button_music);
         button_musicButton.spriteName = "button/music";
+        button_musicButton.callback = () => iglooMusic.visible = true;
         button_musicButton.activeFrame = false;
 
         // list (components)
@@ -234,6 +243,7 @@ export default class IglooEdit extends BaseScene {
         this.controls = controls;
         this.button_furniture = button_furniture;
         this.furniture = furniture;
+        this.iglooMusic = iglooMusic;
         this.gridView = gridView;
 
         this.events.emit("scene-awake");

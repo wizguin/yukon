@@ -319,7 +319,7 @@ export default class IglooMap extends BaseContainer {
         panel.add(igloo_item_large);
 
         // igloo_icon_player
-        const igloo_icon_player = scene.add.image(19, 72, "map", "igloo/icon_player");
+        const igloo_icon_player = scene.add.image(18, 72, "map", "igloo/icon_player");
         igloo_icon_player.setOrigin(0.5128205128205128, 0.5128205128205128);
         panel.add(igloo_icon_player);
 

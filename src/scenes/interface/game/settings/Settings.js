@@ -144,7 +144,7 @@ export default class Settings extends BaseContainer {
         }
 
         if (this.world.muteMusic) {
-            this.world.room.sound.stopByKey(this.world.room.music)
+            this.world.room.stopMusic()
         } else {
             this.world.room.addMusic()
         }

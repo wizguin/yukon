@@ -30,6 +30,8 @@ export default class IglooScene extends RoomScene {
     init(data) {
         this.args = data.args
         this.id = data.args.igloo
+        this.music = data.args.music
+
         this.loader = new FurnitureLoader(this)
 
         // Active furniture quantities
@@ -39,7 +41,7 @@ export default class IglooScene extends RoomScene {
     }
 
     preload() {
-        this._preload()
+        super.preload()
 
         this.load.image(`locations/${this.args.location}`, `/assets/media/igloos/locations/${this.args.location}.png`)
 
@@ -165,6 +167,27 @@ export default class IglooScene extends RoomScene {
         this.load.start()
         this.load.once(`filecomplete-json-flooring/${flooring}`, () => {
             this.addFlooring(flooring)
+        })
+    }
+
+    updateMusic(music) {
+        this.stopMusic()
+
+        this.music = music
+
+        if (!music) {
+            return
+        }
+
+        if (this.cache.audio.exists(music)) {
+            return this.addMusic()
+        }
+
+        this.load.audio(music, `assets/media/music/${music}.mp3`)
+        this.load.start()
+
+        this.load.once(`filecomplete-audio-${music}`, () => {
+            this.addMusic()
         })
     }
 

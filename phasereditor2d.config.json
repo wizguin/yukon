@@ -1,7 +1,8 @@
 {
     "skip": [
         "assets/media/clothing",
-        "assets/media/furniture"
+        "assets/media/furniture",
+        "assets/media/music"
     ],
     "playUrl": "http://localhost:8080"
 }

@@ -163,6 +163,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/music",
+                    "Button.callback": "() => iglooMusic.visible = true",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",
@@ -375,6 +376,22 @@
                     "originX": 0.5076923076923077
                 }
             ]
+        },
+        {
+            "prefabId": "d6cf4a9b-bcc7-4de0-bd9b-d33346f4fd2b",
+            "id": "216bc4ea-cd4c-40f8-9055-10f5864b6fd8",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "iglooMusic",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "visible": false,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "5e67778f-f6b1-47c7-a8e0-fccf4a610c82",

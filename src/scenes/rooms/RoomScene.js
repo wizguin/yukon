@@ -44,12 +44,12 @@ export default class RoomScene extends BaseScene {
 
         this.interface.showInterface()
     }
-	
+
     preload() {
         if (this.music && !this.cache.audio.exists(this.music)) {
             this.load.audio(this.music, `assets/media/music/${this.music}.mp3`)
         }
-		
+
         this._preload()
     }
 
@@ -90,6 +90,10 @@ export default class RoomScene extends BaseScene {
         if (!this.world.muteMusic) {
             this.sound.play(this.music, { loop: true })
         }
+    }
+
+    stopMusic() {
+        this.sound.stopByKey(this.music)
     }
 
     getWaddles() {

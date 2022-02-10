@@ -1,0 +1,387 @@
+{
+    "id": "d6cf4a9b-bcc7-4de0-bd9b-d33346f4fd2b",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 56,
+        "snapHeight": 56,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4e0718fd-22be-4c04-a02b-3bc66e3f302d",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "c1a39cb7-0456-440d-bd05-bc612858fa23",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "b3e28a9b-7313-4368-9480-d2984383210b",
+                    "label": "music_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "iglooedit",
+                        "frame": "music_bg"
+                    },
+                    "y": -24
+                },
+                {
+                    "type": "Image",
+                    "id": "3fd873f1-521f-42b9-a1f0-f6acab233bbd",
+                    "label": "blueButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.visible = false",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 338,
+                    "y": -275
+                },
+                {
+                    "type": "Image",
+                    "id": "12fa2a50-5c92-4064-9d18-149cacf22324",
+                    "label": "blueX",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 338,
+                    "y": -277
+                },
+                {
+                    "type": "Text",
+                    "id": "4f4513f6-89fa-46f1-9698-7602b2d8341e",
+                    "label": "title",
+                    "components": [],
+                    "y": -297,
+                    "originX": 0.5,
+                    "text": "Music List",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000"
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "57e81060-d6a5-4e9b-8c4e-f17ef13641de",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem",
+                    "name": "Brown Puffle Lab",
+                    "musicId": 305,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": -210,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "f4a1f73c-5413-498d-8e42-9244c6e70696",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_1",
+                    "name": "Beware the Dragon",
+                    "musicId": 286,
+                    "bold": true,
+                    "components": [],
+                    "x": -179,
+                    "y": -154,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "0d33ada4-f1fa-4b27-9f27-cc40abaacb21",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_2",
+                    "name": "Planet Y",
+                    "musicId": 38,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": -98,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "c1e3da0b-ffc3-45dc-85ae-9e93e81f2b34",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_3",
+                    "name": "Pre-historic Rock",
+                    "musicId": 35,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": -42,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "3061a52d-76e3-4309-9d02-badfb6451aff",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_4",
+                    "name": "The Royal Court",
+                    "musicId": 233,
+                    "bold": true,
+                    "components": [],
+                    "x": -179,
+                    "y": 14,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "2d47047c-9f64-46fd-83ae-2387e7154e59",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_5",
+                    "name": "Puffle Party",
+                    "musicId": 259,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": 70,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "1ba0a8cf-c902-4e2a-9381-f4ee8c6dda2c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_6",
+                    "name": "In the Tower",
+                    "musicId": 235,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": 126,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "12e62502-a156-4d61-bacf-90f825080056",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_7",
+                    "name": "Norman Swarm",
+                    "musicId": 42,
+                    "bold": false,
+                    "components": [],
+                    "x": 177,
+                    "y": -210,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "56839cc3-26d3-4ed7-958c-d9b33f9d70e7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_8",
+                    "name": "To Battle!",
+                    "musicId": 236,
+                    "bold": true,
+                    "components": [],
+                    "x": 177,
+                    "y": -154,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "e1ff0f35-7d76-4f4f-9634-4d7a9218e355",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_9",
+                    "name": "Flipper Jig",
+                    "musicId": 263,
+                    "bold": false,
+                    "components": [],
+                    "x": 177,
+                    "y": -98,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "704760d2-5a5b-4678-b3b7-0b1ecc3fbc4f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_10",
+                    "name": "Icy Serenade",
+                    "musicId": 256,
+                    "bold": true,
+                    "components": [],
+                    "x": 177,
+                    "y": -42,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "c95ee15d-9e74-4f2f-90a5-a295bed73867",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_11",
+                    "name": "The Way of Sensei",
+                    "musicId": 24,
+                    "bold": false,
+                    "components": [],
+                    "x": 177,
+                    "y": 14,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "5c4489d9-9893-4cd3-90fe-8d92d10ba633",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_12",
+                    "name": "Puffle Rescue: In the Cave",
+                    "musicId": 120,
+                    "bold": false,
+                    "components": [],
+                    "x": 177,
+                    "y": 70,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "c3907774-a6f3-47f4-8b5d-eeebdbd3c2f4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_13",
+                    "name": "For Great Justice",
+                    "musicId": 32,
+                    "bold": false,
+                    "components": [],
+                    "x": 177,
+                    "y": 126,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c49be0bf-73b5-433c-b20f-425fc5789895",
+                    "id": "0285e52d-e247-492d-bdeb-e7e1473afc93",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "name",
+                        "bold",
+                        "musicId"
+                    ],
+                    "label": "musicItem_14",
+                    "name": "No Music",
+                    "musicId": 0,
+                    "bold": false,
+                    "components": [],
+                    "x": -179,
+                    "y": 220,
+                    "nestedPrefabs": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -9,6 +9,7 @@ export default class Igloo extends Plugin {
             'add_igloo': this.addIgloo,
             'add_furniture': this.addFurniture,
             'update_flooring': this.updateFlooring,
+            'update_music': this.updateMusic,
             'get_igloos': this.getIgloos,
             'get_igloo_open': this.getIglooOpen
         }
@@ -62,6 +63,12 @@ export default class Igloo extends Plugin {
         this.client.coins = args.coins
 
         this.interface.refreshPlayerCard()
+    }
+
+    updateMusic(args) {
+        if (!this.world.room.isIgloo) return
+
+        this.world.room.updateMusic(args.music)
     }
 
     getIgloos(args) {
