@@ -87,7 +87,7 @@ export default class RoomScene extends BaseScene {
     }
 
     addMusic() {
-        if (!this.world.muteMusic) {
+        if (!this.world.muteMusic && this.cache.audio.exists(this.music)) {
             this.sound.play(this.music, { loop: true })
         }
     }
