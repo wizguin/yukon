@@ -19,7 +19,7 @@
             "label": "container_1",
             "components": [],
             "x": 760,
-            "y": 460,
+            "y": 480,
             "list": [
                 {
                     "type": "Rectangle",
@@ -28,7 +28,6 @@
                     "components": [
                         "Interactive"
                     ],
-                    "y": 20,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "fillAlpha": 0.2,
@@ -46,7 +45,7 @@
                         "key": "map",
                         "frame": "bg"
                     },
-                    "y": -15,
+                    "y": -35,
                     "originY": 0.5007429420505201
                 },
                 {
@@ -66,7 +65,7 @@
                         "frame": "dojo"
                     },
                     "x": 69,
-                    "y": -290,
+                    "y": -310,
                     "originX": 0.5038759689922481,
                     "originY": 0.5056179775280899
                 },
@@ -80,7 +79,7 @@
                         "frame": "mountains"
                     },
                     "x": 29,
-                    "y": -256
+                    "y": -276
                 },
                 {
                     "type": "Image",
@@ -92,7 +91,7 @@
                         "frame": "island"
                     },
                     "x": -12,
-                    "y": -10,
+                    "y": -30,
                     "originX": 0.5005417118093174
                 },
                 {
@@ -112,7 +111,7 @@
                         "frame": "mtn"
                     },
                     "x": -232,
-                    "y": -236
+                    "y": -256
                 },
                 {
                     "type": "Image",
@@ -131,7 +130,7 @@
                         "frame": "village"
                     },
                     "x": -181,
-                    "y": -159,
+                    "y": -179,
                     "originX": 0.503030303030303,
                     "originY": 0.5041322314049587
                 },
@@ -152,7 +151,7 @@
                         "frame": "beach"
                     },
                     "x": -390,
-                    "y": -74
+                    "y": -94
                 },
                 {
                     "type": "Image",
@@ -171,7 +170,7 @@
                         "frame": "dock"
                     },
                     "x": -370,
-                    "y": 134,
+                    "y": 114,
                     "originY": 0.5037037037037037
                 },
                 {
@@ -191,7 +190,7 @@
                         "frame": "town"
                     },
                     "x": -128,
-                    "y": 42
+                    "y": 22
                 },
                 {
                     "type": "Image",
@@ -210,7 +209,7 @@
                         "frame": "forts"
                     },
                     "x": 78,
-                    "y": 50,
+                    "y": 30,
                     "originX": 0.5045045045045045,
                     "originY": 0.5045871559633027
                 },
@@ -223,6 +222,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "igloo",
+                    "Button.callback": "() => this.iglooMap.show()",
                     "Button.activeFrame": false,
                     "ShowHint.text": "Member Igloos",
                     "texture": {
@@ -230,7 +230,7 @@
                         "frame": "igloo"
                     },
                     "x": 201,
-                    "y": 161
+                    "y": 141
                 },
                 {
                     "type": "Image",
@@ -249,7 +249,7 @@
                         "frame": "plaza"
                     },
                     "x": 264,
-                    "y": 42,
+                    "y": 22,
                     "originY": 0.5038167938931297
                 },
                 {
@@ -269,7 +269,7 @@
                         "frame": "rink"
                     },
                     "x": 52,
-                    "y": -78,
+                    "y": -98,
                     "originX": 0.5023041474654378
                 },
                 {
@@ -289,7 +289,7 @@
                         "frame": "forest"
                     },
                     "x": 291,
-                    "y": -64,
+                    "y": -84,
                     "originX": 0.5027027027027027,
                     "originY": 0.5057471264367817
                 },
@@ -310,7 +310,7 @@
                         "frame": "cove"
                     },
                     "x": 334,
-                    "y": -149,
+                    "y": -169,
                     "originY": 0.5058823529411764
                 },
                 {
@@ -330,7 +330,7 @@
                         "frame": "mine"
                     },
                     "x": 168,
-                    "y": -194,
+                    "y": -214,
                     "originX": 0.5042016806722689
                 },
                 {
@@ -348,7 +348,7 @@
                         "frame": "berg"
                     },
                     "x": 402,
-                    "y": -190
+                    "y": -210
                 },
                 {
                     "type": "Image",
@@ -362,7 +362,7 @@
                         "frame": "note"
                     },
                     "x": 419,
-                    "y": 262,
+                    "y": 242,
                     "originX": 0.5017667844522968
                 },
                 {
@@ -379,7 +379,7 @@
                         "frame": "grey-button"
                     },
                     "x": 483,
-                    "y": -313
+                    "y": -333
                 },
                 {
                     "type": "Image",
@@ -391,7 +391,23 @@
                         "frame": "grey-x"
                     },
                     "x": 483,
-                    "y": -315
+                    "y": -335
+                },
+                {
+                    "prefabId": "9f793ade-93a8-4ab2-bd68-ccd899fb9179",
+                    "id": "10280413-fe4e-43c5-87a0-4ff109f3c31a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "iglooMap",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 0,
+                    "y": 0,
+                    "visible": false,
+                    "nestedPrefabs": []
                 }
             ]
         }

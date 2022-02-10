@@ -29,11 +29,13 @@
                     "id": "536c2427-aa97-4306-8d3e-ccbe16d7e20f",
                     "label": "button_edit",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "button/edit",
                     "Button.callback": "() => this.onEditClick()",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Edit Igloo",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/edit"
@@ -45,11 +47,16 @@
                     "type": "Image",
                     "id": "2f257361-5079-49b1-9efd-16ad2b8c389d",
                     "label": "button_lock",
+                    "scope": "CLASS",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "button/lock",
+                    "Button.hoverOutCallback": "() => this.onLockOut()",
+                    "Button.callback": "() => this.onLockClick()",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "Open Igloo",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/lock"

@@ -128,7 +128,7 @@ class Sled extends GameScene {
         this.anims.fromJSON(this.cache.json.get('sled-anims'))
 
         // Map data
-        this.myHill = this.cache.json.get('map').hills['105']
+        this.myHill = this.cache.json.get('sledmap').hills['105']
         this.myMap = this.createMap()
 
         // Input

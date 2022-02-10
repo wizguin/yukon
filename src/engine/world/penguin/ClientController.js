@@ -4,6 +4,8 @@ import PathEngine from './pathfinding/PathEngine'
 export default class ClientController {
 
     constructor(world, args) {
+        this.world = world
+
         this.interface = world.interface
         this.network = world.network
         this.crumbs = world.crumbs
@@ -16,6 +18,8 @@ export default class ClientController {
         this.id = user.id
         this.coins = user.coins
         this.rank = user.rank
+
+        this.iglooOpen = false
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
@@ -222,6 +226,22 @@ export default class ClientController {
 
         let random = PathEngine.getRandomPos(x, y, randomRange)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })
+    }
+
+    sendJoinIgloo(id) {
+        if (this.world.room.isIgloo && this.world.room.id == id) {
+            return
+        }
+
+        if (this.activeSeat) {
+            return this.interface.prompt.showError('Please exit your game before leaving the room')
+        }
+
+        this.interface.showLoading(this.getString('joining', 'igloo'))
+
+        this.lockRotation = false
+
+        this.network.send('join_igloo', { igloo: id, x: 0, y: 0 })
     }
 
 }

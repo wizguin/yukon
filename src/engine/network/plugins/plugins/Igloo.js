@@ -8,7 +8,9 @@ export default class Igloo extends Plugin {
         this.events = {
             'add_igloo': this.addIgloo,
             'add_furniture': this.addFurniture,
-            'update_flooring': this.updateFlooring
+            'update_flooring': this.updateFlooring,
+            'get_igloos': this.getIgloos,
+            'get_igloo_open': this.getIglooOpen
         }
     }
 
@@ -60,6 +62,16 @@ export default class Igloo extends Plugin {
         this.client.coins = args.coins
 
         this.interface.refreshPlayerCard()
+    }
+
+    getIgloos(args) {
+        this.interface.main.map.iglooMap.setIgloos(args.igloos)
+    }
+
+    getIglooOpen(args) {
+        if (args.open) {
+            this.interface.main.playerCard.buttons.enableButton('igloo')
+        }
     }
 
 }

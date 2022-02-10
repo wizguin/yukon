@@ -197,6 +197,10 @@ export default class Buttons extends BaseContainer {
             this.enableButton('ignore', 'ignore-icon', 'Kick Player')
             this.enableButton('report', 'mod-icon', 'Ban Player')
         }
+
+        if (!['online', 'offline'].includes(relationship)) {
+            this.network.send('get_igloo_open', { igloo: this.parentContainer.id })
+        }
     }
 
     resetButtons() {
@@ -241,12 +245,7 @@ export default class Buttons extends BaseContainer {
     }
 
     onIglooClick() {
-        if (this.world.room.isIgloo && this.world.room.id == this.parentContainer.id) {
-            return
-        }
-
-        this.interface.showLoading(this.getString('joining', 'igloo'))
-        this.network.send('join_igloo', { igloo: this.parentContainer.id, x: 0, y: 0 })
+        this.world.client.sendJoinIgloo(this.parentContainer.id)
     }
 
     onIgnoreClick() {

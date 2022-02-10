@@ -14,6 +14,8 @@ export default class IglooEdit extends BaseScene {
 
         /** @type {Phaser.GameObjects.Container} */
         this.defaultControls;
+        /** @type {Phaser.GameObjects.Image} */
+        this.button_lock;
         /** @type {Phaser.GameObjects.Container} */
         this.controls;
         /** @type {Phaser.GameObjects.Image} */
@@ -151,11 +153,17 @@ export default class IglooEdit extends BaseScene {
         button_editButton.spriteName = "button/edit";
         button_editButton.callback = () => this.onEditClick();
         button_editButton.activeFrame = false;
+        const button_editShowHint = new ShowHint(button_edit);
+        button_editShowHint.text = "Edit Igloo";
 
         // button_lock (components)
         const button_lockButton = new Button(button_lock);
         button_lockButton.spriteName = "button/lock";
+        button_lockButton.hoverOutCallback = () => this.onLockOut();
+        button_lockButton.callback = () => this.onLockClick();
         button_lockButton.activeFrame = false;
+        const button_lockShowHint = new ShowHint(button_lock);
+        button_lockShowHint.text = "Open Igloo";
 
         // button_save (components)
         const button_saveSimpleButton = new SimpleButton(button_save);
@@ -222,6 +230,7 @@ export default class IglooEdit extends BaseScene {
         allButtonButton.activeFrame = false;
 
         this.defaultControls = defaultControls;
+        this.button_lock = button_lock;
         this.controls = controls;
         this.button_furniture = button_furniture;
         this.furniture = furniture;
@@ -251,6 +260,34 @@ export default class IglooEdit extends BaseScene {
 
     onSleep() {
         this.hideControls()
+    }
+
+    onLockClick() {
+        if (this.world.client.iglooOpen) {
+            this.world.client.iglooOpen = false
+            this.button_lock.__ShowHint.text = 'Open Igloo'
+
+            this.network.send('close_igloo')
+
+            return
+        }
+
+        let text = 'Would you like to open your igloo?\nThis will add your igloo to the map.'
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.world.client.iglooOpen = true
+            this.button_lock.__ShowHint.text = 'Close Igloo'
+
+            this.network.send('open_igloo')
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    onLockOut() {
+        if (this.world.client.iglooOpen) {
+            this.button_lock.setFrame('button/lock-hover')
+        }
     }
 
     onEditClick() {

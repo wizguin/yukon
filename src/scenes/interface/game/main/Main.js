@@ -206,7 +206,7 @@ export default class Main extends BaseScene {
         safe.visible = false;
 
         // map
-        const map = new Map(this, 760, 460);
+        const map = new Map(this, 760, 480);
         this.add.existing(map);
         map.visible = false;
 
@@ -415,6 +415,8 @@ export default class Main extends BaseScene {
         for (let item of this.hideOnSleep) {
             item.visible = false
         }
+
+        this.map.iglooMap.visible = false
     }
 
     setupWidgets() {
@@ -476,12 +478,7 @@ export default class Main extends BaseScene {
     }
 
     onIglooClick() {
-        if (this.world.room.isIgloo && this.world.room.id == this.world.client.id) {
-            return
-        }
-
-        this.interface.showLoading(this.getString('joining', 'igloo'))
-        this.network.send('join_igloo', { igloo: this.world.client.id, x: 0, y: 0 })
+        this.world.client.sendJoinIgloo(this.world.client.id)
     }
 
     onRequestClick() {
