@@ -14,9 +14,9 @@ export default class ShowHint {
 
         /* START-USER-CTR-CODE */
 
-        this.gameObject.on('pointerover', () => { this.onOver() })
-        this.gameObject.on('pointerout', () => { this.onOut() })
-        this.gameObject.on('pointerup', () => { this.onOut() })
+        this.gameObject.on('pointerover', () => this.onOver())
+        this.gameObject.on('pointerout', () => this.onOut())
+        this.gameObject.on('pointerup', () => this.onOut())
 
         /* END-USER-CTR-CODE */
     }
@@ -34,7 +34,9 @@ export default class ShowHint {
     }
 
     onOver() {
-        this.hint.showHint(this.gameObject, this.text)
+        if (this.text) {
+            this.hint.showHint(this.gameObject, this.text)
+        }
     }
 
     onOut() {
