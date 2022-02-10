@@ -32,7 +32,7 @@ export default class Coffee extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("coffee-pack", "assets/media/rooms/coffee/coffee-pack.json");
     }

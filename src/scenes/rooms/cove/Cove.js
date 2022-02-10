@@ -24,7 +24,7 @@ export default class Cove extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("cove-pack", "assets/media/rooms/cove/cove-pack.json");
     }

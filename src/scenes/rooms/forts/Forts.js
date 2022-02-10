@@ -30,7 +30,7 @@ export default class Forts extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("forts-pack", "assets/media/rooms/forts/forts-pack.json");
     }

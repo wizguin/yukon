@@ -32,7 +32,7 @@ export default class Lodge extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("lodge-pack", "assets/media/rooms/lodge/lodge-pack.json");
     }

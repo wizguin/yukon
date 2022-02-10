@@ -26,7 +26,7 @@ export default class Shack extends RoomScene {
     }
 
     /** @returns {void} */
-    preload() {
+    _preload() {
 
         this.load.pack("shack-pack", "assets/media/rooms/shack/shack-pack.json");
     }
