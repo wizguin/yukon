@@ -18,6 +18,7 @@ export default class ClientController {
         this.id = user.id
         this.coins = user.coins
         this.rank = user.rank
+        this.joinTime = user.joinTime
 
         this.iglooOpen = false
 

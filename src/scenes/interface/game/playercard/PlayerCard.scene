@@ -211,6 +211,34 @@
                     "x": -135,
                     "y": 33,
                     "nestedPrefabs": []
+                },
+                {
+                    "type": "Image",
+                    "id": "19716e19-069f-4ae4-bb3e-cf418e2faee1",
+                    "label": "stripes",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "stripes/4"
+                    },
+                    "x": -149,
+                    "y": -185,
+                    "originY": 0.5051546391752577
+                },
+                {
+                    "type": "Image",
+                    "id": "27600233-a44b-4dff-9216-b60abdd2b5ce",
+                    "label": "card_badge_member_ribbon",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-badge-member-ribbon"
+                    },
+                    "x": -149,
+                    "y": -208,
+                    "originX": 0.5061728395061729,
+                    "originY": 0.5185185185185185
                 }
             ]
         }
