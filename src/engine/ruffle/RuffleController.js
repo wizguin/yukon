@@ -13,6 +13,14 @@ export default class RuffleController extends BaseScene {
         this.path
 
         window.ruffle = this
+
+        this.keys = [
+            'getPlayerObjectById',
+            'getMyPlayerHex',
+            'isMyPlayerMember',
+            'isItemOnMyPlayer',
+            'sendGameOver'
+        ]
     }
 
     create() {
@@ -73,6 +81,10 @@ export default class RuffleController extends BaseScene {
         this.stopMusic()
 
         this.world.client.sendJoinLastRoom()
+    }
+
+    getKeys() {
+        return this.keys
     }
 
     getPath() {
