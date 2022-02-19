@@ -21,8 +21,10 @@ export default class MiniGame extends Plugin {
     }
 
     gameOver(args) {
-        // Temporary
-        this.world.client.sendJoinRoom(230, 'Ski Hill', 0, 0)
+        this.world.client.coins = args.coins
+
+        this.interface.refreshPlayerCard()
+        this.interface.updateCatalogCoins(args.coins)
     }
 
 }

@@ -236,7 +236,9 @@ export default class ClientController {
         if (this.world.lastRoom) {
             let room = this.crumbs.scenes.rooms[this.world.lastRoom]
 
-            this.sendJoinRoom(this.world.lastRoom, room.key, room.x, room.y, 80)
+            if (room) {
+                this.sendJoinRoom(this.world.lastRoom, room.key, room.x, room.y, 80)
+            }
         }
     }
 

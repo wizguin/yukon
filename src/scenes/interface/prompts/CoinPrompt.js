@@ -68,7 +68,7 @@ export default class CoinPrompt extends BaseContainer {
     show(coins) {
         this.visible = true
 
-        this.text.text = `You have earned ${coins} coins.\nYou now have 0 coins.`
+        this.text.text = `You have earned ${coins} coins.\nYou now have ${this.world.client.coins + coins} coins.`
     }
 
     callback() {
