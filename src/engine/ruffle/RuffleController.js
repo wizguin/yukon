@@ -61,13 +61,14 @@ export default class RuffleController extends BaseScene {
             logLevel: (localStorage.logging == 'true')
                 ? 'trace'
                 : 'error'
-
-        }).then(() => {
-            this.interface.hideLoading()
-            this.interface.hideInterface()
-
-            this.container.visible = true
         })
+    }
+
+    onLoadComplete() {
+        this.interface.hideLoading()
+        this.interface.hideInterface()
+
+        this.container.visible = true
     }
 
     close() {
