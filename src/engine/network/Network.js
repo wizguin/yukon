@@ -7,7 +7,6 @@ export default class Network {
 
     constructor(game) {
         this.game = game
-        this.crumbs = game.crumbs
 
         this.handler = new DataHandler(this)
         this.client = null
@@ -58,7 +57,7 @@ export default class Network {
     connect(world, onConnect, onDisconnect) {
         this.disconnect()
 
-        let config = this.crumbs.worlds[world]
+        let config = this.game.crumbs.worlds[world]
 
         this.client = io.connect(config.host, { path: config.path })
 

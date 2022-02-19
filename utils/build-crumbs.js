@@ -9,6 +9,7 @@ const crumbs = {
     colors: require(`${assets}/colors.json`),
     flooring: require(`${assets}/flooring.json`),
     furniture: require(`${assets}/furniture.json`),
+    games: require(`${assets}/games.json`),
     igloos: require(`${assets}/igloos.json`),
     items: require(`${assets}/items.json`),
     penguin: require(`${assets}/penguin.json`),

@@ -30,27 +30,13 @@ export default class Preload extends BaseScene {
     }
 
     create() {
-        let parent = this.game.config.parent
-
-        document.querySelector(`#${parent} canvas`).onclick = () => {
-            // Removes input focus from active element
-            document.activeElement.blur()
-        }
-
         // Set crumbs
         let crumbs = this.cache.json.get('crumbs')
 
-        this.crumbs.colors = crumbs.colors
-        this.crumbs.flooring = crumbs.flooring
-        this.crumbs.furniture = crumbs.furniture
-        this.crumbs.igloos = crumbs.igloos
-        this.crumbs.items = crumbs.items
-        this.crumbs.penguin = crumbs.penguin
-        this.crumbs.quickKeys = crumbs.quick_keys
-        this.crumbs.safeMessages = crumbs.safe_messages
-        this.crumbs.secretFrames = crumbs.secret_frames
-        this.crumbs.strings = crumbs.strings
-        this.crumbs.worlds = crumbs.worlds
+        this.game.crumbs = {
+            ...this.game.crumbs,
+            ...crumbs
+        }
 
         // Start
         this.interface.hideLoading()
