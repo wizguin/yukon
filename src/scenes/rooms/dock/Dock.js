@@ -23,7 +23,8 @@ export default class Dock extends RoomScene {
         this.roomTriggers = {
             'beach': () => this.triggerRoom(400, 950, 430),
             'village': () => this.triggerRoom(200, 1300, 760),
-            'town': () => this.triggerRoom(100, 368, 640)
+            'town': () => this.triggerRoom(100, 368, 640),
+            'hydro': () => this.triggerGame(903)
         }
 
         /* END-USER-CTR-CODE */

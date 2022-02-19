@@ -5,7 +5,9 @@ const DefinePlugin = require('webpack').DefinePlugin
 
 let config = {
     mode: 'development',
-    entry: './src/Game.js',
+    entry: {
+        yukon: './src/Game.js'
+    },
     output: {
         filename: 'yukon.js',
         path: path.resolve(__dirname, 'assets/scripts/client')

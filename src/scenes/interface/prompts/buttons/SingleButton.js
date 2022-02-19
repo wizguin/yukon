@@ -25,7 +25,7 @@ export default class SingleButton extends BaseContainer {
         // button (components)
         const buttonButton = new Button(button);
         buttonButton.spriteName = "window-button";
-        buttonButton.callback = () => this.parentContainer.visible = false;
+        buttonButton.callback = () => this.onClick();
         buttonButton.activeFrame = false;
 
         /* START-USER-CTR-CODE */
@@ -33,6 +33,11 @@ export default class SingleButton extends BaseContainer {
     }
 
     /* START-USER-CODE */
+
+    onClick() {
+        this.parentContainer.callback()
+    }
+
     /* END-USER-CODE */
 }
 

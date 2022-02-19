@@ -17,7 +17,8 @@ export default class Cove extends RoomScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers =  {
-            'forest': () => this.triggerRoom(809, 1190, 750)
+            'forest': () => this.triggerRoom(809, 1190, 750),
+            'waves': () => this.triggerGame(912)
         }
 
         /* END-USER-CTR-CODE */

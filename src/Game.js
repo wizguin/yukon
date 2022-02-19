@@ -9,12 +9,32 @@ export default class Game extends Phaser.Game {
     constructor(config) {
         super(config)
 
-        console.log(`%cYukon ${VERSION}`, 'color: white; background: black; border-left: 8px solid #0280cd; padding: 0px 8px 0px 8px;')
+        console.log(`Yukon ${VERSION} https://github.com/wizguin/yukon`)
+
+        this.initContainers()
 
         this.crumbs = config.crumbs
         this.network = new Network(this)
 
         this.scene.add('Boot', Boot, true)
+    }
+
+    initContainers() {
+        let parent = document.querySelector(`#${this.config.parent} canvas`)
+
+        parent.onclick = () => {
+            // Removes input focus from active element
+            document.activeElement.blur()
+        }
+
+        // Styles
+        let style = {
+            borderRadius: '5px',
+            overflow: 'hidden'
+        }
+
+        Object.assign(parent.style, style)
+        Object.assign(this.domContainer.style, style)
     }
 
 }

@@ -47,7 +47,7 @@ export default class Safe extends FloatingMenu {
 
         // Map of message ids to message text, used by networking and hotkeys
         this.safeMessagesMap = {}
-        this.setSafeMessagesMap(this.crumbs.safeMessages)
+        this.setSafeMessagesMap(this.crumbs.safe_messages)
 
         this.subItems = []
 
@@ -59,7 +59,7 @@ export default class Safe extends FloatingMenu {
 
         this.timer
 
-        this.createSafeList(this.crumbs.safeMessages)
+        this.createSafeList(this.crumbs.safe_messages)
 
         /* END-USER-CTR-CODE */
     }

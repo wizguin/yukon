@@ -9,6 +9,7 @@ export default class ClientController {
         this.interface = world.interface
         this.network = world.network
         this.crumbs = world.crumbs
+
         this.getString = world.getString
 
         // Assign user attributes
@@ -21,6 +22,8 @@ export default class ClientController {
         this.joinTime = user.joinTime
 
         this.iglooOpen = false
+
+        this.lastRoom
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
@@ -36,8 +39,8 @@ export default class ClientController {
         this.throttleDelay = 100
 
         // Input
-        this.keys = this.crumbs.quickKeys.keys
-        this.emotes = this.crumbs.quickKeys.emotes
+        this.keys = this.crumbs.quick_keys.keys
+        this.emotes = this.crumbs.quick_keys.emotes
 
         this.keyActions = {
             'send_frame': (id) => this.sendFrame(id),
@@ -227,6 +230,14 @@ export default class ClientController {
 
         let random = PathEngine.getRandomPos(x, y, randomRange)
         this.network.send('join_room', { room: id, x: random.x, y: random.y })
+    }
+
+    sendJoinLastRoom() {
+        if (this.world.lastRoom) {
+            let room = this.crumbs.scenes.rooms[this.world.lastRoom]
+
+            this.sendJoinRoom(this.world.lastRoom, room.key, room.x, room.y, 80)
+        }
     }
 
     sendJoinIgloo(id) {

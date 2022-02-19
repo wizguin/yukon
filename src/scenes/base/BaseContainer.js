@@ -16,6 +16,10 @@ export default class BaseContainer extends Phaser.GameObjects.Container {
         return this.scene.world
     }
 
+    get ruffle() {
+        return this.scene.ruffle
+    }
+
     getString(...args) {
         return this.scene.getString(...args)
     }

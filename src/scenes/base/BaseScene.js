@@ -16,6 +16,10 @@ export default class BaseScene extends Phaser.Scene {
         return this.scene.get('WorldController')
     }
 
+    get ruffle() {
+        return this.scene.get('RuffleController')
+    }
+
     getString(...args) {
         return args.map(id => this.crumbs.strings[id.toLowerCase()]).join(' ')
     }

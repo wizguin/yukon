@@ -39,7 +39,7 @@ export default class Pet extends RoomScene {
         this.roomTriggers = {
             'plaza': () => this.triggerRoom(300, 384, 620),
             'adopt': null,
-            'roundup': null,
+            'roundup': () => this.triggerGame(902),
         }
         this.roomAnims = true
 

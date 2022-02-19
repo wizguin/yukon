@@ -3,7 +3,6 @@ import BaseScene from '@scenes/base/BaseScene'
 import ClientController from './penguin/ClientController'
 import PenguinFactory from './penguin/PenguinFactory'
 import RoomFactory from './room/RoomFactory'
-import IglooFactory from './room/IglooFactory'
 
 
 export default class WorldController extends BaseScene {
@@ -20,52 +19,36 @@ export default class WorldController extends BaseScene {
     create() {
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
-        this.iglooFactory = new IglooFactory(this)
+
+        this.scene.start('RuffleController')
     }
 
     setClient(args) {
         this.client = new ClientController(this, args)
     }
 
-    joinRoom(id, users = null) {
-        this.interface.showLoading(this.getString('loading', this.crumbs.scenes.rooms[id].key))
-
+    joinRoom(args) {
         if (!this.room) {
-            return this.createRoom(id, users)
+            return this.createRoom(args)
         }
 
-        this.room.events.once('shutdown', () => this.createRoom(id, users))
+        this.room.events.once('shutdown', () => this.createRoom(args))
         this.room.stop()
     }
 
-    createRoom(id, users) {
-        this.room = this.roomFactory.createRoom(id)
-        this.room.waiting = users
+    createRoom(args) {
+        this.room = this.roomFactory.create(args)
 
-        this.room.events.once('create', () => this.addPenguins())
-    }
+        if (args.users) {
+            this.lastRoom = this.room.id
 
-    joinIgloo(args) {
-        this.interface.showLoading(this.getString('loading', 'igloo'))
-
-        if (!this.room) {
-            return this.createIgloo(args)
+            this.room.waiting = args.users
+            this.room.events.once('create', () => this.addPenguins())
         }
-
-        this.room.events.once('shutdown', () => this.createIgloo(args))
-        this.room.stop()
-    }
-
-    createIgloo(args) {
-        this.room = this.iglooFactory.createIgloo(args)
-        this.room.waiting = args.users
-
-        this.room.events.once('create', () => this.addPenguins())
     }
 
     addPenguins() {
         this.room.penguins = this.penguinFactory.createPenguins(this.room.waiting, this.room)
-        this.room.isReady = true
     }
 
     addPenguin(user) {

@@ -24,7 +24,8 @@ export default class Lodge extends RoomScene {
 
         this.roomTriggers = {
             'attic': () => this.triggerRoom(221, 966, 560),
-            'village': () => this.triggerRoom(200, 940, 540)
+            'village': () => this.triggerRoom(200, 940, 540),
+            'fish': () => this.triggerGame(904)
         }
         this.music = '589'
 

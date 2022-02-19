@@ -29,7 +29,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "window-button",
-                    "Button.callback": "() => this.parentContainer.visible = false",
+                    "Button.callback": "() => this.onClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "prompt",

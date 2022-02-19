@@ -33,11 +33,6 @@ a {
     min-width: 500px;
     max-width: 1520px;
     margin: 0 auto;
-    overflow: hidden;
-}
-
-.game canvas {
-    border-radius: 5px;
 }
 
 .game input {

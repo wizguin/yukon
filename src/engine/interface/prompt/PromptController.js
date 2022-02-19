@@ -1,3 +1,4 @@
+import CoinPrompt from '@scenes/interface/prompts/CoinPrompt'
 import ErrorPrompt from './ErrorPrompt'
 import ItemPrompt from '@scenes/interface/prompts/ItemPrompt'
 import LoadingPrompt from '@scenes/interface/prompts/LoadingPrompt'
@@ -9,15 +10,22 @@ export default class PromptController {
     constructor(_interface) {
         this.interface = _interface
 
+        this.coin = new CoinPrompt(_interface, 760, 480)
         this.error = new ErrorPrompt(_interface, 760, 480)
         this.item = new ItemPrompt(_interface, 760, 480)
         this.loading = new LoadingPrompt(_interface, 760, 480)
         this.window = new WindowPrompt(_interface, 760, 480)
 
+        _interface.add.existing(this.coin)
         _interface.add.existing(this.error)
         _interface.add.existing(this.item)
         _interface.add.existing(this.loading)
         _interface.add.existing(this.window)
+    }
+
+    showCoin(coins = 0) {
+        this.coin.show(coins)
+        this.setCursor()
     }
 
     showError(text, buttonText = 'Okay', callback = () => this.error.visible = false) {
@@ -40,7 +48,7 @@ export default class PromptController {
         this.setCursor()
     }
 
-    showWindow(text, buttonLayout = 'single', callback = () => {}, noCallback = () => this.window.visible = false) {
+    showWindow(text, buttonLayout = 'single', callback = () => this.window.visible = false, noCallback = () => this.window.visible = false) {
         this.window.show(text, buttonLayout, callback, noCallback)
         this.setCursor()
     }

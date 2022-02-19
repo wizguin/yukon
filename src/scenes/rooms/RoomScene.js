@@ -46,6 +46,8 @@ export default class RoomScene extends BaseScene {
     }
 
     preload() {
+        this.events.once('create', () => this.isReady = true)
+
         if (this.music && !this.cache.audio.exists(this.music)) {
             this.load.audio(this.music, `assets/media/music/${this.music}.mp3`)
         }
@@ -193,6 +195,16 @@ export default class RoomScene extends BaseScene {
         let room = this.crumbs.scenes.rooms[id]
 
         this.world.client.sendJoinRoom(id, room.key, x, y)
+    }
+
+    triggerGame(id) {
+        let text = 'Would you like to play'
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.world.client.sendJoinRoom(id, '')
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     triggerWaddle(id) {
