@@ -1,0 +1,33 @@
+<!-- This is a template file used by webpack -->
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Yukon</title>
+
+        <link rel="stylesheet" href="assets/styles/styles.css?v=<%= htmlWebpackPlugin.options.templateParameters.version %>" type="text/css">
+
+        <!-- Fonts -->
+        <script src="assets/scripts/lib/webfont.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+
+        <!-- Phaser -->
+        <script src="assets/scripts/lib/phaser.min.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+        <script src="assets/scripts/lib/nineslice.min.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+        <script src="assets/scripts/lib/phaser-cachebuster.min.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+
+        <!-- Ruffle -->
+        <script src="assets/scripts/lib/ruffle/ruffle.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+
+        <!-- Client bundle -->
+        <script src="assets/scripts/client/yukon.min.js?v=<%= htmlWebpackPlugin.options.templateParameters.version %>"></script>
+    </head>
+
+    <body>
+        <div id="game" class="game"></div>
+    </body>
+
+</html>

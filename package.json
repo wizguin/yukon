@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.4",
+    "html-webpack-plugin": "^5.5.0",
     "javascript-obfuscator": "^3.0.0",
     "phasereditor2d-launcher": "^3.32.0",
     "socket.io-client": "^4.4.1",
