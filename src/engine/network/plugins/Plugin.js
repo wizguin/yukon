@@ -22,4 +22,8 @@ export default class Plugin {
         return this.world.getString(...args)
     }
 
+    getFormatString(id, ...args) {
+        return this.world.getFormatString(id, ...args)
+    }
+
 }
