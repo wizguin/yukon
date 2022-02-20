@@ -311,7 +311,7 @@ export default class FurnitureSprite extends Phaser.GameObjects.Sprite {
                 start: 1,
                 end: num
             }),
-            frameRate: this.crumb.fps,
+            frameRate: 24,
             repeat: -1
         })
     }
