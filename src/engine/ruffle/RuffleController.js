@@ -92,6 +92,10 @@ export default class RuffleController extends BaseScene {
         return `${this.basePath}${this.path}`
     }
 
+    getFrameColor() {
+        return this.crumbs.frameColor
+    }
+
     getMyPlayer() {
         // todo
     }

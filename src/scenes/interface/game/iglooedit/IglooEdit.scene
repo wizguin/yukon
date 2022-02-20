@@ -21,7 +21,7 @@
             "label": "defaultControls",
             "scope": "CLASS",
             "components": [],
-            "x": 1430,
+            "x": 1426,
             "y": 758,
             "list": [
                 {
@@ -40,7 +40,7 @@
                         "key": "iglooedit",
                         "frame": "button/edit"
                     },
-                    "y": 137,
+                    "y": 126,
                     "originX": 0.6422018348623854
                 },
                 {
@@ -71,9 +71,8 @@
             "label": "controls",
             "scope": "CLASS",
             "components": [],
-            "x": 167,
-            "y": 368,
-            "visible": false,
+            "x": 162,
+            "y": 359,
             "list": [
                 {
                     "type": "Image",
@@ -84,6 +83,7 @@
                         "key": "iglooedit",
                         "frame": "note"
                     },
+                    "x": 12,
                     "y": 504
                 },
                 {
@@ -180,8 +180,8 @@
             "label": "furniture",
             "scope": "CLASS",
             "components": [],
-            "x": 1241,
-            "y": 303,
+            "x": 1238,
+            "y": 294,
             "visible": false,
             "list": [
                 {

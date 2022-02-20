@@ -40,8 +40,11 @@ export default class Preload extends BaseScene {
 
         // Start
         this.interface.hideLoading()
+
         this.scene.start('InterfaceController')
         this.scene.start('Start')
+
+        this.interface.bringToTop()
     }
 
     onProgress(progress) {

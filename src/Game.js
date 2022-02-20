@@ -29,7 +29,6 @@ export default class Game extends Phaser.Game {
 
         // Styles
         let style = {
-            borderRadius: '5px',
             overflow: 'hidden'
         }
 

@@ -14,6 +14,12 @@ export default class InterfaceController extends BaseScene {
         // External interface scenes
         this.interfaces = this.crumbs.scenes.interfaces
         this.loadedScenes = []
+
+        // Draw frame
+        let graphics = this.add.graphics()
+
+        graphics.lineStyle(16, this.crumbs.frameColor, 1)
+        graphics.strokeRoundedRect(0, 0, 1520, 960, 15)
     }
 
     get loading() {

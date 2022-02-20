@@ -3,7 +3,6 @@
     "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
-        "snapEnabled": true,
         "snapHeight": 57,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
@@ -35,13 +34,14 @@
                         "key": "main",
                         "frame": "chatlog/bg"
                     },
-                    "y": -440
+                    "y": -442
                 },
                 {
                     "type": "Container",
                     "id": "7db0ab5b-69c4-4ffe-b23f-e695c697d44e",
                     "label": "tab",
                     "components": [],
+                    "y": -2,
                     "list": [
                         {
                             "type": "Image",

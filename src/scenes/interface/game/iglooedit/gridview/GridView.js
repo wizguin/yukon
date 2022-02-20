@@ -27,11 +27,11 @@ export default class GridView extends BaseContainer {
         this.add(block);
 
         // grey_button
-        const grey_button = scene.add.image(1472, 40, "main", "grey-button");
+        const grey_button = scene.add.image(1472, 46, "main", "grey-button");
         this.add(grey_button);
 
         // grey_x
-        const grey_x = scene.add.image(1472, 38, "main", "grey-x");
+        const grey_x = scene.add.image(1472, 44, "main", "grey-x");
         this.add(grey_x);
 
         // container

@@ -37,10 +37,10 @@ export default class IglooEdit extends BaseScene {
     _create() {
 
         // defaultControls
-        const defaultControls = this.add.container(1430, 758);
+        const defaultControls = this.add.container(1426, 758);
 
         // button_edit
-        const button_edit = this.add.image(0, 137, "iglooedit", "button/edit");
+        const button_edit = this.add.image(0, 126, "iglooedit", "button/edit");
         button_edit.setOrigin(0.6422018348623854, 0.5);
         defaultControls.add(button_edit);
 
@@ -50,11 +50,10 @@ export default class IglooEdit extends BaseScene {
         defaultControls.add(button_lock);
 
         // controls
-        const controls = this.add.container(167, 368);
-        controls.visible = false;
+        const controls = this.add.container(162, 359);
 
         // note
-        const note = this.add.image(0, 504, "iglooedit", "note");
+        const note = this.add.image(12, 504, "iglooedit", "note");
         controls.add(note);
 
         // button_save
@@ -82,7 +81,7 @@ export default class IglooEdit extends BaseScene {
         controls.add(button_music);
 
         // furniture
-        const furniture = this.add.container(1241, 303);
+        const furniture = this.add.container(1238, 294);
         furniture.visible = false;
 
         // list

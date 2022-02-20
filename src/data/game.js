@@ -45,7 +45,9 @@ const game = {
             igloos: igloos,
             interfaces: interfaces,
             rooms: rooms
-        }
+        },
+
+        frameColor: 0x2e3440
     }
 }
 

@@ -48,7 +48,7 @@
                         "frame": "grey-button"
                     },
                     "x": 1472,
-                    "y": 40
+                    "y": 46
                 },
                 {
                     "type": "Image",
@@ -60,7 +60,7 @@
                         "frame": "grey-x"
                     },
                     "x": 1472,
-                    "y": 38
+                    "y": 44
                 },
                 {
                     "type": "Container",

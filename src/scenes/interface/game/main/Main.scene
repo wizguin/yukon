@@ -28,7 +28,7 @@
                 "frame": "dock"
             },
             "x": 760,
-            "y": 924
+            "y": 916
         },
         {
             "type": "Image",
@@ -42,7 +42,7 @@
                 "frame": "chat-box"
             },
             "x": 748,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -60,7 +60,7 @@
                 "frame": "blue-button"
             },
             "x": 246,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -72,7 +72,7 @@
                 "frame": "chat-icon"
             },
             "x": 246,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -90,7 +90,7 @@
                 "frame": "blue-button"
             },
             "x": 306,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -102,7 +102,7 @@
                 "frame": "emote-icon"
             },
             "x": 306,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -120,7 +120,7 @@
                 "frame": "blue-button"
             },
             "x": 366,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -132,7 +132,7 @@
                 "frame": "action-icon"
             },
             "x": 366,
-            "y": 927
+            "y": 919
         },
         {
             "type": "Image",
@@ -150,7 +150,7 @@
                 "frame": "blue-button"
             },
             "x": 426,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -162,7 +162,7 @@
                 "frame": "snowball-icon"
             },
             "x": 426,
-            "y": 930
+            "y": 922
         },
         {
             "type": "Image",
@@ -180,7 +180,7 @@
                 "frame": "blue-button"
             },
             "x": 1026,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -192,7 +192,7 @@
                 "frame": "chat-icon"
             },
             "x": 1026,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -210,7 +210,7 @@
                 "frame": "blue-button"
             },
             "x": 1086,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -222,7 +222,7 @@
                 "frame": "badge-member"
             },
             "x": 1086,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -240,7 +240,7 @@
                 "frame": "blue-button"
             },
             "x": 1146,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -252,7 +252,7 @@
                 "frame": "buddies-icon"
             },
             "x": 1146,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -270,7 +270,7 @@
                 "frame": "blue-button"
             },
             "x": 1206,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -282,7 +282,7 @@
                 "frame": "igloo-icon"
             },
             "x": 1206,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Image",
@@ -300,7 +300,7 @@
                 "frame": "blue-button"
             },
             "x": 1266,
-            "y": 931
+            "y": 923
         },
         {
             "type": "Image",
@@ -312,7 +312,7 @@
                 "frame": "help-icon"
             },
             "x": 1266,
-            "y": 929
+            "y": 921
         },
         {
             "type": "Container",
@@ -321,7 +321,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 1155,
-            "y": 857,
+            "y": 849,
             "visible": false,
             "list": [
                 {
@@ -364,7 +364,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 2,
+            "y": 12,
             "nestedPrefabs": []
         },
         {
@@ -397,8 +397,8 @@
                 "key": "main",
                 "frame": "map-button"
             },
-            "x": 90,
-            "y": 888
+            "x": 96,
+            "y": 880
         },
         {
             "type": "Image",
@@ -415,8 +415,8 @@
                 "key": "main",
                 "frame": "buddy-button"
             },
-            "x": 270,
-            "y": 62,
+            "x": 276,
+            "y": 71,
             "visible": false
         },
         {
@@ -432,8 +432,8 @@
                 "key": "main",
                 "frame": "mail-button"
             },
-            "x": 170,
-            "y": 49
+            "x": 176,
+            "y": 58
         },
         {
             "type": "Image",
@@ -448,8 +448,8 @@
                 "key": "main",
                 "frame": "news-button"
             },
-            "x": 70,
-            "y": 61
+            "x": 76,
+            "y": 70
         },
         {
             "type": "Image",
@@ -465,8 +465,8 @@
                 "key": "main",
                 "frame": "mod/button"
             },
-            "x": 1434,
-            "y": 69
+            "x": 1426,
+            "y": 78
         },
         {
             "type": "Sprite",
@@ -478,8 +478,8 @@
                 "key": "main",
                 "frame": "mod/m"
             },
-            "x": 1434,
-            "y": 69
+            "x": 1426,
+            "y": 78
         },
         {
             "type": "Layer",
@@ -550,7 +550,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 366,
-            "y": 872,
+            "y": 864,
             "visible": false,
             "nestedPrefabs": []
         },
@@ -566,7 +566,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 306,
-            "y": 872,
+            "y": 864,
             "visible": false,
             "nestedPrefabs": []
         },
@@ -582,7 +582,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 246,
-            "y": 933,
+            "y": 925,
             "visible": false,
             "nestedPrefabs": []
         },

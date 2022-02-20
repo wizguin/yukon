@@ -19,11 +19,11 @@ export default class ChatLog extends BaseContainer {
 
 
         // bg
-        const bg = scene.add.image(0, -440, "main", "chatlog/bg");
+        const bg = scene.add.image(0, -442, "main", "chatlog/bg");
         this.add(bg);
 
         // tab
-        const tab = scene.add.container(0, 0);
+        const tab = scene.add.container(0, -2);
         this.add(tab);
 
         // handle
@@ -47,6 +47,8 @@ export default class ChatLog extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        this.defaultY = this.y
+
         this.textStyle = {
             fontFamily: 'Burbank Small',
             fontSize: 24,
@@ -56,6 +58,7 @@ export default class ChatLog extends BaseContainer {
         }
 
         this.messages = []
+        this.numContainers = 19
         this.containers = this.createContainers()
 
         this.open = false
@@ -81,9 +84,9 @@ export default class ChatLog extends BaseContainer {
 
     createContainers() {
         let containers = []
-        let y = -17
+        let y = -15
 
-        for (let i = 1; i <= 20; i++) {
+        for (let i = 1; i <= this.numContainers; i++) {
             y -= 40
 
             let container = this.scene.add.image(0, y, 'main', 'chatlog/message')
@@ -104,7 +107,7 @@ export default class ChatLog extends BaseContainer {
     }
 
     addMessage(id, username, message) {
-        if (this.messages.length == 20) this.messages.pop()
+        if (this.messages.length == this.numContainers) this.messages.pop()
 
         this.messages.unshift({ id: id, message: `${username}: ${message}` })
         this.updateMessages()
@@ -143,7 +146,7 @@ export default class ChatLog extends BaseContainer {
         if (this.dragging) return
 
         if (this.open) {
-            this.y = 2
+            this.y = this.defaultY
         } else {
             this.y = 220
         }
@@ -161,7 +164,7 @@ export default class ChatLog extends BaseContainer {
     onTabDrag(y) {
         // Keep log inside boundary
         if (y > 840) y = 840
-        if (y < 2) y = 2
+        if (y < this.defaultY) y = this.defaultY
         this.y = Math.round(y)
 
         // If log passes 222px then set open state to true
