@@ -75,7 +75,7 @@ export default class RuffleController extends BaseScene {
         this.game.domContainer.style.zIndex = 'auto'
 
         setTimeout(() => {
-            this.player.remove()
+            this.player.pause()
         }, 100)
 
         this.container.visible = false
