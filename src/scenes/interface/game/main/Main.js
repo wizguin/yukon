@@ -382,7 +382,7 @@ export default class Main extends BaseScene {
             color: '#fff'
         }
 
-        this.chatInput = new TextInput(this, 745, 931, 'text', style, () => this.onChatSend(), 48)
+        this.chatInput = new TextInput(this, 745, 923, 'text', style, () => this.onChatSend(), 48)
         this.add.existing(this.chatInput)
 
         // Input

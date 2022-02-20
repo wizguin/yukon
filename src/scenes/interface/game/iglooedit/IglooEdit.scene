@@ -73,6 +73,7 @@
             "components": [],
             "x": 162,
             "y": 359,
+            "visible": false,
             "list": [
                 {
                     "type": "Image",

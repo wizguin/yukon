@@ -51,6 +51,7 @@ export default class IglooEdit extends BaseScene {
 
         // controls
         const controls = this.add.container(162, 359);
+        controls.visible = false;
 
         // note
         const note = this.add.image(12, 504, "iglooedit", "note");
