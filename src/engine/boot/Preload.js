@@ -12,7 +12,7 @@ import IglooEdit from '@scenes/interface/game/iglooedit/IglooEdit'
 export default class Preload extends BaseScene {
 
     preload() {
-        this.load.cacheBuster = VERSION
+        this.load.cacheBuster = TIMESTAMP
 
         this.load.on('progress', this.onProgress, this)
 
