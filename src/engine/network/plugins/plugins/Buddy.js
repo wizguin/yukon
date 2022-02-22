@@ -36,7 +36,12 @@ export default class Buddy extends Plugin {
     }
 
     buddyFind(args) {
-        this.interface.prompt.showWindow(args.find, 'single')
+        let username = this.interface.main.playerCard.username.text
+        let id = this.interface.main.playerCard.id
+
+        let name = this.getRoomName(args, id)
+
+        this.interface.prompt.showWindow(`${username} ${this.getString(`${name}_find`)}`, 'single')
     }
 
     buddyOnline(args) {
@@ -58,6 +63,28 @@ export default class Buddy extends Plugin {
             buddy.online = false
             this.interface.updateBuddies()
         }
+    }
+
+    getRoomName(args, userId) {
+        if (!args.igloo && !args.game) {
+            return this.crumbs.scenes.rooms[args.find].key
+        }
+
+        if (args.game) {
+            return this.crumbs.games[args.find].key
+        }
+
+        let iglooUserId = args.find - this.crumbs.iglooIdOffset
+
+        if (iglooUserId == userId) {
+            return 'igloo_theirs'
+        }
+
+        if (iglooUserId == this.world.client.id) {
+            return 'igloo_yours'
+        }
+
+        return 'igloo'
     }
 
 }

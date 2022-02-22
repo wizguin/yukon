@@ -47,7 +47,8 @@ const game = {
             rooms: rooms
         },
 
-        frameColor: 0x2e3440
+        frameColor: 0x2e3440,
+        iglooIdOffset: 2000
     }
 }
 
