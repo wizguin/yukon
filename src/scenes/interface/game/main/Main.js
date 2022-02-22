@@ -434,8 +434,8 @@ export default class Main extends BaseScene {
 
     onSnowballClick() {
         this.crosshair.visible = true
-        this.crosshair.x = this.input.x
-        this.crosshair.y = this.input.y
+        this.crosshair.x = Math.round(this.input.x)
+        this.crosshair.y = Math.round(this.input.y)
     }
 
     onCrosshairMove(pointer) {

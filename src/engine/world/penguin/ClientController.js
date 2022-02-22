@@ -219,7 +219,7 @@ export default class ClientController {
         this.interface.main.onSnowballClick()
     }
 
-    sendJoinRoom(id, name, x, y, randomRange = 40) {
+    sendJoinRoom(id, name, x = 0, y = 0, randomRange = 40) {
         if (this.activeSeat) {
             return this.interface.prompt.showError('Please exit your game before leaving the room')
         }
