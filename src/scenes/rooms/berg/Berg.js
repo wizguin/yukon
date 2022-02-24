@@ -45,7 +45,7 @@ export default class Berg extends RoomScene {
         aquaSimpleButton.pixelPerfect = true;
         new MoveTo(aqua);
         const aquaShowHint = new ShowHint(aqua);
-        aquaShowHint.text = "Aqua Grabber";
+        aquaShowHint.text = "sub_hint";
 
         this.aqua = aqua;
 

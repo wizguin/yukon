@@ -34,9 +34,14 @@ export default class ShowHint {
     }
 
     onOver() {
-        if (this.text) {
-            this.hint.showHint(this.gameObject, this.text)
+        if (!this.text) {
+            return
         }
+
+        this.hint.showHint(
+            this.gameObject,
+            this.gameObject.scene.getString(this.text) || this.text
+        )
     }
 
     onOut() {

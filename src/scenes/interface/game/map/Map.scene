@@ -59,7 +59,7 @@
                     "Button.spriteName": "dojo",
                     "Button.callback": "() => this.onRoomClick(321)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Dojo Courtyard",
+                    "ShowHint.text": "dojoext_hint",
                     "texture": {
                         "key": "map",
                         "frame": "dojo"
@@ -105,7 +105,7 @@
                     "Button.spriteName": "mtn",
                     "Button.callback": "() => this.onRoomClick(230)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Ski Hill",
+                    "ShowHint.text": "mtn_hint",
                     "texture": {
                         "key": "map",
                         "frame": "mtn"
@@ -124,7 +124,7 @@
                     "Button.spriteName": "village",
                     "Button.callback": "() => this.onRoomClick(200)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Ski Village",
+                    "ShowHint.text": "village_hint",
                     "texture": {
                         "key": "map",
                         "frame": "village"
@@ -145,7 +145,7 @@
                     "Button.spriteName": "beach",
                     "Button.callback": "() => this.onRoomClick(400)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "The Beach",
+                    "ShowHint.text": "beach_hint",
                     "texture": {
                         "key": "map",
                         "frame": "beach"
@@ -164,7 +164,7 @@
                     "Button.spriteName": "dock",
                     "Button.callback": "() => this.onRoomClick(800)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "The Dock",
+                    "ShowHint.text": "dock_hint",
                     "texture": {
                         "key": "map",
                         "frame": "dock"
@@ -184,7 +184,7 @@
                     "Button.spriteName": "town",
                     "Button.callback": "() => this.onRoomClick(100)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Town",
+                    "ShowHint.text": "town_hint",
                     "texture": {
                         "key": "map",
                         "frame": "town"
@@ -203,7 +203,7 @@
                     "Button.spriteName": "forts",
                     "Button.callback": "() => this.onRoomClick(801)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Snow Forts",
+                    "ShowHint.text": "forts_hint",
                     "texture": {
                         "key": "map",
                         "frame": "forts"
@@ -224,7 +224,7 @@
                     "Button.spriteName": "igloo",
                     "Button.callback": "() => this.iglooMap.show()",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Member Igloos",
+                    "ShowHint.text": "igloos_hint",
                     "texture": {
                         "key": "map",
                         "frame": "igloo"
@@ -243,7 +243,7 @@
                     "Button.spriteName": "plaza",
                     "Button.callback": "() => this.onRoomClick(300)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "The Plaza",
+                    "ShowHint.text": "plaza_hint",
                     "texture": {
                         "key": "map",
                         "frame": "plaza"
@@ -263,7 +263,7 @@
                     "Button.spriteName": "rink",
                     "Button.callback": "() => this.onRoomClick(802)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Stadium",
+                    "ShowHint.text": "rink_hint",
                     "texture": {
                         "key": "map",
                         "frame": "rink"
@@ -283,7 +283,7 @@
                     "Button.spriteName": "forest",
                     "Button.callback": "() => this.onRoomClick(809)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Forest",
+                    "ShowHint.text": "forest_hint",
                     "texture": {
                         "key": "map",
                         "frame": "forest"
@@ -304,7 +304,7 @@
                     "Button.spriteName": "cove",
                     "Button.callback": "() => this.onRoomClick(810)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Cove",
+                    "ShowHint.text": "cove_hint",
                     "texture": {
                         "key": "map",
                         "frame": "cove"
@@ -324,7 +324,7 @@
                     "Button.spriteName": "mine",
                     "Button.callback": "() => this.onRoomClick(807)",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Mine Shack",
+                    "ShowHint.text": "shack_hint",
                     "texture": {
                         "key": "map",
                         "frame": "mine"

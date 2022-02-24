@@ -199,7 +199,7 @@ export default class Pet extends RoomScene {
         employeesMoveTo.x = 1328;
         employeesMoveTo.y = 572;
         const employeesShowHint = new ShowHint(employees);
-        employeesShowHint.text = "Puffle Roundup";
+        employeesShowHint.text = "roundup_hint";
 
         // door (components)
         const doorButton = new Button(door);

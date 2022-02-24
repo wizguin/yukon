@@ -132,7 +132,7 @@ export default class Map extends BaseContainer {
         dojoButton.callback = () => this.onRoomClick(321);
         dojoButton.activeFrame = false;
         const dojoShowHint = new ShowHint(dojo);
-        dojoShowHint.text = "Dojo Courtyard";
+        dojoShowHint.text = "dojoext_hint";
 
         // mtn (components)
         const mtnButton = new Button(mtn);
@@ -140,7 +140,7 @@ export default class Map extends BaseContainer {
         mtnButton.callback = () => this.onRoomClick(230);
         mtnButton.activeFrame = false;
         const mtnShowHint = new ShowHint(mtn);
-        mtnShowHint.text = "Ski Hill";
+        mtnShowHint.text = "mtn_hint";
 
         // village (components)
         const villageButton = new Button(village);
@@ -148,7 +148,7 @@ export default class Map extends BaseContainer {
         villageButton.callback = () => this.onRoomClick(200);
         villageButton.activeFrame = false;
         const villageShowHint = new ShowHint(village);
-        villageShowHint.text = "Ski Village";
+        villageShowHint.text = "village_hint";
 
         // beach (components)
         const beachButton = new Button(beach);
@@ -156,7 +156,7 @@ export default class Map extends BaseContainer {
         beachButton.callback = () => this.onRoomClick(400);
         beachButton.activeFrame = false;
         const beachShowHint = new ShowHint(beach);
-        beachShowHint.text = "The Beach";
+        beachShowHint.text = "beach_hint";
 
         // dock (components)
         const dockButton = new Button(dock);
@@ -164,7 +164,7 @@ export default class Map extends BaseContainer {
         dockButton.callback = () => this.onRoomClick(800);
         dockButton.activeFrame = false;
         const dockShowHint = new ShowHint(dock);
-        dockShowHint.text = "The Dock";
+        dockShowHint.text = "dock_hint";
 
         // town (components)
         const townButton = new Button(town);
@@ -172,7 +172,7 @@ export default class Map extends BaseContainer {
         townButton.callback = () => this.onRoomClick(100);
         townButton.activeFrame = false;
         const townShowHint = new ShowHint(town);
-        townShowHint.text = "Town";
+        townShowHint.text = "town_hint";
 
         // forts (components)
         const fortsButton = new Button(forts);
@@ -180,7 +180,7 @@ export default class Map extends BaseContainer {
         fortsButton.callback = () => this.onRoomClick(801);
         fortsButton.activeFrame = false;
         const fortsShowHint = new ShowHint(forts);
-        fortsShowHint.text = "Snow Forts";
+        fortsShowHint.text = "forts_hint";
 
         // igloo (components)
         const iglooButton = new Button(igloo);
@@ -188,7 +188,7 @@ export default class Map extends BaseContainer {
         iglooButton.callback = () => this.iglooMap.show();
         iglooButton.activeFrame = false;
         const iglooShowHint = new ShowHint(igloo);
-        iglooShowHint.text = "Member Igloos";
+        iglooShowHint.text = "igloos_hint";
 
         // plaza (components)
         const plazaButton = new Button(plaza);
@@ -196,7 +196,7 @@ export default class Map extends BaseContainer {
         plazaButton.callback = () => this.onRoomClick(300);
         plazaButton.activeFrame = false;
         const plazaShowHint = new ShowHint(plaza);
-        plazaShowHint.text = "The Plaza";
+        plazaShowHint.text = "plaza_hint";
 
         // rink (components)
         const rinkButton = new Button(rink);
@@ -204,7 +204,7 @@ export default class Map extends BaseContainer {
         rinkButton.callback = () => this.onRoomClick(802);
         rinkButton.activeFrame = false;
         const rinkShowHint = new ShowHint(rink);
-        rinkShowHint.text = "Stadium";
+        rinkShowHint.text = "rink_hint";
 
         // forest (components)
         const forestButton = new Button(forest);
@@ -212,7 +212,7 @@ export default class Map extends BaseContainer {
         forestButton.callback = () => this.onRoomClick(809);
         forestButton.activeFrame = false;
         const forestShowHint = new ShowHint(forest);
-        forestShowHint.text = "Forest";
+        forestShowHint.text = "forest_hint";
 
         // cove (components)
         const coveButton = new Button(cove);
@@ -220,7 +220,7 @@ export default class Map extends BaseContainer {
         coveButton.callback = () => this.onRoomClick(810);
         coveButton.activeFrame = false;
         const coveShowHint = new ShowHint(cove);
-        coveShowHint.text = "Cove";
+        coveShowHint.text = "cove_hint";
 
         // mine (components)
         const mineButton = new Button(mine);
@@ -228,7 +228,7 @@ export default class Map extends BaseContainer {
         mineButton.callback = () => this.onRoomClick(807);
         mineButton.activeFrame = false;
         const mineShowHint = new ShowHint(mine);
-        mineShowHint.text = "Mine Shack";
+        mineShowHint.text = "shack_hint";
 
         // berg (components)
         const bergButton = new Button(berg);

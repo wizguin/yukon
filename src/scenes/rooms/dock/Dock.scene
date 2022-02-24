@@ -56,7 +56,7 @@
             "Button.spriteName": "boat",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Hydro Hopper",
+            "ShowHint.text": "hydro_hint",
             "texture": {
                 "key": "dock",
                 "frame": "boat"

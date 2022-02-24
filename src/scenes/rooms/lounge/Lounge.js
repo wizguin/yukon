@@ -115,7 +115,7 @@ export default class Lounge extends RoomScene {
         astroMoveTo.x = 940;
         astroMoveTo.y = 520;
         const astroShowHint = new ShowHint(astro);
-        astroShowHint.text = "Astro Barrier";
+        astroShowHint.text = "astro_hint";
 
         // ice (components)
         const iceButton = new Button(ice);
@@ -126,7 +126,7 @@ export default class Lounge extends RoomScene {
         iceMoveTo.x = 672;
         iceMoveTo.y = 512;
         const iceShowHint = new ShowHint(ice);
-        iceShowHint.text = "Thin Ice";
+        iceShowHint.text = "thinice_hint";
 
         // chair_1 (components)
         const chair_1SimpleButton = new SimpleButton(chair_1);

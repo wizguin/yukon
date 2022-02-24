@@ -109,7 +109,7 @@
             "Button.activeFrame": false,
             "MoveTo.x": 960,
             "MoveTo.y": 460,
-            "ShowHint.text": "Go Fishing",
+            "ShowHint.text": "fish_hint",
             "texture": {
                 "key": "lodge",
                 "frame": "fishing_door"
@@ -196,7 +196,7 @@
             ],
             "Button.spriteName": "table3",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "lodge",
                 "frame": "table3"
@@ -216,7 +216,7 @@
             ],
             "Button.spriteName": "table2",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "lodge",
                 "frame": "table2"
@@ -236,7 +236,7 @@
             ],
             "Button.spriteName": "table4",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "lodge",
                 "frame": "table4"

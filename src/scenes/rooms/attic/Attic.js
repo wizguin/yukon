@@ -86,7 +86,7 @@ export default class Attic extends RoomScene {
         table2Button.activeFrame = false;
         new MoveTo(table2);
         const table2ShowHint = new ShowHint(table2);
-        table2ShowHint.text = "Play Find Four";
+        table2ShowHint.text = "four_hint";
 
         // table1 (components)
         const table1Button = new Button(table1);
@@ -94,7 +94,7 @@ export default class Attic extends RoomScene {
         table1Button.activeFrame = false;
         new MoveTo(table1);
         const table1ShowHint = new ShowHint(table1);
-        table1ShowHint.text = "Play Find Four";
+        table1ShowHint.text = "four_hint";
 
         // table3 (components)
         const table3Button = new Button(table3);
@@ -102,7 +102,7 @@ export default class Attic extends RoomScene {
         table3Button.activeFrame = false;
         new MoveTo(table3);
         const table3ShowHint = new ShowHint(table3);
-        table3ShowHint.text = "Play Find Four";
+        table3ShowHint.text = "four_hint";
 
         // table1_1 (components)
         const table1_1Button = new Button(table1_1);
@@ -110,7 +110,7 @@ export default class Attic extends RoomScene {
         table1_1Button.activeFrame = false;
         new MoveTo(table1_1);
         const table1_1ShowHint = new ShowHint(table1_1);
-        table1_1ShowHint.text = "Play Find Four";
+        table1_1ShowHint.text = "four_hint";
 
         // table4 (components)
         const table4Button = new Button(table4);
@@ -118,7 +118,7 @@ export default class Attic extends RoomScene {
         table4Button.activeFrame = false;
         new MoveTo(table4);
         const table4ShowHint = new ShowHint(table4);
-        table4ShowHint.text = "Play Find Four";
+        table4ShowHint.text = "four_hint";
 
         this.sort = sort;
 

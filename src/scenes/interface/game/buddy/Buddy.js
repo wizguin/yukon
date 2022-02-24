@@ -151,21 +151,21 @@ export default class Buddy extends BaseContainer {
         buddy_buttonButton.spriteName = "blue-button";
         buddy_buttonButton.callback = () => this.switchList('buddies', 'Your Friends');
         const buddy_buttonShowHint = new ShowHint(buddy_button);
-        buddy_buttonShowHint.text = "Show Buddies";
+        buddy_buttonShowHint.text = "buddy_hint";
 
         // profile_button (components)
         const profile_buttonButton = new Button(profile_button);
         profile_buttonButton.spriteName = "blue-button";
         profile_buttonButton.callback = () => this.switchList('room', 'Users in Room');
         const profile_buttonShowHint = new ShowHint(profile_button);
-        profile_buttonShowHint.text = "Show Online";
+        profile_buttonShowHint.text = "online_hint";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
         igloo_buttonButton.callback = () => this.switchList('ignores', 'Ignore List');
         const igloo_buttonShowHint = new ShowHint(igloo_button);
-        igloo_buttonShowHint.text = "Show Ignored";
+        igloo_buttonShowHint.text = "ignore_hint";
 
         this.text = text;
         this.total = total;

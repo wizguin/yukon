@@ -264,7 +264,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.switchList('buddies', 'Your Friends')",
-                    "ShowHint.text": "Show Buddies",
+                    "ShowHint.text": "buddy_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -282,7 +282,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.switchList('room', 'Users in Room')",
-                    "ShowHint.text": "Show Online",
+                    "ShowHint.text": "online_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -299,7 +299,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.switchList('ignores', 'Ignore List')",
-                    "ShowHint.text": "Show Ignored",
+                    "ShowHint.text": "ignore_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"

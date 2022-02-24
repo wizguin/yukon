@@ -234,63 +234,63 @@ export default class Main extends BaseScene {
         chat_buttonButton.spriteName = "blue-button";
         chat_buttonButton.callback = () => this.safe.visible = true;
         const chat_buttonShowHint = new ShowHint(chat_button);
-        chat_buttonShowHint.text = "Messages";
+        chat_buttonShowHint.text = "safe_hint";
 
         // emote_button (components)
         const emote_buttonButton = new Button(emote_button);
         emote_buttonButton.spriteName = "blue-button";
         emote_buttonButton.callback = () => this.emotesMenu.visible = true;
         const emote_buttonShowHint = new ShowHint(emote_button);
-        emote_buttonShowHint.text = "Emotes";
+        emote_buttonShowHint.text = "emote_hint";
 
         // action_button (components)
         const action_buttonButton = new Button(action_button);
         action_buttonButton.spriteName = "blue-button";
         action_buttonButton.callback = () => this.actionsMenu.visible = true;
         const action_buttonShowHint = new ShowHint(action_button);
-        action_buttonShowHint.text = "Actions";
+        action_buttonShowHint.text = "action_hint";
 
         // snowball_button (components)
         const snowball_buttonButton = new Button(snowball_button);
         snowball_buttonButton.spriteName = "blue-button";
         snowball_buttonButton.callback = () => this.onSnowballClick();
         const snowball_buttonShowHint = new ShowHint(snowball_button);
-        snowball_buttonShowHint.text = "Snowball";
+        snowball_buttonShowHint.text = "throw_hint";
 
         // chat_send_button (components)
         const chat_send_buttonButton = new Button(chat_send_button);
         chat_send_buttonButton.spriteName = "blue-button";
         chat_send_buttonButton.callback = () => this.onChatSend();
         const chat_send_buttonShowHint = new ShowHint(chat_send_button);
-        chat_send_buttonShowHint.text = "Send";
+        chat_send_buttonShowHint.text = "send_hint";
 
         // player_button (components)
         const player_buttonButton = new Button(player_button);
         player_buttonButton.spriteName = "blue-button";
         player_buttonButton.callback = () => this.onPlayerClick();
         const player_buttonShowHint = new ShowHint(player_button);
-        player_buttonShowHint.text = "Edit Player";
+        player_buttonShowHint.text = "player_hint";
 
         // buddies_button (components)
         const buddies_buttonButton = new Button(buddies_button);
         buddies_buttonButton.spriteName = "blue-button";
         buddies_buttonButton.callback = () => this.onBuddyClick();
         const buddies_buttonShowHint = new ShowHint(buddies_button);
-        buddies_buttonShowHint.text = "Show Buddies";
+        buddies_buttonShowHint.text = "buddy_hint";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
         igloo_buttonButton.callback = () => this.onIglooClick();
         const igloo_buttonShowHint = new ShowHint(igloo_button);
-        igloo_buttonShowHint.text = "Your Home";
+        igloo_buttonShowHint.text = "home_hint";
 
         // help_button (components)
         const help_buttonButton = new Button(help_button);
         help_buttonButton.spriteName = "blue-button";
         help_buttonButton.callback = () => this.settings.visible = true;
         const help_buttonShowHint = new ShowHint(help_button);
-        help_buttonShowHint.text = "Edit Account";
+        help_buttonShowHint.text = "help_hint";
 
         // crosshair (components)
         const crosshairSimpleButton = new SimpleButton(crosshair);

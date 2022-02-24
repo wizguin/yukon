@@ -125,7 +125,7 @@
             "Button.activeFrame": false,
             "MoveTo.x": 1328,
             "MoveTo.y": 572,
-            "ShowHint.text": "Puffle Roundup",
+            "ShowHint.text": "roundup_hint",
             "texture": {
                 "key": "pet",
                 "frame": "employees"

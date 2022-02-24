@@ -98,7 +98,7 @@ export default class Book extends RoomScene {
         tableButton.pixelPerfect = true;
         new MoveTo(table);
         const tableShowHint = new ShowHint(table);
-        tableShowHint.text = "Play Mancala";
+        tableShowHint.text = "mancala_hint";
 
         // table_1 (components)
         const table_1Button = new Button(table_1);
@@ -107,7 +107,7 @@ export default class Book extends RoomScene {
         table_1Button.pixelPerfect = true;
         new MoveTo(table_1);
         const table_1ShowHint = new ShowHint(table_1);
-        table_1ShowHint.text = "Play Mancala";
+        table_1ShowHint.text = "mancala_hint";
 
         // table_2 (components)
         const table_2Button = new Button(table_2);
@@ -116,7 +116,7 @@ export default class Book extends RoomScene {
         table_2Button.pixelPerfect = true;
         new MoveTo(table_2);
         const table_2ShowHint = new ShowHint(table_2);
-        table_2ShowHint.text = "Play Mancala";
+        table_2ShowHint.text = "mancala_hint";
 
         // table_3 (components)
         const table_3Button = new Button(table_3);
@@ -125,7 +125,7 @@ export default class Book extends RoomScene {
         table_3Button.pixelPerfect = true;
         new MoveTo(table_3);
         const table_3ShowHint = new ShowHint(table_3);
-        table_3ShowHint.text = "Play Mancala";
+        table_3ShowHint.text = "mancala_hint";
 
         // table_4 (components)
         const table_4Button = new Button(table_4);
@@ -134,7 +134,7 @@ export default class Book extends RoomScene {
         table_4Button.pixelPerfect = true;
         new MoveTo(table_4);
         const table_4ShowHint = new ShowHint(table_4);
-        table_4ShowHint.text = "Play Mancala";
+        table_4ShowHint.text = "mancala_hint";
 
         this.sort = sort;
 

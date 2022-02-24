@@ -141,7 +141,7 @@ export default class Lodge extends RoomScene {
         fishing_doorMoveTo.x = 960;
         fishing_doorMoveTo.y = 460;
         const fishing_doorShowHint = new ShowHint(fishing_door);
-        fishing_doorShowHint.text = "Go Fishing";
+        fishing_doorShowHint.text = "fish_hint";
 
         // bait (components)
         const baitButton = new Button(bait);
@@ -164,7 +164,7 @@ export default class Lodge extends RoomScene {
         table3Button.activeFrame = false;
         new MoveTo(table3);
         const table3ShowHint = new ShowHint(table3);
-        table3ShowHint.text = "Play Find Four";
+        table3ShowHint.text = "four_hint";
 
         // table2 (components)
         const table2Button = new Button(table2);
@@ -172,7 +172,7 @@ export default class Lodge extends RoomScene {
         table2Button.activeFrame = false;
         new MoveTo(table2);
         const table2ShowHint = new ShowHint(table2);
-        table2ShowHint.text = "Play Find Four";
+        table2ShowHint.text = "four_hint";
 
         // table4 (components)
         const table4Button = new Button(table4);
@@ -180,7 +180,7 @@ export default class Lodge extends RoomScene {
         table4Button.activeFrame = false;
         new MoveTo(table4);
         const table4ShowHint = new ShowHint(table4);
-        table4ShowHint.text = "Play Find Four";
+        table4ShowHint.text = "four_hint";
 
         // candle (components)
         const candleSimpleButton = new SimpleButton(candle);

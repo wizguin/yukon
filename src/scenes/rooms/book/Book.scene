@@ -120,7 +120,7 @@
             "Button.spriteName": "table",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Mancala",
+            "ShowHint.text": "mancala_hint",
             "texture": {
                 "key": "book",
                 "frame": "table"
@@ -142,7 +142,7 @@
             "Button.spriteName": "table",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Mancala",
+            "ShowHint.text": "mancala_hint",
             "texture": {
                 "key": "book",
                 "frame": "table"
@@ -164,7 +164,7 @@
             "Button.spriteName": "table",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Mancala",
+            "ShowHint.text": "mancala_hint",
             "texture": {
                 "key": "book",
                 "frame": "table"
@@ -186,7 +186,7 @@
             "Button.spriteName": "table",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Mancala",
+            "ShowHint.text": "mancala_hint",
             "texture": {
                 "key": "book",
                 "frame": "table"
@@ -208,7 +208,7 @@
             "Button.spriteName": "table",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Mancala",
+            "ShowHint.text": "mancala_hint",
             "texture": {
                 "key": "book",
                 "frame": "table"

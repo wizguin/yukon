@@ -128,7 +128,7 @@ export default class Coffee extends RoomScene {
         beansButton.pixelPerfect = true;
         new MoveTo(beans);
         const beansShowHint = new ShowHint(beans);
-        beansShowHint.text = "Play Beans";
+        beansShowHint.text = "beans_hint";
 
         // stairs (components)
         const stairsButton = new Button(stairs);

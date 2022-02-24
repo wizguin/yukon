@@ -217,7 +217,7 @@
             "Button.spriteName": "beans",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
-            "ShowHint.text": "Play Beans",
+            "ShowHint.text": "beans_hint",
             "texture": {
                 "key": "coffee",
                 "frame": "beans"

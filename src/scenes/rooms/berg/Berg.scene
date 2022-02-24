@@ -43,7 +43,7 @@
             "SimpleButton.hoverCallback": "() => this.onAquaOver()",
             "SimpleButton.callback": "() => this.onAquaClick()",
             "SimpleButton.pixelPerfect": true,
-            "ShowHint.text": "Aqua Grabber",
+            "ShowHint.text": "sub_hint",
             "texture": {
                 "key": "berg",
                 "frame": "aqua0001"

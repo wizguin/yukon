@@ -35,7 +35,7 @@
                     "Button.spriteName": "button/edit",
                     "Button.callback": "() => this.onEditClick()",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Edit Igloo",
+                    "ShowHint.text": "edit_igloo_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/edit"
@@ -56,7 +56,7 @@
                     "Button.hoverOutCallback": "() => this.onLockOut()",
                     "Button.callback": "() => this.onLockClick()",
                     "Button.activeFrame": false,
-                    "ShowHint.text": "Open Igloo",
+                    "ShowHint.text": "open_igloo_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/lock"

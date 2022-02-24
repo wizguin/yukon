@@ -75,7 +75,7 @@
             ],
             "Button.spriteName": "table2",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "attic",
                 "frame": "table2"
@@ -96,7 +96,7 @@
             ],
             "Button.spriteName": "table1",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -117,7 +117,7 @@
             ],
             "Button.spriteName": "table3",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "attic",
                 "frame": "table3"
@@ -138,7 +138,7 @@
             ],
             "Button.spriteName": "table1",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "attic",
                 "frame": "table1"
@@ -159,7 +159,7 @@
             ],
             "Button.spriteName": "table4",
             "Button.activeFrame": false,
-            "ShowHint.text": "Play Find Four",
+            "ShowHint.text": "four_hint",
             "texture": {
                 "key": "attic",
                 "frame": "table4"

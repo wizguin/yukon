@@ -32,7 +32,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onReportClick()",
-                    "ShowHint.text": "Report Player",
+                    "ShowHint.text": "report_player_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"
@@ -50,7 +50,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onIgnoreClick()",
-                    "ShowHint.text": "Ignore Player",
+                    "ShowHint.text": "add_ignore_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"
@@ -67,7 +67,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
-                    "ShowHint.text": "Send Mail",
+                    "ShowHint.text": "send_mail_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"
@@ -85,7 +85,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onIglooClick()",
-                    "ShowHint.text": "Visit Igloo",
+                    "ShowHint.text": "visit_home_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"
@@ -103,7 +103,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onFindClick()",
-                    "ShowHint.text": "Find Player",
+                    "ShowHint.text": "profile_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"
@@ -121,7 +121,7 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.onBuddyClick()",
-                    "ShowHint.text": "Add Buddy",
+                    "ShowHint.text": "add_buddy_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button-disabled"

@@ -162,7 +162,7 @@ export default class IglooEdit extends BaseScene {
         button_editButton.callback = () => this.onEditClick();
         button_editButton.activeFrame = false;
         const button_editShowHint = new ShowHint(button_edit);
-        button_editShowHint.text = "Edit Igloo";
+        button_editShowHint.text = "edit_igloo_hint";
 
         // button_lock (components)
         const button_lockButton = new Button(button_lock);
@@ -171,7 +171,7 @@ export default class IglooEdit extends BaseScene {
         button_lockButton.callback = () => this.onLockClick();
         button_lockButton.activeFrame = false;
         const button_lockShowHint = new ShowHint(button_lock);
-        button_lockShowHint.text = "Open Igloo";
+        button_lockShowHint.text = "open_igloo_hint";
 
         // button_save (components)
         const button_saveSimpleButton = new SimpleButton(button_save);
@@ -275,7 +275,7 @@ export default class IglooEdit extends BaseScene {
     onLockClick() {
         if (this.world.client.iglooOpen) {
             this.world.client.iglooOpen = false
-            this.button_lock.__ShowHint.text = 'Open Igloo'
+            this.button_lock.__ShowHint.text = 'open_igloo_hint'
 
             this.network.send('close_igloo')
 
@@ -286,7 +286,7 @@ export default class IglooEdit extends BaseScene {
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.world.client.iglooOpen = true
-            this.button_lock.__ShowHint.text = 'Close Igloo'
+            this.button_lock.__ShowHint.text = 'close_igloo_hint'
 
             this.network.send('open_igloo')
 

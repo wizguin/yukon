@@ -89,41 +89,41 @@ export default class Buttons extends BaseContainer {
         report_buttonButton.spriteName = "blue-button";
         report_buttonButton.callback = () => this.onReportClick();
         const report_buttonShowHint = new ShowHint(report_button);
-        report_buttonShowHint.text = "Report Player";
+        report_buttonShowHint.text = "report_player_hint";
 
         // ignore_button (components)
         const ignore_buttonButton = new Button(ignore_button);
         ignore_buttonButton.spriteName = "blue-button";
         ignore_buttonButton.callback = () => this.onIgnoreClick();
         const ignore_buttonShowHint = new ShowHint(ignore_button);
-        ignore_buttonShowHint.text = "Ignore Player";
+        ignore_buttonShowHint.text = "add_ignore_hint";
 
         // mail_button (components)
         const mail_buttonButton = new Button(mail_button);
         mail_buttonButton.spriteName = "blue-button";
         const mail_buttonShowHint = new ShowHint(mail_button);
-        mail_buttonShowHint.text = "Send Mail";
+        mail_buttonShowHint.text = "send_mail_hint";
 
         // igloo_button (components)
         const igloo_buttonButton = new Button(igloo_button);
         igloo_buttonButton.spriteName = "blue-button";
         igloo_buttonButton.callback = () => this.onIglooClick();
         const igloo_buttonShowHint = new ShowHint(igloo_button);
-        igloo_buttonShowHint.text = "Visit Igloo";
+        igloo_buttonShowHint.text = "visit_home_hint";
 
         // profile_button (components)
         const profile_buttonButton = new Button(profile_button);
         profile_buttonButton.spriteName = "blue-button";
         profile_buttonButton.callback = () => this.onFindClick();
         const profile_buttonShowHint = new ShowHint(profile_button);
-        profile_buttonShowHint.text = "Find Player";
+        profile_buttonShowHint.text = "profile_hint";
 
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);
         buddy_buttonButton.spriteName = "blue-button";
         buddy_buttonButton.callback = () => this.onBuddyClick();
         const buddy_buttonShowHint = new ShowHint(buddy_button);
-        buddy_buttonShowHint.text = "Add Buddy";
+        buddy_buttonShowHint.text = "add_buddy_hint";
 
         this.report_button = report_button;
         this.ignore_button = ignore_button;
@@ -173,17 +173,17 @@ export default class Buttons extends BaseContainer {
 
         switch (relationship) {
             case 'online':
-                this.enableButton('buddy', 'buddies-remove-icon', 'Remove Buddy')
+                this.enableButton('buddy', 'buddies-remove-icon', 'remove_buddy_hint')
                 this.enableButtons(['profile', 'igloo', 'mail', 'report'])
                 break
 
             case 'offline':
-                this.enableButton('buddy', 'buddies-remove-icon', 'Remove Buddy')
+                this.enableButton('buddy', 'buddies-remove-icon', 'remove_buddy_hint')
                 this.enableButtons(['igloo', 'mail', 'report'])
                 break
 
             case 'ignore':
-                this.enableButton('ignore', 'ignore-remove-icon', 'Remove Ignore')
+                this.enableButton('ignore', 'ignore-remove-icon', 'remove_ignore_hint')
                 this.enableButton('report')
                 break
 
@@ -194,8 +194,8 @@ export default class Buttons extends BaseContainer {
 
         if (this.world.client.isModerator) {
             //this.enableButton('profile', 'mute-icon', 'Mute Player')
-            this.enableButton('ignore', 'ignore-icon', 'Kick Player')
-            this.enableButton('report', 'mod-icon', 'Ban Player')
+            this.enableButton('ignore', 'ignore-icon', 'kick_player_hint')
+            this.enableButton('report', 'mod-icon', 'ban_player_hint')
         }
 
         if (!['online', 'offline'].includes(relationship)) {

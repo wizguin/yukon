@@ -3,7 +3,6 @@
     "sceneType": "SCENE",
     "settings": {
         "compilerInsertSpaces": true,
-        "snapEnabled": true,
         "snapWidth": 1,
         "snapHeight": 1,
         "javaScriptInitFieldsInConstructor": true,
@@ -54,7 +53,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.safe.visible = true",
-            "ShowHint.text": "Messages",
+            "ShowHint.text": "safe_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -84,7 +83,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.emotesMenu.visible = true",
-            "ShowHint.text": "Emotes",
+            "ShowHint.text": "emote_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -114,7 +113,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.actionsMenu.visible = true",
-            "ShowHint.text": "Actions",
+            "ShowHint.text": "action_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -144,7 +143,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.onSnowballClick()",
-            "ShowHint.text": "Snowball",
+            "ShowHint.text": "throw_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -174,7 +173,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.onChatSend()",
-            "ShowHint.text": "Send",
+            "ShowHint.text": "send_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -204,7 +203,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.onPlayerClick()",
-            "ShowHint.text": "Edit Player",
+            "ShowHint.text": "player_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -234,7 +233,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.onBuddyClick()",
-            "ShowHint.text": "Show Buddies",
+            "ShowHint.text": "buddy_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -264,7 +263,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.onIglooClick()",
-            "ShowHint.text": "Your Home",
+            "ShowHint.text": "home_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
@@ -294,7 +293,7 @@
             ],
             "Button.spriteName": "blue-button",
             "Button.callback": "() => this.settings.visible = true",
-            "ShowHint.text": "Edit Account",
+            "ShowHint.text": "help_hint",
             "texture": {
                 "key": "main",
                 "frame": "blue-button"
