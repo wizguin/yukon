@@ -1,6 +1,6 @@
 {
   "name": "yukon",
-  "version": "1.2-beta",
+  "version": "1.3-beta",
   "description": "A rewrite of the Club Penguin client in HTML5",
   "scripts": {
     "dev": "webpack serve",
@@ -22,6 +22,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^9.2.0",
     "core-js": "^3.16.4",
     "html-webpack-plugin": "^5.5.0",
     "javascript-obfuscator": "^3.0.0",
