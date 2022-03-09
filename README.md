@@ -52,7 +52,7 @@ npm run dev
 npm run editor
 ```
 
-* Building the client for production.
+* Building the client for production. Production files can be found in "/dist".
 
 ```console
 npm run build
@@ -100,13 +100,11 @@ RewriteRule /(.*) ws://localhost:6112/$1 [P,L]
 ProxyPass /world/blizzard http://localhost:6112
 ```
 
-* Make sure to use the minified bundle generated with the build command. If you aren't going to be making any changes to the code, then the latest release can be downloaded from [here](https://github.com/wizguin/yukon/releases).
+* Make sure to use the minified bundle and index.html file generated with the build command. These can be found in "/dist" (the contents can just be merged onto your web server).
 
-* Update the query string in index.html to the appropriate version number, e.g "?v=1.0.0".
+* To modify the outputted index.html file, edit the template file "index.ejs" and rebuild.
 
-```html
-<script src="assets/scripts/client/yukon.min.js?v=1.0.0"></script>
-```
+* If you aren't going to be making any changes to the code, then the latest release can be downloaded from [here](https://github.com/wizguin/yukon/releases).
 
 ## Disclaimer
 
