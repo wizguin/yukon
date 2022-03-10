@@ -33,36 +33,80 @@ export default class FakeServer {
         this.client.handleAddPlayer('test', turnId)
     }
 
-    sendMove(column) {
+    sendMove(col) {
         if (!this.started) {
             return
         }
 
         // need to add checking player turn id here
 
-        if (!this.isValidMove(column)) {
+        if (!this.isValidMove(col)) {
             return
         }
 
-        let move = this.makeMove(column)
+        let move = this.makeMove(col)
         this.client.handleSendMove(this.currentTurn, move[0], move[1])
 
         this.currentTurn = (this.currentTurn === 1) ? 2 : 1
     }
 
-    isValidMove(column) {
-        if (column < 0 || column > 6 || this.map[column][0] !== 0) {
+    isValidMove(col) {
+        if (col < 0 || col > 6 || this.map[col][0] !== 0) {
             return false
         }
 
         return true
     }
 
-    makeMove(column) {
-        let row = this.map[column].lastIndexOf(0)
-        this.map[column][row] = this.currentTurn
+    makeMove(col) {
+        let row = this.map[col].lastIndexOf(0)
+        this.map[col][row] = this.currentTurn
 
-        return [column, row]
+        this.isWin(col, row)
+        this.isFull()
+
+        return [col, row]
+    }
+
+    isWin(col, row) {
+        for (let [deltaRow, deltaCol] of [[1, 0], [0, 1], [1, 1], [1, -1]]) {
+            let streak = 1
+
+            for (let delta of [1, -1]) {
+                deltaRow *= delta
+                deltaCol *= delta
+
+                let nextRow = row + deltaRow
+                let nextCol = col + deltaCol
+
+                while (nextRow >= 0 && nextRow < 6 && nextCol >= 0 && nextCol < 7) {
+                    if (this.map[nextCol][nextRow] === this.currentTurn) {
+                        streak++
+                    } else {
+                        break
+                    }
+
+                    if (streak === 4) {
+                        return true
+                    }
+
+                    nextRow += deltaRow
+                    nextCol += deltaCol
+                }
+            }
+        }
+
+        return false
+    }
+
+    isFull() {
+        for (let col of this.map) {
+            if (!col[0]) {
+                return false
+            }
+        }
+
+        return true
     }
 
 }
