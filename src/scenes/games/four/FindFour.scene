@@ -17,7 +17,10 @@
             "type": "Container",
             "id": "c78a9501-c3e6-456b-b088-10901aee86b1",
             "label": "container_1",
-            "components": [],
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "window",
             "x": 760,
             "y": 480,
             "list": [
@@ -35,6 +38,7 @@
                     "type": "Image",
                     "id": "8bd244b6-e19b-4100-ad75-9be7d47ee878",
                     "label": "shadow",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "four",

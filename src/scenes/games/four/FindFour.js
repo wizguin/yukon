@@ -1,8 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import Button from '@scenes/components/Button'
-import Interactive from '@scenes/components/Interactive'
-import SimpleButton from '@scenes/components/SimpleButton'
+import { Button, DraggableContainer, Interactive, SimpleButton } from '@components/components'
 
 import FindFourPlayer from './FindFourPlayer'
 
@@ -16,6 +14,8 @@ export default class FindFour extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.shadow;
         /** @type {FindFourPlayer} */
         this.player2;
         /** @type {FindFourPlayer} */
@@ -98,11 +98,16 @@ export default class FindFour extends BaseContainer {
         // lists
         const placers = [placer0, placer1, placer2, placer3, placer4, placer5, placer6];
 
+        // this (components)
+        const thisDraggableContainer = new DraggableContainer(this);
+        thisDraggableContainer.handle = window;
+
         // x_button (components)
         const x_buttonButton = new Button(x_button);
         x_buttonButton.spriteName = "blue-button";
         x_buttonButton.callback = () => { this.visible = false };
 
+        this.shadow = shadow;
         this.player2 = player2;
         this.player1 = player1;
         this.hover = hover;
@@ -119,7 +124,6 @@ export default class FindFour extends BaseContainer {
         this.myTurn
 
         this.buttons = []
-        this.shadowIndex = this.getIndex(shadow)
 
         this.setupGame()
 
@@ -249,7 +253,7 @@ export default class FindFour extends BaseContainer {
             this.playDrop(counter, y)
         }
 
-        this.addAt(counter, this.shadowIndex + 1)
+        this.addAt(counter, this.getIndex(this.shadow) + 1)
     }
 
     playDrop(counter, y) {
