@@ -152,6 +152,7 @@
                         "y"
                     ],
                     "label": "player2",
+                    "scope": "CLASS",
                     "components": [],
                     "x": -126,
                     "y": 232,
@@ -165,6 +166,7 @@
                         "y"
                     ],
                     "label": "player1",
+                    "scope": "CLASS",
                     "components": [],
                     "x": -126,
                     "y": 172,

@@ -6,6 +6,8 @@ import SimpleButton from '@scenes/components/SimpleButton'
 
 import FindFourPlayer from './FindFourPlayer'
 
+import FakeServer from './FakeServer'
+
 
 /* START OF COMPILED CODE */
 
@@ -14,6 +16,10 @@ export default class FindFour extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {FindFourPlayer} */
+        this.player2;
+        /** @type {FindFourPlayer} */
+        this.player1;
         /** @type {Phaser.GameObjects.Image} */
         this.hover;
         /** @type {Phaser.GameObjects.Image[]} */
@@ -97,25 +103,70 @@ export default class FindFour extends BaseContainer {
         x_buttonButton.spriteName = "blue-button";
         x_buttonButton.callback = () => { this.visible = false };
 
+        this.player2 = player2;
+        this.player1 = player1;
         this.hover = hover;
         this.placers = placers;
 
         /* START-USER-CTR-CODE */
 
+        this.server = new FakeServer(this)
+
         this.scene = scene
 
-        this.map = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
-        this.buttons = []
+        this.map
+        this.currentTurn = 1
+        this.myTurn
 
+        this.buttons = []
         this.shadowIndex = this.getIndex(shadow)
 
-        this.handleStartGame()
+        this.setupGame()
 
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    get isMyTurn() {
+        return this.currentTurn === this.myTurn
+    }
+
+    setupGame() {
+        this.server.getGame()
+    }
+
+    handleGetGame(map) {
+        this.map = map
+
+        this.server.joinGame()
+
+        // SECOND PLAYER TEST
+        this.handleAddPlayer('username', 2)
+        this.server.started = true
+        this.handleStartGame()
+        //
+    }
+
+    handleJoinGame(turnId) {
+        // Setting my turn
+        this.myTurn = turnId
+    }
+
+    handleAddPlayer(username, turnId) {
+        let player = this[`player${turnId}`]
+        player.turnId = turnId
+
+        player.spinner.visible = false
+        player.waiting.visible = false
+
+        player.username.text = username.toUpperCase()
+        player.username.visible = true
+
+        player.counter.setFrame(`counter_${turnId}`)
+        player.counter.visible = true
+    }
 
     handleStartGame() {
         // Create buttons
@@ -138,11 +189,27 @@ export default class FindFour extends BaseContainer {
         }
     }
 
+    handleSendMove(turn, x, y) {
+        this.addCounter(turn, x, y)
+    }
+
     onButtonClick(column) {
-        this.addCounter(column, 5)
+        if (!this.isMyTurn) {
+            return
+        }
+
+        if (this.map[column][0]) {
+            return this.scene.sound.play('error', { volume: 0.5 })
+        }
+
+        this.server.sendMove(column)
     }
 
     onButtonOver(button) {
+        if (!this.isMyTurn) {
+            return
+        }
+
         this.hover.visible = true
 
         this.hover.x = button.x
@@ -150,10 +217,16 @@ export default class FindFour extends BaseContainer {
     }
 
     onButtonOut() {
+        if (!this.isMyTurn) {
+            return
+        }
+
         this.hover.visible = false
     }
 
-    addCounter(x, y, drop = true) {
+    addCounter(turn, x, y, drop = true) {
+        this.map[x][y] = turn
+
         y++
 
         // Get x from column button position
@@ -161,7 +234,7 @@ export default class FindFour extends BaseContainer {
         // Get y from placer position
         let counterY = this.placers[0].y
 
-        let counter = this.scene.add.image(counterX, counterY, 'four', 'counter_1')
+        let counter = this.scene.add.image(counterX, counterY, 'four', `counter_${turn}`)
 
         if (!drop) {
             counter.y = this.placers[y].y
@@ -180,7 +253,7 @@ export default class FindFour extends BaseContainer {
             callback: () => {
                 counter.y = this.placers[i].y
 
-                if (i == y) {
+                if (i === y) {
                     this.scene.sound.play('drop', { volume: 0.5 })
                     this.scene.time.removeEvent(timer)
                 }

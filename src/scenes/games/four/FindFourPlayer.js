@@ -9,6 +9,10 @@ export default class FindFourPlayer extends Phaser.GameObjects.Container {
         this.spinner;
         /** @type {Phaser.GameObjects.Text} */
         this.waiting;
+        /** @type {Phaser.GameObjects.Image} */
+        this.counter;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
 
 
         // spinner
@@ -22,10 +26,26 @@ export default class FindFourPlayer extends Phaser.GameObjects.Container {
         waiting.setStyle({ "fixedWidth":260,"fontFamily": "Arial", "fontSize": "24px" });
         this.add(waiting);
 
+        // counter
+        const counter = scene.add.image(0, 0, "four", "counter_1");
+        counter.visible = false;
+        this.add(counter);
+
+        // username
+        const username = scene.add.text(40, 0, "", {});
+        username.setOrigin(0, 0.5);
+        username.text = "USERNAME";
+        username.setStyle({ "color": "#d5f1ff", "fixedWidth":260,"fontFamily": "CCComiccrazy", "fontSize": "32px", "stroke": "#336699", "strokeThickness":9});
+        this.add(username);
+
         this.spinner = spinner;
         this.waiting = waiting;
+        this.counter = counter;
+        this.username = username;
 
         /* START-USER-CTR-CODE */
+
+        this.turnId
 
         // Spinner
         this.spinnerTween = scene.tweens.add({

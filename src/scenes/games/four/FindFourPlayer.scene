@@ -41,6 +41,34 @@
                     "fixedWidth": 260,
                     "fontFamily": "Arial",
                     "fontSize": "24px"
+                },
+                {
+                    "type": "Image",
+                    "id": "19b435d3-6090-4f34-9963-218b01f9538e",
+                    "label": "counter",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "visible": false
+                },
+                {
+                    "type": "Text",
+                    "id": "593062c5-f3b2-40a8-9ae0-a77b2248a8c7",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 40,
+                    "originY": 0.5,
+                    "text": "USERNAME",
+                    "fixedWidth": 260,
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "32px",
+                    "color": "#d5f1ff",
+                    "stroke": "#336699",
+                    "strokeThickness": 9
                 }
             ]
         }
