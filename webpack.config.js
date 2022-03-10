@@ -1,7 +1,10 @@
+const fs = require('fs')
 const path = require('path')
-const WebpackObfuscator = require('webpack-obfuscator')
+
+const BannerPlugin = require('./webpack_plugins/BannerPlugin')
 const DefinePlugin = require('webpack').DefinePlugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackObfuscator = require('webpack-obfuscator')
 
 const timestamp = + Date.now()
 
@@ -71,6 +74,10 @@ let config = {
         new DefinePlugin({
             VERSION: JSON.stringify(require('./package.json').version),
             TIMESTAMP: timestamp
+        }),
+        // MIT License do not remove
+        new BannerPlugin({
+            banner: fs.readFileSync('./LICENSE', 'utf-8')
         })
     ]
 }
