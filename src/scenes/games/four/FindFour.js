@@ -130,6 +130,7 @@ export default class FindFour extends BaseContainer {
     /* START-USER-CODE */
 
     get isMyTurn() {
+        return true
         return this.currentTurn === this.myTurn
     }
 
@@ -187,9 +188,14 @@ export default class FindFour extends BaseContainer {
 
             x += 48.6
         }
+
+        this.player1.setActive()
+        this.player2.setActive()
     }
 
     handleSendMove(turn, x, y) {
+        this.currentTurn = turn
+
         this.addCounter(turn, x, y)
     }
 
@@ -238,6 +244,7 @@ export default class FindFour extends BaseContainer {
 
         if (!drop) {
             counter.y = this.placers[y].y
+            this.updateTurn()
         } else {
             this.playDrop(counter, y)
         }
@@ -256,12 +263,31 @@ export default class FindFour extends BaseContainer {
                 if (i === y) {
                     this.scene.sound.play('drop', { volume: 0.5 })
                     this.scene.time.removeEvent(timer)
+                    this.updateTurn()
                 }
 
                 i++
             },
             repeat: y
         })
+    }
+
+    updateTurn() {
+        this.currentTurn = (this.currentTurn === 1) ? 2 : 1
+
+        if (this.isMyTurn) {
+            this.buttons.map(b => b.setInteractive())
+
+        } else {
+            this.buttons.map(b => b.disableInteractive())
+            this.scene.input.setDefaultCursor('default')
+        }
+
+        this.hover.visible = false
+        this.hover.setFrame(`button/counter_${this.currentTurn}`)
+
+        this.player1.setActive()
+        this.player2.setActive()
     }
 
     /* END-USER-CODE */

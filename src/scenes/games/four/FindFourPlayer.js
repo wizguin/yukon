@@ -56,11 +56,25 @@ export default class FindFourPlayer extends Phaser.GameObjects.Container {
             ease: 'Cubic'
         })
 
+        this.inactiveColor = username.style.color
+        this.inactiveStroke = username.style.stroke
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    setActive() {
+        let active = this.turnId === this.parentContainer.currentTurn
+
+        let color = (active) ? '#fff' : this.inactiveColor
+        let stroke = (active) ? '#000' : this.inactiveStroke
+
+        this.username.setColor(color)
+        this.username.setStroke(stroke)
+    }
+
     /* END-USER-CODE */
 }
 
