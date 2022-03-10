@@ -1,0 +1,95 @@
+{
+    "id": "c497abe9-ef5b-4e05-9576-c628bc1df794",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "c78a9501-c3e6-456b-b088-10901aee86b1",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "444f3793-1a41-4386-9e05-e712dbd5f24d",
+                    "label": "window",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "window"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "ffb54173-b9ac-4fe1-bab7-7a6b435da288",
+                    "label": "board",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "board"
+                    },
+                    "y": -44
+                },
+                {
+                    "prefabId": "aa157150-c6e0-4443-8649-1a137743c2ee",
+                    "id": "464b8f4f-cdab-4139-af39-d1ac85c8631e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "findFourPlayer",
+                    "components": [],
+                    "x": -126,
+                    "y": 172,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "aa157150-c6e0-4443-8649-1a137743c2ee",
+                    "id": "df191ca7-415a-4fc9-a8d5-e65fef52082c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "findFourPlayer_1",
+                    "components": [],
+                    "x": -126,
+                    "y": 232,
+                    "nestedPrefabs": []
+                },
+                {
+                    "type": "Image",
+                    "id": "ec828e7e-f8fe-45ce-a6b2-37004b848cde",
+                    "label": "hover",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "button/counter_1"
+                    },
+                    "x": -146,
+                    "y": -194,
+                    "originY": 0.7
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
