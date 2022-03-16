@@ -58,7 +58,7 @@ export default class PromptController {
     }
 
     setCursor() {
-        this.interface.input.setDefaultCursor('default')
+        this.interface.resetCursor()
     }
 
 }

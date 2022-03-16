@@ -1,5 +1,9 @@
 export default class BaseScene extends Phaser.Scene {
 
+    init() {
+        this.input.on('pointerover', () => this.interface.resetCursor(this))
+    }
+
     get crumbs() {
         return this.game.crumbs
     }

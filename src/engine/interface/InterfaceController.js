@@ -20,6 +20,9 @@ export default class InterfaceController extends BaseScene {
 
         graphics.lineStyle(16, this.crumbs.frameColor, 1)
         graphics.strokeRoundedRect(0, 0, 1520, 960, 15)
+
+        // Last scene interacted with
+        this.lastScene
     }
 
     get loading() {
@@ -186,6 +189,34 @@ export default class InterfaceController extends BaseScene {
                 book.setCoins(coins)
             }
         })
+    }
+
+    resetCursor(scene = this) {
+        if (!this.lastScene) {
+            this.lastScene = scene
+            return
+        }
+
+        if (this.lastScene == scene) {
+            return
+        }
+
+        this.lastScene.input._over[0].map(gameObject => {
+            if (gameObject.input && gameObject.input.enabled) {
+                gameObject.emit('pointerout')
+            }
+        })
+
+        let currentlyOver = scene.input._temp[0]
+
+        // Only reset cursor if interface currently over has no cursor
+        if (!currentlyOver || (currentlyOver.input && !currentlyOver.input.cursor)) {
+            scene.input.setDefaultCursor('default')
+        }
+
+        this.lastScene.input._over[0] = []
+
+        this.lastScene = scene
     }
 
 }

@@ -17,6 +17,8 @@ export default class Book extends BaseScene {
     init() {
         this.load.on('start', this.showLoading, this)
         this.events.on('showloading', this.showLoading, this)
+
+        super.init()
     }
 
     showLoading() {

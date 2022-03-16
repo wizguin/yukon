@@ -19,6 +19,8 @@ export default class GameScene extends BaseScene {
 
     init(data) {
         this.id = data.id
+
+        super.init()
     }
 
     create() {
