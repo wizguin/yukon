@@ -209,7 +209,7 @@ export default class InterfaceController extends BaseScene {
 
         let currentlyOver = scene.input._temp[0]
 
-        // Only reset cursor if interface currently over has no cursor
+        // Only reset cursor if currently over has no cursor
         if (!currentlyOver || (currentlyOver.input && !currentlyOver.input.cursor)) {
             scene.input.setDefaultCursor('default')
         }
