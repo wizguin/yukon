@@ -4,6 +4,8 @@ import PluginManager from './plugins/PluginManager'
 export default class DataHandler {
 
     constructor(network) {
+        this.network = network
+
         this.plugins = new PluginManager(network)
     }
 
@@ -15,15 +17,11 @@ export default class DataHandler {
                 console.log('[DataHandler] Message received:', parsed.action, parsed.args)
             }
 
-            this.fireEvent(parsed.action, parsed.args)
+            this.network.events.emit(parsed.action, parsed.args)
 
         } catch(error) {
             console.error(error)
         }
-    }
-
-    fireEvent(event, args) {
-        this.plugins.getEvent(event, args)
     }
 
 }

@@ -8,6 +8,8 @@ export default class Network {
     constructor(game) {
         this.game = game
 
+        this.events = new Phaser.Events.EventEmitter()
+
         this.handler = new DataHandler(this)
         this.client = null
 
