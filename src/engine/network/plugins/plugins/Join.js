@@ -30,17 +30,17 @@ export default class Join extends Plugin {
     }
 
     joinRoom(args) {
-        this.interface.showLoading(this.getString('loading', this.crumbs.scenes.rooms[args.room].key))
+        this.interface.showLoading(this.getString('loading', this.crumbs.scenes.rooms[args.room].key), true)
         this.world.joinRoom(args)
     }
 
     joinIgloo(args) {
-        this.interface.showLoading(this.getString('loading', 'igloo'))
+        this.interface.showLoading(this.getString('loading', 'igloo'), true)
         this.world.joinRoom(args)
     }
 
-    joinGame(args) {
-        this.interface.showLoading(this.getString('loading', this.crumbs.games[args.game].key))
+    joinGameRoom(args) {
+        this.interface.showLoading(this.getString('loading', this.crumbs.games[args.game].key), true)
         this.world.joinRoom(args)
     }
 

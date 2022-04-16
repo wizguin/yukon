@@ -48,6 +48,7 @@ export default class RoomScene extends BaseScene {
     }
 
     preload() {
+        this.load.on('progress', this.onProgress, this)
         this.events.once('create', () => this.isReady = true)
 
         if (this.music && !this.cache.audio.exists(this.music)) {
@@ -55,6 +56,10 @@ export default class RoomScene extends BaseScene {
         }
 
         this._preload()
+    }
+
+    onProgress(progress) {
+        this.interface.loading.progress.scaleX = progress
     }
 
     sortChildren() {
