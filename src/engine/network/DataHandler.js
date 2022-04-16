@@ -14,7 +14,7 @@ export default class DataHandler {
             let parsed = JSON.parse(message)
 
             if (localStorage.logging == 'true') {
-                console.log('[DataHandler] Message received:', parsed.action, parsed.args)
+                console.log('Message received:', parsed.action, parsed.args)
             }
 
             this.network.events.emit(parsed.action, parsed.args)
