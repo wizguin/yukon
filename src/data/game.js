@@ -4,10 +4,17 @@ import interfaces from './interfaces'
 import rooms from './rooms'
 
 
+if (!localStorage.getItem('webgl')) {
+    localStorage.setItem('webgl', 'true')
+}
+
 const game = {
+    type: (localStorage.getItem('webgl') == 'true')
+        ? Phaser.WEBGL
+        : Phaser.CANVAS,
+
     width: 1520,
     height: 960,
-    type: (localStorage.webgl == 'true') ? Phaser.WEBGL : Phaser.CANVAS,
     transparent: true,
     roundPixels: true,
 
