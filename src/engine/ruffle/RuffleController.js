@@ -15,6 +15,7 @@ export default class RuffleController extends BaseScene {
         window.ruffle = this
 
         this.keys = [
+            'getGamesPath',
             'getPlayerObjectById',
             'getMyPlayerHex',
             'isMyPlayerMember',
@@ -98,6 +99,10 @@ export default class RuffleController extends BaseScene {
 
     getMyPlayer() {
         // todo
+    }
+
+    getGamesPath() {
+        return `${this.basePath}games/`
     }
 
     getPlayerObjectById() {
