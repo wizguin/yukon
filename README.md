@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * [Node.js](https://nodejs.org/en/)
 * [yukon-server](https://github.com/wizguin/yukon-server)
-* [assets](https://gitlab.com/yukn/assets)
+* assets
 
 ### Installation
 
@@ -36,7 +36,7 @@ git clone https://github.com/wizguin/yukon
 npm install
 ```
 
-3. Merge contents of [assets](https://gitlab.com/yukn/assets) into the assets folder.
+3. Merge contents of assets into the assets folder.
 
 ### Usage
 
