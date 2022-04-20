@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import ItemLoader from './loader/ItemLoader'
+import ItemLoader from '@engine/loaders/ItemLoader'
 import PathEngine from './pathfinding/PathEngine'
 import PenguinItems from './PenguinItems'
 

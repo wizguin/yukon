@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import PaperDollLoader from './PaperDollLoader'
+import PaperDollLoader from '@engine/loaders/PaperDollLoader'
 import TintedImage from '@engine/utils/tint/TintedImage'
 
 

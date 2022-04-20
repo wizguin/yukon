@@ -1,6 +1,6 @@
 import RoomScene from '../rooms/RoomScene'
 
-import FurnitureLoader from '@engine/world/room/loader/FurnitureLoader'
+import FurnitureLoader from '@engine/loaders/FurnitureLoader'
 import FurnitureSprite from '@engine/world/room/furniture/FurnitureSprite'
 import PhysicsMaskGraphics from '@engine/utils/mask/PhysicsMaskGraphics'
 import RoomCrate from './crates/RoomCrate'

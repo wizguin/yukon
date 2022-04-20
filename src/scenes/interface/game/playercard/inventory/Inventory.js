@@ -2,7 +2,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, SimpleButton } from '@components/components'
 
-import InventoryLoader from '@engine/interface/inventory/InventoryLoader'
+import InventoryLoader from '@engine/loaders/InventoryLoader'
 
 
 /* START OF COMPILED CODE */

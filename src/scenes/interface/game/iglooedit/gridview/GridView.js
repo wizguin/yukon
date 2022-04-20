@@ -2,7 +2,7 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, Interactive } from '@components/components'
 
-import GridViewLoader from '@engine/interface/gridview/GridViewLoader'
+import GridViewLoader from '@engine/loaders/GridViewLoader'
 import GridViewSlot from './gridview_slot/GridViewSlot'
 
 

@@ -1,4 +1,4 @@
-import FurnitureSprite from '../furniture/FurnitureSprite'
+import FurnitureSprite from '@engine/world/room/furniture/FurnitureSprite'
 
 
 export default class FurnitureLoader {
