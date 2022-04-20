@@ -1,9 +1,5 @@
 # Yukon
 
-Visit the Discord server for more support.
-
-[![Yukon Discord members](https://badgen.net/discord/members/eAdSR33k3w)](https://discord.gg/eAdSR33k3w)
-
 ## Built With
 
 * [Node.js](https://nodejs.org/en/)
@@ -107,5 +103,7 @@ ProxyPass /world/blizzard http://localhost:6112
 * If you aren't going to be making any changes to the code, then the latest release can be downloaded from [here](https://github.com/wizguin/yukon/releases).
 
 ## Disclaimer
+
+This project is intended for personal use only.
 
 This project is a work in progress, please report any issues you find [here](https://github.com/wizguin/yukon/issues).
