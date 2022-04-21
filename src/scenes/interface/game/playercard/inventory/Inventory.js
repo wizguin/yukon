@@ -234,7 +234,7 @@ export default class Inventory extends BaseContainer {
         this.pageSize = 12
         this.filter = null
 
-        this.inventoryLoader = new InventoryLoader(this, this.slots)
+        this.inventoryLoader = new InventoryLoader(scene, this)
 
         this.inventory_bg.setInteractive({ pixelPerfect: true })
 

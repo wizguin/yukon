@@ -40,7 +40,7 @@ export default class PaperDoll extends BaseContainer {
         this.slots = [ 'photo', 'color', '', 'feet', 'body', 'neck', 'hand', 'face', 'head', 'flag' ]
         this.items = this.setItems()
 
-        this.paperDollLoader = new PaperDollLoader(this)
+        this.paperDollLoader = new PaperDollLoader(scene, this)
         this.isInputEnabled = false
 
         /* END-USER-CTR-CODE */

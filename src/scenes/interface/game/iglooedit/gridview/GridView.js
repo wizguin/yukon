@@ -96,7 +96,7 @@ export default class GridView extends BaseContainer {
         this.filter
         this.lastSize
 
-        this.loader = new GridViewLoader(this)
+        this.loader = new GridViewLoader(scene, this)
 
         block.on('pointerup', () => this.visible = false)
 

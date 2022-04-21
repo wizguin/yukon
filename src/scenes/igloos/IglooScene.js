@@ -196,6 +196,7 @@ export default class IglooScene extends RoomScene {
             this.updateQuantity(f.furnitureId)
             this.loader.loadFurniture(f.furnitureId, null, f.x, f.y, f.rotation, f.frame)
         }
+
         this.loader.start()
     }
 
