@@ -1,26 +1,29 @@
-export default class GridViewLoader {
+import BaseLoader from './BaseLoader'
 
-    constructor(gridView) {
+
+export default class GridViewLoader extends BaseLoader {
+
+    constructor(scene, gridView) {
+        super(scene)
+
         this.gridView = gridView
-        this.scene = gridView.scene
 
-        this.page = null // Current page
         this.filter
+        this.page
 
-        this.load = new Phaser.Loader.LoaderPlugin(this.scene)
-
-        this.load.on('filecomplete', this.onFileComplete, this)
-        this.load.on('loaderror', this.onLoadError, this)
+        this.attachErrorListener()
     }
 
-    get url() {
+    get baseURL() {
         return (this.filter == 'igloo')
-            ? '/assets/media/igloos/buildings/icon'
-            : '/assets/media/furniture/icon'
+            ? '/assets/media/igloos/buildings/icon/'
+            : '/assets/media/furniture/icon/'
     }
 
-    get prefix() {
-        return (this.filter == 'igloo') ? 'igloo/icon' : 'furniture/icon'
+    get keyPrefix() {
+        return (this.filter == 'igloo')
+            ? 'igloos/icon/'
+            : 'furniture/icon/'
     }
 
     get slots() {
@@ -31,12 +34,18 @@ export default class GridViewLoader {
         this.filter = filter
         this.page = page
 
-        let scale = (this.slots.length > 15) ? '@2.5x' : '@5x'
+        let scale = (this.slots.length > 15) ? '@2.5x/' : '@5x/'
 
         for (let [index, slot] of this.slots.entries()) {
             slot.filter = filter
-            if (slot.item) slot.item.destroy()
-            if (slot.quantity) slot.quantity.visible = false
+
+            if (slot.item) {
+                slot.item.destroy()
+            }
+
+            if (slot.quantity) {
+                slot.quantity.visible = false
+            }
 
             let item = page[index]
 
@@ -51,30 +60,31 @@ export default class GridViewLoader {
             }
         }
 
-        this.load.start()
+        this.start()
     }
 
     loadItem(item, scale) {
-        let key = `${this.prefix}/${scale}/${item}`
-
-        if (this.scene.textures.exists(key)) return this.onFileComplete(key)
+        let key = this.getKey(scale, item)
 
         // Ignore scale on igloo icon url
         let url = (this.filter == 'igloo')
-            ? `${this.url}/${item}.png`
-            : `${this.url}/${scale}/${item}.png`
+            ? `${item}.png`
+            : `${scale}${item}.png`
 
-        this.load.image({
-            key: key,
-            url: url
-        })
+        if (this.checkComplete('image', key, () => {
+            this.onFileComplete(key, item)
+        })) {
+            return
+        }
+
+        this.image(key, url)
     }
 
-    onFileComplete(key) {
-        if (!this.gridView.visible) return
-        if (!this.scene.textures.exists(key)) return
+    onFileComplete(key, item) {
+        if (!this.gridView.visible || !this.textureExists(key)) {
+            return
+        }
 
-        let item = parseInt(key.split('/')[3])
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
 
@@ -84,9 +94,11 @@ export default class GridViewLoader {
     }
 
     onLoadError(file) {
-        if (!this.gridView.visible) return
+        if (!this.gridView.visible) {
+            return
+        }
 
-        let item = parseInt(file.key.split('/')[3])
+        let item = this.getKeyId(file.key)
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
 

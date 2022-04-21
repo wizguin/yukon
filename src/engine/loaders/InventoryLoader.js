@@ -1,25 +1,35 @@
-export default class InventoryLoader {
+import BaseLoader from './BaseLoader'
 
-    constructor(inventory, slots) {
-        this.inventory = inventory // Inventory container object
-        this.scene = inventory.scene
-        this.slots = slots // Item slot sprites (inventory grid)
-        this.page = null // Current page
 
-        this.load = new Phaser.Loader.LoaderPlugin(this.scene)
-        this.url = '/assets/media/clothing/icon'
-        this.prefix = 'icon'
+export default class InventoryLoader extends BaseLoader {
 
-        this.load.on('filecomplete', this.onFileComplete, this)
-        this.load.on('loaderror', this.onLoadError, this)
+    constructor(scene, inventory) {
+        super(scene)
+
+        this.inventory = inventory
+        // Item slot sprites (inventory grid)
+        this.slots = inventory.slots
+
+        this.page
+        this.validSlots = ['large-box', 'large-box-hover']
+
+        this.baseURL = '/assets/media/clothing/icon/'
+        this.keyPrefix = 'clothing/icon/'
+
+        this.attachErrorListener()
     }
 
     loadPage(page) {
         this.page = page
 
         for (let [index, slot] of this.slots.entries()) {
-            if (slot.item) slot.item.destroy()
-            if (slot.spinner) slot.spinner.destroy()
+            if (slot.item) {
+                slot.item.destroy()
+            }
+
+            if (slot.spinner) {
+                slot.spinner.destroy()
+            }
 
             let item = page[index]
 
@@ -35,7 +45,7 @@ export default class InventoryLoader {
             }
         }
 
-        this.load.start()
+        this.start()
     }
 
     addSpinner(slot) {
@@ -54,51 +64,44 @@ export default class InventoryLoader {
     }
 
     loadItem(item) {
-        let key = `${this.prefix}/${item}`
+        let key = `${this.keyPrefix}${item}`
 
-        if (this.scene.textures.exists(key)) return this.onFileComplete(key)
+        if (this.checkComplete('image', key, () => {
+            this.onFileComplete(key, item)
+        })) {
+            return
+        }
 
-        this.load.image({
-            key: key,
-            url: `${this.url}/${item}.png`,
-        })
+        this.image(key, `${item}.png`)
     }
 
-    onFileComplete(key) {
-        if (!this.inventory.visible) return
-        if (!this.scene.textures.exists(key)) return
-
-        let item = parseInt(key.split('/')[1])
-        let index = this.page.indexOf(item)
-        let slot = this.slots[index]
-
-        if (!slot) return
-
-        // Do not load into empty slot
-        if (['large-box', 'large-box-hover'].includes(slot.frame.name)) this.loadIcon(key, slot, item)
+    onFileComplete(key, item) {
+        this.addIcon(item, key)
     }
 
     onLoadError(file) {
-        if (!this.inventory.visible) return
+        let item = this.getKeyId(file.key)
 
-        let item = parseInt(file.key.split('/')[1])
+        this.addIcon(item, 'main', 'x-icon')
+    }
+
+    addIcon(item, key, frame = null) {
+        if (!this.inventory.visible || !this.textureExists(key)) {
+            return
+        }
+
         let index = this.page.indexOf(item)
         let slot = this.slots[index]
 
-        if (!slot) return
-        if (slot.spinner) slot.spinner.destroy()
+        if (!slot || !this.validSlots.includes(slot.frame.name)) {
+            return
+        }
 
-        let errorIcon = this.scene.add.image(slot.x, slot.y, 'main', 'x-icon')
-        this.inventory.container.add(errorIcon)
+        if (slot.spinner) {
+            slot.spinner.destroy()
+        }
 
-        errorIcon.id = item
-        slot.item = errorIcon
-    }
-
-    loadIcon(key, slot, item) {
-        if (slot.spinner) slot.spinner.destroy()
-
-        let icon = this.scene.add.image(slot.x, slot.y, key)
+        let icon = this.scene.add.image(slot.x, slot.y, key, frame)
         this.inventory.container.add(icon)
 
         icon.id = item

@@ -1,74 +1,75 @@
-import SpriteLoader from './SpriteLoader'
+import BaseLoader from './BaseLoader'
+
+import PenguinSpriteFactory from './PenguinSpriteFactory'
 
 
-export default class ItemLoader extends SpriteLoader {
+export default class ItemLoader extends BaseLoader {
 
     constructor(penguin) {
-        super(penguin.room.world)
+        super(penguin.room)
 
         this.penguin = penguin
+
         this.equipped = this.penguin.items.equipped
 
-        this.load = new Phaser.Loader.LoaderPlugin(penguin.room)
-        this.url = '/assets/media/clothing/sprites'
-
-        this.load.on('filecomplete', this.onFileComplete, this)
-        this.load.on('loaderror', this.onLoadError, this)
-        this.load.on('complete', this.onComplete, this)
+        this.baseURL = '/assets/media/clothing/sprites/'
+        this.keyPrefix = 'clothing/sprites/'
     }
 
     loadItems() {
         for (let slot in this.equipped) {
             let item = this.equipped[slot]
 
-            if (item.id > 0) this.loadItem(item.id, slot)
+            if (item.id > 0) {
+                this.loadItem(item.id, slot)
+            }
         }
 
-        this.load.start()
+        this.start()
     }
 
     loadItem(item, slot) {
-        if (item == 0) return this.removeItem(slot)
+        if (item == 0) {
+            return this.removeItem(slot)
+        }
 
-        let key = `${slot}/${item}`
+        if (this.equipped[slot].sprite) {
+            this.removeItem(slot)
+        }
 
-        if (this.world.textures.exists(key)) return this.onFileComplete(key)
+        let key = this.getKey(item)
 
-        this.load.multiatlas({
-            key: key,
-            atlasURL: `${this.url}/${item}.json`,
-            path: `${this.url}`
-        })
+        if (this.checkComplete('json', key, () => {
+            this.onFileComplete(key, slot)
+        })) {
+            return
+        }
+
+        this.multiatlas(key, `${item}.json`)
     }
 
-    onFileComplete(key) {
-        if (!this.world.textures.exists(key)) return
+    onFileComplete(key, slot) {
+        if (!this.textureExists(key)) {
+            return
+        }
 
-        let slot = key.split('/')[0]
         let item = this.equipped[slot]
-
-        // Remove item if one is already equipped
-        if (item.sprite) this.removeItem(slot)
+        if (item.sprite) {
+            this.removeItem(slot)
+        }
 
         // item.depth + 1 to ensure items are loaded on top of penguin body
-        item.sprite = this.loadSprite(this.penguin, key, item.depth + 1)
-    }
+        item.sprite = PenguinSpriteFactory.create(this.penguin, key, item.depth + 1)
 
-    onLoadError(file) {
-        let slot = file.key.split('/')[0]
-        let item = this.equipped[slot]
-
-        if (item.sprite) this.removeItem(slot)
-    }
-
-    onComplete() {
         this.penguin.sort('depth')
         this.penguin.playFrame(this.penguin.frame)
     }
 
     removeItem(slot) {
         let item = this.equipped[slot]
-        if (!item || !item.sprite) return
+        if (!item || !item.sprite) {
+            return
+        }
 
         item.sprite.destroy()
         item.sprite = null

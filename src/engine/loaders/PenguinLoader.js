@@ -1,10 +1,10 @@
-import SpriteLoader from './SpriteLoader'
+import PenguinSpriteFactory from './PenguinSpriteFactory'
 
 
-export default class PenguinLoader extends SpriteLoader {
+export default class PenguinLoader {
 
     constructor(world) {
-        super(world)
+        this.world = world
 
         this.nameStyle = {
             fontFamily: 'Arial',
@@ -22,8 +22,8 @@ export default class PenguinLoader extends SpriteLoader {
     }
 
     addPenguin(penguin) {
-        this.loadSprite(penguin, 'penguin_body', 1)
-        this.loadSprite(penguin, 'penguin', 2)
+        PenguinSpriteFactory.create(penguin, 'penguin_body', 1)
+        PenguinSpriteFactory.create(penguin, 'penguin', 2)
     }
 
     addShadow(penguin) {
