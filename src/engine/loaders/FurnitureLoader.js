@@ -9,14 +9,14 @@ export default class FurnitureLoader extends BaseLoader {
         super(scene)
 
         this.baseURL = '/assets/media/furniture/sprites/'
-        this.keyPrefix = 'furniture/'
+        this.keyPrefix = 'furniture/sprites/'
     }
 
     loadFurniture(item, crate = null, x, y, rotation = 1, frame = 1) {
         let key = this.getKey(item)
 
         if (this.checkComplete('json', key, () => {
-            this.onFileComplete(key, crate, x, y, rotation, frame)
+            this.onFileComplete(key, item, crate, x, y, rotation, frame)
         })) {
             return
         }
@@ -24,12 +24,12 @@ export default class FurnitureLoader extends BaseLoader {
         this.multiatlas(key, `${item}.json`)
     }
 
-    onFileComplete(key, crate, x, y, rotation, frame) {
+    onFileComplete(key, item, crate, x, y, rotation, frame) {
         if (!this.textureExists(key)) {
             return
         }
 
-        let sprite = new FurnitureSprite(this.scene, crate, x, y, key, rotation, frame)
+        let sprite = new FurnitureSprite(this.scene, item, crate, x, y, key, rotation, frame)
         this.scene.add.existing(sprite)
     }
 

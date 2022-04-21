@@ -3,7 +3,7 @@ import BaseLoader from './BaseLoader'
 import PenguinSpriteFactory from './PenguinSpriteFactory'
 
 
-export default class ItemLoader extends BaseLoader {
+export default class ClothingLoader extends BaseLoader {
 
     constructor(penguin) {
         super(penguin.room)

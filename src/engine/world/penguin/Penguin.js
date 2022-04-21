@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import ItemLoader from '@engine/loaders/ItemLoader'
+import ClothingLoader from '@engine/loaders/ClothingLoader'
 import PathEngine from './pathfinding/PathEngine'
 import PenguinItems from './PenguinItems'
 
@@ -16,7 +16,7 @@ export default class Penguin extends BaseContainer {
         this.penguinLoader = penguinLoader
 
         this.items = new PenguinItems(this)
-        this.itemLoader = new ItemLoader(this)
+        this.clothingLoader = new ClothingLoader(this)
         this.bodySprite
 
         PathEngine.setStartPos(this)
@@ -68,7 +68,7 @@ export default class Penguin extends BaseContainer {
 
     load() {
         this.penguinLoader.loadPenguin(this)
-        this.itemLoader.loadItems()
+        this.clothingLoader.loadItems()
 
         this.room.add.existing(this)
     }
@@ -82,14 +82,14 @@ export default class Penguin extends BaseContainer {
 
         // Load item sprite
         if (slot in this.items.equipped) {
-            this.itemLoader.loadItem(item, slot)
-            this.itemLoader.load.start()
+            this.clothingLoader.loadItem(item, slot)
+            this.clothingLoader.start()
         }
 
         // Load item paper, only if card is active
         if (this.playerCard.visible && this.playerCard.id == this.id) {
             this.paperDollLoader.loadItem(item, slot)
-            this.paperDollLoader.load.start()
+            this.paperDollLoader.start()
         }
     }
 
