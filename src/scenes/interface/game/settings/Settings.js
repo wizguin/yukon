@@ -139,14 +139,15 @@ export default class Settings extends BaseContainer {
 
         this.soundManager.muteMusic = this.checkbox.checked
 
-        if (!this.world.room.music) {
+        let music = this.world.room.music
+        if (!music) {
             return
         }
 
         if (this.soundManager.muteMusic) {
             this.world.room.stopMusic()
         } else {
-            this.world.room.setMusic()
+            this.world.room.playMusic(music)
         }
     }
 
