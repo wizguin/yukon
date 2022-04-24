@@ -1,5 +1,6 @@
 import Boot from '@engine/boot/Boot'
 import Network from '@engine/network/Network'
+import SoundManager from '@engine/sound/SoundManager'
 
 import game from './data/game'
 
@@ -15,6 +16,9 @@ export default class Game extends Phaser.Game {
 
         this.crumbs = config.crumbs
         this.network = new Network(this)
+
+        // howler.js based sound manager
+        this.soundManager = new SoundManager(this)
 
         this.scene.add('Boot', Boot, true)
     }

@@ -12,8 +12,6 @@ export default class WorldController extends BaseScene {
 
         this.client
         this.room
-
-        this.muteMusic = false
     }
 
     create() {

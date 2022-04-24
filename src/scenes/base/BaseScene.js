@@ -12,6 +12,10 @@ export default class BaseScene extends Phaser.Scene {
         return this.game.network
     }
 
+    get soundManager() {
+        return this.game.soundManager
+    }
+
     get interface() {
         return this.scene.get('InterfaceController')
     }
@@ -30,6 +34,22 @@ export default class BaseScene extends Phaser.Scene {
 
     getFormatString(id, ...args) {
         return Phaser.Utils.String.Format(this.crumbs.strings[id.toLowerCase()], args)
+    }
+
+    setMusic() {
+        if (this.music) {
+            this.playMusic(this.music)
+        } else {
+            this.stopMusic()
+        }
+    }
+
+    playMusic(key) {
+        this.soundManager.playMusic(key)
+    }
+
+    stopMusic() {
+        this.soundManager.stopMusic()
     }
 
 }

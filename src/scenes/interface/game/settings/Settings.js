@@ -137,16 +137,16 @@ export default class Settings extends BaseContainer {
     onMuteClick() {
         this.toggle(this.checkbox)
 
-        this.world.muteMusic = this.checkbox.checked
+        this.soundManager.muteMusic = this.checkbox.checked
 
         if (!this.world.room.music) {
             return
         }
 
-        if (this.world.muteMusic) {
+        if (this.soundManager.muteMusic) {
             this.world.room.stopMusic()
         } else {
-            this.world.room.addMusic()
+            this.world.room.setMusic()
         }
     }
 

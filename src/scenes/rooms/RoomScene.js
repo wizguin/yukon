@@ -19,6 +19,9 @@ export default class RoomScene extends BaseScene {
         this.isReady = false
         // Array of users to be added once ready
         this.waiting = []
+
+        this.tables
+        this.waddles
     }
 
     get client() {
@@ -37,12 +40,12 @@ export default class RoomScene extends BaseScene {
 
         if (this.roomPhysics) this.addPhysics()
         if (this.roomAnims) this.addAnims()
+
         this.addInput()
+        this.setMusic()
 
-        this.sound.pauseOnBlur = false
-        if (this.music) this.addMusic()
-
-        if (this.waddles) this.getWaddles()
+        if (this.tables) this.sendGetTables()
+        if (this.waddles) this.sendGetWaddles()
 
         this.interface.showInterface()
     }
@@ -95,18 +98,16 @@ export default class RoomScene extends BaseScene {
         this.input.on('pointerup', (pointer, target) => this.client.onPointerUp(pointer, target))
     }
 
-    addMusic() {
-        if (!this.world.muteMusic && this.cache.audio.exists(this.music)) {
-            this.sound.play(this.music, { loop: true })
-        }
+    sendGetTables() {
+        this.network.send('get_tables')
     }
 
-    stopMusic() {
-        this.sound.stopByKey(this.music)
-    }
-
-    getWaddles() {
+    sendGetWaddles() {
         this.network.send('get_waddles')
+    }
+
+    getTable(id) {
+        return this[`table${id}`]
     }
 
     setWaddles(waddles) {
@@ -131,7 +132,7 @@ export default class RoomScene extends BaseScene {
 
     stop() {
         this.interface.main.snowballFactory.clearBalls()
-        this.sound.stopAll()
+        this.soundManager.stopAllButMusic()
         this.scene.stop()
     }
 
@@ -191,11 +192,17 @@ export default class RoomScene extends BaseScene {
         for (let t in this.roomTriggers) {
             let trigger = this.addBody(t, 0x00FF00)
 
-            trigger.callback = this.roomTriggers[t]
+            trigger.callback = () => this.checkTrigger(this.roomTriggers[t])
             triggers.push(trigger)
         }
 
         return triggers
+    }
+
+    checkTrigger(callback) {
+        if (callback && !this.world.client.activeSeat) {
+            callback()
+        }
     }
 
     triggerRoom(id, x, y) {
@@ -216,6 +223,20 @@ export default class RoomScene extends BaseScene {
 
     triggerWaddle(id) {
         // To be overridden in derived class
+    }
+
+    triggerTable(name, id, prompt = true) {
+        if (!prompt) {
+            this.world.client.sendJoinTable(id)
+        }
+
+        let text = this.getString(`${name}_prompt`)
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.world.client.sendJoinTable(id)
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     /*========== Animations ==========*/

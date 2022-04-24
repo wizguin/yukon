@@ -3,6 +3,8 @@ import igloos from './igloos'
 import interfaces from './interfaces'
 import rooms from './rooms'
 
+import SoundFileFactory from '@engine/sound/SoundFileFactory'
+
 
 if (!localStorage.getItem('webgl')) {
     localStorage.setItem('webgl', 'true')
@@ -34,6 +36,11 @@ const game = {
         }
     },
 
+    audio: {
+        // Default Phaser audio systems not needed
+        noAudio: true
+    },
+
     plugins: {
         global: [ NineSlice.Plugin.DefaultCfg ]
     },
@@ -56,6 +63,15 @@ const game = {
 
         frameColor: 0x2e3440,
         iglooIdOffset: 2000
+    },
+
+    callbacks: {
+        preBoot: () => {
+            // Override default Phaser audio loader, loads audio for howler.js instead
+            Phaser.Loader.FileTypesManager.register('audio', function(key, urls, _, xhrSettings) {
+                return SoundFileFactory.create(this, key, urls, xhrSettings)
+            })
+        }
     }
 }
 

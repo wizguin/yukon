@@ -180,14 +180,14 @@ export default class IglooScene extends RoomScene {
         }
 
         if (this.cache.audio.exists(music)) {
-            return this.addMusic()
+            return this.playMusic(music)
         }
 
         this.load.audio(music, `assets/media/music/${music}.mp3`)
         this.load.start()
 
         this.load.once(`filecomplete-audio-${music}`, () => {
-            this.addMusic()
+            this.playMusic(music)
         })
     }
 

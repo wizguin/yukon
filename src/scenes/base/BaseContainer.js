@@ -8,6 +8,10 @@ export default class BaseContainer extends Phaser.GameObjects.Container {
         return this.scene.network
     }
 
+    get soundManager() {
+        return this.scene.soundManager
+    }
+
     get interface() {
         return this.scene.interface
     }

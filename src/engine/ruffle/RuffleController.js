@@ -25,7 +25,7 @@ export default class RuffleController extends BaseScene {
     }
 
     create() {
-		window.RufflePlayer = window.RufflePlayer || {}
+        window.RufflePlayer = window.RufflePlayer || {}
 
         this.playerStyle = {
             width: '100%',
@@ -35,8 +35,6 @@ export default class RuffleController extends BaseScene {
 
         this.container = this.add.dom(760, 480)
         this.container.visible = false
-
-        this.sound.pauseOnBlur = false
     }
 
     bootGame(game) {
@@ -68,6 +66,8 @@ export default class RuffleController extends BaseScene {
     onLoadComplete() {
         this.interface.hideLoading()
         this.interface.hideInterface()
+
+        this.stopMusic()
 
         this.container.visible = true
     }
@@ -130,32 +130,22 @@ export default class RuffleController extends BaseScene {
     }
 
     startGameMusic() {
-        if (!this.music) {
+        let music = this.music
+
+        if (!music) {
             return
         }
 
-        let music = this.music
-
         if (this.cache.audio.exists(music)) {
-            return this.addMusic()
+            return this.playMusic(music)
         }
 
         this.load.audio(music, `assets/media/music/${music}.mp3`)
         this.load.start()
 
         this.load.once(`filecomplete-audio-${music}`, () => {
-            this.addMusic()
+            this.playMusic(music)
         })
-    }
-
-    addMusic() {
-        if (!this.world.muteMusic && this.cache.audio.exists(this.music)) {
-            this.sound.play(this.music, { loop: true })
-        }
-    }
-
-    stopMusic() {
-        this.sound.stopByKey(this.music)
     }
 
 }
