@@ -10,7 +10,7 @@ export default class Join extends Plugin {
             'load_player': this.loadPlayer,
             'join_room': this.joinRoom,
             'join_igloo': this.joinIgloo,
-            'join_game': this.joinGame,
+            'join_game_room': this.joinGameRoom,
             'add_player': this.addPlayer,
             'remove_player': this.removePlayer
         }
@@ -40,7 +40,7 @@ export default class Join extends Plugin {
     }
 
     joinGameRoom(args) {
-        this.interface.showLoading(this.getString('loading', this.crumbs.games[args.game].key), true)
+        this.interface.showLoading(this.getString('loading', this.crumbs.games[args.game].key))
         this.world.joinRoom(args)
     }
 
