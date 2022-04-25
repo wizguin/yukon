@@ -11,7 +11,6 @@ import ActionsMenu from '../floating/actions/ActionsMenu'
 import Buddy from '../buddy/Buddy'
 import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
-import Waddle from '../waddle/Waddle'
 import Map from '../map/Map'
 import Moderator from '../moderator/Moderator'
 import PlayerCard from '../playercard/PlayerCard'
@@ -42,8 +41,6 @@ export default class Main extends BaseScene {
         this.mod_m;
         /** @type {Phaser.GameObjects.Layer} */
         this.widgetLayer;
-        /** @type {Waddle} */
-        this.waddle;
         /** @type {Buddy} */
         this.buddy;
         /** @type {PlayerCard} */
@@ -60,7 +57,7 @@ export default class Main extends BaseScene {
         this.moderator;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<PlayerCard|Buddy|Map|Waddle|Settings|Moderator>} */
+        /** @type {Array<PlayerCard|Buddy|Map|Settings|Moderator>} */
         this.hideOnSleep;
 
 
@@ -175,11 +172,6 @@ export default class Main extends BaseScene {
         // widgetLayer
         const widgetLayer = this.add.layer();
 
-        // waddle
-        const waddle = new Waddle(this, 1099, 332);
-        waddle.visible = false;
-        widgetLayer.add(waddle);
-
         // buddy
         const buddy = new Buddy(this, 1140, 436);
         buddy.visible = false;
@@ -221,7 +213,7 @@ export default class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map, waddle, settings, moderator];
+        const hideOnSleep = [playerCard, buddy, map, settings, moderator];
 
         // dock (components)
         new Interactive(dock);
@@ -332,7 +324,6 @@ export default class Main extends BaseScene {
         this.request_button = request_button;
         this.mod_m = mod_m;
         this.widgetLayer = widgetLayer;
-        this.waddle = waddle;
         this.buddy = buddy;
         this.playerCard = playerCard;
         this.actionsMenu = actionsMenu;
@@ -407,8 +398,6 @@ export default class Main extends BaseScene {
         }
 
         this.stopCrosshair()
-
-        this.waddle.activeSeat = null
 
         this.interface.prompt.hideAll()
 

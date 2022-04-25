@@ -19,9 +19,6 @@ export default class RoomScene extends BaseScene {
         this.isReady = false
         // Array of users to be added once ready
         this.waiting = []
-
-        this.tables
-        this.waddles
     }
 
     get client() {
@@ -43,9 +40,6 @@ export default class RoomScene extends BaseScene {
 
         this.addInput()
         this.setMusic()
-
-        if (this.tables) this.sendGetTables()
-        if (this.waddles) this.sendGetWaddles()
 
         this.interface.showInterface()
     }
@@ -96,34 +90,6 @@ export default class RoomScene extends BaseScene {
     addInput() {
         // Movement
         this.input.on('pointerup', (pointer, target) => this.client.onPointerUp(pointer, target))
-    }
-
-    sendGetTables() {
-        this.network.send('get_tables')
-    }
-
-    sendGetWaddles() {
-        this.network.send('get_waddles')
-    }
-
-    getTable(id) {
-        return this[`table${id}`]
-    }
-
-    setWaddles(waddles) {
-        this.waddles = waddles
-
-        for (let [id, seats] of Object.entries(waddles)) {
-            this.setSeats(id, seats)
-        }
-    }
-
-    setSeats(id, seats) {
-        for (let [index, seat] of seats.entries()) {
-            if (seat) {
-                this.world.room[`seats${id}`][index].visible = true
-            }
-        }
     }
 
     onSnowballComplete(x, y) {
@@ -200,7 +166,7 @@ export default class RoomScene extends BaseScene {
     }
 
     checkTrigger(callback) {
-        if (callback && !this.world.client.activeSeat) {
+        if (callback) {
             callback()
         }
     }
@@ -216,24 +182,6 @@ export default class RoomScene extends BaseScene {
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.world.client.sendJoinRoom(id, '')
-
-            this.interface.prompt.window.visible = false
-        })
-    }
-
-    triggerWaddle(id) {
-        // To be overridden in derived class
-    }
-
-    triggerTable(name, id, prompt = true) {
-        if (!prompt) {
-            this.world.client.sendJoinTable(id)
-        }
-
-        let text = this.getString(`${name}_prompt`)
-
-        this.interface.prompt.showWindow(text, 'dual', () => {
-            this.world.client.sendJoinTable(id)
 
             this.interface.prompt.window.visible = false
         })

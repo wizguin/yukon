@@ -28,13 +28,7 @@ export default class Mtn extends RoomScene {
 
         this.roomTriggers = {
             'village': () => this.triggerRoom(200, 480, 560),
-            'waddle100': () => this.triggerWaddle(100),
-            'waddle101': () => this.triggerWaddle(101),
-            'waddle102': () => this.triggerWaddle(102),
-            'waddle103': () => this.triggerWaddle(103),
         }
-
-        this.waddles = {}
 
         /* END-USER-CTR-CODE */
     }
@@ -286,22 +280,6 @@ export default class Mtn extends RoomScene {
 
 
     /* START-USER-CODE */
-
-    triggerWaddle(id) {
-        if (this.world.client.activeSeat) {
-            return
-        }
-
-        let text = 'Would you like to join this\nSled race?'
-
-        this.interface.prompt.showWindow(text, 'dual', () => {
-            this.network.send('join_waddle', { id: id })
-
-            this.interface.prompt.window.visible = false
-        })
-
-    }
-
     /* END-USER-CODE */
 }
 

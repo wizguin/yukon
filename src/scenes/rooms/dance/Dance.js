@@ -47,7 +47,7 @@ export default class Dance extends RoomScene {
             'mix': null
         }
         this.roomAnims = true
-        this.music = 'MUS_Evergreen_CrossingOver_NightClub'
+        this.music = '5'
 
         /* END-USER-CTR-CODE */
     }

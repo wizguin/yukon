@@ -488,22 +488,6 @@
             "components": [],
             "list": [
                 {
-                    "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
-                    "id": "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
-                    "unlock": [
-                        "visible",
-                        "x",
-                        "y"
-                    ],
-                    "label": "waddle",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": 1099,
-                    "y": 332,
-                    "visible": false,
-                    "nestedPrefabs": []
-                },
-                {
                     "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
                     "id": "9acd4a58-cbf9-4751-b96a-2822f121af9c",
                     "unlock": [
@@ -649,7 +633,6 @@
                 "9770a528-0c5a-4720-a6db-eabd53c787e1",
                 "9acd4a58-cbf9-4751-b96a-2822f121af9c",
                 "75179079-5eb1-4135-9798-34cea7db0f09",
-                "9774c68e-f80f-4832-8d58-7c3ce94f98fd",
                 "4904443b-abe1-429f-9557-f064db674790",
                 "7b10953c-f288-40da-8b3f-44af0dea100d"
             ]

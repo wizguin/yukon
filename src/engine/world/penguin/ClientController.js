@@ -69,10 +69,6 @@ export default class ClientController {
         return this.penguin.visible
     }
 
-    get activeSeat() {
-        return this.interface.main.waddle.activeSeat
-    }
-
     get input() {
         return this.interface.main.input
     }
@@ -121,7 +117,7 @@ export default class ClientController {
     }
 
     onPointerUp(pointer, target) {
-        if (pointer.button != 0 || !this.visible || this.activeSeat) {
+        if (pointer.button != 0 || !this.visible) {
             return
         }
 
@@ -220,10 +216,6 @@ export default class ClientController {
     }
 
     sendJoinRoom(id, name, x = 0, y = 0, randomRange = 40) {
-        if (this.activeSeat) {
-            return this.interface.prompt.showError('Please exit your game before leaving the room')
-        }
-
         this.interface.showLoading(this.getString('joining', name))
 
         this.lockRotation = false
@@ -245,10 +237,6 @@ export default class ClientController {
     sendJoinIgloo(id) {
         if (this.world.room.isIgloo && this.world.room.id == id) {
             return
-        }
-
-        if (this.activeSeat) {
-            return this.interface.prompt.showError('Please exit your game before leaving the room')
         }
 
         this.interface.showLoading(this.getString('joining', 'igloo'))

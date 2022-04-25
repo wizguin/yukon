@@ -130,10 +130,6 @@ const rooms = {
         scene: require('@rooms/cove/Cove').default,
         x: 840,
         y: 480
-    },
-    999: {
-        key: 'Sled',
-        scene: require('@games/sled/Sled').default
     }
 }
 

@@ -26,18 +26,12 @@ export default class GameScene extends BaseScene {
     create() {
         this._create()
 
-        this.sound.pauseOnBlur = false
-        if (this.music) this.addMusic()
-
+        this.setMusic()
         this.interface.hideLoading()
     }
 
-    addMusic() {
-        this.sound.play(this.music, { loop: true })
-    }
-
     stop() {
-        this.sound.stopAll()
+        this.soundManager.stopAllButMusic()
         this.scene.stop()
     }
 

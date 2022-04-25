@@ -56,6 +56,7 @@ export default class RuffleController extends BaseScene {
             menu: false,
             contextMenu: false,
             scale: 'noborder',
+            autoplay: 'on',
 
             logLevel: (localStorage.logging == 'true')
                 ? 'trace'
