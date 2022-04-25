@@ -19,7 +19,7 @@ export default class Book extends RoomScene {
         this.roomTriggers = {
             'coffee': () => this.triggerRoom(110, 1120, 800)
         }
-        this.music = 'MUS_Evergreen_KingofKingston_CoffeeShop'
+        this.music = '1'
 
         /* END-USER-CTR-CODE */
     }
