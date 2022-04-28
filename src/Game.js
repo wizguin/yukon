@@ -13,8 +13,8 @@ export default class Game extends Phaser.Game {
         // Please leave this line here for credit purposes
         console.log('%cYukon%c https://github.com/wizguin/yukon', 'color: white; background: black; border-left: 8px solid #0099cc; padding: 0px 8px 0px 8px;', '')
 
-        // "Yukon" can be changed here to display the version of your own client
-        console.log(`Yukon ${VERSION}`)
+        // Edit this line if you want to display a custom name
+        console.log(`Version ${VERSION}`)
 
         this.initContainers()
 
