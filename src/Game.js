@@ -10,12 +10,7 @@ export default class Game extends Phaser.Game {
     constructor(config) {
         super(config)
 
-        // Please leave this line here for credit purposes
-        console.log('%cYukon%c https://github.com/wizguin/yukon', 'color: white; background: black; border-left: 8px solid #0099cc; padding: 0px 8px 0px 8px;', '')
-
-        // Edit this line if you want to display a custom name
-        console.log(`Version ${VERSION}`)
-
+        this.logBanner()
         this.initContainers()
 
         this.crumbs = config.crumbs
@@ -25,6 +20,14 @@ export default class Game extends Phaser.Game {
         this.soundManager = new SoundManager(this)
 
         this.scene.add('Boot', Boot, true)
+    }
+
+    logBanner() {
+        // Please leave this line here for credit purposes
+        console.log('%cYukon%c https://github.com/wizguin/yukon', 'color: white; background: black; border-left: 8px solid #0099cc; padding: 0px 8px 0px 8px;', '')
+
+        // Edit this line if you want to display a custom name
+        console.log(`Version ${VERSION}`)
     }
 
     initContainers() {
