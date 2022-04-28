@@ -4,6 +4,7 @@ const path = require('path')
 const BannerPlugin = require('./webpack_plugins/BannerPlugin')
 const DefinePlugin = require('webpack').DefinePlugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const WebpackObfuscator = require('webpack-obfuscator')
 
 const timestamp = + Date.now()
@@ -74,10 +75,6 @@ let config = {
         new DefinePlugin({
             VERSION: JSON.stringify(require('./package.json').version),
             TIMESTAMP: timestamp
-        }),
-        // MIT License do not remove
-        new BannerPlugin({
-            banner: fs.readFileSync('./LICENSE', 'utf-8')
         })
     ]
 }
@@ -94,6 +91,11 @@ module.exports = (env, argv) => {
     }
 
     config.optimization.minimize = true
+    config.optimization.minimizer = [
+        new TerserPlugin({
+            extractComments: false
+        })
+    ]
 
     config.plugins.push(
         new HtmlWebpackPlugin({
@@ -103,6 +105,10 @@ module.exports = (env, argv) => {
             templateParameters: {
                 timestamp: timestamp
             }
+        }),
+        // MIT License do not remove
+        new BannerPlugin({
+            banner: fs.readFileSync('./LICENSE', 'utf-8')
         })
     )
 
