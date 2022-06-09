@@ -70,11 +70,17 @@ export default class CoinPrompt extends BaseContainer {
 
         let newCoins = this.world.client.coins + coins
 
-        this.text.text = this.getFormatString('game_over', coins, newCoins)
+        if (coins == 1) {
+            this.text.text = this.getFormatString('game_over1', newCoins)
+        } else {
+            this.text.text = this.getFormatString('game_over', coins, newCoins)
+        }
     }
 
     callback() {
-        this.ruffle.close()
+        if (this.ruffle.container.visible) {
+            this.ruffle.close()
+        }
 
         this.visible = false
     }

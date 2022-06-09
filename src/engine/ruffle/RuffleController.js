@@ -126,8 +126,6 @@ export default class RuffleController extends BaseScene {
         this.network.send('game_over', { coins: obj.coins })
 
         this.game.domContainer.style.zIndex = -10
-
-        this.interface.prompt.showCoin(obj.coins)
     }
 
     startGameMusic() {
