@@ -38,6 +38,8 @@ export default class IglooScene extends RoomScene {
         this.quantities = {}
 
         this.events.once('shutdown', () => this.onShutdown())
+
+        super.init()
     }
 
     preload() {

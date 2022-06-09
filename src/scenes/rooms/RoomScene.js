@@ -26,7 +26,9 @@ export default class RoomScene extends BaseScene {
     }
 
     init(data) {
-        this.id = data.id
+        if (!this.id) {
+            this.id = data.id
+        }
 
         super.init()
     }
