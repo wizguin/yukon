@@ -3,6 +3,9 @@ import EventComponent from './EventComponent'
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 export default class DraggableContainer extends EventComponent {
 
     constructor(gameObject) {
@@ -12,8 +15,6 @@ export default class DraggableContainer extends EventComponent {
         this.gameObject;
         /** @type {Phaser.GameObjects.GameObject} */
         this.handle;
-        /** @type {number} */
-        this.depth = 0;
 
 
         this.gameObject = gameObject;
@@ -39,15 +40,14 @@ export default class DraggableContainer extends EventComponent {
     /* START-USER-CODE */
 
     start() {
-        let zone = this.scene.add.zone(this.handle.x, this.handle.y, this.handle.width, this.handle.height)
+        this.handle.setInteractive({
+            draggable: true,
+            pixelPerfect: true
+        })
 
-        this.gameObject.addAt(zone, this.depth)
-
-        zone.setInteractive({ draggable: true })
-
-        zone.on('pointerdown', (pointer) => this.onDown(pointer))
-        zone.on('dragstart', (pointer) => this.onDragStart(pointer))
-        zone.on('drag', (pointer) => this.onDrag(pointer))
+        this.handle.on('pointerdown', (pointer) => this.onDown(pointer))
+        this.handle.on('dragstart', (pointer) => this.onDragStart(pointer))
+        this.handle.on('drag', (pointer) => this.onDrag(pointer))
     }
 
     onDown(pointer) {
