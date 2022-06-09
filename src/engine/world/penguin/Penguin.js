@@ -7,13 +7,12 @@ import PenguinItems from './PenguinItems'
 
 export default class Penguin extends BaseContainer {
 
-    constructor(user, room, penguinLoader) {
+    constructor(user, room) {
         super(room, user.x, user.y)
 
         // Assign user attributes
         Object.assign(this, user)
         this.room = room
-        this.penguinLoader = penguinLoader
 
         this.items = new PenguinItems(this)
         this.clothingLoader = new ClothingLoader(this)
@@ -24,7 +23,7 @@ export default class Penguin extends BaseContainer {
         this.tween
         this.direction
 
-        this.nameTag = penguinLoader.addName(this)
+        this.nameTag = this.penguinLoader.addName(this)
 
         // Active balloon
         this.balloon
@@ -54,6 +53,14 @@ export default class Penguin extends BaseContainer {
         return this.interface.main.playerCard
     }
 
+    get equipped() {
+        return this.items.equipped
+    }
+
+    get penguinLoader() {
+        return this.world.penguinFactory.penguinLoader
+    }
+
     get paperDollLoader() {
         return this.playerCard.paperDoll.paperDollLoader
     }
@@ -81,7 +88,7 @@ export default class Penguin extends BaseContainer {
         }
 
         // Load item sprite
-        if (slot in this.items.equipped) {
+        if (slot in this.equipped) {
             this.clothingLoader.loadItem(item, slot)
             this.clothingLoader.start()
         }

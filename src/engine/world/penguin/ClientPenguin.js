@@ -5,15 +5,15 @@ import PathEngine from './pathfinding/PathEngine'
 
 export default class ClientPenguin extends Penguin {
 
-    constructor(user, room, penguinLoader) {
-        super(user, room, penguinLoader)
+    constructor(user, room) {
+        super(user, room)
 
         this.isClient = true
 
         this.savedPenguins = this.network.savedPenguins
         this.save = this.savedPenguins[this.username.toLowerCase()]
 
-        penguinLoader.addRing(this)
+        this.penguinLoader.addRing(this)
     }
 
     update(item, slot) {

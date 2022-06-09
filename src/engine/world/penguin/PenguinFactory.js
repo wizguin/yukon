@@ -15,11 +15,11 @@ export default class PenguinFactory {
         let client = this.world.client
 
         if (user.id == client.id) {
-            client.penguin = new ClientPenguin(user, room, this.penguinLoader)
+            client.penguin = new ClientPenguin(user, room)
             return client.penguin
 
         } else {
-            return new Penguin(user, room, this.penguinLoader)
+            return new Penguin(user, room)
         }
     }
 

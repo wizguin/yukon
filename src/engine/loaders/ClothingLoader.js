@@ -10,7 +10,7 @@ export default class ClothingLoader extends BaseLoader {
 
         this.penguin = penguin
 
-        this.equipped = this.penguin.items.equipped
+        this.equipped = this.penguin.equipped
 
         this.baseURL = '/assets/media/clothing/sprites/'
         this.keyPrefix = 'clothing/sprites/'
