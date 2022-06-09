@@ -19,6 +19,8 @@ export default class PenguinLoader {
         this.addPenguin(penguin)
         this.addShadow(penguin)
         this.addInput(penguin)
+
+        penguin.playFrame(penguin.frame)
     }
 
     addPenguin(penguin) {
