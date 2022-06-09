@@ -172,7 +172,7 @@ export default class Cave extends RoomScene {
     /* START-USER-CODE */
 
     onZoneClick() {
-        this.world.client.penguin.move(1266, 572)
+        this.world.client.sendMove(1266, 572)
     }
 
     /* END-USER-CODE */

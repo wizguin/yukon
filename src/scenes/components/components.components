@@ -319,27 +319,29 @@
         },
         {
             "name": "MoveTo",
-            "baseClass": "",
+            "baseClass": "EventComponent",
             "gameObjectType": "Phaser.GameObjects.GameObject",
             "properties": [
                 {
                     "name": "x",
                     "label": "x",
                     "tooltip": "x",
-                    "defValue": 0,
+                    "defValue": "0",
                     "customDefinition": false,
                     "type": {
-                        "id": "number"
+                        "id": "expression",
+                        "expressionType": "any"
                     }
                 },
                 {
                     "name": "y",
                     "label": "y",
                     "tooltip": "y",
-                    "defValue": 0,
+                    "defValue": "0",
                     "customDefinition": false,
                     "type": {
-                        "id": "number"
+                        "id": "expression",
+                        "expressionType": "any"
                     }
                 }
             ]

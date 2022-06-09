@@ -250,7 +250,7 @@ export default class Lodge extends RoomScene {
     }
 
     onZoneClick() {
-        this.world.client.penguin.move(1210, 460)
+        this.world.client.sendMove(1210, 460)
     }
 
     /* END-USER-CODE */

@@ -126,7 +126,7 @@ export default class ClientController {
             return
         }
 
-        this.penguin.move(pointer.x, pointer.y)
+        this.sendMove(pointer.x, pointer.y)
     }
 
     onKeyDown(event) {
@@ -153,6 +153,14 @@ export default class ClientController {
 
             this.keyActions[k.action](k.value || null)
         }
+    }
+
+    sendMove(x, y, frame = null) {
+        if (!this.visible) {
+            return
+        }
+
+        this.penguin.move(x, y, frame)
     }
 
     sendFrame(frame, set = true) {

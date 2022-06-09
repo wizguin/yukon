@@ -1,27 +1,28 @@
+import EventComponent from './EventComponent'
+
+
 /* START OF COMPILED CODE */
 
-export default class MoveTo {
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class MoveTo extends EventComponent {
 
     constructor(gameObject) {
+        super(gameObject);
 
         /** @type {Phaser.GameObjects.GameObject} */
         this.gameObject;
-        /** @type {number} */
+        /** @type {any} */
         this.x = 0;
-        /** @type {number} */
+        /** @type {any} */
         this.y = 0;
+
 
         this.gameObject = gameObject;
         gameObject["__MoveTo"] = this;
 
         /* START-USER-CTR-CODE */
-
-        // If x/y is 0 then use gameObject coordinate
-        this.x = (this.x) ? this.x : gameObject.x
-        this.y = (this.y) ? this.y : gameObject.y
-
-        this.gameObject.on('pointerup', (pointer) => this.onPointerUp(pointer))
-
         /* END-USER-CTR-CODE */
     }
 
@@ -33,12 +34,42 @@ export default class MoveTo {
 
     /* START-USER-CODE */
 
+    start() {
+        // If x/y is 0 then use gameObject coordinate
+        this.x = (this.x) ? this.x : this.getX(this.gameObject)
+        this.y = (this.y) ? this.y : this.getY(this.gameObject)
+
+        this.gameObject.on('pointerup', (pointer) => this.onPointerUp(pointer))
+    }
+
+    getX(gameObject) {
+        if (!gameObject.parentContainer) {
+            return gameObject.x
+        }
+
+        // Get global coordinates of gameObject
+        let matrix = gameObject.getWorldTransformMatrix()
+
+        return matrix.getX(0, 0)
+    }
+
+    getY(gameObject) {
+        if (!gameObject.parentContainer) {
+            return gameObject.y
+        }
+
+        // Get global coordinates of gameObject
+        let matrix = gameObject.getWorldTransformMatrix()
+
+        return matrix.getY(0, 0)
+    }
+
     onPointerUp(pointer) {
         if (pointer.button != 0) {
             return
         }
 
-        this.gameObject.scene.world.client.penguin.move(this.x, this.y)
+        this.gameObject.scene.world.client.sendMove(this.x, this.y)
     }
 
     /* END-USER-CODE */
