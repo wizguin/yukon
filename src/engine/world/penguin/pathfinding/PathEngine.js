@@ -1,6 +1,6 @@
 export default class PathEngine {
 
-    static speed = 260
+    static speed = 215
 
     // Valid screen region
     static minX = 30

@@ -223,7 +223,7 @@ export default class Penguin extends BaseContainer {
     }
 
     onMoveUpdate() {
-        this.depth = this.y
+        this.depth = this.y + 1
 
         if (this.nameTag) {
             this.updateNameTag()
