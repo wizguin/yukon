@@ -3,6 +3,9 @@ import SimpleButton from './SimpleButton'
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 export default class Button extends SimpleButton {
 
     constructor(gameObject) {

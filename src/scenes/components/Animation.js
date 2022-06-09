@@ -7,6 +7,9 @@ const Pad = Phaser.Utils.String.Pad
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 export default class Animation extends EventComponent {
 
     constructor(gameObject) {

@@ -3,6 +3,9 @@ import EventComponent from './EventComponent'
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 export default class Draggable extends EventComponent {
 
     constructor(gameObject) {
