@@ -76,6 +76,10 @@ export default class Network {
     }
 
     send(action, args = {}) {
+        if (localStorage.logging == 'true') {
+            console.log('Message sending:', action, args)
+        }
+
         this.client.emit('message', JSON.stringify({ action: action, args: args }) + '\xdd')
     }
 
