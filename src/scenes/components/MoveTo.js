@@ -39,7 +39,9 @@ export default class MoveTo extends EventComponent {
         this.x = (this.x) ? this.x : this.getX(this.gameObject)
         this.y = (this.y) ? this.y : this.getY(this.gameObject)
 
-        this.gameObject.on('pointerup', (pointer) => this.onPointerUp(pointer))
+        let gameObject = (this.gameObject.zone) ? this.gameObject.zone : this.gameObject
+
+        gameObject.on('pointerup', (pointer) => this.onPointerUp(pointer))
     }
 
     getX(gameObject) {

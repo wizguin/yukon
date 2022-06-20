@@ -1,26 +1,26 @@
+import EventComponent from './EventComponent'
+
+
 /* START OF COMPILED CODE */
 
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class ShowHint {
+export default class ShowHint extends EventComponent {
 
     constructor(gameObject) {
+        super(gameObject);
 
         /** @type {Phaser.GameObjects.GameObject} */
         this.gameObject;
         /** @type {string} */
         this.text = "";
 
+
         this.gameObject = gameObject;
         gameObject["__ShowHint"] = this;
 
         /* START-USER-CTR-CODE */
-
-        this.gameObject.on('pointerover', () => this.onOver())
-        this.gameObject.on('pointerout', () => this.onOut())
-        this.gameObject.on('pointerup', () => this.onOut())
-
         /* END-USER-CTR-CODE */
     }
 
@@ -34,6 +34,14 @@ export default class ShowHint {
 
     get hint() {
         return this.gameObject.scene.interface.main.hint
+    }
+
+    start() {
+        let gameObject = (this.gameObject.zone) ? this.gameObject.zone : this.gameObject
+
+        gameObject.on('pointerover', () => this.onOver())
+        gameObject.on('pointerout', () => this.onOut())
+        gameObject.on('pointerup', () => this.onOut())
     }
 
     onOver() {

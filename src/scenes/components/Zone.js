@@ -50,6 +50,8 @@ export default class Zone extends SimpleButton {
         zone.on('pointerover', () => this.onOver())
         zone.on('pointerout', () => this.onOut())
         zone.on('pointerup', (pointer) => this.onUp(pointer))
+
+        this.gameObject.zone = zone
     }
 
     /* END-USER-CODE */
