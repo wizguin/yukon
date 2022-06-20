@@ -181,7 +181,7 @@ export default class InterfaceController extends BaseScene {
 
     updateCatalogCoins(coins) {
         let books = this.scene.manager.getScenes().filter(
-            scene => Object.getPrototypeOf(scene.constructor).name == 'Book'
+            scene => scene.isBook
         )
 
         books.map(book => {

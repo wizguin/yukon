@@ -12,6 +12,8 @@ export default class Book extends BaseScene {
         this.pages
         // Buttons container defined in derived class
         this.buttons
+
+        this.isBook = true
     }
 
     init() {
