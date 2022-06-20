@@ -24,6 +24,7 @@ export default class ClientController {
         this.iglooOpen = false
 
         this.lastRoom
+        this.activeSeat
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
@@ -117,7 +118,7 @@ export default class ClientController {
     }
 
     onPointerUp(pointer, target) {
-        if (pointer.button != 0 || !this.visible) {
+        if (pointer.button != 0 || !this.visible || this.activeSeat) {
             return
         }
 
@@ -224,6 +225,10 @@ export default class ClientController {
     }
 
     sendJoinRoom(id, name, x = 0, y = 0, randomRange = 40) {
+        if (this.activeSeat) {
+            return this.interface.prompt.showError('Please exit your game before leaving the room')
+        }
+
         this.interface.showLoading(this.getString('joining', name))
 
         this.lockRotation = false
@@ -247,11 +252,62 @@ export default class ClientController {
             return
         }
 
+        if (this.activeSeat) {
+            return this.interface.prompt.showError('Please exit your game before leaving the room')
+        }
+
         this.interface.showLoading(this.getString('joining', 'igloo'))
 
         this.lockRotation = false
 
         this.network.send('join_igloo', { igloo: id, x: 0, y: 0 })
+    }
+
+    sendJoinTable(id) {
+        this.network.send('join_table', { table: id })
+    }
+
+    sendMoveToSeat(table, seat) {
+        table = this.world.room.getTable(table)
+
+        if (!table) {
+            return
+        }
+
+        seat = table[`seat${seat}`]
+
+        if (seat) {
+            this.activeSeat = seat
+
+            let pos = this.getSeatWorldPos(seat)
+            this.sendMove(pos.x, pos.y, seat.sitFrame)
+        } else {
+            this.activeSeat = true
+        }
+    }
+
+    sendLeaveSeat() {
+        if (!this.activeSeat) {
+            return
+        }
+
+        let done = this.activeSeat.donePoint
+
+        if (done) {
+            let pos = this.getSeatWorldPos(done)
+            this.sendMove(pos.x, pos.y)
+        }
+
+        this.activeSeat = null
+    }
+
+    getSeatWorldPos(seat) {
+        let matrix = seat.getWorldTransformMatrix()
+
+        return {
+            x: matrix.getX(0, 0),
+            y: matrix.getY(0, 0)
+        }
     }
 
 }

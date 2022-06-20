@@ -1,0 +1,129 @@
+{
+    "id": "d2fdc365-c022-4a72-8cdf-3f339d862cf6",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "50a0b750-2dd9-4611-a596-566780981ff7",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "485f90c3-f21b-49ba-8d0b-ff28c31d8b16",
+                    "label": "table",
+                    "components": [],
+                    "texture": {
+                        "key": "attic",
+                        "frame": "table/table_4"
+                    },
+                    "originX": 0.5033557046979866,
+                    "originY": 0.5308641975308642
+                },
+                {
+                    "type": "Image",
+                    "id": "8c1dbd2f-030b-4538-aace-4cdd9af8a696",
+                    "label": "game",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button",
+                        "MoveTo",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "table/game_4",
+                    "Button.activeFrame": false,
+                    "MoveTo.x": "this.x",
+                    "MoveTo.y": "this.y",
+                    "ShowHint.text": "four_hint",
+                    "texture": {
+                        "key": "attic",
+                        "frame": "table/game_4"
+                    },
+                    "x": -5,
+                    "y": -58,
+                    "originX": 0.4537037037037037,
+                    "originY": 0.4805194805194805
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "401b0367-c68b-451d-9368-84c068aaa8f3",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done2",
+                    "components": [],
+                    "x": 12,
+                    "y": 64,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "16b15cbe-414b-43ab-aba8-97351ca1c73f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done1",
+                    "components": [],
+                    "x": -110,
+                    "y": 26,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "c6a172e4-cbb5-4641-a9b9-00744157deed",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat2",
+                    "scope": "CLASS",
+                    "sitFrame": 20,
+                    "donePoint": "done2",
+                    "components": [],
+                    "x": 44,
+                    "y": 20,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "596917a9-f68c-4b17-a83a-8d0ddd0a3b8a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 24,
+                    "donePoint": "done1",
+                    "components": [],
+                    "x": -56,
+                    "y": -46,
+                    "nestedPrefabs": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

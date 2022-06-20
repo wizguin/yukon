@@ -2,6 +2,10 @@ import RoomScene from '../RoomScene'
 
 import { Animation, Button, MoveTo, ShowHint, SimpleButton, Zone } from '@components/components'
 
+import FourTable1 from '@scenes/shared_prefabs/tables/four/FourTable1'
+import FourTable2 from '@scenes/shared_prefabs/tables/four/FourTable2'
+import FourTable3 from '@scenes/shared_prefabs/tables/four/FourTable3'
+
 
 /* START OF COMPILED CODE */
 
@@ -10,13 +14,19 @@ export default class Lodge extends RoomScene {
     constructor() {
         super("Lodge");
 
+        /** @type {FourTable2} */
+        this.table207;
+        /** @type {FourTable1} */
+        this.table206;
+        /** @type {FourTable3} */
+        this.table205;
         /** @type {Phaser.GameObjects.Sprite} */
         this.flame;
         /** @type {Phaser.GameObjects.Sprite} */
         this.flame_out;
         /** @type {Phaser.GameObjects.Sprite} */
         this.fish;
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Array<Phaser.GameObjects.Image|FourTable1|FourTable2|FourTable3>} */
         this.sort;
 
 
@@ -25,9 +35,14 @@ export default class Lodge extends RoomScene {
         this.roomTriggers = {
             'attic': () => this.triggerRoom(221, 966, 560),
             'village': () => this.triggerRoom(200, 940, 540),
-            'fish': () => this.triggerGame(904)
+            'fish': () => this.triggerGame(904),
+            'table205': () => this.triggerTable('four', 205),
+            'table206': () => this.triggerTable('four', 206),
+            'table207': () => this.triggerTable('four', 207)
         }
         this.music = '589'
+
+        this.tables = {}
 
         /* END-USER-CTR-CODE */
     }
@@ -42,81 +57,81 @@ export default class Lodge extends RoomScene {
     _create() {
 
         // bg
-        const bg = this.add.image(-17, -2, "lodge", "bg");
+        const bg = this.add.image(-16, 1, "lodge", "bg");
         bg.setOrigin(0, 0);
 
         // door
         const door = this.add.image(136, 461, "lodge", "door");
 
         // footrest
-        const footrest = this.add.image(1279, 747, "lodge", "footrest");
+        const footrest = this.add.image(1275, 750, "lodge", "footrest");
         footrest.setOrigin(0.49295775, 0.47222222);
 
         // chair
-        const chair = this.add.image(1365, 763, "lodge", "chair");
+        const chair = this.add.image(1368, 760, "lodge", "chair");
         chair.setOrigin(0.5017064846416383, 0.5018450184501845);
 
         // fire
-        const fire = this.add.sprite(1334, 473, "lodge", "fire0001");
+        const fire = this.add.sprite(1329, 474, "lodge", "fire0001");
         fire.setOrigin(0.5061728395061729, 0.5);
 
         // fishing_door
-        const fishing_door = this.add.image(949, 249, "lodge", "fishing_door");
+        const fishing_door = this.add.image(946, 256, "lodge", "fishing_door");
         fishing_door.setOrigin(0.2916666666666667, 0.3961218836565097);
 
         // rods
-        this.add.image(820, 328, "lodge", "rods");
+        this.add.image(816, 335, "lodge", "rods");
 
         // bait
-        const bait = this.add.image(838, 416, "lodge", "bait");
+        const bait = this.add.image(835, 421, "lodge", "bait");
         bait.setOrigin(0.5060240963855421, 0.5);
 
         // catalog_small
-        const catalog_small = this.add.sprite(830, 240, "lodge", "catalog_small0001");
+        const catalog_small = this.add.sprite(826, 247, "lodge", "catalog_small0001");
         catalog_small.setOrigin(0, 0);
 
         // catalog_small_tape
-        const catalog_small_tape = this.add.image(847, 238, "lodge", "catalog_small_tape");
+        const catalog_small_tape = this.add.image(843, 244, "lodge", "catalog_small_tape");
         catalog_small_tape.setOrigin(0, 0);
 
-        // table3
-        const table3 = this.add.image(600, 515, "lodge", "table3");
-        table3.setOrigin(0.5, 0.6985294117647058);
+        // table207
+        const table207 = new FourTable2(this, 1020, 814);
+        this.add.existing(table207);
 
-        // table2
-        const table2 = this.add.image(583, 792, "lodge", "table2");
-        table2.setOrigin(0.5, 0.7586206896551724);
+        // table206
+        const table206 = new FourTable1(this, 620, 794);
+        this.add.existing(table206);
 
-        // table4
-        const table4 = this.add.image(1020, 812, "lodge", "table4");
-        table4.setOrigin(0.5, 0.7727272727272727);
+        // table205
+        const table205 = new FourTable3(this, 600, 513);
+        this.add.existing(table205);
 
         // candle
-        const candle = this.add.image(453, 259, "lodge", "candle");
+        const candle = this.add.image(451, 261, "lodge", "candle");
         candle.setOrigin(0, 0);
 
         // flame
-        const flame = this.add.sprite(518, 230, "lodge", "flame0001");
+        const flame = this.add.sprite(516, 232, "lodge", "flame0001");
         flame.setOrigin(0, 0);
 
         // flame_out
-        const flame_out = this.add.sprite(518, 198, "lodge", "flame_out0001");
+        const flame_out = this.add.sprite(516, 200, "lodge", "flame_out0001");
         flame_out.setOrigin(0, 0);
         flame_out.visible = false;
 
         // fish
-        const fish = this.add.sprite(1010, 365, "lodge", "fish0001");
+        const fish = this.add.sprite(1010, 372, "lodge", "fish0001");
         fish.setOrigin(0, 0);
         fish.visible = false;
 
         // zone
-        const zone = this.add.rectangle(1227, 215, 115, 430);
+        const zone = this.add.rectangle(1220, 215, 115, 430);
         zone.alpha = 0.5;
         zone.isFilled = true;
         zone.fillColor = 65280;
 
         // lists
-        const sort = [door, table3, table2, table4, footrest, chair];
+        const sort = [door, table206, footrest, chair, table207, table205];
 
         // door (components)
         const doorButton = new Button(door);
@@ -158,30 +173,6 @@ export default class Lodge extends RoomScene {
         const catalog_smallSimpleButton = new SimpleButton(catalog_small);
         catalog_smallSimpleButton.pixelPerfect = true;
 
-        // table3 (components)
-        const table3Button = new Button(table3);
-        table3Button.spriteName = "table3";
-        table3Button.activeFrame = false;
-        new MoveTo(table3);
-        const table3ShowHint = new ShowHint(table3);
-        table3ShowHint.text = "four_hint";
-
-        // table2 (components)
-        const table2Button = new Button(table2);
-        table2Button.spriteName = "table2";
-        table2Button.activeFrame = false;
-        new MoveTo(table2);
-        const table2ShowHint = new ShowHint(table2);
-        table2ShowHint.text = "four_hint";
-
-        // table4 (components)
-        const table4Button = new Button(table4);
-        table4Button.spriteName = "table4";
-        table4Button.activeFrame = false;
-        new MoveTo(table4);
-        const table4ShowHint = new ShowHint(table4);
-        table4ShowHint.text = "four_hint";
-
         // candle (components)
         const candleSimpleButton = new SimpleButton(candle);
         candleSimpleButton.hoverCallback = () => this.onCandleOver();
@@ -213,6 +204,9 @@ export default class Lodge extends RoomScene {
         const zoneZone = new Zone(zone);
         zoneZone.callback = () => this.onZoneClick();
 
+        this.table207 = table207;
+        this.table206 = table206;
+        this.table205 = table205;
         this.flame = flame;
         this.flame_out = flame_out;
         this.fish = fish;

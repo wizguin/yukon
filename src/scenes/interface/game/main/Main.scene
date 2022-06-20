@@ -518,6 +518,22 @@
                     "y": 436,
                     "visible": false,
                     "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "c497abe9-ef5b-4e05-9576-c628bc1df794",
+                    "id": "cedfa9f0-f053-408e-8dba-781bae626e88",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "findFour",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 731,
+                    "y": 337,
+                    "visible": false,
+                    "nestedPrefabs": []
                 }
             ]
         },

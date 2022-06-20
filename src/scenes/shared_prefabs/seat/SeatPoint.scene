@@ -1,0 +1,63 @@
+{
+    "id": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "85f88508-620a-4897-ae28-f327c5f0657a",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Ellipse",
+                    "id": "2a2dd8a8-d2c1-436b-a26c-67f12407c9c9",
+                    "label": "point",
+                    "components": [],
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 5,
+                    "height": 5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "sitFrame",
+            "label": "sitFrame",
+            "tooltip": "sitFrame",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "donePoint",
+            "label": "donePoint",
+            "tooltip": "Property 1",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.GameObject"
+            }
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "id": "aa157150-c6e0-4443-8649-1a137743c2ee",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8725447b-d398-46a2-af2f-003263655b0c",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "787f01d6-509a-486c-b705-80a374b39358",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "spinner"
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "c396e61e-0034-418e-aea9-efaf0ca7a929",
+                    "label": "waiting",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 55,
+                    "originY": 0.5,
+                    "text": "Waiting for Player",
+                    "fixedWidth": 260,
+                    "fontFamily": "Arial",
+                    "fontSize": "24px"
+                },
+                {
+                    "type": "Image",
+                    "id": "19b435d3-6090-4f34-9963-218b01f9538e",
+                    "label": "counter",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "visible": false
+                },
+                {
+                    "type": "Text",
+                    "id": "593062c5-f3b2-40a8-9ae0-a77b2248a8c7",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 40,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "USERNAME",
+                    "fixedWidth": 260,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "color": "#d5f1ff",
+                    "stroke": "#336699",
+                    "strokeThickness": 9
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

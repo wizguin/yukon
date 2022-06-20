@@ -1,6 +1,11 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo, ShowHint, SimpleButton } from '@components/components'
+import { Animation, SimpleButton } from '@components/components'
+
+import FourTable1 from '@scenes/shared_prefabs/tables/four/FourTable1'
+import FourTable2 from '@scenes/shared_prefabs/tables/four/FourTable2'
+import FourTable3 from '@scenes/shared_prefabs/tables/four/FourTable3'
+import FourTable4 from '@scenes/shared_prefabs/tables/four/FourTable4'
 
 
 /* START OF COMPILED CODE */
@@ -10,14 +15,29 @@ export default class Attic extends RoomScene {
     constructor() {
         super("Attic");
 
-        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
+        /** @type {FourTable2} */
+        this.table204;
+        /** @type {FourTable4} */
+        this.table203;
+        /** @type {FourTable1} */
+        this.table202;
+        /** @type {FourTable4} */
+        this.table201;
+        /** @type {FourTable3} */
+        this.table200;
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite|FourTable1|FourTable3|FourTable4|FourTable2>} */
         this.sort;
 
 
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            'lodge': () => this.triggerRoom(220, 1146, 562)
+            'lodge': () => this.triggerRoom(220, 1146, 562),
+            'table200': () => this.triggerTable('four', 200),
+            'table201': () => this.triggerTable('four', 201),
+            'table202': () => this.triggerTable('four', 202),
+            'table203': () => this.triggerTable('four', 203),
+            'table204': () => this.triggerTable('four', 204)
         }
 
         /* END-USER-CTR-CODE */
@@ -33,93 +53,58 @@ export default class Attic extends RoomScene {
     _create() {
 
         // bg
-        const bg = this.add.image(0, 0, "attic", "bg");
+        const bg = this.add.image(-11, -6, "attic", "bg");
         bg.setOrigin(0, 0);
 
         // arm
-        const arm = this.add.image(225, 611, "attic", "arm");
+        const arm = this.add.image(223, 606, "attic", "arm");
         arm.setOrigin(0.497143, 0.649402);
 
         // horse
-        const horse = this.add.sprite(1369, 639, "attic", "horse0001");
+        const horse = this.add.sprite(1365, 633, "attic", "horse/horse0001");
         horse.setOrigin(0.544, 0.503185);
 
-        // table2
-        const table2 = this.add.image(438, 751, "attic", "table2");
-        table2.setOrigin(0.47058824, 0.56034483);
-
-        // table1
-        const table1 = this.add.image(810, 762, "attic", "table1");
-        table1.setOrigin(0.54362416, 0.56818182);
-
-        // table3
-        const table3 = this.add.image(606, 618, "attic", "table3");
-        table3.setOrigin(0.49342105, 0.50735294);
-
-        // table1_1
-        const table1_1 = this.add.image(873, 582, "attic", "table1");
-        table1_1.setOrigin(0.54362416, 0.56818182);
-
-        // table4
-        const table4 = this.add.image(1135, 802, "attic", "table4");
-        table4.setOrigin(0.4251497005988024, 0.6060606060606061);
-
         // box
-        const box = this.add.image(-1, 970, "attic", "box");
+        const box = this.add.image(-7, 964, "attic", "box");
         box.setOrigin(0, 1);
 
+        // table204
+        const table204 = new FourTable2(this, 1140, 814);
+        this.add.existing(table204);
+
+        // table203
+        const table203 = new FourTable4(this, 800, 772);
+        this.add.existing(table203);
+
+        // table202
+        const table202 = new FourTable1(this, 481, 774);
+        this.add.existing(table202);
+
+        // table201
+        const table201 = new FourTable4(this, 861, 593);
+        this.add.existing(table201);
+
+        // table200
+        const table200 = new FourTable3(this, 601, 633);
+        this.add.existing(table200);
+
         // lists
-        const sort = [box, table2, arm, table3, table1, table1_1, table4, horse];
+        const sort = [box, arm, horse, table202, table200, table201, table203, table204];
 
         // horse (components)
         new SimpleButton(horse);
         const horseAnimation = new Animation(horse);
-        horseAnimation.key = "horse";
+        horseAnimation.key = "horse/horse";
         horseAnimation.end = 67;
         horseAnimation.repeat = 0;
         horseAnimation.onHover = true;
         horseAnimation.stopOnOut = false;
 
-        // table2 (components)
-        const table2Button = new Button(table2);
-        table2Button.spriteName = "table2";
-        table2Button.activeFrame = false;
-        new MoveTo(table2);
-        const table2ShowHint = new ShowHint(table2);
-        table2ShowHint.text = "four_hint";
-
-        // table1 (components)
-        const table1Button = new Button(table1);
-        table1Button.spriteName = "table1";
-        table1Button.activeFrame = false;
-        new MoveTo(table1);
-        const table1ShowHint = new ShowHint(table1);
-        table1ShowHint.text = "four_hint";
-
-        // table3 (components)
-        const table3Button = new Button(table3);
-        table3Button.spriteName = "table3";
-        table3Button.activeFrame = false;
-        new MoveTo(table3);
-        const table3ShowHint = new ShowHint(table3);
-        table3ShowHint.text = "four_hint";
-
-        // table1_1 (components)
-        const table1_1Button = new Button(table1_1);
-        table1_1Button.spriteName = "table1";
-        table1_1Button.activeFrame = false;
-        new MoveTo(table1_1);
-        const table1_1ShowHint = new ShowHint(table1_1);
-        table1_1ShowHint.text = "four_hint";
-
-        // table4 (components)
-        const table4Button = new Button(table4);
-        table4Button.spriteName = "table4";
-        table4Button.activeFrame = false;
-        new MoveTo(table4);
-        const table4ShowHint = new ShowHint(table4);
-        table4ShowHint.text = "four_hint";
-
+        this.table204 = table204;
+        this.table203 = table203;
+        this.table202 = table202;
+        this.table201 = table201;
+        this.table200 = table200;
         this.sort = sort;
 
         this.events.emit("scene-awake");

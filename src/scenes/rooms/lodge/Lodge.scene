@@ -25,8 +25,8 @@
                 "key": "lodge",
                 "frame": "bg"
             },
-            "x": -17,
-            "y": -2,
+            "x": -16,
+            "y": 1,
             "originX": 0,
             "originY": 0
         },
@@ -58,8 +58,8 @@
                 "key": "lodge",
                 "frame": "footrest"
             },
-            "x": 1279,
-            "y": 747,
+            "x": 1275,
+            "y": 750,
             "originX": 0.49295775,
             "originY": 0.47222222
         },
@@ -72,8 +72,8 @@
                 "key": "lodge",
                 "frame": "chair"
             },
-            "x": 1365,
-            "y": 763,
+            "x": 1368,
+            "y": 760,
             "originX": 0.5017064846416383,
             "originY": 0.5018450184501845
         },
@@ -90,8 +90,8 @@
                 "key": "lodge",
                 "frame": "fire0001"
             },
-            "x": 1334,
-            "y": 473,
+            "x": 1329,
+            "y": 474,
             "originX": 0.5061728395061729
         },
         {
@@ -114,8 +114,8 @@
                 "key": "lodge",
                 "frame": "fishing_door"
             },
-            "x": 949,
-            "y": 249,
+            "x": 946,
+            "y": 256,
             "originX": 0.2916666666666667,
             "originY": 0.3961218836565097
         },
@@ -128,8 +128,8 @@
                 "key": "lodge",
                 "frame": "rods"
             },
-            "x": 820,
-            "y": 328
+            "x": 816,
+            "y": 335
         },
         {
             "type": "Image",
@@ -144,8 +144,8 @@
                 "key": "lodge",
                 "frame": "bait"
             },
-            "x": 838,
-            "y": 416,
+            "x": 835,
+            "y": 421,
             "originX": 0.5060240963855421
         },
         {
@@ -166,8 +166,8 @@
                 "key": "lodge",
                 "frame": "catalog_small0001"
             },
-            "x": 830,
-            "y": 240,
+            "x": 826,
+            "y": 247,
             "originX": 0,
             "originY": 0
         },
@@ -180,70 +180,52 @@
                 "key": "lodge",
                 "frame": "catalog_small_tape"
             },
-            "x": 847,
-            "y": 238,
+            "x": 843,
+            "y": 244,
             "originX": 0,
             "originY": 0
         },
         {
-            "type": "Image",
-            "id": "815121c9-6c0c-4a5c-9bfa-44290eeb376c",
-            "label": "table3",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
+            "prefabId": "d3866883-7507-4f66-a7e3-bc9a896c4a22",
+            "id": "72dd394b-dd12-4039-b0b9-aa2e0b014f29",
+            "unlock": [
+                "x",
+                "y"
             ],
-            "Button.spriteName": "table3",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "lodge",
-                "frame": "table3"
-            },
-            "x": 600,
-            "y": 515,
-            "originY": 0.6985294117647058
-        },
-        {
-            "type": "Image",
-            "id": "116a3627-102f-4436-ade3-2a3a1d84b925",
-            "label": "table2",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table2",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "lodge",
-                "frame": "table2"
-            },
-            "x": 583,
-            "y": 792,
-            "originY": 0.7586206896551724
-        },
-        {
-            "type": "Image",
-            "id": "92344cad-eff7-4748-9a84-6ce047322bc4",
-            "label": "table4",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table4",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "lodge",
-                "frame": "table4"
-            },
+            "label": "table207",
+            "scope": "CLASS",
+            "components": [],
             "x": 1020,
-            "y": 812,
-            "originY": 0.7727272727272727
+            "y": 814,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "8163f2e4-12be-4ba3-9eb1-464060e5ecd3",
+            "id": "116a3627-102f-4436-ade3-2a3a1d84b925",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table206",
+            "scope": "CLASS",
+            "components": [],
+            "x": 620,
+            "y": 794,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "a6e91d83-75ce-421c-94ea-d375188195eb",
+            "id": "5efa3090-313c-4ccb-9847-5d666c8fe7e3",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table205",
+            "scope": "CLASS",
+            "components": [],
+            "x": 600,
+            "y": 513,
+            "nestedPrefabs": []
         },
         {
             "type": "Image",
@@ -258,8 +240,8 @@
                 "key": "lodge",
                 "frame": "candle"
             },
-            "x": 453,
-            "y": 259,
+            "x": 451,
+            "y": 261,
             "originX": 0,
             "originY": 0
         },
@@ -277,8 +259,8 @@
                 "key": "lodge",
                 "frame": "flame0001"
             },
-            "x": 518,
-            "y": 230,
+            "x": 516,
+            "y": 232,
             "originX": 0,
             "originY": 0
         },
@@ -300,8 +282,8 @@
                 "key": "lodge",
                 "frame": "flame_out0001"
             },
-            "x": 518,
-            "y": 198,
+            "x": 516,
+            "y": 200,
             "originX": 0,
             "originY": 0,
             "visible": false
@@ -324,7 +306,7 @@
                 "frame": "fish0001"
             },
             "x": 1010,
-            "y": 365,
+            "y": 372,
             "originX": 0,
             "originY": 0,
             "visible": false
@@ -337,7 +319,7 @@
                 "Zone"
             ],
             "Zone.callback": "() => this.onZoneClick()",
-            "x": 1227,
+            "x": 1220,
             "y": 215,
             "alpha": 0.5,
             "isFilled": true,
@@ -359,11 +341,11 @@
             "label": "sort",
             "objectIds": [
                 "88448b99-23ca-4433-82a8-40b75fe91423",
-                "815121c9-6c0c-4a5c-9bfa-44290eeb376c",
                 "116a3627-102f-4436-ade3-2a3a1d84b925",
-                "92344cad-eff7-4748-9a84-6ce047322bc4",
                 "53e3dc25-0ed5-456d-ab6b-fcf13df0fceb",
-                "c015247e-c4dd-45b4-a287-6530da7dbc01"
+                "c015247e-c4dd-45b4-a287-6530da7dbc01",
+                "72dd394b-dd12-4039-b0b9-aa2e0b014f29",
+                "5efa3090-313c-4ccb-9847-5d666c8fe7e3"
             ]
         }
     ]

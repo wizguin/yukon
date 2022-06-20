@@ -43,6 +43,11 @@
 
 @font-face {
     font-family: 'CCFaceFront';
+    src: url('../fonts/CCFaceFront.woff2');
+}
+
+@font-face {
+    font-family: 'CCFaceFront';
     font-style: italic;
     font-weight: bold;
     src: url('../fonts/CCFaceFront Bold Italic.woff2');

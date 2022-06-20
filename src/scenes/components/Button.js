@@ -31,6 +31,9 @@ export default class Button extends SimpleButton {
         gameObject["__Button"] = this;
 
         /* START-USER-CTR-CODE */
+
+        this.lockFrame = false
+
         /* END-USER-CTR-CODE */
     }
 
@@ -48,12 +51,18 @@ export default class Button extends SimpleButton {
     }
 
     onOver() {
-        this.gameObject.setFrame(`${this.spriteName}-hover`)
+        if (!this.lockFrame) {
+            this.gameObject.setFrame(`${this.spriteName}-hover`)
+        }
+
         super.onOver()
     }
 
     onOut() {
-        this.gameObject.setFrame(this.spriteName)
+        if (!this.lockFrame) {
+            this.gameObject.setFrame(this.spriteName)
+        }
+
         super.onOut()
     }
 

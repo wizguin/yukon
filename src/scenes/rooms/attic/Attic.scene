@@ -25,6 +25,8 @@
                 "key": "attic",
                 "frame": "bg"
             },
+            "x": -11,
+            "y": -6,
             "originX": 0,
             "originY": 0
         },
@@ -37,8 +39,8 @@
                 "key": "attic",
                 "frame": "arm"
             },
-            "x": 225,
-            "y": 611,
+            "x": 223,
+            "y": 606,
             "originX": 0.497143,
             "originY": 0.649402
         },
@@ -50,124 +52,19 @@
                 "SimpleButton",
                 "Animation"
             ],
-            "Animation.key": "horse",
+            "Animation.key": "horse/horse",
             "Animation.end": 67,
             "Animation.repeat": 0,
             "Animation.onHover": true,
             "Animation.stopOnOut": false,
             "texture": {
                 "key": "attic",
-                "frame": "horse0001"
+                "frame": "horse/horse0001"
             },
-            "x": 1369,
-            "y": 639,
+            "x": 1365,
+            "y": 633,
             "originX": 0.544,
             "originY": 0.503185
-        },
-        {
-            "type": "Image",
-            "id": "eb9018e6-d7b8-40e4-8e0b-0f8c6a08db5b",
-            "label": "table2",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table2",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "attic",
-                "frame": "table2"
-            },
-            "x": 438,
-            "y": 751,
-            "originX": 0.47058824,
-            "originY": 0.56034483
-        },
-        {
-            "type": "Image",
-            "id": "8e5fef97-e7e0-46e9-8668-1b8ef5527023",
-            "label": "table1",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table1",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "attic",
-                "frame": "table1"
-            },
-            "x": 810,
-            "y": 762,
-            "originX": 0.54362416,
-            "originY": 0.56818182
-        },
-        {
-            "type": "Image",
-            "id": "e48b31c6-05cd-452f-81cb-1b43bd460e71",
-            "label": "table3",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table3",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "attic",
-                "frame": "table3"
-            },
-            "x": 606,
-            "y": 618,
-            "originX": 0.49342105,
-            "originY": 0.50735294
-        },
-        {
-            "type": "Image",
-            "id": "7101e17b-61ef-4a77-ad1c-57ad61bbe582",
-            "label": "table1_1",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table1",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "attic",
-                "frame": "table1"
-            },
-            "x": 873,
-            "y": 582,
-            "originX": 0.54362416,
-            "originY": 0.56818182
-        },
-        {
-            "type": "Image",
-            "id": "018928c6-2420-48ef-8ec4-88803c1b610a",
-            "label": "table4",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table4",
-            "Button.activeFrame": false,
-            "ShowHint.text": "four_hint",
-            "texture": {
-                "key": "attic",
-                "frame": "table4"
-            },
-            "x": 1135,
-            "y": 802,
-            "originX": 0.4251497005988024,
-            "originY": 0.6060606060606061
         },
         {
             "type": "Image",
@@ -178,10 +75,80 @@
                 "key": "attic",
                 "frame": "box"
             },
-            "x": -1,
-            "y": 970,
+            "x": -7,
+            "y": 964,
             "originX": 0,
             "originY": 1
+        },
+        {
+            "prefabId": "d3866883-7507-4f66-a7e3-bc9a896c4a22",
+            "id": "b7299c9d-fbcb-4d63-9534-1ecdf57d3e0e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table204",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1140,
+            "y": 814,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "d2fdc365-c022-4a72-8cdf-3f339d862cf6",
+            "id": "10978010-998d-4d10-a499-dedb1a0b8d9e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table203",
+            "scope": "CLASS",
+            "components": [],
+            "x": 800,
+            "y": 772,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "8163f2e4-12be-4ba3-9eb1-464060e5ecd3",
+            "id": "13d058c1-5258-4e05-b754-8e0db4562ace",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table202",
+            "scope": "CLASS",
+            "components": [],
+            "x": 481,
+            "y": 774,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "d2fdc365-c022-4a72-8cdf-3f339d862cf6",
+            "id": "196decac-e92d-4938-81d3-a7b0cc0e2ee3",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table201",
+            "scope": "CLASS",
+            "components": [],
+            "x": 861,
+            "y": 593,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "a6e91d83-75ce-421c-94ea-d375188195eb",
+            "id": "d21611fa-2e39-4c5e-8fc1-d9e5303a15b5",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table200",
+            "scope": "CLASS",
+            "components": [],
+            "x": 601,
+            "y": 633,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [],
@@ -197,13 +164,13 @@
             "label": "sort",
             "objectIds": [
                 "65a936ef-a9a8-486c-977e-31ccc0f17219",
-                "eb9018e6-d7b8-40e4-8e0b-0f8c6a08db5b",
                 "5415a75b-9831-4ffa-a621-3222772839b7",
-                "e48b31c6-05cd-452f-81cb-1b43bd460e71",
-                "8e5fef97-e7e0-46e9-8668-1b8ef5527023",
-                "7101e17b-61ef-4a77-ad1c-57ad61bbe582",
-                "018928c6-2420-48ef-8ec4-88803c1b610a",
-                "744bf6b7-7721-40a8-9619-6d45e1fc6b44"
+                "744bf6b7-7721-40a8-9619-6d45e1fc6b44",
+                "13d058c1-5258-4e05-b754-8e0db4562ace",
+                "d21611fa-2e39-4c5e-8fc1-d9e5303a15b5",
+                "196decac-e92d-4938-81d3-a7b0cc0e2ee3",
+                "10978010-998d-4d10-a499-dedb1a0b8d9e",
+                "b7299c9d-fbcb-4d63-9534-1ecdf57d3e0e"
             ]
         }
     ]

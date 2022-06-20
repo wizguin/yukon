@@ -1,0 +1,131 @@
+{
+    "id": "a6e91d83-75ce-421c-94ea-d375188195eb",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9704c5c9-5b4e-4863-a13d-72048ac934d2",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "5cbf11a2-1db6-4ac3-82b2-fc9347348607",
+                    "label": "table",
+                    "components": [],
+                    "texture": {
+                        "key": "lodge",
+                        "frame": "table/table_3"
+                    },
+                    "originX": 0.48344370860927155,
+                    "originY": 0.6417910447761194
+                },
+                {
+                    "type": "Image",
+                    "id": "94afb646-83f2-4ee2-b0ec-c0ecd5fbe8b6",
+                    "label": "game",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button",
+                        "MoveTo",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "table/game_3",
+                    "Button.activeFrame": false,
+                    "MoveTo.x": "this.x",
+                    "MoveTo.y": "this.y",
+                    "ShowHint.text": "four_hint",
+                    "texture": {
+                        "key": "lodge",
+                        "frame": "table/game_3"
+                    },
+                    "x": -1,
+                    "y": -47,
+                    "originX": 0.5384615384615384,
+                    "originY": 0.47560975609756095
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "d7a1d5e7-44f2-4d57-a2b1-ea2f203e142c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done2",
+                    "components": [],
+                    "x": -10,
+                    "y": 92,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "65814aba-97c2-4761-8086-382903487c3d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done1",
+                    "components": [],
+                    "x": -126,
+                    "y": 36,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "3d5dab99-e4ec-48df-97a7-5a167ec8d82a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat2",
+                    "scope": "CLASS",
+                    "sitFrame": 20,
+                    "donePoint": "done2",
+                    "components": [],
+                    "x": 48,
+                    "y": 32,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "e1bf931a-8f61-4473-a199-46f9fe6f02a8",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 24,
+                    "donePoint": "done1",
+                    "components": [],
+                    "x": -62,
+                    "y": -42,
+                    "nestedPrefabs": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

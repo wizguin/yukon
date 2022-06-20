@@ -17,6 +17,9 @@ import PlayerCard from '../playercard/PlayerCard'
 import Safe from '../floating/safe/Safe'
 import Settings from '../settings/Settings'
 
+// Todo: write a widget/container loader
+import FindFour from '@scenes/games/four/FindFour'
+
 
 /* START OF COMPILED CODE */
 
@@ -45,6 +48,8 @@ export default class Main extends BaseScene {
         this.buddy;
         /** @type {PlayerCard} */
         this.playerCard;
+        /** @type {FindFour} */
+        this.findFour;
         /** @type {ActionsMenu} */
         this.actionsMenu;
         /** @type {EmotesMenu} */
@@ -181,6 +186,11 @@ export default class Main extends BaseScene {
         const playerCard = new PlayerCard(this, 446, 436);
         playerCard.visible = false;
         widgetLayer.add(playerCard);
+
+        // findFour
+        const findFour = new FindFour(this, 731, 337);
+        findFour.visible = false;
+        widgetLayer.add(findFour);
 
         // actionsMenu
         const actionsMenu = new ActionsMenu(this, 366, 864);
@@ -326,6 +336,7 @@ export default class Main extends BaseScene {
         this.widgetLayer = widgetLayer;
         this.buddy = buddy;
         this.playerCard = playerCard;
+        this.findFour = findFour;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
         this.safe = safe;

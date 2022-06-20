@@ -1,0 +1,247 @@
+{
+    "id": "c497abe9-ef5b-4e05-9576-c628bc1df794",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "c78a9501-c3e6-456b-b088-10901aee86b1",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "window",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "444f3793-1a41-4386-9e05-e712dbd5f24d",
+                    "label": "window",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "window"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "8bd244b6-e19b-4100-ad75-9be7d47ee878",
+                    "label": "shadow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "shadow"
+                    },
+                    "y": -44
+                },
+                {
+                    "type": "Image",
+                    "id": "a4d398e9-8934-4ee2-8dd8-cabf33dd4843",
+                    "label": "placer6",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": 77,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "9a887e10-d735-4cb7-ac8f-10507a4efc7b",
+                    "label": "placer5",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": 29,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "8a5e48dd-707a-49c0-b301-fda55c75b983",
+                    "label": "placer4",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": -20,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "0035373a-2fda-426d-bc5f-7a61c65e06ff",
+                    "label": "placer3",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": -68,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "ff00a750-fb33-4a35-b7ea-76512e5df075",
+                    "label": "placer2",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": -117,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "fbf856f2-46d2-476f-bd44-5fbd5eb5a2a7",
+                    "label": "placer1",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": -165,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "ec4e49e5-b9ab-4e46-b8c1-9972b427aa02",
+                    "label": "placer0",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "counter_1"
+                    },
+                    "x": -146,
+                    "y": -205,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "ffb54173-b9ac-4fe1-bab7-7a6b435da288",
+                    "label": "board",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "board"
+                    },
+                    "y": -44
+                },
+                {
+                    "prefabId": "aa157150-c6e0-4443-8649-1a137743c2ee",
+                    "id": "df191ca7-415a-4fc9-a8d5-e65fef52082c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "player2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -126,
+                    "y": 232,
+                    "nestedPrefabs": []
+                },
+                {
+                    "prefabId": "aa157150-c6e0-4443-8649-1a137743c2ee",
+                    "id": "464b8f4f-cdab-4139-af39-d1ac85c8631e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "player1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -126,
+                    "y": 172,
+                    "nestedPrefabs": []
+                },
+                {
+                    "type": "Image",
+                    "id": "ec828e7e-f8fe-45ce-a6b2-37004b848cde",
+                    "label": "hover",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "four",
+                        "frame": "button/counter_1"
+                    },
+                    "x": -145,
+                    "y": -194,
+                    "originY": 0.7,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "9eee329c-ab1e-4e40-9949-fd7a1f1a0508",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 181,
+                    "y": -243
+                },
+                {
+                    "type": "Image",
+                    "id": "7583ca44-3abe-403e-9adb-f44e6d03c299",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 181,
+                    "y": -245
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "lists": [
+        {
+            "id": "fed2c198-258f-4f6a-b7e3-21b688fed227",
+            "label": "placers",
+            "objectIds": [
+                "ec4e49e5-b9ab-4e46-b8c1-9972b427aa02",
+                "fbf856f2-46d2-476f-bd44-5fbd5eb5a2a7",
+                "ff00a750-fb33-4a35-b7ea-76512e5df075",
+                "0035373a-2fda-426d-bc5f-7a61c65e06ff",
+                "8a5e48dd-707a-49c0-b301-fda55c75b983",
+                "9a887e10-d735-4cb7-ac8f-10507a4efc7b",
+                "a4d398e9-8934-4ee2-8dd8-cabf33dd4843"
+            ]
+        }
+    ]
+}
