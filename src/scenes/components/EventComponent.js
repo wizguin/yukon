@@ -1,55 +1,56 @@
-/* START OF COMPILED CODE */
-
-/* START-USER-IMPORTS */
-/* END-USER-IMPORTS */
-
 export default class EventComponent {
 
+    /**
+     * @param {Phaser.GameObjects.GameObject} gameObject The entity.
+     */
     constructor(gameObject) {
-
-        /** @type {Phaser.GameObjects.GameObject} */
-        this.gameObject;
-
-        this.gameObject = gameObject;
-        gameObject["__EventComponent"] = this;
-
-        /* START-USER-CTR-CODE */
 
         this.scene = gameObject.scene
 
-        // First time the scene is created, call the `start` method
-        this.scene.events.once('create', this.start, this)
-        // Each time the scene is updated, call the `update` method
-        this.scene.events.on('update', this.update, this)
-        // If the object is destroyed, call the `destroy` method
-        gameObject.on('destroy', this.destroy, this)
+        const listenAwake = this.awake !== EventComponent.prototype.awake
+        const listenStart = this.start !== EventComponent.prototype.start
+        const listenUpdate = this.update !== EventComponent.prototype.update
+        const listenDestroy = this.destroy !== EventComponent.prototype.destroy
 
-        /* END-USER-CTR-CODE */
+        if (listenAwake) {
+            this.scene.events.once('scene-awake', this.awake, this)
+        }
+
+        if (listenStart) {
+            this.scene.events.once('update', this.start, this)
+        }
+
+        if (listenUpdate) {
+            this.scene.events.on('update', this.update, this)
+        }
+
+        if (listenStart || listenUpdate || listenDestroy) {
+            gameObject.on('destroy', () => {
+
+                this.scene.events.off('update', this.start, this)
+                this.scene.events.off('update', this.update, this)
+
+                if (listenDestroy) {
+                    this.destroy()
+                }
+            })
+        }
     }
 
-    /** @returns {EventComponent} */
-    static getComponent(gameObject) {
-        return gameObject["__EventComponent"];
+    awake() {
+        // override this
     }
-
-
-    /* START-USER-CODE */
 
     start() {
-        // To be overridden in derived classes
+        // override this
     }
 
     update() {
-        // To be overridden in derived classes
+        // override this
     }
 
     destroy() {
-        // The object is destroyed, so we remove all the event handlers
-        this.scene.events.off('create', this.start, this)
-        this.scene.events.off('update', this.update, this)
+        // override this
     }
 
-    /* END-USER-CODE */
 }
-
-/* END OF COMPILED CODE */

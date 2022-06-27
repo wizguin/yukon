@@ -238,12 +238,6 @@
             ]
         },
         {
-            "name": "EventComponent",
-            "baseClass": "",
-            "gameObjectType": "Phaser.GameObjects.GameObject",
-            "properties": []
-        },
-        {
             "name": "Interactive",
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Image",
