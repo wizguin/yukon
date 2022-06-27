@@ -40,7 +40,6 @@ export default class Lodge extends RoomScene {
             'table206': () => this.triggerTable('four', 206),
             'table207': () => this.triggerTable('four', 207)
         }
-        this.music = '589'
 
         this.tables = {}
 
