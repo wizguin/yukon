@@ -2,6 +2,8 @@ import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, Interactive, NineSlice } from '@components/components'
 
+import PackFileLoader from '@engine/loaders/PackFileLoader'
+
 
 /* START OF COMPILED CODE */
 
@@ -106,26 +108,46 @@ export default class LoadingPrompt extends BaseContainer {
             ease: 'Cubic'
         })
 
+        this.packFileLoader = new PackFileLoader(scene)
+
+        this.packFileLoader.on('progress', this.onProgress, this)
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
 
-    show(scene, progress = 0) {
-        // Can't start without attached scene
-        if (!scene) return
+    onProgress(progress) {
+        this.bar.visible = progress
+
+        this.progress.scaleX = progress
+    }
+
+    showPack(text, key, url, callback) {
+        this.text.text = text
+        this.progress.scaleX = this.packFileLoader.progress
+
+        this.visible = true
+
+        this.packFileLoader.loadPack(key, url, callback)
+    }
+
+    showScene(scene, progress) {
+        if (!scene) {
+            return
+        }
 
         this.externalScene = scene
 
-        // Updates prompt content
         this.text.text = this.getString('loading', scene.sys.config)
         this.progress.scaleX = progress
 
-        // Removes create event if it was previously added by close
+        // Removes any previous events
+        scene.load.off('progress')
         scene.events.off('create')
 
-        scene.load.on('progress', (progress) => this.progress.scaleX = progress)
+        scene.load.on('progress', this.onProgress, this)
 
         scene.events.once('create', () => {
             this.visible = false
@@ -138,10 +160,14 @@ export default class LoadingPrompt extends BaseContainer {
     close() {
         this.visible = false
 
-        let scene = this.externalScene
-        if (!scene) return
+        if (!this.externalScene) {
+            return
+        }
 
-        scene.events.once('create', () => scene.scene.stop())
+        this.externalScene.events.once('create', () => {
+            this.externalScene.scene.stop()
+            this.externalScene = null
+        })
     }
 
     /* END-USER-CODE */

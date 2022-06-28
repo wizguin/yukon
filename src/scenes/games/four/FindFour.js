@@ -5,12 +5,18 @@ import { Button, DraggableContainer, SimpleButton } from '@components/components
 import FindFourPlayer from './FindFourPlayer'
 
 
+export const preload = {
+    key: 'four-pack',
+    url: 'assets/media/games/four/four-pack.json',
+    loadString: 'four'
+}
+
 /* START OF COMPILED CODE */
 
 export default class FindFour extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x ?? 760, y ?? 480);
+        super(scene, x ?? 730, y ?? 340);
 
         /** @type {Phaser.GameObjects.Image} */
         this.shadow;
@@ -235,8 +241,6 @@ export default class FindFour extends BaseContainer {
 
             x += 48.6
         }
-
-        this.updateButtons()
     }
 
     onButtonClick(column) {

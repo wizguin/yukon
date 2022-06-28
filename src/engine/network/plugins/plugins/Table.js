@@ -20,7 +20,7 @@ export default class Table extends Plugin {
         this.world.client.sendMoveToSeat(args.table, args.seat)
 
         // Todo: load different tables
-        this.interface.main.findFour.show()
+        this.interface.loadWidget('FindFour')
     }
 
     updateTable(args) {

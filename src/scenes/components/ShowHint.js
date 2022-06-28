@@ -51,7 +51,7 @@ export default class ShowHint extends EventComponent {
 
         this.hint.showHint(
             this.gameObject,
-            this.gameObject.scene.getString(this.text) || this.text
+            this.gameObject.scene.getString(this.text)
         )
     }
 

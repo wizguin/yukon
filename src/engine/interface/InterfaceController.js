@@ -12,7 +12,7 @@ export default class InterfaceController extends BaseScene {
         this.prompt = new PromptController(this)
 
         // External interface scenes
-        this.interfaces = this.crumbs.scenes.interfaces
+        this.interfaceScenes = this.crumbs.interface.scenes
         this.loadedScenes = []
 
         // Draw frame
@@ -20,6 +20,7 @@ export default class InterfaceController extends BaseScene {
 
         graphics.lineStyle(16, this.crumbs.frameColor, 1)
         graphics.strokeRoundedRect(0, 0, 1520, 960, 15)
+        graphics.depth = 100
 
         // Last scene interacted with
         this.lastScene
@@ -119,19 +120,23 @@ export default class InterfaceController extends BaseScene {
         this.main.playerCard.showCard(id, refresh)
     }
 
+    loadWidget(key, addToWidgetLayer = true) {
+        this.main.loadWidget(key, addToWidgetLayer)
+    }
+
     /**
-     * Loads an external interface scene, e.g catalog, newspaper, telescope.
+     * Loads an external interface scene.
      *
      * @param {string} key - Scene key
      */
      loadExternal(key) {
-        if (!(key in this.interfaces) || this.prompt.loading.visible) {
+        if (!(key in this.interfaceScenes)) {
             return
         }
 
         if (!(key in this.scene.manager.keys)) {
             // Create scene
-            this.scene.add(key, this.interfaces[key], true)
+            this.scene.add(key, this.interfaceScenes[key], true)
             return this.loadedScenes.push(key)
         }
 

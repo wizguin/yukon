@@ -1,6 +1,7 @@
 import fonts from './fonts'
 import igloos from './igloos'
-import interfaces from './interfaces'
+import interfaceScenes from './interface_scenes'
+import interfaceWidgets from './interface_widgets'
 import rooms from './rooms'
 
 import SoundFileFactory from '@engine/sound/SoundFileFactory'
@@ -57,8 +58,12 @@ const game = {
 
         scenes: {
             igloos: igloos,
-            interfaces: interfaces,
             rooms: rooms
+        },
+
+        interface: {
+            scenes: interfaceScenes,
+            widgets: interfaceWidgets
         },
 
         frameColor: 0x2e3440,

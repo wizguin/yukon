@@ -55,4 +55,12 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
         return this.scene.textures.exists(key)
     }
 
+    jsonExists(key) {
+        return this.scene.cache.json.exists(key)
+    }
+
+    audioExists(key) {
+        return this.scene.cache.audio.exists(key)
+    }
+
 }

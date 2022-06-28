@@ -1,7 +1,7 @@
 import CoinPrompt from '@scenes/interface/prompts/CoinPrompt'
 import ErrorPrompt from './ErrorPrompt'
 import ItemPrompt from '@scenes/interface/prompts/ItemPrompt'
-import LoadingPrompt from '@scenes/interface/prompts/LoadingPrompt'
+import LoadingPromptFactory from './LoadingPromptFactory'
 import WindowPrompt from '@scenes/interface/prompts/WindowPrompt'
 
 
@@ -13,14 +13,14 @@ export default class PromptController {
         this.coin = new CoinPrompt(_interface, 760, 480)
         this.error = new ErrorPrompt(_interface, 760, 480)
         this.item = new ItemPrompt(_interface, 760, 480)
-        this.loading = new LoadingPrompt(_interface, 760, 480)
         this.window = new WindowPrompt(_interface, 760, 480)
 
         _interface.add.existing(this.coin)
         _interface.add.existing(this.error)
         _interface.add.existing(this.item)
-        _interface.add.existing(this.loading)
         _interface.add.existing(this.window)
+
+        this.loadingPromptFactory = new LoadingPromptFactory(_interface)
     }
 
     showCoin(coins = 0) {
@@ -43,18 +43,23 @@ export default class PromptController {
         this.setCursor()
     }
 
-    showLoading(scene, progress = 0) {
-        this.loading.show(scene, progress)
-        this.setCursor()
-    }
-
     showWindow(text, buttonLayout = 'single', callback = () => this.window.visible = false, noCallback = () => this.window.visible = false) {
         this.window.show(text, buttonLayout, callback, noCallback)
         this.setCursor()
     }
 
+    showLoadingPack(text, key, url, callback = () => {}) {
+        this.loadingPromptFactory.showLoadingPack(text, key, url, callback)
+        this.setCursor()
+    }
+
+    showLoadingScene(scene, progress = 0) {
+        this.loadingPromptFactory.showLoadingScene(scene, progress)
+        this.setCursor()
+    }
+
     hideAll() {
-        this.loading.visible = false
+        this.loadingPromptFactory.hideAll()
     }
 
     setCursor() {

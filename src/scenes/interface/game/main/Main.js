@@ -11,14 +11,10 @@ import ActionsMenu from '../floating/actions/ActionsMenu'
 import Buddy from '../buddy/Buddy'
 import ChatLog from '../chatlog/ChatLog'
 import EmotesMenu from '../floating/emotes/EmotesMenu'
-import Map from '../map/Map'
 import Moderator from '../moderator/Moderator'
 import PlayerCard from '../playercard/PlayerCard'
 import Safe from '../floating/safe/Safe'
 import Settings from '../settings/Settings'
-
-// Todo: write a widget/container loader
-import FindFour from '@scenes/games/four/FindFour'
 
 
 /* START OF COMPILED CODE */
@@ -48,21 +44,17 @@ export default class Main extends BaseScene {
         this.buddy;
         /** @type {PlayerCard} */
         this.playerCard;
-        /** @type {FindFour} */
-        this.findFour;
         /** @type {ActionsMenu} */
         this.actionsMenu;
         /** @type {EmotesMenu} */
         this.emotesMenu;
         /** @type {Safe} */
         this.safe;
-        /** @type {Map} */
-        this.map;
         /** @type {Moderator} */
         this.moderator;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<PlayerCard|Buddy|Map|Settings|Moderator>} */
+        /** @type {Array<Settings|Moderator|PlayerCard|Buddy>} */
         this.hideOnSleep;
 
 
@@ -187,11 +179,6 @@ export default class Main extends BaseScene {
         playerCard.visible = false;
         widgetLayer.add(playerCard);
 
-        // findFour
-        const findFour = new FindFour(this, 731, 337);
-        findFour.visible = false;
-        widgetLayer.add(findFour);
-
         // actionsMenu
         const actionsMenu = new ActionsMenu(this, 366, 864);
         this.add.existing(actionsMenu);
@@ -207,11 +194,6 @@ export default class Main extends BaseScene {
         this.add.existing(safe);
         safe.visible = false;
 
-        // map
-        const map = new Map(this, 760, 480);
-        this.add.existing(map);
-        map.visible = false;
-
         // moderator
         const moderator = new Moderator(this, 760, 480);
         this.add.existing(moderator);
@@ -223,7 +205,7 @@ export default class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [playerCard, buddy, map, settings, moderator];
+        const hideOnSleep = [settings, moderator, playerCard, buddy];
 
         // dock (components)
         new Interactive(dock);
@@ -301,7 +283,7 @@ export default class Main extends BaseScene {
         // map_button (components)
         const map_buttonButton = new Button(map_button);
         map_buttonButton.spriteName = "map-button";
-        map_buttonButton.callback = () => this.map.visible = true;
+        map_buttonButton.callback = () => this.onMapClick();
         map_buttonButton.activeFrame = false;
 
         // request_button (components)
@@ -336,11 +318,9 @@ export default class Main extends BaseScene {
         this.widgetLayer = widgetLayer;
         this.buddy = buddy;
         this.playerCard = playerCard;
-        this.findFour = findFour;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
         this.safe = safe;
-        this.map = map;
         this.moderator = moderator;
         this.settings = settings;
         this.hideOnSleep = hideOnSleep;
@@ -356,7 +336,13 @@ export default class Main extends BaseScene {
 
         this.events.on('sleep', this.onSleep, this)
 
+        // Widgets
+
         this.setupWidgets()
+
+        // Dynamically loaded widgets
+        this.loadedWidgets = {}
+        this.interfaceWidgets = this.crumbs.interface.widgets
 
         // Factories
 
@@ -369,6 +355,7 @@ export default class Main extends BaseScene {
         this.add.existing(this.hint)
         this.hideOnSleep.push(this.hint)
         this.hint.visible = false
+        this.hint.depth = 100
 
         // Buddy requests
 
@@ -416,20 +403,60 @@ export default class Main extends BaseScene {
             item.visible = false
         }
 
-        this.map.iglooMap.visible = false
+        for (let widget in this.loadedWidgets) {
+            this.loadedWidgets[widget].close()
+        }
     }
 
     setupWidgets() {
         for (let widget of this.widgetLayer.list) {
-            if (widget.__DraggableContainer) {
-                widget.__DraggableContainer.widgetLayer = this.widgetLayer
-            }
+            this.setupWidget(widget)
+        }
+    }
+
+    setupWidget(widget) {
+        if (widget.__DraggableContainer) {
+            widget.__DraggableContainer.widgetLayer = this.widgetLayer
         }
     }
 
     showWidget(widget) {
         this.widgetLayer.bringToTop(widget)
-        widget.visible = true
+        widget.show()
+    }
+
+    loadWidget(key, addToWidgetLayer) {
+        if (!(key in this.interfaceWidgets)) {
+            return
+        }
+
+        if (key in this.loadedWidgets) {
+            return this.showWidget(this.loadedWidgets[key])
+        }
+
+        let preload = this.interfaceWidgets[key].preload
+        let text = this.getString(preload.loadString)
+
+        this.interface.prompt.showLoadingPack(text, preload.key, preload.url, () => {
+            this.onWidgetLoaded(key, addToWidgetLayer)
+        })
+    }
+
+    onWidgetLoaded(key, addToWidgetLayer) {
+        let widget = new this.interfaceWidgets[key].default(this)
+
+        this.loadedWidgets[key] = widget
+
+        if (addToWidgetLayer) {
+            this.widgetLayer.add(widget)
+            this.setupWidget(widget)
+        } else {
+            this.add.existing(widget)
+        }
+
+        this.events.once('update', () => {
+            this.showWidget(widget)
+        })
     }
 
     onSnowballClick() {
@@ -567,6 +594,10 @@ export default class Main extends BaseScene {
     onModClick() {
         this.onModOut()
         this.moderator.visible = true
+    }
+
+    onMapClick() {
+        this.loadWidget('Map', false)
     }
 
     /* END-USER-CODE */

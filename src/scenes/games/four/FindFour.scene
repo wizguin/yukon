@@ -21,8 +21,8 @@
                 "DraggableContainer"
             ],
             "DraggableContainer.handle": "window",
-            "x": 760,
-            "y": 480,
+            "x": 730,
+            "y": 340,
             "list": [
                 {
                     "type": "Image",

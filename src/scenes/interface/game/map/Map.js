@@ -5,6 +5,12 @@ import { Button, Interactive, ShowHint } from '@components/components'
 import IglooMap from './igloo_map/IglooMap'
 
 
+export const preload = {
+    key: 'map-pack',
+    url: 'assets/media/interface/game/map/map-pack.json',
+    loadString: 'Loading Map'
+}
+
 /* START OF COMPILED CODE */
 
 export default class Map extends BaseContainer {
@@ -260,6 +266,11 @@ export default class Map extends BaseContainer {
         this.visible = false
 
         this.world.client.sendJoinRoom(id, room.key, room.x, room.y, 80)
+    }
+
+    close() {
+        this.iglooMap.close()
+        super.close()
     }
 
     /* END-USER-CODE */

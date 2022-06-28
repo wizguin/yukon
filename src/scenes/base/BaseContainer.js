@@ -32,4 +32,12 @@ export default class BaseContainer extends Phaser.GameObjects.Container {
         return this.scene.getFormatString(id, ...args)
     }
 
+    show() {
+        this.visible = true
+    }
+
+    close() {
+        this.visible = false
+    }
+
 }

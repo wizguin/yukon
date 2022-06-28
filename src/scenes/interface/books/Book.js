@@ -24,7 +24,7 @@ export default class Book extends BaseScene {
     }
 
     showLoading() {
-        this.interface.prompt.showLoading(this, this.load.progress)
+        this.interface.prompt.showLoadingScene(this, this.load.progress)
     }
 
     create() {
