@@ -307,13 +307,13 @@ export default class FindFour extends BaseContainer {
         if (!drop) {
             counter.y = this.placers[y].y
         } else {
-            this.playDrop(counter, y)
+            this.playDrop(turn, counter, y)
         }
 
         this.addAt(counter, this.getIndex(this.shadow) + 1)
     }
 
-    playDrop(counter, y) {
+    playDrop(turn, counter, y) {
         let i = 0
 
         let timer = this.scene.time.addEvent({
@@ -324,7 +324,7 @@ export default class FindFour extends BaseContainer {
                 if (i === y) {
                     this.soundManager.play('drop', { volume: 0.5 })
                     this.scene.time.removeEvent(timer)
-                    this.updateTurn()
+                    this.updateTurn(turn)
                 }
 
                 i++
@@ -333,8 +333,8 @@ export default class FindFour extends BaseContainer {
         })
     }
 
-    updateTurn() {
-        this.currentTurn = (this.currentTurn === 1) ? 2 : 1
+    updateTurn(turn) {
+        this.currentTurn = (turn === 1) ? 2 : 1
 
         this.updateButtons()
         this.updateHover()
