@@ -297,6 +297,7 @@ export default class IglooEdit extends BaseScene {
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.world.client.iglooOpen = true
             this.button_lock.__ShowHint.text = 'close_igloo_hint'
+            this.updateLockFrame()
 
             this.network.send('open_igloo')
 
@@ -305,6 +306,10 @@ export default class IglooEdit extends BaseScene {
     }
 
     onLockOut() {
+        this.updateLockFrame()
+    }
+
+    updateLockFrame() {
         if (this.world.client.iglooOpen) {
             this.button_lock.setFrame('button/lock-hover')
         }

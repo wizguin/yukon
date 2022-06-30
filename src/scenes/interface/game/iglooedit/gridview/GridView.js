@@ -143,7 +143,10 @@ export default class GridView extends BaseContainer {
         let rows = Math.ceil(this.pageSize / cols)
 
         this.createGrid(cols, rows)
-        this.showPage()
+
+        this.scene.events.once('update', () => {
+            this.showPage()
+        })
     }
 
     showPage() {
