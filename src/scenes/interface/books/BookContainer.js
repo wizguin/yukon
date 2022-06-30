@@ -1,13 +1,13 @@
-import BaseScene from '@scenes/base/BaseScene'
+import BaseContainer from '@scenes/base/BaseContainer'
 
 
-export default class Book extends BaseScene {
+export default class BookContainer extends BaseContainer {
 
     constructor(key) {
         super(key)
 
         // Current page number
-        this.page
+        this.page = 0
         // Array of pages defined in derived class
         this.pages
         // Buttons container defined in derived class
@@ -16,23 +16,13 @@ export default class Book extends BaseScene {
         this.isBook = true
     }
 
-    init() {
-        this.load.on('start', this.showLoading, this)
-        this.events.on('showloading', this.showLoading, this)
-
-        super.init()
-    }
-
-    showLoading() {
-        this.interface.prompt.showLoadingScene(this, this.load.progress)
-    }
-
-    create() {
-        this._create()
-
+    show() {
         // Reset page
-        this.page = 0
-        this.setPageVisible()
+        this.showPage(0)
+
+        this.setCoins(this.world.client.coins)
+
+        super.show()
     }
 
     showPage(page) {
@@ -47,16 +37,20 @@ export default class Book extends BaseScene {
         this.setButtonsVisible()
     }
 
-    prevPage() {
-        let page = this.page - 1
-        if (page < 0) return
+    nextPage() {
+        let page = this.page + 1
+        if (page > this.pages.length - 1) {
+            return
+        }
 
         this.showPage(page)
     }
 
-    nextPage() {
-        let page = this.page + 1
-        if (page > this.pages.length - 1) return
+    prevPage() {
+        let page = this.page - 1
+        if (page < 0) {
+            return
+        }
 
         this.showPage(page)
     }
@@ -72,8 +66,8 @@ export default class Book extends BaseScene {
         this.buttons.visible = visible
     }
 
-    close() {
-        this.scene.stop()
+    setCoins(coins) {
+        this.coins.text = `YOUR COINS: ${coins}`
     }
 
 }

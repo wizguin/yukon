@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "superClassName": "BaseImage",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -20,7 +21,7 @@
                 "Button"
             ],
             "Button.spriteName": "flag",
-            "Button.callback": "() => this.scene.buy(this.item)",
+            "Button.callback": "() => this.interface.prompt.showItem(this.item)",
             "Button.activeFrame": false,
             "texture": {
                 "key": "clothingcatalog",

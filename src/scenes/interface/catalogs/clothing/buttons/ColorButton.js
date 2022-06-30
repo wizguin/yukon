@@ -19,7 +19,7 @@ export default class ColorButton extends TintedImage {
         // this (components)
         const thisButton = new Button(this);
         thisButton.spriteName = "color_button";
-        thisButton.callback = () => this.scene.buy(this.item);
+        thisButton.callback = () => this.interface.prompt.showItem(this.item);
         thisButton.activeFrame = false;
 
         /* START-USER-CTR-CODE */

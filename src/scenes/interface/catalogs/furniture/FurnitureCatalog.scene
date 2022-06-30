@@ -1,853 +1,858 @@
 {
-    "id": "8dc6fe04-32d6-4182-9571-c3ba476d5bc1",
-    "sceneType": "SCENE",
+    "id": "eabe42dd-4b33-4493-b0ce-7518018c3981",
+    "sceneType": "PREFAB",
     "settings": {
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
-        "superClassName": "Book",
-        "preloadPackFiles": [
-            "yukon/assets/media/interface/catalogs/furniture/furniturecatalog-pack.json"
-        ],
-        "createMethodName": "_create",
-        "sceneKey": "FurnitureCatalog",
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
         "borderWidth": 1520,
         "borderHeight": 960
     },
     "displayList": [
         {
-            "type": "Rectangle",
-            "id": "b140aae9-525c-46f1-8fcd-bee244557386",
-            "label": "block",
-            "components": [
-                "Interactive"
-            ],
-            "x": 760,
-            "y": 480,
-            "isFilled": true,
-            "fillColor": "#000000",
-            "fillAlpha": 0.2,
-            "width": 1520,
-            "height": 960
-        },
-        {
             "type": "Container",
-            "id": "63041e57-2f6b-49a5-985d-80b58018c733",
-            "label": "page8",
+            "id": "5f412ea8-5b94-4496-99e0-8a0a36950046",
+            "label": "container_1",
             "components": [],
-            "visible": false,
             "list": [
                 {
-                    "type": "Image",
-                    "id": "bf43e62a-bda8-496f-91d3-ac4bc64d40ab",
-                    "label": "p8",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0008"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "5519d3de-274b-40c9-8dfe-6a2dbcc785f5",
-                    "label": "pageLeft_1",
+                    "type": "Rectangle",
+                    "id": "29fbb81c-4818-434d-b91b-fecff811bb92",
+                    "label": "block",
                     "components": [
-                        "Button"
+                        "Interactive"
                     ],
-                    "Button.spriteName": "page_left",
-                    "Button.callback": "() => this.prevPage()",
-                    "Button.activeFrame": false,
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page_left"
-                    },
-                    "x": 492,
-                    "y": 590,
-                    "originX": 0,
-                    "originY": 0
+                    "x": 760,
+                    "y": 480,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
                 },
                 {
-                    "type": "Image",
-                    "id": "e1f1b165-ab67-475c-b7f5-1736539af56e",
-                    "label": "closeLeft",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "close_left",
-                    "Button.callback": "() => this.close()",
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "close_left"
-                    },
-                    "x": 491,
-                    "y": 39,
-                    "originX": 0,
-                    "originY": 0
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "18e7a4dc-6573-48d9-84f4-e878c951344e",
-            "label": "page7",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "a156e2bb-3907-4f46-b7b4-212a47fb1462",
-                    "label": "p7",
+                    "type": "Container",
+                    "id": "267bfab4-47ce-49b1-89b8-70798772ec8a",
+                    "label": "page8",
                     "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0007"
-                    },
-                    "originX": 0,
-                    "originY": 0
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "97aaceb2-cecd-497c-ade2-970bd977a41e",
+                            "label": "p8",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0008"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "9478b61e-0405-45aa-8fd9-492156d395f7",
+                            "label": "pageLeft_1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page_left"
+                            },
+                            "x": 492,
+                            "y": 590,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a393aed0-5c7d-4236-ab00-a5bb7885e8ac",
+                            "label": "closeLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_left",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "close_left"
+                            },
+                            "x": 491,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "86d43d38-1387-4a51-96bd-d0bd4af5c307",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_29",
-                    "item": 546,
+                    "type": "Container",
+                    "id": "92817fd0-ada5-46ab-803f-d9ccfcbc0294",
+                    "label": "page7",
                     "components": [],
-                    "x": 541,
-                    "y": 202
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "65721253-38df-42bc-b59a-f9f854cefff7",
+                            "label": "p7",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0007"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "fedbf3b5-e10b-4d6b-895a-e1d91d0368c7",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_29",
+                            "item": 546,
+                            "components": [],
+                            "x": 541,
+                            "y": 202
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "1da4cfca-0495-415c-9061-8882ad9d4194",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_30",
+                            "item": 547,
+                            "components": [],
+                            "x": 302,
+                            "y": 434
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "0434db8b-ac8e-4f99-8c1e-9439aa275084",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_31",
+                            "item": 548,
+                            "components": [],
+                            "x": 503,
+                            "y": 662
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "a004ce85-1b75-4962-8f5c-583624d1a1dd",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_32",
+                            "item": 311,
+                            "components": [],
+                            "x": 1069,
+                            "y": 205
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "b860cf43-1f0c-4901-8631-6fe7f847dfe3",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_33",
+                            "item": 84,
+                            "components": [],
+                            "x": 1026,
+                            "y": 405
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "327a0822-4d4d-43f7-bc43-71798f77477c",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_34",
+                            "item": 544,
+                            "components": [],
+                            "x": 998,
+                            "y": 648
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "9f9132cc-a6c2-4df4-acf5-cf12e6dce9c6",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_30",
-                    "item": 547,
+                    "type": "Container",
+                    "id": "c0401dfe-9ad0-4c02-ad7c-65970e49ab4d",
+                    "label": "page6",
                     "components": [],
-                    "x": 302,
-                    "y": 434
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "8bdbc625-2d64-497a-8741-9ee715d559a4",
+                            "label": "p6",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0006"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "4ef1ecc2-e562-44bd-b07b-8cfcf3de4732",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_23",
+                            "item": 562,
+                            "components": [],
+                            "x": 500,
+                            "y": 199
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "d1e0633c-ba54-448d-9242-5e99a391608f",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_24",
+                            "item": 563,
+                            "components": [],
+                            "x": 296,
+                            "y": 433
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "b92eada2-23a1-463c-a57a-ff3fc9adfd35",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_25",
+                            "item": 564,
+                            "components": [],
+                            "x": 519,
+                            "y": 676
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "38f1ab75-0452-482d-b2ba-68e5393b5196",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_26",
+                            "item": 83,
+                            "components": [],
+                            "x": 834,
+                            "y": 267
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "e9ecec64-6080-4d08-ac18-f4b585165d2e",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_27",
+                            "item": 81,
+                            "components": [],
+                            "x": 1105,
+                            "y": 468
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "7acce106-4910-4269-840d-1f7936de0700",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_28",
+                            "item": 82,
+                            "components": [],
+                            "x": 847,
+                            "y": 666
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "6db980e1-6c9a-4185-b217-c0d6885f3802",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_31",
-                    "item": 548,
+                    "type": "Container",
+                    "id": "ec79ca39-f102-4934-8778-152bcb8787e5",
+                    "label": "page5",
                     "components": [],
-                    "x": 503,
-                    "y": 662
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "c361b1be-73fb-4d69-b0d6-578cbfff740d",
+                            "label": "p5",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0005"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "18436716-76a2-453b-841a-011bad37f44a",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_15",
+                            "item": 551,
+                            "components": [],
+                            "x": 244,
+                            "y": 374
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "9074b94a-33ad-4df7-afc3-026cba6dad0e",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_16",
+                            "item": 552,
+                            "components": [],
+                            "x": 433,
+                            "y": 421
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "55b62413-9df3-427d-9495-b4742cbf5298",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_17",
+                            "item": 553,
+                            "components": [],
+                            "x": 610,
+                            "y": 373
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "c5b2a0b0-ff15-49b3-84ad-af3a72fd926a",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_18",
+                            "item": 550,
+                            "components": [],
+                            "x": 527,
+                            "y": 670
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "ec58e522-60e4-46ce-826e-2bace1ad0089",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_19",
+                            "item": 355,
+                            "components": [],
+                            "x": 851,
+                            "y": 161
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "9154c74e-9a59-4d04-960a-58e199387c91",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_20",
+                            "item": 354,
+                            "components": [],
+                            "x": 1133,
+                            "y": 321
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "7acbca4c-aa6f-4376-914c-0ceee0d0b183",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_21",
+                            "item": 177,
+                            "components": [],
+                            "x": 851,
+                            "y": 573
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "39c56d01-f559-4ab6-8450-8c704e5cfe41",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_22",
+                            "item": 178,
+                            "components": [],
+                            "x": 1120,
+                            "y": 701
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "c5bc91dc-a3b2-4c4e-802e-f473501863b6",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_32",
-                    "item": 311,
+                    "type": "Container",
+                    "id": "5f5b6ce1-253e-473f-8cba-e8d47d715dec",
+                    "label": "page4",
                     "components": [],
-                    "x": 1069,
-                    "y": 205
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "d1c09ca2-4d0c-490d-9dd4-6bf4ba20320a",
+                            "label": "p4",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0004"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "789e75f8-9480-411b-88f3-5024184eccc4",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_10",
+                            "item": 560,
+                            "components": [],
+                            "x": 527,
+                            "y": 385
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "48876e48-51d8-4e58-a907-e11f7647d9ee",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_11",
+                            "item": 561,
+                            "components": [],
+                            "x": 311,
+                            "y": 645
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "439a4f69-7dee-46db-8bbc-65ce31e18b3b",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_12",
+                            "item": 75,
+                            "components": [],
+                            "x": 846,
+                            "y": 197
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "1dedb340-b21f-4d21-b781-4f158d968ae8",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_13",
+                            "item": 73,
+                            "components": [],
+                            "x": 845,
+                            "y": 422
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "5a2c2a40-2848-43ab-8690-fddd213c5491",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_14",
+                            "item": 74,
+                            "components": [],
+                            "x": 1110,
+                            "y": 412
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "6f18507d-f0cb-4dda-a0b7-7fd5b3937025",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_33",
-                    "item": 84,
+                    "type": "Container",
+                    "id": "e8e6386c-50a1-48a8-a3eb-64d422d99a27",
+                    "label": "page3",
                     "components": [],
-                    "x": 1026,
-                    "y": 405
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "93606210-6a36-4f53-968d-b699f09be1d8",
+                            "label": "p3",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0003"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "f619caa9-2b26-4962-a371-ca5ae4b8e4bc",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_5",
+                            "item": 441,
+                            "components": [],
+                            "x": 543,
+                            "y": 288
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "5141f23e-ede6-4a45-b459-3e5369d60f3d",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_6",
+                            "item": 440,
+                            "components": [],
+                            "x": 289,
+                            "y": 618
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "d7989fa7-5efa-4035-958a-945325c02898",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_7",
+                            "item": 443,
+                            "components": [],
+                            "x": 1092,
+                            "y": 206
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "ffdeabbe-8ace-4142-b454-e61dba428e8c",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_8",
+                            "item": 367,
+                            "components": [],
+                            "x": 891,
+                            "y": 448
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "7e621e44-80e1-4dff-b2f1-715a73ba69ce",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_9",
+                            "item": 366,
+                            "components": [],
+                            "x": 1100,
+                            "y": 692
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "cd4f1180-a945-4508-9a8f-dd68df3e06a1",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_34",
-                    "item": 544,
+                    "type": "Container",
+                    "id": "0f526365-bce2-4ac1-a368-0ab3b1c7a3fb",
+                    "label": "page2",
                     "components": [],
-                    "x": 998,
-                    "y": 648
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "0be8018b-9f5f-41ea-a820-35f045768c86",
-            "label": "page6",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "fc478dab-6ee7-44a1-a20b-b4ebfda92de3",
-                    "label": "p6",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0006"
-                    },
-                    "originX": 0,
-                    "originY": 0
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "5f01c72b-abde-43f1-89e5-3f0d8d37c31c",
+                            "label": "p2",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0002"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "dee23b85-5938-4957-b3e3-4cb29f718f84",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton",
+                            "item": 570,
+                            "components": [],
+                            "x": 569,
+                            "y": 277
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "2eb8463c-1417-48e4-82e8-d345a633f042",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_1",
+                            "item": 575,
+                            "components": [],
+                            "x": 280,
+                            "y": 626
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "2e9568f8-d338-4838-927c-39499e3fc16a",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_2",
+                            "item": 572,
+                            "components": [],
+                            "x": 1073,
+                            "y": 211
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "d5201e14-81ea-4189-bbc7-39dfe2d70a6a",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_3",
+                            "item": 571,
+                            "components": [],
+                            "x": 1142,
+                            "y": 329
+                        },
+                        {
+                            "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
+                            "id": "69622c84-df2b-46cc-9e74-fbc2294a7250",
+                            "unlock": [
+                                "item",
+                                "x",
+                                "y"
+                            ],
+                            "label": "buyButton_4",
+                            "item": 186,
+                            "components": [],
+                            "x": 1103,
+                            "y": 704
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "270cf695-fc33-4be6-8d8d-68c6a5fa5b4d",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_23",
-                    "item": 562,
+                    "type": "Container",
+                    "id": "200d0229-ff39-44b9-91b3-136052342f1f",
+                    "label": "page1",
                     "components": [],
-                    "x": 500,
-                    "y": 199
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "338713df-dabf-49e1-9569-93c5b71d6333",
+                            "label": "p1",
+                            "components": [],
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page/page0001"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5cbe8d0a-e999-4e09-b999-421bb8117128",
+                            "label": "pageFront",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_front",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page_front"
+                            },
+                            "x": 468,
+                            "y": 44,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e2838fa8-662c-47e9-acc2-9e7847692b8f",
+                            "label": "closeRight_1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 924,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
                 },
                 {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "3c00db8d-71da-4856-871f-0ff01e509479",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_24",
-                    "item": 563,
-                    "components": [],
-                    "x": 296,
-                    "y": 433
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "973ec436-ae04-4797-9203-5af5ac09abf5",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_25",
-                    "item": 564,
-                    "components": [],
-                    "x": 519,
-                    "y": 676
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "7d4f3e1a-a479-48e1-9ee3-b6e79b9ff991",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_26",
-                    "item": 83,
-                    "components": [],
-                    "x": 834,
-                    "y": 267
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "cdda4b79-b413-4675-8d2a-61563c2236f1",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_27",
-                    "item": 81,
-                    "components": [],
-                    "x": 1105,
-                    "y": 468
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "44061db5-7765-45d4-98c9-e803eac7e2bb",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_28",
-                    "item": 82,
-                    "components": [],
-                    "x": 847,
-                    "y": 666
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "f82b4445-9386-443e-a1ff-d097d30929af",
-            "label": "page5",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "d5e1875b-27e4-43b9-878d-0894b340e279",
-                    "label": "p5",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0005"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "fe538bb8-90c3-4131-b3c1-5c566f3c0455",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_15",
-                    "item": 551,
-                    "components": [],
-                    "x": 244,
-                    "y": 374
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "87a99769-4963-4c13-8581-cdaa0f893c3e",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_16",
-                    "item": 552,
-                    "components": [],
-                    "x": 433,
-                    "y": 421
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "b00b6cdd-abc1-4344-903f-136496cd1f83",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_17",
-                    "item": 553,
-                    "components": [],
-                    "x": 610,
-                    "y": 373
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "0402e0be-3468-462b-b6a8-bbd3a8a91f2b",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_18",
-                    "item": 550,
-                    "components": [],
-                    "x": 527,
-                    "y": 670
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "5984d5f4-1fe6-4dbd-9f1a-fe8e6d7341df",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_19",
-                    "item": 355,
-                    "components": [],
-                    "x": 851,
-                    "y": 161
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "77f77240-8bd0-48fd-a575-0ac7acb3f1ec",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_20",
-                    "item": 354,
-                    "components": [],
-                    "x": 1133,
-                    "y": 321
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "a942eec6-1968-4eeb-8d90-85841c05f9bf",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_21",
-                    "item": 177,
-                    "components": [],
-                    "x": 851,
-                    "y": 573
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "71ce8e26-3a3a-4af8-ba9f-a4a7e6feff3a",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_22",
-                    "item": 178,
-                    "components": [],
-                    "x": 1120,
-                    "y": 701
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "5c1bdab7-e01f-41cb-a8e1-e79491902245",
-            "label": "page4",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "66c55220-0432-4738-a236-35376b5857d4",
-                    "label": "p4",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0004"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "e65a6b7e-0e13-4198-85c2-9807763acfc9",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_10",
-                    "item": 560,
-                    "components": [],
-                    "x": 527,
-                    "y": 385
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "aaea8ab2-3856-46fb-a0bb-5a1465b4592f",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_11",
-                    "item": 561,
-                    "components": [],
-                    "x": 311,
-                    "y": 645
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "e0cfc846-21de-4796-add5-94d9fff6c9e5",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_12",
-                    "item": 75,
-                    "components": [],
-                    "x": 846,
-                    "y": 197
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "2b05e0e2-4110-4997-b4b8-1f4bf31fff43",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_13",
-                    "item": 73,
-                    "components": [],
-                    "x": 845,
-                    "y": 422
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "e2bc0b44-7a8a-4fee-b64b-6981ca26eb16",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_14",
-                    "item": 74,
-                    "components": [],
-                    "x": 1110,
-                    "y": 412
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "d84391c2-6260-4f39-9740-5454ba5f2dcd",
-            "label": "page3",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "df955f4d-65c9-438f-a428-3c4f12812037",
-                    "label": "p3",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0003"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "cf9d3237-1108-478c-aaca-708dafd165d9",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_5",
-                    "item": 441,
-                    "components": [],
-                    "x": 543,
-                    "y": 288
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "a1412eb8-cc35-4309-af8e-32ff1e19a60e",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_6",
-                    "item": 440,
-                    "components": [],
-                    "x": 289,
-                    "y": 618
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "a1850f5d-c732-407e-86ee-b34cdd34aacf",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_7",
-                    "item": 443,
-                    "components": [],
-                    "x": 1092,
-                    "y": 206
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "397c2234-5f77-4d45-b736-1843ee577fc4",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_8",
-                    "item": 367,
-                    "components": [],
-                    "x": 891,
-                    "y": 448
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "cbc64893-edb0-4299-b818-31bb116ba39a",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_9",
-                    "item": 366,
-                    "components": [],
-                    "x": 1100,
-                    "y": 692
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "5297ac81-910b-4858-8677-ee19dd13f211",
-            "label": "page2",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "aebdf6bf-6eae-42e2-aad2-401a017f8d5b",
-                    "label": "p2",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0002"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "5813ffa7-d6d3-4315-9106-7e74ca3addaf",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton",
-                    "item": 570,
-                    "components": [],
-                    "x": 569,
-                    "y": 277
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "e33344bd-9a54-4aac-ad7b-ab6664c351de",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_1",
-                    "item": 575,
-                    "components": [],
-                    "x": 280,
-                    "y": 626
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "84e0a135-5c11-46c7-99c6-8e27832956f9",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_2",
-                    "item": 572,
-                    "components": [],
-                    "x": 1073,
-                    "y": 211
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "18392c3a-b5b6-487c-b3ec-2539fd5d45fe",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_3",
-                    "item": 571,
-                    "components": [],
-                    "x": 1142,
-                    "y": 329
-                },
-                {
-                    "prefabId": "dd77dec9-5b4e-4467-bec6-4b227fd1d6ac",
-                    "id": "6ab7fdb9-8c6f-4bfe-95d3-0e0823baf143",
-                    "unlock": [
-                        "item",
-                        "x",
-                        "y"
-                    ],
-                    "label": "buyButton_4",
-                    "item": 186,
-                    "components": [],
-                    "x": 1103,
-                    "y": 704
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "656d8755-0e55-47b6-ab34-f3ab123ef07e",
-            "label": "page1",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "054baf92-9eff-49ec-81a1-8226fe89d9f9",
-                    "label": "p1",
-                    "components": [],
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page/page0001"
-                    },
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "5d4ddac8-bc60-4d87-a3e8-dd759926ce58",
-                    "label": "pageFront",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "page_front",
-                    "Button.callback": "() => this.nextPage()",
-                    "Button.activeFrame": false,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page_front"
-                    },
-                    "x": 468,
-                    "y": 44,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "fd8819f3-e22f-403c-967f-c0e25459a9ae",
-                    "label": "closeRight_1",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "close_right",
-                    "Button.callback": "() => this.close()",
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "close_right"
-                    },
-                    "x": 924,
-                    "y": 39,
-                    "originX": 0,
-                    "originY": 0
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "4a83ca42-dcc0-40ab-995c-ca2d016469c1",
-            "label": "buttons",
-            "scope": "CLASS",
-            "components": [],
-            "x": 190,
-            "y": 41,
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "e55ba479-4d39-423a-b1e0-0ac98d847175",
-                    "label": "closeRight",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "close_right",
-                    "Button.callback": "() => this.close()",
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "close_right"
-                    },
-                    "x": 1012,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "3f293e18-dcfa-48c0-b0f5-ebfd138c6f0b",
-                    "label": "pageRight",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "page_right",
-                    "Button.callback": "() => this.nextPage()",
-                    "Button.activeFrame": false,
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page_right"
-                    },
-                    "x": 1012,
-                    "y": 549,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "a73ada19-15e0-41ea-abbf-a247fcedacf5",
-                    "label": "pageLeft",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "page_left",
-                    "Button.callback": "() => this.prevPage()",
-                    "Button.activeFrame": false,
-                    "Button.pixelPerfect": true,
-                    "texture": {
-                        "key": "furniturecatalog",
-                        "frame": "page_left"
-                    },
-                    "y": 549,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Text",
-                    "id": "503959d0-20cb-4325-9fbd-add974a4f537",
-                    "label": "coins",
+                    "type": "Container",
+                    "id": "0d5feff1-712f-4fa8-9bce-d23be326aedf",
+                    "label": "buttons",
                     "scope": "CLASS",
                     "components": [],
-                    "x": 1130,
-                    "y": 790,
-                    "originX": 1,
-                    "text": "YOUR COINS:",
-                    "fixedWidth": 600,
-                    "align": "right",
-                    "fontFamily": "CCComiccrazy",
-                    "fontSize": "32px",
-                    "stroke": "#000",
-                    "strokeThickness": 9
+                    "x": 190,
+                    "y": 41,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "ca76f8f7-4775-485b-982b-b0eb45118a66",
+                            "label": "closeRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 1012,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fc75a34f-4b43-4c25-9b1a-3ef46b68a105",
+                            "label": "pageRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_right",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page_right"
+                            },
+                            "x": 1012,
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d4adb90d-6c80-491c-84de-1ed0497602bb",
+                            "label": "pageLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "furniturecatalog",
+                                "frame": "page_left"
+                            },
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Text",
+                            "id": "26549d5d-6716-4bf8-b6bf-87419dbd7839",
+                            "label": "coins",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": 1130,
+                            "y": 790,
+                            "originX": 1,
+                            "text": "YOUR COINS:",
+                            "fixedWidth": 600,
+                            "align": "right",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "32px",
+                            "stroke": "#000",
+                            "strokeThickness": 9
+                        }
+                    ]
                 }
             ]
         }
@@ -861,17 +866,17 @@
     },
     "lists": [
         {
-            "id": "19275786-9bf3-47e4-b6e5-d33e69e8eeca",
+            "id": "574d04ef-a7d5-4c55-963e-d98537ab9f61",
             "label": "pages",
             "objectIds": [
-                "656d8755-0e55-47b6-ab34-f3ab123ef07e",
-                "5297ac81-910b-4858-8677-ee19dd13f211",
-                "d84391c2-6260-4f39-9740-5454ba5f2dcd",
-                "5c1bdab7-e01f-41cb-a8e1-e79491902245",
-                "f82b4445-9386-443e-a1ff-d097d30929af",
-                "0be8018b-9f5f-41ea-a820-35f045768c86",
-                "18e7a4dc-6573-48d9-84f4-e878c951344e",
-                "63041e57-2f6b-49a5-985d-80b58018c733"
+                "200d0229-ff39-44b9-91b3-136052342f1f",
+                "0f526365-bce2-4ac1-a368-0ab3b1c7a3fb",
+                "e8e6386c-50a1-48a8-a3eb-64d422d99a27",
+                "5f5b6ce1-253e-473f-8cba-e8d47d715dec",
+                "ec79ca39-f102-4934-8778-152bcb8787e5",
+                "c0401dfe-9ad0-4c02-ad7c-65970e49ab4d",
+                "92817fd0-ada5-46ab-803f-d9ccfcbc0294",
+                "267bfab4-47ce-49b1-89b8-70798772ec8a"
             ]
         }
     ]

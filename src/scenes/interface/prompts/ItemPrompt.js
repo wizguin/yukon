@@ -82,8 +82,8 @@ export default class ItemPrompt extends BaseContainer {
         this.show(item, this.crumbs.items[item], 'clothing')
     }
 
-    showFurniture(item) {
-        this.show(item, this.crumbs.furniture[item], 'furniture')
+    showFurniture(furniture) {
+        this.show(furniture, this.crumbs.furniture[furniture], 'furniture')
     }
 
     show(item, crumb, type) {

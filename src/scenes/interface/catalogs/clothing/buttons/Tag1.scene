@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "superClassName": "BaseImage",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -20,7 +21,7 @@
                 "Button"
             ],
             "Button.spriteName": "buy1",
-            "Button.callback": "() => this.scene.buy(this.item)",
+            "Button.callback": "() => this.interface.prompt.showItem(this.item)",
             "texture": {
                 "key": "clothingcatalog",
                 "frame": "buy1"

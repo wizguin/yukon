@@ -109,7 +109,7 @@
                     "components": [
                         "SimpleButton"
                     ],
-                    "SimpleButton.callback": "() => this.interface.loadExternal('IglooCatalog')",
+                    "SimpleButton.callback": "() => this.interface.loadWidget('IglooCatalog', false)",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/igloo_catalog"
@@ -126,7 +126,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button/furniture_catalog",
-                    "Button.callback": "() => this.interface.loadExternal('FurnitureCatalog')",
+                    "Button.callback": "() => this.interface.loadWidget('FurnitureCatalog', false)",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "iglooedit",

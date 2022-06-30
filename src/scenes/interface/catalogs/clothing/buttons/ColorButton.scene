@@ -21,7 +21,7 @@
                 "Button"
             ],
             "Button.spriteName": "color_button",
-            "Button.callback": "() => this.scene.buy(this.item)",
+            "Button.callback": "() => this.interface.prompt.showItem(this.item)",
             "Button.activeFrame": false,
             "texture": {
                 "key": "clothingcatalog",

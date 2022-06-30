@@ -1,6 +1,7 @@
+import BookContainer from '@scenes/interface/books/BookContainer'
+
 import { Button, Interactive } from '@components/components'
 
-import Book from '@scenes/interface/books/Book'
 import ColorButton from './buttons/ColorButton'
 import FlagButton from './buttons/FlagButton'
 import PhotoButton from './buttons/PhotoButton'
@@ -8,12 +9,18 @@ import Tag1 from './buttons/Tag1'
 import Tag2 from './buttons/Tag2'
 
 
+export const preload = {
+    key: 'clothingcatalog-pack',
+    url: 'assets/media/interface/catalogs/clothing/clothingcatalog-pack.json',
+    loadString: ''
+}
+
 /* START OF COMPILED CODE */
 
-export default class ClothingCatalog extends Book {
+export default class ClothingCatalog extends BookContainer {
 
-    constructor() {
-        super("ClothingCatalog");
+    constructor(scene, x, y) {
+        super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Image} */
         this.photo12;
@@ -47,888 +54,891 @@ export default class ClothingCatalog extends Book {
         this.pages;
 
 
-        /* START-USER-CTR-CODE */
-        /* END-USER-CTR-CODE */
-    }
-
-    /** @returns {void} */
-    preload() {
-
-        this.load.pack("clothingcatalog-pack", "assets/media/interface/catalogs/clothing/clothingcatalog-pack.json");
-    }
-
-    /** @returns {void} */
-    _create() {
-
         // block
-        const block = this.add.rectangle(760, 480, 1520, 960);
+        const block = scene.add.rectangle(760, 480, 1520, 960);
         block.isFilled = true;
         block.fillColor = 0;
         block.fillAlpha = 0.2;
+        this.add(block);
 
         // page16
-        const page16 = this.add.container(0, 0);
+        const page16 = scene.add.container(0, 0);
         page16.visible = false;
+        this.add(page16);
 
         // p16
-        const p16 = this.add.image(0, 0, "clothingcatalog", "page/page0016");
+        const p16 = scene.add.image(0, 0, "clothingcatalog", "page/page0016");
         p16.setOrigin(0, 0);
         page16.add(p16);
 
         // pageLeft_1
-        const pageLeft_1 = this.add.image(492, 590, "clothingcatalog", "page_left");
+        const pageLeft_1 = scene.add.image(492, 590, "clothingcatalog", "page_left");
         pageLeft_1.setOrigin(0, 0);
         page16.add(pageLeft_1);
 
         // closeLeft
-        const closeLeft = this.add.image(491, 39, "clothingcatalog", "close_left");
+        const closeLeft = scene.add.image(491, 39, "clothingcatalog", "close_left");
         closeLeft.setOrigin(0, 0);
         page16.add(closeLeft);
 
         // page15
-        const page15 = this.add.container(0, 0);
+        const page15 = scene.add.container(0, 0);
         page15.visible = false;
+        this.add(page15);
 
         // p15
-        const p15 = this.add.image(0, 0, "clothingcatalog", "page/page0015");
+        const p15 = scene.add.image(0, 0, "clothingcatalog", "page/page0015");
         p15.setOrigin(0, 0);
         page15.add(p15);
 
         // us
-        const us = new FlagButton(this, 1231, 685);
+        const us = new FlagButton(scene, 1231, 685);
         page15.add(us);
 
         // turkey
-        const turkey = new FlagButton(this, 1112, 685);
+        const turkey = new FlagButton(scene, 1112, 685);
         page15.add(turkey);
 
         // switzerland
-        const switzerland = new FlagButton(this, 987, 685);
+        const switzerland = new FlagButton(scene, 987, 685);
         page15.add(switzerland);
 
         // sweden
-        const sweden = new FlagButton(this, 872, 685);
+        const sweden = new FlagButton(scene, 872, 685);
         page15.add(sweden);
 
         // spain
-        const spain = new FlagButton(this, 1231, 547);
+        const spain = new FlagButton(scene, 1231, 547);
         page15.add(spain);
 
         // sa
-        const sa = new FlagButton(this, 1112, 547);
+        const sa = new FlagButton(scene, 1112, 547);
         page15.add(sa);
 
         // russia
-        const russia = new FlagButton(this, 987, 547);
+        const russia = new FlagButton(scene, 987, 547);
         page15.add(russia);
 
         // portugal
-        const portugal = new FlagButton(this, 872, 547);
+        const portugal = new FlagButton(scene, 872, 547);
         page15.add(portugal);
 
         // poland
-        const poland = new FlagButton(this, 1231, 408);
+        const poland = new FlagButton(scene, 1231, 408);
         page15.add(poland);
 
         // norway
-        const norway = new FlagButton(this, 1112, 408);
+        const norway = new FlagButton(scene, 1112, 408);
         page15.add(norway);
 
         // nz
-        const nz = new FlagButton(this, 991, 408);
+        const nz = new FlagButton(scene, 991, 408);
         page15.add(nz);
 
         // netherlands
-        const netherlands = new FlagButton(this, 872, 408);
+        const netherlands = new FlagButton(scene, 872, 408);
         page15.add(netherlands);
 
         // mexico
-        const mexico = new FlagButton(this, 1230, 270);
+        const mexico = new FlagButton(scene, 1230, 270);
         page15.add(mexico);
 
         // korea
-        const korea = new FlagButton(this, 1113, 271);
+        const korea = new FlagButton(scene, 1113, 271);
         page15.add(korea);
 
         // japan
-        const japan = new FlagButton(this, 988, 271);
+        const japan = new FlagButton(scene, 988, 271);
         page15.add(japan);
 
         // jamaica
-        const jamaica = new FlagButton(this, 871, 270);
+        const jamaica = new FlagButton(scene, 871, 270);
         page15.add(jamaica);
 
         // italy
-        const italy = new FlagButton(this, 1230, 129);
+        const italy = new FlagButton(scene, 1230, 129);
         page15.add(italy);
 
         // israel
-        const israel = new FlagButton(this, 1113, 129);
+        const israel = new FlagButton(scene, 1113, 129);
         page15.add(israel);
 
         // ireland
-        const ireland = new FlagButton(this, 986, 129);
+        const ireland = new FlagButton(scene, 986, 129);
         page15.add(ireland);
 
         // india
-        const india = new FlagButton(this, 871, 129);
+        const india = new FlagButton(scene, 871, 129);
         page15.add(india);
 
         // hungary
-        const hungary = new FlagButton(this, 657, 676);
+        const hungary = new FlagButton(scene, 657, 676);
         page15.add(hungary);
 
         // uk
-        const uk = new FlagButton(this, 536, 677);
+        const uk = new FlagButton(scene, 536, 677);
         page15.add(uk);
 
         // germany
-        const germany = new FlagButton(this, 417, 677);
+        const germany = new FlagButton(scene, 417, 677);
         page15.add(germany);
 
         // france
-        const france = new FlagButton(this, 295, 676);
+        const france = new FlagButton(scene, 295, 676);
         page15.add(france);
 
         // finland
-        const finland = new FlagButton(this, 652, 517);
+        const finland = new FlagButton(scene, 652, 517);
         page15.add(finland);
 
         // egypt
-        const egypt = new FlagButton(this, 532, 517);
+        const egypt = new FlagButton(scene, 532, 517);
         page15.add(egypt);
 
         // denmark
-        const denmark = new FlagButton(this, 413, 517);
+        const denmark = new FlagButton(scene, 413, 517);
         page15.add(denmark);
 
         // colombia
-        const colombia = new FlagButton(this, 294, 518);
+        const colombia = new FlagButton(scene, 294, 518);
         page15.add(colombia);
 
         // china
-        const china = new FlagButton(this, 656, 366);
+        const china = new FlagButton(scene, 656, 366);
         page15.add(china);
 
         // chile
-        const chile = new FlagButton(this, 537, 364);
+        const chile = new FlagButton(scene, 537, 364);
         page15.add(chile);
 
         // canada
-        const canada = new FlagButton(this, 416, 364);
+        const canada = new FlagButton(scene, 416, 364);
         page15.add(canada);
 
         // brazil
-        const brazil = new FlagButton(this, 295, 365);
+        const brazil = new FlagButton(scene, 295, 365);
         page15.add(brazil);
 
         // belize
-        const belize = new FlagButton(this, 656, 210);
+        const belize = new FlagButton(scene, 656, 210);
         page15.add(belize);
 
         // belgium
-        const belgium = new FlagButton(this, 535, 210);
+        const belgium = new FlagButton(scene, 535, 210);
         page15.add(belgium);
 
         // australia
-        const australia = new FlagButton(this, 418, 211);
+        const australia = new FlagButton(scene, 418, 211);
         page15.add(australia);
 
         // argentina
-        const argentina = new FlagButton(this, 295, 210);
+        const argentina = new FlagButton(scene, 295, 210);
         page15.add(argentina);
 
         // page14
-        const page14 = this.add.container(0, 0);
+        const page14 = scene.add.container(0, 0);
         page14.visible = false;
+        this.add(page14);
 
         // p14
-        const p14 = this.add.image(0, 0, "clothingcatalog", "page/page0014");
+        const p14 = scene.add.image(0, 0, "clothingcatalog", "page/page0014");
         p14.setOrigin(0, 0);
         page14.add(p14);
 
         // photoButton12
-        const photoButton12 = new PhotoButton(this, 1180, 620);
+        const photoButton12 = new PhotoButton(scene, 1180, 620);
         page14.add(photoButton12);
 
         // photoButton11
-        const photoButton11 = new PhotoButton(this, 920, 620);
+        const photoButton11 = new PhotoButton(scene, 920, 620);
         page14.add(photoButton11);
 
         // photoButton10
-        const photoButton10 = new PhotoButton(this, 1180, 360);
+        const photoButton10 = new PhotoButton(scene, 1180, 360);
         page14.add(photoButton10);
 
         // photoButton9
-        const photoButton9 = new PhotoButton(this, 920, 360);
+        const photoButton9 = new PhotoButton(scene, 920, 360);
         page14.add(photoButton9);
 
         // photo12
-        const photo12 = this.add.image(1180, 620, "clothingcatalog", "photo/12");
+        const photo12 = scene.add.image(1180, 620, "clothingcatalog", "photo/12");
         page14.add(photo12);
 
         // photo11
-        const photo11 = this.add.image(920, 620, "clothingcatalog", "photo/11");
+        const photo11 = scene.add.image(920, 620, "clothingcatalog", "photo/11");
         page14.add(photo11);
 
         // photo10
-        const photo10 = this.add.image(1180, 360, "clothingcatalog", "photo/10");
+        const photo10 = scene.add.image(1180, 360, "clothingcatalog", "photo/10");
         page14.add(photo10);
 
         // photo9
-        const photo9 = this.add.image(920, 360, "clothingcatalog", "photo/9");
+        const photo9 = scene.add.image(920, 360, "clothingcatalog", "photo/9");
         page14.add(photo9);
 
         // penguin12
-        const penguin12 = this.add.image(1180, 630, "clothingcatalog", "photo/penguin");
+        const penguin12 = scene.add.image(1180, 630, "clothingcatalog", "photo/penguin");
         page14.add(penguin12);
 
         // penguin11
-        const penguin11 = this.add.image(920, 630, "clothingcatalog", "photo/penguin");
+        const penguin11 = scene.add.image(920, 630, "clothingcatalog", "photo/penguin");
         page14.add(penguin11);
 
         // penguin10
-        const penguin10 = this.add.image(1180, 370, "clothingcatalog", "photo/penguin");
+        const penguin10 = scene.add.image(1180, 370, "clothingcatalog", "photo/penguin");
         page14.add(penguin10);
 
         // penguin9
-        const penguin9 = this.add.image(920, 370, "clothingcatalog", "photo/penguin");
+        const penguin9 = scene.add.image(920, 370, "clothingcatalog", "photo/penguin");
         page14.add(penguin9);
 
         // photoButton8
-        const photoButton8 = new PhotoButton(this, 600, 620);
+        const photoButton8 = new PhotoButton(scene, 600, 620);
         page14.add(photoButton8);
 
         // photoButton7
-        const photoButton7 = new PhotoButton(this, 340, 620);
+        const photoButton7 = new PhotoButton(scene, 340, 620);
         page14.add(photoButton7);
 
         // photoButton6
-        const photoButton6 = new PhotoButton(this, 600, 360);
+        const photoButton6 = new PhotoButton(scene, 600, 360);
         page14.add(photoButton6);
 
         // photoButton5
-        const photoButton5 = new PhotoButton(this, 340, 360);
+        const photoButton5 = new PhotoButton(scene, 340, 360);
         page14.add(photoButton5);
 
         // photo8
-        const photo8 = this.add.image(600, 620, "clothingcatalog", "photo/8");
+        const photo8 = scene.add.image(600, 620, "clothingcatalog", "photo/8");
         page14.add(photo8);
 
         // photo7
-        const photo7 = this.add.image(340, 620, "clothingcatalog", "photo/7");
+        const photo7 = scene.add.image(340, 620, "clothingcatalog", "photo/7");
         page14.add(photo7);
 
         // photo6
-        const photo6 = this.add.image(600, 360, "clothingcatalog", "photo/6");
+        const photo6 = scene.add.image(600, 360, "clothingcatalog", "photo/6");
         page14.add(photo6);
 
         // photo5
-        const photo5 = this.add.image(340, 360, "clothingcatalog", "photo/5");
+        const photo5 = scene.add.image(340, 360, "clothingcatalog", "photo/5");
         page14.add(photo5);
 
         // penguin8
-        const penguin8 = this.add.image(600, 630, "clothingcatalog", "photo/penguin");
+        const penguin8 = scene.add.image(600, 630, "clothingcatalog", "photo/penguin");
         page14.add(penguin8);
 
         // penguin7
-        const penguin7 = this.add.image(340, 630, "clothingcatalog", "photo/penguin");
+        const penguin7 = scene.add.image(340, 630, "clothingcatalog", "photo/penguin");
         page14.add(penguin7);
 
         // penguin6
-        const penguin6 = this.add.image(600, 370, "clothingcatalog", "photo/penguin");
+        const penguin6 = scene.add.image(600, 370, "clothingcatalog", "photo/penguin");
         page14.add(penguin6);
 
         // penguin5
-        const penguin5 = this.add.image(340, 370, "clothingcatalog", "photo/penguin");
+        const penguin5 = scene.add.image(340, 370, "clothingcatalog", "photo/penguin");
         page14.add(penguin5);
 
         // page13
-        const page13 = this.add.container(0, 0);
+        const page13 = scene.add.container(0, 0);
         page13.visible = false;
+        this.add(page13);
 
         // p13
-        const p13 = this.add.image(0, 0, "clothingcatalog", "page/page0013");
+        const p13 = scene.add.image(0, 0, "clothingcatalog", "page/page0013");
         p13.setOrigin(0, 0);
         page13.add(p13);
 
         // tag1_44
-        const tag1_44 = new Tag1(this, 255, 329);
+        const tag1_44 = new Tag1(scene, 255, 329);
         tag1_44.angle = -16;
         page13.add(tag1_44);
 
         // tag1_45
-        const tag1_45 = new Tag1(this, 301, 80);
+        const tag1_45 = new Tag1(scene, 301, 80);
         tag1_45.angle = 19;
         page13.add(tag1_45);
 
         // tag2_36
-        const tag2_36 = new Tag2(this, 619, 580);
+        const tag2_36 = new Tag2(scene, 619, 580);
         tag2_36.angle = -23;
         page13.add(tag2_36);
 
         // tag2_37
-        const tag2_37 = new Tag2(this, 578, 216);
+        const tag2_37 = new Tag2(scene, 578, 216);
         tag2_37.angle = -28;
         page13.add(tag2_37);
 
         // photoButton4
-        const photoButton4 = new PhotoButton(this, 1187, 620);
+        const photoButton4 = new PhotoButton(scene, 1187, 620);
         page13.add(photoButton4);
 
         // photoButton3
-        const photoButton3 = new PhotoButton(this, 927, 620);
+        const photoButton3 = new PhotoButton(scene, 927, 620);
         page13.add(photoButton3);
 
         // photoButton2
-        const photoButton2 = new PhotoButton(this, 1187, 360);
+        const photoButton2 = new PhotoButton(scene, 1187, 360);
         page13.add(photoButton2);
 
         // photoButton1
-        const photoButton1 = new PhotoButton(this, 927, 360);
+        const photoButton1 = new PhotoButton(scene, 927, 360);
         page13.add(photoButton1);
 
         // photo4
-        const photo4 = this.add.image(1187, 620, "clothingcatalog", "photo/4");
+        const photo4 = scene.add.image(1187, 620, "clothingcatalog", "photo/4");
         page13.add(photo4);
 
         // photo3
-        const photo3 = this.add.image(927, 620, "clothingcatalog", "photo/3");
+        const photo3 = scene.add.image(927, 620, "clothingcatalog", "photo/3");
         page13.add(photo3);
 
         // photo2
-        const photo2 = this.add.image(1187, 360, "clothingcatalog", "photo/2");
+        const photo2 = scene.add.image(1187, 360, "clothingcatalog", "photo/2");
         page13.add(photo2);
 
         // photo1
-        const photo1 = this.add.image(927, 360, "clothingcatalog", "photo/1");
+        const photo1 = scene.add.image(927, 360, "clothingcatalog", "photo/1");
         page13.add(photo1);
 
         // penguin4
-        const penguin4 = this.add.image(1187, 630, "clothingcatalog", "photo/penguin");
+        const penguin4 = scene.add.image(1187, 630, "clothingcatalog", "photo/penguin");
         page13.add(penguin4);
 
         // penguin3
-        const penguin3 = this.add.image(927, 630, "clothingcatalog", "photo/penguin");
+        const penguin3 = scene.add.image(927, 630, "clothingcatalog", "photo/penguin");
         page13.add(penguin3);
 
         // penguin2
-        const penguin2 = this.add.image(1187, 370, "clothingcatalog", "photo/penguin");
+        const penguin2 = scene.add.image(1187, 370, "clothingcatalog", "photo/penguin");
         page13.add(penguin2);
 
         // penguin1
-        const penguin1 = this.add.image(927, 370, "clothingcatalog", "photo/penguin");
+        const penguin1 = scene.add.image(927, 370, "clothingcatalog", "photo/penguin");
         page13.add(penguin1);
 
         // page12
-        const page12 = this.add.container(0, 0);
+        const page12 = scene.add.container(0, 0);
         page12.visible = false;
+        this.add(page12);
 
         // p12
-        const p12 = this.add.image(0, 0, "clothingcatalog", "page/page0012");
+        const p12 = scene.add.image(0, 0, "clothingcatalog", "page/page0012");
         p12.setOrigin(0, 0);
         page12.add(p12);
 
         // tag1_40
-        const tag1_40 = new Tag1(this, 343, 302);
+        const tag1_40 = new Tag1(scene, 343, 302);
         tag1_40.angle = 10;
         page12.add(tag1_40);
 
         // tag1_41
-        const tag1_41 = new Tag1(this, 865, 653);
+        const tag1_41 = new Tag1(scene, 865, 653);
         tag1_41.angle = 18;
         page12.add(tag1_41);
 
         // tag1_42
-        const tag1_42 = new Tag1(this, 933, 524);
+        const tag1_42 = new Tag1(scene, 933, 524);
         tag1_42.angle = 3;
         page12.add(tag1_42);
 
         // tag1_43
-        const tag1_43 = new Tag1(this, 803, 165);
+        const tag1_43 = new Tag1(scene, 803, 165);
         tag1_43.angle = 52;
         page12.add(tag1_43);
 
         // tag2_33
-        const tag2_33 = new Tag2(this, 606, 448);
+        const tag2_33 = new Tag2(scene, 606, 448);
         tag2_33.angle = -13;
         page12.add(tag2_33);
 
         // tag2_34
-        const tag2_34 = new Tag2(this, 1179, 327);
+        const tag2_34 = new Tag2(scene, 1179, 327);
         tag2_34.angle = -3;
         page12.add(tag2_34);
 
         // tag2_35
-        const tag2_35 = new Tag2(this, 980, 131);
+        const tag2_35 = new Tag2(scene, 980, 131);
         tag2_35.angle = -26;
         page12.add(tag2_35);
 
         // page11
-        const page11 = this.add.container(0, 0);
+        const page11 = scene.add.container(0, 0);
         page11.visible = false;
+        this.add(page11);
 
         // p11
-        const p11 = this.add.image(0, 0, "clothingcatalog", "page/page0011");
+        const p11 = scene.add.image(0, 0, "clothingcatalog", "page/page0011");
         p11.setOrigin(0, 0);
         page11.add(p11);
 
         // tag1_34
-        const tag1_34 = new Tag1(this, 266, 643);
+        const tag1_34 = new Tag1(scene, 266, 643);
         tag1_34.angle = 33;
         page11.add(tag1_34);
 
         // tag1_35
-        const tag1_35 = new Tag1(this, 264, 529);
+        const tag1_35 = new Tag1(scene, 264, 529);
         tag1_35.angle = -36.99999999999994;
         page11.add(tag1_35);
 
         // tag1_36
-        const tag1_36 = new Tag1(this, 221, 203);
+        const tag1_36 = new Tag1(scene, 221, 203);
         tag1_36.angle = 40;
         page11.add(tag1_36);
 
         // tag1_37
-        const tag1_37 = new Tag1(this, 928, 680);
+        const tag1_37 = new Tag1(scene, 928, 680);
         tag1_37.angle = -5;
         page11.add(tag1_37);
 
         // tag1_38
-        const tag1_38 = new Tag1(this, 750, 656);
+        const tag1_38 = new Tag1(scene, 750, 656);
         tag1_38.angle = -32.00000000000006;
         page11.add(tag1_38);
 
         // tag1_39
-        const tag1_39 = new Tag1(this, 719, 180);
+        const tag1_39 = new Tag1(scene, 719, 180);
         tag1_39.angle = 33;
         page11.add(tag1_39);
 
         // tag2_28
-        const tag2_28 = new Tag2(this, 575, 302);
+        const tag2_28 = new Tag2(scene, 575, 302);
         tag2_28.angle = -34;
         page11.add(tag2_28);
 
         // tag2_29
-        const tag2_29 = new Tag2(this, 405, 153);
+        const tag2_29 = new Tag2(scene, 405, 153);
         tag2_29.angle = -9;
         page11.add(tag2_29);
 
         // tag2_30
-        const tag2_30 = new Tag2(this, 1054, 317);
+        const tag2_30 = new Tag2(scene, 1054, 317);
         tag2_30.angle = -14;
         page11.add(tag2_30);
 
         // tag2_31
-        const tag2_31 = new Tag2(this, 964, 228);
+        const tag2_31 = new Tag2(scene, 964, 228);
         tag2_31.angle = -13;
         page11.add(tag2_31);
 
         // tag2_32
-        const tag2_32 = new Tag2(this, 877, 91);
+        const tag2_32 = new Tag2(scene, 877, 91);
         tag2_32.angle = -13;
         page11.add(tag2_32);
 
         // page10
-        const page10 = this.add.container(0, 0);
+        const page10 = scene.add.container(0, 0);
         page10.visible = false;
+        this.add(page10);
 
         // p10
-        const p10 = this.add.image(0, 0, "clothingcatalog", "page/page0010");
+        const p10 = scene.add.image(0, 0, "clothingcatalog", "page/page0010");
         p10.setOrigin(0, 0);
         page10.add(p10);
 
         // tag1_27
-        const tag1_27 = new Tag1(this, 419, 613);
+        const tag1_27 = new Tag1(scene, 419, 613);
         tag1_27.angle = -14;
         page10.add(tag1_27);
 
         // tag1_28
-        const tag1_28 = new Tag1(this, 215, 381);
+        const tag1_28 = new Tag1(scene, 215, 381);
         tag1_28.angle = -2;
         page10.add(tag1_28);
 
         // tag1_29
-        const tag1_29 = new Tag1(this, 223, 182);
+        const tag1_29 = new Tag1(scene, 223, 182);
         tag1_29.angle = 0;
         page10.add(tag1_29);
 
         // tag1_30
-        const tag1_30 = new Tag1(this, 894, 639);
+        const tag1_30 = new Tag1(scene, 894, 639);
         tag1_30.angle = 0;
         page10.add(tag1_30);
 
         // tag1_31
-        const tag1_31 = new Tag1(this, 808, 570);
+        const tag1_31 = new Tag1(scene, 808, 570);
         tag1_31.angle = -47;
         page10.add(tag1_31);
 
         // tag1_32
-        const tag1_32 = new Tag1(this, 756, 359);
+        const tag1_32 = new Tag1(scene, 756, 359);
         tag1_32.angle = -6;
         page10.add(tag1_32);
 
         // tag1_33
-        const tag1_33 = new Tag1(this, 761, 95);
+        const tag1_33 = new Tag1(scene, 761, 95);
         tag1_33.angle = -20;
         page10.add(tag1_33);
 
         // tag2_26
-        const tag2_26 = new Tag2(this, 515, 115);
+        const tag2_26 = new Tag2(scene, 515, 115);
         tag2_26.angle = 7;
         page10.add(tag2_26);
 
         // tag2_27
-        const tag2_27 = new Tag2(this, 1205, 284);
+        const tag2_27 = new Tag2(scene, 1205, 284);
         tag2_27.angle = -19;
         page10.add(tag2_27);
 
         // page9
-        const page9 = this.add.container(0, 0);
+        const page9 = scene.add.container(0, 0);
         page9.visible = false;
+        this.add(page9);
 
         // p9
-        const p9 = this.add.image(0, 0, "clothingcatalog", "page/page0009");
+        const p9 = scene.add.image(0, 0, "clothingcatalog", "page/page0009");
         p9.setOrigin(0, 0);
         page9.add(p9);
 
         // tag1_24
-        const tag1_24 = new Tag1(this, 319, 94);
+        const tag1_24 = new Tag1(scene, 319, 94);
         tag1_24.angle = 33;
         page9.add(tag1_24);
 
         // tag1_25
-        const tag1_25 = new Tag1(this, 967, 100);
+        const tag1_25 = new Tag1(scene, 967, 100);
         tag1_25.angle = 2;
         page9.add(tag1_25);
 
         // tag1_26
-        const tag1_26 = new Tag1(this, 1095, 523);
+        const tag1_26 = new Tag1(scene, 1095, 523);
         tag1_26.angle = -22;
         page9.add(tag1_26);
 
         // tag2_22
-        const tag2_22 = new Tag2(this, 546, 365);
+        const tag2_22 = new Tag2(scene, 546, 365);
         tag2_22.angle = -2;
         page9.add(tag2_22);
 
         // tag2_23
-        const tag2_23 = new Tag2(this, 883, 278);
+        const tag2_23 = new Tag2(scene, 883, 278);
         tag2_23.angle = -34;
         page9.add(tag2_23);
 
         // tag2_24
-        const tag2_24 = new Tag2(this, 1005, 644);
+        const tag2_24 = new Tag2(scene, 1005, 644);
         tag2_24.angle = -3;
         page9.add(tag2_24);
 
         // tag2_25
-        const tag2_25 = new Tag2(this, 1236, 329);
+        const tag2_25 = new Tag2(scene, 1236, 329);
         tag2_25.angle = 41;
         page9.add(tag2_25);
 
         // page8
-        const page8 = this.add.container(0, 0);
+        const page8 = scene.add.container(0, 0);
         page8.visible = false;
+        this.add(page8);
 
         // p8
-        const p8 = this.add.image(0, 0, "clothingcatalog", "page/page0008");
+        const p8 = scene.add.image(0, 0, "clothingcatalog", "page/page0008");
         p8.setOrigin(0, 0);
         page8.add(p8);
 
         // tag1_21
-        const tag1_21 = new Tag1(this, 220, 587);
+        const tag1_21 = new Tag1(scene, 220, 587);
         tag1_21.scaleX = 1.2;
         tag1_21.scaleY = 1.2;
         tag1_21.angle = -13;
         page8.add(tag1_21);
 
         // tag1_22
-        const tag1_22 = new Tag1(this, 210, 345);
+        const tag1_22 = new Tag1(scene, 210, 345);
         tag1_22.angle = -27;
         page8.add(tag1_22);
 
         // tag1_23
-        const tag1_23 = new Tag1(this, 824, 321);
+        const tag1_23 = new Tag1(scene, 824, 321);
         tag1_23.scaleX = 1.3;
         tag1_23.scaleY = 1.3;
         tag1_23.angle = 33;
         page8.add(tag1_23);
 
         // tag2_21
-        const tag2_21 = new Tag2(this, 1081, 170);
+        const tag2_21 = new Tag2(scene, 1081, 170);
         tag2_21.scaleX = 1.3;
         tag2_21.scaleY = 1.3;
         tag2_21.angle = 0;
         page8.add(tag2_21);
 
         // page7
-        const page7 = this.add.container(0, 0);
+        const page7 = scene.add.container(0, 0);
         page7.visible = false;
+        this.add(page7);
 
         // p7
-        const p7 = this.add.image(0, 0, "clothingcatalog", "page/page0007");
+        const p7 = scene.add.image(0, 0, "clothingcatalog", "page/page0007");
         p7.setOrigin(0, 0);
         page7.add(p7);
 
         // tag1_19
-        const tag1_19 = new Tag1(this, 269, 322);
+        const tag1_19 = new Tag1(scene, 269, 322);
         tag1_19.angle = -17;
         page7.add(tag1_19);
 
         // tag1_20
-        const tag1_20 = new Tag1(this, 871, 69);
+        const tag1_20 = new Tag1(scene, 871, 69);
         tag1_20.angle = 33;
         page7.add(tag1_20);
 
         // tag2_17
-        const tag2_17 = new Tag2(this, 622, 494);
+        const tag2_17 = new Tag2(scene, 622, 494);
         tag2_17.angle = 17;
         page7.add(tag2_17);
 
         // tag2_18
-        const tag2_18 = new Tag2(this, 594, 386);
+        const tag2_18 = new Tag2(scene, 594, 386);
         tag2_18.angle = -26;
         page7.add(tag2_18);
 
         // tag2_19
-        const tag2_19 = new Tag2(this, 496, 230);
+        const tag2_19 = new Tag2(scene, 496, 230);
         tag2_19.angle = -34;
         page7.add(tag2_19);
 
         // tag2_20
-        const tag2_20 = new Tag2(this, 1026, 349);
+        const tag2_20 = new Tag2(scene, 1026, 349);
         tag2_20.angle = -23;
         page7.add(tag2_20);
 
         // page6
-        const page6 = this.add.container(0, 0);
+        const page6 = scene.add.container(0, 0);
         page6.visible = false;
+        this.add(page6);
 
         // p6
-        const p6 = this.add.image(0, 0, "clothingcatalog", "page/page0006");
+        const p6 = scene.add.image(0, 0, "clothingcatalog", "page/page0006");
         p6.setOrigin(0, 0);
         page6.add(p6);
 
         // tag1_13
-        const tag1_13 = new Tag1(this, 206, 641);
+        const tag1_13 = new Tag1(scene, 206, 641);
         tag1_13.angle = -38;
         page6.add(tag1_13);
 
         // tag1_14
-        const tag1_14 = new Tag1(this, 325, 173);
+        const tag1_14 = new Tag1(scene, 325, 173);
         tag1_14.angle = 33;
         page6.add(tag1_14);
 
         // tag1_15
-        const tag1_15 = new Tag1(this, 523, 384);
+        const tag1_15 = new Tag1(scene, 523, 384);
         tag1_15.angle = 10;
         page6.add(tag1_15);
 
         // tag1_16
-        const tag1_16 = new Tag1(this, 520, 145);
+        const tag1_16 = new Tag1(scene, 520, 145);
         tag1_16.angle = 33;
         page6.add(tag1_16);
 
         // tag1_17
-        const tag1_17 = new Tag1(this, 555, 75);
+        const tag1_17 = new Tag1(scene, 555, 75);
         tag1_17.angle = 11;
         page6.add(tag1_17);
 
         // tag1_18
-        const tag1_18 = new Tag1(this, 907, 219);
+        const tag1_18 = new Tag1(scene, 907, 219);
         tag1_18.angle = 16;
         page6.add(tag1_18);
 
         // tag2_14
-        const tag2_14 = new Tag2(this, 802, 509);
+        const tag2_14 = new Tag2(scene, 802, 509);
         tag2_14.angle = -34;
         page6.add(tag2_14);
 
         // tag2_15
-        const tag2_15 = new Tag2(this, 1108, 218);
+        const tag2_15 = new Tag2(scene, 1108, 218);
         tag2_15.angle = -29;
         page6.add(tag2_15);
 
         // tag2_16
-        const tag2_16 = new Tag2(this, 1121, 372);
+        const tag2_16 = new Tag2(scene, 1121, 372);
         tag2_16.angle = -39.99999999999994;
         page6.add(tag2_16);
 
         // page5
-        const page5 = this.add.container(0, 0);
+        const page5 = scene.add.container(0, 0);
         page5.visible = false;
+        this.add(page5);
 
         // p5
-        const p5 = this.add.image(0, 0, "clothingcatalog", "page/page0005");
+        const p5 = scene.add.image(0, 0, "clothingcatalog", "page/page0005");
         p5.setOrigin(0, 0);
         page5.add(p5);
 
         // tag1_9
-        const tag1_9 = new Tag1(this, 213, 673);
+        const tag1_9 = new Tag1(scene, 213, 673);
         tag1_9.angle = -45.00000000000006;
         page5.add(tag1_9);
 
         // tag1_10
-        const tag1_10 = new Tag1(this, 275, 91);
+        const tag1_10 = new Tag1(scene, 275, 91);
         tag1_10.angle = 33;
         page5.add(tag1_10);
 
         // tag1_11
-        const tag1_11 = new Tag1(this, 789, 292);
+        const tag1_11 = new Tag1(scene, 789, 292);
         tag1_11.angle = 20;
         page5.add(tag1_11);
 
         // tag1_12
-        const tag1_12 = new Tag1(this, 845, 126);
+        const tag1_12 = new Tag1(scene, 845, 126);
         tag1_12.angle = -19;
         page5.add(tag1_12);
 
         // tag2_11
-        const tag2_11 = new Tag2(this, 537, 194);
+        const tag2_11 = new Tag2(scene, 537, 194);
         tag2_11.angle = -21;
         page5.add(tag2_11);
 
         // tag2_12
-        const tag2_12 = new Tag2(this, 546, 672);
+        const tag2_12 = new Tag2(scene, 546, 672);
         tag2_12.angle = -2;
         page5.add(tag2_12);
 
         // tag2_13
-        const tag2_13 = new Tag2(this, 1242, 235);
+        const tag2_13 = new Tag2(scene, 1242, 235);
         tag2_13.angle = 40;
         page5.add(tag2_13);
 
         // page4
-        const page4 = this.add.container(0, 0);
+        const page4 = scene.add.container(0, 0);
         page4.visible = false;
+        this.add(page4);
 
         // p4
-        const p4 = this.add.image(0, 0, "clothingcatalog", "page/page0004");
+        const p4 = scene.add.image(0, 0, "clothingcatalog", "page/page0004");
         p4.setOrigin(0, 0);
         page4.add(p4);
 
         // tag1_4
-        const tag1_4 = new Tag1(this, 222, 679);
+        const tag1_4 = new Tag1(scene, 222, 679);
         tag1_4.angle = -46;
         page4.add(tag1_4);
 
         // tag1_5
-        const tag1_5 = new Tag1(this, 279, 296);
+        const tag1_5 = new Tag1(scene, 279, 296);
         tag1_5.angle = 31;
         page4.add(tag1_5);
 
         // tag1_6
-        const tag1_6 = new Tag1(this, 574, 141);
+        const tag1_6 = new Tag1(scene, 574, 141);
         tag1_6.angle = 49;
         page4.add(tag1_6);
 
         // tag1_7
-        const tag1_7 = new Tag1(this, 760, 614);
+        const tag1_7 = new Tag1(scene, 760, 614);
         tag1_7.angle = -45.00000000000006;
         page4.add(tag1_7);
 
         // tag1_8
-        const tag1_8 = new Tag1(this, 1080, 761);
+        const tag1_8 = new Tag1(scene, 1080, 761);
         tag1_8.angle = -31;
         page4.add(tag1_8);
 
         // tag2_4
-        const tag2_4 = new Tag2(this, 422, 402);
+        const tag2_4 = new Tag2(scene, 422, 402);
         tag2_4.angle = -20;
         page4.add(tag2_4);
 
         // tag2_5
-        const tag2_5 = new Tag2(this, 667, 434);
+        const tag2_5 = new Tag2(scene, 667, 434);
         tag2_5.scaleX = 0.7;
         tag2_5.scaleY = 0.7;
         tag2_5.angle = -10;
         page4.add(tag2_5);
 
         // tag2_6
-        const tag2_6 = new Tag2(this, 844, 351);
+        const tag2_6 = new Tag2(scene, 844, 351);
         tag2_6.angle = -46;
         page4.add(tag2_6);
 
         // tag2_7
-        const tag2_7 = new Tag2(this, 937, 453);
+        const tag2_7 = new Tag2(scene, 937, 453);
         tag2_7.angle = -26;
         page4.add(tag2_7);
 
         // tag2_8
-        const tag2_8 = new Tag2(this, 1023, 240);
+        const tag2_8 = new Tag2(scene, 1023, 240);
         tag2_8.angle = 9;
         page4.add(tag2_8);
 
         // tag2_9
-        const tag2_9 = new Tag2(this, 1164, 335);
+        const tag2_9 = new Tag2(scene, 1164, 335);
         tag2_9.angle = -25;
         page4.add(tag2_9);
 
         // tag2_10
-        const tag2_10 = new Tag2(this, 1227, 589);
+        const tag2_10 = new Tag2(scene, 1227, 589);
         tag2_10.angle = 20;
         page4.add(tag2_10);
 
         // page3
-        const page3 = this.add.container(0, 0);
+        const page3 = scene.add.container(0, 0);
         page3.visible = false;
+        this.add(page3);
 
         // p3
-        const p3 = this.add.image(0, 0, "clothingcatalog", "page/page0003");
+        const p3 = scene.add.image(0, 0, "clothingcatalog", "page/page0003");
         p3.setOrigin(0, 0);
         page3.add(p3);
 
         // tag1
-        const tag1 = new Tag1(this, 236, 366);
+        const tag1 = new Tag1(scene, 236, 366);
         tag1.angle = 33;
         page3.add(tag1);
 
         // tag1_1
-        const tag1_1 = new Tag1(this, 378, 386);
+        const tag1_1 = new Tag1(scene, 378, 386);
         tag1_1.angle = -13;
         page3.add(tag1_1);
 
         // tag1_2
-        const tag1_2 = new Tag1(this, 359, 110);
+        const tag1_2 = new Tag1(scene, 359, 110);
         tag1_2.angle = 31;
         page3.add(tag1_2);
 
         // tag1_3
-        const tag1_3 = new Tag1(this, 942, 154);
+        const tag1_3 = new Tag1(scene, 942, 154);
         tag1_3.angle = 45;
         page3.add(tag1_3);
 
         // tag2
-        const tag2 = new Tag2(this, 384, 535);
+        const tag2 = new Tag2(scene, 384, 535);
         tag2.angle = -34;
         page3.add(tag2);
 
         // tag2_1
-        const tag2_1 = new Tag2(this, 1178, 309);
+        const tag2_1 = new Tag2(scene, 1178, 309);
         tag2_1.angle = -29;
         page3.add(tag2_1);
 
         // tag2_2
-        const tag2_2 = new Tag2(this, 648, 77);
+        const tag2_2 = new Tag2(scene, 648, 77);
         tag2_2.angle = 17;
         page3.add(tag2_2);
 
         // tag2_3
-        const tag2_3 = new Tag2(this, 431, 605);
+        const tag2_3 = new Tag2(scene, 431, 605);
         tag2_3.angle = 5;
         page3.add(tag2_3);
 
         // page2
-        const page2 = this.add.container(0, 0);
+        const page2 = scene.add.container(0, 0);
         page2.visible = false;
+        this.add(page2);
 
         // p2
-        const p2 = this.add.image(0, 0, "clothingcatalog", "page/page0002");
+        const p2 = scene.add.image(0, 0, "clothingcatalog", "page/page0002");
         p2.setOrigin(0, 0);
         page2.add(p2);
 
         // aqua
-        const aqua = new ColorButton(this, 1200, 525);
+        const aqua = new ColorButton(scene, 1200, 525);
         aqua.tintTopLeft = 4718591;
         aqua.tintTopRight = 4718591;
         aqua.tintBottomLeft = 4718591;
@@ -936,7 +946,7 @@ export default class ClothingCatalog extends Book {
         page2.add(aqua);
 
         // lime
-        const lime = new ColorButton(this, 1100, 525);
+        const lime = new ColorButton(scene, 1100, 525);
         lime.tintFill = false;
         lime.tintTopLeft = 7536384;
         lime.tintTopRight = 7536384;
@@ -945,7 +955,7 @@ export default class ClothingCatalog extends Book {
         page2.add(lime);
 
         // purple
-        const purple = new ColorButton(this, 1000, 525);
+        const purple = new ColorButton(scene, 1000, 525);
         purple.tintFill = false;
         purple.tintTopLeft = 6619289;
         purple.tintTopRight = 6619289;
@@ -954,7 +964,7 @@ export default class ClothingCatalog extends Book {
         page2.add(purple);
 
         // darkGreen
-        const darkGreen = new ColorButton(this, 900, 525);
+        const darkGreen = new ColorButton(scene, 900, 525);
         darkGreen.tintFill = false;
         darkGreen.tintTopLeft = 25856;
         darkGreen.tintTopRight = 25856;
@@ -963,7 +973,7 @@ export default class ClothingCatalog extends Book {
         page2.add(darkGreen);
 
         // pink
-        const pink = new ColorButton(this, 800, 525);
+        const pink = new ColorButton(scene, 800, 525);
         pink.tintFill = false;
         pink.tintTopLeft = 16724633;
         pink.tintTopRight = 16724633;
@@ -972,7 +982,7 @@ export default class ClothingCatalog extends Book {
         page2.add(pink);
 
         // lightblue
-        const lightblue = new ColorButton(this, 1146, 425);
+        const lightblue = new ColorButton(scene, 1146, 425);
         lightblue.tintFill = false;
         lightblue.tintTopLeft = 39372;
         lightblue.tintTopRight = 39372;
@@ -981,7 +991,7 @@ export default class ClothingCatalog extends Book {
         page2.add(lightblue);
 
         // yellow
-        const yellow = new ColorButton(this, 1046, 425);
+        const yellow = new ColorButton(scene, 1046, 425);
         yellow.tintFill = false;
         yellow.tintTopLeft = 16763904;
         yellow.tintTopRight = 16763904;
@@ -990,7 +1000,7 @@ export default class ClothingCatalog extends Book {
         page2.add(yellow);
 
         // peach
-        const peach = new ColorButton(this, 946, 425);
+        const peach = new ColorButton(scene, 946, 425);
         peach.tintFill = false;
         peach.tintTopLeft = 16737637;
         peach.tintTopRight = 16737637;
@@ -999,7 +1009,7 @@ export default class ClothingCatalog extends Book {
         page2.add(peach);
 
         // brown
-        const brown = new ColorButton(this, 846, 425);
+        const brown = new ColorButton(scene, 846, 425);
         brown.tintFill = false;
         brown.tintTopLeft = 10052864;
         brown.tintTopRight = 10052864;
@@ -1008,7 +1018,7 @@ export default class ClothingCatalog extends Book {
         page2.add(brown);
 
         // orange
-        const orange = new ColorButton(this, 1200, 325);
+        const orange = new ColorButton(scene, 1200, 325);
         orange.tintFill = false;
         orange.tintTopLeft = 16737536;
         orange.tintTopRight = 16737536;
@@ -1017,7 +1027,7 @@ export default class ClothingCatalog extends Book {
         page2.add(orange);
 
         // green
-        const green = new ColorButton(this, 1100, 325);
+        const green = new ColorButton(scene, 1100, 325);
         green.tintFill = false;
         green.tintTopLeft = 39168;
         green.tintTopRight = 39168;
@@ -1026,7 +1036,7 @@ export default class ClothingCatalog extends Book {
         page2.add(green);
 
         // red
-        const red = new ColorButton(this, 1000, 325);
+        const red = new ColorButton(scene, 1000, 325);
         red.tintFill = false;
         red.tintTopLeft = 13369344;
         red.tintTopRight = 13369344;
@@ -1035,7 +1045,7 @@ export default class ClothingCatalog extends Book {
         page2.add(red);
 
         // blue
-        const blue = new ColorButton(this, 900, 325);
+        const blue = new ColorButton(scene, 900, 325);
         blue.tintFill = false;
         blue.tintTopLeft = 12901;
         blue.tintTopRight = 12901;
@@ -1044,7 +1054,7 @@ export default class ClothingCatalog extends Book {
         page2.add(blue);
 
         // black
-        const black = new ColorButton(this, 800, 325);
+        const black = new ColorButton(scene, 800, 325);
         black.tintFill = false;
         black.tintTopLeft = 3289650;
         black.tintTopRight = 3289650;
@@ -1053,45 +1063,46 @@ export default class ClothingCatalog extends Book {
         page2.add(black);
 
         // page1
-        const page1 = this.add.container(0, 0);
-        page1.visible = false;
+        const page1 = scene.add.container(0, 0);
+        this.add(page1);
 
         // p1
-        const p1 = this.add.image(0, 0, "clothingcatalog", "page/page0001");
+        const p1 = scene.add.image(0, 0, "clothingcatalog", "page/page0001");
         p1.setOrigin(0, 0);
         page1.add(p1);
 
         // pageFront
-        const pageFront = this.add.image(469, 42, "clothingcatalog", "page_front");
+        const pageFront = scene.add.image(469, 42, "clothingcatalog", "page_front");
         pageFront.setOrigin(0, 0);
         page1.add(pageFront);
 
         // closeRight_1
-        const closeRight_1 = this.add.image(925, 37, "clothingcatalog", "close_right");
+        const closeRight_1 = scene.add.image(925, 37, "clothingcatalog", "close_right");
         closeRight_1.setOrigin(0, 0);
         page1.add(closeRight_1);
 
         // buttons
-        const buttons = this.add.container(190, 41);
+        const buttons = scene.add.container(190, 41);
         buttons.visible = false;
+        this.add(buttons);
 
         // closeRight
-        const closeRight = this.add.image(1012, 0, "clothingcatalog", "close_right");
+        const closeRight = scene.add.image(1012, 0, "clothingcatalog", "close_right");
         closeRight.setOrigin(0, 0);
         buttons.add(closeRight);
 
         // pageRight
-        const pageRight = this.add.image(1012, 549, "clothingcatalog", "page_right");
+        const pageRight = scene.add.image(1012, 549, "clothingcatalog", "page_right");
         pageRight.setOrigin(0, 0);
         buttons.add(pageRight);
 
         // pageLeft
-        const pageLeft = this.add.image(0, 549, "clothingcatalog", "page_left");
+        const pageLeft = scene.add.image(0, 549, "clothingcatalog", "page_left");
         pageLeft.setOrigin(0, 0);
         buttons.add(pageLeft);
 
         // coins
-        const coins = this.add.text(1130, 790, "", {});
+        const coins = scene.add.text(1130, 790, "", {});
         coins.setOrigin(1, 0);
         coins.text = "YOUR COINS:";
         coins.setStyle({ "align": "right", "fixedWidth":600,"fontFamily": "CCComiccrazy", "fontSize": "32px", "stroke": "#000", "strokeThickness":9});
@@ -1602,26 +1613,12 @@ export default class ClothingCatalog extends Book {
         this.coins = coins;
         this.pages = pages;
 
-        this.events.emit("scene-awake");
+        /* START-USER-CTR-CODE */
+        /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
-
-    create() {
-        super.create()
-
-        this.setCoins(this.world.client.coins)
-    }
-
-    setCoins(coins) {
-        this.coins.text = `YOUR COINS: ${coins}`
-    }
-
-    buy(item) {
-        this.interface.prompt.showItem(item)
-    }
-
     /* END-USER-CODE */
 }
 

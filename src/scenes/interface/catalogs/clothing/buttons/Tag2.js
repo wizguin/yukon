@@ -1,9 +1,11 @@
+import BaseImage from '@scenes/base/BaseImage'
+
 import { Button } from '@components/components'
 
 
 /* START OF COMPILED CODE */
 
-export default class Tag2 extends Phaser.GameObjects.Image {
+export default class Tag2 extends BaseImage {
 
     constructor(scene, x, y, texture, frame) {
         super(scene, x ?? 0, y ?? 0, texture || "clothingcatalog", frame ?? "buy2");
@@ -17,7 +19,7 @@ export default class Tag2 extends Phaser.GameObjects.Image {
         // this (components)
         const thisButton = new Button(this);
         thisButton.spriteName = "buy2";
-        thisButton.callback = () => this.scene.buy(this.item);
+        thisButton.callback = () => this.interface.prompt.showItem(this.item);
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */

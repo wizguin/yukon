@@ -1,7 +1,9 @@
+import BaseImage from '@scenes/base/BaseImage'
+
 import CanvasTint from './CanvasTint'
 
 
-export default class TintedImage extends Phaser.GameObjects.Image {
+export default class TintedImage extends BaseImage {
 
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame)

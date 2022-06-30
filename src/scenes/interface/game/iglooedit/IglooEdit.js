@@ -179,12 +179,12 @@ export default class IglooEdit extends BaseScene {
 
         // button_igloo_catalog (components)
         const button_igloo_catalogSimpleButton = new SimpleButton(button_igloo_catalog);
-        button_igloo_catalogSimpleButton.callback = () => this.interface.loadExternal('IglooCatalog');
+        button_igloo_catalogSimpleButton.callback = () => this.interface.loadWidget('IglooCatalog', false);
 
         // button_furniture_catalog (components)
         const button_furniture_catalogButton = new Button(button_furniture_catalog);
         button_furniture_catalogButton.spriteName = "button/furniture_catalog";
-        button_furniture_catalogButton.callback = () => this.interface.loadExternal('FurnitureCatalog');
+        button_furniture_catalogButton.callback = () => this.interface.loadWidget('FurnitureCatalog', false);
         button_furniture_catalogButton.activeFrame = false;
 
         // button_furniture (components)

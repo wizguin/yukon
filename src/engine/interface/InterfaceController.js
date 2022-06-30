@@ -185,8 +185,8 @@ export default class InterfaceController extends BaseScene {
     }
 
     updateCatalogCoins(coins) {
-        let books = this.scene.manager.getScenes().filter(
-            scene => scene.isBook
+        let books = Object.values(this.main.loadedWidgets).filter(
+            widget => widget.isBook
         )
 
         books.map(book => {

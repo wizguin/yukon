@@ -159,7 +159,18 @@ export default class IglooScene extends RoomScene {
     updateFlooring(flooring) {
         this.args.flooring = flooring
 
-        if (flooring == 0 && this.flooring) return this.flooring.destroy()
+        // Close catalog
+        for (let widget in this.interface.main.loadedWidgets) {
+            widget = this.interface.main.loadedWidgets[widget]
+
+            if (widget.isBook && widget.visible) {
+                widget.close()
+            }
+        }
+
+        if (flooring == 0 && this.flooring) {
+            return this.flooring.destroy()
+        }
 
         if (this.textures.exists(`flooring/${flooring}`)) {
             return this.addFlooring(flooring)
