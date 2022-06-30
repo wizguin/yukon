@@ -145,7 +145,7 @@ export default class InterfaceController extends BaseScene {
         widget.show()
     }
 
-    loadWidget(key, addToWidgetLayer = true) {
+    loadWidget(key, addToWidgetLayer = false) {
         if (!(key in this.widgets)) {
             return
         }

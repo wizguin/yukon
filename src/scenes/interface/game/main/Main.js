@@ -552,7 +552,7 @@ export default class Main extends BaseScene {
     }
 
     onMapClick() {
-        this.interface.loadWidget('Map', false)
+        this.interface.loadWidget('Map')
     }
 
     /* END-USER-CODE */

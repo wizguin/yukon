@@ -112,7 +112,7 @@
                         "SimpleButton",
                         "ShowHint"
                     ],
-                    "SimpleButton.callback": "() => this.interface.loadWidget('IglooCatalog', false)",
+                    "SimpleButton.callback": "() => this.interface.loadWidget('IglooCatalog')",
                     "ShowHint.text": "upgrade_igloo_hint",
                     "texture": {
                         "key": "iglooedit",
@@ -131,7 +131,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "button/furniture_catalog",
-                    "Button.callback": "() => this.interface.loadWidget('FurnitureCatalog', false)",
+                    "Button.callback": "() => this.interface.loadWidget('FurnitureCatalog')",
                     "Button.activeFrame": false,
                     "ShowHint.text": "buy_items_hint",
                     "texture": {

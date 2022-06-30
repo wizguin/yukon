@@ -198,7 +198,7 @@
                 "Button"
             ],
             "Button.spriteName": "catalog",
-            "Button.callback": "() => this.interface.loadWidget('ClothingCatalog', false)",
+            "Button.callback": "() => this.interface.loadWidget('ClothingCatalog')",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
             "texture": {
