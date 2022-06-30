@@ -8,7 +8,7 @@ import IglooMap from './igloo_map/IglooMap'
 export const preload = {
     key: 'map-pack',
     url: 'assets/media/interface/game/map/map-pack.json',
-    loadString: 'Loading Map'
+    loadString: ['loading', 'map']
 }
 
 /* START OF COMPILED CODE */

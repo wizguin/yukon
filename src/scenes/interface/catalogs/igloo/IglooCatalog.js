@@ -9,7 +9,7 @@ import UpgradeButton from './buttons/UpgradeButton'
 export const preload = {
     key: 'igloocatalog-pack',
     url: 'assets/media/interface/catalogs/igloo/igloocatalog-pack.json',
-    loadString: ''
+    loadString: ['loading', 'igloocatalog']
 }
 
 /* START OF COMPILED CODE */

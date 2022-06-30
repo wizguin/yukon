@@ -8,7 +8,7 @@ import BuyButton from './buttons/BuyButton'
 export const preload = {
     key: 'furniturecatalog-pack',
     url: 'assets/media/interface/catalogs/furniture/furniturecatalog-pack.json',
-    loadString: ''
+    loadString: ['loading', 'furniturecatalog']
 }
 
 /* START OF COMPILED CODE */

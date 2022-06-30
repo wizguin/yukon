@@ -12,7 +12,7 @@ import Tag2 from './buttons/Tag2'
 export const preload = {
     key: 'clothingcatalog-pack',
     url: 'assets/media/interface/catalogs/clothing/clothingcatalog-pack.json',
-    loadString: ''
+    loadString: ['loading', 'clothingcatalog']
 }
 
 /* START OF COMPILED CODE */
