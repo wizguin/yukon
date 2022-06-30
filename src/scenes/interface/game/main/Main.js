@@ -395,7 +395,11 @@ export default class Main extends BaseScene {
         }
 
         for (let widget in this.interface.loadedWidgets) {
-            this.interface.loadedWidgets[widget].close()
+            widget = this.interface.loadedWidgets[widget]
+
+            if (widget.visible) {
+                widget.close()
+            }
         }
     }
 
