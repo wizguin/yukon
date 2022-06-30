@@ -97,9 +97,6 @@ export default class LoadingPrompt extends BaseContainer {
 
         this.scene = scene
 
-        // Attached scene
-        this.externalScene
-
         this.tween = scene.tweens.add({
             targets: this.spinner,
             angle: { from: 0, to: 180 },
@@ -124,50 +121,13 @@ export default class LoadingPrompt extends BaseContainer {
         this.progress.scaleX = progress
     }
 
-    showPack(text, key, url, callback) {
+    show(text, key, url, callback) {
         this.text.text = text
         this.progress.scaleX = this.packFileLoader.progress
 
         this.visible = true
 
         this.packFileLoader.loadPack(key, url, callback)
-    }
-
-    showScene(scene, progress) {
-        if (!scene) {
-            return
-        }
-
-        this.externalScene = scene
-
-        this.text.text = this.getString('loading', scene.sys.config)
-        this.progress.scaleX = progress
-
-        // Removes any previous events
-        scene.load.off('progress')
-        scene.events.off('create')
-
-        scene.load.on('progress', this.onProgress, this)
-
-        scene.events.once('create', () => {
-            this.visible = false
-            this.scene.bringToTop()
-        })
-
-        this.visible = true
-    }
-
-    close() {
-        this.visible = false
-
-        if (!this.externalScene) {
-            return
-        }
-
-        this.externalScene.events.once('create', () => {
-            this.externalScene.scene.stop()
-            this.externalScene = null
-        })
     }
 
     /* END-USER-CODE */

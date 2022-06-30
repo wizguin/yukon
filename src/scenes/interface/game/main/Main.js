@@ -342,7 +342,7 @@ export default class Main extends BaseScene {
 
         // Dynamically loaded widgets
         this.loadedWidgets = {}
-        this.interfaceWidgets = this.crumbs.interface.widgets
+        this.interfaceWidgets = this.crumbs.widgets
 
         // Factories
 

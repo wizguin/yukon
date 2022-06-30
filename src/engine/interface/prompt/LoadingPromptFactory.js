@@ -7,12 +7,9 @@ export default class LoadingPromptFactory {
         this.interface = _interface
 
         this.prompts = {}
-
-        // temporary
-        this.scenePrompt = this.createPrompt()
     }
 
-    showLoadingPack(text, key, url, callback) {
+    showLoading(text, key, url, callback) {
         if (key in this.prompts) {
             return this.updatePrompt(key)
         }
@@ -25,11 +22,7 @@ export default class LoadingPromptFactory {
             delete this.prompts[key]
         })
 
-        prompt.showPack(text, key, url, callback)
-    }
-
-    showLoadingScene(scene, progress) {
-        this.scenePrompt.showScene(scene, progress)
+        prompt.show(text, key, url, callback)
     }
 
     createPrompt() {

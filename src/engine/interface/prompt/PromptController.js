@@ -73,12 +73,8 @@ export default class PromptController {
         this.window.show(text, buttonLayout, callback, noCallback)
     }
 
-    showLoadingPack(text, key, url, callback = () => {}) {
-        this.loadingPromptFactory.showLoadingPack(text, key, url, callback)
-    }
-
-    showLoadingScene(scene, progress = 0) {
-        this.loadingPromptFactory.showLoadingScene(scene, progress)
+    showLoading(text, key, url, callback = () => {}) {
+        this.loadingPromptFactory.showLoading(text, key, url, callback)
     }
 
     hideAll() {

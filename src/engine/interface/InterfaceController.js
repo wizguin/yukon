@@ -11,10 +11,6 @@ export default class InterfaceController extends BaseScene {
     create() {
         this.prompt = new PromptController(this)
 
-        // External interface scenes
-        this.interfaceScenes = this.crumbs.interface.scenes
-        this.loadedScenes = []
-
         // Draw frame
         let graphics = this.add.graphics()
 
@@ -76,9 +72,6 @@ export default class InterfaceController extends BaseScene {
     hideInterface(clearChat = true) {
         if (this.main && this.main.scene.isActive()) {
             this.scene.sleep('Main', { clearChat: clearChat })
-
-            // Stop external scenes
-            this.stopExternals()
         }
     }
 
@@ -122,50 +115,6 @@ export default class InterfaceController extends BaseScene {
 
     loadWidget(key, addToWidgetLayer = true) {
         this.main.loadWidget(key, addToWidgetLayer)
-    }
-
-    /**
-     * Loads an external interface scene.
-     *
-     * @param {string} key - Scene key
-     */
-     loadExternal(key) {
-        if (!(key in this.interfaceScenes)) {
-            return
-        }
-
-        if (!(key in this.scene.manager.keys)) {
-            // Create scene
-            this.scene.add(key, this.interfaceScenes[key], true)
-            return this.loadedScenes.push(key)
-        }
-
-        if (!this.scene.isVisible(key)) {
-            // Scene stopped
-            this.scene.launch(key)
-        } else {
-            // Scene still preloading
-            this.scene.get(key).events.emit('showloading')
-        }
-
-        this.bringToTop(key)
-    }
-
-    /**
-     * Stop external interface scenes, called when hiding interface on room change.
-     */
-    stopExternals() {
-        for (let key of this.loadedScenes) {
-            let scene = this.scene.get(key)
-
-            if (scene.scene.isActive()) {
-                scene.scene.stop()
-
-            } else if (scene.scene.isVisible()) {
-                // Scene still preloading
-                scene.events.once('create', () => scene.scene.stop())
-            }
-        }
     }
 
     /**
