@@ -25,6 +25,10 @@ export default class BookContainer extends BaseContainer {
         super.show()
     }
 
+    close() {
+        this.interface.destroyWidget(this)
+    }
+
     showPage(page) {
         // Hide current page
         this.setPageVisible(false)
