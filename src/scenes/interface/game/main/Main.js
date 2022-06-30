@@ -456,7 +456,6 @@ export default class Main extends BaseScene {
 
     onBuddyClick() {
         this.interface.showWidget(this.buddy)
-        this.buddy.showPage()
     }
 
     onIglooClick() {
