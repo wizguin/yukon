@@ -19,6 +19,8 @@ class Hint extends BaseContainer {
         this.tween = null
 
         this.add([ this.hint, this.text ])
+
+        this.visible = false
     }
 
     createHint() {

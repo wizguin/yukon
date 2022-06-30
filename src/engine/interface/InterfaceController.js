@@ -1,5 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
+import Hint from '@engine/interface/hint/Hint'
 import MetricsManager from './metrics/MetricsManager'
 import PromptController from './prompt/PromptController'
 
@@ -9,6 +10,9 @@ export default class InterfaceController extends BaseScene {
     metricsManager = new MetricsManager()
 
     create() {
+        this.hint = new Hint(this, 0, 0)
+        this.add.existing(this.hint)
+
         this.prompt = new PromptController(this)
 
         // Draw frame

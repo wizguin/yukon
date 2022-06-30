@@ -33,7 +33,7 @@ export default class ShowHint extends EventComponent {
     /* START-USER-CODE */
 
     get hint() {
-        return this.gameObject.scene.interface.main.hint
+        return this.gameObject.scene.interface.hint
     }
 
     start() {

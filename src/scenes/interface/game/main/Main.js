@@ -4,7 +4,6 @@ import { Button, Interactive, SimpleButton, ShowHint } from '@components/compone
 import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
-import Hint from '@engine/interface/hint/Hint'
 import SnowballFactory from '@engine/interface/snowball/SnowballFactory'
 
 import ActionsMenu from '../floating/actions/ActionsMenu'
@@ -351,11 +350,7 @@ export default class Main extends BaseScene {
 
         // Hints
 
-        this.hint = new Hint(this, 0, 0)
-        this.add.existing(this.hint)
-        this.hideOnSleep.push(this.hint)
-        this.hint.visible = false
-        this.hint.depth = 100
+        this.hideOnSleep.push(this.interface.hint)
 
         // Buddy requests
 
