@@ -339,10 +339,6 @@ export default class Main extends BaseScene {
 
         this.setupWidgets()
 
-        // Dynamically loaded widgets
-        this.loadedWidgets = {}
-        this.interfaceWidgets = this.crumbs.widgets
-
         // Factories
 
         this.balloonFactory = new BalloonFactory(this)
@@ -398,8 +394,8 @@ export default class Main extends BaseScene {
             item.visible = false
         }
 
-        for (let widget in this.loadedWidgets) {
-            this.loadedWidgets[widget].close()
+        for (let widget in this.interface.loadedWidgets) {
+            this.interface.loadedWidgets[widget].close()
         }
     }
 

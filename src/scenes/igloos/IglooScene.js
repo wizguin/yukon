@@ -160,8 +160,8 @@ export default class IglooScene extends RoomScene {
         this.args.flooring = flooring
 
         // Close catalog
-        for (let widget in this.interface.main.loadedWidgets) {
-            widget = this.interface.main.loadedWidgets[widget]
+        for (let widget in this.interface.loadedWidgets) {
+            widget = this.interface.loadedWidgets[widget]
 
             if (widget.isBook && widget.visible) {
                 widget.close()
