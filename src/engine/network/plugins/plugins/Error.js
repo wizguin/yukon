@@ -28,7 +28,7 @@ export default class Error extends Plugin {
             this.interface.showInterface()
 
             this.interface.prompt.error.visible = false
-            this.interface.main.map.visible = true
+            this.interface.loadWidget('Map')
         })
     }
 

@@ -17,7 +17,7 @@ export default class DojoExt extends RoomScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            'map': () => this.interface.main.map.visible = true,
+            'map': () => this.interface.loadWidget('Map'),
             'dojo': null,
             'dojohide': null
         }
