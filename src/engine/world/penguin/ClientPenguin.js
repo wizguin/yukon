@@ -45,6 +45,8 @@ export default class ClientPenguin extends Penguin {
     move(x, y, frame = null) {
         if (frame) {
             this.afterMove = () => this.world.client.sendFrame(frame)
+        } else {
+            this.afterMove = null
         }
 
         let path = PathEngine.getPath(this, { x, y })
