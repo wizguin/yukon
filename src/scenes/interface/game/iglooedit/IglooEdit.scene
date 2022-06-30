@@ -92,9 +92,11 @@
                     "id": "5d5104f2-aa6c-4d59-8e01-e8543c8869bd",
                     "label": "button_save",
                     "components": [
-                        "SimpleButton"
+                        "SimpleButton",
+                        "ShowHint"
                     ],
                     "SimpleButton.callback": "() => this.onSaveClick()",
+                    "ShowHint.text": "save_igloo_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/save"
@@ -107,9 +109,11 @@
                     "id": "a01066f8-1c7e-4651-af2f-88044dcc3098",
                     "label": "button_igloo_catalog",
                     "components": [
-                        "SimpleButton"
+                        "SimpleButton",
+                        "ShowHint"
                     ],
                     "SimpleButton.callback": "() => this.interface.loadWidget('IglooCatalog', false)",
+                    "ShowHint.text": "upgrade_igloo_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/igloo_catalog"
@@ -123,11 +127,13 @@
                     "id": "31b8f480-fe56-4bad-9886-17e2cff52a01",
                     "label": "button_furniture_catalog",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "button/furniture_catalog",
                     "Button.callback": "() => this.interface.loadWidget('FurnitureCatalog', false)",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "buy_items_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/furniture_catalog"
@@ -143,11 +149,13 @@
                     "label": "button_furniture",
                     "scope": "CLASS",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "button/furniture",
                     "Button.callback": "() => this.onFurnitureClick()",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "view_items_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/furniture"
@@ -161,11 +169,13 @@
                     "id": "ad320d7f-2225-4183-8c56-f288d3af51c0",
                     "label": "button_music",
                     "components": [
-                        "Button"
+                        "Button",
+                        "ShowHint"
                     ],
                     "Button.spriteName": "button/music",
                     "Button.callback": "() => iglooMusic.visible = true",
                     "Button.activeFrame": false,
+                    "ShowHint.text": "play_music_hint",
                     "texture": {
                         "key": "iglooedit",
                         "frame": "button/music"

@@ -176,28 +176,38 @@ export default class IglooEdit extends BaseScene {
         // button_save (components)
         const button_saveSimpleButton = new SimpleButton(button_save);
         button_saveSimpleButton.callback = () => this.onSaveClick();
+        const button_saveShowHint = new ShowHint(button_save);
+        button_saveShowHint.text = "save_igloo_hint";
 
         // button_igloo_catalog (components)
         const button_igloo_catalogSimpleButton = new SimpleButton(button_igloo_catalog);
         button_igloo_catalogSimpleButton.callback = () => this.interface.loadWidget('IglooCatalog', false);
+        const button_igloo_catalogShowHint = new ShowHint(button_igloo_catalog);
+        button_igloo_catalogShowHint.text = "upgrade_igloo_hint";
 
         // button_furniture_catalog (components)
         const button_furniture_catalogButton = new Button(button_furniture_catalog);
         button_furniture_catalogButton.spriteName = "button/furniture_catalog";
         button_furniture_catalogButton.callback = () => this.interface.loadWidget('FurnitureCatalog', false);
         button_furniture_catalogButton.activeFrame = false;
+        const button_furniture_catalogShowHint = new ShowHint(button_furniture_catalog);
+        button_furniture_catalogShowHint.text = "buy_items_hint";
 
         // button_furniture (components)
         const button_furnitureButton = new Button(button_furniture);
         button_furnitureButton.spriteName = "button/furniture";
         button_furnitureButton.callback = () => this.onFurnitureClick();
         button_furnitureButton.activeFrame = false;
+        const button_furnitureShowHint = new ShowHint(button_furniture);
+        button_furnitureShowHint.text = "view_items_hint";
 
         // button_music (components)
         const button_musicButton = new Button(button_music);
         button_musicButton.spriteName = "button/music";
         button_musicButton.callback = () => iglooMusic.visible = true;
         button_musicButton.activeFrame = false;
+        const button_musicShowHint = new ShowHint(button_music);
+        button_musicShowHint.text = "play_music_hint";
 
         // list (components)
         new Interactive(list);
