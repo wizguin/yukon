@@ -235,9 +235,9 @@ export default class Buddy extends BaseContainer {
     }
 
     show() {
-        this.showPage()
-
         super.show()
+
+        this.showPage()
     }
 
     showPage() {
