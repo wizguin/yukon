@@ -26,8 +26,6 @@ export default class DraggableContainer extends EventComponent {
         this.offsetX = 0
         this.offsetY = 0
 
-        this.widgetLayer
-
         /* END-USER-CTR-CODE */
     }
 
@@ -51,8 +49,8 @@ export default class DraggableContainer extends EventComponent {
     }
 
     onDown(pointer) {
-        if (this.widgetLayer && pointer.button == 0) {
-            this.widgetLayer.bringToTop(this.gameObject)
+        if (this.gameObject.widgetLayer && pointer.button == 0) {
+            this.gameObject.widgetLayer.bringToTop(this.gameObject)
         }
     }
 

@@ -15,6 +15,10 @@ export default class InterfaceController extends BaseScene {
 
         this.prompt = new PromptController(this)
 
+        this.widgets = this.crumbs.widgets
+        // Dynamically loaded widgets
+        this.loadedWidgets = {}
+
         // Draw frame
         let graphics = this.add.graphics()
 
@@ -117,10 +121,6 @@ export default class InterfaceController extends BaseScene {
         this.main.playerCard.showCard(id, refresh)
     }
 
-    loadWidget(key, addToWidgetLayer = true) {
-        this.main.loadWidget(key, addToWidgetLayer)
-    }
-
     /**
      * Refreshes buddy list and player card to reflect changes from the server.
      */
@@ -135,6 +135,50 @@ export default class InterfaceController extends BaseScene {
         if (this.main.playerCard.visible && this.main.playerCard.id == this.world.client.id) {
             this.showCard(this.world.client.id, true)
         }
+    }
+
+    showWidget(widget) {
+        if (widget.widgetLayer) {
+            widget.widgetLayer.bringToTop(widget)
+        }
+
+        widget.show()
+    }
+
+    loadWidget(key, addToWidgetLayer = true) {
+        if (!(key in this.widgets)) {
+            return
+        }
+
+        if (key in this.loadedWidgets) {
+            return this.showWidget(this.loadedWidgets[key])
+        }
+
+        let preload = this.widgets[key].preload
+        let text = this.getString(preload.loadString)
+
+        this.prompt.showLoading(text, preload.key, preload.url, () => {
+            this.onWidgetLoaded(key, addToWidgetLayer)
+        })
+    }
+
+    onWidgetLoaded(key, addToWidgetLayer) {
+        let scene = (addToWidgetLayer) ? this.main : this
+
+        let widget = new this.widgets[key].default(scene)
+
+        this.loadedWidgets[key] = widget
+
+        if (addToWidgetLayer) {
+            this.main.addToWidgetLayer(widget)
+        } else {
+            this.add.existing(widget)
+            widget.depth = -1
+        }
+
+        scene.events.once('update', () => {
+            this.showWidget(widget)
+        })
     }
 
     updateCatalogCoins(coins) {

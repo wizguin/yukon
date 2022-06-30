@@ -410,48 +410,12 @@ export default class Main extends BaseScene {
     }
 
     setupWidget(widget) {
-        if (widget.__DraggableContainer) {
-            widget.__DraggableContainer.widgetLayer = this.widgetLayer
-        }
+        widget.widgetLayer = this.widgetLayer
     }
 
-    showWidget(widget) {
-        this.widgetLayer.bringToTop(widget)
-        widget.show()
-    }
-
-    loadWidget(key, addToWidgetLayer) {
-        if (!(key in this.interfaceWidgets)) {
-            return
-        }
-
-        if (key in this.loadedWidgets) {
-            return this.showWidget(this.loadedWidgets[key])
-        }
-
-        let preload = this.interfaceWidgets[key].preload
-        let text = this.getString(preload.loadString)
-
-        this.interface.prompt.showLoadingPack(text, preload.key, preload.url, () => {
-            this.onWidgetLoaded(key, addToWidgetLayer)
-        })
-    }
-
-    onWidgetLoaded(key, addToWidgetLayer) {
-        let widget = new this.interfaceWidgets[key].default(this)
-
-        this.loadedWidgets[key] = widget
-
-        if (addToWidgetLayer) {
-            this.widgetLayer.add(widget)
-            this.setupWidget(widget)
-        } else {
-            this.add.existing(widget)
-        }
-
-        this.events.once('update', () => {
-            this.showWidget(widget)
-        })
+    addToWidgetLayer(widget) {
+        this.widgetLayer.add(widget)
+        this.setupWidget(widget)
     }
 
     onSnowballClick() {
@@ -495,7 +459,7 @@ export default class Main extends BaseScene {
     }
 
     onBuddyClick() {
-        this.showWidget(this.buddy)
+        this.interface.showWidget(this.buddy)
         this.buddy.showPage()
     }
 
@@ -592,7 +556,7 @@ export default class Main extends BaseScene {
     }
 
     onMapClick() {
-        this.loadWidget('Map', false)
+        this.interface.loadWidget('Map', false)
     }
 
     /* END-USER-CODE */

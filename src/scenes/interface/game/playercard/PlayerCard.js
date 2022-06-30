@@ -152,7 +152,7 @@ export default class PlayerCard extends BaseContainer {
     showCard(id, refresh = false) {
         // Don't open player's card if it's already open
         if (id == this.id && this.visible && !refresh) {
-            this.interface.main.showWidget(this)
+            this.interface.showWidget(this)
             return
         }
 
@@ -202,7 +202,7 @@ export default class PlayerCard extends BaseContainer {
         this.updateButtons()
         this.updateStripes(penguin.joinTime)
 
-        this.interface.main.showWidget(this)
+        this.interface.showWidget(this)
     }
 
     updateButtons() {
