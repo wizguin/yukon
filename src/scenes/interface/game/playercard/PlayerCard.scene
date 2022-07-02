@@ -144,18 +144,6 @@
                 },
                 {
                     "type": "Image",
-                    "id": "c872414d-cfa7-46ab-bf78-7618077e1f55",
-                    "label": "card_badge_member",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "card-badge-member"
-                    },
-                    "x": -149,
-                    "y": -224
-                },
-                {
-                    "type": "Image",
                     "id": "274b2a17-fd19-4625-8207-2ce436778aba",
                     "label": "x_button",
                     "components": [
@@ -214,31 +202,72 @@
                 },
                 {
                     "type": "Image",
+                    "id": "d7d09dd6-5a3d-4b01-a39c-3624addb808f",
+                    "label": "badge_member",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "badge/member"
+                    },
+                    "x": -149,
+                    "y": -224
+                },
+                {
+                    "type": "Image",
                     "id": "19716e19-069f-4ae4-bb3e-cf418e2faee1",
                     "label": "stripes",
                     "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "stripes/4"
+                        "frame": "badge/stripes/4"
                     },
                     "x": -149,
                     "y": -185,
                     "originY": 0.5051546391752577
                 },
                 {
+                    "type": "Sprite",
+                    "id": "0f94544b-8688-4697-8954-c27a66f7c9d8",
+                    "label": "badge_lines_lines",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "badge/lines/lines",
+                    "Animation.end": 180,
+                    "texture": {
+                        "key": "main",
+                        "frame": "badge/lines/lines0001"
+                    },
+                    "x": -149,
+                    "y": -223,
+                    "originY": 0.5028571428571429
+                },
+                {
                     "type": "Image",
-                    "id": "27600233-a44b-4dff-9216-b60abdd2b5ce",
-                    "label": "card_badge_member_ribbon",
+                    "id": "05860546-ac93-4e10-8d9e-5cd0a99badb2",
+                    "label": "badge_ribbon",
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "card-badge-member-ribbon"
+                        "frame": "badge/ribbon"
                     },
                     "x": -149,
                     "y": -208,
                     "originX": 0.5061728395061729,
                     "originY": 0.5185185185185185
+                },
+                {
+                    "type": "Image",
+                    "id": "299ffc11-4542-4a91-bc7d-76b24daf4324",
+                    "label": "badge_star",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "badge/star"
+                    },
+                    "x": -149,
+                    "y": -241
                 }
             ]
         }

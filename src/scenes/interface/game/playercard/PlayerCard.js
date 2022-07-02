@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { Button, DraggableContainer, Interactive } from '@components/components'
+import { Animation, Button, DraggableContainer, Interactive } from '@components/components'
 
 import Inventory from './inventory/Inventory'
 import InventorySort from './inventory_sort/InventorySort'
@@ -78,10 +78,6 @@ export default class PlayerCard extends BaseContainer {
         username.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":360,"fontFamily": "Arial", "fontSize": "32px", "fontStyle": "bold" });
         this.add(username);
 
-        // card_badge_member
-        const card_badge_member = scene.add.image(-149, -224, "main", "card-badge-member");
-        this.add(card_badge_member);
-
         // x_button
         const x_button = scene.add.image(177, -237, "main", "blue-button");
         this.add(x_button);
@@ -99,15 +95,28 @@ export default class PlayerCard extends BaseContainer {
         const inventory = new Inventory(scene, -135, 33);
         this.add(inventory);
 
+        // badge_member
+        const badge_member = scene.add.image(-149, -224, "main", "badge/member");
+        this.add(badge_member);
+
         // stripes
-        const stripes = scene.add.image(-149, -185, "main", "stripes/4");
+        const stripes = scene.add.image(-149, -185, "main", "badge/stripes/4");
         stripes.setOrigin(0.5, 0.5051546391752577);
         this.add(stripes);
 
-        // card_badge_member_ribbon
-        const card_badge_member_ribbon = scene.add.image(-149, -208, "main", "card-badge-member-ribbon");
-        card_badge_member_ribbon.setOrigin(0.5061728395061729, 0.5185185185185185);
-        this.add(card_badge_member_ribbon);
+        // badge_lines_lines
+        const badge_lines_lines = scene.add.sprite(-149, -223, "main", "badge/lines/lines0001");
+        badge_lines_lines.setOrigin(0.5, 0.5028571428571429);
+        this.add(badge_lines_lines);
+
+        // badge_ribbon
+        const badge_ribbon = scene.add.image(-149, -208, "main", "badge/ribbon");
+        badge_ribbon.setOrigin(0.5061728395061729, 0.5185185185185185);
+        this.add(badge_ribbon);
+
+        // badge_star
+        const badge_star = scene.add.image(-149, -241, "main", "badge/star");
+        this.add(badge_star);
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -120,6 +129,11 @@ export default class PlayerCard extends BaseContainer {
         const x_buttonButton = new Button(x_button);
         x_buttonButton.spriteName = "blue-button";
         x_buttonButton.callback = () => { this.visible = false };
+
+        // badge_lines_lines (components)
+        const badge_lines_linesAnimation = new Animation(badge_lines_lines);
+        badge_lines_linesAnimation.key = "badge/lines/lines";
+        badge_lines_linesAnimation.end = 180;
 
         this.photo = photo;
         this.paperDoll = paperDoll;
@@ -214,7 +228,7 @@ export default class PlayerCard extends BaseContainer {
 
     updateStripes(joinTime) {
         if (!joinTime) {
-            return this.stripes.setFrame('stripes/0')
+            return this.stripes.setFrame('badge/stripes/0')
         }
 
         let oneDay = 1000 * 60 * 60 * 24
@@ -236,7 +250,7 @@ export default class PlayerCard extends BaseContainer {
             frame = 4
         }
 
-        this.stripes.setFrame(`stripes/${frame}`)
+        this.stripes.setFrame(`badge/stripes/${frame}`)
     }
 
     /* END-USER-CODE */
