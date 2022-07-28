@@ -99,15 +99,15 @@ export default class PlayerCard extends BaseContainer {
         const badge_member = scene.add.image(-149, -224, "main", "badge/member");
         this.add(badge_member);
 
-        // stripes
-        const stripes = scene.add.image(-149, -185, "main", "badge/stripes/4");
-        stripes.setOrigin(0.5, 0.5051546391752577);
-        this.add(stripes);
-
         // badge_lines_lines
         const badge_lines_lines = scene.add.sprite(-149, -223, "main", "badge/lines/lines0001");
         badge_lines_lines.setOrigin(0.5, 0.5028571428571429);
         this.add(badge_lines_lines);
+
+        // stripes
+        const stripes = scene.add.image(-149, -185, "main", "badge/stripes/4");
+        stripes.setOrigin(0.5, 0.5051546391752577);
+        this.add(stripes);
 
         // badge_ribbon
         const badge_ribbon = scene.add.image(-149, -208, "main", "badge/ribbon");

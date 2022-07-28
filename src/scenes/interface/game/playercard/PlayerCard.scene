@@ -213,20 +213,6 @@
                     "y": -224
                 },
                 {
-                    "type": "Image",
-                    "id": "19716e19-069f-4ae4-bb3e-cf418e2faee1",
-                    "label": "stripes",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "badge/stripes/4"
-                    },
-                    "x": -149,
-                    "y": -185,
-                    "originY": 0.5051546391752577
-                },
-                {
                     "type": "Sprite",
                     "id": "0f94544b-8688-4697-8954-c27a66f7c9d8",
                     "label": "badge_lines_lines",
@@ -242,6 +228,20 @@
                     "x": -149,
                     "y": -223,
                     "originY": 0.5028571428571429
+                },
+                {
+                    "type": "Image",
+                    "id": "19716e19-069f-4ae4-bb3e-cf418e2faee1",
+                    "label": "stripes",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "badge/stripes/4"
+                    },
+                    "x": -149,
+                    "y": -185,
+                    "originY": 0.5051546391752577
                 },
                 {
                     "type": "Image",
