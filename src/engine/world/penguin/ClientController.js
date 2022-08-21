@@ -1,4 +1,5 @@
 import PathEngine from './pathfinding/PathEngine'
+import sleep from "../../../../utils/sleep";
 
 
 export default class ClientController {
@@ -200,7 +201,22 @@ export default class ClientController {
         if (!this.visible || this.isBalloonThrottled) {
             return
         }
+        
+         const isJoke = safe === 701;
 
+        if (isJoke) {
+
+          let jokesArray = this.interface.main.safe.jokesMap;
+          let joke = jokesArray[Math.floor(Math.random()*jokesArray.length)];
+          this.interface.showTextBalloon(this.id, joke.joke);
+          this.network.send("send_message", { message: joke.joke });
+          sleep(4000).then(() => {
+            this.interface.showTextBalloon(this.id, joke.answer);
+            this.network.send("send_message", { message: joke.answer });
+          });
+
+          return;
+        }
         let message = this.interface.main.safe.safeMessagesMap[safe]
 
         this.interface.showTextBalloon(this.id, message)
