@@ -17,7 +17,8 @@ const crumbs = {
     safe_messages: require(`${assets}/safe_messages.json`),
     secret_frames: require(`${assets}/secret_frames.json`),
     strings: require(`${assets}/strings.json`),
-    worlds: require(`${assets}/worlds.json`)
+    worlds: require(`${assets}/worlds.json`),
+    jokes: require(`${assets}/jokes.json`)
 }
 
 try {
