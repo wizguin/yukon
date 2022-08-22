@@ -1,6 +1,9 @@
+const defaultRegex = /[^ -~]/gi
+
+
 export default class TextInput extends Phaser.GameObjects.DOMElement {
 
-    constructor(scene, x, y, type, style, callback = () => {}, maxLength = 100, preventTab = true) {
+    constructor(scene, x, y, type, style, callback = () => {}, maxLength = 100, preventTab = true, regex = defaultRegex) {
         let element = document.createElement('input')
 
         // Combine default styles with passed in styles
@@ -21,10 +24,13 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         super(scene, x, y, element, style)
 
         this.callback = callback
+        this.maxLength = maxLength
         this.preventTab = preventTab
+        this.regex = regex
+
+        let totalPadding = this.getTotalPadding(style.padding)
 
         // Phaser Text object which will be used on focus lost
-        let totalPadding = this.getTotalPadding(style.padding)
         this.phaserText = this.scene.add.text(x, y, '', {
             fixedWidth: style.width - totalPadding,
             fontFamily: style.fontFamily,
@@ -43,8 +49,12 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         return this.node.value
     }
 
-    setText(text) {
-        this.node.value = text
+    setText(text = this.text) {
+        this.node.value = this.filterText(text)
+    }
+
+    filterText(text) {
+        return text.replace(this.regex, '').substring(0, this.maxLength)
     }
 
     /**
@@ -54,7 +64,9 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
      * @param {string} padding - CSS padding string
      */
     getTotalPadding(padding) {
-        if (!padding) return 0
+        if (!padding) {
+            return 0
+        }
 
         let parsed = padding.replaceAll('px', '').split(' ')
         return parseInt(parsed[1]) + parseInt(parsed[3])
@@ -64,6 +76,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         this.addListener('focus')
         this.addListener('blur')
         this.addListener('keydown')
+        this.addListener('input')
 
         this.scene.events.on('showinput', () => this.onShow())
         this.scene.events.on('hideinput', () => this.onHide())
@@ -75,6 +88,7 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         this.on('focus', () => this.onFocus())
         this.on('blur', () => this.onBlur())
         this.on('keydown', (event) => this.onKeyDown(event))
+        this.on('input', () => this.setText())
     }
 
     onFocus() {
@@ -91,7 +105,10 @@ export default class TextInput extends Phaser.GameObjects.DOMElement {
         if (event.key == 'Enter') {
             event.preventDefault()
 
-            if (!this.text) this.node.blur()
+            if (!this.text) {
+                this.node.blur()
+            }
+
             this.callback()
 
         } else if (event.key == 'Tab' && this.preventTab) {
