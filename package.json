@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "webpack serve",
     "editor": "phasereditor2d-launcher -project . -max-number-files 5000",
-    "build": "webpack --mode production --env obfuscate=true",
+    "build": "webpack --mode production --env obfuscate=false",
     "build-crumbs": "node ./utils/build-crumbs.js"
   },
   "repository": {
