@@ -1,6 +1,10 @@
 {
   "name": "yukon",
+<<<<<<< HEAD
   "version": "1.4.0-beta",
+=======
+  "version": "1.3.0-beta",
+>>>>>>> 8ba2df432828a63548aedec335be5a04c2511f1c
   "scripts": {
     "dev": "webpack serve",
     "editor": "phasereditor2d-launcher -project .",
