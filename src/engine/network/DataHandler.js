@@ -11,13 +11,11 @@ export default class DataHandler {
 
     handle(message) {
         try {
-            let parsed = JSON.parse(message)
-
             if (localStorage.logging == 'true') {
-                console.log('Message received:', parsed.action, parsed.args)
+                console.log('Message received:', message.action, message.args)
             }
 
-            this.network.events.emit(parsed.action, parsed.args)
+            this.network.events.emit(message.action, message.args)
 
         } catch(error) {
             console.error(error)

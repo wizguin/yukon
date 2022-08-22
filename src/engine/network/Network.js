@@ -80,7 +80,7 @@ export default class Network {
             console.log('Message sending:', action, args)
         }
 
-        this.client.emit('message', JSON.stringify({ action: action, args: args }) + '\xdd')
+        this.client.emit('message', { action: action, args: args })
     }
 
     // Handlers
