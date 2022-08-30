@@ -1,0 +1,64 @@
+{
+    "id": "f8784375-ecdc-4788-b2e3-3d14bc36f79a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "c5c3bba4-59f7-49e0-a508-f34f7b0867b6",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "NinePatchContainer",
+                    "id": "102dc468-22b6-44ff-88f8-578563187924",
+                    "label": "hint",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "hint"
+                    },
+                    "width": 176,
+                    "height": 44,
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                    "marginTop": 10,
+                    "marginBottom": 10
+                },
+                {
+                    "type": "Text",
+                    "id": "0d43599f-750e-4dcd-9fce-6b8d7b7ec248",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -14,
+                    "fixedHeight": 30,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "color": "#000000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

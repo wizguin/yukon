@@ -1,55 +1,51 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
 
-class Hint extends BaseContainer {
+/* START OF COMPILED CODE */
+
+export default class Hint extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x, y)
+        super(scene, x ?? 760, y ?? 480);
 
-        this.textStyle = {
-            fontFamily: 'Arial',
-            fontSize: 24,
-            color: '#000000',
-            align: 'center'
-        }
+        /** @type {NinePatchContainer} */
+        this.hint;
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
 
-        this.hint = this.createHint()
-        this.text = this.createText()
 
-        this.tween = null
+        // hint
+        const hint = scene.add.ninePatchContainer(0, 0, 176, 44, "main", "hint");
+        hint.marginLeft = 10;
+        hint.marginTop = 10;
+        hint.marginRight = 10;
+        hint.marginBottom = 10;
+        this.add(hint);
 
-        this.add([ this.hint, this.text ])
+        // text
+        const text = scene.add.text(0, -14, "", {});
+        text.setStyle({ "align": "center", "color": "#000000", "fixedHeight":30,"fontFamily": "Arial", "fontSize": "24px" });
+        this.add(text);
 
+        this.hint = hint;
+        this.text = text;
+
+        /* START-USER-CTR-CODE */
+
+        this.tween
         this.visible = false
+
+        /* END-USER-CTR-CODE */
     }
 
-    createHint() {
-        let hint = this.scene.add.nineslice(
-            0, 0,
-            176, 44,
-            {
-                key: 'main',
-                frame: 'hint'
-            },
-            10 // Corner slice
-        )
 
-        hint.setOrigin(0.5)
-
-        return hint
-    }
-
-    createText() {
-        let text = this.scene.add.text(0, -14, '', this.textStyle)
-
-        return text
-    }
+    /* START-USER-CODE */
 
     showHint(gameObject, text) {
         // Get global coordinates of gameObject
         let matrix = gameObject.getWorldTransformMatrix()
 
-        // Set hint position
+        // // Set hint position
         this.x = matrix.getX(0, 0)
         this.y = matrix.getY(0, 0) - 56
 
@@ -60,7 +56,7 @@ class Hint extends BaseContainer {
 
         // Calculate and set new width
         let width = (this.text.width > 144) ? this.text.width + 32 : 176
-        this.hint.resize(width, 44)
+        this.hint.resize(width, this.hint.height)
 
         this.visible = true
 
@@ -85,6 +81,7 @@ class Hint extends BaseContainer {
         }
     }
 
+    /* END-USER-CODE */
 }
 
-export default Hint
+/* END OF COMPILED CODE */

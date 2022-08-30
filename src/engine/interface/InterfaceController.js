@@ -1,6 +1,6 @@
 import BaseScene from '@scenes/base/BaseScene'
 
-import Hint from '@engine/interface/hint/Hint'
+import Hint from '@scenes/interface/game/hint/Hint'
 import MetricsManager from './metrics/MetricsManager'
 import PromptController from './prompt/PromptController'
 
