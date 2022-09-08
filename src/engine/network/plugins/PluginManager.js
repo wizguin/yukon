@@ -18,8 +18,6 @@ export default class PluginManager {
                 this.loadEvents(plugin)
             }
         }
-
-        console.log(`${Object.keys(this.pluginsCache).length} plugins loaded`)
     }
 
     importPlugins(r) {
