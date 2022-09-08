@@ -100,7 +100,6 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.nextPage()",
-                    "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -117,7 +116,6 @@
                     ],
                     "Button.spriteName": "blue-button",
                     "Button.callback": "() => this.prevPage()",
-                    "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
