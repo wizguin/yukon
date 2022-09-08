@@ -19,6 +19,10 @@ export default class Igloo extends Plugin {
         return this.world.client
     }
 
+    get gridView() {
+        return this.interface.iglooEdit.gridView
+    }
+
     addIgloo(args) {
         let inventory = this.client.igloos
 
@@ -28,7 +32,7 @@ export default class Igloo extends Plugin {
 
         this.interface.refreshPlayerCard()
 
-        if (this.interface.iglooEdit.gridView.visible) {
+        if (this.gridView && this.gridView.visible) {
             this.interface.iglooEdit.showGridView()
         }
 
@@ -46,7 +50,7 @@ export default class Igloo extends Plugin {
 
         this.interface.refreshPlayerCard()
 
-        if (this.interface.iglooEdit.gridView.visible) {
+        if (this.gridView && this.gridView.visible) {
             this.interface.iglooEdit.showGridView()
         }
 
