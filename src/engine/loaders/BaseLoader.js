@@ -42,7 +42,7 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
 
     }
 
-    checkComplete(type, key, callback) {
+    checkComplete(type, key, callback = () => {}) {
         if (this.textureExists(key)) {
             callback()
             return true
