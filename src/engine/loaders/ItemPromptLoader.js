@@ -7,29 +7,30 @@ export default class ItemPromptLoader extends BaseLoader {
         super(scene)
 
         this.prompt = prompt
+
+        this.config = {
+            clothing: {
+                baseURL: '/assets/media/clothing/icon/240/',
+                keyPrefix: 'clothing/icon/240/'
+            },
+            furniture: {
+                baseURL: '/assets/media/furniture/icon/@5x/',
+                keyPrefix: 'furniture/icon/@5x/',
+                scale: 0.65
+            }
+        }
     }
 
     get baseURL() {
-        return (this.prompt.type == 'furniture')
-            ? '/assets/media/furniture/icon/@5x/'
-            : '/assets/media/clothing/icon/large/'
+        return this.config[this.prompt.type].baseURL
     }
 
     get keyPrefix() {
-        return (this.prompt.type == 'furniture')
-            ? 'furniture/icon/@5x/'
-            : 'clothing/icon/large/'
+        return this.config[this.prompt.type].keyPrefix
     }
 
     get scale() {
-        switch (this.prompt.type) {
-            case 'clothing':
-                return 0.75
-            case 'furniture':
-                return 0.65
-            default:
-                return 1
-        }
+        return this.config[this.prompt.type].scale || 1
     }
 
     loadIcon(item) {
