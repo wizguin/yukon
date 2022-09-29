@@ -31,7 +31,7 @@ export default class PenguinLarge extends BaseContainer {
         this.add(penguinLarge);
 
         // paperDoll
-        const paperDoll = new PaperDoll(scene, 0, -45);
+        const paperDoll = new PaperDoll(scene, 0, -38);
         this.add(paperDoll);
 
         // username

@@ -27,26 +27,28 @@
             "y": 460,
             "list": [
                 {
+                    "type": "Image",
+                    "id": "7d777943-f33d-411a-b64c-37f557089f8b",
+                    "label": "card_photo",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-photo"
+                    },
+                    "originX": 0.5011600928074246,
+                    "originY": 0.5011709601873536
+                },
+                {
                     "type": "Container",
                     "id": "ae5ef1eb-31ba-4fb6-b949-c7cdbb0f48f4",
                     "label": "photo",
                     "scope": "CLASS",
                     "components": [],
-                    "y": -2,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "8621979a-5a8b-4fb0-a9f5-7591660d7e29",
-                            "label": "card_photo",
-                            "components": [
-                                "Interactive"
-                            ],
-                            "texture": {
-                                "key": "main",
-                                "frame": "card-photo"
-                            }
-                        }
-                    ]
+                    "x": -205,
+                    "y": -206,
+                    "list": []
                 },
                 {
                     "type": "Image",
@@ -69,7 +71,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 0,
-                    "y": -7,
+                    "y": 0,
                     "nestedPrefabs": []
                 },
                 {
@@ -209,8 +211,8 @@
                         "key": "main",
                         "frame": "badge/member"
                     },
-                    "x": -149,
-                    "y": -224
+                    "x": -153,
+                    "y": -223
                 },
                 {
                     "type": "Sprite",
@@ -225,8 +227,8 @@
                         "key": "main",
                         "frame": "badge/lines/lines0001"
                     },
-                    "x": -149,
-                    "y": -223,
+                    "x": -153,
+                    "y": -222,
                     "originY": 0.5028571428571429
                 },
                 {
@@ -239,8 +241,8 @@
                         "key": "main",
                         "frame": "badge/stripes/4"
                     },
-                    "x": -149,
-                    "y": -185,
+                    "x": -153,
+                    "y": -184,
                     "originY": 0.5051546391752577
                 },
                 {
@@ -252,8 +254,8 @@
                         "key": "main",
                         "frame": "badge/ribbon"
                     },
-                    "x": -149,
-                    "y": -208,
+                    "x": -153,
+                    "y": -207,
                     "originX": 0.5061728395061729,
                     "originY": 0.5185185185185185
                 },
@@ -266,8 +268,8 @@
                         "key": "main",
                         "frame": "badge/star"
                     },
-                    "x": -149,
-                    "y": -241
+                    "x": -153,
+                    "y": -240
                 }
             ]
         }

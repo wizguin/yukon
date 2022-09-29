@@ -35,20 +35,21 @@ export default class PlayerCard extends BaseContainer {
         this.stripes;
 
 
-        // photo
-        const photo = scene.add.container(0, -2);
-        this.add(photo);
-
         // card_photo
         const card_photo = scene.add.image(0, 0, "main", "card-photo");
-        photo.add(card_photo);
+        card_photo.setOrigin(0.5011600928074246, 0.5011709601873536);
+        this.add(card_photo);
+
+        // photo
+        const photo = scene.add.container(-205, -206);
+        this.add(photo);
 
         // card_bg
         const card_bg = scene.add.image(0, 0, "main", "card-bg-player");
         this.add(card_bg);
 
         // paperDoll
-        const paperDoll = new PaperDoll(scene, 0, -7);
+        const paperDoll = new PaperDoll(scene, 0, 0);
         this.add(paperDoll);
 
         // buttons
@@ -96,26 +97,26 @@ export default class PlayerCard extends BaseContainer {
         this.add(inventory);
 
         // badge_member
-        const badge_member = scene.add.image(-149, -224, "main", "badge/member");
+        const badge_member = scene.add.image(-153, -223, "main", "badge/member");
         this.add(badge_member);
 
         // badge_lines_lines
-        const badge_lines_lines = scene.add.sprite(-149, -223, "main", "badge/lines/lines0001");
+        const badge_lines_lines = scene.add.sprite(-153, -222, "main", "badge/lines/lines0001");
         badge_lines_lines.setOrigin(0.5, 0.5028571428571429);
         this.add(badge_lines_lines);
 
         // stripes
-        const stripes = scene.add.image(-149, -185, "main", "badge/stripes/4");
+        const stripes = scene.add.image(-153, -184, "main", "badge/stripes/4");
         stripes.setOrigin(0.5, 0.5051546391752577);
         this.add(stripes);
 
         // badge_ribbon
-        const badge_ribbon = scene.add.image(-149, -208, "main", "badge/ribbon");
+        const badge_ribbon = scene.add.image(-153, -207, "main", "badge/ribbon");
         badge_ribbon.setOrigin(0.5061728395061729, 0.5185185185185185);
         this.add(badge_ribbon);
 
         // badge_star
-        const badge_star = scene.add.image(-149, -241, "main", "badge/star");
+        const badge_star = scene.add.image(-153, -240, "main", "badge/star");
         this.add(badge_star);
 
         // this (components)

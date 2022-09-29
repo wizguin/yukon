@@ -36,8 +36,8 @@ export default class PaperDoll extends BaseContainer {
         this.paperdoll.depth = 2
 
         // Slots ordered by depth
-        // '' representing paperdoll
-        this.slots = [ 'photo', 'color', '', 'feet', 'body', 'neck', 'hand', 'face', 'head', 'flag' ]
+        this.slots = ['photo', 'color', 'feet', 'body', 'neck', 'face', 'head', 'hand', 'flag']
+
         this.items = this.setItems()
 
         this.paperDollLoader = new PaperDollLoader(scene, this)
@@ -53,9 +53,13 @@ export default class PaperDoll extends BaseContainer {
         let items = {}
 
         for (let slot of this.slots) {
-            if (!slot) continue
+            if (!slot) {
+                continue
+            }
+
             items[slot] = {
-                depth: this.slots.indexOf(slot)
+                id: 0,
+                depth: this.slots.indexOf(slot) + 100
             }
         }
 
