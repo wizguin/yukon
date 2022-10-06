@@ -118,7 +118,7 @@ export default class PaperDollLoader extends BaseLoader {
 
     addBack(key, slot, parentItem) {
         if (parentItem.back) {
-            this.removeBack(parentItem)
+            this.paperDoll.destroyBack(item)
         }
 
         parentItem.back = this.addPaper(key, slot, parentItem.depth, 1, true)
@@ -193,21 +193,9 @@ export default class PaperDollLoader extends BaseLoader {
             return
         }
 
-        if (item.sprite) {
-            item.sprite.destroy()
-            item.sprite = null
-        }
-
-        if (item.back) {
-            this.removeBack(item)
-        }
+        this.paperDoll.removeItem(item)
 
         this.updateBackSprites()
-    }
-
-    removeBack(item) {
-        item.back.destroy()
-        item.back = null
     }
 
     updateBackSprites() {

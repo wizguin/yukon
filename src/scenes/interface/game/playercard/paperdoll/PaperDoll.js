@@ -66,17 +66,6 @@ export default class PaperDoll extends BaseContainer {
         return items
     }
 
-    removeItems() {
-        for (let item in this.items) {
-            let sprite = this.items[item].sprite
-
-            if (this.items[item].sprite) {
-                sprite.destroy()
-                sprite = null
-            }
-        }
-    }
-
     loadDoll(penguin, isInputEnabled = false) {
         // Clear items for next penguin
         this.removeItems()
@@ -109,6 +98,35 @@ export default class PaperDoll extends BaseContainer {
         this.body.removeInteractive()
         this.paperdoll.removeInteractive()
     }
+
+    removeItems() {
+        for (let item of Object.values(this.items)) {
+            this.removeItem(item)
+        }
+    }
+
+    removeItem(item) {
+        item.id = 0
+
+        if (item.sprite) {
+            this.destroySprite(item)
+        }
+
+        if (item.back) {
+            this.destroyBack(item)
+        }
+    }
+
+    destroySprite(item) {
+        item.sprite.destroy()
+        item.sprite = null
+    }
+
+    destroyBack(item) {
+        item.back.destroy()
+        item.back = null
+    }
+
 
     /* END-USER-CODE */
 }
