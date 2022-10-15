@@ -14,6 +14,8 @@ export default class WorldController extends BaseScene {
         this.room
 
         this.secretFramesCache = {}
+
+        this.globalLoadQueue = {}
     }
 
     create() {
