@@ -17,8 +17,6 @@ export default class ClientController {
         Object.assign(this, attributes)
 
         this.id = user.id
-        this.coins = user.coins
-        this.rank = user.rank
         this.joinTime = user.joinTime
 
         this.iglooOpen = false
