@@ -39,7 +39,7 @@ export default class Login extends Plugin {
     }
 
     gameAuth(args) {
-        if (args.success) this.network.send('load_player')
+        if (args.success) this.network.send('join_server')
     }
 
     authToken(args) {
