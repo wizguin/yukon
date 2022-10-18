@@ -31,6 +31,8 @@ export default class PlayerCard extends BaseContainer {
         this.inventorySort;
         /** @type {Inventory} */
         this.inventory;
+        /** @type {Phaser.GameObjects.Container} */
+        this.badge;
         /** @type {Phaser.GameObjects.Image} */
         this.stripes;
 
@@ -96,28 +98,32 @@ export default class PlayerCard extends BaseContainer {
         const inventory = new Inventory(scene, -135, 33);
         this.add(inventory);
 
+        // badge
+        const badge = scene.add.container(-153, -240);
+        this.add(badge);
+
         // badge_member
-        const badge_member = scene.add.image(-153, -223, "main", "badge/member");
-        this.add(badge_member);
+        const badge_member = scene.add.image(0, 17, "main", "badge/member");
+        badge.add(badge_member);
 
         // badge_lines_lines
-        const badge_lines_lines = scene.add.sprite(-153, -222, "main", "badge/lines/lines0001");
+        const badge_lines_lines = scene.add.sprite(0, 18, "main", "badge/lines/lines0001");
         badge_lines_lines.setOrigin(0.5, 0.5028571428571429);
-        this.add(badge_lines_lines);
+        badge.add(badge_lines_lines);
 
         // stripes
-        const stripes = scene.add.image(-153, -184, "main", "badge/stripes/4");
+        const stripes = scene.add.image(0, 56, "main", "badge/stripes/4");
         stripes.setOrigin(0.5, 0.5051546391752577);
-        this.add(stripes);
+        badge.add(stripes);
 
         // badge_ribbon
-        const badge_ribbon = scene.add.image(-153, -207, "main", "badge/ribbon");
+        const badge_ribbon = scene.add.image(0, 33, "main", "badge/ribbon");
         badge_ribbon.setOrigin(0.5061728395061729, 0.5185185185185185);
-        this.add(badge_ribbon);
+        badge.add(badge_ribbon);
 
         // badge_star
-        const badge_star = scene.add.image(-153, -240, "main", "badge/star");
-        this.add(badge_star);
+        const badge_star = scene.add.image(0, 0, "main", "badge/star");
+        badge.add(badge_star);
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -144,6 +150,7 @@ export default class PlayerCard extends BaseContainer {
         this.username = username;
         this.inventorySort = inventorySort;
         this.inventory = inventory;
+        this.badge = badge;
         this.stripes = stripes;
 
         /* START-USER-CTR-CODE */
@@ -215,7 +222,7 @@ export default class PlayerCard extends BaseContainer {
         this.id = penguin.id
 
         this.updateButtons()
-        this.updateStripes(penguin.joinTime)
+        this.updateBadge(penguin.joinTime)
 
         this.interface.showWidget(this)
     }
@@ -227,10 +234,13 @@ export default class PlayerCard extends BaseContainer {
         }
     }
 
-    updateStripes(joinTime) {
+    updateBadge(joinTime) {
         if (!joinTime) {
-            return this.stripes.setFrame('badge/stripes/0')
+            this.badge.visible = false
+            return
         }
+
+        this.badge.visible = true
 
         let oneDay = 1000 * 60 * 60 * 24
         let timeDiff = Date.now() - Date.parse(joinTime)
