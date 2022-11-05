@@ -42,7 +42,6 @@ export default class BuddyItem extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.id
-        this.relationship
 
         /* END-USER-CTR-CODE */
     }
@@ -57,9 +56,9 @@ export default class BuddyItem extends BaseContainer {
 
         this.id = buddy.id
         this.username.text = buddy.username
-        this.relationship = this.world.getRelationship(buddy.id)
 
-        let texture = `buddy/icon-${this.relationship}`
+        let relationship = this.world.getRelationship(buddy.id)
+        let texture = `buddy/icon-${relationship}`
 
         this.icon.setTexture('main', texture)
     }
@@ -67,7 +66,6 @@ export default class BuddyItem extends BaseContainer {
     clearItem() {
         this.id = null
         this.username.text = ''
-        this.relationship = null
 
         this.icon.setTexture('main', 'buddy/icon-offline')
     }
