@@ -490,7 +490,7 @@ export default class Main extends BaseScene {
         let text = `${request.username} has asked to be your buddy.\nDo you accept?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
-            this.network.send('buddy_accept', request)
+            this.network.send('buddy_accept', { id: request.id })
             this.interface.prompt.window.visible = false
 
         }, () => {

@@ -4,6 +4,8 @@ import ClothingLoader from '@engine/loaders/ClothingLoader'
 import PathEngine from './pathfinding/PathEngine'
 import PenguinItems from './PenguinItems'
 
+import adjustRedemptionItem from './frames/adjustRedemptionItem'
+
 
 export default class Penguin extends BaseContainer {
 
@@ -16,9 +18,12 @@ export default class Penguin extends BaseContainer {
 
         this.items = new PenguinItems(this)
         this.clothingLoader = new ClothingLoader(this)
+
         this.bodySprite
+        this.penguinSprite
 
         PathEngine.setStartPos(this)
+
         this.depth = this.y
         this.tween
         this.direction
@@ -57,12 +62,33 @@ export default class Penguin extends BaseContainer {
         return this.items.equipped
     }
 
+    get equippedSprites() {
+        return this.list.filter(child => {
+
+            return child.type == 'Sprite'
+                && child != this.bodySprite
+                && child != this.penguinSprite
+        })
+    }
+
     get penguinLoader() {
         return this.world.penguinFactory.penguinLoader
     }
 
     get paperDollLoader() {
         return this.playerCard.paperDoll.paperDollLoader
+    }
+
+    get textures() {
+        return this.room.textures
+    }
+
+    get anims() {
+        return this.room.anims
+    }
+
+    get secretFramesCache() {
+        return this.world.secretFramesCache
     }
 
     /**
@@ -102,7 +128,10 @@ export default class Penguin extends BaseContainer {
 
     move(x, y) {
         let path = PathEngine.getPath(this, { x: x, y: y })
-        if (path) this.addMoveTween(path)
+
+        if (path) {
+            this.addMoveTween(path)
+        }
     }
 
     setPos(x, y) {
@@ -110,79 +139,181 @@ export default class Penguin extends BaseContainer {
         this.y = y
     }
 
-    /*========== Frames ==========*/
+    /*========== Animations ==========*/
 
     playFrame(_frame, set = true) {
         // Moving penguin can only update when frames are movement frames (9-16)
-        if (this.isTweening && (frame < 9 || frame > 16)) {
+        if (this.isTweening && (_frame < 9 || _frame > 16)) {
             return
         }
-
-        // Filters out shadow and ring
-        let sprites = this.list.filter(child => child.type == 'Sprite')
 
         // Get correct frame id
         let frame = ([25, 26].includes(_frame))
             ? this.getSecretFrame(_frame)
             : _frame
 
-        for (let sprite of sprites) {
-            let key = `${sprite.texture.key}_${frame}`
+        this.createAnims(frame, frame != _frame)
 
-            if (!this.world.anims.exists(key)) {
-                this.createAnim(sprite.texture.key, frame)
-            }
-
-            if (this.checkAnim(key)) {
-                sprite.visible = true
-                sprite.anims.play(key)
-            } else {
-                sprite.visible = false
-            }
-        }
+        this.playAnims(frame)
 
         // Frames that aren't set get set to 1
         this.frame = (set) ? _frame : 1
     }
 
-    createAnim(key, frame) {
-        let animation = this.crumbs.penguin[frame]
-        let frames = this.generateFrames(key, frame, animation)
+    createAnims(frame, isSecretFrame) {
+        let penguinTexture = (isSecretFrame)
+            ? `secret_frames/${frame}`
+            : 'penguin'
 
-        this.world.anims.create({
-            key: `${key}_${frame}`,
+        this.createAnim(`penguin_body_${frame}`, penguinTexture, frame, 'body/')
+        this.createAnim(`penguin_${frame}`, penguinTexture, frame, 'penguin/')
+
+        for (let sprite of this.equippedSprites) {
+            this.createAnim(`${sprite.texture.key}_${frame}`, sprite.texture.key, frame, '', true)
+        }
+    }
+
+    createAnim(key, textureKey, frame, prefix = '', checkItem = false) {
+        if (this.anims.exists(key)) {
+            return
+        }
+
+        if (!this.textures.exists(textureKey)) {
+            return
+        }
+
+        let animation = this.crumbs.penguin[frame]
+
+        if (checkItem && animation.items) {
+            animation = this.checkAnimItems(animation, textureKey)
+        }
+
+        let frames = this.generateFrames(textureKey, frame, prefix, animation)
+
+        let anim = this.anims.create({
+            key: key,
             frames: frames,
             frameRate: 24,
             repeat: animation.repeat || 0
         })
+
+        if (animation.chain) {
+            anim.chainKeys = this.createChains(key, textureKey, frame, prefix, animation.chain)
+        }
     }
 
-    generateFrames(key, frame, animation) {
-        let config = {
-            prefix: `${frame}_`,
-            frames: animation.frames || Phaser.Utils.Array.NumberArray(animation.start || 1, animation.end)
+    checkAnimItems(animation, textureKey) {
+        let check = adjustRedemptionItem(textureKey.split('/').pop())
+
+        for (let item in animation.items) {
+            let secretCheck = adjustRedemptionItem(item)
+
+            if (check == secretCheck) {
+                return animation.items[item]
+            }
         }
 
-        let textureFrames = this.world.textures.get(key).getFrameNames(false)
+        return animation
+    }
+
+    generateFrames(textureKey, frame, prefix, animation) {
+        let frames = Phaser.Utils.Array.NumberArray(animation.start || 1, animation.end)
+
+        let config = {
+            prefix: `${prefix}${frame}_`,
+            frames: frames
+        }
+
+        let textureFrames = this.textures.get(textureKey).getFrameNames(false)
 
         // Filter out null frames
         config.frames = config.frames.filter((i) => {
-            return textureFrames.includes(`${frame}_${i}`)
+            return textureFrames.includes(`${prefix}${frame}_${i}`)
         })
 
-        return this.world.anims.generateFrameNames(key, config)
+        return this.anims.generateFrameNames(textureKey, config)
+    }
+
+    createChains(key, textureKey, frame, prefix, config) {
+        let chainKeys = []
+
+        for (let i = 0; i < config.length; i++) {
+            let chain = config[i]
+
+            let chainKey = `${key}/chain_${i + 1}`
+
+            frames = this.generateFrames(textureKey, frame, prefix, chain)
+
+            this.anims.create({
+                key: chainKey,
+                frames: frames,
+                frameRate: 24,
+                repeat: chain.repeat || 0
+            })
+
+            chainKeys.push(chainKey)
+        }
+
+        return chainKeys
+    }
+
+    playAnims(frame) {
+        this.playAnim(this.bodySprite, `penguin_body_${frame}`)
+        this.playAnim(this.penguinSprite, `penguin_${frame}`)
+
+        for (let sprite of this.equippedSprites) {
+            let key = `${sprite.texture.key}_${frame}`
+
+            this.playAnim(sprite, key)
+        }
+    }
+
+    playAnim(sprite, key) {
+        if (!this.checkAnim(key)) {
+            return sprite.visible = false
+        }
+
+        sprite.visible = true
+        sprite.anims.play(key)
+
+        // Reset current chain queue
+        sprite.chain()
+
+        let anim = this.anims.get(key)
+
+        if (anim.chainKeys) {
+            this.playChain(sprite, anim)
+        }
+    }
+
+    playChain(sprite, anim) {
+        let keys = anim.chainKeys
+
+        for (let key of keys) {
+            if (this.checkAnim(key)) {
+                sprite.chain(key)
+            }
+        }
     }
 
     checkAnim(key) {
-        let animation = this.world.anims.get(key)
+        let animation = this.anims.get(key)
         return animation && animation.frames.length > 0
     }
 
     getSecretFrame(frame) {
         let equipped = this.items.equippedFlat
+        let frameString = this.getSecretFrameString(frame, equipped)
+
+        if (this.secretFramesCache[frameString]) {
+            return this.secretFramesCache[frameString]
+        }
 
         for (let secret of this.crumbs.secret_frames[frame]) {
             if (this.checkSecretFrames(equipped, secret)) {
+
+                this.secretFramesCache[frameString] = secret.secret_frame
+
                 return secret.secret_frame
             }
         }
@@ -192,13 +323,28 @@ export default class Penguin extends BaseContainer {
 
     checkSecretFrames(equipped, secret) {
         for (let item in equipped) {
-            if (equipped[item] !== secret[item]) {
+            let check = adjustRedemptionItem(equipped[item])
+            let secretCheck = adjustRedemptionItem(secret[item])
+
+            if (check != secretCheck) {
                 return false
             }
         }
 
-        // Only return true if frame is found in crumbs
         return secret.secret_frame in this.crumbs.penguin
+            && this.checkSecretFrameTextures(secret.secret_frame)
+    }
+
+    checkSecretFrameTextures(frame) {
+        return this.textures.exists(`secret_frames/${frame}`)
+    }
+
+    getSecretFrameString(frame, equipped) {
+        let slots = this.items.slots.filter(slot => slot in equipped)
+
+        let items = slots.map(slot => adjustRedemptionItem(equipped[slot]))
+
+        return `${frame},${items.toString()}`
     }
 
     /*========== Tweening ==========*/

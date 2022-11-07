@@ -8,6 +8,8 @@ import Servers from '@scenes/interface/menus/servers/Servers'
 import Main from '@scenes/interface/game/main/Main'
 import IglooEdit from '@scenes/interface/game/iglooedit/IglooEdit'
 
+import generateItemsToFrames from '@engine/world/penguin/frames/generateItemsToFrames'
+
 
 export default class Preload extends BaseScene {
 
@@ -37,6 +39,8 @@ export default class Preload extends BaseScene {
             ...this.game.crumbs,
             ...crumbs
         }
+
+        this.game.crumbs.itemsToFrames = generateItemsToFrames(crumbs.secret_frames)
 
         // Start
         this.interface.hideLoading()

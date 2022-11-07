@@ -19,7 +19,7 @@ export default class SnowballFactory {
         let penguin = this.world.room.penguins[id]
         if (!penguin || penguin.isTweening) return
 
-        if (this.balls.length > 9) this.removeOldestBall()
+        if (this.balls.length > 10) this.removeOldestBall()
 
         let ball = this.createBall(penguin)
         x += Phaser.Math.Between(-20, 20)

@@ -260,10 +260,12 @@ export default class Map extends BaseContainer {
     /* START-USER-CODE */
 
     onRoomClick(id) {
-        let room = this.crumbs.scenes.rooms[id]
-        if (this.world.room.key == room.key) return
+        this.close()
 
-        this.visible = false
+        let room = this.crumbs.scenes.rooms[id]
+        if (this.world.room.key == room.key) {
+            return
+        }
 
         this.world.client.sendJoinRoom(id, room.key, room.x, room.y, 80)
     }

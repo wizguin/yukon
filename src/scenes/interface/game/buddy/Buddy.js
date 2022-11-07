@@ -138,13 +138,11 @@ export default class Buddy extends BaseContainer {
         const down_buttonButton = new Button(down_button);
         down_buttonButton.spriteName = "blue-button";
         down_buttonButton.callback = () => this.nextPage();
-        down_buttonButton.activeFrame = false;
 
         // up_button (components)
         const up_buttonButton = new Button(up_button);
         up_buttonButton.spriteName = "blue-button";
         up_buttonButton.callback = () => this.prevPage();
-        up_buttonButton.activeFrame = false;
 
         // buddy_button (components)
         const buddy_buttonButton = new Button(buddy_button);

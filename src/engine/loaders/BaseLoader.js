@@ -2,6 +2,8 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
 
     constructor(scene) {
         super(scene)
+
+        this.globalLoadQueue = scene.world.globalLoadQueue
     }
 
     get crumbs() {
@@ -42,13 +44,29 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
 
     }
 
-    checkComplete(type, key, callback) {
+    checkComplete(type, key, callback = () => {}) {
         if (this.textureExists(key)) {
             callback()
             return true
         }
 
-        this.once(`filecomplete-${type}-${key}`, callback)
+        let event = `filecomplete-${type}-${key}`
+
+        if (key in this.globalLoadQueue) {
+            let loader = this.globalLoadQueue[key]
+            loader.once(event, callback)
+
+            return true
+        }
+
+        this.globalLoadQueue[key] = this
+
+        this.once(event, () => {
+            callback()
+            delete this.globalLoadQueue[key]
+        })
+
+        return false
     }
 
     textureExists(key) {

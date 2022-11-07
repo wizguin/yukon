@@ -36,8 +36,8 @@ export default class PaperDoll extends BaseContainer {
         this.paperdoll.depth = 2
 
         // Slots ordered by depth
-        // '' representing paperdoll
-        this.slots = [ 'photo', 'color', '', 'feet', 'body', 'neck', 'hand', 'face', 'head', 'flag' ]
+        this.slots = ['photo', 'color', 'feet', 'body', 'neck', 'face', 'head', 'hand', 'flag']
+
         this.items = this.setItems()
 
         this.paperDollLoader = new PaperDollLoader(scene, this)
@@ -53,24 +53,17 @@ export default class PaperDoll extends BaseContainer {
         let items = {}
 
         for (let slot of this.slots) {
-            if (!slot) continue
+            if (!slot) {
+                continue
+            }
+
             items[slot] = {
-                depth: this.slots.indexOf(slot)
+                id: 0,
+                depth: this.slots.indexOf(slot) + 100
             }
         }
 
         return items
-    }
-
-    removeItems() {
-        for (let item in this.items) {
-            let sprite = this.items[item].sprite
-
-            if (this.items[item].sprite) {
-                sprite.destroy()
-                sprite = null
-            }
-        }
     }
 
     loadDoll(penguin, isInputEnabled = false) {
@@ -105,6 +98,35 @@ export default class PaperDoll extends BaseContainer {
         this.body.removeInteractive()
         this.paperdoll.removeInteractive()
     }
+
+    removeItems() {
+        for (let item of Object.values(this.items)) {
+            this.removeItem(item)
+        }
+    }
+
+    removeItem(item) {
+        item.id = 0
+
+        if (item.sprite) {
+            this.destroySprite(item)
+        }
+
+        if (item.back) {
+            this.destroyBack(item)
+        }
+    }
+
+    destroySprite(item) {
+        item.sprite.destroy()
+        item.sprite = null
+    }
+
+    destroyBack(item) {
+        item.back.destroy()
+        item.back = null
+    }
+
 
     /* END-USER-CODE */
 }

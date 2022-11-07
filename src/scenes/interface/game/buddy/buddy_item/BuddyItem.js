@@ -41,7 +41,7 @@ export default class BuddyItem extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.id = null
+        this.id
 
         /* END-USER-CTR-CODE */
     }
@@ -50,7 +50,9 @@ export default class BuddyItem extends BaseContainer {
     /* START-USER-CODE */
 
     setItem(buddy) {
-        if (!buddy) return this.clearItem()
+        if (!buddy) {
+            return this.clearItem()
+        }
 
         this.id = buddy.id
         this.username.text = buddy.username
@@ -64,13 +66,31 @@ export default class BuddyItem extends BaseContainer {
     clearItem() {
         this.id = null
         this.username.text = ''
+
         this.icon.setTexture('main', 'buddy/icon-offline')
     }
 
     onClick() {
-        if (this.id) {
-            this.interface.showCard(this.id)
+        if (!this.id) {
+            return
         }
+
+        if (this.parentContainer.listType == 'ignores') {
+            this.showRemoveIgnore()
+            return
+        }
+
+        this.interface.showCard(this.id)
+    }
+
+    showRemoveIgnore() {
+        let text = `Would you like to remove ${this.username.text}\nfrom your ignore list?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('ignore_remove', { id: this.id })
+
+            this.interface.prompt.showWindow('Done', 'single')
+        })
     }
 
     /* END-USER-CODE */

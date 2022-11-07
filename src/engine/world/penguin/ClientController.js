@@ -17,8 +17,6 @@ export default class ClientController {
         Object.assign(this, attributes)
 
         this.id = user.id
-        this.coins = user.coins
-        this.rank = user.rank
         this.joinTime = user.joinTime
 
         this.iglooOpen = false
@@ -96,6 +94,12 @@ export default class ClientController {
 
         // Assigns inventory list to slots
         for (let item of this.inventory) {
+            item = parseInt(item)
+
+            if (!(item in this.crumbs.items)) {
+                continue
+            }
+
             let type = this.crumbs.items[item].type
             let slot = this.slots[type - 1]
 

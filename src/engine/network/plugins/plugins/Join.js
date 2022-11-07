@@ -25,8 +25,6 @@ export default class Join extends Plugin {
 
         this.scene.start('WorldController')
         this.world.setClient(args)
-
-        this.network.send('join_server')
     }
 
     joinRoom(args) {

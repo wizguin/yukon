@@ -24,8 +24,8 @@ export default class PenguinLoader {
     }
 
     addPenguin(penguin) {
-        PenguinSpriteFactory.create(penguin, 'penguin_body', 1)
-        PenguinSpriteFactory.create(penguin, 'penguin', 2)
+        penguin.bodySprite = PenguinSpriteFactory.create(penguin, 'body', 1)
+        penguin.penguinSprite = PenguinSpriteFactory.create(penguin, 'penguin', 2)
     }
 
     addShadow(penguin) {

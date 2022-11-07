@@ -288,7 +288,7 @@ export default class Buttons extends BaseContainer {
         let text = `Would you like to add ${this.username}\nto your ignore list?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
-            this.network.send('ignore_add', { id: this.parentContainer.id, username: this.username })
+            this.network.send('ignore_add', { id: this.parentContainer.id })
 
             this.interface.prompt.showWindow('Done', 'single')
         })

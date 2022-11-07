@@ -20,13 +20,18 @@ export default class Buddy extends Plugin {
     }
 
     buddyAccept(args) {
-        if (args.requester) this.interface.main.addRequest(args)
+        if (args.requester) {
+            this.interface.main.addRequest(args)
+        }
 
         let { requester, ...buddy } = args
 
         this.world.client.buddies.push(buddy)
         this.interface.updateBuddies()
-        this.interface.main.showOnlinePopup(buddy.username)
+
+        if (args.online) {
+            this.interface.main.showOnlinePopup(buddy.username)
+        }
     }
 
     buddyRemove(args) {

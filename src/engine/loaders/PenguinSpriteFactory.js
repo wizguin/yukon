@@ -10,15 +10,25 @@ export default class PenguinSpriteFactory {
 
         let sprite
 
-        if (key == 'penguin_body') {
-            sprite = new TintedSprite(penguin.room, 0, 0, key, '1_1')
-            sprite.tint = penguin.room.world.getColor(penguin.color)
+        switch (key) {
+            case 'body':
+                sprite = new TintedSprite(penguin.room, 0, 0, 'penguin', 'body/1_1')
+                sprite.tint = penguin.room.world.getColor(penguin.color)
 
-            penguin.bodySprite = sprite
-            penguin.room.add.existing(sprite)
+                penguin.room.add.existing(sprite)
+                break
 
-        } else {
-            sprite = penguin.room.add.sprite(0, 0, key, '1_1')
+            case 'penguin':
+                sprite = penguin.room.add.sprite(0, 0, 'penguin', 'penguin/1_1')
+                break
+
+            default:
+                if (!penguin.textures.exists(key)) {
+                    return
+                }
+
+                sprite = penguin.room.add.sprite(0, 0, key, '1_1')
+                break
         }
 
         // Attach depth so that children can be sorted using penguin.sort('depth')
