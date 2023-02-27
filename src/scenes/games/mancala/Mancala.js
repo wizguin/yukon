@@ -268,6 +268,8 @@ export default class Mancala extends BaseContainer {
     }
 
     handleStartGame() {
+        this.started = true
+
         let currentColor = 1
 
         for (let i = 0; i < this.map.length; i++) {
@@ -284,6 +286,9 @@ export default class Mancala extends BaseContainer {
         }
 
         this.updateScore()
+
+        this.mancalaPlayer1.setActive()
+        this.mancalaPlayer2.setActive()
     }
 
     isMancala(hole) {
