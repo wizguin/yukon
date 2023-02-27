@@ -82,6 +82,17 @@ export default class MancalaPlayer extends Phaser.GameObjects.Container {
         return this.holes.map(hole => hole.stones)
     }
 
+    set(username, turn) {
+        this.turnId = turn
+
+        this.spinner.visible = false
+        this.waiting.visible = false
+
+        this.username.text = username.toUpperCase()
+        this.username.visible = true
+        this.score.visible = true
+    }
+
     setActive() {
         let active = this.turnId === this.parentContainer.currentTurn
 

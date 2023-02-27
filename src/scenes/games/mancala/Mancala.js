@@ -214,35 +214,57 @@ export default class Mancala extends BaseContainer {
         return this[`mancalaPlayer${this.currentTurn}`]
     }
 
-    isMancala(hole) {
-        return this.mancalas.includes(hole)
+    addListeners() {
+        this.network.events.on('get_game', this.handleGetGame, this)
+        this.network.events.on('join_game', this.handleJoinGame, this)
+        this.network.events.on('update_game', this.handleUpdateGame, this)
+        this.network.events.on('start_game', this.handleStartGame, this)
+        this.network.events.on('send_move', this.handleSendMove, this)
+        //this.network.events.on('close_game', this.handleCloseGame, this)
     }
 
-    setUpGame() {
+    removeListeners() {
+        this.network.events.off('get_game', this.handleGetGame, this)
+        this.network.events.off('join_game', this.handleJoinGame, this)
+        this.network.events.off('update_game', this.handleUpdateGame, this)
+        this.network.events.off('start_game', this.handleStartGame, this)
+        this.network.events.off('send_move', this.handleSendMove, this)
+        //this.network.events.off('close_game', this.handleCloseGame, this)
+    }
 
+    show() {
+        this.map = null
+        this.myTurn = null
+        this.currentTurn = 1
+        this.started = false
+
+        super.show()
+
+        this.addListeners()
+        this.network.send('get_game')
+    }
+
+    close() {
+        super.close()
     }
 
     handleGetGame(map) {
         this.map = map
+
+        this.network.send('join_game')
     }
 
     handleJoinGame(turnId) {
-        // Setting my turn
         this.myTurn = turnId
     }
 
-    handleAddPlayer(username, turnId) {
-        let player = this[`mancalaPlayer${turnId}`]
-        player.turnId = turnId
+    handleUpdateGame(args) {
+        this.setPlayer(args.username, args.turn)
+    }
 
-        player.spinner.visible = false
-        player.waiting.visible = false
-
-        player.username.text = username.toUpperCase()
-        player.username.visible = true
-        player.score.visible = true
-
-        player.setActive()
+    setPlayer(username, turn) {
+        let player = this[`mancalaPlayer${turn}`]
+        player.set(username, turn)
     }
 
     handleStartGame() {
