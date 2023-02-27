@@ -1,0 +1,63 @@
+{
+    "id": "325c2f02-83fe-4592-9a90-32228cab6f13",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b003f2ee-88af-4169-8a8d-f5a41c5b3fbf",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "ce3caf58-2a72-44b9-8734-38eb48372b37",
+                    "label": "hint",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hint/hint0011"
+                    },
+                    "originX": 0.49056603773584906,
+                    "originY": 0.9294117647058824
+                },
+                {
+                    "type": "Text",
+                    "id": "fb2c6be3-4511-45b7-940c-f8ca7be5bd09",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -39,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "99",
+                    "fixedWidth": 64,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "color": "#000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
