@@ -331,7 +331,7 @@ export default class Mancala extends BaseContainer {
         this.hint.hideHint()
 
         if (!this.wait && this.currentPlayer.holes.includes(hole) && hole.stones.length) {
-
+            this.network.send('send_move', { hole: this.holes.indexOf(hole) })
         }
     }
 
@@ -351,9 +351,9 @@ export default class Mancala extends BaseContainer {
         this.hint.hideHint()
     }
 
-    handleSendMove(turn, hole, move) {
-        this.currentTurn = turn
-        hole = this.holes[hole]
+    handleSendMove(args) {
+        this.currentTurn = args.turn
+        let hole = this.holes[args.hole]
 
         this.wait = true
 
@@ -374,7 +374,7 @@ export default class Mancala extends BaseContainer {
 
             if (hole.stones.length === 0) {
                 this.scene.time.delayedCall(i * this.dropDelay, () => {
-                    this.updateTurn(nextHole, move)
+                    this.updateTurn(nextHole, args.move)
                 })
             }
 
