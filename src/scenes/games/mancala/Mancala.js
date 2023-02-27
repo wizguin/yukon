@@ -248,14 +248,14 @@ export default class Mancala extends BaseContainer {
         super.close()
     }
 
-    handleGetGame(map) {
-        this.map = map
+    handleGetGame(args) {
+        this.map = args.map
 
         this.network.send('join_game')
     }
 
-    handleJoinGame(turnId) {
-        this.myTurn = turnId
+    handleJoinGame(args) {
+        this.myTurn = args.turn
     }
 
     handleUpdateGame(args) {
