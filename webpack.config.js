@@ -24,8 +24,14 @@ let config = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname),
-            publicPath: '/'
+            directory: path.resolve(__dirname),
+            publicPath: '/',
+            watch: {
+                ignored: [
+                    path.resolve(__dirname, '.git'),
+                    path.resolve(__dirname, 'node_modules')
+                ]
+            }
         },
         devMiddleware: {
             writeToDisk: true
