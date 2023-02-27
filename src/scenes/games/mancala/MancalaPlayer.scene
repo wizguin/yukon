@@ -53,7 +53,13 @@
                     "y": -30,
                     "visible": false,
                     "text": "USERNAME",
-                    "fontSize": "32px"
+                    "fixedWidth": 330,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "fontStyle": "bold italic",
+                    "color": "#D5E1FF",
+                    "stroke": "#006699",
+                    "strokeThickness": 9
                 },
                 {
                     "type": "Text",

@@ -34,7 +34,7 @@ export default class MancalaPlayer extends Phaser.GameObjects.Container {
         const username = scene.add.text(-47, -30, "", {});
         username.visible = false;
         username.text = "USERNAME";
-        username.setStyle({ "fontSize": "32px" });
+        username.setStyle({ "color": "#D5E1FF", "fixedWidth":330,"fontFamily": "CCFaceFront", "fontSize": "32px", "fontStyle": "bold italic", "stroke": "#006699", "strokeThickness":9});
         this.add(username);
 
         // score
@@ -62,6 +62,9 @@ export default class MancalaPlayer extends Phaser.GameObjects.Container {
             repeat: -1,
             ease: 'Cubic'
         })
+
+        this.inactiveColor = username.style.color
+        this.inactiveStroke = username.style.stroke
 
         /* END-USER-CTR-CODE */
     }
@@ -96,10 +99,14 @@ export default class MancalaPlayer extends Phaser.GameObjects.Container {
     setActive() {
         let active = this.turnId === this.parentContainer.currentTurn
 
-        let alpha = active ? 1 : 0.5
+        let color = (active) ? '#fff' : this.inactiveColor
+        let stroke = (active) ? '#000' : this.inactiveStroke
+
         let bgFrame = active ? '_turn' : ''
 
-        this.username.alpha = alpha
+        this.username.setColor(color)
+        this.username.setStroke(stroke)
+
         this.bg.setFrame(`player/bg${bgFrame}`)
     }
 
