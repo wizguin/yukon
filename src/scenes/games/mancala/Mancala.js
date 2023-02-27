@@ -194,7 +194,7 @@ export default class Mancala extends BaseContainer {
         popup.setInteractive()
         popup.on('animationcomplete', (animation) => this.onPopupComplete(animation))
 
-        this.setUpGame()
+        this.createButtons()
 
         /* END-USER-CTR-CODE */
     }
@@ -264,6 +264,28 @@ export default class Mancala extends BaseContainer {
         this.updateScore()
     }
 
+    isMancala(hole) {
+        return this.mancalas.includes(hole)
+    }
+
+    createButtons() {
+        for (let hole of this.holes) {
+            hole.stones = []
+            hole.index = this.holes.indexOf(hole)
+
+            let button = new SimpleButton(hole)
+
+            button.pixelPerfect = false
+
+            if (!this.isMancala(hole)) {
+                button.callback = () => this.onHoleClick(hole)
+            }
+
+            button.hoverCallback = () => this.onHoleOver(hole)
+            button.hoverOutCallback = () => this.onHoleOut(hole)
+        }
+    }
+
     createStone(index, color) {
         let hole = this.holes[index]
         let stone = this.scene.add.sprite(hole.x, hole.y, 'mancala', `stone/${color}/placed`)
@@ -287,6 +309,10 @@ export default class Mancala extends BaseContainer {
     }
 
     onHoleOver(hole) {
+        if (!this.isMyTurn) {
+            return
+        }
+
         if (!this.wait) {
             this.bringToTop(this.hint)
 
