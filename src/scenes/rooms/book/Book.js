@@ -1,6 +1,8 @@
 import RoomScene from '../RoomScene'
 
-import { Button, MoveTo, ShowHint } from '@components/components'
+import { Button } from '@components/components'
+
+import MancalaTable from '@scenes/shared_prefabs/tables/mancala/MancalaTable'
 
 
 /* START OF COMPILED CODE */
@@ -10,7 +12,17 @@ export default class Book extends RoomScene {
     constructor() {
         super("Book");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {MancalaTable} */
+        this.table104;
+        /** @type {MancalaTable} */
+        this.table103;
+        /** @type {MancalaTable} */
+        this.table102;
+        /** @type {MancalaTable} */
+        this.table101;
+        /** @type {MancalaTable} */
+        this.table100;
+        /** @type {Array<Phaser.GameObjects.Image|MancalaTable>} */
         this.sort;
 
 
@@ -62,28 +74,32 @@ export default class Book extends RoomScene {
         const poster = this.add.image(720, 97, "book", "poster");
         poster.setOrigin(0, 0);
 
-        // table
-        const table = this.add.image(951, 446, "book", "table");
-        table.setOrigin(0.5043478260869565, 0.46);
+        // table104
+        const table104 = new MancalaTable(this, 1208, 755);
+        this.add.existing(table104);
+        table104.visible = true;
 
-        // table_1
-        const table_1 = this.add.image(652, 444, "book", "table");
-        table_1.setOrigin(0.5043478260869565, 0.46);
+        // table103
+        const table103 = new MancalaTable(this, 806, 690);
+        this.add.existing(table103);
+        table103.visible = true;
 
-        // table_2
-        const table_2 = this.add.image(426, 646, "book", "table");
-        table_2.setOrigin(0.5043478260869565, 0.46);
+        // table102
+        const table102 = new MancalaTable(this, 426, 652);
+        this.add.existing(table102);
+        table102.visible = true;
 
-        // table_3
-        const table_3 = this.add.image(806, 684, "book", "table");
-        table_3.setOrigin(0.5043478260869565, 0.46);
+        // table101
+        const table101 = new MancalaTable(this, 951, 453);
+        this.add.existing(table101);
+        table101.visible = true;
 
-        // table_4
-        const table_4 = this.add.image(1208, 748, "book", "table");
-        table_4.setOrigin(0.5043478260869565, 0.46);
+        // table100
+        const table100 = new MancalaTable(this, 651, 450);
+        this.add.existing(table100);
 
         // lists
-        const sort = [table_4, table_3, table_2, table_1, table, chair_table, chair_front, chair_back];
+        const sort = [chair_table, chair_front, chair_back, table100, table101, table102, table103, table104];
 
         // books (components)
         const booksButton = new Button(books);
@@ -96,51 +112,11 @@ export default class Book extends RoomScene {
         posterButton.activeFrame = false;
         posterButton.pixelPerfect = true;
 
-        // table (components)
-        const tableButton = new Button(table);
-        tableButton.spriteName = "table";
-        tableButton.activeFrame = false;
-        tableButton.pixelPerfect = true;
-        new MoveTo(table);
-        const tableShowHint = new ShowHint(table);
-        tableShowHint.text = "mancala_hint";
-
-        // table_1 (components)
-        const table_1Button = new Button(table_1);
-        table_1Button.spriteName = "table";
-        table_1Button.activeFrame = false;
-        table_1Button.pixelPerfect = true;
-        new MoveTo(table_1);
-        const table_1ShowHint = new ShowHint(table_1);
-        table_1ShowHint.text = "mancala_hint";
-
-        // table_2 (components)
-        const table_2Button = new Button(table_2);
-        table_2Button.spriteName = "table";
-        table_2Button.activeFrame = false;
-        table_2Button.pixelPerfect = true;
-        new MoveTo(table_2);
-        const table_2ShowHint = new ShowHint(table_2);
-        table_2ShowHint.text = "mancala_hint";
-
-        // table_3 (components)
-        const table_3Button = new Button(table_3);
-        table_3Button.spriteName = "table";
-        table_3Button.activeFrame = false;
-        table_3Button.pixelPerfect = true;
-        new MoveTo(table_3);
-        const table_3ShowHint = new ShowHint(table_3);
-        table_3ShowHint.text = "mancala_hint";
-
-        // table_4 (components)
-        const table_4Button = new Button(table_4);
-        table_4Button.spriteName = "table";
-        table_4Button.activeFrame = false;
-        table_4Button.pixelPerfect = true;
-        new MoveTo(table_4);
-        const table_4ShowHint = new ShowHint(table_4);
-        table_4ShowHint.text = "mancala_hint";
-
+        this.table104 = table104;
+        this.table103 = table103;
+        this.table102 = table102;
+        this.table101 = table101;
+        this.table100 = table100;
         this.sort = sort;
 
         this.events.emit("scene-awake");

@@ -109,114 +109,87 @@
             "originY": 0
         },
         {
-            "type": "Image",
-            "id": "3121adc6-b8d0-49cc-80b9-fb0f907a2521",
-            "label": "table",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
+            "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+            "id": "fd51e368-47f4-47df-a384-50368708110b",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
             ],
-            "Button.spriteName": "table",
-            "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
-            "ShowHint.text": "mancala_hint",
-            "texture": {
-                "key": "book",
-                "frame": "table"
-            },
-            "x": 951,
-            "y": 446,
-            "originX": 0.5043478260869565,
-            "originY": 0.46
-        },
-        {
-            "type": "Image",
-            "id": "7c76f0f6-08ce-42ce-95ce-ee2bf30214e8",
-            "label": "table_1",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table",
-            "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
-            "ShowHint.text": "mancala_hint",
-            "texture": {
-                "key": "book",
-                "frame": "table"
-            },
-            "x": 652,
-            "y": 444,
-            "originX": 0.5043478260869565,
-            "originY": 0.46
-        },
-        {
-            "type": "Image",
-            "id": "69f50215-4fae-4002-ab73-5ae417038520",
-            "label": "table_2",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table",
-            "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
-            "ShowHint.text": "mancala_hint",
-            "texture": {
-                "key": "book",
-                "frame": "table"
-            },
-            "x": 426,
-            "y": 646,
-            "originX": 0.5043478260869565,
-            "originY": 0.46
-        },
-        {
-            "type": "Image",
-            "id": "83d3b05f-42f9-41da-afe7-f1970727b41c",
-            "label": "table_3",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table",
-            "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
-            "ShowHint.text": "mancala_hint",
-            "texture": {
-                "key": "book",
-                "frame": "table"
-            },
-            "x": 806,
-            "y": 684,
-            "originX": 0.5043478260869565,
-            "originY": 0.46
-        },
-        {
-            "type": "Image",
-            "id": "2f6c3924-ae43-4b24-b896-637751ef5008",
-            "label": "table_4",
-            "components": [
-                "Button",
-                "MoveTo",
-                "ShowHint"
-            ],
-            "Button.spriteName": "table",
-            "Button.activeFrame": false,
-            "Button.pixelPerfect": true,
-            "ShowHint.text": "mancala_hint",
-            "texture": {
-                "key": "book",
-                "frame": "table"
-            },
+            "label": "table104",
+            "scope": "CLASS",
+            "components": [],
             "x": 1208,
-            "y": 748,
-            "originX": 0.5043478260869565,
-            "originY": 0.46
+            "y": 755,
+            "visible": true,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+            "id": "62ad80e4-03cd-46be-bc97-88dde203d0d1",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "table103",
+            "scope": "CLASS",
+            "components": [],
+            "x": 806,
+            "y": 690,
+            "visible": true,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+            "id": "026d8187-0e90-4d76-a2e4-3ab5b5463b36",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "table102",
+            "scope": "CLASS",
+            "components": [],
+            "x": 426,
+            "y": 652,
+            "visible": true,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+            "id": "3c0f4d88-d38f-49e0-b90d-2389d36e4d50",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "table101",
+            "scope": "CLASS",
+            "components": [],
+            "x": 951,
+            "y": 453,
+            "visible": true,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+            "id": "641156f5-cc76-4144-8f1a-e4648f3ddfc7",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "table100",
+            "scope": "CLASS",
+            "components": [],
+            "x": 651,
+            "y": 450,
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [],
@@ -231,14 +204,14 @@
             "id": "8bce6f73-b3e7-48cf-9a02-7e5412e5397d",
             "label": "sort",
             "objectIds": [
-                "2f6c3924-ae43-4b24-b896-637751ef5008",
-                "83d3b05f-42f9-41da-afe7-f1970727b41c",
-                "69f50215-4fae-4002-ab73-5ae417038520",
-                "7c76f0f6-08ce-42ce-95ce-ee2bf30214e8",
-                "3121adc6-b8d0-49cc-80b9-fb0f907a2521",
                 "c9532f84-c85e-4dc4-bae4-aaaf8557e69e",
                 "587577af-f9ef-471a-849a-09a07bc115b1",
-                "3f068263-f4f5-4b66-88b0-078006583a4c"
+                "3f068263-f4f5-4b66-88b0-078006583a4c",
+                "641156f5-cc76-4144-8f1a-e4648f3ddfc7",
+                "3c0f4d88-d38f-49e0-b90d-2389d36e4d50",
+                "026d8187-0e90-4d76-a2e4-3ab5b5463b36",
+                "62ad80e4-03cd-46be-bc97-88dde203d0d1",
+                "fd51e368-47f4-47df-a384-50368708110b"
             ]
         }
     ]
