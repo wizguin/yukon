@@ -4,6 +4,7 @@ const widgets = {
     'IglooCatalog': require('@scenes/interface/catalogs/igloo/IglooCatalog'),
 
     'FindFour': require('@scenes/games/four/FindFour'),
+    'Mancala': require('@scenes/games/mancala/Mancala'),
     'Map': require('@scenes/interface/game/map/Map')
 }
 
