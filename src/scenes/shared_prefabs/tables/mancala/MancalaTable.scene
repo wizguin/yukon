@@ -1,0 +1,135 @@
+{
+    "id": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "1ea9b4a8-891e-41b1-9e51-dc480b7d635c",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "1be28fd3-9b42-4599-84e2-c2a1f87246a2",
+                    "label": "table",
+                    "components": [],
+                    "texture": {
+                        "key": "book",
+                        "frame": "table/table"
+                    },
+                    "originX": 0.5043478260869565,
+                    "originY": 0.4838709677419355
+                },
+                {
+                    "type": "Image",
+                    "id": "e5ab1cc4-03c9-4f3f-af98-c434b0b7d459",
+                    "label": "game",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button",
+                        "MoveTo",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "table/game",
+                    "Button.activeFrame": false,
+                    "MoveTo.x": "this.x",
+                    "MoveTo.y": "this.y",
+                    "ShowHint.text": "mancala_hint",
+                    "texture": {
+                        "key": "book",
+                        "frame": "table/game"
+                    },
+                    "x": -2,
+                    "y": -29,
+                    "originX": 0.5046728971962616,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "6912ed84-8287-4eb7-9cb7-18e74c7e37a8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done2",
+                    "components": [],
+                    "x": -8,
+                    "y": 89,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "6bd50828-cf73-4817-ac81-da6521228aa6",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "done1",
+                    "components": [],
+                    "x": -114,
+                    "y": 47,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "1977c67d-f603-4e04-aca6-72a5efe07015",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat2",
+                    "scope": "CLASS",
+                    "sitFrame": 20,
+                    "donePoint": "done2",
+                    "components": [],
+                    "x": 73,
+                    "y": 22,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "2134e9a9-d340-4e4d-a453-d487de816890",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 24,
+                    "donePoint": "done1",
+                    "components": [],
+                    "x": -66,
+                    "y": -29,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
