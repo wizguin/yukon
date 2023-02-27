@@ -343,6 +343,34 @@
                     "visible": false,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "f0061852-6a3b-4abe-b30f-17ab057412d8",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 252,
+                    "y": -160
+                },
+                {
+                    "type": "Image",
+                    "id": "50799ffa-d7f7-4746-9483-ea71c5beeedd",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 252,
+                    "y": -162
                 }
             ]
         }

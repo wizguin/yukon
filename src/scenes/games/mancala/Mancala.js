@@ -1,6 +1,6 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
-import { DraggableContainer, SimpleButton } from '@components/components'
+import { Button, DraggableContainer, SimpleButton } from '@components/components'
 
 import MancalaHint from './MancalaHint'
 import MancalaPlayer from './MancalaPlayer'
@@ -140,6 +140,14 @@ export default class Mancala extends BaseContainer {
         hint.visible = false;
         this.add(hint);
 
+        // x_button
+        const x_button = scene.add.image(252, -160, "main", "blue-button");
+        this.add(x_button);
+
+        // blue_x
+        const blue_x = scene.add.image(252, -162, "main", "blue-x");
+        this.add(blue_x);
+
         // lists
         const holes = [hole_0, hole_1, hole_2, hole_3, hole_4, hole_5, hole_6, hole_7, hole_8, hole_9, hole_10, hole_11, hole_12, hole_13];
 
@@ -154,6 +162,11 @@ export default class Mancala extends BaseContainer {
         // mancalaPlayer2 (prefab fields)
         mancalaPlayer2.bg = bg1;
         mancalaPlayer2.mancala = hole_13;
+
+        // x_button (components)
+        const x_buttonButton = new Button(x_button);
+        x_buttonButton.spriteName = "blue-button";
+        x_buttonButton.callback = () => this.close();
 
         this.mancalaPlayer1 = mancalaPlayer1;
         this.mancalaPlayer2 = mancalaPlayer2;
