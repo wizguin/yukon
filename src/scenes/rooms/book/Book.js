@@ -17,7 +17,12 @@ export default class Book extends RoomScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            'coffee': () => this.triggerRoom(110, 1120, 800)
+            'coffee': () => this.triggerRoom(110, 1120, 800),
+            'table100': () => this.triggerTable('mancala', 100),
+            'table101': () => this.triggerTable('mancala', 101),
+            'table102': () => this.triggerTable('mancala', 102),
+            'table103': () => this.triggerTable('mancala', 103),
+            'table104': () => this.triggerTable('mancala', 104)
         }
         this.music = '1'
 
