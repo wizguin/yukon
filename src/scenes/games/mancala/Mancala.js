@@ -250,9 +250,14 @@ export default class Mancala extends BaseContainer {
 
     handleGetGame(args) {
         this.map = args.map
+        this.currentTurn = args.currentTurn
 
         for (let user of args.users) {
             this.setPlayer(user, args.users.indexOf(user) + 1)
+        }
+
+        if (args.started) {
+            return this.handleStartGame()
         }
 
         this.network.send('join_game')
