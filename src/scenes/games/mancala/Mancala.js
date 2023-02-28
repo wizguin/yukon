@@ -541,7 +541,16 @@ export default class Mancala extends BaseContainer {
     }
 
     resetGame() {
+        for (let hole of this.holes) {
+            for (let stone of hole.stones) {
+                stone.destroy()
+            }
 
+            hole.stones = []
+        }
+
+        this.mancalaPlayer1.reset()
+        this.mancalaPlayer2.reset()
     }
 
     /* END-USER-CODE */
