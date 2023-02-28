@@ -265,7 +265,7 @@ export default class Mancala extends BaseContainer {
         }
 
         if (args.started) {
-            return this.handleStartGame()
+            return this.setupMap()
         }
 
         this.network.send('join_game')
@@ -286,7 +286,10 @@ export default class Mancala extends BaseContainer {
 
     handleStartGame() {
         this.started = true
+        this.setupMap()
+    }
 
+    setupMap() {
         let currentColor = 1
 
         for (let i = 0; i < this.map.length; i++) {
