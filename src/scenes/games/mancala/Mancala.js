@@ -356,10 +356,6 @@ export default class Mancala extends BaseContainer {
     }
 
     onHoleOver(hole) {
-        if (!this.isMyTurn) {
-            return
-        }
-
         if (!this.wait) {
             this.bringToTop(this.hint)
 
