@@ -220,7 +220,7 @@ export default class Mancala extends BaseContainer {
         this.network.events.on('update_game', this.handleUpdateGame, this)
         this.network.events.on('start_game', this.handleStartGame, this)
         this.network.events.on('send_move', this.handleSendMove, this)
-        //this.network.events.on('close_game', this.handleCloseGame, this)
+        this.network.events.on('close_game', this.handleCloseGame, this)
     }
 
     removeListeners() {
@@ -229,7 +229,7 @@ export default class Mancala extends BaseContainer {
         this.network.events.off('update_game', this.handleUpdateGame, this)
         this.network.events.off('start_game', this.handleStartGame, this)
         this.network.events.off('send_move', this.handleSendMove, this)
-        //this.network.events.off('close_game', this.handleCloseGame, this)
+        this.network.events.off('close_game', this.handleCloseGame, this)
     }
 
     show() {
@@ -245,7 +245,15 @@ export default class Mancala extends BaseContainer {
     }
 
     close() {
-        super.close()
+        if (!this.started) {
+            return this.sendLeaveTable()
+        }
+
+        this.interface.prompt.showWindow(this.getString('quit_game_prompt'), 'dual', () => {
+            this.sendLeaveTable()
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     handleGetGame(args) {
@@ -391,6 +399,15 @@ export default class Mancala extends BaseContainer {
         }
     }
 
+    handleCloseGame(args) {
+        if (args.username) {
+            let text = this.getFormatString('player_quit_prompt', args.username)
+            this.interface.prompt.showWindow(text, 'single')
+        }
+
+        this.leaveTable()
+    }
+
     pickUpStone(stone) {
         stone.anims.play(`mancala/stone/${stone.color}/hand`)
     }
@@ -508,6 +525,24 @@ export default class Mancala extends BaseContainer {
         }
 
         this.wait = false
+    }
+
+    sendLeaveTable() {
+        this.network.send('leave_table')
+        this.leaveTable()
+    }
+
+    leaveTable() {
+        this.removeListeners()
+        this.resetGame()
+
+        super.close()
+
+        this.world.client.sendLeaveSeat()
+    }
+
+    resetGame() {
+
     }
 
     /* END-USER-CODE */
