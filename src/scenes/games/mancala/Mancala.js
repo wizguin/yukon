@@ -441,9 +441,9 @@ export default class Mancala extends BaseContainer {
 
             // Mancala holes play louder sound
             if (this.isMancala(hole)) {
-                this.scene.sound.play('drop', { volume: 0.5 })
+                this.soundManager.play('drop', { volume: 0.5 })
             } else {
-                this.scene.sound.play('drop', { volume: 0.2 })
+                this.soundManager.play('drop', { volume: 0.2 })
             }
 
             this.updateStonePos(stone, hole)
