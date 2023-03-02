@@ -406,13 +406,13 @@ export default class Mancala extends BaseContainer {
 
             this.dropStone(i, stone, this.holes[nextHole])
 
+            i++
+
             if (hole.stones.length === 0) {
                 this.delayedCall(i * this.dropDelay, () => {
                     this.updateTurn(nextHole, args.move)
                 })
             }
-
-            i++
         }
     }
 
