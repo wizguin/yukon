@@ -75,10 +75,13 @@ export default class MancalaPlayer extends Phaser.GameObjects.Container {
     get holes() {
         if (this.turnId === 1) {
             return this.parentContainer.holes.slice(0, 7)
+        }
 
-        } else if (this.turnId === 2) {
+        if (this.turnId === 2) {
             return this.parentContainer.holes.slice(7, 14)
         }
+
+        return []
     }
 
     get stones() {
