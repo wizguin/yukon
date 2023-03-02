@@ -176,16 +176,6 @@ export default class Mancala extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.scene = scene
-
-        this.map
-        this.board = []
-        this.currentTurn = 1
-        this.myTurn
-
-        // Waiting for turn to finish
-        this.wait = false
-
         this.maxStoneColor = 5
         this.holeSize = 49
         this.dropDelay = 168
@@ -234,9 +224,16 @@ export default class Mancala extends BaseContainer {
 
     show() {
         this.map = null
-        this.myTurn = null
         this.currentTurn = 1
+        this.myTurn = null
         this.started = false
+
+        // Waiting for turn to finish
+        this.wait = false
+
+        this.moveQueue = []
+        this.timerEvents = []
+        this.stones = []
 
         super.show()
 
@@ -279,14 +276,33 @@ export default class Mancala extends BaseContainer {
         this.setPlayer(args.username, args.turn)
     }
 
-    setPlayer(username, turn) {
-        let player = this[`mancalaPlayer${turn}`]
-        player.set(username, turn)
-    }
-
     handleStartGame() {
         this.started = true
         this.setupMap()
+    }
+
+    handleSendMove(args) {
+        this.moveQueue.push(args)
+
+        if (this.moveQueue.length > 1) {
+            return
+        }
+
+        this.moveStones(args)
+    }
+
+    handleCloseGame(args) {
+        if (args.username) {
+            let text = this.getFormatString('player_quit_prompt', args.username)
+            this.interface.prompt.showWindow(text, 'single')
+        }
+
+        this.leaveTable()
+    }
+
+    setPlayer(username, turn) {
+        let player = this[`mancalaPlayer${turn}`]
+        player.set(username, turn)
     }
 
     setupMap() {
@@ -341,6 +357,8 @@ export default class Mancala extends BaseContainer {
 
         this.updateStonePos(stone, hole)
         this.add(stone)
+
+        this.stones.push(stone)
     }
 
     onHoleClick(hole) {
@@ -367,7 +385,7 @@ export default class Mancala extends BaseContainer {
         this.hint.hideHint()
     }
 
-    handleSendMove(args) {
+    moveStones(args) {
         this.currentTurn = args.turn
         let hole = this.holes[args.hole]
 
@@ -389,22 +407,13 @@ export default class Mancala extends BaseContainer {
             this.dropStone(i, stone, this.holes[nextHole])
 
             if (hole.stones.length === 0) {
-                this.scene.time.delayedCall(i * this.dropDelay, () => {
+                this.delayedCall(i * this.dropDelay, () => {
                     this.updateTurn(nextHole, args.move)
                 })
             }
 
             i++
         }
-    }
-
-    handleCloseGame(args) {
-        if (args.username) {
-            let text = this.getFormatString('player_quit_prompt', args.username)
-            this.interface.prompt.showWindow(text, 'single')
-        }
-
-        this.leaveTable()
     }
 
     pickUpStone(stone) {
@@ -427,7 +436,7 @@ export default class Mancala extends BaseContainer {
     }
 
     dropStone(i, stone, hole, delay = this.dropDelay) {
-        this.scene.time.delayedCall(i * delay, () => {
+        this.delayedCall(i * delay, () => {
             stone.anims.play(`mancala/stone/${stone.color}/drop`)
 
             // Mancala holes play louder sound
@@ -466,8 +475,18 @@ export default class Mancala extends BaseContainer {
             this.mancalaPlayer1.setActive()
             this.mancalaPlayer2.setActive()
 
-            this.wait = false
+            this.checkMoveQueue()
         }
+    }
+
+    checkMoveQueue() {
+        this.moveQueue.shift()
+
+        if (this.moveQueue.length) {
+            return this.moveStones(this.moveQueue[0])
+        }
+
+        this.wait = false
     }
 
     checkLastHole(lastHole, move) {
@@ -502,7 +521,7 @@ export default class Mancala extends BaseContainer {
 
         this.dropStone(i, this.holes[hole].stones.shift(), currentMancala, this.captureDelay)
 
-        this.scene.time.delayedCall(i * this.captureDelay, () => {
+        this.delayedCall(i * this.captureDelay, () => {
             this.showPopup('capture')
         })
     }
@@ -523,7 +542,8 @@ export default class Mancala extends BaseContainer {
             return this.updateTurn()
         }
 
-        this.wait = false
+        // Free turn
+        this.checkMoveQueue()
     }
 
     sendLeaveTable() {
@@ -541,16 +561,18 @@ export default class Mancala extends BaseContainer {
     }
 
     resetGame() {
-        for (let hole of this.holes) {
-            for (let stone of hole.stones) {
-                stone.destroy()
-            }
+        this.scene.time.removeEvent(this.timerEvents)
 
-            hole.stones = []
-        }
+        this.stones.map(stone => stone.destroy())
+        this.holes.map(hole => hole.stones = [])
 
         this.mancalaPlayer1.reset()
         this.mancalaPlayer2.reset()
+    }
+
+    delayedCall(delay, callback) {
+        let timerEvent = this.scene.time.delayedCall(delay, callback)
+        this.timerEvents.push(timerEvent)
     }
 
     /* END-USER-CODE */
