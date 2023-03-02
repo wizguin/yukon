@@ -227,6 +227,7 @@ export default class Mancala extends BaseContainer {
         this.currentTurn = 1
         this.myTurn = null
         this.started = false
+        this.gameOver = false
 
         // Waiting for turn to finish
         this.wait = false
@@ -295,6 +296,12 @@ export default class Mancala extends BaseContainer {
         if (args.username) {
             let text = this.getFormatString('player_quit_prompt', args.username)
             this.interface.prompt.showWindow(text, 'single')
+        }
+
+        // Wait for turn to finish
+        if (args.gameOver) {
+            this.gameOver = true
+            return
         }
 
         this.leaveTable()
@@ -487,6 +494,10 @@ export default class Mancala extends BaseContainer {
         }
 
         this.wait = false
+
+        if (this.gameOver) {
+            this.leaveTable()
+        }
     }
 
     checkLastHole(lastHole, move) {

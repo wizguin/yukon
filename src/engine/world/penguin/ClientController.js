@@ -303,6 +303,7 @@ export default class ClientController {
         }
 
         this.activeSeat = null
+        this.world.events.emit('leftseat')
     }
 
     getSeatWorldPos(seat) {

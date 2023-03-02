@@ -11,6 +11,11 @@ export default class MiniGame extends Plugin {
     }
 
     gameOver(args) {
+        if (this.world.client.activeSeat) {
+            this.world.events.once('leftseat', () => this.gameOver(args))
+            return
+        }
+
         // Difference in coins = coins earned
         this.interface.prompt.showCoin(args.coins - this.world.client.coins)
 
