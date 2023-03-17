@@ -9,6 +9,30 @@ export default class CardJitsuBattle {
         this.list = {}
     }
 
+    get body() {
+        return this.list.body
+    }
+
+    get frontArm() {
+        return this.list.frontarm
+    }
+
+    get backArm() {
+        return this.list.backarm
+    }
+
+    get belt() {
+        return this.list.belt
+    }
+
+    get beltLine() {
+        return this.list.beltline
+    }
+
+    get sensei() {
+        return this.list.sensei
+    }
+
     play(battle) {
         this.clear()
 
