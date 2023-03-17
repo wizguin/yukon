@@ -1,0 +1,107 @@
+{
+    "id": "594505eb-e825-43c4-87c4-a1394daaa2e7",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "GameScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/games/card/cardjitsu-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "CardJitsu",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "c12c3e43-59eb-4f80-ad9a-810a06c53763",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
+            "label": "close",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "close0001"
+            },
+            "x": 1466,
+            "y": 57
+        },
+        {
+            "type": "Image",
+            "id": "a1e810c2-0719-4c82-b4c9-f0d891121829",
+            "label": "help",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "help"
+            },
+            "x": 760,
+            "y": 26,
+            "originX": 0.5005370569280344,
+            "originY": 0.5004436557231589
+        },
+        {
+            "type": "Image",
+            "id": "9e6b3a10-20e4-48fb-95b7-8e3259b670c4",
+            "label": "frame",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "frame"
+            },
+            "x": 760,
+            "y": 480,
+            "originX": 0.5003261578604045,
+            "originY": 0.5005192107995846
+        },
+        {
+            "type": "Image",
+            "id": "db30b7ad-1640-42d2-836d-9ac3e76bee29",
+            "label": "panel",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "panel"
+            },
+            "x": 760,
+            "y": 854,
+            "originX": 0.500351370344343
+        },
+        {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardJitsuPlayer",
+            "components": [],
+            "x": 760,
+            "y": 315,
+            "nestedPrefabs": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
