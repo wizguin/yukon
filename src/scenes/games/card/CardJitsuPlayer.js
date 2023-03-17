@@ -17,6 +17,7 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.battle = new CardJitsuBattle(this)
 
         this.playBattle('ambient')
+        this.setColor(0x009900)
 
         /* END-USER-CTR-CODE */
     }
@@ -25,6 +26,10 @@ export default class CardJitsuPlayer extends BaseContainer {
 
     playBattle(battle) {
         this.battle.play(battle)
+    }
+
+    setColor(color) {
+        this.battle.setColor(color)
     }
 
     /* END-USER-CODE */

@@ -118,6 +118,20 @@ export default class CardJitsuBattle {
         }
     }
 
+    setColor(color) {
+        if (this.body) {
+            this.body.tint = color
+        }
+
+        if (this.frontArm) {
+            this.frontArm.tint = color
+        }
+
+        if (this.backArm) {
+            this.backArm.tint = color
+        }
+    }
+
     clear() {
         for (let child in this.list) {
             this.list[child].destroy()
