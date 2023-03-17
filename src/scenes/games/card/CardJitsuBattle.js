@@ -132,6 +132,12 @@ export default class CardJitsuBattle {
         }
     }
 
+    setBeltColor(color) {
+        if (this.belt) {
+            this.belt.tint = color
+        }
+    }
+
     clear() {
         for (let child in this.list) {
             this.list[child].destroy()
