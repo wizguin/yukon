@@ -30,6 +30,40 @@
             "y": 480
         },
         {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "3f476cde-316b-42f5-ad18-da70ada1474d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "player2",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 315,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "player1",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 315,
+            "scaleX": -1,
+            "scaleY": 1,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
             "type": "Image",
             "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
             "label": "close",
@@ -81,20 +115,6 @@
             "x": 760,
             "y": 854,
             "originX": 0.500351370344343
-        },
-        {
-            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
-            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "cardJitsuPlayer",
-            "components": [],
-            "x": 760,
-            "y": 315,
-            "nestedPrefabs": [],
-            "list": []
         }
     ],
     "plainObjects": [],

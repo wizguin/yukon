@@ -10,6 +10,12 @@ export default class CardJitsu extends GameScene {
     constructor() {
         super("CardJitsu");
 
+        /** @type {CardJitsuPlayer} */
+        this.player2;
+        /** @type {CardJitsuPlayer} */
+        this.player1;
+
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
@@ -26,6 +32,16 @@ export default class CardJitsu extends GameScene {
         // bg
         this.add.image(760, 480, "cardjitsu", "bg");
 
+        // player2
+        const player2 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player2);
+
+        // player1
+        const player1 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player1);
+        player1.scaleX = -1;
+        player1.scaleY = 1;
+
         // close
         this.add.image(1466, 57, "cardjitsu", "close0001");
 
@@ -41,12 +57,12 @@ export default class CardJitsu extends GameScene {
         const panel = this.add.image(760, 854, "cardjitsu", "panel");
         panel.setOrigin(0.500351370344343, 0.5);
 
-        // cardJitsuPlayer
-        const cardJitsuPlayer = new CardJitsuPlayer(this, 760, 315);
-        this.add.existing(cardJitsuPlayer);
+        this.player2 = player2;
+        this.player1 = player1;
 
         this.events.emit("scene-awake");
     }
+
 
     /* START-USER-CODE */
 
