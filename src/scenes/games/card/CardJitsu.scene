@@ -93,7 +93,21 @@
                 "frame": "clock/clock0001"
             },
             "x": 760,
-            "y": 676
+            "y": 676,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "0c63a625-f56a-40e1-8863-870ad03ce58f",
+            "label": "spinner",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "spinner"
+            },
+            "x": 760,
+            "y": 482
         },
         {
             "type": "Text",

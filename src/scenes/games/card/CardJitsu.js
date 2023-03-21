@@ -12,6 +12,8 @@ export default class CardJitsu extends GameScene {
 
         /** @type {Phaser.GameObjects.Image} */
         this.clock;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
         /** @type {Phaser.GameObjects.Text} */
         this.username2;
         /** @type {Phaser.GameObjects.Text} */
@@ -55,6 +57,10 @@ export default class CardJitsu extends GameScene {
 
         // clock
         const clock = this.add.image(760, 676, "cardjitsu", "clock/clock0001");
+        clock.visible = false;
+
+        // spinner
+        const spinner = this.add.image(760, 482, "cardjitsu", "spinner");
 
         // username2
         const username2 = this.add.text(1420, 736, "", {});
@@ -76,6 +82,7 @@ export default class CardJitsu extends GameScene {
         player1.scaleY = 1;
 
         this.clock = clock;
+        this.spinner = spinner;
         this.username2 = username2;
         this.username1 = username1;
         this.player2 = player2;
@@ -89,6 +96,15 @@ export default class CardJitsu extends GameScene {
 
     create() {
         super.create()
+
+        // Spinner
+        this.tweens.add({
+            targets: this.spinner,
+            angle: { from: 0, to: 180 },
+            duration: 900,
+            repeat: -1,
+            ease: 'Cubic'
+        })
     }
 
     /* END-USER-CODE */
