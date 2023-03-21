@@ -1,0 +1,64 @@
+{
+    "id": "96e2fae2-4efb-453e-b4a7-eb969252c5bd",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/dojo/dojo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Dojo",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "cdad28c5-a6ef-4041-b7a2-d1b67c1d0477",
+            "label": "bg",
+            "components": [],
+            "texture": {
+                "key": "dojo",
+                "frame": "bg"
+            },
+            "x": -4,
+            "y": -2,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "33712c63-4115-4d75-9703-cdd091474e6f",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": "400",
+            "MoveTo.y": "570",
+            "texture": {
+                "key": "dojo",
+                "frame": "door"
+            },
+            "x": 358,
+            "y": 421,
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
