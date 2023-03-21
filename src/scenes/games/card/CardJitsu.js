@@ -10,6 +10,12 @@ export default class CardJitsu extends GameScene {
     constructor() {
         super("CardJitsu");
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.clock;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username2;
+        /** @type {Phaser.GameObjects.Text} */
+        this.username1;
         /** @type {CardJitsuPlayer} */
         this.player2;
         /** @type {CardJitsuPlayer} */
@@ -32,16 +38,6 @@ export default class CardJitsu extends GameScene {
         // bg
         this.add.image(760, 480, "cardjitsu", "bg");
 
-        // player2
-        const player2 = new CardJitsuPlayer(this, 760, 315);
-        this.add.existing(player2);
-
-        // player1
-        const player1 = new CardJitsuPlayer(this, 760, 315);
-        this.add.existing(player1);
-        player1.scaleX = -1;
-        player1.scaleY = 1;
-
         // close
         this.add.image(1466, 57, "cardjitsu", "close0001");
 
@@ -57,6 +53,31 @@ export default class CardJitsu extends GameScene {
         const panel = this.add.image(760, 854, "cardjitsu", "panel");
         panel.setOrigin(0.500351370344343, 0.5);
 
+        // clock
+        const clock = this.add.image(760, 676, "cardjitsu", "clock/clock0001");
+
+        // username2
+        const username2 = this.add.text(1420, 736, "", {});
+        username2.setOrigin(1, 0);
+        username2.setStyle({ "align": "right", "color": "#000", "fixedWidth":410,"fontFamily": "CCComiccrazy", "fontSize": "28px", "fontStyle": "bold" });
+
+        // username1
+        const username1 = this.add.text(100, 736, "", {});
+        username1.setStyle({ "color": "#000", "fixedWidth":410,"fontFamily": "CCComiccrazy", "fontSize": "28px", "fontStyle": "bold" });
+
+        // player2
+        const player2 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player2);
+
+        // player1
+        const player1 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player1);
+        player1.scaleX = -1;
+        player1.scaleY = 1;
+
+        this.clock = clock;
+        this.username2 = username2;
+        this.username1 = username1;
         this.player2 = player2;
         this.player1 = player1;
 
