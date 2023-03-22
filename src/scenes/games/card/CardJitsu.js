@@ -112,6 +112,11 @@ export default class CardJitsu extends GameScene {
             ease: 'Cubic'
         })
     }
+    
+    setPlayer(user, turn) {
+        let player = this[`player${turn}`]
+        player.set(user, turn)
+    }
 
     /* END-USER-CODE */
 }
