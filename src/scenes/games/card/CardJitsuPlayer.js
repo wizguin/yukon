@@ -28,6 +28,10 @@ export default class CardJitsuPlayer extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get animating() {
+        return this.battle.animating
+    }
+
     set(user, turn) {
         this.username.text = user.username.toUpperCase()
         this.color = this.world.getColor(user.color)

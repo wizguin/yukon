@@ -7,6 +7,8 @@ export default class CardJitsuBattle {
 
         this.currentBattle
         this.list = {}
+
+        this.animating = false
     }
 
     get body() {
@@ -98,6 +100,8 @@ export default class CardJitsuBattle {
             return this.scene.anims.get(key)
         }
 
+        let repeat = (this.currentBattle == 'ambient') ? -1 : 0
+
         return this.scene.anims.create({
             key: key,
             frames: this.scene.anims.generateFrameNames(this.currentBattle, {
@@ -106,7 +110,7 @@ export default class CardJitsuBattle {
                 end: spriteConfig.frames
             }),
             frameRate: 24,
-            repeat: -1
+            repeat: repeat
         })
     }
 
@@ -116,6 +120,17 @@ export default class CardJitsuBattle {
                 sprite.play(sprite.anim)
             }
         }
+
+        this.animating = true
+
+        // Only add this event to one sprite instead of all
+        let first = Object.values(this.list)[0]
+        first.once('animationcomplete', this.onAnimationComplete, this)
+    }
+
+    onAnimationComplete() {
+        this.animating = false
+        this.scene.onBattleComplete()
     }
 
     setColor(color) {

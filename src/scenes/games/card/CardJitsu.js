@@ -118,6 +118,17 @@ export default class CardJitsu extends GameScene {
         player.set(user, turn)
     }
 
+    playBattle(battle) {
+        this.player1.playBattle(battle)
+        this.player2.playBattle(battle)
+    }
+
+    onBattleComplete() {
+        if (!this.player1.animating && !this.player2.animating) {
+            this.events.emit('battle_complete')
+        }
+    }
+
     /* END-USER-CODE */
 }
 
