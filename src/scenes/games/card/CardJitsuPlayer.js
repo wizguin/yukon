@@ -12,12 +12,19 @@ export default class CardJitsuPlayer extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Text} */
+        this.username;
+
+
         /* START-USER-CTR-CODE */
 
         this.battle = new CardJitsuBattle(this)
 
+        this.color
+
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 

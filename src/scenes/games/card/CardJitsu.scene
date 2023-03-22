@@ -144,10 +144,12 @@
             "id": "3f476cde-316b-42f5-ad18-da70ada1474d",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "username"
             ],
             "label": "player2",
             "scope": "CLASS",
+            "username": "username2",
             "components": [],
             "x": 760,
             "y": 315,
@@ -161,10 +163,12 @@
                 "x",
                 "y",
                 "scaleX",
-                "scaleY"
+                "scaleY",
+                "username"
             ],
             "label": "player1",
             "scope": "CLASS",
+            "username": "username1",
             "components": [],
             "x": 760,
             "y": 315,

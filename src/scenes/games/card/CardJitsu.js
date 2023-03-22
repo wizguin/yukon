@@ -81,6 +81,12 @@ export default class CardJitsu extends GameScene {
         player1.scaleX = -1;
         player1.scaleY = 1;
 
+        // player2 (prefab fields)
+        player2.username = username2;
+
+        // player1 (prefab fields)
+        player1.username = username1;
+
         this.clock = clock;
         this.spinner = spinner;
         this.username2 = username2;
