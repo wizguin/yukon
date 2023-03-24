@@ -1,0 +1,124 @@
+{
+    "id": "a407308b-445f-4a78-a4f2-b93495772216",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6c346f50-1d14-4573-89dc-cad5ae046a9c",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "61942b80-3e84-485c-9be6-1ec3407c6c04",
+                    "label": "shadow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/shadow"
+                    },
+                    "x": 245,
+                    "y": 275,
+                    "originX": 0.5010660980810234,
+                    "originY": 0.500945179584121
+                },
+                {
+                    "type": "Image",
+                    "id": "2ca4c8b6-b5b4-4c42-9d50-485b8caec74f",
+                    "label": "back",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/back"
+                    },
+                    "x": 235,
+                    "y": 265,
+                    "originX": 0.5010660980810234,
+                    "originY": 0.500945179584121,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "ce8b4112-2ec8-4825-85c3-ac09dfc6629d",
+                    "label": "glow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/glow0001"
+                    },
+                    "x": 238,
+                    "y": 259,
+                    "originX": 0.5008695652173913,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "168cd85e-361d-4eae-8447-978bb7df8dc6",
+                    "label": "color",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/color"
+                    },
+                    "x": 235,
+                    "y": 265,
+                    "originX": 0.5010660980810234,
+                    "originY": 0.500945179584121
+                },
+                {
+                    "type": "Image",
+                    "id": "783f90f6-7493-44a9-bbf1-68add522e7c5",
+                    "label": "attribute",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/fire"
+                    },
+                    "x": 68,
+                    "y": 72,
+                    "originY": 0.5051546391752577
+                },
+                {
+                    "type": "Image",
+                    "id": "045d53fd-0832-402d-bb4e-c2c88b7563e0",
+                    "label": "disabled",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/disabled"
+                    },
+                    "x": 235,
+                    "y": 265,
+                    "originX": 0.5010660980810234,
+                    "originY": 0.500945179584121,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
