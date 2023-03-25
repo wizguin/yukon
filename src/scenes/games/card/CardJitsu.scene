@@ -57,6 +57,19 @@
         },
         {
             "type": "Image",
+            "id": "db30b7ad-1640-42d2-836d-9ac3e76bee29",
+            "label": "panel",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "panel"
+            },
+            "x": 760,
+            "y": 854,
+            "originX": 0.500351370344343
+        },
+        {
+            "type": "Image",
             "id": "9e6b3a10-20e4-48fb-95b7-8e3259b670c4",
             "label": "frame",
             "components": [],
@@ -68,19 +81,6 @@
             "y": 480,
             "originX": 0.5003261578604045,
             "originY": 0.5005192107995846
-        },
-        {
-            "type": "Image",
-            "id": "db30b7ad-1640-42d2-836d-9ac3e76bee29",
-            "label": "panel",
-            "components": [],
-            "texture": {
-                "key": "cardjitsu",
-                "frame": "panel"
-            },
-            "x": 760,
-            "y": 854,
-            "originX": 0.500351370344343
         },
         {
             "type": "Image",

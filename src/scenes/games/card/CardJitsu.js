@@ -47,13 +47,13 @@ export default class CardJitsu extends GameScene {
         const help = this.add.image(760, 26, "cardjitsu", "help");
         help.setOrigin(0.5005370569280344, 0.5004436557231589);
 
-        // frame
-        const frame = this.add.image(760, 480, "cardjitsu", "frame");
-        frame.setOrigin(0.5003261578604045, 0.5005192107995846);
-
         // panel
         const panel = this.add.image(760, 854, "cardjitsu", "panel");
         panel.setOrigin(0.500351370344343, 0.5);
+
+        // frame
+        const frame = this.add.image(760, 480, "cardjitsu", "frame");
+        frame.setOrigin(0.5003261578604045, 0.5005192107995846);
 
         // clock
         const clock = this.add.image(760, 676, "cardjitsu", "clock/clock0001");
