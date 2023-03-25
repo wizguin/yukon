@@ -81,6 +81,9 @@ export default class CardJitsu extends GameScene {
         player1.scaleX = -1;
         player1.scaleY = 1;
 
+        // lists
+        const players = [player1, player2];
+
         // player2 (prefab fields)
         player2.username = username2;
 
@@ -93,6 +96,7 @@ export default class CardJitsu extends GameScene {
         this.username1 = username1;
         this.player2 = player2;
         this.player1 = player1;
+        this.players = players;
 
         this.events.emit("scene-awake");
     }

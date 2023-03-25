@@ -184,5 +184,15 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "6ce89abe-2ddb-4c0a-a242-5e92240d350e",
+            "label": "players",
+            "objectIds": [
+                "6fd982c9-843f-4778-899e-de82fbcde04d",
+                "3f476cde-316b-42f5-ad18-da70ada1474d"
+            ]
+        }
+    ]
 }
