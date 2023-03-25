@@ -7,7 +7,7 @@ import BaseContainer from "../../../base/BaseContainer";
 export default class CardJitsuCard extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x ?? 0, y ?? 0);
+        super(scene, x ?? 750, y ?? 1000);
 
         /** @type {Phaser.GameObjects.Image} */
         this.shadow;
@@ -65,6 +65,19 @@ export default class CardJitsuCard extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        this.player
+        this.state
+        this.spacer
+
+        this.posDealts = [{ x: 100, y: 770 }, { x: 1420, y: 770 }]
+
+        this.dealtFrontSpacer = 150
+        this.dealtBackSpacer = 70
+
+        this.scaleFront = 0.28
+        this.scaleBack = 0.15
+        this.scaleFlip = 0.40
+
         this.glow.anims.play('card/glow')
 
         /* END-USER-CTR-CODE */
@@ -72,6 +85,69 @@ export default class CardJitsuCard extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    init(player, state) {
+        if (!player.dealtCards.includes(null)) {
+            return
+        }
+
+        this.player = player
+        this.state = state
+
+        let empty = player.dealtCards.indexOf(null)
+        player.dealtCards[empty] = this
+
+        this.updateState()
+        this.tweenToDealt(empty)
+    }
+
+    updateState() {
+        if (this.state === 'back') {
+            this.setStateBack()
+        } else {
+            this.setStateFront()
+        }
+    }
+
+    setStateFront() {
+        this.scale = this.scaleFront
+        this.spacer = this.dealtFrontSpacer
+
+        this.showFrontSprites(true)
+    }
+
+    setStateBack() {
+        this.scale = this.scaleBack
+        this.spacer = this.dealtBackSpacer
+
+        this.showFrontSprites(false)
+    }
+
+    showFrontSprites(show) {
+        this.back.visible = !show
+        this.attribute.visible = show
+        this.color.visible = show
+
+        this.glow.visible = false
+    }
+
+    tweenToDealt(empty) {
+        let index = this.scene.players.indexOf(this.player)
+
+        let pos = this.posDealts[index]
+
+        let x = (index === 0)
+            ? pos.x + (this.spacer * empty)
+            : pos.x - (this.spacer * empty) - this.spacer
+
+        this.scene.tweens.add({
+            targets: this,
+            x: x,
+            y: pos.y,
+            duration: 500
+        })
+    }
+
     /* END-USER-CODE */
 }
 
