@@ -3,6 +3,10 @@
 import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
 /* START-USER-IMPORTS */
+
+import StateMachine from '@engine/utils/state_machine/StateMachine'
+import ServeState from './states/ServeState'
+
 /* END-USER-IMPORTS */
 
 export default class CardJitsu extends GameScene {
@@ -22,6 +26,8 @@ export default class CardJitsu extends GameScene {
         this.player2;
         /** @type {CardJitsuPlayer} */
         this.player1;
+        /** @type {CardJitsuPlayer[]} */
+        this.players;
 
 
         /* START-USER-CTR-CODE */
@@ -115,11 +121,13 @@ export default class CardJitsu extends GameScene {
             repeat: -1,
             ease: 'Cubic'
         })
-    }
-    
-    setPlayer(user, turn) {
-        let player = this[`player${turn}`]
-        player.set(user, turn)
+
+        // States
+        this.stateMachine = new StateMachine({
+            'serve': new ServeState(this)
+        })
+
+        this.stateMachine.setState('serve')
     }
 
     playBattle(battle) {
