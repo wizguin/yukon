@@ -113,6 +113,8 @@ export default class CardJitsu extends GameScene {
     create() {
         super.create()
 
+        this.myPlayer
+
         // Spinner
         this.tweens.add({
             targets: this.spinner,
@@ -128,6 +130,34 @@ export default class CardJitsu extends GameScene {
         })
 
         this.stateMachine.setState('serve')
+
+        this.addListeners()
+        this.network.send('start_game')
+    }
+
+    addListeners() {
+        this.network.events.on('start_game', this.handleStartGame, this)
+    }
+
+    removeListeners() {
+        this.network.events.off('start_game', this.handleStartGame, this)
+    }
+
+    handleStartGame(args) {
+        for (let user of args.users) {
+            this.setPlayer(user, args.users.indexOf(user))
+        }
+
+        this.events.emit('start_game')
+    }
+
+    setPlayer(user, index) {
+        let player = this.players[index]
+        player.set(user)
+
+        if (this.world.isClientUsername(user.username)) {
+            this.myPlayer = player
+        }
     }
 
     playBattle(battle) {
