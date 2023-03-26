@@ -21,6 +21,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.attribute;
         /** @type {Phaser.GameObjects.Image} */
         this.disabled;
+        /** @type {Phaser.GameObjects.Text} */
+        this.value;
 
 
         // shadow
@@ -56,12 +58,19 @@ export default class CardJitsuCard extends BaseContainer {
         disabled.visible = false;
         this.add(disabled);
 
+        // value
+        const value = scene.add.text(0, 121, "", {});
+        value.text = "88";
+        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":132,"fontFamily": "Arial", "fontSize": "96px", "fontStyle": "bold" });
+        this.add(value);
+
         this.shadow = shadow;
         this.back = back;
         this.glow = glow;
         this.color = color;
         this.attribute = attribute;
         this.disabled = disabled;
+        this.value = value;
 
         /* START-USER-CTR-CODE */
 

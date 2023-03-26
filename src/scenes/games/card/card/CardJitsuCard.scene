@@ -112,6 +112,21 @@
                     "originX": 0.5010660980810234,
                     "originY": 0.500945179584121,
                     "visible": false
+                },
+                {
+                    "type": "Text",
+                    "id": "10b504e1-dd20-411b-83e8-31df0743d59c",
+                    "label": "value",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 121,
+                    "text": "88",
+                    "fixedWidth": 132,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "96px",
+                    "fontStyle": "bold",
+                    "color": "#000"
                 }
             ]
         }
