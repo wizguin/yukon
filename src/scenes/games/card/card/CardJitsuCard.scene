@@ -65,7 +65,17 @@
                     },
                     "x": 238,
                     "y": 259,
-                    "originX": 0.5008695652173913,
+                    "originX": 0.5008695652173913
+                },
+                {
+                    "type": "Sprite",
+                    "id": "9aca60f5-218c-4d87-a2ad-c661e35b5f74",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {},
+                    "x": 235,
+                    "y": 265,
                     "visible": false
                 },
                 {
@@ -86,12 +96,12 @@
                 {
                     "type": "Image",
                     "id": "783f90f6-7493-44a9-bbf1-68add522e7c5",
-                    "label": "attribute",
+                    "label": "element",
                     "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "cardjitsu",
-                        "frame": "card/fire"
+                        "frame": "card/f"
                     },
                     "x": 68,
                     "y": 72,

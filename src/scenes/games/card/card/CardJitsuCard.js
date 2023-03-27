@@ -15,10 +15,12 @@ export default class CardJitsuCard extends BaseContainer {
         this.back;
         /** @type {Phaser.GameObjects.Sprite} */
         this.glow;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.icon;
         /** @type {Phaser.GameObjects.Image} */
         this.color;
         /** @type {Phaser.GameObjects.Image} */
-        this.attribute;
+        this.element;
         /** @type {Phaser.GameObjects.Image} */
         this.disabled;
         /** @type {Phaser.GameObjects.Text} */
@@ -39,18 +41,22 @@ export default class CardJitsuCard extends BaseContainer {
         // glow
         const glow = scene.add.sprite(238, 259, "cardjitsu", "card/glow0001");
         glow.setOrigin(0.5008695652173913, 0.5);
-        glow.visible = false;
         this.add(glow);
+
+        // icon
+        const icon = scene.add.sprite(235, 265, "_MISSING");
+        icon.visible = false;
+        this.add(icon);
 
         // color
         const color = scene.add.image(235, 265, "cardjitsu", "card/color");
         color.setOrigin(0.5010660980810234, 0.500945179584121);
         this.add(color);
 
-        // attribute
-        const attribute = scene.add.image(68, 72, "cardjitsu", "card/fire");
-        attribute.setOrigin(0.5, 0.5051546391752577);
-        this.add(attribute);
+        // element
+        const element = scene.add.image(68, 72, "cardjitsu", "card/f");
+        element.setOrigin(0.5, 0.5051546391752577);
+        this.add(element);
 
         // disabled
         const disabled = scene.add.image(235, 265, "cardjitsu", "card/disabled");
@@ -67,8 +73,9 @@ export default class CardJitsuCard extends BaseContainer {
         this.shadow = shadow;
         this.back = back;
         this.glow = glow;
+        this.icon = icon;
         this.color = color;
-        this.attribute = attribute;
+        this.element = element;
         this.disabled = disabled;
         this.value = value;
 
@@ -77,6 +84,9 @@ export default class CardJitsuCard extends BaseContainer {
         this.player
         this.state
         this.spacer
+
+        this.color
+        this.glow
 
         this.posDealts = [{ x: 100, y: 770 }, { x: 1420, y: 770 }]
 
@@ -87,6 +97,27 @@ export default class CardJitsuCard extends BaseContainer {
         this.scaleBack = 0.15
         this.scaleFlip = 0.40
 
+        this.colors = {
+            r: {
+                color: 0xE23C26
+            },
+            g: {
+                color: 0x61B946
+            },
+            b: {
+                color: 0x1148A1
+            },
+            p: {
+                color: 0xA399CA
+            },
+            o: {
+                color: 0xF7952B
+            },
+            y: {
+                color: 0xFBEB2D
+            }
+        }
+
         this.glow.anims.play('card/glow')
 
         /* END-USER-CTR-CODE */
@@ -95,7 +126,7 @@ export default class CardJitsuCard extends BaseContainer {
 
     /* START-USER-CODE */
 
-    init(player, state) {
+    init(player, state, card = null) {
         if (!player.dealtCards.includes(null)) {
             return
         }
@@ -107,7 +138,22 @@ export default class CardJitsuCard extends BaseContainer {
         player.dealtCards[empty] = this
 
         this.updateState()
+
+        if (card) {
+            this.updateCard(card)
+        }
+
         this.tweenToDealt(empty)
+    }
+
+    updateCard(card) {
+        this.value.text = card.value
+        this.color.tint = this.colors[card.color].color
+        this.element.setFrame(`card/${card.element}`)
+
+        if (card.power_id > 0) {
+            this.glow.visible = true
+        }
     }
 
     updateState() {
@@ -134,8 +180,10 @@ export default class CardJitsuCard extends BaseContainer {
 
     showFrontSprites(show) {
         this.back.visible = !show
-        this.attribute.visible = show
+        this.value.visible = show
+        this.element.visible = show
         this.color.visible = show
+        this.icon.visible = show
 
         this.glow.visible = false
     }
