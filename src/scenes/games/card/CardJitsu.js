@@ -201,6 +201,8 @@ export default class CardJitsu extends GameScene {
 
         cardPrefab.init(this.myPlayer, 'front', card)
         cardPrefab.icon.setTexture(key)
+
+        cardPrefab.enableInput()
     }
 
     createCard() {

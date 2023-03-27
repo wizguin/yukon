@@ -39,6 +39,20 @@
                 },
                 {
                     "type": "Image",
+                    "id": "26f85f1a-b09b-4f2a-af66-f661a3d84dd2",
+                    "label": "hover",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/hover"
+                    },
+                    "x": 240,
+                    "y": 269,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
                     "id": "2ca4c8b6-b5b4-4c42-9d50-485b8caec74f",
                     "label": "back",
                     "scope": "CLASS",
@@ -65,7 +79,8 @@
                     },
                     "x": 238,
                     "y": 259,
-                    "originX": 0.5008695652173913
+                    "originX": 0.5008695652173913,
+                    "visible": false
                 },
                 {
                     "type": "Sprite",

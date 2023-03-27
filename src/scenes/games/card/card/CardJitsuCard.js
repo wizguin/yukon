@@ -12,6 +12,8 @@ export default class CardJitsuCard extends BaseContainer {
         /** @type {Phaser.GameObjects.Image} */
         this.shadow;
         /** @type {Phaser.GameObjects.Image} */
+        this.hover;
+        /** @type {Phaser.GameObjects.Image} */
         this.back;
         /** @type {Phaser.GameObjects.Sprite} */
         this.glow;
@@ -32,6 +34,11 @@ export default class CardJitsuCard extends BaseContainer {
         shadow.setOrigin(0.5010660980810234, 0.500945179584121);
         this.add(shadow);
 
+        // hover
+        const hover = scene.add.image(240, 269, "cardjitsu", "card/hover");
+        hover.visible = false;
+        this.add(hover);
+
         // back
         const back = scene.add.image(235, 265, "cardjitsu", "card/back");
         back.setOrigin(0.5010660980810234, 0.500945179584121);
@@ -41,6 +48,7 @@ export default class CardJitsuCard extends BaseContainer {
         // glow
         const glow = scene.add.sprite(238, 259, "cardjitsu", "card/glow0001");
         glow.setOrigin(0.5008695652173913, 0.5);
+        glow.visible = false;
         this.add(glow);
 
         // icon
@@ -71,6 +79,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.add(value);
 
         this.shadow = shadow;
+        this.hover = hover;
         this.back = back;
         this.glow = glow;
         this.icon = icon;
@@ -120,6 +129,10 @@ export default class CardJitsuCard extends BaseContainer {
 
         this.glow.anims.play('card/glow')
 
+        this.on('pointerup', this.onUp, this)
+        this.on('pointerover', this.onOver, this)
+        this.on('pointerout', this.onOut, this)
+
         /* END-USER-CTR-CODE */
     }
 
@@ -152,7 +165,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.element.setFrame(`card/${card.element}`)
 
         if (card.power_id > 0) {
-            this.glow.visible = true
+            //this.glow.visible = true
         }
     }
 
@@ -203,6 +216,31 @@ export default class CardJitsuCard extends BaseContainer {
             y: pos.y,
             duration: 500
         })
+    }
+
+    enableInput() {
+        this.setSize(this.color.width, this.color.height)
+        this.setInteractive()
+
+        // Offset
+        this.input.hitArea.x = this.color.x
+        this.input.hitArea.y = this.color.y
+    }
+
+    disableInput() {
+
+    }
+
+    onUp() {
+
+    }
+
+    onOver() {
+        this.hover.visible = true
+    }
+
+    onOut() {
+        this.hover.visible = false
     }
 
     /* END-USER-CODE */
