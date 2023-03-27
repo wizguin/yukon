@@ -4,6 +4,8 @@ import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
 /* START-USER-IMPORTS */
 
+import CardLoader from '@engine/loaders/CardLoader'
+import CardJitsuCard from './card/CardJitsuCard'
 import StateMachine from '@engine/utils/state_machine/StateMachine'
 import ServeState from './states/ServeState'
 
@@ -113,6 +115,8 @@ export default class CardJitsu extends GameScene {
     create() {
         super.create()
 
+        this.cardLoader = new CardLoader(this)
+
         this.myPlayer
 
         // Spinner
@@ -137,10 +141,14 @@ export default class CardJitsu extends GameScene {
 
     addListeners() {
         this.network.events.on('start_game', this.handleStartGame, this)
+        this.network.events.on('send_deal', this.handleSendDeal, this)
+        this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
     }
 
     removeListeners() {
         this.network.events.off('start_game', this.handleStartGame, this)
+        this.network.events.on('send_deal', this.handleSendDeal, this)
+        this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
     }
 
     handleStartGame(args) {
@@ -149,6 +157,23 @@ export default class CardJitsu extends GameScene {
         }
 
         this.events.emit('start_game')
+    }
+
+    handleSendDeal(args) {
+        for (let card of args.cards) {
+            this.cardLoader.loadCard(card)
+        }
+    }
+
+    handleSendOpponentDeal(args) {
+        for (let i = 0; i < args.deal; i++) {
+            let cardPrefab = this.createCard()
+
+            let seat = this.players.indexOf(this.myPlayer)
+            let opponentSeat = (seat + 1) % 2
+
+            cardPrefab.init(this.players[opponentSeat], 'back')
+        }
     }
 
     setPlayer(user, index) {
@@ -169,6 +194,20 @@ export default class CardJitsu extends GameScene {
         if (!this.player1.animating && !this.player2.animating) {
             this.events.emit('battle_complete')
         }
+    }
+
+    onCardLoad(key, card) {
+        let cardPrefab = this.createCard()
+
+        cardPrefab.init(this.myPlayer, 'front', card)
+        cardPrefab.icon.setTexture(key)
+    }
+
+    createCard() {
+        let card = new CardJitsuCard(this)
+        this.add.existing(card)
+
+        return card
     }
 
     /* END-USER-CODE */
