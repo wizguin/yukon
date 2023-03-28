@@ -16,6 +16,10 @@ export default class CardJitsu extends GameScene {
     constructor() {
         super("CardJitsu");
 
+        /** @type {CardJitsuPlayer} */
+        this.player2;
+        /** @type {CardJitsuPlayer} */
+        this.player1;
         /** @type {Phaser.GameObjects.Image} */
         this.clock;
         /** @type {Phaser.GameObjects.Image} */
@@ -24,10 +28,6 @@ export default class CardJitsu extends GameScene {
         this.username2;
         /** @type {Phaser.GameObjects.Text} */
         this.username1;
-        /** @type {CardJitsuPlayer} */
-        this.player2;
-        /** @type {CardJitsuPlayer} */
-        this.player1;
         /** @type {CardJitsuPlayer[]} */
         this.players;
 
@@ -47,6 +47,16 @@ export default class CardJitsu extends GameScene {
 
         // bg
         this.add.image(760, 480, "cardjitsu", "bg");
+
+        // player2
+        const player2 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player2);
+
+        // player1
+        const player1 = new CardJitsuPlayer(this, 760, 315);
+        this.add.existing(player1);
+        player1.scaleX = -1;
+        player1.scaleY = 1;
 
         // close
         this.add.image(1466, 57, "cardjitsu", "close0001");
@@ -79,16 +89,6 @@ export default class CardJitsu extends GameScene {
         const username1 = this.add.text(100, 736, "", {});
         username1.setStyle({ "color": "#000", "fixedWidth":410,"fontFamily": "CCComiccrazy", "fontSize": "28px", "fontStyle": "bold" });
 
-        // player2
-        const player2 = new CardJitsuPlayer(this, 760, 315);
-        this.add.existing(player2);
-
-        // player1
-        const player1 = new CardJitsuPlayer(this, 760, 315);
-        this.add.existing(player1);
-        player1.scaleX = -1;
-        player1.scaleY = 1;
-
         // lists
         const players = [player1, player2];
 
@@ -98,12 +98,12 @@ export default class CardJitsu extends GameScene {
         // player1 (prefab fields)
         player1.username = username1;
 
+        this.player2 = player2;
+        this.player1 = player1;
         this.clock = clock;
         this.spinner = spinner;
         this.username2 = username2;
         this.username1 = username1;
-        this.player2 = player2;
-        this.player1 = player1;
         this.players = players;
 
         this.events.emit("scene-awake");

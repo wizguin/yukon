@@ -30,6 +30,44 @@
             "y": 480
         },
         {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "3f476cde-316b-42f5-ad18-da70ada1474d",
+            "unlock": [
+                "x",
+                "y",
+                "username"
+            ],
+            "label": "player2",
+            "scope": "CLASS",
+            "username": "username2",
+            "components": [],
+            "x": 760,
+            "y": 315,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "username"
+            ],
+            "label": "player1",
+            "scope": "CLASS",
+            "username": "username1",
+            "components": [],
+            "x": 760,
+            "y": 315,
+            "scaleX": -1,
+            "scaleY": 1,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
             "type": "Image",
             "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
             "label": "close",
@@ -138,44 +176,6 @@
             "fontSize": "28px",
             "fontStyle": "bold",
             "color": "#000"
-        },
-        {
-            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
-            "id": "3f476cde-316b-42f5-ad18-da70ada1474d",
-            "unlock": [
-                "x",
-                "y",
-                "username"
-            ],
-            "label": "player2",
-            "scope": "CLASS",
-            "username": "username2",
-            "components": [],
-            "x": 760,
-            "y": 315,
-            "nestedPrefabs": [],
-            "list": []
-        },
-        {
-            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
-            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
-            "unlock": [
-                "x",
-                "y",
-                "scaleX",
-                "scaleY",
-                "username"
-            ],
-            "label": "player1",
-            "scope": "CLASS",
-            "username": "username1",
-            "components": [],
-            "x": 760,
-            "y": 315,
-            "scaleX": -1,
-            "scaleY": 1,
-            "nestedPrefabs": [],
-            "list": []
         }
     ],
     "plainObjects": [],
