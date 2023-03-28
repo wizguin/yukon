@@ -32,8 +32,8 @@
                         "key": "cardjitsu",
                         "frame": "card/shadow"
                     },
-                    "x": 245,
-                    "y": 275,
+                    "x": 99,
+                    "y": 111,
                     "originX": 0.5010660980810234,
                     "originY": 0.500945179584121
                 },
@@ -47,8 +47,8 @@
                         "key": "cardjitsu",
                         "frame": "card/hover"
                     },
-                    "x": 240,
-                    "y": 269,
+                    "x": 97,
+                    "y": 108,
                     "visible": false
                 },
                 {
@@ -61,8 +61,8 @@
                         "key": "cardjitsu",
                         "frame": "card/back"
                     },
-                    "x": 235,
-                    "y": 265,
+                    "x": 95,
+                    "y": 107,
                     "originX": 0.5010660980810234,
                     "originY": 0.500945179584121,
                     "visible": false
@@ -77,10 +77,14 @@
                         "key": "cardjitsu",
                         "frame": "card/glow0001"
                     },
-                    "x": 238,
-                    "y": 259,
+                    "x": 95,
+                    "y": 104,
                     "originX": 0.5008695652173913,
-                    "visible": false
+                    "alpha": 0.5,
+                    "alphaTopLeft": 0.5,
+                    "alphaTopRight": 0.5,
+                    "alphaBottomLeft": 0.5,
+                    "alphaBottomRight": 0.5
                 },
                 {
                     "type": "Sprite",
@@ -89,8 +93,8 @@
                     "scope": "CLASS",
                     "components": [],
                     "texture": {},
-                    "x": 235,
-                    "y": 265,
+                    "x": 95,
+                    "y": 107,
                     "visible": false
                 },
                 {
@@ -103,8 +107,8 @@
                         "key": "cardjitsu",
                         "frame": "card/color"
                     },
-                    "x": 235,
-                    "y": 265,
+                    "x": 95,
+                    "y": 107,
                     "originX": 0.5010660980810234,
                     "originY": 0.500945179584121
                 },
@@ -118,8 +122,8 @@
                         "key": "cardjitsu",
                         "frame": "card/f"
                     },
-                    "x": 68,
-                    "y": 72,
+                    "x": 28,
+                    "y": 28,
                     "originY": 0.5051546391752577
                 },
                 {
@@ -132,8 +136,8 @@
                         "key": "cardjitsu",
                         "frame": "card/disabled"
                     },
-                    "x": 235,
-                    "y": 265,
+                    "x": 95,
+                    "y": 107,
                     "originX": 0.5010660980810234,
                     "originY": 0.500945179584121,
                     "visible": false
@@ -144,12 +148,13 @@
                     "label": "value",
                     "scope": "CLASS",
                     "components": [],
-                    "y": 121,
+                    "x": 1,
+                    "y": 48,
                     "text": "88",
-                    "fixedWidth": 132,
+                    "fixedWidth": 52,
                     "align": "center",
                     "fontFamily": "Arial",
-                    "fontSize": "96px",
+                    "fontSize": "38px",
                     "fontStyle": "bold",
                     "color": "#000"
                 }

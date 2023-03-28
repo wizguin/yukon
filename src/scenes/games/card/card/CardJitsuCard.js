@@ -30,52 +30,56 @@ export default class CardJitsuCard extends BaseContainer {
 
 
         // shadow
-        const shadow = scene.add.image(245, 275, "cardjitsu", "card/shadow");
+        const shadow = scene.add.image(99, 111, "cardjitsu", "card/shadow");
         shadow.setOrigin(0.5010660980810234, 0.500945179584121);
         this.add(shadow);
 
         // hover
-        const hover = scene.add.image(240, 269, "cardjitsu", "card/hover");
+        const hover = scene.add.image(97, 108, "cardjitsu", "card/hover");
         hover.visible = false;
         this.add(hover);
 
         // back
-        const back = scene.add.image(235, 265, "cardjitsu", "card/back");
+        const back = scene.add.image(95, 107, "cardjitsu", "card/back");
         back.setOrigin(0.5010660980810234, 0.500945179584121);
         back.visible = false;
         this.add(back);
 
         // glow
-        const glow = scene.add.sprite(238, 259, "cardjitsu", "card/glow0001");
+        const glow = scene.add.sprite(95, 104, "cardjitsu", "card/glow0001");
         glow.setOrigin(0.5008695652173913, 0.5);
-        glow.visible = false;
+        glow.alpha = 0.5;
+        glow.alphaTopLeft = 0.5;
+        glow.alphaTopRight = 0.5;
+        glow.alphaBottomLeft = 0.5;
+        glow.alphaBottomRight = 0.5;
         this.add(glow);
 
         // icon
-        const icon = scene.add.sprite(235, 265, "_MISSING");
+        const icon = scene.add.sprite(95, 107, "_MISSING");
         icon.visible = false;
         this.add(icon);
 
         // color
-        const color = scene.add.image(235, 265, "cardjitsu", "card/color");
+        const color = scene.add.image(95, 107, "cardjitsu", "card/color");
         color.setOrigin(0.5010660980810234, 0.500945179584121);
         this.add(color);
 
         // element
-        const element = scene.add.image(68, 72, "cardjitsu", "card/f");
+        const element = scene.add.image(28, 28, "cardjitsu", "card/f");
         element.setOrigin(0.5, 0.5051546391752577);
         this.add(element);
 
         // disabled
-        const disabled = scene.add.image(235, 265, "cardjitsu", "card/disabled");
+        const disabled = scene.add.image(95, 107, "cardjitsu", "card/disabled");
         disabled.setOrigin(0.5010660980810234, 0.500945179584121);
         disabled.visible = false;
         this.add(disabled);
 
         // value
-        const value = scene.add.text(0, 121, "", {});
+        const value = scene.add.text(1, 48, "", {});
         value.text = "88";
-        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":132,"fontFamily": "Arial", "fontSize": "96px", "fontStyle": "bold" });
+        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Arial", "fontSize": "38px", "fontStyle": "bold" });
         this.add(value);
 
         this.shadow = shadow;
@@ -102,9 +106,9 @@ export default class CardJitsuCard extends BaseContainer {
         this.dealtFrontSpacer = 150
         this.dealtBackSpacer = 70
 
-        this.scaleFront = 0.28
-        this.scaleBack = 0.15
-        this.scaleFlip = 0.40
+        this.scaleFront = 0.7
+        this.scaleBack = 0.375
+        this.scalePick = 1
 
         this.colors = {
             r: {
