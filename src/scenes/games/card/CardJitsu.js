@@ -59,10 +59,10 @@ export default class CardJitsu extends GameScene {
         player1.scaleY = 1;
 
         // close
-        this.add.image(1466, 57, "cardjitsu", "close0001");
+        this.add.image(1464, 57, "cardjitsu", "close0001");
 
         // help
-        const help = this.add.image(760, 26, "cardjitsu", "help");
+        const help = this.add.image(754, 26, "cardjitsu", "help");
         help.setOrigin(0.5005370569280344, 0.5004436557231589);
 
         // panel
@@ -70,7 +70,7 @@ export default class CardJitsu extends GameScene {
         panel.setOrigin(0.500351370344343, 0.5);
 
         // frame
-        const frame = this.add.image(760, 480, "cardjitsu", "frame");
+        const frame = this.add.image(758, 480, "cardjitsu", "frame");
         frame.setOrigin(0.5003261578604045, 0.5005192107995846);
 
         // clock
