@@ -39,6 +39,14 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.color = this.world.getColor(user.color)
     }
 
+    setColor(color) {
+        this.battle.setColor(color)
+    }
+
+    setBeltColor(color) {
+        this.battle.setBeltColor(color)
+    }
+
     playBattle(battle) {
         this.battle.play(battle)
 
