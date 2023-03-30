@@ -149,7 +149,6 @@ export default class CardJitsu extends GameScene {
         this.network.events.on('send_deal', this.handleSendDeal, this)
         this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
         this.network.events.on('pick_card', this.handlePickCard, this)
-        this.network.events.on('pick_opponent_card', this.handlePickOpponentCard, this)
         this.network.events.on('reveal_card', this.handleRevealCard, this)
     }
 
@@ -158,7 +157,6 @@ export default class CardJitsu extends GameScene {
         this.network.events.off('send_deal', this.handleSendDeal, this)
         this.network.events.off('send_opponent_deal', this.handleSendOpponentDeal, this)
         this.network.events.off('pick_card', this.handlePickCard, this)
-        this.network.events.off('pick_opponent_card', this.handlePickOpponentCard, this)
         this.network.events.off('reveal_card', this.handleRevealCard, this)
     }
 
@@ -185,11 +183,6 @@ export default class CardJitsu extends GameScene {
     }
 
     handlePickCard(args) {
-        let card = this.myPlayer.dealtCards.find(dealt => dealt.id === args.card)
-        this.myPlayer.pickCard(card)
-    }
-
-    handlePickOpponentCard(args) {
         let card = this.opponent.dealtCards[args.card]
         this.opponent.pickCard(card)
     }
@@ -245,6 +238,7 @@ export default class CardJitsu extends GameScene {
     }
 
     pickCard(card) {
+        this.myPlayer.pickCard(card)
         this.network.send('pick_card', { card: card.id })
     }
 
