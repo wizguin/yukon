@@ -27,7 +27,7 @@ export default class InitState extends State {
 
     battleComplete() {
         this.scene.playBattle('ambient')
-        this.network.send('send_deal', { deal: 5 })
+        this.network.send('send_deal')
     }
 
 }
