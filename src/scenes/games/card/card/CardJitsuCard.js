@@ -2,6 +2,9 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 /* START-USER-IMPORTS */
+
+import layout from '../layout'
+
 /* END-USER-IMPORTS */
 
 export default class CardJitsuCard extends BaseContainer {
@@ -104,37 +107,6 @@ export default class CardJitsuCard extends BaseContainer {
 
         this.tween
 
-        this.posDealts = [{ x: 100, y: 770 }, { x: 1420, y: 770 }]
-        this.posPicks = [{ x: 450, y: 300 }, { x: 850, y: 300 }]
-
-        this.dealtFrontSpacer = 150
-        this.dealtBackSpacer = 70
-
-        this.scaleFront = 0.7
-        this.scaleBack = 0.375
-        this.scalePick = 1
-
-        this.colors = {
-            r: {
-                color: 0xE23C26
-            },
-            g: {
-                color: 0x61B946
-            },
-            b: {
-                color: 0x1148A1
-            },
-            p: {
-                color: 0xA399CA
-            },
-            o: {
-                color: 0xF7952B
-            },
-            y: {
-                color: 0xFBEB2D
-            }
-        }
-
         this.glow.anims.play('card/glow')
 
         this.on('pointerup', this.onUp, this)
@@ -170,12 +142,13 @@ export default class CardJitsuCard extends BaseContainer {
         this.id = parseInt(card.card_id)
 
         this.value.text = card.value
-        this.color.tint = this.colors[card.color].color
+        this.color.tint = layout.colors[card.color].color
+
         this.element.setFrame(`card/${card.element}`)
 
         if (card.power_id > 0) {
             this.glow.visible = true
-            this.glow.tint = this.colors[card.color].color
+            this.glow.tint = layout.colors[card.color].color
         }
     }
 
@@ -196,21 +169,21 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     setStateFront() {
-        this.scale = this.scaleFront
-        this.spacer = this.dealtFrontSpacer
+        this.scale = layout.scale.front
+        this.spacer = layout.spacer.dealtFront
 
         this.showFrontSprites(true)
     }
 
     setStateBack() {
-        this.scale = this.scaleBack
-        this.spacer = this.dealtBackSpacer
+        this.scale = layout.scale.back
+        this.spacer = layout.spacer.dealtBack
 
         this.showFrontSprites(false)
     }
 
     setStateReveal() {
-        this.scale = this.scalePick
+        this.scale = layout.scale.pick
 
         if (!this.tween) {
             this.revealCard()
@@ -233,7 +206,7 @@ export default class CardJitsuCard extends BaseContainer {
     tweenToDealt(empty) {
         let index = this.scene.players.indexOf(this.player)
 
-        let pos = this.posDealts[index]
+        let pos = layout.pos.dealts[index]
 
         let x = (index === 0)
             ? pos.x + (this.spacer * empty)
@@ -243,10 +216,10 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     tweenToPick() {
-        this.scale = this.scalePick
+        this.scale = layout.scale.pick
 
         let index = this.scene.players.indexOf(this.player)
-        let pos = this.posPicks[index]
+        let pos = layout.pos.picks[index]
 
         this.tweenTo(pos.x, pos.y)
     }
@@ -282,14 +255,17 @@ export default class CardJitsuCard extends BaseContainer {
         timeline.add({
             targets: this,
             duration: 250,
+
             x: this.x + this.back.width / 2,
             scaleX: 0,
+
             onComplete: () => this.showFrontSprites(true)
         })
 
         timeline.add({
             targets: this,
             duration: 250,
+
             x: this.x,
             scaleX: 1,
         })
