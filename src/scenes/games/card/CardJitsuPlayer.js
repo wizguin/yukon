@@ -19,8 +19,10 @@ export default class CardJitsuPlayer extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.battle = new CardJitsuBattle(this)
-
         this.color
+
+        this.dealtCards = new Array(5).fill(null)
+        this.pick
 
         /* END-USER-CTR-CODE */
     }
@@ -45,12 +47,16 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.setColor(this.color)
     }
 
-    setColor(color) {
-        this.battle.setColor(color)
-    }
+    pickCard(card) {
+        for (let dealt of this.dealtCards) {
+            dealt.disableInput()
+        }
 
-    setBeltColor(color) {
-        this.battle.setBeltColor(color)
+        let index = this.dealtCards.indexOf(card)
+        this.dealtCards[index] = null
+
+        card.tweenToPick()
+        this.pick = card
     }
 
     /* END-USER-CODE */

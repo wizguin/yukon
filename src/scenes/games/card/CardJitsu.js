@@ -115,9 +115,14 @@ export default class CardJitsu extends GameScene {
     create() {
         super.create()
 
+        this.myPlayer
+        this.opponent
+
+        // Loader
         this.cardLoader = new CardLoader(this)
 
-        this.myPlayer
+        this.onDealCardLoad = this.onDealCardLoad.bind(this)
+        this.onRevealCardLoad = this.onRevealCardLoad.bind(this)
 
         // Spinner
         this.tweens.add({
@@ -143,12 +148,18 @@ export default class CardJitsu extends GameScene {
         this.network.events.on('start_game', this.handleStartGame, this)
         this.network.events.on('send_deal', this.handleSendDeal, this)
         this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
+        this.network.events.on('pick_card', this.handlePickCard, this)
+        this.network.events.on('pick_opponent_card', this.handlePickOpponentCard, this)
+        this.network.events.on('reveal_card', this.handleRevealCard, this)
     }
 
     removeListeners() {
         this.network.events.off('start_game', this.handleStartGame, this)
-        this.network.events.on('send_deal', this.handleSendDeal, this)
-        this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
+        this.network.events.off('send_deal', this.handleSendDeal, this)
+        this.network.events.off('send_opponent_deal', this.handleSendOpponentDeal, this)
+        this.network.events.off('pick_card', this.handlePickCard, this)
+        this.network.events.off('pick_opponent_card', this.handlePickOpponentCard, this)
+        this.network.events.off('reveal_card', this.handleRevealCard, this)
     }
 
     handleStartGame(args) {
@@ -161,7 +172,7 @@ export default class CardJitsu extends GameScene {
 
     handleSendDeal(args) {
         for (let card of args.cards) {
-            this.cardLoader.loadCard(card)
+            this.cardLoader.loadCard(card, this.onDealCardLoad)
         }
     }
 
@@ -169,11 +180,22 @@ export default class CardJitsu extends GameScene {
         for (let i = 0; i < args.deal; i++) {
             let cardPrefab = this.createCard()
 
-            let seat = this.players.indexOf(this.myPlayer)
-            let opponentSeat = (seat + 1) % 2
-
-            cardPrefab.init(this.players[opponentSeat], 'back')
+            cardPrefab.init(this.opponent, 'back')
         }
+    }
+
+    handlePickCard(args) {
+        let card = this.myPlayer.dealtCards.find(dealt => dealt.id === args.card)
+        this.myPlayer.pickCard(card)
+    }
+
+    handlePickOpponentCard(args) {
+        let card = this.opponent.dealtCards[args.card]
+        this.opponent.pickCard(card)
+    }
+
+    handleRevealCard(args) {
+        this.cardLoader.loadCard(args.card, this.onRevealCardLoad)
     }
 
     setPlayer(user, index) {
@@ -182,6 +204,8 @@ export default class CardJitsu extends GameScene {
 
         if (this.world.isClientUsername(user.username)) {
             this.myPlayer = player
+        } else {
+            this.opponent = player
         }
     }
 
@@ -196,7 +220,7 @@ export default class CardJitsu extends GameScene {
         }
     }
 
-    onCardLoad(key, card) {
+    onDealCardLoad(key, card) {
         let cardPrefab = this.createCard()
 
         cardPrefab.init(this.myPlayer, 'front', card)
@@ -205,11 +229,23 @@ export default class CardJitsu extends GameScene {
         cardPrefab.enableInput()
     }
 
+    onRevealCardLoad(key, card) {
+        let cardPrefab = this.opponent.pick
+
+        cardPrefab.updateCard(card)
+        cardPrefab.icon.setTexture(key)
+        cardPrefab.updateState('reveal')
+    }
+
     createCard() {
         let card = new CardJitsuCard(this)
         this.add.existing(card)
 
         return card
+    }
+
+    pickCard(card) {
+        this.network.send('pick_card', { card: card.id })
     }
 
     /* END-USER-CODE */

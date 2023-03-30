@@ -95,13 +95,17 @@ export default class CardJitsuCard extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.player
+        this.id
         this.state
         this.spacer
 
         this.color
         this.glow
 
+        this.tween
+
         this.posDealts = [{ x: 100, y: 770 }, { x: 1420, y: 770 }]
+        this.posPicks = [{ x: 450, y: 300 }, { x: 850, y: 300 }]
 
         this.dealtFrontSpacer = 150
         this.dealtBackSpacer = 70
@@ -149,12 +153,11 @@ export default class CardJitsuCard extends BaseContainer {
         }
 
         this.player = player
-        this.state = state
 
         let empty = player.dealtCards.indexOf(null)
         player.dealtCards[empty] = this
 
-        this.updateState()
+        this.updateState(state)
 
         if (card) {
             this.updateCard(card)
@@ -164,20 +167,31 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     updateCard(card) {
+        this.id = parseInt(card.card_id)
+
         this.value.text = card.value
         this.color.tint = this.colors[card.color].color
         this.element.setFrame(`card/${card.element}`)
 
         if (card.power_id > 0) {
-            //this.glow.visible = true
+            this.glow.visible = true
+            this.glow.tint = this.colors[card.color].color
         }
     }
 
-    updateState() {
-        if (this.state === 'back') {
-            this.setStateBack()
-        } else {
-            this.setStateFront()
+    updateState(state) {
+        this.state = state
+
+        switch (state) {
+            case 'back':
+                this.setStateBack()
+                break
+            case 'reveal':
+                this.setStateReveal()
+                break
+            default:
+                this.setStateFront()
+                break
         }
     }
 
@@ -193,6 +207,17 @@ export default class CardJitsuCard extends BaseContainer {
         this.spacer = this.dealtBackSpacer
 
         this.showFrontSprites(false)
+    }
+
+    setStateReveal() {
+        this.scale = this.scalePick
+
+        if (!this.tween) {
+            this.revealCard()
+            return
+        }
+
+        this.tween.once('complete', this.revealCard, this)
     }
 
     showFrontSprites(show) {
@@ -214,12 +239,62 @@ export default class CardJitsuCard extends BaseContainer {
             ? pos.x + (this.spacer * empty)
             : pos.x - (this.spacer * empty) - this.spacer
 
-        this.scene.tweens.add({
+        this.tweenTo(x, pos.y)
+    }
+
+    tweenToPick() {
+        this.scale = this.scalePick
+
+        let index = this.scene.players.indexOf(this.player)
+        let pos = this.posPicks[index]
+
+        this.tweenTo(pos.x, pos.y)
+    }
+
+    tweenTo(x, y) {
+        this.tween = this.scene.tweens.add({
             targets: this,
+            duration: 500,
+
             x: x,
-            y: pos.y,
-            duration: 500
+            y: y,
+
+            onComplete: () => this.removeTween()
         })
+    }
+
+    removeTween() {
+        if (!this.tween) {
+            return
+        }
+
+        this.tween.remove()
+        this.tween = null
+    }
+
+    revealCard() {
+        this.scene.time.delayedCall(1000, () => this.flip())
+    }
+
+    flip() {
+        let timeline = this.scene.tweens.createTimeline()
+
+        timeline.add({
+            targets: this,
+            duration: 250,
+            x: this.x + this.back.width / 2,
+            scaleX: 0,
+            onComplete: () => this.showFrontSprites(true)
+        })
+
+        timeline.add({
+            targets: this,
+            duration: 250,
+            x: this.x,
+            scaleX: 1,
+        })
+
+        timeline.play()
     }
 
     enableInput() {
@@ -232,11 +307,12 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     disableInput() {
-
+        this.disableInteractive()
+        this.onOut()
     }
 
     onUp() {
-
+        this.scene.pickCard(this)
     }
 
     onOver() {
