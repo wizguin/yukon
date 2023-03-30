@@ -10,11 +10,11 @@ export default class CardLoader extends BaseLoader {
         this.keyPrefix = 'card/icons/'
     }
 
-    loadCard(card) {
+    loadCard(card, callback) {
         let key = this.getKey(card.card_id)
 
         if (this.checkComplete('image', key, () => {
-            this.onFileComplete(key, card)
+            this.onFileComplete(key, card, callback)
         })) {
             return
         }
@@ -23,12 +23,12 @@ export default class CardLoader extends BaseLoader {
         this.start()
     }
 
-    onFileComplete(key, card) {
+    onFileComplete(key, card, callback) {
         if (!this.textureExists(key)) {
             return
         }
 
-        this.scene.onCardLoad(key, card)
+        callback(key, card)
     }
 
 }
