@@ -215,6 +215,15 @@ export default class CardJitsuCard extends BaseContainer {
         this.tweenTo(x, pos.y)
     }
 
+    pick() {
+        if (!this.tween) {
+            this.tweenToPick()
+            return
+        }
+
+        this.tween.once('complete', this.tweenToPick, this)
+    }
+
     tweenToPick() {
         this.scale = layout.scale.pick
 
@@ -230,10 +239,10 @@ export default class CardJitsuCard extends BaseContainer {
             duration: 500,
 
             x: x,
-            y: y,
-
-            onComplete: () => this.removeTween()
+            y: y
         })
+
+        this.tween.once('complete', () => this.removeTween())
     }
 
     removeTween() {
