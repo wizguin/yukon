@@ -132,11 +132,11 @@ export default class CardJitsuCard extends BaseContainer {
         let empty = player.dealtCards.indexOf(null)
         player.dealtCards[empty] = this
 
-        this.updateState(state)
-
         if (card) {
             this.updateCard(card)
         }
+
+        this.updateState(state)
 
         this.tweenToDealt(empty)
     }
@@ -152,7 +152,6 @@ export default class CardJitsuCard extends BaseContainer {
         this.element.setFrame(`card/${card.element}`)
 
         if (card.power_id > 0) {
-            this.glow.visible = true
             this.glow.tint = layout.colors[card.color].color
         }
     }
@@ -204,8 +203,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.element.visible = show
         this.color.visible = show
         this.icon.visible = show
-
-        this.glow.visible = false
+        this.glow.visible = show && this.powerId > 0
     }
 
     tweenToDealt(empty) {
