@@ -98,10 +98,13 @@ export default class CardJitsuCard extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.player
-        this.id
         this.state
-        this.spacer
 
+        this.id
+        this.powerId
+        this.elementId
+
+        this.spacer
         this.color
         this.glow
 
@@ -140,6 +143,8 @@ export default class CardJitsuCard extends BaseContainer {
 
     updateCard(card) {
         this.id = parseInt(card.card_id)
+        this.powerId = parseInt(card.power_id)
+        this.elementId = card.element
 
         this.value.text = card.value
         this.color.tint = layout.colors[card.color].color
@@ -259,7 +264,9 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     flip() {
-        let timeline = this.scene.tweens.createTimeline()
+        let timeline = this.scene.tweens.createTimeline({
+            onComplete: () => this.scene.events.emit('flipped')
+        })
 
         timeline.add({
             targets: this,

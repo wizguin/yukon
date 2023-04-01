@@ -4,6 +4,7 @@ import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
 /* START-USER-IMPORTS */
 
+import BattleLoader from '@engine/loaders/BattleLoader'
 import CardLoader from '@engine/loaders/CardLoader'
 import CardJitsuCard from './card/CardJitsuCard'
 import StateMachine from '@engine/utils/state_machine/StateMachine'
@@ -119,6 +120,7 @@ export default class CardJitsu extends GameScene {
         this.opponent
 
         // Loader
+        this.battleLoader = new BattleLoader(this)
         this.cardLoader = new CardLoader(this)
 
         this.onDealCardLoad = this.onDealCardLoad.bind(this)
@@ -150,6 +152,7 @@ export default class CardJitsu extends GameScene {
         this.network.events.on('send_opponent_deal', this.handleSendOpponentDeal, this)
         this.network.events.on('pick_card', this.handlePickCard, this)
         this.network.events.on('reveal_card', this.handleRevealCard, this)
+        this.network.events.on('judge', this.handleJudge, this)
     }
 
     removeListeners() {
@@ -158,6 +161,7 @@ export default class CardJitsu extends GameScene {
         this.network.events.off('send_opponent_deal', this.handleSendOpponentDeal, this)
         this.network.events.off('pick_card', this.handlePickCard, this)
         this.network.events.off('reveal_card', this.handleRevealCard, this)
+        this.network.events.off('judge', this.handleJudge, this)
     }
 
     handleStartGame(args) {
@@ -191,6 +195,14 @@ export default class CardJitsu extends GameScene {
         this.cardLoader.loadCard(args.card, this.onRevealCardLoad)
     }
 
+    handleJudge(args) {
+        let cardPrefab = this.opponent.pick
+
+        cardPrefab.updateState('reveal')
+
+        this.events.once('flipped', () => this.onFlipped(args.winner))
+    }
+
     setPlayer(user, index) {
         let player = this.players[index]
         player.set(user)
@@ -202,15 +214,18 @@ export default class CardJitsu extends GameScene {
         }
     }
 
-    playBattle(battle) {
-        this.player1.playBattle(battle)
-        this.player2.playBattle(battle)
-    }
-
     onBattleComplete() {
         if (!this.player1.animating && !this.player2.animating) {
             this.events.emit('battle_complete')
         }
+    }
+
+    onFlipped(winner) {
+        let winCard = this.players[winner].pick
+
+        this.battleLoader.loadBattle(winCard, () => {
+            this.judge(winner, winCard)
+        })
     }
 
     onDealCardLoad(key, card) {
@@ -227,7 +242,25 @@ export default class CardJitsu extends GameScene {
 
         cardPrefab.updateCard(card)
         cardPrefab.icon.setTexture(key)
-        cardPrefab.updateState('reveal')
+    }
+
+    playBattle(battle, winSeat = null) {
+        if (!winSeat) {
+            this.player1.playBattle(battle)
+            this.player2.playBattle(battle)
+
+            return
+        }
+
+        let mySeat = this.players.indexOf(this.myPlayer)
+
+        if (winSeat == mySeat) {
+            this.myPlayer.playBattle(`${battle}_attack`)
+            this.opponent.playBattle(`${battle}_react`)
+        } else {
+            this.myPlayer.playBattle(`${battle}_react`)
+            this.opponent.playBattle(`${battle}_attack`)
+        }
     }
 
     createCard() {
@@ -240,6 +273,56 @@ export default class CardJitsu extends GameScene {
     pickCard(card) {
         this.myPlayer.pickCard(card)
         this.network.send('pick_card', { card: card.id })
+    }
+
+    judge(winner, winCard) {
+        let mySeat = this.players.indexOf(this.myPlayer)
+
+        if (winner == -1) {
+            this.judgeTie()
+            return
+        }
+
+        winCard.visible = false
+
+        if (winner == mySeat) {
+            this.judgeWin(winner, winCard)
+        } else {
+            this.judgeLoss(winner, winCard)
+        }
+    }
+
+    judgeTie() {
+        this.myPlayer.cardLose()
+        this.opponent.cardLose()
+
+        this.playBattle('tie')
+    }
+
+    judgeWin(winSeat, winCard) {
+        this.myPlayer.cardWin()
+        this.opponent.cardLose()
+
+        this.judgePlayBattle(winSeat, winCard)
+    }
+
+    judgeLoss(winSeat, winCard) {
+        this.myPlayer.cardLose()
+        this.opponent.cardWin()
+
+        this.judgePlayBattle(winSeat, winCard)
+    }
+
+    judgePlayBattle(winSeat, winCard) {
+        if (winCard.powerId == 0) {
+            this.playBattle(winCard.elementId, winSeat)
+            return
+        }
+
+        if (winCard.powerId != 0) {
+            this.playBattle(`pow_${winCard.id}`, winSeat)
+            return
+        }
     }
 
     /* END-USER-CODE */

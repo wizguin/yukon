@@ -24,6 +24,9 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.dealtCards = new Array(5).fill(null)
         this.pick
 
+        this.wins = []
+        this.losses = []
+
         /* END-USER-CTR-CODE */
     }
 
@@ -65,6 +68,25 @@ export default class CardJitsuPlayer extends BaseContainer {
 
         card.pick()
         this.pick = card
+    }
+
+    cardWin() {
+        if (!this.pick) {
+            return
+        }
+
+        this.wins.push(this.pick)
+        this.pick = null
+    }
+
+    cardLose() {
+        if (!this.pick) {
+            return
+        }
+
+        this.losses.push(this.pick)
+        this.pick.destroy()
+        this.pick = null
     }
 
     /* END-USER-CODE */
