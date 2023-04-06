@@ -168,12 +168,6 @@ export default class CardJitsu extends GameScene {
         for (let card of args.cards) {
             this.cardLoader.loadCard(card, this.onDealCardLoad)
         }
-
-        for (let card of this.myPlayer.dealtCards) {
-            if (card) {
-                card.enableInput()
-            }
-        }
     }
 
     handleSendOpponentDeal(args) {
@@ -237,8 +231,6 @@ export default class CardJitsu extends GameScene {
 
         cardPrefab.init(this.myPlayer, 'front', card)
         cardPrefab.icon.setTexture(key)
-
-        cardPrefab.enableInput()
     }
 
     onRevealCardLoad(key, card) {

@@ -63,9 +63,7 @@ export default class CardJitsuPlayer extends BaseContainer {
     }
 
     pickCard(card) {
-        for (let dealt of this.dealtCards) {
-            dealt.disableInput()
-        }
+        this.disableCards()
 
         let index = this.dealtCards.indexOf(card)
         this.dealtCards[index] = null
@@ -94,6 +92,22 @@ export default class CardJitsuPlayer extends BaseContainer {
 
         this.pick.destroy()
         this.pick = null
+    }
+
+    enableCards() {
+        for (let dealt of this.dealtCards) {
+            if (dealt) {
+                dealt.enableInput()
+            }
+        }
+    }
+
+    disableCards() {
+        for (let dealt of this.dealtCards) {
+            if (dealt) {
+                dealt.disableInput()
+            }
+        }
     }
 
     /* END-USER-CODE */

@@ -263,6 +263,22 @@ export default class CardJitsuCard extends BaseContainer {
             : pos.x - (this.spacer * empty) - this.spacer
 
         this.tweenTo(x, pos.y)
+
+        this.tween.once('complete', this.onTweenToDealtComplete, this)
+    }
+
+    onTweenToDealtComplete() {
+        if (this.player != this.scene.myPlayer) {
+            return
+        }
+
+        for (let card of this.player.dealtCards) {
+            if (card.tween) {
+                return
+            }
+        }
+
+        this.player.enableCards()
     }
 
     tweenToPick() {
