@@ -183,6 +183,9 @@ export default class CardJitsuCard extends BaseContainer {
             case 'back':
                 this.setStateBack()
                 break
+            case 'pick':
+                this.setStatePick()
+                break
             case 'reveal':
                 this.setStateReveal()
                 break
@@ -207,6 +210,17 @@ export default class CardJitsuCard extends BaseContainer {
         this.spacer = layout.spacer.dealtBack
 
         this.showFrontSprites(false)
+    }
+
+    setStatePick() {
+        this.scale = layout.scale.pick
+
+        if (!this.tween) {
+            this.tweenToPick()
+            return
+        }
+
+        this.tween.once('complete', this.tweenToPick, this)
     }
 
     setStateReveal() {
@@ -249,15 +263,6 @@ export default class CardJitsuCard extends BaseContainer {
             : pos.x - (this.spacer * empty) - this.spacer
 
         this.tweenTo(x, pos.y)
-    }
-
-    pick() {
-        if (!this.tween) {
-            this.tweenToPick()
-            return
-        }
-
-        this.tween.once('complete', this.tweenToPick, this)
     }
 
     tweenToPick() {

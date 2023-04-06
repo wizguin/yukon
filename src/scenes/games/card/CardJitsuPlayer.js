@@ -70,7 +70,7 @@ export default class CardJitsuPlayer extends BaseContainer {
         let index = this.dealtCards.indexOf(card)
         this.dealtCards[index] = null
 
-        card.pick()
+        card.setState('pick')
         this.pick = card
     }
 
