@@ -7,8 +7,6 @@ import CardJitsuPlayer from "./CardJitsuPlayer";
 import BattleLoader from '@engine/loaders/BattleLoader'
 import CardLoader from '@engine/loaders/CardLoader'
 import CardJitsuCard from './card/CardJitsuCard'
-import StateMachine from '@engine/utils/state_machine/StateMachine'
-import ServeState from './states/ServeState'
 
 /* END-USER-IMPORTS */
 
@@ -135,13 +133,6 @@ export default class CardJitsu extends GameScene {
             ease: 'Cubic'
         })
 
-        // States
-        this.stateMachine = new StateMachine({
-            'serve': new ServeState(this)
-        })
-
-        this.stateMachine.setState('serve')
-
         this.addListeners()
         this.network.send('start_game')
     }
@@ -169,7 +160,8 @@ export default class CardJitsu extends GameScene {
             this.setPlayer(user, args.users.indexOf(user))
         }
 
-        this.events.emit('start_game')
+        this.spinner.visible = false
+        this.playBattle('walk')
     }
 
     handleSendDeal(args) {
@@ -222,7 +214,8 @@ export default class CardJitsu extends GameScene {
 
     onBattleComplete() {
         if (!this.player1.animating && !this.player2.animating) {
-            this.events.emit('battle_complete')
+            this.playBattle('ambient')
+            this.network.send('send_deal')
         }
     }
 
