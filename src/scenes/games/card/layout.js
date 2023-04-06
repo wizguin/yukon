@@ -49,12 +49,23 @@ const layout = {
                     y: 50
                 }
             }
+        ],
+        over: [
+            {
+                x: 90,
+                y: 340
+            },
+            {
+                x: 1140,
+                y: 340
+            }
         ]
     },
     spacer: {
         dealtFront: 150,
         dealtBack: 70,
-        win: 30
+        win: 30,
+        out: 100
     },
     scale: {
         front: 0.7,

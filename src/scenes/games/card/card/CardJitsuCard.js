@@ -303,6 +303,22 @@ export default class CardJitsuCard extends BaseContainer {
         this.tween.once('complete', this.updateDepth, this)
     }
 
+    tweenToOver(cardIndex) {
+        if (this.tween) {
+            this.tween.once('complete', () => this.tweenToOver(cardIndex))
+            return
+        }
+
+        let spacer = layout.spacer.out
+
+        let index = this.scene.players.indexOf(this.player)
+        let pos = layout.pos.over[index]
+
+        let x = pos.x + (spacer * cardIndex)
+
+        this.tweenTo(x, pos.y)
+    }
+
     tweenTo(x, y) {
         this.tween = this.scene.tweens.add({
             targets: this,
