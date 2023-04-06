@@ -133,8 +133,6 @@ export default class CardJitsu extends GameScene {
             ease: 'Cubic'
         })
 
-        this.gameOver = false
-
         this.events.on('battle_complete', this.onBattleComplete, this)
 
         this.addListeners()
@@ -202,9 +200,10 @@ export default class CardJitsu extends GameScene {
     }
 
     handleWinner(args) {
-        this.gameOver = true
+        // Remove original handler
+        this.events.off('battle_complete', this.onBattleComplete, this)
 
-        this.events.once('battle_complete', () => this.endGame(args.winner, args.cards))
+        this.events.once('battle_complete', () => this.onLastBattle(args.winner, args.cards))
     }
 
     setPlayer(user, index) {
@@ -218,14 +217,16 @@ export default class CardJitsu extends GameScene {
         }
     }
 
-    onBattleComplete() {
+    checkBattleComplete() {
         if (!this.player1.animating && !this.player2.animating) {
-            this.playBattle('ambient')
-
-            if (!this.gameOver) {
-                this.network.send('send_deal')
-            }
+            this.events.emit('battle_complete')
         }
+    }
+
+    onBattleComplete() {
+        this.playBattle('ambient')
+
+        this.network.send('send_deal')
     }
 
     onFlipped(winner) {
@@ -253,6 +254,25 @@ export default class CardJitsu extends GameScene {
 
         cardPrefab.updateCard(card)
         cardPrefab.icon.setTexture(key)
+    }
+
+    onLastBattle(winSeat, winCards) {
+        this.playBattle('ambient')
+
+        let winner = this.players[winSeat]
+
+        // temp until made int on server
+        winCards = winCards.map(i => parseInt(i))
+
+        let cards = winner.findWins(winCards)
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].tweenToOver(i)
+        }
+
+        this.time.delayedCall(1000, () => this.playBattle('tie'))
+
+        // this.events.once('battle_complete', )
     }
 
     playBattle(battle, winSeat = null) {
@@ -326,19 +346,6 @@ export default class CardJitsu extends GameScene {
         if (winCard.powerId != 0) {
             this.playBattle(`pow_${winCard.id}`, winSeat)
             return
-        }
-    }
-
-    endGame(winSeat, winCards) {
-        let winner = this.players[winSeat]
-
-        // temp until made int on server
-        winCards = winCards.map(i => parseInt(i))
-
-        let cards = winner.findWins(winCards)
-
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].tweenToOver(i)
         }
     }
 

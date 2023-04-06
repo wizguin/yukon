@@ -130,7 +130,7 @@ export default class CardJitsuBattle {
 
     onAnimationComplete() {
         this.animating = false
-        this.scene.events.emit('battle_complete')
+        this.scene.checkBattleComplete()
     }
 
     setColor(color) {
