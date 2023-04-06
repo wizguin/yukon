@@ -183,6 +183,11 @@ export default class CardJitsu extends GameScene {
     }
 
     handlePickCard(args) {
+        if (this.opponent.pick) {
+            this.events.once('remove_pick', () => this.handlePickCard(args))
+            return
+        }
+
         let card = this.opponent.dealtCards[args.card]
         this.opponent.pickCard(card)
     }

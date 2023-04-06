@@ -80,7 +80,7 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.wins.push(this.pick)
 
         this.pick.setState('thumbnail')
-        this.pick = null
+        this.removePick()
     }
 
     cardLose() {
@@ -91,7 +91,15 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.losses.push(this.pick)
 
         this.pick.destroy()
+        this.removePick()
+    }
+
+    removePick() {
         this.pick = null
+
+        if (this === this.scene.opponent) {
+            this.scene.events.emit('remove_pick')
+        }
     }
 
     enableCards() {
