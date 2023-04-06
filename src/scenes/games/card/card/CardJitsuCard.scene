@@ -80,6 +80,7 @@
                     "x": 95,
                     "y": 104,
                     "originX": 0.5008695652173913,
+                    "visible": false,
                     "alpha": 0.5,
                     "alphaTopLeft": 0.5,
                     "alphaTopRight": 0.5,
@@ -110,7 +111,11 @@
                     "x": 95,
                     "y": 107,
                     "originX": 0.5010660980810234,
-                    "originY": 0.500945179584121
+                    "originY": 0.500945179584121,
+                    "tintTopLeft": "#1148a1",
+                    "tintTopRight": "#1148a1",
+                    "tintBottomLeft": "#1148a1",
+                    "tintBottomRight": "#1148a1"
                 },
                 {
                     "type": "Image",
@@ -157,6 +162,23 @@
                     "fontSize": "38px",
                     "fontStyle": "bold",
                     "color": "#000"
+                },
+                {
+                    "prefabId": "f44f8f17-7031-4845-aaba-fc842a544771",
+                    "id": "23b26ff4-5fed-4419-b975-ead0216911c4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "thumbnail",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 47,
+                    "y": 45,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         }

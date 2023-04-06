@@ -37,6 +37,10 @@ export default class CardJitsuPlayer extends BaseContainer {
         return this.battle.animating
     }
 
+    getElementWins(element) {
+        return this.wins.filter(win => win.elementId == element)
+    }
+
     set(user) {
         this.username.text = user.username.toUpperCase()
         this.color = this.world.getColor(user.color)
@@ -76,6 +80,8 @@ export default class CardJitsuPlayer extends BaseContainer {
         }
 
         this.wins.push(this.pick)
+
+        this.pick.setState('thumbnail')
         this.pick = null
     }
 
@@ -85,6 +91,7 @@ export default class CardJitsuPlayer extends BaseContainer {
         }
 
         this.losses.push(this.pick)
+
         this.pick.destroy()
         this.pick = null
     }

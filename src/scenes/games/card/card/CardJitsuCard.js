@@ -1,6 +1,7 @@
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../../base/BaseContainer";
+import CardJitsuThumb from "./CardJitsuThumb";
 /* START-USER-IMPORTS */
 
 import layout from '../layout'
@@ -30,6 +31,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.disabled;
         /** @type {Phaser.GameObjects.Text} */
         this.value;
+        /** @type {CardJitsuThumb} */
+        this.thumbnail;
 
 
         // shadow
@@ -51,6 +54,7 @@ export default class CardJitsuCard extends BaseContainer {
         // glow
         const glow = scene.add.sprite(95, 104, "cardjitsu", "card/glow0001");
         glow.setOrigin(0.5008695652173913, 0.5);
+        glow.visible = false;
         glow.alpha = 0.5;
         glow.alphaTopLeft = 0.5;
         glow.alphaTopRight = 0.5;
@@ -66,6 +70,10 @@ export default class CardJitsuCard extends BaseContainer {
         // color
         const color = scene.add.image(95, 107, "cardjitsu", "card/color");
         color.setOrigin(0.5010660980810234, 0.500945179584121);
+        color.tintTopLeft = 1132705;
+        color.tintTopRight = 1132705;
+        color.tintBottomLeft = 1132705;
+        color.tintBottomRight = 1132705;
         this.add(color);
 
         // element
@@ -85,6 +93,11 @@ export default class CardJitsuCard extends BaseContainer {
         value.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Arial", "fontSize": "38px", "fontStyle": "bold" });
         this.add(value);
 
+        // thumbnail
+        const thumbnail = new CardJitsuThumb(scene, 47, 45);
+        thumbnail.visible = false;
+        this.add(thumbnail);
+
         this.shadow = shadow;
         this.hover = hover;
         this.back = back;
@@ -94,6 +107,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.element = element;
         this.disabled = disabled;
         this.value = value;
+        this.thumbnail = thumbnail;
 
         /* START-USER-CTR-CODE */
 
@@ -136,27 +150,33 @@ export default class CardJitsuCard extends BaseContainer {
             this.updateCard(card)
         }
 
-        this.updateState(state)
+        this.updateDepth()
+        this.setState(state)
 
         this.tweenToDealt(empty)
     }
 
     updateCard(card) {
+        let tint = layout.colors[card.color].color
+
         this.id = parseInt(card.card_id)
         this.powerId = parseInt(card.power_id)
         this.elementId = card.element
 
         this.value.text = card.value
-        this.color.tint = layout.colors[card.color].color
+        this.color.tint = tint
 
         this.element.setFrame(`card/${card.element}`)
 
         if (card.power_id > 0) {
-            this.glow.tint = layout.colors[card.color].color
+            this.glow.tint = tint
         }
+
+        this.thumbnail.color.tint = tint
+        this.thumbnail.element.setFrame(`card/thumbnail/${card.element}`)
     }
 
-    updateState(state) {
+    setState(state) {
         this.state = state
 
         switch (state) {
@@ -165,6 +185,9 @@ export default class CardJitsuCard extends BaseContainer {
                 break
             case 'reveal':
                 this.setStateReveal()
+                break
+            case 'thumbnail':
+                this.setStateThumbnail()
                 break
             default:
                 this.setStateFront()
@@ -197,7 +220,17 @@ export default class CardJitsuCard extends BaseContainer {
         this.tween.once('complete', this.revealCard, this)
     }
 
+    setStateThumbnail() {
+        this.spacer = layout.spacer.win
+
+        this.list.map(sprite => sprite.visible = false)
+        this.thumbnail.visible = true
+
+        this.tweenToWin()
+    }
+
     showFrontSprites(show) {
+        this.thumbnail.visible = false
         this.back.visible = !show
         this.value.visible = show
         this.element.visible = show
@@ -236,6 +269,19 @@ export default class CardJitsuCard extends BaseContainer {
         this.tweenTo(pos.x, pos.y)
     }
 
+    tweenToWin() {
+        let index = this.scene.players.indexOf(this.player)
+        let pos = layout.pos.wins[index][this.elementId]
+
+        let wins = this.player.getElementWins(this.elementId).length
+
+        let y = pos.y + (this.spacer * wins)
+
+        this.tweenTo(pos.x, y)
+
+        this.tween.once('complete', this.updateDepth, this)
+    }
+
     tweenTo(x, y) {
         this.tween = this.scene.tweens.add({
             targets: this,
@@ -245,7 +291,7 @@ export default class CardJitsuCard extends BaseContainer {
             y: y
         })
 
-        this.tween.once('complete', () => this.removeTween())
+        this.tween.once('complete', this.removeTween, this)
     }
 
     removeTween() {
@@ -311,6 +357,10 @@ export default class CardJitsuCard extends BaseContainer {
 
     onOut() {
         this.hover.visible = false
+    }
+
+    updateDepth() {
+        this.depth = this.y
     }
 
     /* END-USER-CODE */

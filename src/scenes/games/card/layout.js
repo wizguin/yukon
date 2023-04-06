@@ -19,11 +19,42 @@ const layout = {
                 x: 850,
                 y: 300
             }
+        ],
+        wins: [
+            {
+                f: {
+                    x: 100,
+                    y: 50
+                },
+                w: {
+                    x: 200,
+                    y: 50
+                },
+                s: {
+                    x: 300,
+                    y: 50
+                }
+            },
+            {
+                f: {
+                    x: 1100,
+                    y: 50
+                },
+                w: {
+                    x: 1200,
+                    y: 50
+                },
+                s: {
+                    x: 1300,
+                    y: 50
+                }
+            }
         ]
     },
     spacer: {
         dealtFront: 150,
-        dealtBack: 70
+        dealtBack: 70,
+        win: 30
     },
     scale: {
         front: 0.7,
@@ -32,22 +63,22 @@ const layout = {
     },
     colors: {
         r: {
-            color: 0xE23C26
+            color: 0xe23c26
         },
         g: {
-            color: 0x61B946
+            color: 0x61b946
         },
         b: {
-            color: 0x1148A1
+            color: 0x1148a1
         },
         p: {
-            color: 0xA399CA
+            color: 0xa399ca
         },
         o: {
-            color: 0xF7952B
+            color: 0xf7952b
         },
         y: {
-            color: 0xFBEB2D
+            color: 0xfbeb2d
         }
     }
 }

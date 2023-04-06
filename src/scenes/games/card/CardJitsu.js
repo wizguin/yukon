@@ -176,6 +176,12 @@ export default class CardJitsu extends GameScene {
         for (let card of args.cards) {
             this.cardLoader.loadCard(card, this.onDealCardLoad)
         }
+
+        for (let card of this.myPlayer.dealtCards) {
+            if (card) {
+                card.enableInput()
+            }
+        }
     }
 
     handleSendOpponentDeal(args) {
@@ -198,7 +204,7 @@ export default class CardJitsu extends GameScene {
     handleJudge(args) {
         let cardPrefab = this.opponent.pick
 
-        cardPrefab.updateState('reveal')
+        cardPrefab.setState('reveal')
 
         this.events.once('flipped', () => this.onFlipped(args.winner))
     }
@@ -221,6 +227,11 @@ export default class CardJitsu extends GameScene {
     }
 
     onFlipped(winner) {
+        if (winner == -1) {
+            this.judgeTie()
+            return
+        }
+
         let winCard = this.players[winner].pick
 
         this.battleLoader.loadBattle(winCard, () => {
@@ -245,7 +256,7 @@ export default class CardJitsu extends GameScene {
     }
 
     playBattle(battle, winSeat = null) {
-        if (!winSeat) {
+        if (winSeat == null) {
             this.player1.playBattle(battle)
             this.player2.playBattle(battle)
 
@@ -277,13 +288,6 @@ export default class CardJitsu extends GameScene {
 
     judge(winner, winCard) {
         let mySeat = this.players.indexOf(this.myPlayer)
-
-        if (winner == -1) {
-            this.judgeTie()
-            return
-        }
-
-        winCard.visible = false
 
         if (winner == mySeat) {
             this.judgeWin(winner, winCard)

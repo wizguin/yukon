@@ -8,6 +8,8 @@ export default class BattleLoader extends BaseLoader {
 
         this.baseURL = '/assets/media/games/card/battles/'
         this.keyPrefix = ''
+
+        this.maxParallelDownloads = 1
     }
 
     loadBattle(card, callback) {
