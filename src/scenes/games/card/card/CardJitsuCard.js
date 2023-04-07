@@ -278,7 +278,7 @@ export default class CardJitsuCard extends BaseContainer {
             }
         }
 
-        this.player.enableCards()
+        this.scene.allCardsDealt()
     }
 
     tweenToPick() {

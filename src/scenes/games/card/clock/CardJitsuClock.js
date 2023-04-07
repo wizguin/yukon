@@ -66,14 +66,17 @@ export default class CardJitsuClock extends BaseContainer {
     }
 
     onTimeEvent() {
-        console.log(this.timer.repeatCount)
-
         if (this.timer.repeatCount == 0) {
-            this.stop()
+            this.timeUp()
             return
         }
 
         this.updateClock()
+    }
+
+    timeUp() {
+        this.stop()
+        this.scene.timeUp()
     }
 
     updateClock() {

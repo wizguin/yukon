@@ -308,9 +308,23 @@ export default class CardJitsu extends GameScene {
         return card
     }
 
+    allCardsDealt() {
+        this.myPlayer.enableCards()
+
+        this.clock.start()
+    }
+
+    timeUp() {
+        let random = Phaser.Math.RND.pick(this.myPlayer.dealtCards)
+
+        this.pickCard(random)
+    }
+
     pickCard(card) {
         this.myPlayer.pickCard(card)
         this.network.send('pick_card', { card: card.id })
+
+        this.clock.stop()
     }
 
     judge(winner, winCard) {
