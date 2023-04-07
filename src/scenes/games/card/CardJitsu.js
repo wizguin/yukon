@@ -2,6 +2,7 @@
 
 import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
+import Button from "../../components/Button";
 import CardJitsuClock from "./clock/CardJitsuClock";
 /* START-USER-IMPORTS */
 
@@ -59,7 +60,7 @@ export default class CardJitsu extends GameScene {
         player1.scaleY = 1;
 
         // close
-        this.add.image(1464, 57, "cardjitsu", "close0001");
+        const close = this.add.image(1464, 57, "cardjitsu", "close");
 
         // help
         const help = this.add.image(754, 26, "cardjitsu", "help");
@@ -98,6 +99,10 @@ export default class CardJitsu extends GameScene {
 
         // player1 (prefab fields)
         player1.username = username1;
+
+        // close (components)
+        const closeButton = new Button(close);
+        closeButton.spriteName = "close";
 
         this.player2 = player2;
         this.player1 = player1;

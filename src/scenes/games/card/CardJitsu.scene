@@ -71,10 +71,13 @@
             "type": "Image",
             "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
             "label": "close",
-            "components": [],
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "close",
             "texture": {
                 "key": "cardjitsu",
-                "frame": "close0001"
+                "frame": "close"
             },
             "x": 1464,
             "y": 57
