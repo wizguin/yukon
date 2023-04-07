@@ -76,6 +76,7 @@ export default class CardJitsu extends GameScene {
         // clock
         const clock = new CardJitsuClock(this, 760, 676);
         this.add.existing(clock);
+        clock.visible = false;
 
         // spinner
         const spinner = this.add.image(760, 482, "cardjitsu", "spinner");

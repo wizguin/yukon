@@ -125,13 +125,17 @@
             "id": "5ae193e4-747e-4c9e-a9b1-33e45c465696",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "visible"
             ],
             "label": "clock",
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 676
+            "y": 676,
+            "visible": false,
+            "nestedPrefabs": [],
+            "list": []
         },
         {
             "type": "Image",

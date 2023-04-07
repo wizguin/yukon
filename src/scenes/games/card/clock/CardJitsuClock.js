@@ -16,7 +16,7 @@ export default class CardJitsuClock extends BaseContainer {
 
 
         // clock
-        const clock = scene.add.image(0, 0, "cardjitsu", "clock/clock0001");
+        const clock = scene.add.image(0, 0, "cardjitsu", "clock/20");
         this.add(clock);
 
         // time
@@ -30,11 +30,58 @@ export default class CardJitsuClock extends BaseContainer {
         this.time = time;
 
         /* START-USER-CTR-CODE */
+
+        this.timerConfig = {
+            delay: 1000,
+            callback: this.onTimeEvent,
+            callbackScope: this,
+            repeat: 20,
+            startAt: 1000,
+            paused: true
+        }
+
+        this.timer = scene.time.addEvent(this.timerConfig)
+
+        // temp
+        window.s = () => this.start()
+        window.st = () => this.stop()
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    start() {
+        this.show()
+
+        this.timer.paused = false
+    }
+
+    stop() {
+        this.close()
+
+        this.timer.reset(this.timerConfig)
+        this.updateClock()
+    }
+
+    onTimeEvent() {
+        console.log(this.timer.repeatCount)
+
+        if (this.timer.repeatCount == 0) {
+            this.stop()
+            return
+        }
+
+        this.updateClock()
+    }
+
+    updateClock() {
+        this.time.text = this.timer.repeatCount
+
+        this.clock.setFrame(`clock/${this.timer.repeatCount}`)
+    }
+
     /* END-USER-CODE */
 }
 
