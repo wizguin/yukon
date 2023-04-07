@@ -2,6 +2,7 @@
 
 import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
+import CardJitsuClock from "./clock/CardJitsuClock";
 /* START-USER-IMPORTS */
 
 import BattleLoader from '@engine/loaders/BattleLoader'
@@ -19,7 +20,7 @@ export default class CardJitsu extends GameScene {
         this.player2;
         /** @type {CardJitsuPlayer} */
         this.player1;
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {CardJitsuClock} */
         this.clock;
         /** @type {Phaser.GameObjects.Image} */
         this.spinner;
@@ -73,8 +74,8 @@ export default class CardJitsu extends GameScene {
         frame.setOrigin(0.5003261578604045, 0.5005192107995846);
 
         // clock
-        const clock = this.add.image(760, 676, "cardjitsu", "clock/clock0001");
-        clock.visible = false;
+        const clock = new CardJitsuClock(this, 760, 676);
+        this.add.existing(clock);
 
         // spinner
         const spinner = this.add.image(760, 482, "cardjitsu", "spinner");

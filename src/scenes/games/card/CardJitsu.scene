@@ -121,18 +121,17 @@
             "originY": 0.5005192107995846
         },
         {
-            "type": "Image",
+            "prefabId": "ebed3022-bcec-4b40-b9a2-de88069e87b6",
             "id": "5ae193e4-747e-4c9e-a9b1-33e45c465696",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "clock",
             "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "cardjitsu",
-                "frame": "clock/clock0001"
-            },
             "x": 760,
-            "y": 676,
-            "visible": false
+            "y": 676
         },
         {
             "type": "Image",
