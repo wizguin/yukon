@@ -425,7 +425,10 @@ export default class CardJitsu extends GameScene {
     leaveGame() {
         this.removeListeners()
 
-        this.events.off('battle_complete', this.onBattleComplete, this)
+        // destroying room scene would remove need to remove these events
+        this.events.off('battle_complete')
+        this.events.off('flipped')
+        this.events.off('remove_pick')
 
         this.world.client.sendJoinLastRoom()
     }
