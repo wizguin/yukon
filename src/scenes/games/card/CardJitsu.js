@@ -155,6 +155,7 @@ export default class CardJitsu extends GameScene {
         this.network.events.on('reveal_card', this.handleRevealCard, this)
         this.network.events.on('judge', this.handleJudge, this)
         this.network.events.on('winner', this.handleWinner, this)
+        this.network.events.on('close_game', this.handleCloseGame, this)
     }
 
     removeListeners() {
@@ -165,6 +166,7 @@ export default class CardJitsu extends GameScene {
         this.network.events.off('reveal_card', this.handleRevealCard, this)
         this.network.events.off('judge', this.handleJudge, this)
         this.network.events.off('winner', this.handleWinner, this)
+        this.network.events.off('close_game', this.handleCloseGame, this)
     }
 
     handleStartGame(args) {
@@ -219,6 +221,14 @@ export default class CardJitsu extends GameScene {
         this.events.off('battle_complete', this.onBattleComplete, this)
 
         this.events.once('battle_complete', () => this.onLastBattle(args.winner, args.cards))
+    }
+
+    handleCloseGame(args) {
+        this.interface.prompt.showWindow(this.getFormatString('player_quit_prompt', args.username))
+
+        // remove this delay when BUG with 2 players joining the same room at exactly the same time is fixed
+        // currently add_player breaks because the previous room hasn't shut down yet
+        this.time.delayedCall(500, () => this.sendLeaveGame())
     }
 
     setPlayer(user, index) {
@@ -389,17 +399,6 @@ export default class CardJitsu extends GameScene {
         this.events.once('battle_complete', callback)
     }
 
-    sendLeaveGame() {
-        this.network.send('leave_game')
-        this.leaveGame()
-    }
-
-    leaveGame() {
-        this.removeListeners()
-
-        this.world.client.sendJoinLastRoom()
-    }
-
     showCloseGamePrompt() {
         this.interface.prompt.showWindow(this.getString('quit_game_prompt'), 'dual', () => {
             this.sendLeaveGame()
@@ -416,6 +415,19 @@ export default class CardJitsu extends GameScene {
 
             this.interface.prompt.window.visible = false
         })
+    }
+
+    sendLeaveGame() {
+        this.network.send('leave_game')
+        this.leaveGame()
+    }
+
+    leaveGame() {
+        this.removeListeners()
+
+        this.events.off('battle_complete', this.onBattleComplete, this)
+
+        this.world.client.sendJoinLastRoom()
     }
 
     /* END-USER-CODE */
