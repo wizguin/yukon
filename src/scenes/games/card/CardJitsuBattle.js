@@ -9,6 +9,9 @@ export default class CardJitsuBattle {
         this.list = {}
 
         this.animating = false
+
+        // can be moved somewhere else
+        this.beltColors = [null, 16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924, 4473924]
     }
 
     get body() {
@@ -147,10 +150,22 @@ export default class CardJitsuBattle {
         }
     }
 
-    setBeltColor(color) {
+    setBelt(rank) {
+        if (rank < 1) {
+            this.hideBelt()
+            return
+        }
+
+        let color = this.beltColors[rank]
+
         if (this.belt) {
             this.belt.tint = color
         }
+    }
+
+    hideBelt() {
+        this.belt.visible = false
+        this.beltLine.visible = false
     }
 
     clear() {
