@@ -100,6 +100,7 @@ export default class CardJitsu extends GameScene {
         // close (components)
         const closeButton = new Button(close);
         closeButton.spriteName = "close";
+        closeButton.callback = () => this.onCloseClick();
 
         this.player2 = player2;
         this.player1 = player1;
@@ -140,6 +141,8 @@ export default class CardJitsu extends GameScene {
 
         this.events.on('battle_complete', this.onBattleComplete, this)
 
+        this.started = false
+
         this.addListeners()
         this.network.send('start_game')
     }
@@ -171,6 +174,8 @@ export default class CardJitsu extends GameScene {
 
         this.spinner.visible = false
         this.playBattle('walk')
+
+        this.started = true
     }
 
     handleSendDeal(args) {
@@ -280,9 +285,16 @@ export default class CardJitsu extends GameScene {
             cards[i].tweenToOver(i)
         }
 
-        this.time.delayedCall(1000, () => this.playBattle('tie'))
+        this.time.delayedCall(1000, () => this.playGameOver(winSeat))
+    }
 
-        // this.events.once('battle_complete', )
+    onCloseClick() {
+        if (!this.started) {
+            this.sendLeaveGame()
+            return
+        }
+
+        this.showCloseGamePrompt()
     }
 
     playBattle(battle, winSeat = null) {
@@ -367,6 +379,43 @@ export default class CardJitsu extends GameScene {
             this.playBattle(`pow_${winCard.id}`, winSeat)
             return
         }
+    }
+
+    playGameOver(winSeat) {
+        this.playBattle('tie')
+
+        let callback = () => this.time.delayedCall(500, () => this.showGameOverPrompt(winSeat))
+
+        this.events.once('battle_complete', callback)
+    }
+
+    sendLeaveGame() {
+        this.network.send('leave_game')
+        this.leaveGame()
+    }
+
+    leaveGame() {
+        this.removeListeners()
+
+        this.world.client.sendJoinLastRoom()
+    }
+
+    showCloseGamePrompt() {
+        this.interface.prompt.showWindow(this.getString('quit_game_prompt'), 'dual', () => {
+            this.sendLeaveGame()
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    showGameOverPrompt(winSeat) {
+        let username = this.players[winSeat].username
+
+        this.interface.prompt.showWindow(this.getFormatString('wins', username), 'single', () => {
+            this.sendLeaveGame()
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     /* END-USER-CODE */
