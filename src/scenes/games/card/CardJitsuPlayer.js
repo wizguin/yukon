@@ -12,11 +12,10 @@ export default class CardJitsuPlayer extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
-        /** @type {Phaser.GameObjects.Text} */
-        this.username;
-
-
         /* START-USER-CTR-CODE */
+
+        this.seat
+        this.username
 
         this.battle = new CardJitsuBattle(this)
         this.color
@@ -30,11 +29,14 @@ export default class CardJitsuPlayer extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
-
     /* START-USER-CODE */
 
     get animating() {
         return this.battle.animating
+    }
+
+    get usernameText() {
+        return this.scene.usernames[this.seat]
     }
 
     getElementWins(element) {
@@ -42,7 +44,11 @@ export default class CardJitsuPlayer extends BaseContainer {
     }
 
     set(user) {
-        this.username.text = user.username.toUpperCase()
+        this.seat = this.scene.players.indexOf(this)
+
+        this.username = user.username
+        this.usernameText.text = user.username.toUpperCase()
+
         this.color = this.world.getColor(user.color)
     }
 

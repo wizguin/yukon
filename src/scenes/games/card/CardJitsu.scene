@@ -35,11 +35,11 @@
             "unlock": [
                 "x",
                 "y",
-                "username"
+                "username",
+                "usernameText"
             ],
             "label": "player2",
             "scope": "CLASS",
-            "username": "username2",
             "components": [],
             "x": 760,
             "y": 315,
@@ -54,11 +54,11 @@
                 "y",
                 "scaleX",
                 "scaleY",
-                "username"
+                "username",
+                "usernameText"
             ],
             "label": "player1",
             "scope": "CLASS",
-            "username": "username1",
             "components": [],
             "x": 760,
             "y": 315,
@@ -75,6 +75,7 @@
                 "Button"
             ],
             "Button.spriteName": "close",
+            "Button.callback": "() => this.onCloseClick()",
             "texture": {
                 "key": "cardjitsu",
                 "frame": "close"
@@ -198,6 +199,14 @@
             "objectIds": [
                 "6fd982c9-843f-4778-899e-de82fbcde04d",
                 "3f476cde-316b-42f5-ad18-da70ada1474d"
+            ]
+        },
+        {
+            "id": "612a85bc-48d2-4a9f-a377-75a400da8bca",
+            "label": "usernames",
+            "objectIds": [
+                "c54766f1-4ebc-4dc0-b3a4-b119c06d9faf",
+                "a3698971-d213-46ce-b701-03bf7dd7a7ed"
             ]
         }
     ]

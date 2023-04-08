@@ -31,6 +31,8 @@ export default class CardJitsu extends GameScene {
         this.username1;
         /** @type {CardJitsuPlayer[]} */
         this.players;
+        /** @type {Phaser.GameObjects.Text[]} */
+        this.usernames;
 
 
         /* START-USER-CTR-CODE */
@@ -93,12 +95,7 @@ export default class CardJitsu extends GameScene {
 
         // lists
         const players = [player1, player2];
-
-        // player2 (prefab fields)
-        player2.username = username2;
-
-        // player1 (prefab fields)
-        player1.username = username1;
+        const usernames = [username1, username2];
 
         // close (components)
         const closeButton = new Button(close);
@@ -111,6 +108,7 @@ export default class CardJitsu extends GameScene {
         this.username2 = username2;
         this.username1 = username1;
         this.players = players;
+        this.usernames = usernames;
 
         this.events.emit("scene-awake");
     }
@@ -295,9 +293,7 @@ export default class CardJitsu extends GameScene {
             return
         }
 
-        let mySeat = this.players.indexOf(this.myPlayer)
-
-        if (winSeat == mySeat) {
+        if (winSeat == this.myPlayer.seat) {
             this.myPlayer.playBattle(`${battle}_attack`)
             this.opponent.playBattle(`${battle}_react`)
         } else {
@@ -333,9 +329,7 @@ export default class CardJitsu extends GameScene {
     }
 
     judge(winner, winCard) {
-        let mySeat = this.players.indexOf(this.myPlayer)
-
-        if (winner == mySeat) {
+        if (winner == this.myPlayer.seat) {
             this.judgeWin(winner, winCard)
         } else {
             this.judgeLoss(winner, winCard)

@@ -254,11 +254,11 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     tweenToDealt(empty) {
-        let index = this.scene.players.indexOf(this.player)
+        let seat = this.player.seat
 
-        let pos = layout.pos.dealts[index]
+        let pos = layout.pos.dealts[seat]
 
-        let x = (index === 0)
+        let x = (seat === 0)
             ? pos.x + (this.spacer * empty)
             : pos.x - (this.spacer * empty) - this.spacer
 
@@ -284,15 +284,13 @@ export default class CardJitsuCard extends BaseContainer {
     tweenToPick() {
         this.scale = layout.scale.pick
 
-        let index = this.scene.players.indexOf(this.player)
-        let pos = layout.pos.picks[index]
+        let pos = layout.pos.picks[this.player.seat]
 
         this.tweenTo(pos.x, pos.y)
     }
 
     tweenToWin() {
-        let index = this.scene.players.indexOf(this.player)
-        let pos = layout.pos.wins[index][this.elementId]
+        let pos = layout.pos.wins[this.player.seat][this.elementId]
 
         let wins = this.player.getElementWins(this.elementId).length
 
@@ -311,8 +309,7 @@ export default class CardJitsuCard extends BaseContainer {
 
         let spacer = layout.spacer.out
 
-        let index = this.scene.players.indexOf(this.player)
-        let pos = layout.pos.over[index]
+        let pos = layout.pos.over[this.player.seat]
 
         let x = pos.x + (spacer * cardIndex)
 
