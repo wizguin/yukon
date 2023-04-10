@@ -1,0 +1,70 @@
+{
+    "id": "05d04137-c915-4f19-ba6c-2d937cd558d7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "cd072e2a-a2e4-46a5-8808-9f05596ea6bf",
+            "label": "container_2",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "44f8a28d-0709-4e0a-86f5-14c40b4cc924",
+                    "label": "base",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/base/base"
+                    },
+                    "originY": 0.5009140767824497
+                },
+                {
+                    "type": "Image",
+                    "id": "97d1b382-3f13-4efc-a14a-462d81eff120",
+                    "label": "beak",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/beak/beak0001"
+                    },
+                    "x": 39,
+                    "y": -142,
+                    "originY": 0.5037593984962406
+                },
+                {
+                    "type": "Image",
+                    "id": "79d113f9-9a27-407b-ab6c-5444be9c730a",
+                    "label": "eyebrows",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/eyebrows/eyebrows0001"
+                    },
+                    "x": -6,
+                    "y": -179,
+                    "originY": 0.5027624309392266
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

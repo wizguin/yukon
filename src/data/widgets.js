@@ -5,7 +5,8 @@ const widgets = {
 
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),
-    'Map': require('@scenes/interface/game/map/Map')
+    'Map': require('@scenes/interface/game/map/Map'),
+    'Sensei': require('@scenes/games/sensei/Sensei')
 }
 
 export default widgets

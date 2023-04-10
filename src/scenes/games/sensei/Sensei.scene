@@ -1,0 +1,62 @@
+{
+    "id": "fbf6af33-9518-47c9-b5a9-fd3beb3a5292",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6c8b4abc-527b-4fb7-86e5-ce92b00f7ca6",
+            "label": "container_1",
+            "components": [],
+            "x": 409,
+            "y": 350,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "06e66bb6-5a49-4833-8a26-681a8126ce3b",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "bg"
+                    },
+                    "x": 189,
+                    "y": 212
+                },
+                {
+                    "prefabId": "05d04137-c915-4f19-ba6c-2d937cd558d7",
+                    "id": "e7df3b1d-4174-48f4-a459-8ee32d5c0805",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "sensei",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -189,
+                    "y": 11,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
