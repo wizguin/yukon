@@ -22,40 +22,70 @@
             "list": [
                 {
                     "type": "Image",
-                    "id": "44f8a28d-0709-4e0a-86f5-14c40b4cc924",
+                    "id": "239209aa-cd82-49d7-bc0d-7e1526fcf9a0",
                     "label": "base",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "sensei/talk/base/base"
                     },
-                    "originY": 0.5009140767824497
+                    "originX": 0.501039501039501
                 },
                 {
                     "type": "Image",
-                    "id": "97d1b382-3f13-4efc-a14a-462d81eff120",
+                    "id": "10bcd89a-7f3b-422c-95a3-591f6bdfd528",
+                    "label": "beard",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/beard/beard0001"
+                    },
+                    "x": 64,
+                    "y": 120
+                },
+                {
+                    "type": "Image",
+                    "id": "1f15b8e8-4bc2-4d8d-be15-5da03a121018",
                     "label": "beak",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "sensei/talk/beak/beak0001"
                     },
-                    "x": 39,
-                    "y": -142,
+                    "x": 84,
+                    "y": -111,
                     "originY": 0.5037593984962406
                 },
                 {
                     "type": "Image",
-                    "id": "79d113f9-9a27-407b-ab6c-5444be9c730a",
+                    "id": "8368fd3d-03ce-4524-b9cd-84f9b22c76b8",
                     "label": "eyebrows",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "sensei/talk/eyebrows/eyebrows0001"
                     },
-                    "x": -6,
-                    "y": -179,
+                    "x": 45,
+                    "y": -148,
                     "originY": 0.5027624309392266
+                },
+                {
+                    "type": "Image",
+                    "id": "f8ddd89e-07bd-4d19-a71e-2f7c0ccb247c",
+                    "label": "front",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/front/front"
+                    },
+                    "x": 71,
+                    "y": 182,
+                    "originX": 0.5009487666034156
                 }
             ]
         }
