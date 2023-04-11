@@ -137,6 +137,10 @@ const rooms = {
         x: 840,
         y: 480
     },
+    951: {
+        key: 'Sensei',
+        scene: require('@rooms/../games/sensei/Sensei').default
+    },
     998: {
         key: 'CardJitsu',
         scene: require('@rooms/../games/card/CardJitsu').default
