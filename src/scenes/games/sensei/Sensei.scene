@@ -29,6 +29,21 @@
             "visible": true,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "prefabId": "717f221e-2a49-41a0-a3d4-1aabab9d9a0f",
+            "id": "7d7ebac3-5625-4b21-9b9c-18c356cc56f3",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "menu",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1055,
+            "y": 774,
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [],

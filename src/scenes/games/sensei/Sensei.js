@@ -1,10 +1,8 @@
-
-// You can write more code here
-
 /* START OF COMPILED CODE */
 
 import GameScene from "../GameScene";
 import SenseiWidget from "./widget/SenseiWidget";
+import SenseiMenu from "./menu/SenseiMenu";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -15,6 +13,8 @@ export default class Sensei extends GameScene {
 
         /** @type {SenseiWidget} */
         this.sensei;
+        /** @type {SenseiMenu} */
+        this.menu;
 
 
         /* START-USER-CTR-CODE */
@@ -35,7 +35,12 @@ export default class Sensei extends GameScene {
         this.add.existing(sensei);
         sensei.visible = true;
 
+        // menu
+        const menu = new SenseiMenu(this, 1055, 774);
+        this.add.existing(menu);
+
         this.sensei = sensei;
+        this.menu = menu;
 
         this.events.emit("scene-awake");
     }
@@ -45,6 +50,8 @@ export default class Sensei extends GameScene {
 
     create() {
         super.create()
+
+        this.sensei.showSpeech('Hello world')
     }
 
     /* END-USER-CODE */
