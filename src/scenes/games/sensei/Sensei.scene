@@ -26,7 +26,9 @@
                     "type": "Image",
                     "id": "06e66bb6-5a49-4833-8a26-681a8126ce3b",
                     "label": "bg",
-                    "components": [],
+                    "components": [
+                        "Interactive"
+                    ],
                     "texture": {
                         "key": "sensei",
                         "frame": "bg"
@@ -54,46 +56,34 @@
                     "id": "d7b7ee82-0eb5-4a93-9f9f-ebb2c2c4eb8d",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "visible"
                     ],
                     "label": "belt",
                     "scope": "CLASS",
                     "components": [],
                     "x": 697,
                     "y": 218,
+                    "visible": false,
                     "nestedPrefabs": [],
                     "list": []
                 },
                 {
-                    "type": "Image",
-                    "id": "39370fe4-3a26-44fa-b7ac-a9ed6d763109",
-                    "label": "bubble",
+                    "prefabId": "21b5b7fb-31dc-48aa-beea-a780ae0fe510",
+                    "id": "536fa4b4-a12b-4d0c-8c76-00af7f45305c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "speech",
                     "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "sensei",
-                        "frame": "bubble"
-                    },
                     "x": 522,
                     "y": -149,
-                    "originX": 0.5004574565416285
-                },
-                {
-                    "type": "Text",
-                    "id": "9914f859-c661-4847-9b24-1a350014193a",
-                    "label": "dialog",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": 548,
-                    "y": -221,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "This example text\nI have put it on three lines\nNot a good haiku",
-                    "fixedWidth": 1030,
-                    "align": "center",
-                    "fontFamily": "CCComiccrazy",
-                    "fontSize": "40px",
-                    "color": "#000"
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         }
