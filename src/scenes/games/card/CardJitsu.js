@@ -143,10 +143,14 @@ export default class CardJitsu extends GameScene {
 
         this.started = false
 
+        this.awards = [4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 104]
+        this.rankUp
+
         this.addListeners()
         this.network.send('start_game')
     }
 
+    // probably a better way than needing 2 functions for this
     addListeners() {
         this.network.events.on('start_game', this.handleStartGame, this)
         this.network.events.on('send_deal', this.handleSendDeal, this)
@@ -156,6 +160,7 @@ export default class CardJitsu extends GameScene {
         this.network.events.on('judge', this.handleJudge, this)
         this.network.events.on('winner', this.handleWinner, this)
         this.network.events.on('close_game', this.handleCloseGame, this)
+        this.network.events.on('award', this.handleAward, this)
     }
 
     removeListeners() {
@@ -167,6 +172,8 @@ export default class CardJitsu extends GameScene {
         this.network.events.off('judge', this.handleJudge, this)
         this.network.events.off('winner', this.handleWinner, this)
         this.network.events.off('close_game', this.handleCloseGame, this)
+        this.network.events.off('close_game', this.handleCloseGame, this)
+        this.network.events.off('award', this.handleAward, this)
     }
 
     handleStartGame(args) {
@@ -229,6 +236,22 @@ export default class CardJitsu extends GameScene {
         // remove this delay when BUG with 2 players joining the same room at exactly the same time is fixed
         // currently add_player breaks because the previous room hasn't shut down yet
         this.time.delayedCall(500, () => this.sendLeaveGame())
+    }
+
+    handleAward(args) {
+        this.rankUp = args.rank
+
+        this.addAward(this.awards[args.rank - 1])
+    }
+
+    addAward(award) {
+        // this should be abstracted, user inventory could be its own class
+        if (this.world.client.inventory['body'].includes(award)) {
+            return
+        }
+
+        this.world.client.inventory['body'].push(award)
+        this.world.client.inventory['body'].sort((a, b) => a - b)
     }
 
     setPlayer(user, index) {
@@ -411,10 +434,19 @@ export default class CardJitsu extends GameScene {
         let username = this.players[winSeat].username
 
         this.interface.prompt.showWindow(this.getFormatString('wins', username), 'single', () => {
-            this.sendLeaveGame()
+            this.winsPromptCallback()
 
             this.interface.prompt.window.visible = false
         })
+    }
+
+    winsPromptCallback() {
+        if (!this.rankUp) {
+            this.sendLeaveGame()
+            return
+        }
+
+        this.interface.loadWidget('Sensei')
     }
 
     sendLeaveGame() {
