@@ -44,10 +44,56 @@
                     "label": "sensei",
                     "scope": "CLASS",
                     "components": [],
-                    "x": -189,
-                    "y": 11,
+                    "x": -237,
+                    "y": -21,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "897d8990-9358-4074-882a-e64ab2e43e6d",
+                    "id": "d7b7ee82-0eb5-4a93-9f9f-ebb2c2c4eb8d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "belt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 697,
+                    "y": 218,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "39370fe4-3a26-44fa-b7ac-a9ed6d763109",
+                    "label": "bubble",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "bubble"
+                    },
+                    "x": 522,
+                    "y": -149,
+                    "originX": 0.5004574565416285
+                },
+                {
+                    "type": "Text",
+                    "id": "9914f859-c661-4847-9b24-1a350014193a",
+                    "label": "dialog",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 548,
+                    "y": -221,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "This example text\nI have put it on three lines\nNot a good haiku",
+                    "fixedWidth": 1030,
+                    "align": "center",
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "40px",
+                    "color": "#000"
                 }
             ]
         }
