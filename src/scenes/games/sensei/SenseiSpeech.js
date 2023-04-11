@@ -33,6 +33,13 @@ export default class SenseiSpeech extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    show(text) {
+        this.dialog.text = text
+
+        super.show()
+    }
+
     /* END-USER-CODE */
 }
 

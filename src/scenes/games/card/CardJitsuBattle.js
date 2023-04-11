@@ -11,7 +11,7 @@ export default class CardJitsuBattle {
         this.animating = false
 
         // can be moved somewhere else
-        this.beltColors = [null, 16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924, 4473924]
+        this.beltColors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924, 4473924]
     }
 
     get body() {
@@ -156,7 +156,7 @@ export default class CardJitsuBattle {
             return
         }
 
-        let color = this.beltColors[rank]
+        let color = this.beltColors[rank - 1]
 
         if (this.belt) {
             this.belt.tint = color

@@ -144,7 +144,7 @@ export default class CardJitsu extends GameScene {
         this.started = false
 
         this.awards = [4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 104]
-        this.rankUp
+        this.rankUp = null
 
         this.addListeners()
         this.network.send('start_game')
@@ -445,6 +445,13 @@ export default class CardJitsu extends GameScene {
             this.sendLeaveGame()
             return
         }
+
+        this.interface.events.once('sensei_ready', () => {
+            let sensei = this.interface.loadedWidgets.Sensei
+
+            sensei.rankId = this.rankUp
+            sensei.loadMenu('beltAward')
+        })
 
         this.interface.loadWidget('Sensei')
     }

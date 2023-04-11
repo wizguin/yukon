@@ -64,9 +64,13 @@ export default class Sensei extends BaseContainer {
             beltAward: [
                 this.menuBeltAward,
                 this.menuBeltEarned,
-                this.close,
+                this.leaveGame,
             ]
         }
+
+        this.rankId = 1
+
+        this.beltNames = ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Red', 'Purple', 'Brown', 'Black']
 
         this.bindMenus()
 
@@ -83,6 +87,11 @@ export default class Sensei extends BaseContainer {
     }
 
     close() {
+        this.menu = null
+        this.currentIndex = 0
+
+        this.hideAll()
+
         super.close()
     }
 
@@ -116,11 +125,30 @@ export default class Sensei extends BaseContainer {
     }
 
     menuBeltAward() {
-        console.log('1')
+        this.showSpeech('Congratulations!\nMuch like the fearsome earthquake,\nYou have rocked the house.')
     }
 
     menuBeltEarned() {
-        console.log('2')
+        let beltName = this.beltNames[this.rankId - 1]
+
+        this.showSpeech(`Well done. You have earned\na ${beltName} Belt for your efforts.\nI am proud of you.`)
+
+        this.belt.show(this.rankId)
+    }
+
+    showSpeech(text) {
+        // todo: strings file
+        this.speech.show(text)
+    }
+
+    hideAll() {
+        this.speech.close()
+        this.belt.close()
+    }
+
+    leaveGame() {
+        this.close()
+        this.world.room.sendLeaveGame()
     }
 
     bindMenus() {

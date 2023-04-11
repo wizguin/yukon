@@ -31,24 +31,29 @@ export default class SenseiBelt extends BaseContainer {
         this.color = color;
 
         /* START-USER-CTR-CODE */
+
+        this.colors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924, 4473924]
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
 
-    show() {
+    show(rank) {
+        this.color.tint = this.colors[rank - 1]
+
         super.show()
 
         // Fade
-        scene.tweens.add({
+        this.scene.tweens.add({
             targets: this,
             alpha: { from: 0, to: 1 },
             duration: 1450
         })
 
         // Float
-        scene.tweens.add({
+        this.scene.tweens.add({
             targets: this,
             y: this.y + 10,
             duration: 333,
