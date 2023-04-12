@@ -1,6 +1,7 @@
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../../base/BaseContainer";
+import SenseiMenuItem from "./SenseiMenuItem";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -17,6 +18,10 @@ export default class SenseiMenu extends BaseContainer {
         const bg = scene.add.image(0, 0, "sensei", "menu/bg");
         bg.setOrigin(0.5, 0.5015197568389058);
         this.add(bg);
+
+        // senseiMenuItem
+        const senseiMenuItem = new SenseiMenuItem(scene, 0, -94);
+        this.add(senseiMenuItem);
 
         this.bg = bg;
 
