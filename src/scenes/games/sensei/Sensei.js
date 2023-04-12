@@ -3,6 +3,7 @@
 import GameScene from "../GameScene";
 import SenseiWidget from "./widget/SenseiWidget";
 import SenseiMenu from "./menu/SenseiMenu";
+import Button from "../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -38,6 +39,17 @@ export default class Sensei extends GameScene {
         // menu
         const menu = new SenseiMenu(this, 1055, 774);
         this.add.existing(menu);
+
+        // xButton
+        const xButton = this.add.image(1474, 43, "main", "grey-button");
+
+        // x
+        this.add.image(1474, 41, "main", "grey-x");
+
+        // xButton (components)
+        const xButtonButton = new Button(xButton);
+        xButtonButton.spriteName = "grey-button";
+        xButtonButton.callback = () => this.world.client.sendJoinLastRoom();
 
         this.sensei = sensei;
         this.menu = menu;

@@ -19,8 +19,8 @@
             "id": "6c8b4abc-527b-4fb7-86e5-ce92b00f7ca6",
             "label": "container_1",
             "components": [],
-            "x": 409,
-            "y": 350,
+            "x": 415,
+            "y": 353,
             "list": [
                 {
                     "type": "Image",

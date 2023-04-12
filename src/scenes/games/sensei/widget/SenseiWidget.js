@@ -17,7 +17,7 @@ import SenseiSpeech from "./SenseiSpeech";
 export default class SenseiWidget extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x ?? 409, y ?? 350);
+        super(scene, x ?? 415, y ?? 353);
 
         /** @type {SenseiSprite} */
         this.sensei;
