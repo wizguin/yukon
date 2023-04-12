@@ -56,7 +56,7 @@ export default class SenseiMenu extends BaseContainer {
         this.menus = {
             start: [
                 {
-                    text: 'Competition Mode',
+                    text: 'Earn your belts',
                     icon: 'menu/icon/belt',
 
                     over: this.competitionOver,
@@ -64,7 +64,7 @@ export default class SenseiMenu extends BaseContainer {
                     up: this.competitionUp
                 },
                 {
-                    text: 'Sensei Mode',
+                    text: 'Challenge Sensei',
                     icon: 'menu/icon/sensei',
 
                     over: this.senseiOver,
@@ -76,19 +76,15 @@ export default class SenseiMenu extends BaseContainer {
 
         this.bindMenus()
 
-        this.loadMenu('start')
-
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
 
-    hideSpeech() {
-        this.scene.hideSpeech()
-    }
+    show(menu) {
+        this.reset()
 
-    loadMenu(menu) {
         if (!(menu in this.menus)) {
             return
         }
@@ -96,6 +92,8 @@ export default class SenseiMenu extends BaseContainer {
         this.menu = this.menus[menu]
 
         this.updateMenu()
+
+        super.show()
     }
 
     updateMenu() {
@@ -149,7 +147,10 @@ export default class SenseiMenu extends BaseContainer {
     }
 
     competitionUp() {
+        this.close()
+        this.hideSpeech()
 
+        this.scene.showMatch()
     }
 
     senseiOver() {
@@ -158,6 +159,16 @@ export default class SenseiMenu extends BaseContainer {
 
     senseiUp() {
 
+    }
+
+    hideSpeech() {
+        this.scene.hideSpeech()
+    }
+
+    reset() {
+        for (let item of this.items) {
+            item.close()
+        }
     }
 
     /* END-USER-CODE */

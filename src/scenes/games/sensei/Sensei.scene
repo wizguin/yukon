@@ -72,6 +72,23 @@
             },
             "x": 1474,
             "y": 41
+        },
+        {
+            "prefabId": "d658d0fb-b2e2-4eee-ba26-d33156d4eee1",
+            "id": "a3de0ee2-1b7a-4a18-a3a3-afa1e39efcb7",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "match",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1024,
+            "y": 424,
+            "visible": false,
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [],

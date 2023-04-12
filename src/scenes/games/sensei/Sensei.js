@@ -4,6 +4,7 @@ import GameScene from "../GameScene";
 import SenseiWidget from "./widget/SenseiWidget";
 import SenseiMenu from "./menu/SenseiMenu";
 import Button from "../../components/Button";
+import SenseiMatch from "./match/SenseiMatch";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -16,6 +17,8 @@ export default class Sensei extends GameScene {
         this.sensei;
         /** @type {SenseiMenu} */
         this.menu;
+        /** @type {SenseiMatch} */
+        this.match;
 
 
         /* START-USER-CTR-CODE */
@@ -46,6 +49,11 @@ export default class Sensei extends GameScene {
         // x
         this.add.image(1474, 41, "main", "grey-x");
 
+        // match
+        const match = new SenseiMatch(this, 1024, 424);
+        this.add.existing(match);
+        match.visible = false;
+
         // xButton (components)
         const xButtonButton = new Button(xButton);
         xButtonButton.spriteName = "grey-button";
@@ -53,6 +61,7 @@ export default class Sensei extends GameScene {
 
         this.sensei = sensei;
         this.menu = menu;
+        this.match = match;
 
         this.events.emit("scene-awake");
     }
@@ -62,6 +71,16 @@ export default class Sensei extends GameScene {
 
     create() {
         super.create()
+
+        this.showMenu('start')
+    }
+
+    showMenu(menu) {
+        this.menu.show(menu)
+    }
+
+    showMatch() {
+        this.match.show()
     }
 
     showSpeech(text) {
