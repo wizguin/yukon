@@ -57,21 +57,24 @@ export default class SenseiMenu extends BaseContainer {
             start: [
                 {
                     text: 'Competition Mode',
-                    callback: () => console.log('matchmaking'),
-                    icon: 'menu/icon/belt'
+                    icon: 'menu/icon/belt',
+
+                    over: this.competitionOver,
+                    out: this.hideSpeech,
+                    up: this.competitionUp
                 },
                 {
                     text: 'Sensei Mode',
-                    callback: () => console.log('sensei'),
-                    icon: 'menu/icon/sensei'
-                },
-                // {
-                //     text: 'Instructions',
-                //     callback: () => console.log('instructions'),
-                //     icon: 'menu/icon/instructions'
-                // }
+                    icon: 'menu/icon/sensei',
+
+                    over: this.senseiOver,
+                    out: this.hideSpeech,
+                    up: this.senseiUp
+                }
             ]
         }
+
+        this.bindMenus()
 
         this.loadMenu('start')
 
@@ -80,6 +83,10 @@ export default class SenseiMenu extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    hideSpeech() {
+        this.scene.hideSpeech()
+    }
 
     loadMenu(menu) {
         if (!(menu in this.menus)) {
@@ -109,6 +116,48 @@ export default class SenseiMenu extends BaseContainer {
 
     resizeMenu() {
         this.bg.height = (this.menu.length * 61) + 78
+    }
+
+    bindMenus() {
+        for (let menu of Object.values(this.menus)) {
+            this.bindMenu(menu)
+        }
+    }
+
+    bindMenu(menu) {
+        for (let item of menu) {
+            this.bindItem(item)
+        }
+    }
+
+    bindItem(item) {
+        if (item.over) {
+            item.over = item.over.bind(this)
+        }
+
+        if (item.out) {
+            item.out = item.out.bind(this)
+        }
+
+        if (item.up) {
+            item.up = item.up.bind(this)
+        }
+    }
+
+    competitionOver() {
+        this.scene.showSpeech('Do you wish to play\nAnd compete with another\nStudent, grasshopper?')
+    }
+
+    competitionUp() {
+
+    }
+
+    senseiOver() {
+        this.scene.showSpeech('To become ninja,\nYou must challenge me and win.\nBut bring your black belt.')
+    }
+
+    senseiUp() {
+
     }
 
     /* END-USER-CODE */

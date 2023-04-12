@@ -64,6 +64,14 @@ export default class Sensei extends GameScene {
         super.create()
     }
 
+    showSpeech(text) {
+        this.sensei.showSpeech(text)
+    }
+
+    hideSpeech() {
+        this.sensei.hideSpeech()
+    }
+
     /* END-USER-CODE */
 }
 

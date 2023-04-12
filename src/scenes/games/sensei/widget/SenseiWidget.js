@@ -141,8 +141,12 @@ export default class SenseiWidget extends BaseContainer {
         this.speech.show(text)
     }
 
-    hideAll() {
+    hideSpeech() {
         this.speech.close()
+    }
+
+    hideAll() {
+        this.hideSpeech()
         this.belt.close()
     }
 

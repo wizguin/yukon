@@ -28,11 +28,13 @@
                         "Button"
                     ],
                     "Button.spriteName": "menu/item",
-                    "Button.callback": "() => this.onClick()",
+                    "Button.hoverCallback": "() => this.onOver()",
+                    "Button.hoverOutCallback": "() => this.onOut()",
+                    "Button.callback": "() => this.onUp()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "sensei",
-                        "frame": "menu/item-hover"
+                        "frame": "menu/item"
                     }
                 },
                 {

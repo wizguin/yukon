@@ -17,7 +17,7 @@ export default class SenseiMenuItem extends BaseContainer {
 
 
         // item
-        const item = scene.add.image(0, 0, "sensei", "menu/item-hover");
+        const item = scene.add.image(0, 0, "sensei", "menu/item");
         this.add(item);
 
         // text
@@ -36,7 +36,9 @@ export default class SenseiMenuItem extends BaseContainer {
         // item (components)
         const itemButton = new Button(item);
         itemButton.spriteName = "menu/item";
-        itemButton.callback = () => this.onClick();
+        itemButton.hoverCallback = () => this.onOver();
+        itemButton.hoverOutCallback = () => this.onOut();
+        itemButton.callback = () => this.onUp();
         itemButton.activeFrame = false;
 
         this.text = text;
@@ -44,7 +46,9 @@ export default class SenseiMenuItem extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.callback
+        this.onOver = () => {}
+        this.onOut = () => {}
+        this.onUp = () => {}
 
         /* END-USER-CTR-CODE */
     }
@@ -55,7 +59,7 @@ export default class SenseiMenuItem extends BaseContainer {
     show(config) {
         this.text.text = config.text
 
-        this.callback = config.callback
+        this.setCallbacks(config)
 
         if (config.icon) {
             this.showIcon(config.icon)
@@ -64,6 +68,14 @@ export default class SenseiMenuItem extends BaseContainer {
         }
 
         super.show()
+    }
+
+    setCallbacks(config) {
+        let empty = () => {}
+
+        this.onOver = config.over || empty
+        this.onOut = config.out || empty
+        this.onUp = config.up || empty
     }
 
     showIcon(icon) {
@@ -77,12 +89,6 @@ export default class SenseiMenuItem extends BaseContainer {
         this.icon.visible = false
 
         this.text.x = 0
-    }
-
-    onClick() {
-        if (this.callback) {
-            this.callback()
-        }
     }
 
     /* END-USER-CODE */
