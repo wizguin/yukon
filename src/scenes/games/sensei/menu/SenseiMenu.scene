@@ -30,12 +30,14 @@
                         "key": "sensei",
                         "frame": "menu/bg"
                     },
+                    "y": -162,
                     "width": 848,
                     "height": 323,
                     "marginLeft": 60,
                     "marginRight": 60,
                     "marginTop": 40,
-                    "marginBottom": 45
+                    "marginBottom": 45,
+                    "ninePatchContainerOriginY": 0
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",

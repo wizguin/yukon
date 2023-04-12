@@ -17,11 +17,12 @@ export default class SenseiMenu extends BaseContainer {
 
 
         // bg
-        const bg = scene.add.ninePatchContainer(0, 0, 848, 323, "sensei", "menu/bg");
+        const bg = scene.add.ninePatchContainer(0, -162, 848, 323, "sensei", "menu/bg");
         bg.marginLeft = 60;
         bg.marginTop = 40;
         bg.marginRight = 60;
         bg.marginBottom = 45;
+        bg.ninePatchContainerOriginY = 0;
         this.add(bg);
 
         // senseiMenuItem4
@@ -64,11 +65,11 @@ export default class SenseiMenu extends BaseContainer {
                     callback: () => console.log('sensei'),
                     icon: 'menu/icon/sensei'
                 },
-                {
-                    text: 'Instructions',
-                    callback: () => console.log('instructions'),
-                    icon: 'menu/icon/instructions'
-                },
+                // {
+                //     text: 'Instructions',
+                //     callback: () => console.log('instructions'),
+                //     icon: 'menu/icon/instructions'
+                // }
             ]
         }
 
@@ -102,6 +103,12 @@ export default class SenseiMenu extends BaseContainer {
 
             item.show(config)
         }
+
+        this.resizeMenu()
+    }
+
+    resizeMenu() {
+        this.bg.height = (this.menu.length * 61) + 78
     }
 
     /* END-USER-CODE */

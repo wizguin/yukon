@@ -62,8 +62,6 @@ export default class Sensei extends GameScene {
 
     create() {
         super.create()
-
-        this.sensei.showSpeech('Hello world')
     }
 
     /* END-USER-CODE */
