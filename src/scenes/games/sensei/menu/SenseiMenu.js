@@ -10,13 +10,16 @@ export default class SenseiMenu extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {NinePatchContainer} */
         this.bg;
 
 
         // bg
-        const bg = scene.add.image(0, 0, "sensei", "menu/bg");
-        bg.setOrigin(0.5, 0.5015197568389058);
+        const bg = scene.add.ninePatchContainer(0, 0, 842, 323, "sensei", "menu/bg");
+        bg.marginLeft = 60;
+        bg.marginTop = 40;
+        bg.marginRight = 60;
+        bg.marginBottom = 45;
         this.add(bg);
 
         // senseiMenuItem

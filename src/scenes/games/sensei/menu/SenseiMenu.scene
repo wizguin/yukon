@@ -21,8 +21,8 @@
             "components": [],
             "list": [
                 {
-                    "type": "Image",
-                    "id": "45bc16aa-d4e2-4c36-8505-48fb586adbfc",
+                    "type": "NinePatchContainer",
+                    "id": "907491ca-6c4a-4227-a8f0-fd5774fb38af",
                     "label": "bg",
                     "scope": "CLASS",
                     "components": [],
@@ -30,7 +30,12 @@
                         "key": "sensei",
                         "frame": "menu/bg"
                     },
-                    "originY": 0.5015197568389058
+                    "width": 842,
+                    "height": 323,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginTop": 40,
+                    "marginBottom": 45
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
