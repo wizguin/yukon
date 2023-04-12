@@ -30,7 +30,7 @@
                         "key": "sensei",
                         "frame": "menu/bg"
                     },
-                    "width": 842,
+                    "width": 848,
                     "height": 323,
                     "marginLeft": 60,
                     "marginRight": 60,
@@ -39,15 +39,65 @@
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
+                    "id": "d7db7652-6890-4681-a0c5-b03d3dcb9aef",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "senseiMenuItem4",
+                    "components": [],
+                    "x": 0,
+                    "y": 92,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
+                    "id": "6030acca-d185-4087-8b80-de8730932721",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "senseiMenuItem3",
+                    "components": [],
+                    "x": 0,
+                    "y": 30,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
+                    "id": "5790a6f6-fa4c-4dcc-b87f-f561cf423691",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "senseiMenuItem2",
+                    "components": [],
+                    "x": 0,
+                    "y": -32,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
                     "id": "fa3ec168-e4e1-4a50-8685-29a2d6e96874",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "visible"
                     ],
-                    "label": "senseiMenuItem",
+                    "label": "senseiMenuItem1",
                     "components": [],
                     "x": 0,
                     "y": -94,
+                    "visible": false,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -60,5 +110,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "916431eb-b2a5-475a-9067-6b83e8e6ed16",
+            "label": "items",
+            "objectIds": [
+                "fa3ec168-e4e1-4a50-8685-29a2d6e96874",
+                "5790a6f6-fa4c-4dcc-b87f-f561cf423691",
+                "6030acca-d185-4087-8b80-de8730932721",
+                "d7db7652-6890-4681-a0c5-b03d3dcb9aef"
+            ]
+        }
+    ]
 }

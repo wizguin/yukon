@@ -37,7 +37,7 @@ export default class Sensei extends GameScene {
         sensei.visible = true;
 
         // menu
-        const menu = new SenseiMenu(this, 1055, 774);
+        const menu = new SenseiMenu(this, 1060, 774);
         this.add.existing(menu);
 
         // xButton

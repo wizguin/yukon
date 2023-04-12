@@ -34,6 +34,35 @@
                         "key": "sensei",
                         "frame": "menu/item-hover"
                     }
+                },
+                {
+                    "type": "Text",
+                    "id": "6cf0380e-497d-4d1a-b1cf-89d06a966ee5",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "components": [],
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "This is a menu item!",
+                    "fixedWidth": 720,
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "26px",
+                    "color": "#000"
+                },
+                {
+                    "type": "Image",
+                    "id": "45287d6d-9695-479a-92e0-873e03a1f6af",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "menu/icon/belt"
+                    },
+                    "x": -342,
+                    "originX": 0.5106382978723404,
+                    "originY": 0.5106382978723404,
+                    "visible": false
                 }
             ]
         }
