@@ -17,6 +17,7 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.seat
         this.username
         this.rank
+        this.sensei
 
         this.battle = new CardJitsuBattle(this)
         this.color
@@ -53,6 +54,8 @@ export default class CardJitsuPlayer extends BaseContainer {
         this.rank = user.ninjaRank
 
         this.color = this.world.getColor(user.color)
+
+        this.sensei = user.sensei || false
     }
 
     setColor(color) {
@@ -60,13 +63,13 @@ export default class CardJitsuPlayer extends BaseContainer {
     }
 
     setBelt(rank) {
-        this.battle.setBelt(rank)
+        this.battle.setBelt(this.sensei ? 0 : rank)
     }
 
     playBattle(battle) {
         this.battle.play(battle)
 
-        this.battle.sensei.visible = false
+        this.battle.sensei.visible = this.sensei
 
         this.setColor(this.color)
         this.setBelt(this.rank)
