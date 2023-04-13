@@ -40,7 +40,20 @@
                     "components": [],
                     "texture": {
                         "key": "main",
-                        "frame": "buddy/icon-offline"
+                        "frame": "buddy/icon-player"
+                    },
+                    "x": -137,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "b4fdaa43-9dc9-4152-a95e-28f3de2b805e",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/icon-load"
                     },
                     "x": -137
                 },

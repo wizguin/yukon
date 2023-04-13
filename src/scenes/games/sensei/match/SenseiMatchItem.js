@@ -11,6 +11,8 @@ export default class SenseiMatchItem extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Image} */
         this.icon;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
         /** @type {Phaser.GameObjects.Text} */
         this.username;
 
@@ -20,8 +22,13 @@ export default class SenseiMatchItem extends BaseContainer {
         this.add(item);
 
         // icon
-        const icon = scene.add.image(-137, 0, "main", "buddy/icon-offline");
+        const icon = scene.add.image(-137, 0, "main", "buddy/icon-player");
+        icon.visible = false;
         this.add(icon);
+
+        // spinner
+        const spinner = scene.add.image(-137, 0, "main", "buddy/icon-load");
+        this.add(spinner);
 
         // username
         const username = scene.add.text(25, 0, "", {});
@@ -30,14 +37,45 @@ export default class SenseiMatchItem extends BaseContainer {
         this.add(username);
 
         this.icon = icon;
+        this.spinner = spinner;
         this.username = username;
 
         /* START-USER-CTR-CODE */
+
+        // Spinner
+        scene.tweens.add({
+            targets: this.spinner,
+            angle: { from: 0, to: 180 },
+            duration: 900,
+            repeat: -1,
+            ease: 'Cubic'
+        })
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    setItem(player) {
+        if (!player) {
+            clearItem()
+            return
+        }
+
+        this.username.text = player
+
+        this.spinner.visible = false
+        this.icon.visible = true
+    }
+
+    clearItem() {
+        this.username.text = ''
+
+        this.icon.visible = false
+        this.spinner.visible = true
+    }
+
     /* END-USER-CODE */
 }
 

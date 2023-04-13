@@ -91,6 +91,12 @@ export default class Sensei extends GameScene {
         this.sensei.hideSpeech()
     }
 
+    stop() {
+        this.match.close()
+
+        super.stop()
+    }
+
     /* END-USER-CODE */
 }
 

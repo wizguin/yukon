@@ -12,24 +12,32 @@ export default class SenseiMatch extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {SenseiMatchItem} */
+        this.opponent;
+        /** @type {SenseiMatchItem} */
+        this.myPlayer;
+        /** @type {Phaser.GameObjects.Text} */
+        this.text;
+
+
         // bg
         const bg = scene.add.image(0, 0, "sensei", "match/window");
         this.add(bg);
 
-        // item2
-        const item2 = new SenseiMatchItem(scene, 0, 46);
-        this.add(item2);
+        // opponent
+        const opponent = new SenseiMatchItem(scene, 0, 98);
+        this.add(opponent);
 
-        // item1
-        const item1 = new SenseiMatchItem(scene, 2, 98);
-        this.add(item1);
+        // myPlayer
+        const myPlayer = new SenseiMatchItem(scene, 0, 46);
+        this.add(myPlayer);
 
-        // text_1
-        const text_1 = scene.add.text(0, -20, "", {});
-        text_1.setOrigin(0.5, 0.5);
-        text_1.text = "Waiting for more players";
-        text_1.setStyle({ "align": "center", "fixedWidth":460,"fontFamily": "Arial Narrow", "fontSize": "32px" });
-        this.add(text_1);
+        // text
+        const text = scene.add.text(0, -20, "", {});
+        text.setOrigin(0.5, 0.5);
+        text.text = "Waiting for more players";
+        text.setStyle({ "align": "center", "fixedWidth":460,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        this.add(text);
 
         // spinner
         const spinner = scene.add.image(0, -100, "sensei", "match/spinner");
@@ -54,6 +62,10 @@ export default class SenseiMatch extends BaseContainer {
         xButtonButton.spriteName = "blue-button";
         xButtonButton.callback = () => this.close();
 
+        this.opponent = opponent;
+        this.myPlayer = myPlayer;
+        this.text = text;
+
         /* START-USER-CTR-CODE */
 
         // Spinner
@@ -71,19 +83,38 @@ export default class SenseiMatch extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
+
+    addListeners() {
+        this.network.events.on('join_matchmaking', this.handleJoinMatchmaking, this)
+    }
+
+    removeListeners() {
+        this.network.events.off('join_matchmaking', this.handleJoinMatchmaking, this)
+    }
 
     show() {
         this.x = this.originalX
         this.y = this.originalY
 
+        this.addListeners()
+        this.scene.network.send('join_matchmaking')
+
         super.show()
     }
 
     close() {
+        this.scene.network.send('leave_matchmaking')
+        this.removeListeners()
+
         super.close()
 
         this.scene.showMenu('start')
+    }
+
+    handleJoinMatchmaking() {
+        this.myPlayer.setItem(this.world.client.penguin.username)
     }
 
     /* END-USER-CODE */

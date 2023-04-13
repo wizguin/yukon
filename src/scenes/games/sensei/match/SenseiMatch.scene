@@ -39,12 +39,28 @@
                 },
                 {
                     "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
+                    "id": "c80802ff-9240-44e6-9512-d6cb00e47373",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "opponent",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 0,
+                    "y": 98,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
                     "id": "12bc02a8-5618-461e-83de-1a00a7412997",
                     "unlock": [
                         "x",
                         "y"
                     ],
-                    "label": "item2",
+                    "label": "myPlayer",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 0,
                     "y": 46,
@@ -52,23 +68,10 @@
                     "list": []
                 },
                 {
-                    "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
-                    "id": "c80802ff-9240-44e6-9512-d6cb00e47373",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "item1",
-                    "components": [],
-                    "x": 2,
-                    "y": 98,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
                     "type": "Text",
                     "id": "7b204eaf-dbd4-42cb-8322-ce985fdd95fd",
-                    "label": "text_1",
+                    "label": "text",
+                    "scope": "CLASS",
                     "components": [],
                     "y": -20,
                     "originX": 0.5,
