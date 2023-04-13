@@ -17,7 +17,11 @@ export default class SenseiMatch extends BaseContainer {
         /** @type {SenseiMatchItem} */
         this.myPlayer;
         /** @type {Phaser.GameObjects.Text} */
-        this.text;
+        this.message;
+        /** @type {Phaser.GameObjects.Text} */
+        this.time;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
 
 
         // bg
@@ -32,17 +36,23 @@ export default class SenseiMatch extends BaseContainer {
         const myPlayer = new SenseiMatchItem(scene, 0, 46);
         this.add(myPlayer);
 
-        // text
-        const text = scene.add.text(0, -20, "", {});
-        text.setOrigin(0.5, 0.5);
-        text.text = "Waiting for more players";
-        text.setStyle({ "align": "center", "fixedWidth":460,"fontFamily": "Arial Narrow", "fontSize": "32px" });
-        this.add(text);
+        // message
+        const message = scene.add.text(0, -20, "", {});
+        message.setOrigin(0.5, 0.5);
+        message.text = "Waiting for more players";
+        message.setStyle({ "align": "center", "fixedWidth":460,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        this.add(message);
+
+        // time
+        const time = scene.add.text(0, -100, "", {});
+        time.setOrigin(0.5, 0.5);
+        time.text = "10";
+        time.setStyle({ "align": "center", "fixedWidth":60,"fontFamily": "Arial", "fontSize": "32px", "fontStyle": "bold" });
+        this.add(time);
 
         // spinner
         const spinner = scene.add.image(0, -100, "sensei", "match/spinner");
         spinner.setOrigin(0.5, 0.5063291139240507);
-        spinner.visible = false;
         this.add(spinner);
 
         // xButton
@@ -64,7 +74,9 @@ export default class SenseiMatch extends BaseContainer {
 
         this.opponent = opponent;
         this.myPlayer = myPlayer;
-        this.text = text;
+        this.message = message;
+        this.time = time;
+        this.spinner = spinner;
 
         /* START-USER-CTR-CODE */
 
@@ -88,13 +100,17 @@ export default class SenseiMatch extends BaseContainer {
 
     addListeners() {
         this.network.events.on('join_matchmaking', this.handleJoinMatchmaking, this)
+        this.network.events.on('tick_matchmaking', this.handleTickMatchmaking, this)
     }
 
     removeListeners() {
         this.network.events.off('join_matchmaking', this.handleJoinMatchmaking, this)
+        this.network.events.off('tick_matchmaking', this.handleTickMatchmaking, this)
     }
 
     show() {
+        this.showWaitingElements(true)
+
         this.x = this.originalX
         this.y = this.originalY
 
@@ -115,6 +131,18 @@ export default class SenseiMatch extends BaseContainer {
 
     handleJoinMatchmaking() {
         this.myPlayer.setItem(this.world.client.penguin.username)
+    }
+
+    handleTickMatchmaking(args) {
+        this.showWaitingElements(false)
+
+        this.time.text = args.tick
+    }
+
+    showWaitingElements(show) {
+        this.spinner.visible = !show
+        this.time.visible = !show
+        this.message.visible = show
     }
 
     /* END-USER-CODE */

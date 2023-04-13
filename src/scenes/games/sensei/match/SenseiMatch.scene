@@ -70,7 +70,7 @@
                 {
                     "type": "Text",
                     "id": "7b204eaf-dbd4-42cb-8322-ce985fdd95fd",
-                    "label": "text",
+                    "label": "message",
                     "scope": "CLASS",
                     "components": [],
                     "y": -20,
@@ -83,17 +83,33 @@
                     "fontSize": "32px"
                 },
                 {
+                    "type": "Text",
+                    "id": "150d74b5-74fe-4764-9d54-4a697e9eda43",
+                    "label": "time",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -100,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "10",
+                    "fixedWidth": 60,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "fontStyle": "bold"
+                },
+                {
                     "type": "Image",
                     "id": "fd40b908-3817-45e9-9d72-e9fa95d657f1",
                     "label": "spinner",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "match/spinner"
                     },
                     "y": -100,
-                    "originY": 0.5063291139240507,
-                    "visible": false
+                    "originY": 0.5063291139240507
                 },
                 {
                     "type": "Image",
