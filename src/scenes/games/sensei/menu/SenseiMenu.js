@@ -158,7 +158,7 @@ export default class SenseiMenu extends BaseContainer {
     }
 
     senseiUp() {
-
+        this.network.send('join_sensei')
     }
 
     hideSpeech() {
