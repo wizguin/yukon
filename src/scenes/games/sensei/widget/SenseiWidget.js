@@ -25,6 +25,8 @@ export default class SenseiWidget extends BaseContainer {
         this.belt;
         /** @type {SenseiSpeech} */
         this.speech;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.hideout;
 
 
         // bg
@@ -45,12 +47,19 @@ export default class SenseiWidget extends BaseContainer {
         speech.visible = false;
         this.add(speech);
 
+        // hideout
+        const hideout = scene.add.sprite(573, 133, "sensei", "hideout/hideout0001");
+        hideout.setOrigin(0.5005599104143337, 0.5);
+        hideout.visible = false;
+        this.add(hideout);
+
         // bg (components)
         new Interactive(bg);
 
         this.sensei = sensei;
         this.belt = belt;
         this.speech = speech;
+        this.hideout = hideout;
 
         /* START-USER-CTR-CODE */
 
@@ -64,7 +73,14 @@ export default class SenseiWidget extends BaseContainer {
             beltAward: [
                 this.menuBeltAward,
                 this.menuBeltEarned,
-                this.leaveGame,
+                this.leaveGame
+            ],
+            maskAward: [
+                this.menuMaskStart,
+                this.menuMaskAward,
+                this.menuMaskEarned,
+                this.menuMaskHideout,
+                this.leaveGame
             ]
         }
 
@@ -81,6 +97,8 @@ export default class SenseiWidget extends BaseContainer {
     /* START-USER-CODE */
 
     show() {
+        this.hideAll()
+
         super.show()
 
         this.scene.events.emit('sensei_ready')
@@ -124,6 +142,16 @@ export default class SenseiWidget extends BaseContainer {
         this.currentIndex++
     }
 
+    rankUp(rank) {
+        this.rankId = rank
+
+        if (rank > this.beltNames.length) {
+            this.loadMenu('maskAward')
+        } else {
+            this.loadMenu('beltAward')
+        }
+    }
+
     menuBeltAward() {
         this.showSpeech('Congratulations!\nMuch like the fearsome earthquake,\nYou have rocked the house.')
     }
@@ -133,7 +161,30 @@ export default class SenseiWidget extends BaseContainer {
 
         this.showSpeech(`Well done. You have earned\na ${beltName} Belt for your efforts.\nI am proud of you.`)
 
-        this.belt.show(this.rankId)
+        this.belt.showBelt(this.rankId)
+    }
+
+    menuMaskStart() {
+        this.showSpeech('The gentle lotus,\nCowers before the storm cloud.\nBut you... you did not.')
+    }
+
+    menuMaskAward() {
+        this.showSpeech('Well done, grasshopper.\nYou have faced my skills, and won.\nAnd proven yourself.')
+    }
+
+    menuMaskEarned() {
+        this.showSpeech('Now receive the mark\nOf a Card-Jitsu master,\nWith this ninja mask.')
+
+        this.belt.showMask()
+    }
+
+    menuMaskHideout() {
+        this.belt.close()
+
+        this.hideout.visible = true
+        this.hideout.play('hideout')
+
+        this.showSpeech('You may now join us,\nIn the secret ninja hideout.\nCongratulations!')
     }
 
     showSpeech(text) {
@@ -148,6 +199,7 @@ export default class SenseiWidget extends BaseContainer {
     hideAll() {
         this.hideSpeech()
         this.belt.close()
+        this.hideout.visible = false
     }
 
     leaveGame() {

@@ -84,6 +84,21 @@
                     "visible": false,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "type": "Sprite",
+                    "id": "285d21e7-04d7-4494-a425-7cff536c0c7a",
+                    "label": "hideout",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "hideout/hideout0001"
+                    },
+                    "x": 573,
+                    "y": 133,
+                    "originX": 0.5005599104143337,
+                    "visible": false
                 }
             ]
         }

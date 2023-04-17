@@ -443,10 +443,7 @@ export default class CardJitsu extends GameScene {
         }
 
         this.interface.events.once('sensei_ready', () => {
-            let sensei = this.interface.loadedWidgets.Sensei
-
-            sensei.rankId = this.rankUp
-            sensei.loadMenu('beltAward')
+            this.interface.loadedWidgets.Sensei.rankUp(this.rankUp)
         })
 
         this.interface.loadWidget('Sensei')

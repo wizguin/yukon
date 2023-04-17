@@ -10,7 +10,13 @@ export default class SenseiBelt extends BaseContainer {
         super(scene, x ?? 760, y ?? 480);
 
         /** @type {Phaser.GameObjects.Image} */
+        this.belt;
+        /** @type {Phaser.GameObjects.Image} */
         this.color;
+        /** @type {Phaser.GameObjects.Image} */
+        this.shadow;
+        /** @type {Phaser.GameObjects.Image} */
+        this.ninja;
 
 
         // belt
@@ -28,7 +34,16 @@ export default class SenseiBelt extends BaseContainer {
         shadow.setOrigin(0.5, 0.5014492753623189);
         this.add(shadow);
 
+        // ninja
+        const ninja = scene.add.image(0, 0, "sensei", "mask/mask");
+        ninja.setOrigin(0.500823723228995, 0.5);
+        ninja.visible = false;
+        this.add(ninja);
+
+        this.belt = belt;
         this.color = color;
+        this.shadow = shadow;
+        this.ninja = ninja;
 
         /* START-USER-CTR-CODE */
 
@@ -40,11 +55,31 @@ export default class SenseiBelt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(rank) {
+    showBelt(rank) {
+        this.showBeltSprites(true)
         this.color.tint = this.colors[rank - 1]
 
-        super.show()
+        this.show()
+    }
 
+    showMask() {
+        this.showBeltSprites(false)
+        this.show()
+    }
+
+    show() {
+        super.show()
+        this.addTweens()
+    }
+
+    showBeltSprites(show) {
+        this.ninja.visible = !show
+        this.shadow.visible = show
+        this.color.visible = show
+        this.belt.visible = show
+    }
+
+    addTweens() {
         // Fade
         this.scene.tweens.add({
             targets: this,
