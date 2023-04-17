@@ -308,10 +308,6 @@ export default class CardJitsu extends GameScene {
         this.playBattle('ambient')
 
         let winner = this.players[winSeat]
-
-        // temp until made int on server
-        winCards = winCards.map(i => parseInt(i))
-
         let cards = winner.findWins(winCards)
 
         for (let i = 0; i < cards.length; i++) {

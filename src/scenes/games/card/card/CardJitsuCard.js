@@ -159,8 +159,8 @@ export default class CardJitsuCard extends BaseContainer {
     updateCard(card) {
         let tint = layout.colors[card.color].color
 
-        this.id = parseInt(card.card_id)
-        this.powerId = parseInt(card.power_id)
+        this.id = card.card_id
+        this.powerId = card.power_id
         this.elementId = card.element
 
         this.value.text = card.value
