@@ -245,13 +245,15 @@ export default class CardJitsu extends GameScene {
     }
 
     addAward(award) {
+        let type = award == 104 ? 'face' : 'body'
+
         // this should be abstracted, user inventory could be its own class
-        if (this.world.client.inventory['body'].includes(award)) {
+        if (this.world.client.inventory[type].includes(award)) {
             return
         }
 
-        this.world.client.inventory['body'].push(award)
-        this.world.client.inventory['body'].sort((a, b) => a - b)
+        this.world.client.inventory[type].push(award)
+        this.world.client.inventory[type].sort((a, b) => a - b)
     }
 
     setPlayer(user, index) {
