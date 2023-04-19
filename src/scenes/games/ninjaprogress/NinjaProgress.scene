@@ -23,6 +23,19 @@
             "y": 480,
             "list": [
                 {
+                    "type": "Rectangle",
+                    "id": "fa964fba-f465-4781-ac56-f5ed6a276e3a",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
                     "type": "Image",
                     "id": "ad799b05-40ff-4e8c-a56e-dc291a18cd30",
                     "label": "bg",

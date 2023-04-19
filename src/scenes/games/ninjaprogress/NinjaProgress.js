@@ -7,6 +7,8 @@ export const preload = {
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../base/BaseContainer";
+import Interactive from "../../components/Interactive";
+import Button from "../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -24,6 +26,13 @@ export default class NinjaProgress extends BaseContainer {
         /** @type {Phaser.GameObjects.Container} */
         this.separator;
 
+
+        // block
+        const block = scene.add.rectangle(0, 0, 1520, 960);
+        block.isFilled = true;
+        block.fillColor = 0;
+        block.fillAlpha = 0.2;
+        this.add(block);
 
         // bg
         const bg = scene.add.image(0, 51, "ninjaprogress", "bg");
@@ -84,6 +93,9 @@ export default class NinjaProgress extends BaseContainer {
         // xButton
         const xButton = scene.add.image(541, -305, "ninjaprogress", "close");
         this.add(xButton);
+
+        // block (components)
+        new Interactive(block);
 
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
