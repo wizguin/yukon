@@ -71,6 +71,16 @@
                 },
                 {
                     "type": "Image",
+                    "id": "27fb7239-fc87-44d5-8fb8-b48adcdff5f4",
+                    "label": "progressBg",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "progress"
+                    }
+                },
+                {
+                    "type": "Image",
                     "id": "374a2838-1cb8-4407-a5f5-b1de8aafaf29",
                     "label": "nextBelt",
                     "scope": "CLASS",
@@ -79,10 +89,10 @@
                         "key": "ninjaprogress",
                         "frame": "next/1"
                     },
-                    "y": 23,
+                    "x": 436,
+                    "y": 27,
                     "originX": 0.5042735042735043,
-                    "originY": 0.5052631578947369,
-                    "visible": false
+                    "originY": 0.5052631578947369
                 },
                 {
                     "type": "Image",
@@ -94,32 +104,75 @@
                         "key": "ninjaprogress",
                         "frame": "belt/1"
                     },
-                    "y": 23,
-                    "originX": 0.502262443438914,
-                    "visible": false
+                    "x": -399,
+                    "y": 66,
+                    "originX": 0.502262443438914
                 },
                 {
-                    "type": "Image",
-                    "id": "27fb7239-fc87-44d5-8fb8-b48adcdff5f4",
-                    "label": "progressBg",
+                    "type": "Text",
+                    "id": "8ba4a30c-2d8d-451b-85e0-2bcffb8a6c85",
+                    "label": "nextText",
                     "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "progress"
-                    }
+                    "x": 244,
+                    "y": -42,
+                    "originX": 0.5,
+                    "originY": 1,
+                    "text": "Next Belt",
+                    "fixedWidth": 500,
+                    "align": "right",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "26px",
+                    "fontStyle": "bold",
+                    "color": "#333"
+                },
+                {
+                    "type": "Text",
+                    "id": "456d9a0f-c780-43b6-b567-a2c88bf0cfb3",
+                    "label": "currentText",
+                    "components": [],
+                    "x": -256,
+                    "y": -42,
+                    "originX": 0.5,
+                    "originY": 1,
+                    "text": "Current Belt",
+                    "fixedWidth": 500,
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "32px",
+                    "fontStyle": "bold",
+                    "color": "#333"
                 },
                 {
                     "type": "Image",
                     "id": "bff05c3e-1f12-4d7f-a38d-d2ba933299c8",
-                    "label": "progress",
+                    "label": "bar",
                     "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "progress/1"
                     },
+                    "x": 46,
                     "y": 7,
                     "originX": 0.5008347245409015
+                },
+                {
+                    "type": "Text",
+                    "id": "366be64f-d6da-4849-8142-09442eeb6d94",
+                    "label": "progressText",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -192,
+                    "y": 8,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "0%",
+                    "fixedWidth": 80,
+                    "align": "right",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "28px",
+                    "fontStyle": "bold",
+                    "color": "#333"
                 },
                 {
                     "type": "Image",

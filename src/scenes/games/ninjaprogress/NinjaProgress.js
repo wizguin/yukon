@@ -22,7 +22,9 @@ export default class NinjaProgress extends BaseContainer {
         /** @type {Phaser.GameObjects.Image} */
         this.currentBelt;
         /** @type {Phaser.GameObjects.Image} */
-        this.progress;
+        this.bar;
+        /** @type {Phaser.GameObjects.Text} */
+        this.progressText;
         /** @type {Phaser.GameObjects.Container} */
         this.separator;
 
@@ -47,26 +49,46 @@ export default class NinjaProgress extends BaseContainer {
         const cards = scene.add.image(0, 23, "ninjaprogress", "cards");
         this.add(cards);
 
-        // nextBelt
-        const nextBelt = scene.add.image(0, 23, "ninjaprogress", "next/1");
-        nextBelt.setOrigin(0.5042735042735043, 0.5052631578947369);
-        nextBelt.visible = false;
-        this.add(nextBelt);
-
-        // currentBelt
-        const currentBelt = scene.add.image(0, 23, "ninjaprogress", "belt/1");
-        currentBelt.setOrigin(0.502262443438914, 0.5);
-        currentBelt.visible = false;
-        this.add(currentBelt);
-
         // progressBg
         const progressBg = scene.add.image(0, 0, "ninjaprogress", "progress");
         this.add(progressBg);
 
-        // progress
-        const progress = scene.add.image(0, 7, "ninjaprogress", "progress/1");
-        progress.setOrigin(0.5008347245409015, 0.5);
-        this.add(progress);
+        // nextBelt
+        const nextBelt = scene.add.image(436, 27, "ninjaprogress", "next/1");
+        nextBelt.setOrigin(0.5042735042735043, 0.5052631578947369);
+        this.add(nextBelt);
+
+        // currentBelt
+        const currentBelt = scene.add.image(-399, 66, "ninjaprogress", "belt/1");
+        currentBelt.setOrigin(0.502262443438914, 0.5);
+        this.add(currentBelt);
+
+        // nextText
+        const nextText = scene.add.text(244, -42, "", {});
+        nextText.setOrigin(0.5, 1);
+        nextText.text = "Next Belt";
+        nextText.setStyle({ "align": "right", "color": "#333", "fixedWidth":500,"fontFamily": "Burbank Small", "fontSize": "26px", "fontStyle": "bold" });
+        this.add(nextText);
+
+        // currentText
+        const currentText = scene.add.text(-256, -42, "", {});
+        currentText.setOrigin(0.5, 1);
+        currentText.text = "Current Belt";
+        currentText.setStyle({ "color": "#333", "fixedWidth":500,"fontFamily": "Burbank Small", "fontSize": "32px", "fontStyle": "bold" });
+        this.add(currentText);
+
+        // bar
+        const bar = scene.add.image(46, 7, "ninjaprogress", "progress/1");
+        bar.setOrigin(0.5008347245409015, 0.5);
+        this.add(bar);
+
+        // progressText
+        const progressText = scene.add.text(-192, 8, "", {});
+        progressText.setOrigin(1, 0.5);
+        progressText.visible = false;
+        progressText.text = "0%";
+        progressText.setStyle({ "align": "right", "color": "#333", "fixedWidth":80,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold" });
+        this.add(progressText);
 
         // frame2
         const frame2 = scene.add.image(0, -2, "ninjaprogress", "frame/2");
@@ -104,15 +126,42 @@ export default class NinjaProgress extends BaseContainer {
 
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
-        this.progress = progress;
+        this.bar = bar;
+        this.progressText = progressText;
         this.separator = separator;
 
         /* START-USER-CTR-CODE */
+
+        this.progressStartX = this.progressText.x
+
+        this.setRank(5)
+        this.setProgress(50)
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    setRank(rank) {
+        this.setCurrentBelt(rank)
+        this.setNextBelt(rank)
+    }
+
+    setCurrentBelt(rank) {
+        this.currentBelt.setFrame(`belt/${rank}`)
+    }
+
+    setNextBelt(rank) {
+        this.nextBelt.setFrame(`next/${rank + 1}`)
+    }
+
+    setProgress(progress) {
+        progress = Phaser.Math.Clamp(progress, 1, 100)
+
+        this.bar.setFrame(`progress/${progress}`)
+    }
+
     /* END-USER-CODE */
 }
 
