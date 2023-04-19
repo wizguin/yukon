@@ -47,171 +47,19 @@
                     "y": 51
                 },
                 {
-                    "type": "Image",
-                    "id": "b3dc35d6-8e63-4fba-911e-0e32fa354e8a",
-                    "label": "cardsButton",
-                    "components": [
-                        "Button"
+                    "prefabId": "69fb792c-79d1-47f9-a9aa-152d9e190c9d",
+                    "id": "eb43e92d-7d06-471a-a937-c8b14e00548f",
+                    "unlock": [
+                        "x",
+                        "y"
                     ],
-                    "Button.spriteName": "button",
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "button"
-                    },
-                    "y": 254,
-                    "originY": 0.5060240963855421
-                },
-                {
-                    "type": "Text",
-                    "id": "2504cb8f-1c7b-45f8-a24d-03813652b9a4",
-                    "label": "cardsText",
+                    "label": "progress",
                     "scope": "CLASS",
                     "components": [],
-                    "x": -81,
-                    "y": 254,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "VIEW YOUR\nCARDS",
-                    "fixedWidth": 140,
-                    "align": "center",
-                    "fontFamily": "CCFaceFront",
-                    "fontSize": "20px",
-                    "fontStyle": "bold italic",
-                    "color": "#736357"
-                },
-                {
-                    "type": "Image",
-                    "id": "1a214fa4-e565-46b0-ac3b-cc496c3ee226",
-                    "label": "cards",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "cards"
-                    },
-                    "x": 68,
-                    "y": 245
-                },
-                {
-                    "type": "Image",
-                    "id": "27fb7239-fc87-44d5-8fb8-b48adcdff5f4",
-                    "label": "progressBg",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "progress"
-                    }
-                },
-                {
-                    "type": "Image",
-                    "id": "374a2838-1cb8-4407-a5f5-b1de8aafaf29",
-                    "label": "nextBelt",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "next/1"
-                    },
-                    "x": 436,
-                    "y": 27,
-                    "originX": 0.5042735042735043,
-                    "originY": 0.5052631578947369
-                },
-                {
-                    "type": "Image",
-                    "id": "bc23f8fa-624d-4a53-842c-15526779d7df",
-                    "label": "currentBelt",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "belt/1"
-                    },
-                    "x": -399,
-                    "y": 66,
-                    "originX": 0.502262443438914
-                },
-                {
-                    "type": "Text",
-                    "id": "8ba4a30c-2d8d-451b-85e0-2bcffb8a6c85",
-                    "label": "nextText",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": 244,
-                    "y": -42,
-                    "originX": 0.5,
-                    "originY": 1,
-                    "text": "Next Belt",
-                    "fixedWidth": 500,
-                    "align": "right",
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "26px",
-                    "fontStyle": "bold",
-                    "color": "#333"
-                },
-                {
-                    "type": "Text",
-                    "id": "456d9a0f-c780-43b6-b567-a2c88bf0cfb3",
-                    "label": "currentText",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": -256,
-                    "y": -42,
-                    "originX": 0.5,
-                    "originY": 1,
-                    "text": "Current Belt",
-                    "fixedWidth": 500,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "32px",
-                    "fontStyle": "bold",
-                    "color": "#333"
-                },
-                {
-                    "type": "Image",
-                    "id": "bff05c3e-1f12-4d7f-a38d-d2ba933299c8",
-                    "label": "bar",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "progress/1"
-                    },
-                    "x": 46,
-                    "y": 7,
-                    "originX": 0.5008347245409015
-                },
-                {
-                    "type": "Text",
-                    "id": "366be64f-d6da-4849-8142-09442eeb6d94",
-                    "label": "progressText",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": -192,
-                    "y": 8,
-                    "originX": 1,
-                    "originY": 0.5,
-                    "visible": false,
-                    "text": "0%",
-                    "fixedWidth": 80,
-                    "align": "right",
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "28px",
-                    "fontStyle": "bold",
-                    "color": "#333"
-                },
-                {
-                    "type": "Image",
-                    "id": "b10ef6fe-7275-4f5d-bc05-56dbfc72db12",
-                    "label": "sensei",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "sensei"
-                    },
-                    "x": 128,
-                    "y": -14,
-                    "originY": 0.5023255813953489,
-                    "visible": false
+                    "x": 0,
+                    "y": 0,
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "type": "Image",
