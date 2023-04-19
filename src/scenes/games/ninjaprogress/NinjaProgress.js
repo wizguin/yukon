@@ -17,6 +17,8 @@ export default class NinjaProgress extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Text} */
+        this.cardsText;
         /** @type {Phaser.GameObjects.Image} */
         this.nextBelt;
         /** @type {Phaser.GameObjects.Image} */
@@ -29,6 +31,8 @@ export default class NinjaProgress extends BaseContainer {
         this.bar;
         /** @type {Phaser.GameObjects.Text} */
         this.progressText;
+        /** @type {Phaser.GameObjects.Image} */
+        this.sensei;
         /** @type {Phaser.GameObjects.Container} */
         this.separator;
 
@@ -44,13 +48,20 @@ export default class NinjaProgress extends BaseContainer {
         const bg = scene.add.image(0, 51, "ninjaprogress", "bg");
         this.add(bg);
 
-        // button
-        const button = scene.add.image(0, 23, "ninjaprogress", "button");
-        button.setOrigin(0.5, 0.5060240963855421);
-        this.add(button);
+        // cardsButton
+        const cardsButton = scene.add.image(0, 254, "ninjaprogress", "button");
+        cardsButton.setOrigin(0.5, 0.5060240963855421);
+        this.add(cardsButton);
+
+        // cardsText
+        const cardsText = scene.add.text(-81, 254, "", {});
+        cardsText.setOrigin(0.5, 0.5);
+        cardsText.text = "VIEW YOUR\nCARDS";
+        cardsText.setStyle({ "align": "center", "color": "#736357", "fixedWidth":140,"fontFamily": "CCFaceFront", "fontSize": "20px", "fontStyle": "bold italic" });
+        this.add(cardsText);
 
         // cards
-        const cards = scene.add.image(0, 23, "ninjaprogress", "cards");
+        const cards = scene.add.image(68, 245, "ninjaprogress", "cards");
         this.add(cards);
 
         // progressBg
@@ -94,6 +105,12 @@ export default class NinjaProgress extends BaseContainer {
         progressText.setStyle({ "align": "right", "color": "#333", "fixedWidth":80,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold" });
         this.add(progressText);
 
+        // sensei
+        const sensei = scene.add.image(128, -14, "ninjaprogress", "sensei");
+        sensei.setOrigin(0.5, 0.5023255813953489);
+        sensei.visible = false;
+        this.add(sensei);
+
         // frame2
         const frame2 = scene.add.image(0, -2, "ninjaprogress", "frame/2");
         frame2.setOrigin(0.500374531835206, 0.5);
@@ -123,25 +140,33 @@ export default class NinjaProgress extends BaseContainer {
         // block (components)
         new Interactive(block);
 
+        // cardsButton (components)
+        const cardsButtonButton = new Button(cardsButton);
+        cardsButtonButton.spriteName = "button";
+
         // xButton (components)
         const xButtonButton = new Button(xButton);
         xButtonButton.spriteName = "close";
         xButtonButton.callback = () => this.close();
 
+        this.cardsText = cardsText;
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
         this.nextText = nextText;
         this.currentText = currentText;
         this.bar = bar;
         this.progressText = progressText;
+        this.sensei = sensei;
         this.separator = separator;
 
         /* START-USER-CTR-CODE */
 
         this.progressStartX = this.progressText.x
 
-        this.setRank(0)
-        this.setProgress(0)
+        window.test = (rank, progress) => {
+            this.setRank(rank)
+            this.setProgress(progress)
+        }
 
         /* END-USER-CTR-CODE */
     }
@@ -150,6 +175,7 @@ export default class NinjaProgress extends BaseContainer {
     /* START-USER-CODE */
 
     setRank(rank) {
+        this.setVisibleElements(rank)
         this.setCurrentBelt(rank)
         this.setNextBelt(rank)
     }
@@ -163,11 +189,6 @@ export default class NinjaProgress extends BaseContainer {
     }
 
     setNextBelt(rank) {
-        let visible = rank < 9
-
-        this.nextText.visible = visible
-        this.nextBelt.visible = visible
-
         rank = Phaser.Math.Clamp(rank + 1, 1, 9)
 
         this.nextBelt.setFrame(`next/${rank}`)
@@ -177,6 +198,21 @@ export default class NinjaProgress extends BaseContainer {
         progress = Phaser.Math.Clamp(progress, 1, 100)
 
         this.bar.setFrame(`progress/${progress}`)
+    }
+
+    setVisibleElements(rank) {
+        let nextVisible = rank < 9
+        let senseiVisible = rank == 9
+        let ninjaVisible = rank == 10
+
+        this.bar.visible = nextVisible
+        this.nextText.visible = nextVisible
+        this.nextBelt.visible = nextVisible
+
+        this.sensei.visible = senseiVisible
+
+        this.currentText.visible = !ninjaVisible
+        this.currentBelt.visible = !ninjaVisible
     }
 
     /* END-USER-CODE */

@@ -48,26 +48,48 @@
                 },
                 {
                     "type": "Image",
-                    "id": "ff473508-416a-4edf-a27c-41a0edb01120",
-                    "label": "button",
-                    "components": [],
+                    "id": "b3dc35d6-8e63-4fba-911e-0e32fa354e8a",
+                    "label": "cardsButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "button",
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "button"
                     },
-                    "y": 23,
+                    "y": 254,
                     "originY": 0.5060240963855421
                 },
                 {
+                    "type": "Text",
+                    "id": "2504cb8f-1c7b-45f8-a24d-03813652b9a4",
+                    "label": "cardsText",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -81,
+                    "y": 254,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "VIEW YOUR\nCARDS",
+                    "fixedWidth": 140,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "20px",
+                    "fontStyle": "bold italic",
+                    "color": "#736357"
+                },
+                {
                     "type": "Image",
-                    "id": "fa7467a5-603b-46e2-9f03-44a9d036b218",
+                    "id": "1a214fa4-e565-46b0-ac3b-cc496c3ee226",
                     "label": "cards",
                     "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "cards"
                     },
-                    "y": 23
+                    "x": 68,
+                    "y": 245
                 },
                 {
                     "type": "Image",
@@ -175,6 +197,21 @@
                     "fontSize": "28px",
                     "fontStyle": "bold",
                     "color": "#333"
+                },
+                {
+                    "type": "Image",
+                    "id": "b10ef6fe-7275-4f5d-bc05-56dbfc72db12",
+                    "label": "sensei",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "sensei"
+                    },
+                    "x": 128,
+                    "y": -14,
+                    "originY": 0.5023255813953489,
+                    "visible": false
                 },
                 {
                     "type": "Image",
