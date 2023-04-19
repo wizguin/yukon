@@ -74,38 +74,21 @@
                     "originX": 0.500374531835206
                 },
                 {
-                    "type": "Container",
-                    "id": "bfebc54f-e303-4129-8cb1-e5f6acb59318",
+                    "prefabId": "4f090387-6719-455f-887b-a8bf5946be9f",
+                    "id": "bd670da4-42f1-471a-9318-85ff9dbdae60",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
                     "label": "separator",
                     "scope": "CLASS",
                     "components": [],
-                    "x": -20,
-                    "y": -217,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "20fedf31-3359-43b8-89e6-c202f3665ce8",
-                            "label": "sep",
-                            "components": [],
-                            "texture": {
-                                "key": "ninjaprogress",
-                                "frame": "separator/separator"
-                            },
-                            "x": 18
-                        },
-                        {
-                            "type": "Image",
-                            "id": "fbeb26e2-ad32-4223-962b-61ff561b3563",
-                            "label": "arrow",
-                            "components": [],
-                            "texture": {
-                                "key": "ninjaprogress",
-                                "frame": "separator/arrow"
-                            },
-                            "y": 9,
-                            "originY": 0.5454545454545454
-                        }
-                    ]
+                    "x": -18,
+                    "y": -214,
+                    "visible": true,
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "type": "Image",

@@ -9,6 +9,7 @@ export const preload = {
 import BaseContainer from "../../base/BaseContainer";
 import Interactive from "../../components/Interactive";
 import ProgressView from "./ProgressView";
+import Separator from "./Separator";
 import Button from "../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -20,7 +21,7 @@ export default class NinjaProgress extends BaseContainer {
 
         /** @type {ProgressView} */
         this.progress;
-        /** @type {Phaser.GameObjects.Container} */
+        /** @type {Separator} */
         this.separator;
 
 
@@ -45,17 +46,9 @@ export default class NinjaProgress extends BaseContainer {
         this.add(frame2);
 
         // separator
-        const separator = scene.add.container(-20, -217);
+        const separator = new Separator(scene, -18, -214);
+        separator.visible = true;
         this.add(separator);
-
-        // sep
-        const sep = scene.add.image(18, 0, "ninjaprogress", "separator/separator");
-        separator.add(sep);
-
-        // arrow
-        const arrow = scene.add.image(0, 9, "ninjaprogress", "separator/arrow");
-        arrow.setOrigin(0.5, 0.5454545454545454);
-        separator.add(arrow);
 
         // frame1
         const frame1 = scene.add.image(2, 23, "ninjaprogress", "frame/1");
@@ -77,16 +70,20 @@ export default class NinjaProgress extends BaseContainer {
         this.separator = separator;
 
         /* START-USER-CTR-CODE */
-
-        window.test = (rank, progress) => {
-            this.progress.show(rank, progress)
-        }
-
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    showProgress() {
+        this.progress.show(0, 0)
+    }
+
+    hideProgress() {
+        this.progress.close()
+    }
+
     /* END-USER-CODE */
 }
 
