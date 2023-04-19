@@ -134,8 +134,8 @@ export default class NinjaProgress extends BaseContainer {
 
         this.progressStartX = this.progressText.x
 
-        this.setRank(5)
-        this.setProgress(50)
+        this.setRank(0)
+        this.setProgress(0)
 
         /* END-USER-CTR-CODE */
     }
@@ -149,6 +149,10 @@ export default class NinjaProgress extends BaseContainer {
     }
 
     setCurrentBelt(rank) {
+        this.currentBelt.alpha = rank > 0 ? 1 : 0.25
+
+        rank = Phaser.Math.Clamp(rank, 1, 9)
+
         this.currentBelt.setFrame(`belt/${rank}`)
     }
 
