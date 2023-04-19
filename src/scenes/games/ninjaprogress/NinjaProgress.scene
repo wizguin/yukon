@@ -1,0 +1,191 @@
+{
+    "id": "9c33734a-197d-4f67-a819-ddfed17122cb",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "24a2f1b7-2511-43fa-a48d-fdd3ce8acf40",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ad799b05-40ff-4e8c-a56e-dc291a18cd30",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "bg"
+                    },
+                    "y": 51
+                },
+                {
+                    "type": "Image",
+                    "id": "ff473508-416a-4edf-a27c-41a0edb01120",
+                    "label": "button",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "button"
+                    },
+                    "y": 23,
+                    "originY": 0.5060240963855421
+                },
+                {
+                    "type": "Image",
+                    "id": "fa7467a5-603b-46e2-9f03-44a9d036b218",
+                    "label": "cards",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "cards"
+                    },
+                    "y": 23
+                },
+                {
+                    "type": "Image",
+                    "id": "374a2838-1cb8-4407-a5f5-b1de8aafaf29",
+                    "label": "nextBelt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "next/1"
+                    },
+                    "y": 23,
+                    "originX": 0.5042735042735043,
+                    "originY": 0.5052631578947369,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "bc23f8fa-624d-4a53-842c-15526779d7df",
+                    "label": "currentBelt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "belt/1"
+                    },
+                    "y": 23,
+                    "originX": 0.502262443438914,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "27fb7239-fc87-44d5-8fb8-b48adcdff5f4",
+                    "label": "progressBg",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "progress"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "bff05c3e-1f12-4d7f-a38d-d2ba933299c8",
+                    "label": "progress",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "progress/1"
+                    },
+                    "y": 7,
+                    "originX": 0.5008347245409015
+                },
+                {
+                    "type": "Image",
+                    "id": "e5afcad6-4320-4997-ae48-b1aa760a21a5",
+                    "label": "frame2",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "frame/2"
+                    },
+                    "y": -2,
+                    "originX": 0.500374531835206
+                },
+                {
+                    "type": "Container",
+                    "id": "bfebc54f-e303-4129-8cb1-e5f6acb59318",
+                    "label": "separator",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -20,
+                    "y": -217,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "20fedf31-3359-43b8-89e6-c202f3665ce8",
+                            "label": "sep",
+                            "components": [],
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "separator/separator"
+                            },
+                            "x": 18
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fbeb26e2-ad32-4223-962b-61ff561b3563",
+                            "label": "arrow",
+                            "components": [],
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "separator/arrow"
+                            },
+                            "y": 9,
+                            "originY": 0.5454545454545454
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "b59f681c-846b-436f-a297-0239e4c83f62",
+                    "label": "frame1",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "frame/1"
+                    },
+                    "x": 2,
+                    "y": 23
+                },
+                {
+                    "type": "Image",
+                    "id": "0972ddd2-bf0a-4b96-9f03-b2243200659b",
+                    "label": "xButton",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "close"
+                    },
+                    "x": 541,
+                    "y": -305
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

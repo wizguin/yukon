@@ -6,6 +6,7 @@ const widgets = {
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),
     'Map': require('@scenes/interface/game/map/Map'),
+    'NinjaProgress': require('@scenes/games/ninjaprogress/NinjaProgress'),
     'Sensei': require('@scenes/games/sensei/widget/SenseiWidget')
 }
 
