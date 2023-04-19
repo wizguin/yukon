@@ -97,6 +97,11 @@ export default class NinjaProgress extends BaseContainer {
         // block (components)
         new Interactive(block);
 
+        // xButton (components)
+        const xButtonButton = new Button(xButton);
+        xButtonButton.spriteName = "close";
+        xButtonButton.callback = () => this.close();
+
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
         this.progress = progress;

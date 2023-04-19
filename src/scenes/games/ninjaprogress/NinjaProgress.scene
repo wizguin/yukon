@@ -183,7 +183,11 @@
                     "type": "Image",
                     "id": "0972ddd2-bf0a-4b96-9f03-b2243200659b",
                     "label": "xButton",
-                    "components": [],
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "close",
+                    "Button.callback": "() => this.close()",
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "close"
