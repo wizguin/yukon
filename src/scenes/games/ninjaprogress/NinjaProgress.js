@@ -21,6 +21,10 @@ export default class NinjaProgress extends BaseContainer {
         this.nextBelt;
         /** @type {Phaser.GameObjects.Image} */
         this.currentBelt;
+        /** @type {Phaser.GameObjects.Text} */
+        this.nextText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.currentText;
         /** @type {Phaser.GameObjects.Image} */
         this.bar;
         /** @type {Phaser.GameObjects.Text} */
@@ -126,6 +130,8 @@ export default class NinjaProgress extends BaseContainer {
 
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
+        this.nextText = nextText;
+        this.currentText = currentText;
         this.bar = bar;
         this.progressText = progressText;
         this.separator = separator;
@@ -157,7 +163,14 @@ export default class NinjaProgress extends BaseContainer {
     }
 
     setNextBelt(rank) {
-        this.nextBelt.setFrame(`next/${rank + 1}`)
+        let visible = rank < 9
+
+        this.nextText.visible = visible
+        this.nextBelt.visible = visible
+
+        rank = Phaser.Math.Clamp(rank + 1, 1, 9)
+
+        this.nextBelt.setFrame(`next/${rank}`)
     }
 
     setProgress(progress) {
