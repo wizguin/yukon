@@ -120,12 +120,15 @@ export default class NinjaProgress extends BaseContainer {
     reset() {
         this.separator.close()
         this.progress.close()
+        this.progress.setCardsNum(0)
     }
 
     handleGetNinja(args) {
         this.ninjaRank = args.rank
         this.ninjaProgress = args.progress
         this.ninjaCards = args.cards
+
+        this.progress.setCardsNum(args.cards.length)
 
         this.showProgress()
 

@@ -10,6 +10,8 @@ export default class ProgressView extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Text} */
+        this.cardsNum;
         /** @type {Phaser.GameObjects.Image} */
         this.nextBelt;
         /** @type {Phaser.GameObjects.Image} */
@@ -34,6 +36,13 @@ export default class ProgressView extends BaseContainer {
         // cards
         const cards = scene.add.image(68, 245, "ninjaprogress", "cards");
         this.add(cards);
+
+        // cardsNum
+        const cardsNum = scene.add.text(64, 248, "", {});
+        cardsNum.setOrigin(0.5, 0.5);
+        cardsNum.text = "0";
+        cardsNum.setStyle({ "align": "center", "fixedWidth":100,"fontFamily": "Arial", "fontSize": "48px", "fontStyle": "bold", "stroke": "#000", "strokeThickness":8,"shadow.blur":2,"shadow.stroke":true,"shadow.fill":true});
+        this.add(cardsNum);
 
         // cardsText
         const cardsText = scene.add.text(-81, 254, "", {});
@@ -94,6 +103,7 @@ export default class ProgressView extends BaseContainer {
         cardsButtonButton.spriteName = "button";
         cardsButtonButton.callback = () => this.onButtonClick();
 
+        this.cardsNum = cardsNum;
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
         this.nextText = nextText;
@@ -140,6 +150,10 @@ export default class ProgressView extends BaseContainer {
         progress = Phaser.Math.Clamp(progress, 1, 100)
 
         this.bar.setFrame(`progress/${progress}`)
+    }
+
+    setCardsNum(num) {
+        this.cardsNum.text = num
     }
 
     setVisibleElements(rank) {
