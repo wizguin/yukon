@@ -84,5 +84,11 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "5f9fb9e1-bb62-4599-b6e1-05cdd4f4555c",
+            "label": "cards"
+        }
+    ]
 }
