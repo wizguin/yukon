@@ -66,13 +66,15 @@
                     "id": "eb43e92d-7d06-471a-a937-c8b14e00548f",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "visible"
                     ],
                     "label": "progress",
                     "scope": "CLASS",
                     "components": [],
                     "x": 0,
                     "y": 0,
+                    "visible": false,
                     "nestedPrefabs": [],
                     "list": []
                 },

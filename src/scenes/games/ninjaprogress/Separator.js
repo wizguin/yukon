@@ -43,8 +43,13 @@ export default class Separator extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        this.enable = false
+
         this.tween
         this.down = false
+
+        this.startX = this.x
+        this.startY = this.y
 
         this.yDiff = 574
 
@@ -54,8 +59,12 @@ export default class Separator extends BaseContainer {
 
     /* START-USER-CODE */
 
+    setEnable(enable) {
+        this.enable = enable
+    }
+
     onClick() {
-        if (this.tween) {
+        if (this.tween || !this.enable) {
             return
         }
 
@@ -87,6 +96,21 @@ export default class Separator extends BaseContainer {
         if (!this.down) {
             this.parentContainer.showProgress()
         }
+    }
+
+    close() {
+        if (this.tween) {
+            this.tween.remove()
+            this.tween = null
+        }
+
+        this.down = false
+        this.arrow.flipY = false
+
+        this.x = this.startX
+        this.y = this.startY
+
+        this.setEnable(false)
     }
 
     /* END-USER-CODE */

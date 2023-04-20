@@ -47,6 +47,7 @@ export default class NinjaProgress extends BaseContainer {
 
         // progress
         const progress = new ProgressView(scene, 0, 0);
+        progress.visible = false;
         this.add(progress);
 
         // frame2
@@ -81,6 +82,10 @@ export default class NinjaProgress extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        this.ninjaRank
+        this.ninjaProgress
+        this.ninjaCards
+
         this.createCardsViewMask()
 
         /* END-USER-CTR-CODE */
@@ -89,8 +94,48 @@ export default class NinjaProgress extends BaseContainer {
 
     /* START-USER-CODE */
 
+    addListeners() {
+        this.network.events.on('get_ninja', this.handleGetNinja, this)
+    }
+
+    removeListeners() {
+        this.network.events.off('get_ninja', this.handleGetNinja, this)
+    }
+
+    show() {
+        this.addListeners()
+
+        this.network.send('get_ninja')
+
+        super.show()
+    }
+
+    close() {
+        this.removeListeners()
+        this.reset()
+
+        super.close()
+    }
+
+    reset() {
+        this.separator.close()
+        this.progress.close()
+    }
+
+    handleGetNinja(args) {
+        this.ninjaRank = args.rank
+        this.ninjaProgress = args.progress
+        this.ninjaCards = args.cards
+
+        this.showProgress()
+
+        this.separator.setEnable(true)
+    }
+
     showProgress() {
-        this.progress.show(0, 0)
+        if (!this.progress.down) {
+            this.progress.show(this.ninjaRank, this.ninjaProgress)
+        }
     }
 
     hideProgress() {
