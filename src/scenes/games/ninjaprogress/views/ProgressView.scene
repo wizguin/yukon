@@ -30,6 +30,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "button",
+                    "Button.callback": "() => this.onButtonClick()",
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "button"

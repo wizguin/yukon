@@ -92,6 +92,7 @@ export default class ProgressView extends BaseContainer {
         // cardsButton (components)
         const cardsButtonButton = new Button(cardsButton);
         cardsButtonButton.spriteName = "button";
+        cardsButtonButton.callback = () => this.onButtonClick();
 
         this.nextBelt = nextBelt;
         this.currentBelt = currentBelt;
@@ -154,6 +155,10 @@ export default class ProgressView extends BaseContainer {
 
         this.currentText.visible = !ninjaVisible
         this.currentBelt.visible = !ninjaVisible
+    }
+
+    onButtonClick() {
+        this.parentContainer.separator.onClick()
     }
 
     /* END-USER-CODE */
