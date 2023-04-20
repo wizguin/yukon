@@ -1,7 +1,7 @@
 /* START OF COMPILED CODE */
 
-import BaseContainer from "../../base/BaseContainer";
-import Button from "../../components/Button";
+import BaseContainer from "../../../base/BaseContainer";
+import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 

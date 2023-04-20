@@ -1,7 +1,7 @@
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../base/BaseContainer";
-import CardsView from "./CardsView";
+import CardsView from "./views/CardsView";
 import SimpleButton from "../../components/SimpleButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */

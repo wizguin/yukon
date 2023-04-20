@@ -8,7 +8,7 @@ export const preload = {
 
 import BaseContainer from "../../base/BaseContainer";
 import Interactive from "../../components/Interactive";
-import ProgressView from "./ProgressView";
+import ProgressView from "./views/ProgressView";
 import Separator from "./Separator";
 import Button from "../../components/Button";
 /* START-USER-IMPORTS */
