@@ -42,9 +42,24 @@
                     "components": [],
                     "texture": {
                         "key": "ninjaprogress",
-                        "frame": "bg"
+                        "frame": "bg/1"
                     },
                     "y": 51
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f4dfcd8f-5bc5-4f39-9f7a-963abaae952a",
+                    "label": "cardsViewRect",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -584,
+                    "y": -210,
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 1168,
+                    "height": 542
                 },
                 {
                     "prefabId": "69fb792c-79d1-47f9-a9aa-152d9e190c9d",

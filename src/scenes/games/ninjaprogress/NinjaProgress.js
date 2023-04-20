@@ -19,6 +19,8 @@ export default class NinjaProgress extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.cardsViewRect;
         /** @type {ProgressView} */
         this.progress;
         /** @type {Separator} */
@@ -33,8 +35,15 @@ export default class NinjaProgress extends BaseContainer {
         this.add(block);
 
         // bg
-        const bg = scene.add.image(0, 51, "ninjaprogress", "bg");
+        const bg = scene.add.image(0, 51, "ninjaprogress", "bg/1");
         this.add(bg);
+
+        // cardsViewRect
+        const cardsViewRect = scene.add.rectangle(-584, -210, 1168, 542);
+        cardsViewRect.setOrigin(0, 0);
+        cardsViewRect.visible = false;
+        cardsViewRect.isFilled = true;
+        this.add(cardsViewRect);
 
         // progress
         const progress = new ProgressView(scene, 0, 0);
@@ -66,10 +75,14 @@ export default class NinjaProgress extends BaseContainer {
         xButtonButton.spriteName = "close";
         xButtonButton.callback = () => this.close();
 
+        this.cardsViewRect = cardsViewRect;
         this.progress = progress;
         this.separator = separator;
 
         /* START-USER-CTR-CODE */
+
+        this.createCardsViewMask()
+
         /* END-USER-CTR-CODE */
     }
 
@@ -82,6 +95,20 @@ export default class NinjaProgress extends BaseContainer {
 
     hideProgress() {
         this.progress.close()
+    }
+
+    createCardsViewMask() {
+        let rect = this.cardsViewRect
+        let graphics = this.scene.make.graphics()
+
+        // World position
+        let matrix = rect.getWorldTransformMatrix()
+
+        graphics.fillRect(matrix.getX(0, 0), matrix.getY(0, 0), rect.width, rect.height)
+
+        let mask = graphics.createGeometryMask()
+
+        this.separator.cards.setMask(mask)
     }
 
     /* END-USER-CODE */

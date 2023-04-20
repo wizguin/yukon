@@ -1,6 +1,7 @@
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../base/BaseContainer";
+import CardsView from "./CardsView";
 import SimpleButton from "../../components/SimpleButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -10,9 +11,15 @@ export default class Separator extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {CardsView} */
+        this.cards;
         /** @type {Phaser.GameObjects.Image} */
         this.arrow;
 
+
+        // cards
+        const cards = new CardsView(scene, 18, -322);
+        this.add(cards);
 
         // sep
         const sep = scene.add.image(18, -3, "ninjaprogress", "separator/separator");
@@ -31,6 +38,7 @@ export default class Separator extends BaseContainer {
         const buttonSimpleButton = new SimpleButton(button);
         buttonSimpleButton.callback = () => this.onClick();
 
+        this.cards = cards;
         this.arrow = arrow;
 
         /* START-USER-CTR-CODE */
