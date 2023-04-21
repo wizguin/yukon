@@ -16,6 +16,10 @@ export default class CardsView extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Image} */
         this.bg;
+        /** @type {Phaser.GameObjects.Image} */
+        this.down;
+        /** @type {Phaser.GameObjects.Image} */
+        this.up;
         /** @type {Array<any>} */
         this.cards;
 
@@ -50,6 +54,8 @@ export default class CardsView extends BaseContainer {
         upButton.callback = () => this.prevPage();
 
         this.bg = bg;
+        this.down = down;
+        this.up = up;
         this.cards = cards;
 
         /* START-USER-CTR-CODE */
@@ -137,6 +143,8 @@ export default class CardsView extends BaseContainer {
 
             prefab.show(card)
         }
+
+        this.updateButtons()
     }
 
     prevPage() {
@@ -165,8 +173,31 @@ export default class CardsView extends BaseContainer {
         }
     }
 
+    updateButtons() {
+        if (!this.parentContainer.down) {
+            this.disableButtons()
+            return
+        }
+
+        let upEnabled = this.page > 1
+        let downEnabled = this.page < this.maxPage
+
+        this.setButtons(upEnabled, downEnabled)
+    }
+
+    disableButtons() {
+        this.setButtons(false, false)
+    }
+
+    setButtons(upEnabled, downEnabled) {
+        this.up.input.enabled = upEnabled
+        this.down.input.enabled = downEnabled
+
+        this.up.alpha = upEnabled ? 1 : 0.5
+        this.down.alpha = downEnabled ? 1 : 0.5
+    }
+
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-

@@ -68,6 +68,8 @@ export default class Separator extends BaseContainer {
             return
         }
 
+        this.cards.disableButtons()
+
         let duration = this.down ? 325 : 500
         let y = this.down ? this.y - this.yDiff : this.y + this.yDiff
         let ease = this.down ? 'Quad.easeOut' : 'Quad.easeIn'
@@ -96,6 +98,8 @@ export default class Separator extends BaseContainer {
         if (!this.down) {
             this.parentContainer.showProgress()
         }
+
+        this.cards.updateButtons()
     }
 
     close() {

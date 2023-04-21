@@ -49,6 +49,7 @@
                     "type": "Image",
                     "id": "12eaafd0-60f0-4c74-8499-f5f82274178b",
                     "label": "down",
+                    "scope": "CLASS",
                     "components": [
                         "Button"
                     ],
@@ -65,6 +66,7 @@
                     "type": "Image",
                     "id": "5d509cd6-a79e-419b-94fb-6a8fed349bdf",
                     "label": "up",
+                    "scope": "CLASS",
                     "components": [
                         "Button"
                     ],
