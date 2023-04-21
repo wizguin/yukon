@@ -94,8 +94,10 @@
                     "scope": "CLASS",
                     "components": [],
                     "texture": {},
-                    "x": 95,
-                    "y": 107,
+                    "x": 1,
+                    "y": 1,
+                    "originX": 0,
+                    "originY": 0,
                     "visible": false
                 },
                 {

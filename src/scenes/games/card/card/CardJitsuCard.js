@@ -63,7 +63,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.add(glow);
 
         // icon
-        const icon = scene.add.sprite(95, 107, "_MISSING");
+        const icon = scene.add.sprite(1, 1, "_MISSING");
+        icon.setOrigin(0, 0);
         icon.visible = false;
         this.add(icon);
 

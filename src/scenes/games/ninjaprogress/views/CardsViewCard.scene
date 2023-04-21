@@ -70,6 +70,12 @@
                     "scope": "CLASS",
                     "components": [],
                     "texture": {},
+                    "x": -66,
+                    "y": -74,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7,
+                    "originX": 0,
+                    "originY": 0,
                     "visible": false
                 },
                 {

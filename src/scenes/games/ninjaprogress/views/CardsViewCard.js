@@ -45,7 +45,10 @@ export default class CardsViewCard extends BaseContainer {
         this.add(shadow);
 
         // icon
-        const icon = scene.add.image(0, 0, "_MISSING");
+        const icon = scene.add.image(-66, -74, "_MISSING");
+        icon.scaleX = 0.7;
+        icon.scaleY = 0.7;
+        icon.setOrigin(0, 0);
         icon.visible = false;
         this.add(icon);
 
@@ -79,8 +82,6 @@ export default class CardsViewCard extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.id
-
-        this.icon.scale = 0.7
 
         this.glow.anims.play('ninjaprogress/glow')
 
