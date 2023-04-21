@@ -4,6 +4,7 @@ import BaseContainer from "../../../base/BaseContainer";
 import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
 
+import CardLoader from '@engine/loaders/CardLoader'
 import CardsViewCard from './CardsViewCard'
 
 /* END-USER-IMPORTS */
@@ -60,6 +61,7 @@ export default class CardsView extends BaseContainer {
         this.cellWidth = 188
         this.cellHeight = 166
 
+        this.cardLoader = new CardLoader(scene)
         this.createCards()
 
         /* END-USER-CTR-CODE */
@@ -92,6 +94,36 @@ export default class CardsView extends BaseContainer {
             x: this.startX,
             y: this.startY
         })
+    }
+
+    setCards(ninjaCards) {
+        for (let i = 0; i < this.cards.length; i++) {
+            let prefab = this.cards[i]
+
+            prefab.removeIcon()
+
+            if (!ninjaCards[i]) {
+                prefab.id = null
+                prefab.close()
+
+                continue
+            }
+
+            let card = ninjaCards[i]
+            let key = this.cardLoader.getKey(card.card_id)
+
+            prefab.id = card.card_id
+
+            this.cardLoader.loadCard(card, () => this.onCardLoad(key, card, prefab))
+
+            prefab.show(card)
+        }
+    }
+
+    onCardLoad(key, card, prefab) {
+        if (prefab.id == card.card_id) {
+            prefab.setIcon(key)
+        }
     }
 
     /* END-USER-CODE */

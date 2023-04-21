@@ -23,7 +23,7 @@
             "y": 480,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "695f8494-eea7-464d-97fa-98dec9180ffe",
                     "label": "glow",
                     "scope": "CLASS",

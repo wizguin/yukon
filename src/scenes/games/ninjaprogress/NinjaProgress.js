@@ -119,6 +119,8 @@ export default class NinjaProgress extends BaseContainer {
 
     reset() {
         this.separator.close()
+        this.separator.cards.setCards([])
+
         this.progress.close()
         this.progress.setCardsNum(0)
     }
@@ -129,8 +131,9 @@ export default class NinjaProgress extends BaseContainer {
         this.ninjaCards = args.cards
 
         this.progress.setCardsNum(args.cards.length)
-
         this.showProgress()
+
+        this.setCards()
 
         this.separator.setEnable(true)
     }
@@ -143,6 +146,10 @@ export default class NinjaProgress extends BaseContainer {
 
     hideProgress() {
         this.progress.close()
+    }
+
+    setCards() {
+        this.separator.cards.setCards(this.ninjaCards)
     }
 
     createCardsViewMask() {

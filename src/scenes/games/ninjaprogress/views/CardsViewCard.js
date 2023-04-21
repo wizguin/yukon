@@ -2,6 +2,9 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 /* START-USER-IMPORTS */
+
+import layout from '@scenes/games/card/layout'
+
 /* END-USER-IMPORTS */
 
 export default class CardsViewCard extends BaseContainer {
@@ -9,7 +12,7 @@ export default class CardsViewCard extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {Phaser.GameObjects.Sprite} */
         this.glow;
         /** @type {Phaser.GameObjects.Image} */
         this.back;
@@ -24,7 +27,7 @@ export default class CardsViewCard extends BaseContainer {
 
 
         // glow
-        const glow = scene.add.image(1, 0, "ninjaprogress", "card/glow0001");
+        const glow = scene.add.sprite(1, 0, "ninjaprogress", "card/glow0001");
         glow.setOrigin(0.503030303030303, 0.5);
         glow.visible = false;
         this.add(glow);
@@ -74,11 +77,45 @@ export default class CardsViewCard extends BaseContainer {
         this.value = value;
 
         /* START-USER-CTR-CODE */
+
+        this.id
+
+        this.icon.scale = 0.7
+
+        this.glow.anims.play('ninjaprogress/glow')
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    show(card) {
+        let tint = layout.colors[card.color].color
+
+        this.value.text = card.value
+        this.color.tint = tint
+
+        this.element.setFrame(`card/${card.element}`)
+
+        if (card.power_id > 0) {
+            this.glow.tint = tint
+        }
+
+        this.glow.visible = card.power_id > 0
+
+        super.show()
+    }
+
+    setIcon(key) {
+        this.icon.setTexture(key)
+        this.icon.visible = true
+    }
+
+    removeIcon() {
+        this.icon.visible = false
+    }
+
     /* END-USER-CODE */
 }
 
