@@ -210,6 +210,20 @@
                     "y": -14,
                     "originY": 0.5023255813953489,
                     "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "29c6e148-233f-4cbc-959a-f4b295425d1f",
+                    "label": "hideout",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "hideout"
+                    },
+                    "x": -26,
+                    "y": -6,
+                    "visible": false
                 }
             ]
         }

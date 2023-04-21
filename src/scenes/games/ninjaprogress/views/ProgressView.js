@@ -26,6 +26,8 @@ export default class ProgressView extends BaseContainer {
         this.progressText;
         /** @type {Phaser.GameObjects.Image} */
         this.sensei;
+        /** @type {Phaser.GameObjects.Image} */
+        this.hideout;
 
 
         // cardsButton
@@ -98,6 +100,11 @@ export default class ProgressView extends BaseContainer {
         sensei.visible = false;
         this.add(sensei);
 
+        // hideout
+        const hideout = scene.add.image(-26, -6, "ninjaprogress", "hideout");
+        hideout.visible = false;
+        this.add(hideout);
+
         // cardsButton (components)
         const cardsButtonButton = new Button(cardsButton);
         cardsButtonButton.spriteName = "button";
@@ -111,6 +118,7 @@ export default class ProgressView extends BaseContainer {
         this.bar = bar;
         this.progressText = progressText;
         this.sensei = sensei;
+        this.hideout = hideout;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -166,6 +174,7 @@ export default class ProgressView extends BaseContainer {
         this.nextBelt.visible = nextVisible
 
         this.sensei.visible = senseiVisible
+        this.hideout.visible = ninjaVisible
 
         this.currentText.visible = !ninjaVisible
         this.currentBelt.visible = !ninjaVisible
