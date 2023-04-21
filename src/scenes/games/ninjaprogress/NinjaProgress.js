@@ -123,6 +123,8 @@ export default class NinjaProgress extends BaseContainer {
 
         this.progress.close()
         this.progress.setCardsNum(0)
+
+        this.separator.cards.page = 1
     }
 
     handleGetNinja(args) {

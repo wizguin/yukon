@@ -42,10 +42,12 @@ export default class CardsView extends BaseContainer {
         // down (components)
         const downButton = new Button(down);
         downButton.spriteName = "scroll/down";
+        downButton.callback = () => this.nextPage();
 
         // up (components)
         const upButton = new Button(up);
         upButton.spriteName = "scroll/up";
+        upButton.callback = () => this.prevPage();
 
         this.bg = bg;
         this.cards = cards;
@@ -61,6 +63,11 @@ export default class CardsView extends BaseContainer {
         this.cellWidth = 188
         this.cellHeight = 166
 
+        this.page = 1
+        this.pageSize = this.width * this.height
+
+        this.ninjaCards = []
+
         this.cardLoader = new CardLoader(scene)
         this.createCards()
 
@@ -70,8 +77,12 @@ export default class CardsView extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get maxPage() {
+        return Math.ceil(this.ninjaCards.length / this.pageSize)
+    }
+
     createCards() {
-        for (let i = 0; i < this.width * this.height; i++) {
+        for (let i = 0; i < this.pageSize; i++) {
             let card = new CardsViewCard(this.scene, this.startX, this.startY)
 
             this.add(card)
@@ -97,19 +108,27 @@ export default class CardsView extends BaseContainer {
     }
 
     setCards(ninjaCards) {
+        this.ninjaCards = ninjaCards
+
+        this.showPage()
+    }
+
+    showPage() {
+        let page = this.ninjaCards.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
+
         for (let i = 0; i < this.cards.length; i++) {
             let prefab = this.cards[i]
 
             prefab.removeIcon()
 
-            if (!ninjaCards[i]) {
+            if (!page[i]) {
                 prefab.id = null
                 prefab.close()
 
                 continue
             }
 
-            let card = ninjaCards[i]
+            let card = page[i]
             let key = this.cardLoader.getKey(card.card_id)
 
             prefab.id = card.card_id
@@ -118,6 +137,26 @@ export default class CardsView extends BaseContainer {
 
             prefab.show(card)
         }
+    }
+
+    prevPage() {
+        let page = this.page - 1
+        if (page < 1) {
+            return
+        }
+
+        this.page = page
+        this.showPage()
+    }
+
+    nextPage() {
+        let page = this.page + 1
+        if (page > this.maxPage) {
+            return
+        }
+
+        this.page = page
+        this.showPage()
     }
 
     onCardLoad(key, card, prefab) {

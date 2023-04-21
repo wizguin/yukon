@@ -53,6 +53,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "scroll/down",
+                    "Button.callback": "() => this.nextPage()",
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "scroll/down"
@@ -68,6 +69,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "scroll/up",
+                    "Button.callback": "() => this.prevPage()",
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "scroll/up"
