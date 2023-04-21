@@ -197,33 +197,83 @@
                     "color": "#333"
                 },
                 {
-                    "type": "Image",
-                    "id": "a8b59277-06bc-450f-a0c6-408956531166",
+                    "type": "Container",
+                    "id": "a91499ce-58e4-4159-866a-6074a3bd6bd8",
                     "label": "sensei",
                     "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "sensei"
-                    },
-                    "x": 128,
+                    "x": 12,
                     "y": -14,
-                    "originY": 0.5023255813953489,
-                    "visible": false
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "a8b59277-06bc-450f-a0c6-408956531166",
+                            "label": "senseiImage",
+                            "components": [],
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "sensei"
+                            },
+                            "x": 116,
+                            "originY": 0.5023255813953489
+                        },
+                        {
+                            "type": "Text",
+                            "id": "57ed6934-c5fb-4f95-8746-20adfbcdfd66",
+                            "label": "senseiText",
+                            "components": [],
+                            "y": 20,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Well done, grasshopper. You have earned your\nblack belt. Take the next step of your training\njourney and challenge Sensei to become a ninja.",
+                            "fixedWidth": 600,
+                            "lineSpacing": 8,
+                            "align": "center",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "26px",
+                            "color": "#333"
+                        }
+                    ]
                 },
                 {
-                    "type": "Image",
-                    "id": "29c6e148-233f-4cbc-959a-f4b295425d1f",
+                    "type": "Container",
+                    "id": "73fc1120-7bec-42f7-a3ff-c1ef70dbdf4b",
                     "label": "hideout",
                     "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "ninjaprogress",
-                        "frame": "hideout"
-                    },
                     "x": -26,
                     "y": -6,
-                    "visible": false
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "29c6e148-233f-4cbc-959a-f4b295425d1f",
+                            "label": "hideoutImage",
+                            "components": [],
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "hideout"
+                            }
+                        },
+                        {
+                            "type": "Text",
+                            "id": "7b63e695-ade2-4079-9399-8ac8fa14d8b7",
+                            "label": "hideoutText",
+                            "components": [],
+                            "x": 132,
+                            "y": 10,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Congratulations, ninja! You are a wise Card-Jitsu\nmaster and you now have access to the Ninja Hideout.",
+                            "fixedWidth": 800,
+                            "lineSpacing": 8,
+                            "align": "center",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "26px",
+                            "color": "#333"
+                        }
+                    ]
                 }
             ]
         }

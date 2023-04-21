@@ -24,9 +24,9 @@ export default class ProgressView extends BaseContainer {
         this.bar;
         /** @type {Phaser.GameObjects.Text} */
         this.progressText;
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {Phaser.GameObjects.Container} */
         this.sensei;
-        /** @type {Phaser.GameObjects.Image} */
+        /** @type {Phaser.GameObjects.Container} */
         this.hideout;
 
 
@@ -95,15 +95,39 @@ export default class ProgressView extends BaseContainer {
         this.add(progressText);
 
         // sensei
-        const sensei = scene.add.image(128, -14, "ninjaprogress", "sensei");
-        sensei.setOrigin(0.5, 0.5023255813953489);
+        const sensei = scene.add.container(12, -14);
         sensei.visible = false;
         this.add(sensei);
 
+        // senseiImage
+        const senseiImage = scene.add.image(116, 0, "ninjaprogress", "sensei");
+        senseiImage.setOrigin(0.5, 0.5023255813953489);
+        sensei.add(senseiImage);
+
+        // senseiText
+        const senseiText = scene.add.text(0, 20, "", {});
+        senseiText.setOrigin(0.5, 0.5);
+        senseiText.text = "Well done, grasshopper. You have earned your\nblack belt. Take the next step of your training\njourney and challenge Sensei to become a ninja.";
+        senseiText.setStyle({ "align": "center", "color": "#333", "fixedWidth":600,"fontFamily": "Burbank Small", "fontSize": "26px" });
+        senseiText.setLineSpacing(8);
+        sensei.add(senseiText);
+
         // hideout
-        const hideout = scene.add.image(-26, -6, "ninjaprogress", "hideout");
+        const hideout = scene.add.container(-26, -6);
         hideout.visible = false;
         this.add(hideout);
+
+        // hideoutImage
+        const hideoutImage = scene.add.image(0, 0, "ninjaprogress", "hideout");
+        hideout.add(hideoutImage);
+
+        // hideoutText
+        const hideoutText = scene.add.text(132, 10, "", {});
+        hideoutText.setOrigin(0.5, 0.5);
+        hideoutText.text = "Congratulations, ninja! You are a wise Card-Jitsu\nmaster and you now have access to the Ninja Hideout.";
+        hideoutText.setStyle({ "align": "center", "color": "#333", "fixedWidth":800,"fontFamily": "Burbank Small", "fontSize": "26px" });
+        hideoutText.setLineSpacing(8);
+        hideout.add(hideoutText);
 
         // cardsButton (components)
         const cardsButtonButton = new Button(cardsButton);
