@@ -6,6 +6,8 @@ export default class CardJitsuBattle {
         this.scene = player.scene
 
         this.currentBattle
+        this.currentConfig
+
         this.list = {}
 
         this.animating = false
@@ -43,14 +45,21 @@ export default class CardJitsuBattle {
 
         this.currentBattle = battle
 
-        // Sprite names mapped to layer and frames
-        let config = this.getBattleConfig()
+        // Loaded from battle config.json file
+        this.currentConfig = this.getConfig()
 
-        this.createSprites(config)
+        // Sprite names mapped to layer and frames
+        let spritesConfig = this.getSpritesConfig()
+
+        this.createSprites(spritesConfig)
         this.playAnims()
     }
 
-    getBattleConfig() {
+    getConfig() {
+        return this.scene.cache.json.get(`${this.currentBattle}_config`) || {}
+    }
+
+    getSpritesConfig() {
         let frames = this.scene.textures.get(this.currentBattle).getFrameNames()
 
         let config = {}
@@ -118,22 +127,56 @@ export default class CardJitsuBattle {
     }
 
     playAnims() {
-        for (let sprite of Object.values(this.list)) {
+        let values = Object.values(this.list)
+
+        if (!values.length) {
+            return
+        }
+
+        this.addAnimEvents(values)
+
+        for (let sprite of values) {
             if (sprite.anim) {
                 sprite.play(sprite.anim)
             }
         }
 
         this.animating = true
-
-        // Only add this event to one sprite instead of all
-        let first = Object.values(this.list)[0]
-        first.once('animationcomplete', this.onAnimationComplete, this)
     }
 
-    onAnimationComplete() {
+    addAnimEvents(values) {
+        // Only add events to one sprite instead of all
+        let first = values[0]
+
+        first.once('animationcomplete', () => this.onAnimComplete(first))
+
+        if (!this.currentConfig.sounds) {
+            return
+        }
+
+        // Sound events
+        first.once('animationstart', (anim, frame) => this.onAnimUpdate(frame))
+
+        first.on('animationupdate', (anim, frame) => this.onAnimUpdate(frame))
+    }
+
+    onAnimComplete(first) {
+        first.off('animationupdate')
+
         this.animating = false
         this.scene.checkBattleComplete()
+    }
+
+    onAnimUpdate(frame) {
+        let index = frame.index
+
+        if (index in this.currentConfig.sounds) {
+            this.playSound(index)
+        }
+    }
+
+    playSound(key) {
+        this.scene.soundManager.play(this.currentConfig.sounds[key])
     }
 
     setColor(color) {

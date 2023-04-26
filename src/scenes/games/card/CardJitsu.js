@@ -52,11 +52,11 @@ export default class CardJitsu extends GameScene {
         this.add.image(760, 480, "cardjitsu", "bg");
 
         // player2
-        const player2 = new CardJitsuPlayer(this, 760, 315);
+        const player2 = new CardJitsuPlayer(this, 760, 480);
         this.add.existing(player2);
 
         // player1
-        const player1 = new CardJitsuPlayer(this, 760, 315);
+        const player1 = new CardJitsuPlayer(this, 760, 480);
         this.add.existing(player1);
         player1.scaleX = -1;
         player1.scaleY = 1;
@@ -117,6 +117,16 @@ export default class CardJitsu extends GameScene {
 
     /* START-USER-CODE */
 
+    preload() {
+        super.preload()
+
+        let url = 'assets/media/games/card/battles/'
+
+        this.load.pack('walk-pack', `${url}/walk/walk-pack.json`)
+        this.load.pack('ambient-pack', `${url}/ambient/ambient-pack.json`)
+        this.load.pack('tie-pack', `${url}/tie/tie-pack.json`)
+    }
+
     create() {
         super.create()
 
@@ -148,6 +158,8 @@ export default class CardJitsu extends GameScene {
 
         this.addListeners()
         this.network.send('start_game')
+
+        this.events.once('shutdown', this.onShutdown, this)
     }
 
     // probably a better way than needing 2 functions for this
@@ -287,9 +299,9 @@ export default class CardJitsu extends GameScene {
 
         let winCard = this.players[winner].pick
 
-        this.battleLoader.loadBattle(winCard, () => {
-            this.judge(winner, winCard)
-        })
+        let battles = this.getBattleNames(winCard)
+
+        this.battleLoader.loadBattles(battles, () => this.judge(winner, winCard))
     }
 
     onDealCardLoad(key, card) {
@@ -328,21 +340,27 @@ export default class CardJitsu extends GameScene {
         this.showCloseGamePrompt()
     }
 
+    getBattleNames(card) {
+        let prefix = card.powerId > 0 ? `pow_${card.id}` : card.elementId
+
+        return [`${prefix}_attack`, `${prefix}_react`]
+    }
+
+    getOppositeSeat(seat) {
+        return (seat + 1) % 2
+    }
+
     playBattle(battle, winSeat = null) {
         if (winSeat == null) {
-            this.player1.playBattle(battle)
-            this.player2.playBattle(battle)
-
+            this.players.forEach(player => player.playBattle(battle))
             return
         }
 
-        if (winSeat == this.myPlayer.seat) {
-            this.myPlayer.playBattle(`${battle}_attack`)
-            this.opponent.playBattle(`${battle}_react`)
-        } else {
-            this.myPlayer.playBattle(`${battle}_react`)
-            this.opponent.playBattle(`${battle}_attack`)
-        }
+        let winner = this.players[winSeat]
+        let loser = this.players[this.getOppositeSeat(winSeat)]
+
+        winner.playBattle(`${battle}_attack`)
+        loser.playBattle(`${battle}_react`)
     }
 
     createCard() {
@@ -359,7 +377,7 @@ export default class CardJitsu extends GameScene {
     }
 
     timeUp() {
-        let random = Phaser.Math.RND.pick(this.myPlayer.dealtCards)
+        let random = Phaser.Math.RND.pick(this.myPlayer.dealtNotNull)
 
         this.pickCard(random)
     }
@@ -380,8 +398,7 @@ export default class CardJitsu extends GameScene {
     }
 
     judgeTie() {
-        this.myPlayer.cardLose()
-        this.opponent.cardLose()
+        this.players.forEach(player => player.cardLose())
 
         this.playBattle('tie')
     }
@@ -401,15 +418,9 @@ export default class CardJitsu extends GameScene {
     }
 
     judgePlayBattle(winSeat, winCard) {
-        if (winCard.powerId == 0) {
-            this.playBattle(winCard.elementId, winSeat)
-            return
-        }
+        let battle = winCard.powerId == 0 ? winCard.elementId : `pow_${winCard.id}`
 
-        if (winCard.powerId != 0) {
-            this.playBattle(`pow_${winCard.id}`, winSeat)
-            return
-        }
+        this.playBattle(battle, winSeat)
     }
 
     playGameOver(winSeat) {
@@ -465,6 +476,11 @@ export default class CardJitsu extends GameScene {
         this.events.off('remove_pick')
 
         this.world.client.sendJoinLastRoom()
+    }
+
+    onShutdown() {
+        // Temp solution until memory management update
+        this.battleLoader.clearPacks()
     }
 
     /* END-USER-CODE */

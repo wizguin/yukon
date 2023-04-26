@@ -42,7 +42,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 315,
+            "y": 480,
             "nestedPrefabs": [],
             "list": []
         },
@@ -61,7 +61,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 760,
-            "y": 315,
+            "y": 480,
             "scaleX": -1,
             "scaleY": 1,
             "nestedPrefabs": [],

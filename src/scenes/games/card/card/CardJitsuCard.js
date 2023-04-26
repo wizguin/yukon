@@ -273,7 +273,7 @@ export default class CardJitsuCard extends BaseContainer {
             return
         }
 
-        for (let card of this.player.dealtCards) {
+        for (let card of this.player.dealtNotNull) {
             if (card.tween) {
                 return
             }

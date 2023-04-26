@@ -41,6 +41,10 @@ export default class CardJitsuPlayer extends BaseContainer {
         return this.scene.usernames[this.seat]
     }
 
+    get dealtNotNull() {
+        return this.dealtCards.filter(Boolean)
+    }
+
     getElementWins(element) {
         return this.wins.filter(win => win.elementId == element)
     }
@@ -116,18 +120,14 @@ export default class CardJitsuPlayer extends BaseContainer {
     }
 
     enableCards() {
-        for (let dealt of this.dealtCards) {
-            if (dealt) {
-                dealt.enableInput()
-            }
+        for (let dealt of this.dealtNotNull) {
+            dealt.enableInput()
         }
     }
 
     disableCards() {
-        for (let dealt of this.dealtCards) {
-            if (dealt) {
-                dealt.disableInput()
-            }
+        for (let dealt of this.dealtNotNull) {
+            dealt.disableInput()
         }
     }
 
