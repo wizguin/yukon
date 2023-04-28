@@ -2,6 +2,7 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 import CardJitsuThumb from "./CardJitsuThumb";
+import CardJitsuHint from "./CardJitsuHint";
 /* START-USER-IMPORTS */
 
 import layout from '../layout'
@@ -33,6 +34,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.value;
         /** @type {CardJitsuThumb} */
         this.thumbnail;
+        /** @type {CardJitsuHint} */
+        this.hint;
 
 
         // shadow
@@ -99,6 +102,11 @@ export default class CardJitsuCard extends BaseContainer {
         thumbnail.visible = false;
         this.add(thumbnail);
 
+        // hint
+        const hint = new CardJitsuHint(scene, 95, -120);
+        hint.visible = false;
+        this.add(hint);
+
         this.shadow = shadow;
         this.hover = hover;
         this.back = back;
@@ -109,6 +117,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.disabled = disabled;
         this.value = value;
         this.thumbnail = thumbnail;
+        this.hint = hint;
 
         /* START-USER-CTR-CODE */
 
@@ -117,6 +126,7 @@ export default class CardJitsuCard extends BaseContainer {
 
         this.id
         this.powerId
+        this.description
         this.elementId
 
         this.spacer
@@ -157,19 +167,25 @@ export default class CardJitsuCard extends BaseContainer {
         this.tweenToDealt(empty)
     }
 
+    get isPowerCard() {
+        return this.powerId > 0
+    }
+
     updateCard(card) {
         let tint = layout.colors[card.color].color
 
         this.id = card.card_id
-        this.powerId = card.power_id
         this.elementId = card.element
+
+        this.powerId = card.power_id
+        this.description = card.description || ""
 
         this.value.text = card.value
         this.color.tint = tint
 
         this.element.setFrame(`card/${card.element}`)
 
-        if (card.power_id > 0) {
+        if (this.isPowerCard) {
             this.glow.tint = tint
         }
 
@@ -251,7 +267,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.element.visible = show
         this.color.visible = show
         this.icon.visible = show
-        this.glow.visible = show && this.powerId > 0
+        this.glow.visible = show && this.isPowerCard
     }
 
     tweenToDealt(empty) {
@@ -388,10 +404,16 @@ export default class CardJitsuCard extends BaseContainer {
 
     onOver() {
         this.hover.visible = true
+
+        if (this.isPowerCard) {
+            this.hint.show()
+        }
     }
 
     onOut() {
         this.hover.visible = false
+
+        this.hint.close()
     }
 
     updateDepth() {

@@ -181,6 +181,23 @@
                     "visible": false,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "f7bc21d3-944c-4122-96b0-93ea4388bcff",
+                    "id": "0d7b3b9b-993f-444e-83fa-2198e18910f7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "hint",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 95,
+                    "y": -120,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         }
