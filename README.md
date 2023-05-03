@@ -2,7 +2,7 @@
 
 Visit the Discord server for more support.
 
-[![Yukon Discord members](https://badgen.net/discord/members/gxBqXy3qeY)](https://discord.gg/gxBqXy3qeY)
+[![Yukon Discord members](https://badgen.net/discord/members/NtYtpzyxBu)](https://discord.gg/NtYtpzyxBu)
 
 ## Built With
 
