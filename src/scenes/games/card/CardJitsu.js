@@ -9,6 +9,9 @@ import CardJitsuClock from "./clock/CardJitsuClock";
 import BattleLoader from '@engine/loaders/BattleLoader'
 import CardLoader from '@engine/loaders/CardLoader'
 import CardJitsuCard from './card/CardJitsuCard'
+import CardJitsuPower from './power/CardJitsuPower'
+
+import Rules from './Rules'
 
 /* END-USER-IMPORTS */
 
@@ -148,6 +151,10 @@ export default class CardJitsu extends GameScene {
             repeat: -1,
             ease: 'Cubic'
         })
+
+        // Power effects
+        this.activePowers = []
+        this.powersQueue = []
 
         this.events.on('battle_complete', this.onBattleComplete, this)
 
@@ -301,8 +308,71 @@ export default class CardJitsu extends GameScene {
 
         let battles = this.getBattleNames(winCard)
 
-        this.battleLoader.loadBattles(battles, () => this.judge(winner, winCard))
+        this.checkPowersOnPlayed()
+        this.checkPowerOnScored(this.players[winner], winCard)
+
+        this.events.once('powers_complete', () => this.judge(winner, winCard))
+
+        this.processPowers()
     }
+
+    // powers start
+
+    checkPowersOnPlayed() {
+        this.checkPowerOnPlayed(this.player1, this.player1.pick)
+        this.checkPowerOnPlayed(this.player2, this.player2.pick)
+    }
+
+    checkPowerOnPlayed(player, card) {
+        if (this.hasPower(card) && Rules.onPlayed.includes(card.powerId)) {
+            this.addPower(player, card)
+        }
+    }
+
+    checkPowerOnScored(player, card) {
+        if (this.hasPower(card) && !Rules.onPlayed.includes(card.powerId)) {
+            this.addPower(player, card)
+        }
+    }
+
+    hasPower(card) {
+        return card.powerId > 0
+    }
+
+    addPower(player, card) {
+        let power = new CardJitsuPower(this, player, card)
+
+        this.add.existing(power)
+
+        this.activePowers.push(power)
+    }
+
+    removePower(power) {
+        let index = this.activePowers.indexOf(power)
+
+        this.activePowers.splice(index, 1)
+    }
+
+    processPowers() {
+        this.powersQueue = this.activePowers.slice()
+
+        console.log(this.powersQueue)
+
+        this.nextPower()
+    }
+
+    nextPower() {
+        if (!this.powersQueue.length) {
+            this.events.emit('powers_complete')
+            return
+        }
+
+        let next = this.powersQueue.shift()
+
+        next.process()
+    }
+
+    // powers end
 
     onDealCardLoad(key, card) {
         let cardPrefab = this.createCard()
@@ -474,6 +544,7 @@ export default class CardJitsu extends GameScene {
         this.events.off('battle_complete')
         this.events.off('flipped')
         this.events.off('remove_pick')
+        this.events.off('powers_complete')
 
         this.world.client.sendJoinLastRoom()
     }
