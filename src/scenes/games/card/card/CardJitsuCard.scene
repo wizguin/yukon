@@ -78,9 +78,8 @@
                         "frame": "card/glow0001"
                     },
                     "x": 95,
-                    "y": 104,
+                    "y": 105,
                     "originX": 0.5008695652173913,
-                    "visible": false,
                     "alpha": 0.5,
                     "alphaTopLeft": 0.5,
                     "alphaTopRight": 0.5,
@@ -152,7 +151,7 @@
                 {
                     "type": "Text",
                     "id": "10b504e1-dd20-411b-83e8-31df0743d59c",
-                    "label": "value",
+                    "label": "valueText",
                     "scope": "CLASS",
                     "components": [],
                     "x": 1,

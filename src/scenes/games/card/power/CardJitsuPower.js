@@ -47,19 +47,46 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
         return this.powerId in Rules.limiters
     }
 
+    get isPick() {
+        return this.state == States.Pick
+    }
+
+    get isActive() {
+        return this.state == States.Active
+    }
+
+    get isComplete() {
+        return this.state == States.Complete
+    }
+
+    get isReverseEffect() {
+        return this.powerId == 1
+    }
+
     process() {
         this.visible = true
 
-        if (this.state == States.Active && this.isLimiter) {
+        let target = this.getTarget()
+
+        // No target
+        if (!target) {
             this.onStateProcessed()
             return
         }
 
-        let target = this.getTarget()
+        // Target not moved
+        if (this.isTargetSame(target)) {
+            this.scene.time.delayedCall(1000, () => this.onStateProcessed())
+            return
+        }
 
         this.tweenTo(target.x, target.y)
 
-        this.tween.once('complete', this.onTweenComplete, this)
+        this.tween.once('complete', this.onStateProcessed, this)
+    }
+
+    isTargetSame(target) {
+        return target.x == this.x && target.y == this.y
     }
 
     tweenTo(x, y) {
@@ -74,10 +101,6 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
         })
     }
 
-    onTweenComplete() {
-        this.onStateProcessed()
-    }
-
     onStateProcessed() {
         this.updateState()
 
@@ -88,10 +111,6 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
 
             case States.Complete:
                 this.removePower()
-                break
-
-            default:
-                this.nextPower()
                 break
         }
     }
@@ -108,7 +127,7 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
         let seat = this.player.seat
         let oppositeSeat = this.scene.getOppositeSeat(seat)
 
-        return this.state == States.Active
+        return this.isActive
             ? this.getActiveTarget(seat, oppositeSeat)
             : this.getPickTarget(seat, oppositeSeat)
     }
@@ -116,7 +135,7 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
     getPickTarget(seat, oppositeSeat) {
         let top = layout.pos.power.top
 
-        if (this.powerId == 1) {
+        if (this.isReverseEffect) {
             return top[2]
         }
 
@@ -134,15 +153,44 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
     getActiveTarget(seat, oppositeSeat) {
         let pick = layout.pos.power.pick
 
-        if (this.powerId == 1) {
-            this.visible = false
+        if (this.isReverseEffect) {
+            return this.getReverseEffectTarget(seat, oppositeSeat)
         }
 
         if (this.isAffectsOwnPlayer) {
             return pick[seat]
         }
 
+        if (this.isLimiter) {
+            return null
+        }
+
         return pick[oppositeSeat]
+    }
+
+    getReverseEffectTarget(seat, oppositeSeat) {
+        let opponentCard = this.scene.players[oppositeSeat].pick
+        let pick = layout.pos.power.pick
+
+        if (this.card.elementId != opponentCard.elementId) {
+            this.playPoof()
+            return this
+        }
+
+        if (this.card.value > opponentCard.value) {
+            return pick[oppositeSeat]
+        }
+
+        if (this.card.value < opponentCard.value) {
+            return pick[seat]
+        }
+
+        this.playPoof()
+        return this
+    }
+
+    playPoof() {
+        this.anims.play('power/poof')
     }
 
     updateState() {
@@ -158,7 +206,7 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
     }
 
     startRemove() {
-        this.scene.time.delayedCall(250, () => this.removePower())
+        this.scene.time.delayedCall(500, () => this.removePower())
     }
 
     removePower() {

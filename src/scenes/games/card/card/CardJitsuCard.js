@@ -31,7 +31,7 @@ export default class CardJitsuCard extends BaseContainer {
         /** @type {Phaser.GameObjects.Image} */
         this.disabled;
         /** @type {Phaser.GameObjects.Text} */
-        this.value;
+        this.valueText;
         /** @type {CardJitsuThumb} */
         this.thumbnail;
         /** @type {CardJitsuHint} */
@@ -55,9 +55,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.add(back);
 
         // glow
-        const glow = scene.add.sprite(95, 104, "cardjitsu", "card/glow0001");
+        const glow = scene.add.sprite(95, 105, "cardjitsu", "card/glow0001");
         glow.setOrigin(0.5008695652173913, 0.5);
-        glow.visible = false;
         glow.alpha = 0.5;
         glow.alphaTopLeft = 0.5;
         glow.alphaTopRight = 0.5;
@@ -91,11 +90,11 @@ export default class CardJitsuCard extends BaseContainer {
         disabled.visible = false;
         this.add(disabled);
 
-        // value
-        const value = scene.add.text(1, 48, "", {});
-        value.text = "88";
-        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Arial", "fontSize": "38px", "fontStyle": "bold" });
-        this.add(value);
+        // valueText
+        const valueText = scene.add.text(1, 48, "", {});
+        valueText.text = "88";
+        valueText.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Arial", "fontSize": "38px", "fontStyle": "bold" });
+        this.add(valueText);
 
         // thumbnail
         const thumbnail = new CardJitsuThumb(scene, 47, 45);
@@ -115,7 +114,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.color = color;
         this.element = element;
         this.disabled = disabled;
-        this.value = value;
+        this.valueText = valueText;
         this.thumbnail = thumbnail;
         this.hint = hint;
 
@@ -175,12 +174,12 @@ export default class CardJitsuCard extends BaseContainer {
         let tint = layout.colors[card.color].color
 
         this.id = card.card_id
-        this.elementId = card.element
-
         this.powerId = card.power_id
-        this.description = card.description || ""
+        this.elementId = card.element
+        this.value = card.value
+        this.description = card.description || ''
 
-        this.value.text = card.value
+        this.valueText.text = card.value
         this.color.tint = tint
 
         this.element.setFrame(`card/${card.element}`)
@@ -263,7 +262,7 @@ export default class CardJitsuCard extends BaseContainer {
     showFrontSprites(show) {
         this.thumbnail.visible = false
         this.back.visible = !show
-        this.value.visible = show
+        this.valueText.visible = show
         this.element.visible = show
         this.color.visible = show
         this.icon.visible = show

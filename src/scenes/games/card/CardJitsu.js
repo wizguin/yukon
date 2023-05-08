@@ -300,20 +300,26 @@ export default class CardJitsu extends GameScene {
 
     onFlipped(winner) {
         if (winner == -1) {
-            this.judgeTie()
-            return
+            this.onFlippedTie()
+        } else {
+            this.onFlippedWin(winner)
         }
 
+        this.checkPowersOnPlayed()
+
+        this.processPowers()
+    }
+
+    onFlippedTie() {
+        this.events.once('powers_complete', this.judgeTie, this)
+    }
+
+    onFlippedWin(winner) {
         let winCard = this.players[winner].pick
 
-        let battles = this.getBattleNames(winCard)
-
-        this.checkPowersOnPlayed()
         this.checkPowerOnScored(this.players[winner], winCard)
 
         this.events.once('powers_complete', () => this.judge(winner, winCard))
-
-        this.processPowers()
     }
 
     // powers start
@@ -340,6 +346,14 @@ export default class CardJitsu extends GameScene {
     }
 
     addPower(player, card) {
+        if (card.powerId == 1) {
+            let hasReverse = this.activePowers.some(power => power.isReverseEffect & power.isPick)
+
+            if (hasReverse) {
+                return
+            }
+        }
+
         let power = new CardJitsuPower(this, player, card)
 
         this.add.existing(power)
