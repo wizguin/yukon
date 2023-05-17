@@ -213,8 +213,23 @@ export default class CardJitsuPower extends Phaser.GameObjects.Sprite {
         this.scene.removePower(this)
 
         this.nextPower()
+        this.afterRemove()
 
         this.destroy()
+    }
+
+    afterRemove() {
+        let opponent = this.scene.players[this.scene.getOppositeSeat(this.player.seat)]
+
+        if (this.isDiscardElement) {
+            opponent.discardElement(Rules.discardElements[this.powerId])
+        }
+
+        if (this.isDiscardColor) {
+            opponent.discardColor(Rules.discardColors[this.powerId])
+        }
+
+        opponent.arrangeWinCards()
     }
 
 }

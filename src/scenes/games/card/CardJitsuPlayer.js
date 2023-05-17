@@ -49,6 +49,10 @@ export default class CardJitsuPlayer extends BaseContainer {
         return this.wins.filter(win => win.elementId == element)
     }
 
+    getColorWins(color) {
+        return this.wins.filter(win => win.color == color)
+    }
+
     set(user) {
         this.seat = this.scene.players.indexOf(this)
 
@@ -133,6 +137,34 @@ export default class CardJitsuPlayer extends BaseContainer {
 
     findWins(find) {
         return find.map(id => this.wins.find(win => win.id == id)).filter(Boolean)
+    }
+
+    discardElement(element) {
+        let elementWins = this.getElementWins(element)
+
+        if (elementWins.length) {
+            this.discardCard(elementWins.pop())
+        }
+    }
+
+    discardColor(color) {
+        let colorWins = this.getColorWins(color)
+
+        if (colorWins.length) {
+            this.discardCard(colorWins.pop())
+        }
+    }
+
+    discardCard(card) {
+        this.wins.splice(this.wins.indexOf(card), 1)
+
+        card.destroy()
+    }
+
+    arrangeWinCards() {
+        for (let card of this.wins) {
+            card.tweenToWin()
+        }
     }
 
     /* END-USER-CODE */

@@ -102,7 +102,7 @@
                 {
                     "type": "Image",
                     "id": "168cd85e-361d-4eae-8447-978bb7df8dc6",
-                    "label": "color",
+                    "label": "colorSprite",
                     "scope": "CLASS",
                     "components": [],
                     "texture": {

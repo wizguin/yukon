@@ -25,7 +25,7 @@ export default class CardJitsuCard extends BaseContainer {
         /** @type {Phaser.GameObjects.Sprite} */
         this.icon;
         /** @type {Phaser.GameObjects.Image} */
-        this.color;
+        this.colorSprite;
         /** @type {Phaser.GameObjects.Image} */
         this.element;
         /** @type {Phaser.GameObjects.Image} */
@@ -70,14 +70,14 @@ export default class CardJitsuCard extends BaseContainer {
         icon.visible = false;
         this.add(icon);
 
-        // color
-        const color = scene.add.image(95, 107, "cardjitsu", "card/color");
-        color.setOrigin(0.5010660980810234, 0.500945179584121);
-        color.tintTopLeft = 1132705;
-        color.tintTopRight = 1132705;
-        color.tintBottomLeft = 1132705;
-        color.tintBottomRight = 1132705;
-        this.add(color);
+        // colorSprite
+        const colorSprite = scene.add.image(95, 107, "cardjitsu", "card/color");
+        colorSprite.setOrigin(0.5010660980810234, 0.500945179584121);
+        colorSprite.tintTopLeft = 1132705;
+        colorSprite.tintTopRight = 1132705;
+        colorSprite.tintBottomLeft = 1132705;
+        colorSprite.tintBottomRight = 1132705;
+        this.add(colorSprite);
 
         // element
         const element = scene.add.image(28, 28, "cardjitsu", "card/f");
@@ -111,7 +111,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.back = back;
         this.glow = glow;
         this.icon = icon;
-        this.color = color;
+        this.colorSprite = colorSprite;
         this.element = element;
         this.disabled = disabled;
         this.valueText = valueText;
@@ -177,10 +177,11 @@ export default class CardJitsuCard extends BaseContainer {
         this.powerId = card.power_id
         this.elementId = card.element
         this.value = card.value
+        this.color = card.color
         this.description = card.description || ''
 
         this.valueText.text = card.value
-        this.color.tint = tint
+        this.colorSprite.tint = tint
 
         this.element.setFrame(`card/${card.element}`)
 
@@ -264,7 +265,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.back.visible = !show
         this.valueText.visible = show
         this.element.visible = show
-        this.color.visible = show
+        this.colorSprite.visible = show
         this.icon.visible = show
         this.glow.visible = show && this.isPowerCard
     }
@@ -308,9 +309,10 @@ export default class CardJitsuCard extends BaseContainer {
     tweenToWin() {
         let pos = layout.pos.wins[this.player.seat][this.elementId]
 
-        let wins = this.player.getElementWins(this.elementId).length
+        let wins = this.player.getElementWins(this.elementId)
+        let index = wins.indexOf(this) + 1
 
-        let y = pos.y + (this.spacer * wins)
+        let y = pos.y + (this.spacer * index)
 
         this.tweenTo(pos.x, y)
 
@@ -384,17 +386,24 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     enableInput() {
-        this.setSize(this.color.width, this.color.height)
+        this.setSize(this.colorSprite.width, this.colorSprite.height)
         this.setInteractive()
 
         // Offset
-        this.input.hitArea.x = this.color.x
-        this.input.hitArea.y = this.color.y
+        this.input.hitArea.x = this.colorSprite.x
+        this.input.hitArea.y = this.colorSprite.y
+
+        this.disabled.visible = false
     }
 
     disableInput() {
         this.disableInteractive()
         this.onOut()
+    }
+
+    disableCard() {
+        this.disableInput()
+        this.disabled.visible = true
     }
 
     onUp() {

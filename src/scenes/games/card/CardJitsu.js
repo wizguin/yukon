@@ -457,11 +457,27 @@ export default class CardJitsu extends GameScene {
     allCardsDealt() {
         this.myPlayer.enableCards()
 
+        let limit = this.activePowers.find(power => power.isLimiter && power.player != this.myPlayer)
+
+        if (limit) {
+            this.disableElements(limit)
+        }
+
         this.clock.start()
     }
 
+    disableElements(power) {
+        let element = Rules.limiters[power.powerId]
+
+        for (let card of this.myPlayer.dealtNotNull) {
+            if (card.elementId == element) {
+                card.disableCard()
+            }
+        }
+    }
+
     timeUp() {
-        let random = Phaser.Math.RND.pick(this.myPlayer.dealtNotNull)
+        let random = Phaser.Math.RND.pick(this.myPlayer.dealtNotNull.filter(card => !card.disabled.visible))
 
         this.pickCard(random)
     }
