@@ -45,6 +45,10 @@ export default class CardJitsuPlayer extends BaseContainer {
         return this.dealtCards.filter(Boolean)
     }
 
+    get pickableCards() {
+        return this.dealtNotNull.filter(card => !card.isDisabled)
+    }
+
     getElementWins(element) {
         return this.wins.filter(win => win.elementId == element)
     }
@@ -137,6 +141,14 @@ export default class CardJitsuPlayer extends BaseContainer {
 
     findWins(find) {
         return find.map(id => this.wins.find(win => win.id == id)).filter(Boolean)
+    }
+
+    disableElement(element) {
+        for (let card of this.dealtNotNull) {
+            if (card.elementId == element) {
+                card.disableCard()
+            }
+        }
     }
 
     discardElement(element) {

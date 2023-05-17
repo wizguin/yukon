@@ -146,6 +146,10 @@ export default class CardJitsuCard extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get isDisabled() {
+        return this.disabled.visible
+    }
+
     init(player, state, card = null) {
         if (!player.dealtCards.includes(null)) {
             return
