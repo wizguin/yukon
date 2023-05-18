@@ -244,7 +244,7 @@ export default class CardJitsu extends GameScene {
 
     handleWinner(args) {
         // Remove original handler
-        this.events.off('battle_complete', this.onBattleComplete, this)
+        this.events.off('battle_complete')
 
         this.events.once('battle_complete', () => this.onLastBattle(args.winner, args.cards))
     }
@@ -402,7 +402,7 @@ export default class CardJitsu extends GameScene {
         cardPrefab.icon.setTexture(key)
     }
 
-    onLastBattle(winSeat, winCards) {
+    onLastBattle(winSeat, winCards = []) {
         this.playBattle('ambient')
 
         let winner = this.players[winSeat]
@@ -412,7 +412,7 @@ export default class CardJitsu extends GameScene {
             cards[i].tweenToOver(i)
         }
 
-        this.time.delayedCall(1000, () => this.playGameOver(winSeat))
+        this.time.delayedCall(1000, () => this.playGameOver(winSeat, !winCards.length))
     }
 
     onCloseClick() {
@@ -456,14 +456,17 @@ export default class CardJitsu extends GameScene {
 
     allCardsDealt() {
         this.myPlayer.enableCards()
+        this.updateDisabledCards()
 
+        this.clock.start()
+    }
+
+    updateDisabledCards() {
         let limit = this.activePowers.find(power => power.isLimiter && power.player != this.myPlayer)
 
         if (limit) {
             this.disableElement(limit)
         }
-
-        this.clock.start()
     }
 
     disableElement(power) {
@@ -473,12 +476,20 @@ export default class CardJitsu extends GameScene {
     }
 
     timeUp() {
-        let random = Phaser.Math.RND.pick(this.myPlayer.pickableCards)
+        let pickable = this.myPlayer.pickableCards
 
-        this.pickCard(random)
+        if (pickable.length) {
+            let random = Phaser.Math.RND.pick(pickable)
+
+            this.pickCard(random)
+        }
     }
 
     pickCard(card) {
+        if (!this.myPlayer.pickableCards.includes(card)) {
+            return
+        }
+
         this.myPlayer.pickCard(card)
         this.network.send('pick_card', { card: card.id })
 
@@ -519,10 +530,10 @@ export default class CardJitsu extends GameScene {
         this.playBattle(battle, winSeat)
     }
 
-    playGameOver(winSeat) {
+    playGameOver(winSeat, hasNoCards) {
         this.playBattle('tie')
 
-        let callback = () => this.time.delayedCall(500, () => this.showGameOverPrompt(winSeat))
+        let callback = () => this.time.delayedCall(500, () => this.showGameOverPrompt(winSeat, hasNoCards))
 
         this.events.once('battle_complete', callback)
     }
@@ -535,14 +546,28 @@ export default class CardJitsu extends GameScene {
         })
     }
 
-    showGameOverPrompt(winSeat) {
-        let username = this.players[winSeat].username
+    showGameOverPrompt(winSeat, hasNoCards) {
+        let message = this.getGameOverMessage(winSeat, hasNoCards)
 
-        this.interface.prompt.showWindow(this.getFormatString('wins', username), 'single', () => {
+        this.interface.prompt.showWindow(message, 'single', () => {
             this.winsPromptCallback()
 
             this.interface.prompt.window.visible = false
         })
+    }
+
+    getGameOverMessage(winSeat, hasNoCards) {
+        let username = this.players[winSeat].username
+        let message = this.getFormatString('wins', username)
+
+        if (!hasNoCards) {
+            return message
+        }
+
+        let loserUsername = this.players[this.getOppositeSeat(winSeat)].username
+        let loserMessage = this.getFormatString('has_no_cards', loserUsername)
+
+        return `${loserMessage}\n${message}`
     }
 
     winsPromptCallback() {
