@@ -162,8 +162,12 @@ export default class CardJitsuPlayer extends BaseContainer {
     discardColor(color) {
         let colorWins = this.getColorWins(color)
 
+        // Order by element
+        let order = { f: 1, w: 2, s: 3 }
+        colorWins.sort((a, b) => order[a.elementId] - order[b.elementId])
+
         if (colorWins.length) {
-            this.discardCard(colorWins.pop())
+            this.discardCard(colorWins.shift())
         }
     }
 
