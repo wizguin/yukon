@@ -42,10 +42,6 @@ export default class CardJitsuClock extends BaseContainer {
 
         this.timer = scene.time.addEvent(this.timerConfig)
 
-        // temp
-        window.s = () => this.start()
-        window.st = () => this.stop()
-
         /* END-USER-CTR-CODE */
     }
 
