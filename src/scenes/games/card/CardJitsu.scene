@@ -21,6 +21,7 @@
             "type": "Image",
             "id": "c12c3e43-59eb-4f80-ad9a-810a06c53763",
             "label": "bg",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "cardjitsu",

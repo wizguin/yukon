@@ -20,6 +20,8 @@ export default class CardJitsu extends GameScene {
     constructor() {
         super("CardJitsu");
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.bg;
         /** @type {CardJitsuPlayer} */
         this.player2;
         /** @type {CardJitsuPlayer} */
@@ -39,6 +41,9 @@ export default class CardJitsu extends GameScene {
 
 
         /* START-USER-CTR-CODE */
+
+        window.card = this
+
         /* END-USER-CTR-CODE */
     }
 
@@ -52,7 +57,7 @@ export default class CardJitsu extends GameScene {
     _create() {
 
         // bg
-        this.add.image(760, 480, "cardjitsu", "bg");
+        const bg = this.add.image(760, 480, "cardjitsu", "bg");
 
         // player2
         const player2 = new CardJitsuPlayer(this, 760, 480);
@@ -105,6 +110,7 @@ export default class CardJitsu extends GameScene {
         closeButton.spriteName = "close";
         closeButton.callback = () => this.onCloseClick();
 
+        this.bg = bg;
         this.player2 = player2;
         this.player1 = player1;
         this.clock = clock;
@@ -130,7 +136,16 @@ export default class CardJitsu extends GameScene {
         this.load.pack('tie-pack', `${url}/tie/tie-pack.json`)
     }
 
-    create() {
+    async create() {
+        this.container = this.add.dom(760, 480)
+        this.container.visible = false
+
+        this.battlesPath = 'assets/media/flash/battles/'
+
+        this.events.once('emulator_ready', this.onEmulatorReady, this)
+
+        this.player = await this.loadEmulator()
+
         super.create()
 
         this.myPlayer
@@ -164,7 +179,6 @@ export default class CardJitsu extends GameScene {
         this.rankUp = null
 
         this.addListeners()
-        this.network.send('start_game')
 
         this.events.once('shutdown', this.onShutdown, this)
     }
@@ -193,6 +207,57 @@ export default class CardJitsu extends GameScene {
         this.network.events.off('close_game', this.handleCloseGame, this)
         this.network.events.off('close_game', this.handleCloseGame, this)
         this.network.events.off('award', this.handleAward, this)
+    }
+
+    async loadEmulator() {
+        const ruffle = window.RufflePlayer.newest()
+        const player = ruffle.createPlayer()
+
+        this.container.setElement(player, {
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'auto'
+        })
+
+        // Position dom below canvas
+        this.game.domContainer.style.zIndex = -10
+
+        await player.load({
+            url: 'assets/media/flash/battle.swf',
+            allowScriptAccess: true,
+            menu: false,
+            contextMenu: false,
+            scale: 'noborder',
+            autoplay: 'on',
+
+            logLevel: 'info',
+            splashScreen: false
+        })
+
+        return player
+    }
+
+    onEmulatorReady() {
+        this.bg.visible = false
+        this.container.visible = true
+
+        this.network.send('start_game')
+    }
+
+    getBattlesPath() {
+        return this.battlesPath
+    }
+
+    getColor(seat) {
+        return this.players[seat].color
+    }
+
+    getSensei(seat) {
+        return this.players[seat].sensei
+    }
+
+    getRank(seat) {
+        return this.players[seat].rank
     }
 
     handleStartGame(args) {
@@ -435,16 +500,7 @@ export default class CardJitsu extends GameScene {
     }
 
     playBattle(battle, winSeat = null) {
-        if (winSeat == null) {
-            this.players.forEach(player => player.playBattle(battle))
-            return
-        }
-
-        let winner = this.players[winSeat]
-        let loser = this.players[this.getOppositeSeat(winSeat)]
-
-        winner.playBattle(`${battle}_attack`)
-        loser.playBattle(`${battle}_react`)
+        this.player.loadBattle(battle, winSeat)
     }
 
     createCard() {
@@ -596,6 +652,8 @@ export default class CardJitsu extends GameScene {
         this.events.off('flipped')
         this.events.off('remove_pick')
         this.events.off('powers_complete')
+
+        this.game.domContainer.style.zIndex = 'auto'
 
         this.world.client.sendJoinLastRoom()
     }
