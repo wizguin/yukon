@@ -6,7 +6,6 @@ import Button from "../../components/Button";
 import CardJitsuClock from "./clock/CardJitsuClock";
 /* START-USER-IMPORTS */
 
-import BattleLoader from '@engine/loaders/BattleLoader'
 import CardLoader from '@engine/loaders/CardLoader'
 import CardJitsuCard from './card/CardJitsuCard'
 import CardJitsuPower from './power/CardJitsuPower'
@@ -152,7 +151,6 @@ export default class CardJitsu extends GameScene {
         this.opponent
 
         // Loader
-        this.battleLoader = new BattleLoader(this)
         this.cardLoader = new CardLoader(this)
 
         this.onDealCardLoad = this.onDealCardLoad.bind(this)
@@ -179,8 +177,6 @@ export default class CardJitsu extends GameScene {
         this.rankUp = null
 
         this.addListeners()
-
-        this.events.once('shutdown', this.onShutdown, this)
     }
 
     // probably a better way than needing 2 functions for this
@@ -351,12 +347,6 @@ export default class CardJitsu extends GameScene {
         }
     }
 
-    checkBattleComplete() {
-        if (!this.player1.animating && !this.player2.animating) {
-            this.events.emit('battle_complete')
-        }
-    }
-
     onBattleComplete() {
         this.playBattle('ambient')
 
@@ -487,12 +477,6 @@ export default class CardJitsu extends GameScene {
         }
 
         this.showCloseGamePrompt()
-    }
-
-    getBattleNames(card) {
-        let prefix = card.powerId > 0 ? `pow_${card.id}` : card.elementId
-
-        return [`${prefix}_attack`, `${prefix}_react`]
     }
 
     getOppositeSeat(seat) {
@@ -656,11 +640,6 @@ export default class CardJitsu extends GameScene {
         this.game.domContainer.style.zIndex = 'auto'
 
         this.world.client.sendJoinLastRoom()
-    }
-
-    onShutdown() {
-        // Temp solution until memory management update
-        this.battleLoader.clearPacks()
     }
 
     /* END-USER-CODE */
