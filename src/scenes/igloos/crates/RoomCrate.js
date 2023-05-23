@@ -60,7 +60,7 @@ export default class RoomCrate extends Crate {
         this.scale = 1
 
         if (this.tween) {
-            this.tween.remove()
+            this.scene.tweens.remove(this.tween)
             this.tween = null
         }
 
