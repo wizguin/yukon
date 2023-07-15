@@ -190,10 +190,14 @@ export default class SenseiWidget extends BaseContainer {
     showSpeech(text) {
         // todo: strings file
         this.speech.show(text)
+
+        this.sensei.playTalk()
     }
 
     hideSpeech() {
         this.speech.close()
+
+        this.sensei.playWait()
     }
 
     hideAll() {
