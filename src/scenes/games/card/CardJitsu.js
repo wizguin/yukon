@@ -3,6 +3,7 @@
 import GameScene from "../GameScene";
 import CardJitsuPlayer from "./CardJitsuPlayer";
 import Button from "../../components/Button";
+import CardJitsuHelp from "./help/CardJitsuHelp";
 import CardJitsuClock from "./clock/CardJitsuClock";
 /* START-USER-IMPORTS */
 
@@ -25,6 +26,10 @@ export default class CardJitsu extends GameScene {
         this.player2;
         /** @type {CardJitsuPlayer} */
         this.player1;
+        /** @type {CardJitsuHelp} */
+        this.help;
+        /** @type {Phaser.GameObjects.Image} */
+        this.frame;
         /** @type {CardJitsuClock} */
         this.clock;
         /** @type {Phaser.GameObjects.Image} */
@@ -72,8 +77,8 @@ export default class CardJitsu extends GameScene {
         const close = this.add.image(1464, 57, "cardjitsu", "close");
 
         // help
-        const help = this.add.image(754, 26, "cardjitsu", "help");
-        help.setOrigin(0.5005370569280344, 0.5004436557231589);
+        const help = new CardJitsuHelp(this, 754, 24);
+        this.add.existing(help);
 
         // panel
         const panel = this.add.image(760, 854, "cardjitsu", "panel");
@@ -112,6 +117,8 @@ export default class CardJitsu extends GameScene {
         this.bg = bg;
         this.player2 = player2;
         this.player1 = player1;
+        this.help = help;
+        this.frame = frame;
         this.clock = clock;
         this.spinner = spinner;
         this.username2 = username2;
@@ -177,6 +184,9 @@ export default class CardJitsu extends GameScene {
         this.rankUp = null
 
         this.addListeners()
+
+        this.help.depth = 2000
+        this.frame.depth = 2001
     }
 
     // probably a better way than needing 2 functions for this
@@ -499,6 +509,7 @@ export default class CardJitsu extends GameScene {
         this.updateDisabledCards()
 
         this.clock.start()
+        this.help.unlock()
     }
 
     updateDisabledCards() {
@@ -534,6 +545,7 @@ export default class CardJitsu extends GameScene {
         this.network.send('pick_card', { card: card.id })
 
         this.clock.stop()
+        this.help.lock()
     }
 
     judge(winner, winCard) {

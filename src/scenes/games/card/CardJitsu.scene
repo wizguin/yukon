@@ -85,18 +85,19 @@
             "y": 57
         },
         {
-            "type": "Image",
+            "prefabId": "94535fbd-178b-46f2-a995-1dd72d803895",
             "id": "a1e810c2-0719-4c82-b4c9-f0d891121829",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "help",
+            "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "cardjitsu",
-                "frame": "help"
-            },
             "x": 754,
-            "y": 26,
-            "originX": 0.5005370569280344,
-            "originY": 0.5004436557231589
+            "y": 24,
+            "nestedPrefabs": [],
+            "list": []
         },
         {
             "type": "Image",
@@ -115,6 +116,7 @@
             "type": "Image",
             "id": "9e6b3a10-20e4-48fb-95b7-8e3259b670c4",
             "label": "frame",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "cardjitsu",
