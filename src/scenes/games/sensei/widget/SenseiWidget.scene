@@ -26,6 +26,7 @@
                     "type": "Image",
                     "id": "06e66bb6-5a49-4833-8a26-681a8126ce3b",
                     "label": "bg",
+                    "scope": "CLASS",
                     "components": [
                         "Interactive"
                     ],

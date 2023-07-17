@@ -60,7 +60,6 @@ export default class SenseiMenu extends BaseContainer {
                     icon: 'menu/icon/belt',
 
                     over: this.competitionOver,
-                    out: this.hideSpeech,
                     up: this.competitionUp
                 },
                 {
@@ -68,7 +67,6 @@ export default class SenseiMenu extends BaseContainer {
                     icon: 'menu/icon/sensei',
 
                     over: this.senseiOver,
-                    out: this.hideSpeech,
                     up: this.senseiUp
                 }
             ]

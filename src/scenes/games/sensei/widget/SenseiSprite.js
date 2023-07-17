@@ -53,6 +53,8 @@ export default class SenseiSprite extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        this.currentAnim
+
         this.playWait()
 
         /* END-USER-CTR-CODE */
@@ -70,6 +72,12 @@ export default class SenseiSprite extends BaseContainer {
     }
 
     playAnims(key) {
+        if (key === this.currentAnim) {
+            return
+        }
+
+        this.currentAnim = key
+
         this.base.play(`${key}/base`)
         this.beak.play(`${key}/beak`)
         this.beard.play(`${key}/beard`)

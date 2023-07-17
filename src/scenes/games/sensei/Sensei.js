@@ -72,6 +72,8 @@ export default class Sensei extends GameScene {
     create() {
         super.create()
 
+        this.sensei.bg.on('pointerover', this.sensei.hideSpeech, this.sensei)
+
         this.showMenu('start')
     }
 

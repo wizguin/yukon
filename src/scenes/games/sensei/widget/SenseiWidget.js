@@ -19,6 +19,8 @@ export default class SenseiWidget extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 415, y ?? 353);
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.bg;
         /** @type {SenseiSprite} */
         this.sensei;
         /** @type {SenseiBelt} */
@@ -56,6 +58,7 @@ export default class SenseiWidget extends BaseContainer {
         // bg (components)
         new Interactive(bg);
 
+        this.bg = bg;
         this.sensei = sensei;
         this.belt = belt;
         this.speech = speech;
