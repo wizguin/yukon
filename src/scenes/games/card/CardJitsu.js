@@ -26,6 +26,8 @@ export default class CardJitsu extends GameScene {
         this.player2;
         /** @type {CardJitsuPlayer} */
         this.player1;
+        /** @type {Phaser.GameObjects.Image} */
+        this.closeButton;
         /** @type {CardJitsuHelp} */
         this.help;
         /** @type {Phaser.GameObjects.Image} */
@@ -73,8 +75,8 @@ export default class CardJitsu extends GameScene {
         player1.scaleX = -1;
         player1.scaleY = 1;
 
-        // close
-        const close = this.add.image(1464, 57, "cardjitsu", "close");
+        // closeButton
+        const closeButton = this.add.image(1464, 57, "cardjitsu", "close");
 
         // help
         const help = new CardJitsuHelp(this, 754, 24);
@@ -109,14 +111,15 @@ export default class CardJitsu extends GameScene {
         const players = [player1, player2];
         const usernames = [username1, username2];
 
-        // close (components)
-        const closeButton = new Button(close);
-        closeButton.spriteName = "close";
-        closeButton.callback = () => this.onCloseClick();
+        // closeButton (components)
+        const closeButtonButton = new Button(closeButton);
+        closeButtonButton.spriteName = "close";
+        closeButtonButton.callback = () => this.onCloseClick();
 
         this.bg = bg;
         this.player2 = player2;
         this.player1 = player1;
+        this.closeButton = closeButton;
         this.help = help;
         this.frame = frame;
         this.clock = clock;
@@ -187,6 +190,8 @@ export default class CardJitsu extends GameScene {
 
         this.help.depth = 2000
         this.frame.depth = 2001
+
+        this.closeButton.on('pointerdown', this.playCloseSound, this)
     }
 
     // probably a better way than needing 2 functions for this
@@ -652,6 +657,10 @@ export default class CardJitsu extends GameScene {
         this.game.domContainer.style.zIndex = 'auto'
 
         this.world.client.sendJoinLastRoom()
+    }
+
+    playCloseSound() {
+        this.soundManager.play('switch')
     }
 
     /* END-USER-CODE */

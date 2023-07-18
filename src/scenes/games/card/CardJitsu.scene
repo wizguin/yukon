@@ -71,7 +71,8 @@
         {
             "type": "Image",
             "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
-            "label": "close",
+            "label": "closeButton",
+            "scope": "CLASS",
             "components": [
                 "Button"
             ],
