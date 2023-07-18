@@ -15,6 +15,13 @@ export default class CardJitsuHelp extends BaseContainer {
         help.setOrigin(0.5005370569280344, 0.5004436557231589);
         this.add(help);
 
+        // text
+        const text = scene.add.text(0, -275, "", {});
+        text.setOrigin(0.5, 0.5);
+        text.text = "If tied, the highest number wins.";
+        text.setStyle({ "align": "center", "color": "#333", "fixedWidth":828,"fixedHeight":50,"fontFamily": "Burbank Small", "fontSize": "32px" });
+        this.add(text);
+
         // help (components)
         const helpSimpleButton = new SimpleButton(help);
         helpSimpleButton.hoverCallback = () => this.onOver();

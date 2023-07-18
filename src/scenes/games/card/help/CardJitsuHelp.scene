@@ -36,6 +36,22 @@
                     },
                     "originX": 0.5005370569280344,
                     "originY": 0.5004436557231589
+                },
+                {
+                    "type": "Text",
+                    "id": "108802b2-880c-4a19-893e-a4ddb0e4763f",
+                    "label": "text",
+                    "components": [],
+                    "y": -275,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "If tied, the highest number wins.",
+                    "fixedWidth": 828,
+                    "fixedHeight": 50,
+                    "align": "center",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "32px",
+                    "color": "#333"
                 }
             ]
         }
