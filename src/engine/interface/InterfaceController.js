@@ -138,10 +138,6 @@ export default class InterfaceController extends BaseScene {
     }
 
     showWidget(widget) {
-        if (widget.visible) {
-            widget.close()
-        }
-
         if (widget.widgetLayer) {
             widget.widgetLayer.bringToTop(widget)
         }
