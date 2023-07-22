@@ -50,6 +50,8 @@ export default class CardJitsu extends GameScene {
 
         window.card = this
 
+        this.music = '116'
+
         /* END-USER-CTR-CODE */
     }
 
