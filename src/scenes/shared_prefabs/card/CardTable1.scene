@@ -1,0 +1,72 @@
+{
+    "id": "8adc32e3-5c26-46f8-b0a3-ceb8200598ec",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "92e98aa4-f6b1-4b7b-bee2-08bc6a7b7bef",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "dd831ee5-3fa1-4d8e-adf4-273bf9ac6372",
+                    "label": "mat",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "mat/mat_1",
+                    "Button.activeFrame": false,
+                    "Button.pixelPerfect": true,
+                    "ShowHint.text": "card_hint",
+                    "texture": {
+                        "key": "dojo",
+                        "frame": "mat/mat_1"
+                    },
+                    "originX": 0.5018450184501845
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "prefabProperties": [
+        {
+            "name": "moveToX",
+            "label": "moveToX",
+            "tooltip": "moveToX",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveToY",
+            "label": "moveToY",
+            "tooltip": "moveToY",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
