@@ -21,7 +21,6 @@
             "type": "Image",
             "id": "cdad28c5-a6ef-4041-b7a2-d1b67c1d0477",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "dojo",
                 "frame": "bg"
@@ -52,6 +51,185 @@
             "y": 421,
             "originX": 0,
             "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "779d8848-0d5a-4c38-93b2-1a51b4c294ed",
+            "label": "sensei",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dojo",
+                "frame": "sensei/sensei0001"
+            },
+            "x": 965,
+            "y": 373,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "11187da2-2046-47b4-8601-6631421f43ee",
+            "label": "tree",
+            "texture": {
+                "key": "dojo",
+                "frame": "tree"
+            },
+            "x": 1198,
+            "y": 451,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "cd9d3eb7-a7fe-4f75-9077-53b8c1a6eae5",
+            "label": "instructionsPoster",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "instructions_poster",
+            "Button.callback": "() => this.interface.loadWidget('NinjaInstructions')",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "dojo",
+                "frame": "instructions_poster"
+            },
+            "x": 631,
+            "y": 375,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "88e43778-3321-4a69-98e8-eadd7d082a6c",
+            "label": "instructions",
+            "texture": {
+                "key": "dojo",
+                "frame": "instructions"
+            },
+            "x": 647,
+            "y": 381,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "6532e5fe-0d2d-483d-9631-2f8abf2f93e1",
+            "label": "legendPoster",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "legend_poster",
+            "Button.callback": "() => this.interface.loadWidget('NinjaBelts')",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "dojo",
+                "frame": "legend_poster"
+            },
+            "x": 512,
+            "y": 375,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "89add8ea-3226-4101-914b-de9e1f6c0d4f",
+            "label": "legend",
+            "texture": {
+                "key": "dojo",
+                "frame": "legend"
+            },
+            "x": 534,
+            "y": 382,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "prefabId": "8adc32e3-5c26-46f8-b0a3-ceb8200598ec",
+            "id": "4ed85538-b1e1-4391-864a-12165867f2d7",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "table203",
+            "moveToX": 1160,
+            "moveToY": 750,
+            "x": 1188,
+            "y": 813,
+            "scaleX": -1,
+            "scaleY": 1
+        },
+        {
+            "prefabId": "8adc32e3-5c26-46f8-b0a3-ceb8200598ec",
+            "id": "930e64d7-509f-4b66-b069-17ddd8228123",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "table202",
+            "moveToX": 380,
+            "moveToY": 750,
+            "x": 358,
+            "y": 813
+        },
+        {
+            "prefabId": "36e51c27-3069-47c0-8b43-7a47b5400852",
+            "id": "7353dd85-f3a9-44e6-a1b5-efce0d80b611",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "table201",
+            "moveToX": 920,
+            "moveToY": 650,
+            "x": 930,
+            "y": 706,
+            "scaleX": -1,
+            "scaleY": 1
+        },
+        {
+            "prefabId": "36e51c27-3069-47c0-8b43-7a47b5400852",
+            "id": "fb495e97-de4b-464b-91cc-e79480e53d2d",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "table200",
+            "moveToX": 620,
+            "moveToY": 650,
+            "x": 616,
+            "y": 706
+        },
+        {
+            "type": "Rectangle",
+            "id": "ddcfe359-2530-437e-8de5-d24516fa0c13",
+            "label": "zone",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "Zone.hoverCallback": "() => this.onSenseiOver()",
+            "Zone.hoverOutCallback": "() => this.onSenseiOut()",
+            "MoveTo.x": "1096",
+            "MoveTo.y": "640",
+            "x": 1096,
+            "y": 490,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 246,
+            "height": 217
         }
     ],
     "plainObjects": [],
@@ -59,6 +237,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }
