@@ -24,12 +24,14 @@ export default class Item extends Plugin {
     }
 
     addItem(args) {
+        const item = parseInt(args.item)
+
         // If item already in inventory
-        if (this.client.inventory[args.slot].includes(args.item)) return
+        if (this.client.inventory[args.slot].includes(item)) return
 
         // Update player data
         this.client.coins = args.coins
-        this.client.inventory[args.slot].push(args.item)
+        this.client.inventory[args.slot].push(item)
         this.client.inventory[args.slot].sort((a, b) => a - b)
 
         // Update player card
