@@ -16,6 +16,8 @@ export default class Dojo extends RoomScene {
 
         /** @type {Phaser.GameObjects.Sprite} */
         this.sensei;
+        /** @type {Phaser.GameObjects.Image} */
+        this.cards;
 
 
         /* START-USER-CTR-CODE */
@@ -100,6 +102,11 @@ export default class Dojo extends RoomScene {
         zone.isFilled = true;
         zone.fillColor = 65280;
 
+        // cards
+        const cards = this.add.image(1342, 819, "dojo", "cards");
+        cards.setOrigin(0, 0);
+        cards.visible = false;
+
         // door (components)
         const doorButton = new Button(door);
         doorButton.spriteName = "door";
@@ -145,13 +152,28 @@ export default class Dojo extends RoomScene {
         zoneMoveTo.x = 1096;
         zoneMoveTo.y = 640;
 
+        // cards (components)
+        const cardsButton = new Button(cards);
+        cardsButton.spriteName = "cards";
+        cardsButton.callback = () => this.interface.loadWidget('NinjaProgress');
+        cardsButton.activeFrame = false;
+        cardsButton.pixelPerfect = true;
+
         this.sensei = sensei;
+        this.cards = cards;
 
         this.events.emit("scene-awake");
     }
 
 
     /* START-USER-CODE */
+
+    create() {
+        super.create()
+
+        this.cards.depth = 960
+        this.cards.visible = this.world.client.inventory.award.includes(821)
+    }
 
     onSenseiOver() {
         this.sensei.play('sensei_over')

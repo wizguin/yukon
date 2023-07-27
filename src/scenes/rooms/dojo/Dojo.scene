@@ -230,6 +230,28 @@
             "fillColor": "#00ff00",
             "width": 246,
             "height": 217
+        },
+        {
+            "type": "Image",
+            "id": "f8368dcf-c97e-4fd6-8b91-a1e62e7bd9c1",
+            "label": "cards",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "cards",
+            "Button.callback": "() => this.interface.loadWidget('NinjaProgress')",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "dojo",
+                "frame": "cards"
+            },
+            "x": 1342,
+            "y": 819,
+            "originX": 0,
+            "originY": 0,
+            "visible": false
         }
     ],
     "plainObjects": [],
