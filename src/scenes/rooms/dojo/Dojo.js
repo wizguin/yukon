@@ -168,11 +168,15 @@ export default class Dojo extends RoomScene {
 
     /* START-USER-CODE */
 
+    get userHasDeck() {
+        return this.world.client.inventory.award.includes(821)
+    }
+
     create() {
         super.create()
 
         this.cards.depth = 960
-        this.cards.visible = this.world.client.inventory.award.includes(821)
+        this.cards.visible = this.userHasDeck
     }
 
     onSenseiOver() {
