@@ -14,7 +14,7 @@ export default class Sensei extends GameScene {
         super("Sensei");
 
         /** @type {SenseiWidget} */
-        this.senseiWidget;
+        this.widget;
         /** @type {SenseiMenu} */
         this.menu;
         /** @type {SenseiMatch} */
@@ -34,10 +34,10 @@ export default class Sensei extends GameScene {
     /** @returns {void} */
     _create() {
 
-        // senseiWidget
-        const senseiWidget = new SenseiWidget(this);
-        this.add.existing(senseiWidget);
-        senseiWidget.visible = true;
+        // widget
+        const widget = new SenseiWidget(this);
+        this.add.existing(widget);
+        widget.visible = true;
 
         // menu
         const menu = new SenseiMenu(this, 1060, 774);
@@ -59,7 +59,7 @@ export default class Sensei extends GameScene {
         xButtonButton.spriteName = "grey-button";
         xButtonButton.callback = () => this.world.client.sendJoinLastRoom();
 
-        this.senseiWidget = senseiWidget;
+        this.widget = widget;
         this.menu = menu;
         this.match = match;
 
@@ -72,7 +72,7 @@ export default class Sensei extends GameScene {
     create() {
         super.create()
 
-        this.senseiWidget.addBackgroundEvent('pointerover', this.onBackgroundOver, this)
+        this.widget.addBackgroundEvent('pointerover', this.onBackgroundOver, this)
 
         this.showStartMenu()
     }
@@ -84,16 +84,16 @@ export default class Sensei extends GameScene {
         // Speech displayed during menus other than the start menu should stick
         if (!this.menu.isStartMenuActive) return
 
-        this.senseiWidget.hideSpeech()
+        this.widget.hideSpeech()
     }
 
     startSequence(sequence) {
         this.menu.close()
-        this.senseiWidget.startSequence(sequence)
+        this.widget.startSequence(sequence)
     }
 
     showMenu(menu) {
-        this.senseiWidget.playWait()
+        this.widget.playWait()
         this.menu.show(menu)
     }
 
@@ -112,11 +112,11 @@ export default class Sensei extends GameScene {
     }
 
     showSpeech(text) {
-        this.senseiWidget.showSpeech(text)
+        this.widget.showSpeech(text)
     }
 
     hideSpeech() {
-        this.senseiWidget.hideSpeech()
+        this.widget.hideSpeech()
     }
 
     stop() {

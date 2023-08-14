@@ -23,7 +23,7 @@
             "unlock": [
                 "visible"
             ],
-            "label": "senseiWidget",
+            "label": "widget",
             "scope": "CLASS",
             "visible": true
         },
