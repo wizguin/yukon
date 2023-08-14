@@ -18,14 +18,12 @@
             "type": "Container",
             "id": "cc188231-2b7e-4bcd-a7bc-6da884837ac6",
             "label": "container_1",
-            "components": [],
             "list": [
                 {
                     "type": "NinePatchContainer",
                     "id": "907491ca-6c4a-4227-a8f0-fd5774fb38af",
                     "label": "bg",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "menu/bg"
@@ -48,12 +46,9 @@
                         "visible"
                     ],
                     "label": "senseiMenuItem4",
-                    "components": [],
                     "x": 0,
                     "y": 92,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
@@ -64,12 +59,9 @@
                         "visible"
                     ],
                     "label": "senseiMenuItem3",
-                    "components": [],
                     "x": 0,
                     "y": 30,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
@@ -80,12 +72,9 @@
                         "visible"
                     ],
                     "label": "senseiMenuItem2",
-                    "components": [],
                     "x": 0,
                     "y": -32,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
                 },
                 {
                     "prefabId": "09107910-1b0d-415a-80fe-5bf424b8d97a",
@@ -96,12 +85,9 @@
                         "visible"
                     ],
                     "label": "senseiMenuItem1",
-                    "components": [],
                     "x": 0,
                     "y": -94,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
                 }
             ]
         }
@@ -111,7 +97,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {

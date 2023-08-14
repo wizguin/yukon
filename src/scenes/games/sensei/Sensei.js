@@ -14,7 +14,7 @@ export default class Sensei extends GameScene {
         super("Sensei");
 
         /** @type {SenseiWidget} */
-        this.sensei;
+        this.senseiWidget;
         /** @type {SenseiMenu} */
         this.menu;
         /** @type {SenseiMatch} */
@@ -34,10 +34,10 @@ export default class Sensei extends GameScene {
     /** @returns {void} */
     _create() {
 
-        // sensei
-        const sensei = new SenseiWidget(this);
-        this.add.existing(sensei);
-        sensei.visible = true;
+        // senseiWidget
+        const senseiWidget = new SenseiWidget(this);
+        this.add.existing(senseiWidget);
+        senseiWidget.visible = true;
 
         // menu
         const menu = new SenseiMenu(this, 1060, 774);
@@ -59,7 +59,7 @@ export default class Sensei extends GameScene {
         xButtonButton.spriteName = "grey-button";
         xButtonButton.callback = () => this.world.client.sendJoinLastRoom();
 
-        this.sensei = sensei;
+        this.senseiWidget = senseiWidget;
         this.menu = menu;
         this.match = match;
 
@@ -72,25 +72,51 @@ export default class Sensei extends GameScene {
     create() {
         super.create()
 
-        this.sensei.bg.on('pointerover', this.sensei.hideSpeech, this.sensei)
+        this.senseiWidget.addBackgroundEvent('pointerover', this.onBackgroundOver, this)
 
-        this.showMenu('start')
+        this.showStartMenu()
+    }
+
+    onBackgroundOver() {
+        // Speech displayed when there is no menu should stick
+        if (!this.menu.visible) return
+
+        // Speech displayed during menus other than the start menu should stick
+        if (!this.menu.isStartMenuActive) return
+
+        this.senseiWidget.hideSpeech()
+    }
+
+    startSequence(sequence) {
+        this.menu.close()
+        this.senseiWidget.startSequence(sequence)
     }
 
     showMenu(menu) {
+        this.senseiWidget.playWait()
         this.menu.show(menu)
     }
 
+    showStartMenu() {
+        this.menu.showStartMenu()
+    }
+
+    showPreviousMenu() {
+        this.menu.showPreviousMenu()
+    }
+
     showMatch() {
+        this.menu.close()
+        this.hideSpeech()
         this.match.show()
     }
 
     showSpeech(text) {
-        this.sensei.showSpeech(text)
+        this.senseiWidget.showSpeech(text)
     }
 
     hideSpeech() {
-        this.sensei.hideSpeech()
+        this.senseiWidget.hideSpeech()
     }
 
     stop() {

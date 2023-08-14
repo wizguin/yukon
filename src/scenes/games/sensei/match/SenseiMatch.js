@@ -126,7 +126,7 @@ export default class SenseiMatch extends BaseContainer {
 
         super.close()
 
-        this.scene.showMenu('start')
+        this.scene.showPreviousMenu()
     }
 
     handleJoinMatchmaking() {

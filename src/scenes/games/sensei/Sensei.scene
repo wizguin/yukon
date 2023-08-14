@@ -23,12 +23,9 @@
             "unlock": [
                 "visible"
             ],
-            "label": "sensei",
+            "label": "senseiWidget",
             "scope": "CLASS",
-            "components": [],
-            "visible": true,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": true
         },
         {
             "prefabId": "717f221e-2a49-41a0-a3d4-1aabab9d9a0f",
@@ -39,11 +36,8 @@
             ],
             "label": "menu",
             "scope": "CLASS",
-            "components": [],
             "x": 1060,
-            "y": 774,
-            "nestedPrefabs": [],
-            "list": []
+            "y": 774
         },
         {
             "type": "Image",
@@ -65,7 +59,6 @@
             "type": "Image",
             "id": "42c44031-0283-493f-84b0-702119a7182b",
             "label": "x",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "grey-x"
@@ -83,12 +76,9 @@
             ],
             "label": "match",
             "scope": "CLASS",
-            "components": [],
             "x": 1024,
             "y": 424,
-            "visible": false,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": false
         }
     ],
     "plainObjects": [],
@@ -96,6 +86,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

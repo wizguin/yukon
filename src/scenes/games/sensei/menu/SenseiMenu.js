@@ -3,6 +3,9 @@
 import BaseContainer from "../../../base/BaseContainer";
 import SenseiMenuItem from "./SenseiMenuItem";
 /* START-USER-IMPORTS */
+
+import * as menus from '../config/SenseiMenus'
+
 /* END-USER-IMPORTS */
 
 export default class SenseiMenu extends BaseContainer {
@@ -53,26 +56,8 @@ export default class SenseiMenu extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.menus = {
-            start: [
-                {
-                    text: 'Earn your belts',
-                    icon: 'menu/icon/belt',
-
-                    over: this.competitionOver,
-                    up: this.competitionUp
-                },
-                {
-                    text: 'Challenge Sensei',
-                    icon: 'menu/icon/sensei',
-
-                    over: this.senseiOver,
-                    up: this.senseiUp
-                }
-            ]
-        }
-
-        this.bindMenus()
+        this.currentMenu
+        this.currentItems
 
         /* END-USER-CTR-CODE */
     }
@@ -83,26 +68,37 @@ export default class SenseiMenu extends BaseContainer {
     show(menu) {
         this.reset()
 
-        if (!(menu in this.menus)) {
-            return
-        }
-
-        this.menu = this.menus[menu]
+        this.currentMenu = menu
+        // Pass SenseiMenu dependency
+        this.currentItems = this.currentMenu(this)
 
         this.updateMenu()
 
         super.show()
     }
 
-    updateMenu() {
-        if (!this.menu) {
+    get isStartMenuActive() {
+        return this.currentMenu === menus.start
+    }
+
+    showStartMenu() {
+        this.show(menus.start)
+    }
+
+    showPreviousMenu() {
+        if (!this.currentMenu) {
+            this.showStartMenu()
             return
         }
 
-        for (let i = 0; i < this.menu.length; i++) {
-            let config = this.menu[i]
+        // Use last menu stored in this.currentMenu
+        this.show(this.currentMenu)
+    }
 
-            let item = this.items[i]
+    updateMenu() {
+        for (let i = 0; i < this.currentItems.length; i++) {
+            const config = this.currentItems[i]
+            const item = this.items[i]
 
             item.show(config)
         }
@@ -111,60 +107,27 @@ export default class SenseiMenu extends BaseContainer {
     }
 
     resizeMenu() {
-        this.bg.height = (this.menu.length * 61) + 78
+        this.bg.resize(this.bg.width, (this.currentItems.length * 61) + 78)
     }
 
-    bindMenus() {
-        for (let menu of Object.values(this.menus)) {
-            this.bindMenu(menu)
-        }
+    startSequence(sequence) {
+        this.scene.startSequence(sequence)
     }
 
-    bindMenu(menu) {
-        for (let item of menu) {
-            this.bindItem(item)
-        }
-    }
-
-    bindItem(item) {
-        if (item.over) {
-            item.over = item.over.bind(this)
-        }
-
-        if (item.out) {
-            item.out = item.out.bind(this)
-        }
-
-        if (item.up) {
-            item.up = item.up.bind(this)
-        }
-    }
-
-    competitionOver() {
-        this.scene.showSpeech('Do you wish to play\nAnd compete with another\nStudent, grasshopper?')
-    }
-
-    competitionUp() {
-        this.close()
-        this.hideSpeech()
-
-        this.scene.showMatch()
-    }
-
-    senseiOver() {
-        this.scene.showSpeech('To become ninja,\nYou must challenge me and win.\nBut bring your black belt.')
-    }
-
-    senseiUp() {
-        this.network.send('join_sensei')
+    showSpeech(text) {
+        this.scene.showSpeech(text)
     }
 
     hideSpeech() {
         this.scene.hideSpeech()
     }
 
+    showMatch() {
+        this.scene.showMatch()
+    }
+
     reset() {
-        for (let item of this.items) {
+        for (const item of this.items) {
             item.close()
         }
     }
