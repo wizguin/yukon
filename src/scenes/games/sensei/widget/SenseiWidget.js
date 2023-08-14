@@ -8,23 +8,26 @@ export const preload = {
 
 import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
-import SenseiSprite from "./SenseiSprite";
-import SenseiBelt from "./SenseiBelt";
-import SenseiSpeech from "./SenseiSpeech";
+import SenseiSprite from "./sprite/SenseiSprite";
+import SenseiAward from "./award/SenseiAward";
+import SenseiSpeech from "./speech/SenseiSpeech";
 /* START-USER-IMPORTS */
+
+import * as sequences from '../config/SenseiSequences'
+
 /* END-USER-IMPORTS */
 
 export default class SenseiWidget extends BaseContainer {
 
     constructor(scene, x, y) {
-        super(scene, x ?? 415, y ?? 353);
+        super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Image} */
         this.bg;
         /** @type {SenseiSprite} */
-        this.sensei;
-        /** @type {SenseiBelt} */
-        this.belt;
+        this.senseiSprite;
+        /** @type {SenseiAward} */
+        this.award;
         /** @type {SenseiSpeech} */
         this.speech;
         /** @type {Phaser.GameObjects.Sprite} */
@@ -32,25 +35,25 @@ export default class SenseiWidget extends BaseContainer {
 
 
         // bg
-        const bg = scene.add.image(189, 212, "sensei", "bg");
+        const bg = scene.add.image(604, 565, "sensei", "bg");
         this.add(bg);
 
-        // sensei
-        const sensei = new SenseiSprite(scene, -237, -21);
-        this.add(sensei);
+        // senseiSprite
+        const senseiSprite = new SenseiSprite(scene, 178, 332);
+        this.add(senseiSprite);
 
-        // belt
-        const belt = new SenseiBelt(scene, 697, 218);
-        belt.visible = false;
-        this.add(belt);
+        // award
+        const award = new SenseiAward(scene, 1112, 571);
+        award.visible = false;
+        this.add(award);
 
         // speech
-        const speech = new SenseiSpeech(scene, 522, -149);
+        const speech = new SenseiSpeech(scene, 937, 204);
         speech.visible = false;
         this.add(speech);
 
         // hideout
-        const hideout = scene.add.sprite(573, 133, "sensei", "hideout/hideout0001");
+        const hideout = scene.add.sprite(988, 486, "sensei", "hideout/hideout0001");
         hideout.setOrigin(0.5005599104143337, 0.5);
         hideout.visible = false;
         this.add(hideout);
@@ -59,45 +62,31 @@ export default class SenseiWidget extends BaseContainer {
         new Interactive(bg);
 
         this.bg = bg;
-        this.sensei = sensei;
-        this.belt = belt;
+        this.senseiSprite = senseiSprite;
+        this.award = award;
         this.speech = speech;
         this.hideout = hideout;
 
         /* START-USER-CTR-CODE */
 
-        bg.on('pointerup', this.onBackgroundClick, this)
-
-        this.menu
-        this.currentIndex = 0
-
-        // Menu sequences
-        this.menus = {
-            beltAward: [
-                this.menuBeltAward,
-                this.menuBeltEarned,
-                this.leaveGame
-            ],
-            maskAward: [
-                this.menuMaskStart,
-                this.menuMaskAward,
-                this.menuMaskEarned,
-                this.menuMaskHideout,
-                this.leaveGame
-            ]
-        }
+        this.currentSequence
+        this.currentSequenceIndex = 0
 
         this.rankId = 1
 
         this.beltNames = ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Red', 'Purple', 'Brown', 'Black']
 
-        this.bindMenus()
+        this.addBackgroundEvent('pointerup', this.forwardSequence, this)
 
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    get beltName() {
+        return this.beltNames[this.rankId - 1]
+    }
 
     show() {
         this.hideAll()
@@ -108,124 +97,105 @@ export default class SenseiWidget extends BaseContainer {
     }
 
     close() {
-        this.menu = null
-        this.currentIndex = 0
+        this.currentSequence = null
+        this.currentSequenceIndex = 0
 
         this.hideAll()
 
         super.close()
     }
 
-    onBackgroundClick() {
-        this.updateMenu()
-    }
-
-    loadMenu(menu) {
-        if (!(menu in this.menus)) {
-            return
-        }
-
-        this.menu = this.menus[menu]
-        this.currentIndex = 0
-
-        this.updateMenu()
-    }
-
-    updateMenu() {
-        if (!this.menu) {
-            return
-        }
-
-        if (this.currentIndex >= this.menu.length) {
-            return
-        }
-
-        this.menu[this.currentIndex]()
-
-        this.currentIndex++
+    addBackgroundEvent(event, callback, context) {
+        this.bg.on(event, callback, context)
     }
 
     rankUp(rank) {
         this.rankId = rank
 
         if (rank > this.beltNames.length) {
-            this.loadMenu('maskAward')
+            this.startSequence(sequences.maskAward)
         } else {
-            this.loadMenu('beltAward')
+            this.startSequence(sequences.beltAward)
         }
     }
 
-    menuBeltAward() {
-        this.showSpeech('Congratulations!\nMuch like the fearsome earthquake,\nYou have rocked the house.')
+    startSequence(sequence) {
+        // Pass SenseiWidget dependency
+        this.currentSequence = sequence(this)
+
+        this.currentSequenceIndex = 0
+        this.updateSequence()
     }
 
-    menuBeltEarned() {
-        let beltName = this.beltNames[this.rankId - 1]
+    forwardSequence() {
+        if (!this.currentSequence) {
+            return
+        }
 
-        this.showSpeech(`Well done. You have earned\na ${beltName} Belt for your efforts.\nI am proud of you.`)
+        if (this.currentSequenceIndex === this.currentSequence.length - 1) {
+            return
+        }
 
-        this.belt.showBelt(this.rankId)
+        this.currentSequenceIndex++
+        this.updateSequence()
     }
 
-    menuMaskStart() {
-        this.showSpeech('The gentle lotus,\nCowers before the storm cloud.\nBut you... you did not.')
-    }
+    updateSequence() {
+        if (!this.currentSequence) {
+            return
+        }
 
-    menuMaskAward() {
-        this.showSpeech('Well done, grasshopper.\nYou have faced my skills, and won.\nAnd proven yourself.')
-    }
-
-    menuMaskEarned() {
-        this.showSpeech('Now receive the mark\nOf a Card-Jitsu master,\nWith this ninja mask.')
-
-        this.belt.showMask()
-    }
-
-    menuMaskHideout() {
-        this.belt.close()
-
-        this.hideout.visible = true
-        this.hideout.play('hideout')
-
-        this.showSpeech('You may now join us,\nIn the secret ninja hideout.\nCongratulations!')
+        this.currentSequence[this.currentSequenceIndex]()
     }
 
     showSpeech(text) {
-        // todo: strings file
         this.speech.show(text)
-
-        this.sensei.playTalk()
+        this.playTalk()
     }
 
     hideSpeech() {
         this.speech.close()
+        this.playWait()
+    }
 
-        this.sensei.playWait()
+    playTalk() {
+        this.senseiSprite.playTalk()
+    }
+
+    playWait() {
+        this.senseiSprite.playWait()
+    }
+
+    showBelt() {
+        this.award.showBelt(this.rankId)
+    }
+
+    showMask() {
+        this.award.showMask()
+    }
+
+    hideAward() {
+        this.award.close()
+    }
+
+    showHideout() {
+        this.hideout.visible = true
+        this.hideout.play('hideout')
+    }
+
+    hideHideout() {
+        this.hideout.visible = false
     }
 
     hideAll() {
         this.hideSpeech()
-        this.belt.close()
-        this.hideout.visible = false
+        this.hideAward()
+        this.hideHideout()
     }
 
     leaveGame() {
         this.close()
         this.world.room.sendLeaveGame()
-    }
-
-    bindMenus() {
-        for (let menu of Object.values(this.menus)) {
-            this.bindMenu(menu)
-        }
-    }
-
-    bindMenu(menu) {
-        for (let i = 0; i < menu.length; i++) {
-            let item = menu[i]
-
-            menu[i] = item.bind(this)
-        }
     }
 
     /* END-USER-CODE */

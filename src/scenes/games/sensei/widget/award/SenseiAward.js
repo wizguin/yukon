@@ -1,10 +1,10 @@
 /* START OF COMPILED CODE */
 
-import BaseContainer from "../../../base/BaseContainer";
+import BaseContainer from "../../../../base/BaseContainer";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class SenseiBelt extends BaseContainer {
+export default class SenseiAward extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
@@ -69,6 +69,7 @@ export default class SenseiBelt extends BaseContainer {
 
     show() {
         super.show()
+
         this.addTweens()
     }
 

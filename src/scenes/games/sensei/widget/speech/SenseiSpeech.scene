@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "e5d528fa-be3b-4a85-ad3b-5d125d347631",
             "label": "container_2",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -26,7 +25,6 @@
                     "type": "Image",
                     "id": "39370fe4-3a26-44fa-b7ac-a9ed6d763109",
                     "label": "bubble",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "bubble"
@@ -38,7 +36,6 @@
                     "id": "9914f859-c661-4847-9b24-1a350014193a",
                     "label": "dialog",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 26,
                     "y": -72,
                     "originX": 0.5,
@@ -58,6 +55,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

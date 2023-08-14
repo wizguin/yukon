@@ -1,6 +1,6 @@
 /* START OF COMPILED CODE */
 
-import BaseContainer from "../../../base/BaseContainer";
+import BaseContainer from "../../../../base/BaseContainer";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 

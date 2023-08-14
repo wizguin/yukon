@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "4293c1e1-13e0-421c-b2c6-9861f7b3a64d",
             "label": "container_2",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -27,7 +26,6 @@
                     "id": "5c3eb48a-06c1-43a3-b1de-e46dd3528d27",
                     "label": "belt",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "belt/belt"
@@ -39,7 +37,6 @@
                     "id": "6e2bd2fb-89af-4878-80f3-f79d68a62080",
                     "label": "color",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "belt/color"
@@ -53,7 +50,6 @@
                     "id": "562d5386-43e0-4b1c-aa6e-cfa33c8928f6",
                     "label": "shadow",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "belt/shadow"
@@ -67,7 +63,6 @@
                     "id": "ef2c6293-d6b9-4fc4-9d07-cbcbd5d7faa7",
                     "label": "ninja",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "mask/mask"
@@ -83,6 +78,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

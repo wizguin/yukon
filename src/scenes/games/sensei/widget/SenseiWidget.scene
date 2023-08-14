@@ -18,9 +18,6 @@
             "type": "Container",
             "id": "6c8b4abc-527b-4fb7-86e5-ce92b00f7ca6",
             "label": "container_1",
-            "components": [],
-            "x": 415,
-            "y": 353,
             "list": [
                 {
                     "type": "Image",
@@ -34,8 +31,8 @@
                         "key": "sensei",
                         "frame": "bg"
                     },
-                    "x": 189,
-                    "y": 212
+                    "x": 604,
+                    "y": 565
                 },
                 {
                     "prefabId": "05d04137-c915-4f19-ba6c-2d937cd558d7",
@@ -44,13 +41,10 @@
                         "x",
                         "y"
                     ],
-                    "label": "sensei",
+                    "label": "senseiSprite",
                     "scope": "CLASS",
-                    "components": [],
-                    "x": -237,
-                    "y": -21,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 178,
+                    "y": 332
                 },
                 {
                     "prefabId": "897d8990-9358-4074-882a-e64ab2e43e6d",
@@ -60,14 +54,11 @@
                         "y",
                         "visible"
                     ],
-                    "label": "belt",
+                    "label": "award",
                     "scope": "CLASS",
-                    "components": [],
-                    "x": 697,
-                    "y": 218,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 1112,
+                    "y": 571,
+                    "visible": false
                 },
                 {
                     "prefabId": "21b5b7fb-31dc-48aa-beea-a780ae0fe510",
@@ -79,25 +70,21 @@
                     ],
                     "label": "speech",
                     "scope": "CLASS",
-                    "components": [],
-                    "x": 522,
-                    "y": -149,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 937,
+                    "y": 204,
+                    "visible": false
                 },
                 {
                     "type": "Sprite",
                     "id": "285d21e7-04d7-4494-a425-7cff536c0c7a",
                     "label": "hideout",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "hideout/hideout0001"
                     },
-                    "x": 573,
-                    "y": 133,
+                    "x": 988,
+                    "y": 486,
                     "originX": 0.5005599104143337,
                     "visible": false
                 }
@@ -109,6 +96,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }
