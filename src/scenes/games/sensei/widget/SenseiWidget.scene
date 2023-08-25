@@ -47,6 +47,20 @@
                     "y": 332
                 },
                 {
+                    "type": "Sprite",
+                    "id": "285d21e7-04d7-4494-a425-7cff536c0c7a",
+                    "label": "hideout",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "hideout/hideout0001"
+                    },
+                    "x": 988,
+                    "y": 486,
+                    "originX": 0.5005599104143337,
+                    "visible": false
+                },
+                {
                     "prefabId": "897d8990-9358-4074-882a-e64ab2e43e6d",
                     "id": "d7b7ee82-0eb5-4a93-9f9f-ebb2c2c4eb8d",
                     "unlock": [
@@ -72,20 +86,6 @@
                     "scope": "CLASS",
                     "x": 937,
                     "y": 204,
-                    "visible": false
-                },
-                {
-                    "type": "Sprite",
-                    "id": "285d21e7-04d7-4494-a425-7cff536c0c7a",
-                    "label": "hideout",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "sensei",
-                        "frame": "hideout/hideout0001"
-                    },
-                    "x": 988,
-                    "y": 486,
-                    "originX": 0.5005599104143337,
                     "visible": false
                 }
             ]

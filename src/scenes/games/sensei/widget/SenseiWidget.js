@@ -26,12 +26,12 @@ export default class SenseiWidget extends BaseContainer {
         this.bg;
         /** @type {SenseiSprite} */
         this.senseiSprite;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.hideout;
         /** @type {SenseiAward} */
         this.award;
         /** @type {SenseiSpeech} */
         this.speech;
-        /** @type {Phaser.GameObjects.Sprite} */
-        this.hideout;
 
 
         // bg
@@ -41,6 +41,12 @@ export default class SenseiWidget extends BaseContainer {
         // senseiSprite
         const senseiSprite = new SenseiSprite(scene, 178, 332);
         this.add(senseiSprite);
+
+        // hideout
+        const hideout = scene.add.sprite(988, 486, "sensei", "hideout/hideout0001");
+        hideout.setOrigin(0.5005599104143337, 0.5);
+        hideout.visible = false;
+        this.add(hideout);
 
         // award
         const award = new SenseiAward(scene, 1112, 571);
@@ -52,20 +58,14 @@ export default class SenseiWidget extends BaseContainer {
         speech.visible = false;
         this.add(speech);
 
-        // hideout
-        const hideout = scene.add.sprite(988, 486, "sensei", "hideout/hideout0001");
-        hideout.setOrigin(0.5005599104143337, 0.5);
-        hideout.visible = false;
-        this.add(hideout);
-
         // bg (components)
         new Interactive(bg);
 
         this.bg = bg;
         this.senseiSprite = senseiSprite;
+        this.hideout = hideout;
         this.award = award;
         this.speech = speech;
-        this.hideout = hideout;
 
         /* START-USER-CTR-CODE */
 
@@ -86,6 +86,10 @@ export default class SenseiWidget extends BaseContainer {
 
     get beltName() {
         return this.beltNames[this.rankId - 1]
+    }
+
+    get speechIndex() {
+        return this.getIndex(this.speech)
     }
 
     show() {

@@ -6,6 +6,9 @@ import SenseiMenu from "./menu/SenseiMenu";
 import Button from "../../components/Button";
 import SenseiMatch from "./match/SenseiMatch";
 /* START-USER-IMPORTS */
+
+import SenseiInstructions from './instructions/SenseiInstructions'
+
 /* END-USER-IMPORTS */
 
 export default class Sensei extends GameScene {
@@ -74,6 +77,11 @@ export default class Sensei extends GameScene {
 
         this.widget.addBackgroundEvent('pointerover', this.onBackgroundOver, this)
 
+        this.instructions = new SenseiInstructions(this)
+
+        // Add instructions into widget
+        this.widget.addAt(this.instructions, this.widget.speechIndex)
+
         this.showStartMenu()
     }
 
@@ -93,6 +101,7 @@ export default class Sensei extends GameScene {
     }
 
     showMenu(menu) {
+        this.instructions.hideAll()
         this.widget.playWait()
         this.menu.show(menu)
     }
