@@ -101,7 +101,7 @@ export default class Sensei extends GameScene {
     }
 
     showMenu(menu) {
-        this.instructions.hideAll()
+        this.hideInstructions()
         this.widget.playWait()
         this.menu.show(menu)
     }
@@ -126,6 +126,10 @@ export default class Sensei extends GameScene {
 
     hideSpeech() {
         this.widget.hideSpeech()
+    }
+
+    hideInstructions() {
+        this.instructions.hideAll()
     }
 
     stop() {
