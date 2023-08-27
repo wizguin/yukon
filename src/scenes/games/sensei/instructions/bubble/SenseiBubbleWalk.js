@@ -10,6 +10,8 @@ export default class SenseiBubbleWalk extends BaseContainer {
         super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Sprite} */
+        this.backArm;
+        /** @type {Phaser.GameObjects.Sprite} */
         this.body;
         /** @type {Phaser.GameObjects.Sprite} */
         this.sensei;
@@ -19,6 +21,10 @@ export default class SenseiBubbleWalk extends BaseContainer {
         this.belt;
         /** @type {Phaser.GameObjects.Sprite} */
         this.frontArm;
+        /** @type {Phaser.GameObjects.Sprite[]} */
+        this.colorSprites;
+        /** @type {Phaser.GameObjects.Sprite[]} */
+        this.beltSprites;
 
 
         // backFoot
@@ -81,15 +87,24 @@ export default class SenseiBubbleWalk extends BaseContainer {
         const frontArm = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/15_frontarm_1");
         this.add(frontArm);
 
+        // lists
+        const colorSprites = [body, frontArm, backArm];
+        const beltSprites = [belt, beltLine];
+
+        this.backArm = backArm;
         this.body = body;
         this.sensei = sensei;
         this.beltLine = beltLine;
         this.belt = belt;
         this.frontArm = frontArm;
+        this.colorSprites = colorSprites;
+        this.beltSprites = beltSprites;
 
         /* START-USER-CTR-CODE */
 
         this.end = 70
+
+        this.beltColors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924]
 
         this.createAnims()
 
@@ -101,6 +116,24 @@ export default class SenseiBubbleWalk extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    setColor(color) {
+        this.colorSprites.forEach(sprite => sprite.tint = this.world.getColor(color))
+    }
+
+    setBelt(rank) {
+        const hasBelt = rank > 0
+
+        this.beltSprites.forEach(sprite => sprite.visible = hasBelt)
+
+        if (hasBelt) {
+            this.belt.tint = this.beltColors[rank - 1]
+        }
+    }
+
+    setSensei(sensei) {
+        this.sensei.visible = sensei
+    }
 
     createAnims() {
         this.list.forEach(child => this.createAnim(child))

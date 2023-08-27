@@ -50,6 +50,7 @@
                     "type": "Sprite",
                     "id": "95574afd-4503-46de-adf3-cee52bccec64",
                     "label": "backArm",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "sensei",
                         "frame": "instructions/bubble/walk/4_backarm_1"
@@ -168,5 +169,24 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "lists": [
+        {
+            "id": "f960adb1-5d55-452f-89d3-8adcfcf1119f",
+            "label": "colorSprites",
+            "objectIds": [
+                "4e1d6789-c309-4469-8fb4-21a090ad217d",
+                "46e37fd7-de04-4caa-a063-987cb236c355",
+                "95574afd-4503-46de-adf3-cee52bccec64"
+            ]
+        },
+        {
+            "id": "0c502c58-3bf0-401b-afb4-6ef8cf3fe967",
+            "label": "beltSprites",
+            "objectIds": [
+                "11bc2ebc-2fe3-4b7b-8d6d-2be4e6b78c71",
+                "d566321a-b1d5-4a57-9160-8348d14945dd"
+            ]
+        }
+    ]
 }
