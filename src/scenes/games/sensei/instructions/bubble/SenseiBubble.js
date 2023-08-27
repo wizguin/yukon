@@ -73,6 +73,38 @@ export default class SenseiBubble extends BaseContainer {
         this.bubble.play('instructions/bubble')
     }
 
+    get clientColor() {
+        return this.world.client.penguin.items.all.color.id
+    }
+
+    showCompete() {
+        this.setPlayerWalk(0)
+        this.setOpponentWalk(6, 2)
+
+        this.show()
+    }
+
+    showBlackBelt() {
+        this.setPlayerWalk(9)
+        this.setOpponentWalk(14, 0, true)
+
+        this.show()
+    }
+
+    setPlayerWalk(rank) {
+        this.setWalk(this.walks[0], this.clientColor, rank)
+    }
+
+    setOpponentWalk(color, rank, sensei = false) {
+        this.setWalk(this.walks[1], color, rank, sensei)
+    }
+
+    setWalk(walk, color, rank, sensei = false) {
+        walk.setColor(color)
+        walk.setBelt(rank)
+        walk.setSensei(sensei)
+    }
+
     setMask() {
         const matrix = this.maskImage.getWorldTransformMatrix()
 
