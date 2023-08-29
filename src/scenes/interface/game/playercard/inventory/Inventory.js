@@ -234,6 +234,8 @@ export default class Inventory extends BaseContainer {
         this.pageSize = 12
         this.filter = null
 
+        this.cardDeckId = 821
+
         this.inventoryLoader = new InventoryLoader(scene, this)
 
         this.inventory_bg.setInteractive({ pixelPerfect: true })
@@ -301,6 +303,11 @@ export default class Inventory extends BaseContainer {
         let item = this.slots[slotId].item
 
         if (!item || !item.id || !item.active) return
+
+        if (item.id === this.cardDeckId) {
+            this.interface.loadWidget('NinjaProgress')
+            return
+        }
 
         this.network.send('update_player', { item: item.id })
     }
