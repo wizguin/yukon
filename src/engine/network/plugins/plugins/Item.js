@@ -40,6 +40,12 @@ export default class Item extends Plugin {
         // Update catalog coins
         this.interface.updateCatalogCoins(args.coins)
 
+        // Check no purchase popup
+        const data = this.crumbs.items[item]
+        if ('no_purchase_popup' in data && data.no_purchase_popup === 1) {
+            return
+        }
+
         // Show prompt
         let text = `${args.name}\nhas been added to your inventory.`
         this.interface.prompt.showWindow(text, 'single')
