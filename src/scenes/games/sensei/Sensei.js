@@ -8,6 +8,7 @@ import SenseiMatch from "./match/SenseiMatch";
 /* START-USER-IMPORTS */
 
 import SenseiInstructions from './instructions/SenseiInstructions'
+import { intro } from './config/SenseiSequences'
 
 /* END-USER-IMPORTS */
 
@@ -72,6 +73,10 @@ export default class Sensei extends GameScene {
 
     /* START-USER-CODE */
 
+    get userHasDeck() {
+        return this.world.client.inventory.award.includes(821)
+    }
+
     create() {
         super.create()
 
@@ -81,6 +86,11 @@ export default class Sensei extends GameScene {
 
         // Add instructions into widget
         this.widget.addAt(this.instructions, this.widget.speechIndex)
+
+        if (!this.userHasDeck) {
+            this.startSequence(intro)
+            return
+        }
 
         this.showStartMenu()
     }
@@ -101,7 +111,6 @@ export default class Sensei extends GameScene {
     }
 
     showMenu(menu) {
-        this.hideInstructions()
         this.widget.playWait()
         this.menu.show(menu)
     }
