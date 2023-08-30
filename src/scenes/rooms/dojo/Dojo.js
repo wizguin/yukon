@@ -25,10 +25,10 @@ export default class Dojo extends RoomScene {
         this.roomTriggers = {
             'door': () => this.triggerRoom(321, 780, 640),
             'sensei': () => this.triggerGame(951),
-            'table200': () => {},
-            'table201': () => {},
-            'table202': () => {},
-            'table203': () => {}
+            'table200': () => this.triggerMat(200),
+            'table201': () => this.triggerMat(201),
+            'table202': () => this.triggerMat(202),
+            'table203': () => this.triggerMat(203)
         }
         this.roomAnims = true
 
@@ -185,6 +185,21 @@ export default class Dojo extends RoomScene {
 
     onSenseiOut() {
         this.sensei.play('sensei_out')
+    }
+
+    triggerMat(id) {
+        if (!this.userHasDeck) {
+            this.interface.prompt.showWindow(this.getString('starter_deck_prompt'))
+            return
+        }
+
+        const text = this.getString('card_prompt')
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.network.send('join_waddle', { waddle: id })
+
+            this.interface.prompt.window.visible = false
+        })
     }
 
     /* END-USER-CODE */
