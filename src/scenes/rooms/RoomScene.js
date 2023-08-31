@@ -21,6 +21,7 @@ export default class RoomScene extends BaseScene {
         this.waiting = []
 
         this.tables
+        this.waddles
     }
 
     get client() {
@@ -46,6 +47,7 @@ export default class RoomScene extends BaseScene {
         this.setMusic()
 
         if (this.tables) this.sendGetTables()
+        if (this.waddles) this.sendGetWaddles()
 
         this.interface.showInterface()
     }
@@ -102,6 +104,10 @@ export default class RoomScene extends BaseScene {
         this.network.send('get_tables')
     }
 
+    sendGetWaddles() {
+        this.network.send('get_waddles')
+    }
+
     getTable(id) {
         return this[`table${id}`]
     }
@@ -131,6 +137,10 @@ export default class RoomScene extends BaseScene {
             table.game.setFrame(name)
             button.lockFrame = false
         }
+    }
+
+    setWaddles(waddles) {
+        this.waddles = waddles
     }
 
     onSnowballComplete(x, y) {
