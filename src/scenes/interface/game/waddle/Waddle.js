@@ -85,6 +85,22 @@ export default class Waddle extends BaseContainer {
         return this.world.room.waddles[this.activeWaddleId]
     }
 
+    get activeWaddleContainer() {
+        return this.getWaddleContainer(this.activeWaddleId)
+    }
+
+    getWaddleContainer(waddle) {
+        return this.world.room.getWaddle(waddle)
+    }
+
+    getSeatPoint(waddle, seat) {
+        return this.getWaddleContainer(waddle)[`seat${seat}`]
+    }
+
+    getDonePoint() {
+        return this.getWaddleContainer(waddle)[`done${seat}`]
+    }
+
     setText(game) {
         this.text.text = this.getString(game)
     }
@@ -119,12 +135,12 @@ export default class Waddle extends BaseContainer {
         }
     }
 
-    enterSeat() {
-
+    enterSeat(waddle, seat) {
+        this.world.client.sendMoveToSeat(waddle, seat, 'waddle')
     }
 
     leaveSeat() {
-
+        this.world.client.sendLeaveSeat()
     }
 
     /* END-USER-CODE */

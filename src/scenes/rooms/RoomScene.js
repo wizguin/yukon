@@ -112,6 +112,10 @@ export default class RoomScene extends BaseScene {
         return this[`table${id}`]
     }
 
+    getWaddle(id) {
+        return this[`waddle${id}`]
+    }
+
     setTables(tables) {
         this.tables = tables
 

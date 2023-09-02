@@ -27,7 +27,10 @@ export default class GameScene extends BaseScene {
         this._create()
 
         this.setMusic()
+
         this.interface.hideLoading()
+
+        this.world.client.activeSeat = null
     }
 
     stop() {

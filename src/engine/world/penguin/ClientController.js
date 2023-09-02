@@ -271,14 +271,23 @@ export default class ClientController {
         this.network.send('join_table', { table: id })
     }
 
-    sendMoveToSeat(table, seat) {
-        table = this.world.room.getTable(table)
+    sendMoveToSeat(id, seat, type = 'table') {
+        let container
 
-        if (!table) {
+        switch (type) {
+            case 'table':
+                container = this.world.room.getTable(id)
+                break
+            case 'waddle':
+                container = this.world.room.getWaddle(id)
+                break
+        }
+
+        if (!container) {
             return
         }
 
-        seat = table[`seat${seat}`]
+        seat = container[`seat${seat}`]
 
         if (seat) {
             this.activeSeat = seat
