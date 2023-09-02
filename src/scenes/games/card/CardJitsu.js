@@ -569,6 +569,7 @@ export default class CardJitsu extends GameScene {
         this.players.forEach(player => player.cardLose())
 
         this.playBattle('tie')
+        this.soundManager.play('tie')
     }
 
     judgeWin(winSeat, winCard) {
