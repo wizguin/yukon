@@ -3,8 +3,10 @@
 import RoomScene from "../RoomScene";
 import Button from "../../components/Button";
 import MoveTo from "../../components/MoveTo";
-import CardTable1 from "../../shared_prefabs/card/CardTable1";
-import CardTable2 from "../../shared_prefabs/card/CardTable2";
+import Waddle203 from "./waddle/Waddle203";
+import Waddle202 from "./waddle/Waddle202";
+import Waddle201 from "./waddle/Waddle201";
+import Waddle200 from "./waddle/Waddle200";
 import Zone from "../../components/Zone";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -16,6 +18,14 @@ export default class Dojo extends RoomScene {
 
         /** @type {Phaser.GameObjects.Sprite} */
         this.sensei;
+        /** @type {Waddle203} */
+        this.waddle203;
+        /** @type {Waddle202} */
+        this.waddle202;
+        /** @type {Waddle201} */
+        this.waddle201;
+        /** @type {Waddle200} */
+        this.waddle200;
         /** @type {Phaser.GameObjects.Image} */
         this.cards;
 
@@ -30,7 +40,10 @@ export default class Dojo extends RoomScene {
             'table202': () => this.triggerMat(202),
             'table203': () => this.triggerMat(203)
         }
+
         this.roomAnims = true
+
+        this.waddles = {}
 
         /* END-USER-CTR-CODE */
     }
@@ -53,7 +66,7 @@ export default class Dojo extends RoomScene {
         door.setOrigin(0, 0);
 
         // sensei
-        const sensei = this.add.sprite(965, 373, "dojo", "sensei/sensei0001");
+        const sensei = this.add.sprite(973, 372, "dojo", "sensei/sensei0001");
         sensei.setOrigin(0, 0);
 
         // tree
@@ -76,25 +89,21 @@ export default class Dojo extends RoomScene {
         const legend = this.add.image(534, 382, "dojo", "legend");
         legend.setOrigin(0, 0);
 
-        // table203
-        const table203 = new CardTable1(this, 1188, 813);
-        this.add.existing(table203);
-        table203.scaleX = -1;
-        table203.scaleY = 1;
+        // waddle203
+        const waddle203 = new Waddle203(this, 1188, 813);
+        this.add.existing(waddle203);
 
-        // table202
-        const table202 = new CardTable1(this, 358, 813);
-        this.add.existing(table202);
+        // waddle202
+        const waddle202 = new Waddle202(this, 358, 813);
+        this.add.existing(waddle202);
 
-        // table201
-        const table201 = new CardTable2(this, 930, 706);
-        this.add.existing(table201);
-        table201.scaleX = -1;
-        table201.scaleY = 1;
+        // waddle201
+        const waddle201 = new Waddle201(this, 930, 706);
+        this.add.existing(waddle201);
 
-        // table200
-        const table200 = new CardTable2(this, 616, 706);
-        this.add.existing(table200);
+        // waddle200
+        const waddle200 = new Waddle200(this, 616, 706);
+        this.add.existing(waddle200);
 
         // zone
         const zone = this.add.rectangle(1096, 490, 246, 217);
@@ -106,6 +115,14 @@ export default class Dojo extends RoomScene {
         const cards = this.add.image(1342, 819, "dojo", "cards");
         cards.setOrigin(0, 0);
         cards.visible = false;
+
+        // cauldronBack
+        const cauldronBack = this.add.image(918, 540, "dojo", "cauldron/back");
+        cauldronBack.setOrigin(0, 0);
+
+        // cauldronFront
+        const cauldronFront = this.add.image(926, 550, "dojo", "cauldron/front");
+        cauldronFront.setOrigin(0, 0);
 
         // door (components)
         const doorButton = new Button(door);
@@ -128,21 +145,21 @@ export default class Dojo extends RoomScene {
         legendPosterButton.callback = () => this.interface.loadWidget('NinjaBelts');
         legendPosterButton.activeFrame = false;
 
-        // table203 (prefab fields)
-        table203.moveToX = 1160;
-        table203.moveToY = 750;
+        // waddle203 (prefab fields)
+        waddle203.moveToX = 1160;
+        waddle203.moveToY = 750;
 
-        // table202 (prefab fields)
-        table202.moveToX = 380;
-        table202.moveToY = 750;
+        // waddle202 (prefab fields)
+        waddle202.moveToX = 380;
+        waddle202.moveToY = 750;
 
-        // table201 (prefab fields)
-        table201.moveToX = 920;
-        table201.moveToY = 650;
+        // waddle201 (prefab fields)
+        waddle201.moveToX = 920;
+        waddle201.moveToY = 650;
 
-        // table200 (prefab fields)
-        table200.moveToX = 620;
-        table200.moveToY = 650;
+        // waddle200 (prefab fields)
+        waddle200.moveToX = 620;
+        waddle200.moveToY = 650;
 
         // zone (components)
         const zoneZone = new Zone(zone);
@@ -160,6 +177,10 @@ export default class Dojo extends RoomScene {
         cardsButton.pixelPerfect = true;
 
         this.sensei = sensei;
+        this.waddle203 = waddle203;
+        this.waddle202 = waddle202;
+        this.waddle201 = waddle201;
+        this.waddle200 = waddle200;
         this.cards = cards;
 
         this.events.emit("scene-awake");

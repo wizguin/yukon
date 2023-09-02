@@ -61,8 +61,8 @@
                 "key": "dojo",
                 "frame": "sensei/sensei0001"
             },
-            "x": 965,
-            "y": 373,
+            "x": 973,
+            "y": 372,
             "originX": 0,
             "originY": 0
         },
@@ -144,26 +144,23 @@
             "originY": 0
         },
         {
-            "prefabId": "8adc32e3-5c26-46f8-b0a3-ceb8200598ec",
+            "prefabId": "d60128ff-4079-4464-b688-dbdea3c52e20",
             "id": "4ed85538-b1e1-4391-864a-12165867f2d7",
             "unlock": [
                 "x",
                 "y",
-                "scaleX",
-                "scaleY",
                 "moveToX",
                 "moveToY"
             ],
-            "label": "table203",
+            "label": "waddle203",
+            "scope": "CLASS",
             "moveToX": 1160,
             "moveToY": 750,
             "x": 1188,
-            "y": 813,
-            "scaleX": -1,
-            "scaleY": 1
+            "y": 813
         },
         {
-            "prefabId": "8adc32e3-5c26-46f8-b0a3-ceb8200598ec",
+            "prefabId": "d6d50181-a9a9-48b9-b4a2-6096b1ad8542",
             "id": "930e64d7-509f-4b66-b069-17ddd8228123",
             "unlock": [
                 "x",
@@ -171,33 +168,31 @@
                 "moveToX",
                 "moveToY"
             ],
-            "label": "table202",
+            "label": "waddle202",
+            "scope": "CLASS",
             "moveToX": 380,
             "moveToY": 750,
             "x": 358,
             "y": 813
         },
         {
-            "prefabId": "36e51c27-3069-47c0-8b43-7a47b5400852",
+            "prefabId": "7554bcf3-656c-48ed-97c0-e431350f8ba5",
             "id": "7353dd85-f3a9-44e6-a1b5-efce0d80b611",
             "unlock": [
                 "x",
                 "y",
-                "scaleX",
-                "scaleY",
                 "moveToX",
                 "moveToY"
             ],
-            "label": "table201",
+            "label": "waddle201",
+            "scope": "CLASS",
             "moveToX": 920,
             "moveToY": 650,
             "x": 930,
-            "y": 706,
-            "scaleX": -1,
-            "scaleY": 1
+            "y": 706
         },
         {
-            "prefabId": "36e51c27-3069-47c0-8b43-7a47b5400852",
+            "prefabId": "20915166-b810-4ea6-b9c1-62e694ee975c",
             "id": "fb495e97-de4b-464b-91cc-e79480e53d2d",
             "unlock": [
                 "x",
@@ -205,7 +200,8 @@
                 "moveToX",
                 "moveToY"
             ],
-            "label": "table200",
+            "label": "waddle200",
+            "scope": "CLASS",
             "moveToX": 620,
             "moveToY": 650,
             "x": 616,
@@ -252,6 +248,32 @@
             "originX": 0,
             "originY": 0,
             "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "f254b723-f462-4cbf-b100-dadcf1b8e2a0",
+            "label": "cauldronBack",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/back"
+            },
+            "x": 918,
+            "y": 540,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "cb465f3b-f7c4-491c-9b8b-035cccf288c1",
+            "label": "cauldronFront",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/front"
+            },
+            "x": 926,
+            "y": 550,
+            "originX": 0,
+            "originY": 0
         }
     ],
     "plainObjects": [],
