@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "f9520288-babf-4d1e-9df3-6de2014f5bf8",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -27,7 +26,6 @@
                     "id": "695f8494-eea7-464d-97fa-98dec9180ffe",
                     "label": "glow",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "card/glow0001"
@@ -41,7 +39,6 @@
                     "id": "0b8f3a7d-39ce-44f5-96ed-57f43fb888e7",
                     "label": "back",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "card/back"
@@ -54,7 +51,6 @@
                     "type": "Image",
                     "id": "e1ca6d79-b0a8-49ef-a40a-2d60d05bdf90",
                     "label": "shadow",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "card/shadow"
@@ -68,7 +64,6 @@
                     "id": "3aa33900-d940-437c-8155-e66c64f3b560",
                     "label": "icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {},
                     "x": -66,
                     "y": -74,
@@ -83,7 +78,6 @@
                     "id": "30e60b4b-9fe0-40bf-b4a7-b2d698495564",
                     "label": "color",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "card/color"
@@ -99,7 +93,6 @@
                     "id": "229219ee-a4bd-4dc7-a844-2977401125c8",
                     "label": "element",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "card/f"
@@ -113,13 +106,12 @@
                     "id": "eed3170b-7b07-4cdc-adcd-133f2a8e8bb7",
                     "label": "value",
                     "scope": "CLASS",
-                    "components": [],
                     "x": -66,
-                    "y": -38,
+                    "y": -40,
                     "text": "88",
                     "fixedWidth": 36,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "Burbank Big Regular",
                     "fontSize": "26px",
                     "fontStyle": "bold",
                     "color": "#000"
@@ -132,6 +124,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

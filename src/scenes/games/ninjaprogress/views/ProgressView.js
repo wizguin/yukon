@@ -43,7 +43,7 @@ export default class ProgressView extends BaseContainer {
         const cardsNum = scene.add.text(64, 248, "", {});
         cardsNum.setOrigin(0.5, 0.5);
         cardsNum.text = "0";
-        cardsNum.setStyle({ "align": "center", "fixedWidth":100,"fontFamily": "Arial", "fontSize": "48px", "fontStyle": "bold", "stroke": "#000", "strokeThickness":8,"shadow.blur":2,"shadow.stroke":true,"shadow.fill":true});
+        cardsNum.setStyle({ "align": "center", "fixedWidth":100,"fontFamily": "Burbank Big Regular", "fontSize": "48px", "fontStyle": "bold", "stroke": "#000", "strokeThickness":8,"shadow.blur":2,"shadow.stroke":true,"shadow.fill":true});
         this.add(cardsNum);
 
         // cardsText

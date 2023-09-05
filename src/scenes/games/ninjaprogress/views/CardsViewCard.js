@@ -67,9 +67,9 @@ export default class CardsViewCard extends BaseContainer {
         this.add(element);
 
         // value
-        const value = scene.add.text(-66, -38, "", {});
+        const value = scene.add.text(-66, -40, "", {});
         value.text = "88";
-        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":36,"fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
+        value.setStyle({ "align": "center", "color": "#000", "fixedWidth":36,"fontFamily": "Burbank Big Regular", "fontSize": "26px", "fontStyle": "bold" });
         this.add(value);
 
         this.glow = glow;

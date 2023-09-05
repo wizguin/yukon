@@ -26,6 +26,12 @@
 }
 
 @font-face {
+    font-family: 'Burbank Big Regular';
+    font-weight: bold;
+    src: url('../fonts/Burbank Big Regular Bold.woff2');
+}
+
+@font-face {
     font-family: 'Burbank Small';
     src: url('../fonts/Burbank Small Medium.woff2');
 }

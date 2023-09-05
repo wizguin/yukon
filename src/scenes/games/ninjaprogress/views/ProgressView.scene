@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "e79a212e-9595-46b8-930e-6c5f2e0e62c0",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -42,7 +41,6 @@
                     "type": "Image",
                     "id": "7b9b4fe8-ae89-45a4-abb5-b027bf877c8b",
                     "label": "cards",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "cards"
@@ -55,7 +53,6 @@
                     "id": "179eb58d-0975-484c-b228-cc6276263375",
                     "label": "cardsNum",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 64,
                     "y": 248,
                     "originX": 0.5,
@@ -63,7 +60,7 @@
                     "text": "0",
                     "fixedWidth": 100,
                     "align": "center",
-                    "fontFamily": "Arial",
+                    "fontFamily": "Burbank Big Regular",
                     "fontSize": "48px",
                     "fontStyle": "bold",
                     "stroke": "#000",
@@ -76,7 +73,6 @@
                     "type": "Text",
                     "id": "928a8a3c-c2c0-4c2b-8b73-0b1bcd0cfe0e",
                     "label": "cardsText",
-                    "components": [],
                     "x": -81,
                     "y": 254,
                     "originX": 0.5,
@@ -93,7 +89,6 @@
                     "type": "Image",
                     "id": "076ce9cb-e64c-4dcc-be8a-e351954f6d6a",
                     "label": "progressBg",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "progress"
@@ -104,7 +99,6 @@
                     "id": "d269ba3b-46d9-4af2-8920-62965ed19bf6",
                     "label": "nextBelt",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "next/1"
@@ -119,7 +113,6 @@
                     "id": "a85434a7-54ef-4c09-99d2-857f010bf8fc",
                     "label": "currentBelt",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "belt/1"
@@ -133,7 +126,6 @@
                     "id": "21d65873-cc17-4483-be74-d80f8a55abad",
                     "label": "nextText",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 244,
                     "y": -42,
                     "originX": 0.5,
@@ -151,7 +143,6 @@
                     "id": "d70717d1-7680-46ce-9783-b2a5963bcbdd",
                     "label": "currentText",
                     "scope": "CLASS",
-                    "components": [],
                     "x": -256,
                     "y": -42,
                     "originX": 0.5,
@@ -168,7 +159,6 @@
                     "id": "429725a8-bb97-4868-9739-0025aa45eead",
                     "label": "bar",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "ninjaprogress",
                         "frame": "progress/1"
@@ -182,7 +172,6 @@
                     "id": "c60c1252-f381-4260-b587-06924e6e85b7",
                     "label": "progressText",
                     "scope": "CLASS",
-                    "components": [],
                     "x": -192,
                     "y": 8,
                     "originX": 1,
@@ -201,7 +190,6 @@
                     "id": "a91499ce-58e4-4159-866a-6074a3bd6bd8",
                     "label": "sensei",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 12,
                     "y": -14,
                     "visible": false,
@@ -210,7 +198,6 @@
                             "type": "Image",
                             "id": "a8b59277-06bc-450f-a0c6-408956531166",
                             "label": "senseiImage",
-                            "components": [],
                             "texture": {
                                 "key": "ninjaprogress",
                                 "frame": "sensei"
@@ -222,7 +209,6 @@
                             "type": "Text",
                             "id": "57ed6934-c5fb-4f95-8746-20adfbcdfd66",
                             "label": "senseiText",
-                            "components": [],
                             "y": 20,
                             "originX": 0.5,
                             "originY": 0.5,
@@ -241,7 +227,6 @@
                     "id": "73fc1120-7bec-42f7-a3ff-c1ef70dbdf4b",
                     "label": "hideout",
                     "scope": "CLASS",
-                    "components": [],
                     "x": -26,
                     "y": -6,
                     "visible": false,
@@ -250,7 +235,6 @@
                             "type": "Image",
                             "id": "29c6e148-233f-4cbc-959a-f4b295425d1f",
                             "label": "hideoutImage",
-                            "components": [],
                             "texture": {
                                 "key": "ninjaprogress",
                                 "frame": "hideout"
@@ -260,7 +244,6 @@
                             "type": "Text",
                             "id": "7b63e695-ade2-4079-9399-8ac8fa14d8b7",
                             "label": "hideoutText",
-                            "components": [],
                             "x": 132,
                             "y": 10,
                             "originX": 0.5,
@@ -283,6 +266,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

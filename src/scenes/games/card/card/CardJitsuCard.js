@@ -96,7 +96,7 @@ export default class CardJitsuCard extends BaseContainer {
         // valueText
         const valueText = scene.add.text(1, 48, "", {});
         valueText.text = "88";
-        valueText.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Arial", "fontSize": "38px", "fontStyle": "bold" });
+        valueText.setStyle({ "align": "center", "color": "#000", "fixedWidth":52,"fontFamily": "Burbank Big Regular", "fontSize": "38px", "fontStyle": "bold" });
         this.add(valueText);
 
         // thumbnail
