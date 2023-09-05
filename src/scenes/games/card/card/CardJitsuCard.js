@@ -3,6 +3,7 @@
 import BaseContainer from "../../../base/BaseContainer";
 import CardJitsuThumb from "./CardJitsuThumb";
 import CardJitsuHint from "./CardJitsuHint";
+import CardJitsuExplosion from "./explosion/CardJitsuExplosion";
 /* START-USER-IMPORTS */
 
 import layout from '../layout'
@@ -36,6 +37,8 @@ export default class CardJitsuCard extends BaseContainer {
         this.thumbnail;
         /** @type {CardJitsuHint} */
         this.hint;
+        /** @type {CardJitsuExplosion} */
+        this.explosion;
 
 
         // shadow
@@ -106,6 +109,11 @@ export default class CardJitsuCard extends BaseContainer {
         hint.visible = false;
         this.add(hint);
 
+        // explosion
+        const explosion = new CardJitsuExplosion(scene, 101, 129);
+        explosion.visible = false;
+        this.add(explosion);
+
         this.shadow = shadow;
         this.hover = hover;
         this.back = back;
@@ -117,6 +125,7 @@ export default class CardJitsuCard extends BaseContainer {
         this.valueText = valueText;
         this.thumbnail = thumbnail;
         this.hint = hint;
+        this.explosion = explosion;
 
         /* START-USER-CTR-CODE */
 
@@ -430,6 +439,10 @@ export default class CardJitsuCard extends BaseContainer {
 
     updateDepth() {
         this.depth = this.y
+    }
+
+    explode() {
+        this.explosion.show()
     }
 
     /* END-USER-CODE */

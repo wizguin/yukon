@@ -90,7 +90,7 @@ export default class CardJitsuPlayer extends BaseContainer {
 
         this.losses.push(this.pick)
 
-        this.pick.destroy()
+        this.pick.explode()
         this.removePick()
     }
 
