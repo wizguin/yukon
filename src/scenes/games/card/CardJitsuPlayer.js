@@ -115,7 +115,7 @@ export default class CardJitsuPlayer extends BaseContainer {
     }
 
     findWins(find) {
-        return find.map(id => this.wins.find(win => win.id == id)).filter(Boolean)
+        return this.wins.filter(card => find.includes(card.id))
     }
 
     disableElement(element) {
