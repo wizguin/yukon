@@ -18,68 +18,59 @@
             "type": "Container",
             "id": "6c346f50-1d14-4573-89dc-cad5ae046a9c",
             "label": "container_1",
-            "components": [],
             "x": 750,
             "y": 1000,
             "list": [
                 {
                     "type": "Image",
-                    "id": "61942b80-3e84-485c-9be6-1ec3407c6c04",
+                    "id": "947a2411-722b-4b2f-9f67-60ba43f40807",
                     "label": "shadow",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/shadow"
                     },
                     "x": 99,
-                    "y": 111,
-                    "originX": 0.5010660980810234,
-                    "originY": 0.500945179584121
+                    "y": 111
                 },
                 {
                     "type": "Image",
-                    "id": "26f85f1a-b09b-4f2a-af66-f661a3d84dd2",
+                    "id": "468a9224-d66e-4a4e-abac-23255c005723",
                     "label": "hover",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/hover"
                     },
-                    "x": 97,
-                    "y": 108,
+                    "x": 95,
+                    "y": 107,
                     "visible": false
                 },
                 {
                     "type": "Image",
-                    "id": "2ca4c8b6-b5b4-4c42-9d50-485b8caec74f",
+                    "id": "e2a1144d-f852-45e0-820c-963e0b038b76",
                     "label": "back",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/back"
                     },
                     "x": 95,
                     "y": 107,
-                    "originX": 0.5010660980810234,
-                    "originY": 0.500945179584121,
                     "visible": false
                 },
                 {
                     "type": "Sprite",
-                    "id": "ce8b4112-2ec8-4825-85c3-ac09dfc6629d",
+                    "id": "a753f951-e279-4ec6-9e49-d1af7527c434",
                     "label": "glow",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/glow0001"
                     },
                     "x": 95,
                     "y": 105,
-                    "originX": 0.5008695652173913,
+                    "visible": false,
                     "alpha": 0.5,
                     "alphaTopLeft": 0.5,
                     "alphaTopRight": 0.5,
@@ -91,7 +82,6 @@
                     "id": "9aca60f5-218c-4d87-a2ad-c661e35b5f74",
                     "label": "icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {},
                     "x": 1,
                     "y": 1,
@@ -101,18 +91,15 @@
                 },
                 {
                     "type": "Image",
-                    "id": "168cd85e-361d-4eae-8447-978bb7df8dc6",
+                    "id": "c6c0d21a-8e8a-4c4f-b867-7a5ae4b43e0e",
                     "label": "colorSprite",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/color"
                     },
                     "x": 95,
                     "y": 107,
-                    "originX": 0.5010660980810234,
-                    "originY": 0.500945179584121,
                     "tintTopLeft": "#1148a1",
                     "tintTopRight": "#1148a1",
                     "tintBottomLeft": "#1148a1",
@@ -120,32 +107,29 @@
                 },
                 {
                     "type": "Image",
-                    "id": "783f90f6-7493-44a9-bbf1-68add522e7c5",
+                    "id": "28a70a05-3a13-4981-ba5e-01ec1a854dec",
                     "label": "element",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/f"
                     },
                     "x": 28,
                     "y": 28,
-                    "originY": 0.5051546391752577
+                    "originX": 0.5116279069767442,
+                    "originY": 0.5128205128205128
                 },
                 {
                     "type": "Image",
-                    "id": "045d53fd-0832-402d-bb4e-c2c88b7563e0",
+                    "id": "efa94a48-8431-4d8e-81e2-294e2a7f2846",
                     "label": "disabled",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "cardjitsu",
                         "frame": "card/disabled"
                     },
                     "x": 95,
                     "y": 107,
-                    "originX": 0.5010660980810234,
-                    "originY": 0.500945179584121,
                     "visible": false
                 },
                 {
@@ -153,7 +137,6 @@
                     "id": "10b504e1-dd20-411b-83e8-31df0743d59c",
                     "label": "valueText",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 1,
                     "y": 48,
                     "text": "88",
@@ -174,12 +157,9 @@
                     ],
                     "label": "thumbnail",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 47,
                     "y": 45,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
                 },
                 {
                     "prefabId": "f7bc21d3-944c-4122-96b0-93ea4388bcff",
@@ -191,12 +171,23 @@
                     ],
                     "label": "hint",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 95,
                     "y": -120,
-                    "visible": false,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "visible": false
+                },
+                {
+                    "prefabId": "cb9a1643-8ee1-408f-89d0-0a8bbdb8ecee",
+                    "id": "fb57c098-d2be-4f60-acf1-428eeb021c87",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "explosion",
+                    "scope": "CLASS",
+                    "x": 101,
+                    "y": 129,
+                    "visible": false
                 }
             ]
         }
@@ -206,6 +197,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

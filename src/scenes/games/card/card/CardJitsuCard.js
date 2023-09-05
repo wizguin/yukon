@@ -43,23 +43,21 @@ export default class CardJitsuCard extends BaseContainer {
 
         // shadow
         const shadow = scene.add.image(99, 111, "cardjitsu", "card/shadow");
-        shadow.setOrigin(0.5010660980810234, 0.500945179584121);
         this.add(shadow);
 
         // hover
-        const hover = scene.add.image(97, 108, "cardjitsu", "card/hover");
+        const hover = scene.add.image(95, 107, "cardjitsu", "card/hover");
         hover.visible = false;
         this.add(hover);
 
         // back
         const back = scene.add.image(95, 107, "cardjitsu", "card/back");
-        back.setOrigin(0.5010660980810234, 0.500945179584121);
         back.visible = false;
         this.add(back);
 
         // glow
         const glow = scene.add.sprite(95, 105, "cardjitsu", "card/glow0001");
-        glow.setOrigin(0.5008695652173913, 0.5);
+        glow.visible = false;
         glow.alpha = 0.5;
         glow.alphaTopLeft = 0.5;
         glow.alphaTopRight = 0.5;
@@ -75,7 +73,6 @@ export default class CardJitsuCard extends BaseContainer {
 
         // colorSprite
         const colorSprite = scene.add.image(95, 107, "cardjitsu", "card/color");
-        colorSprite.setOrigin(0.5010660980810234, 0.500945179584121);
         colorSprite.tintTopLeft = 1132705;
         colorSprite.tintTopRight = 1132705;
         colorSprite.tintBottomLeft = 1132705;
@@ -84,12 +81,11 @@ export default class CardJitsuCard extends BaseContainer {
 
         // element
         const element = scene.add.image(28, 28, "cardjitsu", "card/f");
-        element.setOrigin(0.5, 0.5051546391752577);
+        element.setOrigin(0.5116279069767442, 0.5128205128205128);
         this.add(element);
 
         // disabled
         const disabled = scene.add.image(95, 107, "cardjitsu", "card/disabled");
-        disabled.setOrigin(0.5010660980810234, 0.500945179584121);
         disabled.visible = false;
         this.add(disabled);
 
