@@ -370,7 +370,7 @@ export default class CardJitsuCard extends BaseContainer {
 
     flip() {
         let timeline = this.scene.tweens.createTimeline({
-            onComplete: () => this.scene.events.emit('flipped')
+            onComplete: () => this.scene.time.delayedCall(500, () => this.scene.events.emit('flipped'))
         })
 
         timeline.add({
