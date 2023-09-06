@@ -42,6 +42,7 @@ export default class Dojo extends RoomScene {
         }
 
         this.roomAnims = true
+        this.music = 21
 
         this.waddles = {}
 
