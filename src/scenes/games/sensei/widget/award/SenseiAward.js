@@ -2,6 +2,9 @@
 
 import BaseContainer from "../../../../base/BaseContainer";
 /* START-USER-IMPORTS */
+
+import BeltColors from '../../config/BeltColors'
+
 /* END-USER-IMPORTS */
 
 export default class SenseiAward extends BaseContainer {
@@ -46,9 +49,6 @@ export default class SenseiAward extends BaseContainer {
         this.ninja = ninja;
 
         /* START-USER-CTR-CODE */
-
-        this.colors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924, 4473924]
-
         /* END-USER-CTR-CODE */
     }
 
@@ -57,7 +57,7 @@ export default class SenseiAward extends BaseContainer {
 
     showBelt(rank) {
         this.showBeltSprites(true)
-        this.color.tint = this.colors[rank - 1]
+        this.color.tint = BeltColors[rank - 1]
 
         this.show()
     }

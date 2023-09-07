@@ -3,6 +3,9 @@
 import BaseContainer from "../../../../base/BaseContainer";
 import SimpleButton from "../../../../components/SimpleButton";
 /* START-USER-IMPORTS */
+
+import BeltColors from '../../config/BeltColors'
+
 /* END-USER-IMPORTS */
 
 export default class SenseiBelt extends BaseContainer {
@@ -38,8 +41,6 @@ export default class SenseiBelt extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.current = 0
-        this.beltColors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924]
-
         this.tween = null
 
         /* END-USER-CTR-CODE */
@@ -67,13 +68,13 @@ export default class SenseiBelt extends BaseContainer {
     }
 
     onBeltClick() {
-        this.current = (this.current + 1) % this.beltColors.length
+        this.current = (this.current + 1) % BeltColors.length
 
         this.updateColor()
     }
 
     updateColor() {
-        this.color.tint = this.beltColors[this.current]
+        this.color.tint = BeltColors[this.current]
     }
 
     stop() {

@@ -2,6 +2,9 @@
 
 import BaseContainer from "../../../../base/BaseContainer";
 /* START-USER-IMPORTS */
+
+import BeltColors from '../../config/BeltColors'
+
 /* END-USER-IMPORTS */
 
 export default class SenseiBubbleWalk extends BaseContainer {
@@ -104,8 +107,6 @@ export default class SenseiBubbleWalk extends BaseContainer {
 
         this.end = 70
 
-        this.beltColors = [16777215, 16776960, 16737792, 3394560, 13260, 13369344, 6684927, 6697728, 4473924]
-
         this.createAnims()
 
         // Start hidden
@@ -127,7 +128,7 @@ export default class SenseiBubbleWalk extends BaseContainer {
         this.beltSprites.forEach(sprite => sprite.visible = hasBelt)
 
         if (hasBelt) {
-            this.belt.tint = this.beltColors[rank - 1]
+            this.belt.tint = BeltColors[rank - 1]
         }
     }
 
