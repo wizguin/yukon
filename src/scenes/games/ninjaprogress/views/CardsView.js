@@ -135,9 +135,9 @@ export default class CardsView extends BaseContainer {
             }
 
             let card = page[i]
-            let key = this.cardLoader.getKey(card.card_id)
+            let key = this.cardLoader.getKey(card.id)
 
-            prefab.id = card.card_id
+            prefab.id = card.id
 
             this.cardLoader.loadCard(card, () => this.onCardLoad(key, card, prefab))
 
@@ -168,7 +168,7 @@ export default class CardsView extends BaseContainer {
     }
 
     onCardLoad(key, card, prefab) {
-        if (prefab.id == card.card_id) {
+        if (prefab.id == card.id) {
             prefab.setIcon(key)
         }
     }

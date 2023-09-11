@@ -11,7 +11,7 @@ export default class CardLoader extends BaseLoader {
     }
 
     loadCard(card, callback) {
-        let key = this.getKey(card.card_id)
+        let key = this.getKey(card.id)
 
         if (this.checkComplete('image', key, () => {
             this.onFileComplete(key, card, callback)
@@ -19,7 +19,7 @@ export default class CardLoader extends BaseLoader {
             return
         }
 
-        this.image(key, `${card.card_id}.png`)
+        this.image(key, `${card.id}.png`)
         this.start()
     }
 

@@ -99,11 +99,11 @@ export default class CardsViewCard extends BaseContainer {
 
         this.element.setFrame(`card/${card.element}`)
 
-        if (card.power_id > 0) {
+        if (card.powerId > 0) {
             this.glow.tint = tint
         }
 
-        this.glow.visible = card.power_id > 0
+        this.glow.visible = card.powerId > 0
 
         super.show()
     }
