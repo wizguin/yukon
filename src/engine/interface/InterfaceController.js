@@ -94,8 +94,10 @@ export default class InterfaceController extends BaseScene {
         this.bringToTop('IglooEdit')
     }
 
-    bringToTop(key) {
-        this.scene.bringToTop(key)
+    bringToTop(key = null) {
+        if (key) {
+            this.scene.bringToTop(key)
+        }
 
         // Keeps InterfaceController scene always on top, for prompts
         this.scene.bringToTop()
