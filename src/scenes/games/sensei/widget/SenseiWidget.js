@@ -112,9 +112,9 @@ export default class SenseiWidget extends BaseContainer {
     }
 
     rankUp(rank) {
-        this.rankId = rank
+        this.rankId = Phaser.Math.Clamp(rank, 1, 9)
 
-        if (rank > this.beltNames.length) {
+        if (rank > 9) {
             this.startSequence(sequences.maskAward)
         } else {
             this.startSequence(sequences.beltAward)
