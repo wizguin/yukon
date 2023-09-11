@@ -187,7 +187,10 @@ export default class CardJitsuCard extends BaseContainer {
         this.elementId = card.element
         this.value = card.value
         this.color = card.color
-        this.description = card.description || ''
+
+        this.description = this.powerId
+            ? this.getString(`pow_${this.powerId}`)
+            : ''
 
         this.valueText.text = card.value
         this.colorSprite.tint = tint
