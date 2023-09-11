@@ -28,6 +28,8 @@ export default class Dojo extends RoomScene {
         this.waddle200;
         /** @type {Phaser.GameObjects.Image} */
         this.cards;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.cauldronSmoke;
 
 
         /* START-USER-CTR-CODE */
@@ -121,6 +123,9 @@ export default class Dojo extends RoomScene {
         const cauldronBack = this.add.image(918, 540, "dojo", "cauldron/back");
         cauldronBack.setOrigin(0, 0);
 
+        // cauldronSmoke
+        const cauldronSmoke = this.add.sprite(954, 511, "dojo", "cauldron/smoke/smoke0001");
+
         // cauldronFront
         const cauldronFront = this.add.image(926, 550, "dojo", "cauldron/front");
         cauldronFront.setOrigin(0, 0);
@@ -183,6 +188,7 @@ export default class Dojo extends RoomScene {
         this.waddle201 = waddle201;
         this.waddle200 = waddle200;
         this.cards = cards;
+        this.cauldronSmoke = cauldronSmoke;
 
         this.events.emit("scene-awake");
     }
@@ -196,6 +202,8 @@ export default class Dojo extends RoomScene {
 
     create() {
         super.create()
+
+        this.cauldronSmoke.play('smoke')
 
         this.cards.depth = 960
         this.cards.visible = this.userHasDeck

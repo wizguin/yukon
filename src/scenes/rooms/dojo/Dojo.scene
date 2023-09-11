@@ -263,6 +263,18 @@
             "originY": 0
         },
         {
+            "type": "Sprite",
+            "id": "af14ada9-4962-47b2-a360-9f49189a5894",
+            "label": "cauldronSmoke",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/smoke/smoke0001"
+            },
+            "x": 954,
+            "y": 511
+        },
+        {
             "type": "Image",
             "id": "cb465f3b-f7c4-491c-9b8b-035cccf288c1",
             "label": "cauldronFront",
