@@ -546,7 +546,7 @@ export default class CardJitsu extends GameScene {
     }
 
     pickCard(card) {
-        if (!this.myPlayer.pickableCards.includes(card)) {
+        if (this.myPlayer.pick || !this.myPlayer.pickableCards.includes(card)) {
             return
         }
 
