@@ -31,7 +31,6 @@
                     "type": "Image",
                     "id": "5688e8cb-f7d7-45bc-b786-59a8031f6dc7",
                     "label": "bg",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "match/window"
@@ -46,11 +45,8 @@
                     ],
                     "label": "opponent",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 0,
-                    "y": 98,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 98
                 },
                 {
                     "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
@@ -61,18 +57,14 @@
                     ],
                     "label": "myPlayer",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 0,
-                    "y": 46,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 46
                 },
                 {
                     "type": "Text",
                     "id": "7b204eaf-dbd4-42cb-8322-ce985fdd95fd",
                     "label": "message",
                     "scope": "CLASS",
-                    "components": [],
                     "y": -20,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -87,7 +79,6 @@
                     "id": "150d74b5-74fe-4764-9d54-4a697e9eda43",
                     "label": "time",
                     "scope": "CLASS",
-                    "components": [],
                     "y": -100,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -103,7 +94,6 @@
                     "id": "fd40b908-3817-45e9-9d72-e9fa95d657f1",
                     "label": "spinner",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sensei",
                         "frame": "match/spinner"
@@ -131,7 +121,6 @@
                     "type": "Image",
                     "id": "931e5701-f927-410a-9586-ec26268a6b61",
                     "label": "xIcon",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "blue-x"
@@ -147,6 +136,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

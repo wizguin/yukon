@@ -30,6 +30,8 @@ export default class CardJitsuHelp extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        text.text = this.getString('help_card')
+
         this.closedY = this.y
         this.openY = this.y + 464
 

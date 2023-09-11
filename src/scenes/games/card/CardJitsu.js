@@ -627,7 +627,7 @@ export default class CardJitsu extends GameScene {
         }
 
         let loserUsername = this.players[this.getOppositeSeat(winSeat)].username
-        let loserMessage = this.getFormatString('has_no_cards', loserUsername)
+        let loserMessage = this.getFormatString('sudden_death', loserUsername)
 
         return `${loserMessage}\n${message}`
     }

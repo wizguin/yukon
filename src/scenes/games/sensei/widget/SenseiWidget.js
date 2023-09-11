@@ -74,8 +74,6 @@ export default class SenseiWidget extends BaseContainer {
 
         this.rankId = 1
 
-        this.beltNames = ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Red', 'Purple', 'Brown', 'Black']
-
         this.addBackgroundEvent('pointerup', this.forwardSequence, this)
 
         /* END-USER-CTR-CODE */
@@ -84,8 +82,8 @@ export default class SenseiWidget extends BaseContainer {
 
     /* START-USER-CODE */
 
-    get beltName() {
-        return this.beltNames[this.rankId - 1]
+    get beltString() {
+        return this.getString(`belt_${this.rankId}`)
     }
 
     get speechIndex() {

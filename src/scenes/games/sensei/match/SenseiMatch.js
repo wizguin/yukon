@@ -80,6 +80,8 @@ export default class SenseiMatch extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
+        message.text = this.getString('widget_wait')
+
         // Spinner
         scene.tweens.add({
             targets: spinner,
