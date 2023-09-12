@@ -39,7 +39,7 @@ export default class SenseiInstructions extends BaseContainer {
 
 
         // ninja
-        const ninja = scene.add.sprite(1025, 558, "sensei", "instructions/ninja/ninja0035");
+        const ninja = scene.add.sprite(1025, 558, "senseiinstructions", "ninja/ninja0035");
         ninja.setOrigin(0.5006226650062267, 0.5008976660682226);
         ninja.visible = false;
         this.add(ninja);
@@ -55,54 +55,54 @@ export default class SenseiInstructions extends BaseContainer {
         this.add(belt);
 
         // help
-        const help = scene.add.sprite(1150, 646, "sensei", "instructions/help/help0001");
+        const help = scene.add.sprite(1150, 646, "senseiinstructions", "help/help0001");
         help.setOrigin(0.5003996802557954, 0.5);
         help.visible = false;
         this.add(help);
 
         // winDifferent
-        const winDifferent = scene.add.sprite(987, 1335, "sensei", "instructions/win_different/win0091");
+        const winDifferent = scene.add.sprite(987, 1335, "senseiinstructions", "win_different/win0091");
         winDifferent.visible = false;
         this.add(winDifferent);
 
         // winSame
-        const winSame = scene.add.sprite(1826, 484, "sensei", "instructions/win_same/win0090");
+        const winSame = scene.add.sprite(1826, 484, "senseiinstructions", "win_same/win0090");
         winSame.setOrigin(0.5002171081198437, 0.5);
         winSame.visible = false;
         this.add(winSame);
 
         // tie
-        const tie = scene.add.sprite(1093, 483, "sensei", "instructions/tie/tie0040");
+        const tie = scene.add.sprite(1093, 483, "senseiinstructions", "tie/tie0040");
         tie.setOrigin(0.5006353240152478, 0.5);
         tie.visible = false;
         this.add(tie);
 
         // fire
-        const fire = scene.add.sprite(1057, 440, "sensei", "instructions/fire/fire0056");
+        const fire = scene.add.sprite(1057, 440, "senseiinstructions", "fire/fire0056");
         fire.setOrigin(0.5007704160246533, 0.5016835016835017);
         fire.visible = false;
         this.add(fire);
 
         // snow
-        const snow = scene.add.sprite(949, 441, "sensei", "instructions/snow/snow0056");
+        const snow = scene.add.sprite(949, 441, "senseiinstructions", "snow/snow0056");
         snow.setOrigin(0.5007898894154819, 0.5016835016835017);
         snow.visible = false;
         this.add(snow);
 
         // water
-        const water = scene.add.sprite(1057, 440, "sensei", "instructions/water/water0056");
+        const water = scene.add.sprite(1057, 440, "senseiinstructions", "water/water0056");
         water.setOrigin(0.5007704160246533, 0.5016835016835017);
         water.visible = false;
         this.add(water);
 
         // pick
-        const pick = scene.add.sprite(1564, 1004, "sensei", "instructions/pick/pick0001");
+        const pick = scene.add.sprite(1564, 1004, "senseiinstructions", "pick/pick0001");
         pick.visible = false;
         this.add(pick);
 
         // cards
         const cards = new SenseiCards(scene, 1378, 658);
-        cards.visible = true;
+        cards.visible = false;
         this.add(cards);
 
         this.ninja = ninja;

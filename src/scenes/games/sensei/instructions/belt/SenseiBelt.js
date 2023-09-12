@@ -18,17 +18,17 @@ export default class SenseiBelt extends BaseContainer {
 
 
         // belt
-        const belt = scene.add.image(0, 0, "sensei", "instructions/belt/belt");
+        const belt = scene.add.image(0, 0, "senseiinstructions", "belt/belt");
         belt.setOrigin(0.503030303030303, 0.5037037037037037);
         this.add(belt);
 
         // color
-        const color = scene.add.image(1, -1, "sensei", "instructions/belt/color");
+        const color = scene.add.image(1, -1, "senseiinstructions", "belt/color");
         color.setOrigin(0.503448275862069, 0.5);
         this.add(color);
 
         // shadow
-        const shadow = scene.add.image(1, 4, "sensei", "instructions/belt/shadow");
+        const shadow = scene.add.image(1, 4, "senseiinstructions", "belt/shadow");
         shadow.setOrigin(0.503448275862069, 0.5);
         this.add(shadow);
 

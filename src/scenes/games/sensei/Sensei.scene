@@ -9,7 +9,8 @@
         "superClassName": "GameScene",
         "preloadMethodName": "_preload",
         "preloadPackFiles": [
-            "yukon/assets/media/games/sensei/sensei-pack.json"
+            "yukon/assets/media/games/sensei/sensei-pack.json",
+            "yukon/assets/media/games/sensei/instructions/senseiinstructions-pack.json"
         ],
         "createMethodName": "_create",
         "sceneKey": "Sensei",

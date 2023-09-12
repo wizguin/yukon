@@ -24,8 +24,8 @@
                     "id": "5d85551b-e50c-4b54-ab8a-a160d89c1115",
                     "label": "backFoot",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/1_instance3_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/1_instance3_1"
                     }
                 },
                 {
@@ -33,8 +33,8 @@
                     "id": "e6d7478e-cf80-4fd1-a855-cd86e90aca1f",
                     "label": "frontFoot",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/2_instance5_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/2_instance5_1"
                     }
                 },
                 {
@@ -42,8 +42,8 @@
                     "id": "ac1d2cc7-2274-4d78-a8d5-695f8c94d1af",
                     "label": "backArmLine",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/3_instance7_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/3_instance7_1"
                     }
                 },
                 {
@@ -52,8 +52,8 @@
                     "label": "backArm",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/4_backarm_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/4_backarm_1"
                     }
                 },
                 {
@@ -61,8 +61,8 @@
                     "id": "7eba80ed-9087-49e1-84c2-01880626f3d3",
                     "label": "bodyLine",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/5_instance8_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/5_instance8_1"
                     }
                 },
                 {
@@ -71,8 +71,8 @@
                     "label": "body",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/6_body_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/6_body_1"
                     }
                 },
                 {
@@ -80,8 +80,8 @@
                     "id": "8cd82544-a3da-402a-bc39-e81b876d9dd5",
                     "label": "shadow",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/7_instance10_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/7_instance10_1"
                     }
                 },
                 {
@@ -89,8 +89,8 @@
                     "id": "9475c700-6ed4-4d94-8fe8-a95c6943d2f3",
                     "label": "eye",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/8_instance11_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/8_instance11_1"
                     }
                 },
                 {
@@ -98,8 +98,8 @@
                     "id": "796fb263-66db-4602-9e3b-382a7978b006",
                     "label": "pupil",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/9_instance13_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/9_instance13_1"
                     }
                 },
                 {
@@ -108,8 +108,8 @@
                     "label": "sensei",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/10_sensei_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/10_sensei_1"
                     }
                 },
                 {
@@ -117,8 +117,8 @@
                     "id": "9fe3e127-2e32-44f3-8f68-7f258d254035",
                     "label": "beak",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/11_instance18_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/11_instance18_1"
                     }
                 },
                 {
@@ -127,8 +127,8 @@
                     "label": "beltLine",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/12_beltline_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/12_beltline_1"
                     }
                 },
                 {
@@ -137,8 +137,8 @@
                     "label": "belt",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/13_belt_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/13_belt_1"
                     }
                 },
                 {
@@ -146,8 +146,8 @@
                     "id": "57c75665-de10-4c11-9a8d-671445622e44",
                     "label": "frontArmLine",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/14_instance22_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/14_instance22_1"
                     }
                 },
                 {
@@ -156,8 +156,8 @@
                     "label": "frontArm",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/walk/15_frontarm_1"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/15_frontarm_1"
                     }
                 }
             ]

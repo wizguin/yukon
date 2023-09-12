@@ -28,8 +28,8 @@
                     ],
                     "SimpleButton.callback": "() => this.onBeltClick()",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/belt/belt"
+                        "key": "senseiinstructions",
+                        "frame": "belt/belt"
                     },
                     "originX": 0.503030303030303,
                     "originY": 0.5037037037037037
@@ -40,8 +40,8 @@
                     "label": "color",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/belt/color"
+                        "key": "senseiinstructions",
+                        "frame": "belt/color"
                     },
                     "x": 1,
                     "y": -1,
@@ -52,8 +52,8 @@
                     "id": "3d77bfd2-99f5-4d34-bf08-b3aeccb56d78",
                     "label": "shadow",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/belt/shadow"
+                        "key": "senseiinstructions",
+                        "frame": "belt/shadow"
                     },
                     "x": 1,
                     "y": 4,

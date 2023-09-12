@@ -23,7 +23,7 @@ export default class SenseiBubble extends BaseContainer {
 
 
         // bubble
-        const bubble = scene.add.sprite(0, 0, "sensei", "instructions/bubble/bubble0030");
+        const bubble = scene.add.sprite(0, 0, "senseiinstructions", "bubble/bubble0030");
         bubble.setOrigin(0.5006226650062267, 0.5008976660682226);
         this.add(bubble);
 
@@ -38,7 +38,7 @@ export default class SenseiBubble extends BaseContainer {
         this.add(senseiBubbleWalk1);
 
         // maskImage
-        const maskImage = scene.add.image(0, 0, "sensei", "instructions/bubble/mask");
+        const maskImage = scene.add.image(0, 0, "senseiinstructions", "bubble/mask");
         maskImage.setOrigin(0.5006226650062267, 0.5008976660682226);
         maskImage.visible = false;
         this.add(maskImage);

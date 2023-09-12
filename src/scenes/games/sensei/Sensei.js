@@ -33,6 +33,7 @@ export default class Sensei extends GameScene {
     _preload() {
 
         this.load.pack("sensei-pack", "assets/media/games/sensei/sensei-pack.json");
+        this.load.pack("senseiinstructions-pack", "assets/media/games/sensei/instructions/senseiinstructions-pack.json");
     }
 
     /** @returns {void} */

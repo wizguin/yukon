@@ -14,11 +14,11 @@ export default class SenseiCards extends BaseContainer {
 
 
         // glow
-        const glow = scene.add.sprite(-62, -70, "sensei", "instructions/cards/glow/glow0001");
+        const glow = scene.add.sprite(-62, -70, "senseiinstructions", "cards/glow/glow0001");
         this.add(glow);
 
         // cards
-        const cards = scene.add.image(-317, -158, "sensei", "instructions/cards/cards");
+        const cards = scene.add.image(-317, -158, "senseiinstructions", "cards/cards");
         cards.setOrigin(0.5007874015748032, 0.5);
         this.add(cards);
 

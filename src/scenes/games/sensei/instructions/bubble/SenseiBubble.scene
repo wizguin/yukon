@@ -25,8 +25,8 @@
                     "label": "bubble",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/bubble0030"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/bubble0030"
                     },
                     "originX": 0.5006226650062267,
                     "originY": 0.5008976660682226
@@ -65,8 +65,8 @@
                     "label": "maskImage",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/bubble/mask"
+                        "key": "senseiinstructions",
+                        "frame": "bubble/mask"
                     },
                     "originX": 0.5006226650062267,
                     "originY": 0.5008976660682226,

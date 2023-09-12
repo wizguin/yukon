@@ -25,8 +25,8 @@
                     "label": "ninja",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/ninja/ninja0035"
+                        "key": "senseiinstructions",
+                        "frame": "ninja/ninja0035"
                     },
                     "x": 1025,
                     "y": 558,
@@ -68,8 +68,8 @@
                     "label": "help",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/help/help0001"
+                        "key": "senseiinstructions",
+                        "frame": "help/help0001"
                     },
                     "x": 1150,
                     "y": 646,
@@ -82,8 +82,8 @@
                     "label": "winDifferent",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/win_different/win0091"
+                        "key": "senseiinstructions",
+                        "frame": "win_different/win0091"
                     },
                     "x": 987,
                     "y": 1335,
@@ -95,8 +95,8 @@
                     "label": "winSame",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/win_same/win0090"
+                        "key": "senseiinstructions",
+                        "frame": "win_same/win0090"
                     },
                     "x": 1826,
                     "y": 484,
@@ -109,8 +109,8 @@
                     "label": "tie",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/tie/tie0040"
+                        "key": "senseiinstructions",
+                        "frame": "tie/tie0040"
                     },
                     "x": 1093,
                     "y": 483,
@@ -123,8 +123,8 @@
                     "label": "fire",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/fire/fire0056"
+                        "key": "senseiinstructions",
+                        "frame": "fire/fire0056"
                     },
                     "x": 1057,
                     "y": 440,
@@ -138,8 +138,8 @@
                     "label": "snow",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/snow/snow0056"
+                        "key": "senseiinstructions",
+                        "frame": "snow/snow0056"
                     },
                     "x": 949,
                     "y": 441,
@@ -153,8 +153,8 @@
                     "label": "water",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/water/water0056"
+                        "key": "senseiinstructions",
+                        "frame": "water/water0056"
                     },
                     "x": 1057,
                     "y": 440,
@@ -168,8 +168,8 @@
                     "label": "pick",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "sensei",
-                        "frame": "instructions/pick/pick0001"
+                        "key": "senseiinstructions",
+                        "frame": "pick/pick0001"
                     },
                     "x": 1564,
                     "y": 1004,
@@ -187,7 +187,7 @@
                     "scope": "CLASS",
                     "x": 1378,
                     "y": 658,
-                    "visible": true
+                    "visible": false
                 }
             ]
         }

@@ -31,63 +31,63 @@ export default class SenseiBubbleWalk extends BaseContainer {
 
 
         // backFoot
-        const backFoot = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/1_instance3_1");
+        const backFoot = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/1_instance3_1");
         this.add(backFoot);
 
         // frontFoot
-        const frontFoot = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/2_instance5_1");
+        const frontFoot = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/2_instance5_1");
         this.add(frontFoot);
 
         // backArmLine
-        const backArmLine = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/3_instance7_1");
+        const backArmLine = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/3_instance7_1");
         this.add(backArmLine);
 
         // backArm
-        const backArm = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/4_backarm_1");
+        const backArm = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/4_backarm_1");
         this.add(backArm);
 
         // bodyLine
-        const bodyLine = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/5_instance8_1");
+        const bodyLine = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/5_instance8_1");
         this.add(bodyLine);
 
         // body
-        const body = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/6_body_1");
+        const body = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/6_body_1");
         this.add(body);
 
         // shadow
-        const shadow = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/7_instance10_1");
+        const shadow = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/7_instance10_1");
         this.add(shadow);
 
         // eye
-        const eye = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/8_instance11_1");
+        const eye = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/8_instance11_1");
         this.add(eye);
 
         // pupil
-        const pupil = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/9_instance13_1");
+        const pupil = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/9_instance13_1");
         this.add(pupil);
 
         // sensei
-        const sensei = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/10_sensei_1");
+        const sensei = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/10_sensei_1");
         this.add(sensei);
 
         // beak
-        const beak = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/11_instance18_1");
+        const beak = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/11_instance18_1");
         this.add(beak);
 
         // beltLine
-        const beltLine = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/12_beltline_1");
+        const beltLine = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/12_beltline_1");
         this.add(beltLine);
 
         // belt
-        const belt = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/13_belt_1");
+        const belt = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/13_belt_1");
         this.add(belt);
 
         // frontArmLine
-        const frontArmLine = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/14_instance22_1");
+        const frontArmLine = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/14_instance22_1");
         this.add(frontArmLine);
 
         // frontArm
-        const frontArm = scene.add.sprite(0, 0, "sensei", "instructions/bubble/walk/15_frontarm_1");
+        const frontArm = scene.add.sprite(0, 0, "senseiinstructions", "bubble/walk/15_frontarm_1");
         this.add(frontArm);
 
         // lists
@@ -143,7 +143,7 @@ export default class SenseiBubbleWalk extends BaseContainer {
     createAnim(child) {
         const animKey = this.getAnimKey(child)
 
-        const frameNames = this.scene.anims.generateFrameNames('sensei', {
+        const frameNames = this.scene.anims.generateFrameNames('senseiinstructions', {
             prefix: `${animKey}_`,
             start: 1,
             end: this.end
