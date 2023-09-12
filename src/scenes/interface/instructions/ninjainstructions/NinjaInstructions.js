@@ -1,7 +1,7 @@
 export const preload = {
     key: 'ninjainstructions-pack',
     url: 'assets/media/interface/instructions/ninjainstructions/ninjainstructions-pack.json',
-    loadString: ''
+    loadString: ['loading', 'ninjainstructions']
 }
 
 /* START OF COMPILED CODE */

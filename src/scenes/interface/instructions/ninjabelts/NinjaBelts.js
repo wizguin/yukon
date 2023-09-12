@@ -1,7 +1,7 @@
 export const preload = {
     key: 'ninjabelts-pack',
     url: 'assets/media/interface/instructions/ninjabelts/ninjabelts-pack.json',
-    loadString: ''
+    loadString: ['loading', 'ninjabelts']
 }
 
 /* START OF COMPILED CODE */
