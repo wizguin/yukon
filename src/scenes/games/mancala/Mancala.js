@@ -468,7 +468,7 @@ export default class Mancala extends BaseContainer {
     }
 
     updateTurn(lastHole = null, move = '') {
-        if (lastHole) {
+        if (lastHole !== null) {
             this.checkLastHole(lastHole, move)
         }
 
