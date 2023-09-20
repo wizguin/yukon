@@ -141,7 +141,7 @@ export default class CardJitsu extends GameScene {
         this.container = this.add.dom(760, 480)
         this.container.visible = false
 
-        this.battlesPath = 'assets/media/flash/battles/'
+        this.battlesPath = 'assets/media/games/card/battles/'
 
         this.events.once('emulator_ready', this.onEmulatorReady, this)
 
@@ -226,7 +226,7 @@ export default class CardJitsu extends GameScene {
         this.game.domContainer.style.zIndex = -10
 
         await player.load({
-            url: 'assets/media/flash/battle.swf',
+            url: 'assets/media/games/card/battle.swf',
             allowScriptAccess: true,
             menu: false,
             contextMenu: false,
