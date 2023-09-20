@@ -137,16 +137,6 @@ export default class CardJitsu extends GameScene {
 
     /* START-USER-CODE */
 
-    preload() {
-        super.preload()
-
-        let url = 'assets/media/games/card/battles/'
-
-        this.load.pack('walk-pack', `${url}/walk/walk-pack.json`)
-        this.load.pack('ambient-pack', `${url}/ambient/ambient-pack.json`)
-        this.load.pack('tie-pack', `${url}/tie/tie-pack.json`)
-    }
-
     async create() {
         this.container = this.add.dom(760, 480)
         this.container.visible = false
