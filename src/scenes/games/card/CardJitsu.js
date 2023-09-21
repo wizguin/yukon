@@ -432,8 +432,6 @@ export default class CardJitsu extends GameScene {
     processPowers() {
         this.powersQueue = this.activePowers.slice()
 
-        console.log(this.powersQueue)
-
         this.nextPower()
     }
 
