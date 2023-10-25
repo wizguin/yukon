@@ -1,0 +1,217 @@
+{
+    "id": "594505eb-e825-43c4-87c4-a1394daaa2e7",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "GameScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/games/card/cardjitsu-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "CardJitsu",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "c12c3e43-59eb-4f80-ad9a-810a06c53763",
+            "label": "bg",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "3f476cde-316b-42f5-ad18-da70ada1474d",
+            "unlock": [
+                "x",
+                "y",
+                "username",
+                "usernameText"
+            ],
+            "label": "player2",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "2c95b708-e07e-4a6b-ad34-afb595594583",
+            "id": "6fd982c9-843f-4778-899e-de82fbcde04d",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "username",
+                "usernameText"
+            ],
+            "label": "player1",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "scaleX": -1,
+            "scaleY": 1,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "type": "Image",
+            "id": "7a0d7dac-7b59-4a80-bc52-f98bbe8639bd",
+            "label": "closeButton",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "close",
+            "Button.callback": "() => this.onCloseClick()",
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "close"
+            },
+            "x": 1464,
+            "y": 57
+        },
+        {
+            "prefabId": "94535fbd-178b-46f2-a995-1dd72d803895",
+            "id": "a1e810c2-0719-4c82-b4c9-f0d891121829",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "help",
+            "scope": "CLASS",
+            "components": [],
+            "x": 754,
+            "y": 24,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "type": "Image",
+            "id": "db30b7ad-1640-42d2-836d-9ac3e76bee29",
+            "label": "panel",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "panel"
+            },
+            "x": 760,
+            "y": 854,
+            "originX": 0.500351370344343
+        },
+        {
+            "type": "Image",
+            "id": "9e6b3a10-20e4-48fb-95b7-8e3259b670c4",
+            "label": "frame",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "frame"
+            },
+            "x": 758,
+            "y": 480,
+            "originX": 0.5003261578604045,
+            "originY": 0.5005192107995846
+        },
+        {
+            "prefabId": "ebed3022-bcec-4b40-b9a2-de88069e87b6",
+            "id": "5ae193e4-747e-4c9e-a9b1-33e45c465696",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "clock",
+            "scope": "CLASS",
+            "components": [],
+            "x": 760,
+            "y": 676,
+            "visible": false,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "type": "Image",
+            "id": "0c63a625-f56a-40e1-8863-870ad03ce58f",
+            "label": "spinner",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "cardjitsu",
+                "frame": "spinner"
+            },
+            "x": 760,
+            "y": 482
+        },
+        {
+            "type": "Text",
+            "id": "a3698971-d213-46ce-b701-03bf7dd7a7ed",
+            "label": "username2",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1420,
+            "y": 736,
+            "originX": 1,
+            "fixedWidth": 410,
+            "align": "right",
+            "fontFamily": "CCComiccrazy",
+            "fontSize": "28px",
+            "fontStyle": "bold",
+            "color": "#000"
+        },
+        {
+            "type": "Text",
+            "id": "c54766f1-4ebc-4dc0-b3a4-b119c06d9faf",
+            "label": "username1",
+            "scope": "CLASS",
+            "components": [],
+            "x": 100,
+            "y": 736,
+            "fixedWidth": 410,
+            "fontFamily": "CCComiccrazy",
+            "fontSize": "28px",
+            "fontStyle": "bold",
+            "color": "#000"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "lists": [
+        {
+            "id": "6ce89abe-2ddb-4c0a-a242-5e92240d350e",
+            "label": "players",
+            "objectIds": [
+                "6fd982c9-843f-4778-899e-de82fbcde04d",
+                "3f476cde-316b-42f5-ad18-da70ada1474d"
+            ]
+        },
+        {
+            "id": "612a85bc-48d2-4a9f-a377-75a400da8bca",
+            "label": "usernames",
+            "objectIds": [
+                "c54766f1-4ebc-4dc0-b3a4-b119c06d9faf",
+                "a3698971-d213-46ce-b701-03bf7dd7a7ed"
+            ]
+        }
+    ]
+}

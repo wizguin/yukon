@@ -1,0 +1,407 @@
+{
+    "id": "f4fdbbc7-bf40-42c0-92c9-e80824c1e652",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 58,
+        "snapHeight": 60,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "2e89319d-c037-4f9f-8b8c-a4af45dadf38",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "window",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "55d91bff-c9af-40fd-ad97-0bdc375a99d4",
+                    "label": "window",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "window"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "76bf3f20-f10a-45ab-b2c6-76fe7a7ba86a",
+                    "label": "bg2",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "player/bg"
+                    },
+                    "y": 118,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "001894b7-e6e0-4caf-b9cc-04ce634e5282",
+                    "label": "bg1",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "player/bg"
+                    },
+                    "y": -86
+                },
+                {
+                    "type": "Image",
+                    "id": "029699bc-46a0-4c39-8794-64b9bac2700a",
+                    "label": "shadow",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "shadow"
+                    },
+                    "y": 16
+                },
+                {
+                    "type": "Image",
+                    "id": "8a60289b-06e8-4dae-a743-3da28ce00a85",
+                    "label": "board",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "board"
+                    },
+                    "y": 10
+                },
+                {
+                    "type": "Image",
+                    "id": "d6000b2f-67d1-49df-91c3-49711c59fc64",
+                    "label": "hole_13",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole_1"
+                    },
+                    "x": -200,
+                    "y": 11,
+                    "originY": 0.5047619047619047
+                },
+                {
+                    "type": "Image",
+                    "id": "152805b6-0b3d-4b6c-bee7-378c9c5d726f",
+                    "label": "hole_12",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -144,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "36432eed-487c-415d-85b8-fb68cab93e36",
+                    "label": "hole_11",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -86,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "2c5d315e-9b9e-416d-b814-724181ec2064",
+                    "label": "hole_10",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -28,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "ee42fdb0-7cdd-45a7-879a-77f2db75ba4c",
+                    "label": "hole_9",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 30,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "c11152e4-188c-4cbf-a6c3-fdc8945f4151",
+                    "label": "hole_8",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 88,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "12f66ea0-f7b9-47b9-9c6e-76ea297e9495",
+                    "label": "hole_7",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 146,
+                    "y": -20,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "6aac4be8-f26c-47fe-ba0c-52d28eefa127",
+                    "label": "hole_6",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole_2"
+                    },
+                    "x": 200,
+                    "y": 11,
+                    "originY": 0.5047619047619047
+                },
+                {
+                    "type": "Image",
+                    "id": "0202ccd0-af01-44bb-a24d-0a2bb9384aa8",
+                    "label": "hole_5",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 146,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "efae5d11-1f07-4f2a-b36c-1dbec458382e",
+                    "label": "hole_4",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 88,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "e713e514-0694-489b-a3a2-cfd099f34187",
+                    "label": "hole_3",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": 30,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "9f44682c-679f-495b-ae2b-674d1a589c4b",
+                    "label": "hole_2",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -28,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "b8baf473-a75f-4135-a894-537390a919a9",
+                    "label": "hole_1",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -86,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "type": "Image",
+                    "id": "9389f3d3-994d-43d1-92c5-4024661b79f4",
+                    "label": "hole_0",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "hole"
+                    },
+                    "x": -144,
+                    "y": 40,
+                    "originX": 0.5102040816326531,
+                    "originY": 0.5102040816326531
+                },
+                {
+                    "prefabId": "bb969ff5-2103-4d09-a09b-4cad958047d4",
+                    "id": "f52d5978-c409-4410-b4ab-487c7096d3cb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "bg",
+                        "mancala"
+                    ],
+                    "label": "mancalaPlayer1",
+                    "scope": "CLASS",
+                    "bg": "bg2",
+                    "mancala": "hole_6",
+                    "components": [],
+                    "x": -193,
+                    "y": 136,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "bb969ff5-2103-4d09-a09b-4cad958047d4",
+                    "id": "ad4829d1-d06f-453a-a05e-aa2401544ad2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "bg",
+                        "mancala"
+                    ],
+                    "label": "mancalaPlayer2",
+                    "scope": "CLASS",
+                    "bg": "bg1",
+                    "mancala": "hole_13",
+                    "components": [],
+                    "x": -193,
+                    "y": -104,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "type": "Sprite",
+                    "id": "09ec3328-6878-41df-9d53-721df330da61",
+                    "label": "popup",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "popup/popup0005"
+                    },
+                    "x": 4,
+                    "y": 16,
+                    "visible": false
+                },
+                {
+                    "prefabId": "325c2f02-83fe-4592-9a90-32228cab6f13",
+                    "id": "e864d2f5-b71b-4106-ace2-d974512d3eff",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "hint",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -144,
+                    "y": -20,
+                    "visible": false,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "f0061852-6a3b-4abe-b30f-17ab057412d8",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 252,
+                    "y": -160
+                },
+                {
+                    "type": "Image",
+                    "id": "50799ffa-d7f7-4746-9483-ea71c5beeedd",
+                    "label": "blue_x",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 252,
+                    "y": -162
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "lists": [
+        {
+            "id": "0cc252c2-494b-4324-baf9-ad1f2bf25c77",
+            "label": "holes",
+            "objectIds": [
+                "9389f3d3-994d-43d1-92c5-4024661b79f4",
+                "b8baf473-a75f-4135-a894-537390a919a9",
+                "9f44682c-679f-495b-ae2b-674d1a589c4b",
+                "e713e514-0694-489b-a3a2-cfd099f34187",
+                "efae5d11-1f07-4f2a-b36c-1dbec458382e",
+                "0202ccd0-af01-44bb-a24d-0a2bb9384aa8",
+                "6aac4be8-f26c-47fe-ba0c-52d28eefa127",
+                "12f66ea0-f7b9-47b9-9c6e-76ea297e9495",
+                "c11152e4-188c-4cbf-a6c3-fdc8945f4151",
+                "ee42fdb0-7cdd-45a7-879a-77f2db75ba4c",
+                "2c5d315e-9b9e-416d-b814-724181ec2064",
+                "36432eed-487c-415d-85b8-fb68cab93e36",
+                "152805b6-0b3d-4b6c-bee7-378c9c5d726f",
+                "d6000b2f-67d1-49df-91c3-49711c59fc64"
+            ]
+        }
+    ]
+}

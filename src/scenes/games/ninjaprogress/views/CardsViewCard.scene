@@ -1,0 +1,129 @@
+{
+    "id": "9f9b5b6f-5629-4026-a28d-0bfd8b2ac1e4",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f9520288-babf-4d1e-9df3-6de2014f5bf8",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "695f8494-eea7-464d-97fa-98dec9180ffe",
+                    "label": "glow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "card/glow0001"
+                    },
+                    "x": 1,
+                    "originX": 0.503030303030303,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "0b8f3a7d-39ce-44f5-96ed-57f43fb888e7",
+                    "label": "back",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "card/back"
+                    },
+                    "scaleX": 0.95,
+                    "scaleY": 0.95,
+                    "originX": 0.5038167938931297
+                },
+                {
+                    "type": "Image",
+                    "id": "e1ca6d79-b0a8-49ef-a40a-2d60d05bdf90",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "card/shadow"
+                    },
+                    "x": 3,
+                    "y": 3,
+                    "originX": 0.5038167938931297
+                },
+                {
+                    "type": "Image",
+                    "id": "3aa33900-d940-437c-8155-e66c64f3b560",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "texture": {},
+                    "x": -66,
+                    "y": -74,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7,
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "30e60b4b-9fe0-40bf-b4a7-b2d698495564",
+                    "label": "color",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "card/color"
+                    },
+                    "originX": 0.5038167938931297,
+                    "tintTopLeft": "#1148a1",
+                    "tintTopRight": "#1148a1",
+                    "tintBottomLeft": "#1148a1",
+                    "tintBottomRight": "#1148a1"
+                },
+                {
+                    "type": "Image",
+                    "id": "229219ee-a4bd-4dc7-a844-2977401125c8",
+                    "label": "element",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "card/f"
+                    },
+                    "x": -47,
+                    "y": -54,
+                    "originY": 0.5185185185185185
+                },
+                {
+                    "type": "Text",
+                    "id": "eed3170b-7b07-4cdc-adcd-133f2a8e8bb7",
+                    "label": "value",
+                    "scope": "CLASS",
+                    "x": -66,
+                    "y": -40,
+                    "text": "88",
+                    "fixedWidth": 36,
+                    "align": "center",
+                    "fontFamily": "Burbank Big Regular",
+                    "fontSize": "26px",
+                    "fontStyle": "bold",
+                    "color": "#000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

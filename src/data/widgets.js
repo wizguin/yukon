@@ -4,7 +4,12 @@ const widgets = {
     'IglooCatalog': require('@scenes/interface/catalogs/igloo/IglooCatalog'),
 
     'FindFour': require('@scenes/games/four/FindFour'),
-    'Map': require('@scenes/interface/game/map/Map')
+    'Mancala': require('@scenes/games/mancala/Mancala'),
+    'Map': require('@scenes/interface/game/map/Map'),
+    'NinjaBelts': require('@scenes/interface/instructions/ninjabelts/NinjaBelts'),
+    'NinjaInstructions': require('@scenes/interface/instructions/ninjainstructions/NinjaInstructions'),
+    'NinjaProgress': require('@scenes/games/ninjaprogress/NinjaProgress'),
+    'Sensei': require('@scenes/games/sensei/widget/SenseiWidget')
 }
 
 export default widgets

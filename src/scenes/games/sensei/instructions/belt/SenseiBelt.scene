@@ -1,0 +1,72 @@
+{
+    "id": "4f8d4522-9b0f-44e6-b42b-864b442c8610",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "a003baf5-af83-437e-b5a5-b9e160ffe729",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "fa0da86e-f10c-45db-9fcc-5cc2bb7e828f",
+                    "label": "belt",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onBeltClick()",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "belt/belt"
+                    },
+                    "originX": 0.503030303030303,
+                    "originY": 0.5037037037037037
+                },
+                {
+                    "type": "Image",
+                    "id": "26263dde-bd9a-4b97-be6e-73708819290f",
+                    "label": "color",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "belt/color"
+                    },
+                    "x": 1,
+                    "y": -1,
+                    "originX": 0.503448275862069
+                },
+                {
+                    "type": "Image",
+                    "id": "3d77bfd2-99f5-4d34-bf08-b3aeccb56d78",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "belt/shadow"
+                    },
+                    "x": 1,
+                    "y": 4,
+                    "originX": 0.503448275862069
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

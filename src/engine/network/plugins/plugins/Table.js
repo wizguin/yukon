@@ -10,6 +10,11 @@ export default class Table extends Plugin {
             'join_table': this.joinTable,
             'update_table': this.updateTable
         }
+
+        this.types = {
+            'four': 'FindFour',
+            'mancala': 'Mancala'
+        }
     }
 
     getTables(args) {
@@ -19,8 +24,7 @@ export default class Table extends Plugin {
     joinTable(args) {
         this.world.client.sendMoveToSeat(args.table, args.seat)
 
-        // Todo: load different tables
-        this.interface.loadWidget('FindFour', true)
+        this.interface.loadWidget(this.types[args.game], true)
     }
 
     updateTable(args) {

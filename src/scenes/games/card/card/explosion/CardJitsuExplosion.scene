@@ -1,0 +1,59 @@
+{
+    "id": "cb9a1643-8ee1-408f-89d0-0a8bbdb8ecee",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e7bfb279-18a7-49e4-9fa8-c3fe4c80d2f6",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "391966aa-0909-4214-b9fd-6150194390dc",
+                    "label": "poof",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/explosion/poof/poof0008"
+                    },
+                    "x": 8,
+                    "y": -24,
+                    "originX": 0.5006501950585176,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "4d21bfc4-c243-4863-8246-4369a55b0ede",
+                    "label": "start",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/explosion/start"
+                    },
+                    "originX": 0.5014577259475219,
+                    "originY": 0.5016722408026756,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

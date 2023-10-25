@@ -1,0 +1,60 @@
+{
+    "id": "21b5b7fb-31dc-48aa-beea-a780ae0fe510",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e5d528fa-be3b-4a85-ad3b-5d125d347631",
+            "label": "container_2",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "39370fe4-3a26-44fa-b7ac-a9ed6d763109",
+                    "label": "bubble",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "bubble"
+                    },
+                    "originX": 0.5004574565416285
+                },
+                {
+                    "type": "Text",
+                    "id": "9914f859-c661-4847-9b24-1a350014193a",
+                    "label": "dialog",
+                    "scope": "CLASS",
+                    "x": 26,
+                    "y": -72,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "This example text\nI have put it on three lines\nNot a good haiku",
+                    "fixedWidth": 1030,
+                    "align": "center",
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "40px",
+                    "color": "#000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

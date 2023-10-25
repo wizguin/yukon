@@ -26,6 +26,12 @@
 }
 
 @font-face {
+    font-family: 'Burbank Big Regular';
+    font-weight: bold;
+    src: url('../fonts/Burbank Big Regular Bold.woff2');
+}
+
+@font-face {
     font-family: 'Burbank Small';
     src: url('../fonts/Burbank Small Medium.woff2');
 }
@@ -39,6 +45,12 @@
 @font-face {
     font-family: 'CCComiccrazy';
     src: url('../fonts/CCComicrazy-Roman.woff2');
+}
+
+@font-face {
+    font-family: 'CCComiccrazy Bold';
+    font-weight: bold;
+    src: url('../fonts/CCComicrazy_Bold.woff2');
 }
 
 @font-face {

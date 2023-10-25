@@ -1,0 +1,79 @@
+{
+    "id": "09107910-1b0d-415a-80fe-5bf424b8d97a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8aaa5e07-e214-4a10-9b85-d7015b5bbea1",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e7941825-34f8-48c0-a2b3-90bb401eb0a7",
+                    "label": "item",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "menu/item",
+                    "Button.hoverCallback": "() => this.onOver()",
+                    "Button.hoverOutCallback": "() => this.onOut()",
+                    "Button.callback": "() => this.onUp()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "menu/item"
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "6cf0380e-497d-4d1a-b1cf-89d06a966ee5",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "components": [],
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "This is a menu item!",
+                    "fixedWidth": 720,
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "26px",
+                    "color": "#000"
+                },
+                {
+                    "type": "Image",
+                    "id": "45287d6d-9695-479a-92e0-873e03a1f6af",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "menu/icon/belt"
+                    },
+                    "x": -342,
+                    "originX": 0.5106382978723404,
+                    "originY": 0.5106382978723404,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

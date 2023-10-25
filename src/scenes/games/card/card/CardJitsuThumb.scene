@@ -1,0 +1,77 @@
+{
+    "id": "f44f8f17-7031-4845-aaba-fc842a544771",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapEnabled": true,
+        "snapWidth": 1533,
+        "snapHeight": 963,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "3d6d8f71-4942-41ab-882c-cbb250278716",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "508731ad-5b4c-455b-a37b-7aedbe538f01",
+                    "label": "back",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/thumbnail/back"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "ce66837f-6376-4b3c-aea9-71bb41e10eec",
+                    "label": "color",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/thumbnail/color"
+                    },
+                    "x": -2,
+                    "y": -2,
+                    "tintTopLeft": "#1148a1",
+                    "tintTopRight": "#1148a1",
+                    "tintBottomLeft": "#1148a1",
+                    "tintBottomRight": "#1148a1"
+                },
+                {
+                    "type": "Image",
+                    "id": "3ad6fe2a-409a-49fa-94a7-5a40b43330a1",
+                    "label": "element",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/thumbnail/f"
+                    },
+                    "originY": 0.5102040816326531
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "id": "897d8990-9358-4074-882a-e64ab2e43e6d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4293c1e1-13e0-421c-b2c6-9861f7b3a64d",
+            "label": "container_2",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "5c3eb48a-06c1-43a3-b1de-e46dd3528d27",
+                    "label": "belt",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "belt/belt"
+                    },
+                    "originX": 0.5009784735812133
+                },
+                {
+                    "type": "Image",
+                    "id": "6e2bd2fb-89af-4878-80f3-f79d68a62080",
+                    "label": "color",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "belt/color"
+                    },
+                    "x": 4,
+                    "y": -1,
+                    "originX": 0.503448275862069
+                },
+                {
+                    "type": "Image",
+                    "id": "562d5386-43e0-4b1c-aa6e-cfa33c8928f6",
+                    "label": "shadow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "belt/shadow"
+                    },
+                    "x": 1,
+                    "y": 6,
+                    "originY": 0.5014492753623189
+                },
+                {
+                    "type": "Image",
+                    "id": "ef2c6293-d6b9-4fc4-9d07-cbcbd5d7faa7",
+                    "label": "ninja",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "mask/mask"
+                    },
+                    "originX": 0.500823723228995,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

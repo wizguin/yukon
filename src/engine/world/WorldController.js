@@ -100,6 +100,10 @@ export default class WorldController extends BaseScene {
         return buddy.online
     }
 
+    isClientUsername(username) {
+        return username.toLowerCase() === this.client.penguin.username.toLowerCase()
+    }
+
     getColor(id) {
         return this.crumbs.colors[id - 1] || this.crumbs.colors[0]
     }

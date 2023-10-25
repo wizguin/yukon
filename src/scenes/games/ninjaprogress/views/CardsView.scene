@@ -1,0 +1,98 @@
+{
+    "id": "eebb7e39-e8a3-4ccc-b5b3-6241aca388da",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f2796d25-cfcd-4029-aa65-b5959b3df19b",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "bcdbd623-a5b9-4c7b-ba61-e5929f6e594d",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "bg/2"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "6c6a4641-6550-4814-855c-b9ccb30ce606",
+                    "label": "scroll",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "scroll/scroll"
+                    },
+                    "x": 470,
+                    "y": 21
+                },
+                {
+                    "type": "Image",
+                    "id": "12eaafd0-60f0-4c74-8499-f5f82274178b",
+                    "label": "down",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "scroll/down",
+                    "Button.callback": "() => this.nextPage()",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "scroll/down"
+                    },
+                    "x": 470,
+                    "y": 238
+                },
+                {
+                    "type": "Image",
+                    "id": "5d509cd6-a79e-419b-94fb-6a8fed349bdf",
+                    "label": "up",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "scroll/up",
+                    "Button.callback": "() => this.prevPage()",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "scroll/up"
+                    },
+                    "x": 470,
+                    "y": -193
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "lists": [
+        {
+            "id": "5f9fb9e1-bb62-4599-b6e1-05cdd4f4555c",
+            "label": "cards"
+        }
+    ]
+}

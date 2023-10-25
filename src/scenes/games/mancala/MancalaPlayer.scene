@@ -1,0 +1,114 @@
+{
+    "id": "bb969ff5-2103-4d09-a09b-4cad958047d4",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "fbe440e4-3c46-44fd-a3df-22cbec77387c",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "145c1cb0-bf8b-4f3e-9476-356a8b9170ec",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "mancala",
+                        "frame": "player/spinner"
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "f47ca1f1-d476-415e-9191-c59c11b8937c",
+                    "label": "waiting",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 52,
+                    "originY": 0.5,
+                    "text": "Waiting for Player",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px"
+                },
+                {
+                    "type": "Text",
+                    "id": "922fa1fd-ccd9-4ddb-a9d4-3b871943b0f4",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -47,
+                    "y": -30,
+                    "visible": false,
+                    "text": "USERNAME",
+                    "fixedWidth": 330,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "fontStyle": "bold italic",
+                    "color": "#D5E1FF",
+                    "stroke": "#006699",
+                    "strokeThickness": 9
+                },
+                {
+                    "type": "Text",
+                    "id": "9dc99cde-1ca7-4fd4-b015-73c17698ffe2",
+                    "label": "score",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 432,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "Score: 0",
+                    "align": "right",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "color": "#000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "bg",
+            "label": "bg",
+            "tooltip": "bg",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "any"
+            }
+        },
+        {
+            "name": "mancala",
+            "label": "mancala",
+            "tooltip": "mancala",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "any"
+            }
+        }
+    ]
+}

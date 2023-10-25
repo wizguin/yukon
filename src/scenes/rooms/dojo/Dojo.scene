@@ -1,0 +1,298 @@
+{
+    "id": "96e2fae2-4efb-453e-b4a7-eb969252c5bd",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/dojo/dojo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Dojo",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "cdad28c5-a6ef-4041-b7a2-d1b67c1d0477",
+            "label": "bg",
+            "texture": {
+                "key": "dojo",
+                "frame": "bg"
+            },
+            "x": -4,
+            "y": -2,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "33712c63-4115-4d75-9703-cdd091474e6f",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": "400",
+            "MoveTo.y": "570",
+            "texture": {
+                "key": "dojo",
+                "frame": "door"
+            },
+            "x": 358,
+            "y": 421,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "779d8848-0d5a-4c38-93b2-1a51b4c294ed",
+            "label": "sensei",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dojo",
+                "frame": "sensei/sensei0001"
+            },
+            "x": 973,
+            "y": 372,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "11187da2-2046-47b4-8601-6631421f43ee",
+            "label": "tree",
+            "texture": {
+                "key": "dojo",
+                "frame": "tree"
+            },
+            "x": 1198,
+            "y": 451,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "cd9d3eb7-a7fe-4f75-9077-53b8c1a6eae5",
+            "label": "instructionsPoster",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "instructions_poster",
+            "Button.callback": "() => this.interface.loadWidget('NinjaInstructions')",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "dojo",
+                "frame": "instructions_poster"
+            },
+            "x": 631,
+            "y": 375,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "88e43778-3321-4a69-98e8-eadd7d082a6c",
+            "label": "instructions",
+            "texture": {
+                "key": "dojo",
+                "frame": "instructions"
+            },
+            "x": 647,
+            "y": 381,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "6532e5fe-0d2d-483d-9631-2f8abf2f93e1",
+            "label": "legendPoster",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "legend_poster",
+            "Button.callback": "() => this.interface.loadWidget('NinjaBelts')",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "dojo",
+                "frame": "legend_poster"
+            },
+            "x": 512,
+            "y": 375,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "89add8ea-3226-4101-914b-de9e1f6c0d4f",
+            "label": "legend",
+            "texture": {
+                "key": "dojo",
+                "frame": "legend"
+            },
+            "x": 534,
+            "y": 382,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "prefabId": "d60128ff-4079-4464-b688-dbdea3c52e20",
+            "id": "4ed85538-b1e1-4391-864a-12165867f2d7",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "waddle203",
+            "scope": "CLASS",
+            "moveToX": 1160,
+            "moveToY": 750,
+            "x": 1188,
+            "y": 813
+        },
+        {
+            "prefabId": "d6d50181-a9a9-48b9-b4a2-6096b1ad8542",
+            "id": "930e64d7-509f-4b66-b069-17ddd8228123",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "waddle202",
+            "scope": "CLASS",
+            "moveToX": 380,
+            "moveToY": 750,
+            "x": 358,
+            "y": 813
+        },
+        {
+            "prefabId": "7554bcf3-656c-48ed-97c0-e431350f8ba5",
+            "id": "7353dd85-f3a9-44e6-a1b5-efce0d80b611",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "waddle201",
+            "scope": "CLASS",
+            "moveToX": 920,
+            "moveToY": 650,
+            "x": 930,
+            "y": 706
+        },
+        {
+            "prefabId": "20915166-b810-4ea6-b9c1-62e694ee975c",
+            "id": "fb495e97-de4b-464b-91cc-e79480e53d2d",
+            "unlock": [
+                "x",
+                "y",
+                "moveToX",
+                "moveToY"
+            ],
+            "label": "waddle200",
+            "scope": "CLASS",
+            "moveToX": 620,
+            "moveToY": 650,
+            "x": 616,
+            "y": 706
+        },
+        {
+            "type": "Rectangle",
+            "id": "ddcfe359-2530-437e-8de5-d24516fa0c13",
+            "label": "zone",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "Zone.hoverCallback": "() => this.onSenseiOver()",
+            "Zone.hoverOutCallback": "() => this.onSenseiOut()",
+            "MoveTo.x": "1096",
+            "MoveTo.y": "640",
+            "x": 1096,
+            "y": 490,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 246,
+            "height": 217
+        },
+        {
+            "type": "Image",
+            "id": "f8368dcf-c97e-4fd6-8b91-a1e62e7bd9c1",
+            "label": "cards",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "cards",
+            "Button.callback": "() => this.interface.loadWidget('NinjaProgress')",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "dojo",
+                "frame": "cards"
+            },
+            "x": 1342,
+            "y": 819,
+            "originX": 0,
+            "originY": 0,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "f254b723-f462-4cbf-b100-dadcf1b8e2a0",
+            "label": "cauldronBack",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/back"
+            },
+            "x": 918,
+            "y": 540,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "af14ada9-4962-47b2-a360-9f49189a5894",
+            "label": "cauldronSmoke",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/smoke/smoke0001"
+            },
+            "x": 954,
+            "y": 511
+        },
+        {
+            "type": "Image",
+            "id": "cb465f3b-f7c4-491c-9b8b-035cccf288c1",
+            "label": "cauldronFront",
+            "texture": {
+                "key": "dojo",
+                "frame": "cauldron/front"
+            },
+            "x": 926,
+            "y": 550,
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

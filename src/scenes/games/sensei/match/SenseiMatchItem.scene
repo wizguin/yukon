@@ -1,0 +1,83 @@
+{
+    "id": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "dd60dc30-073d-45d0-a9ee-dd562211f7f5",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "a26cef61-4e6e-48e6-bf95-9462fb1949c6",
+                    "label": "item",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/item"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "940a9878-56ab-4312-903e-18df2c2c58a0",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/icon-player"
+                    },
+                    "x": -137,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "b4fdaa43-9dc9-4152-a95e-28f3de2b805e",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "main",
+                        "frame": "buddy/icon-load"
+                    },
+                    "x": -137
+                },
+                {
+                    "type": "Text",
+                    "id": "f366378c-85d3-48fe-b1e9-a20d9b0e482f",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 25,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 270,
+                    "fontFamily": "Arial",
+                    "fontSize": "24px"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

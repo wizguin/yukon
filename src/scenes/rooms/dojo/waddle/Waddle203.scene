@@ -1,0 +1,137 @@
+{
+    "id": "d60128ff-4079-4464-b688-dbdea3c52e20",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "92e98aa4-f6b1-4b7b-bee2-08bc6a7b7bef",
+            "label": "container_1",
+            "scaleX": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "dd831ee5-3fa1-4d8e-adf4-273bf9ac6372",
+                    "label": "mat",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "mat/mat_1",
+                    "Button.activeFrame": false,
+                    "Button.pixelPerfect": true,
+                    "ShowHint.text": "card_hint",
+                    "texture": {
+                        "key": "dojo",
+                        "frame": "mat/mat_1"
+                    },
+                    "originX": 0.5018450184501845
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "dbfd168d-a0ff-4e9b-a3c1-dc79843e1c10",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done1",
+                    "scope": "CLASS",
+                    "x": -30,
+                    "y": -78,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "15d4098a-2e57-4056-9c9e-14a81ad3362e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done0",
+                    "scope": "CLASS",
+                    "x": 69,
+                    "y": -78,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "c5ebb9a9-0910-4792-b474-60a809e6e3ee",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint",
+                        "visible"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 3,
+                    "donePoint": "done0",
+                    "x": -54,
+                    "y": -16,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "e2529f8b-9377-4329-81b1-8038dbd04fcd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "sitFrame",
+                        "donePoint",
+                        "visible"
+                    ],
+                    "label": "seat0",
+                    "scope": "CLASS",
+                    "sitFrame": 7,
+                    "donePoint": "done1",
+                    "x": 77,
+                    "y": -16,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "prefabProperties": [
+        {
+            "name": "moveToX",
+            "label": "moveToX",
+            "tooltip": "moveToX",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveToY",
+            "label": "moveToY",
+            "tooltip": "moveToY",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

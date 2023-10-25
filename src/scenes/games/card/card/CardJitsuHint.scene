@@ -1,0 +1,77 @@
+{
+    "id": "f7bc21d3-944c-4122-96b0-93ea4388bcff",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d1a28e21-a0ab-469f-ad9f-3aeeee456248",
+            "label": "container_1",
+            "components": [],
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "92c4b27a-4d26-4219-b33d-a64e40d6491e",
+                    "label": "hint",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/hint"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "0e24a1b2-3bc4-408f-98aa-72a985b57917",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "card/power/1"
+                    },
+                    "y": -87,
+                    "originY": 0.5135135135135135
+                },
+                {
+                    "type": "Text",
+                    "id": "4bfbda05-5539-4e91-ad28-78eb4d2d0cd8",
+                    "label": "description",
+                    "scope": "CLASS",
+                    "components": [],
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 300,
+                    "fixedHeight": 130,
+                    "lineSpacing": 1,
+                    "align": "center",
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "24px",
+                    "fontStyle": "bold",
+                    "color": "#000",
+                    "wordWrapWidth": 300,
+                    "wordWrapUseAdvanced": true
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
