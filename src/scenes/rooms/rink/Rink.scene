@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "autoImport": true,
         "superClassName": "RoomScene",
         "preloadMethodName": "_preload",
         "preloadPackFiles": [
@@ -20,7 +21,6 @@
             "type": "Image",
             "id": "1cbd9670-8af9-419a-a0a4-06e6d95c1257",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "bg"
@@ -34,7 +34,6 @@
             "type": "Image",
             "id": "139351a3-ad27-4f1c-b1cc-cb39e13fb57d",
             "label": "rink_border",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "rink_border"
@@ -48,7 +47,6 @@
             "type": "Image",
             "id": "8d069f94-5f09-4127-8056-9e6adf5c877d",
             "label": "sports",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "sports"
@@ -62,7 +60,6 @@
             "type": "Image",
             "id": "5efbc284-3a48-4070-afaa-7e75fdd7fa7a",
             "label": "sports_door0001",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "sports_door0001"
@@ -74,22 +71,8 @@
         },
         {
             "type": "Image",
-            "id": "dd5aac14-4403-46f8-89e5-bf4c0af9d7e1",
-            "label": "ball",
-            "components": [],
-            "texture": {
-                "key": "rink",
-                "frame": "ball"
-            },
-            "x": 765,
-            "y": 537,
-            "originY": 0.7037037
-        },
-        {
-            "type": "Image",
             "id": "8d678d53-c165-41fb-84fa-af61ae034f40",
             "label": "fish_dogs",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "fish_dogs"
@@ -103,7 +86,6 @@
             "type": "Image",
             "id": "ef1c8365-1a0f-48ec-ad08-058a520546e3",
             "label": "left_bleachers",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "left_bleachers"
@@ -117,7 +99,6 @@
             "type": "Image",
             "id": "1a5fbcad-92bb-46b9-8009-7b1decadfe73",
             "label": "bleachers_rail",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "bleachers_rail"
@@ -131,7 +112,6 @@
             "type": "Image",
             "id": "71d3ac56-d068-41fc-a032-34745024edf5",
             "label": "right_bleachers",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "right_bleachers"
@@ -145,7 +125,6 @@
             "type": "Image",
             "id": "75874fb2-e84e-4279-8d62-8c6a59cb2bb5",
             "label": "bleachers_rail_1",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "bleachers_rail"
@@ -160,7 +139,6 @@
             "type": "Image",
             "id": "0e99bf40-ebdd-49df-9cd2-299b87a4eb9b",
             "label": "drink",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "drink"
@@ -173,7 +151,6 @@
             "type": "Image",
             "id": "4696c680-3ebf-4d19-b173-930fa9100e32",
             "label": "fg",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "fg"
@@ -187,7 +164,6 @@
             "type": "Image",
             "id": "3e1b4e7e-0f5b-4cda-ac6e-248ce8878e73",
             "label": "trash",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "trash"
@@ -201,7 +177,6 @@
             "type": "Image",
             "id": "a37ff0c1-0127-4006-a381-ce6757c35c1d",
             "label": "snacks",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "snacks"
@@ -215,7 +190,6 @@
             "type": "Image",
             "id": "32361733-5092-4745-9a30-10cddef6d1e5",
             "label": "stand_base",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "stand_base"
@@ -229,7 +203,6 @@
             "type": "Image",
             "id": "be5cc6f5-703e-4a40-894f-ec6d5d3d7cc9",
             "label": "stand_middle",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "stand_middle"
@@ -243,7 +216,6 @@
             "type": "Image",
             "id": "623653b5-a2d7-4918-8598-d48314177fe6",
             "label": "stand_top",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "stand_top"
@@ -257,7 +229,6 @@
             "type": "Image",
             "id": "e98107c1-00e5-4038-af33-9c09f0215d15",
             "label": "goal_back",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "goal_back"
@@ -271,7 +242,6 @@
             "type": "Image",
             "id": "d2fc417b-d621-42bf-b36f-9ceb490309a9",
             "label": "goal",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "goal"
@@ -285,7 +255,6 @@
             "type": "Image",
             "id": "e0207549-cdcf-46ef-bc96-f47224bdbf9e",
             "label": "goal_back_1",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "goal_back"
@@ -300,7 +269,6 @@
             "type": "Image",
             "id": "22bb19b8-4dba-44de-b801-0c1a933e24e7",
             "label": "goal_1",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "goal"
@@ -315,7 +283,6 @@
             "type": "Image",
             "id": "1daf781a-48ce-435e-8a67-ff83a00acf18",
             "label": "snacks_door0001",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "snacks_door0001"
@@ -327,13 +294,26 @@
             "type": "Image",
             "id": "9b6face9-4978-4553-9f5a-f1a87ad0a76a",
             "label": "snacks_ring",
-            "components": [],
             "texture": {
                 "key": "rink",
                 "frame": "snacks_ring"
             },
             "x": 1250,
             "y": 200
+        },
+        {
+            "prefabId": "dc463eea-eb00-439e-ab39-e70b942a7342",
+            "id": "717fc086-d109-4cef-928b-fcbd43c99816",
+            "unlock": [
+                "x",
+                "y",
+                "visible"
+            ],
+            "label": "hockeyGame",
+            "scope": "CLASS",
+            "x": 764,
+            "y": 540,
+            "visible": false
         }
     ],
     "plainObjects": [],
@@ -341,7 +321,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
@@ -349,7 +329,6 @@
             "label": "sort",
             "objectIds": [
                 "4696c680-3ebf-4d19-b173-930fa9100e32",
-                "dd5aac14-4403-46f8-89e5-bf4c0af9d7e1",
                 "e98107c1-00e5-4038-af33-9c09f0215d15",
                 "d2fc417b-d621-42bf-b36f-9ceb490309a9",
                 "e0207549-cdcf-46ef-bc96-f47224bdbf9e",
@@ -366,7 +345,8 @@
                 "32361733-5092-4745-9a30-10cddef6d1e5",
                 "623653b5-a2d7-4918-8598-d48314177fe6",
                 "3e1b4e7e-0f5b-4cda-ac6e-248ce8878e73",
-                "139351a3-ad27-4f1c-b1cc-cb39e13fb57d"
+                "139351a3-ad27-4f1c-b1cc-cb39e13fb57d",
+                "717fc086-d109-4cef-928b-fcbd43c99816"
             ]
         }
     ]
