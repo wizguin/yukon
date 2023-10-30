@@ -157,7 +157,7 @@ export default class HockeyGame extends BaseContainer {
         this.friction = 0.05
         this.speedDiv = 12
         this.maxAngleFromHorizontal = 50
-        this.maxVerticalFromNetCenter = 15
+        this.maxVerticalFromNetCenter = 30
 
         // Hides all children except puck
         this.hidePhysics()
