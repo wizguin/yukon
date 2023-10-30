@@ -145,6 +145,8 @@ export default class Rink extends RoomScene {
 
         this.hockeyGame.addListeners()
         this.hockeyGame.sendGetPuck()
+
+        this.hockeyGame.show()
     }
 
     update() {
