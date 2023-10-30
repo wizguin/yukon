@@ -159,6 +159,10 @@ export default class HockeyGame extends BaseContainer {
         this.maxAngleFromHorizontal = 50
         this.maxVerticalFromNetCenter = 30
 
+        // Timeout after 2500 fixed updates (~40 seconds) when puck isn't moving
+        this.timeout = 2500
+        this.defaultTimeout = this.timeout
+
         // Hides all children except puck
         this.hidePhysics()
 
@@ -212,6 +216,8 @@ export default class HockeyGame extends BaseContainer {
 
         if (this.puck.isMoving) {
             this.updatePhysics()
+        } else {
+            this.updateTimeout()
         }
     }
 
@@ -220,6 +226,19 @@ export default class HockeyGame extends BaseContainer {
         this.addVelocity()
         this.collideWithNets()
         this.collideWithWalls()
+    }
+
+    updateTimeout() {
+        if (this.puck.isInStartPos) {
+            return
+        }
+
+        this.timeout -= 1
+
+        if (this.timeout <= 0) {
+            this.resetPuck()
+            this.resetTimeout()
+        }
     }
 
     onMoveStart(args) {
@@ -294,6 +313,8 @@ export default class HockeyGame extends BaseContainer {
     }
 
     movePuck(puckX, puckY, speedX, speedY) {
+        this.resetTimeout()
+
         this.puck.isMoving = true
 
         this.puck.setPosition(puckX, puckY)
@@ -424,6 +445,10 @@ export default class HockeyGame extends BaseContainer {
 
     resetPuck() {
         this.puck.reset()
+    }
+
+    resetTimeout() {
+        this.timeout = this.defaultTimeout
     }
 
     hidePhysics() {

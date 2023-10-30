@@ -36,6 +36,10 @@ export default class HockeyPuck extends BaseImage {
         return this.y + this.parentContainer.y
     }
 
+    get isInStartPos() {
+        return this.x === 0 && this.y === 0
+    }
+
     setVelocity(x, y) {
         this.velocity.set(x, y)
     }
