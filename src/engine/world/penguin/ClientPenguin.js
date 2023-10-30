@@ -54,6 +54,8 @@ export default class ClientPenguin extends Penguin {
         if (path) {
             this.addMoveTween(path)
             this.network.send('send_position', { x: path.target.x, y: path.target.y })
+
+            this.scene.events.emit('move_start', { x: x, y: y })
         }
     }
 
@@ -62,6 +64,8 @@ export default class ClientPenguin extends Penguin {
 
         super.onMoveComplete()
         this.isTrigger()
+
+        this.scene.events.emit('move_end')
     }
 
     isTrigger() {
