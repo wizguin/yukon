@@ -1,0 +1,66 @@
+{
+    "id": "94535fbd-178b-46f2-a995-1dd72d803895",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4645b7a2-5b6f-4953-9ebd-1226540eb5b4",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ab83195e-cec8-49c5-a5b2-1eb80dc96830",
+                    "label": "help",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.hoverCallback": "() => this.onOver()",
+                    "SimpleButton.hoverOutCallback": "() => this.onOut()",
+                    "SimpleButton.pixelPerfect": true,
+                    "texture": {
+                        "key": "cardjitsu",
+                        "frame": "help"
+                    },
+                    "originX": 0.5005370569280344,
+                    "originY": 0.5004436557231589
+                },
+                {
+                    "type": "Text",
+                    "id": "108802b2-880c-4a19-893e-a4ddb0e4763f",
+                    "label": "text",
+                    "components": [],
+                    "y": -275,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "If tied, the highest number wins.",
+                    "fixedWidth": 828,
+                    "fixedHeight": 50,
+                    "align": "center",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "32px",
+                    "color": "#333"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

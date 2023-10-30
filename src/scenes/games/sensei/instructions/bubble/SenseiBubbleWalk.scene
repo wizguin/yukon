@@ -1,0 +1,192 @@
+{
+    "id": "22a41d6c-54a1-45d7-b3ae-580a36389586",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "86cdbc54-b5fc-4f5e-8838-6ba02ddec0ec",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "5d85551b-e50c-4b54-ab8a-a160d89c1115",
+                    "label": "backFoot",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/1_instance3_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "e6d7478e-cf80-4fd1-a855-cd86e90aca1f",
+                    "label": "frontFoot",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/2_instance5_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "ac1d2cc7-2274-4d78-a8d5-695f8c94d1af",
+                    "label": "backArmLine",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/3_instance7_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "95574afd-4503-46de-adf3-cee52bccec64",
+                    "label": "backArm",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/4_backarm_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "7eba80ed-9087-49e1-84c2-01880626f3d3",
+                    "label": "bodyLine",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/5_instance8_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "4e1d6789-c309-4469-8fb4-21a090ad217d",
+                    "label": "body",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/6_body_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "8cd82544-a3da-402a-bc39-e81b876d9dd5",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/7_instance10_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "9475c700-6ed4-4d94-8fe8-a95c6943d2f3",
+                    "label": "eye",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/8_instance11_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "796fb263-66db-4602-9e3b-382a7978b006",
+                    "label": "pupil",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/9_instance13_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "3eb3e714-566f-4467-9b67-3d81f5d9e2d4",
+                    "label": "sensei",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/10_sensei_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "9fe3e127-2e32-44f3-8f68-7f258d254035",
+                    "label": "beak",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/11_instance18_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "d566321a-b1d5-4a57-9160-8348d14945dd",
+                    "label": "beltLine",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/12_beltline_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "11bc2ebc-2fe3-4b7b-8d6d-2be4e6b78c71",
+                    "label": "belt",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/13_belt_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "57c75665-de10-4c11-9a8d-671445622e44",
+                    "label": "frontArmLine",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/14_instance22_1"
+                    }
+                },
+                {
+                    "type": "Sprite",
+                    "id": "46e37fd7-de04-4caa-a063-987cb236c355",
+                    "label": "frontArm",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/walk/15_frontarm_1"
+                    }
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "f960adb1-5d55-452f-89d3-8adcfcf1119f",
+            "label": "colorSprites",
+            "objectIds": [
+                "4e1d6789-c309-4469-8fb4-21a090ad217d",
+                "46e37fd7-de04-4caa-a063-987cb236c355",
+                "95574afd-4503-46de-adf3-cee52bccec64"
+            ]
+        },
+        {
+            "id": "0c502c58-3bf0-401b-afb4-6ef8cf3fe967",
+            "label": "beltSprites",
+            "objectIds": [
+                "11bc2ebc-2fe3-4b7b-8d6d-2be4e6b78c71",
+                "d566321a-b1d5-4a57-9160-8348d14945dd"
+            ]
+        }
+    ]
+}

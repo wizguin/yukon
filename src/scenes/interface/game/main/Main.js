@@ -14,6 +14,7 @@ import Moderator from '../moderator/Moderator'
 import PlayerCard from '../playercard/PlayerCard'
 import Safe from '../floating/safe/Safe'
 import Settings from '../settings/Settings'
+import Waddle from '../waddle/Waddle'
 
 
 /* START OF COMPILED CODE */
@@ -23,12 +24,12 @@ export default class Main extends BaseScene {
     constructor() {
         super("Main");
 
-        /** @type {Phaser.GameObjects.Container} */
-        this.onlinePopup;
         /** @type {Phaser.GameObjects.Image} */
         this.popup;
         /** @type {Phaser.GameObjects.Text} */
         this.popupText;
+        /** @type {Phaser.GameObjects.Container} */
+        this.onlinePopup;
         /** @type {ChatLog} */
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
@@ -37,12 +38,14 @@ export default class Main extends BaseScene {
         this.request_button;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
-        /** @type {Phaser.GameObjects.Layer} */
-        this.widgetLayer;
+        /** @type {Waddle} */
+        this.waddle;
         /** @type {Buddy} */
         this.buddy;
         /** @type {PlayerCard} */
         this.playerCard;
+        /** @type {Phaser.GameObjects.Layer} */
+        this.widgetLayer;
         /** @type {ActionsMenu} */
         this.actionsMenu;
         /** @type {EmotesMenu} */
@@ -53,7 +56,7 @@ export default class Main extends BaseScene {
         this.moderator;
         /** @type {Settings} */
         this.settings;
-        /** @type {Array<Settings|Moderator|PlayerCard|Buddy>} */
+        /** @type {Array<Settings|Moderator|PlayerCard|Buddy|Waddle>} */
         this.hideOnSleep;
 
 
@@ -168,6 +171,11 @@ export default class Main extends BaseScene {
         // widgetLayer
         const widgetLayer = this.add.layer();
 
+        // waddle
+        const waddle = new Waddle(this, 1099, 332);
+        waddle.visible = false;
+        widgetLayer.add(waddle);
+
         // buddy
         const buddy = new Buddy(this, 1140, 436);
         buddy.visible = false;
@@ -204,7 +212,7 @@ export default class Main extends BaseScene {
         settings.visible = false;
 
         // lists
-        const hideOnSleep = [settings, moderator, playerCard, buddy];
+        const hideOnSleep = [settings, moderator, playerCard, buddy, waddle];
 
         // dock (components)
         new Interactive(dock);
@@ -307,16 +315,17 @@ export default class Main extends BaseScene {
         mod_buttonSimpleButton.hoverOutCallback = () => this.onModOut();
         mod_buttonSimpleButton.callback = () => this.onModClick();
 
-        this.onlinePopup = onlinePopup;
         this.popup = popup;
         this.popupText = popupText;
+        this.onlinePopup = onlinePopup;
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
         this.mod_m = mod_m;
-        this.widgetLayer = widgetLayer;
+        this.waddle = waddle;
         this.buddy = buddy;
         this.playerCard = playerCard;
+        this.widgetLayer = widgetLayer;
         this.actionsMenu = actionsMenu;
         this.emotesMenu = emotesMenu;
         this.safe = safe;

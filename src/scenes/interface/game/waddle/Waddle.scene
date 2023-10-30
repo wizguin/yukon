@@ -1,0 +1,155 @@
+{
+    "id": "032db1d9-1eac-4321-b4b3-ef359e514589",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "729c65f6-2998-4823-97ff-2ba3f648dd9a",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "bg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "0cec3224-ef6f-45d5-923a-3dbff900f144",
+                    "label": "bg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "waddle"
+                    },
+                    "y": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "d38ec65c-43c9-47d1-8bba-246ed197fe3e",
+                    "label": "tab",
+                    "texture": {
+                        "key": "main",
+                        "frame": "tab-2"
+                    },
+                    "y": -190
+                },
+                {
+                    "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
+                    "id": "bbf90d57-ecc8-4fb3-8815-2baa1aec66a7",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "waddle_item_3",
+                    "x": 0,
+                    "y": 100
+                },
+                {
+                    "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
+                    "id": "3588c486-0906-4565-b511-30925e03b354",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "waddle_item_2",
+                    "x": 0,
+                    "y": 48
+                },
+                {
+                    "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
+                    "id": "d72de3b8-e1eb-4a3d-9f4a-438af119150a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "waddle_item_1",
+                    "x": 0,
+                    "y": -4
+                },
+                {
+                    "prefabId": "64de3f26-671d-4f1f-acbf-49ffc1eeaa13",
+                    "id": "7fb1cdfc-e641-4100-8c14-86058fbefa78",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "waddle_item",
+                    "x": 0,
+                    "y": -56
+                },
+                {
+                    "type": "Text",
+                    "id": "635f3877-d38a-4af7-b58d-0687b7fec219",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "y": -122,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 420,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000"
+                },
+                {
+                    "type": "Image",
+                    "id": "0de71d0d-c87f-4d7c-b0c5-3b77c406342c",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 178,
+                    "y": -126
+                },
+                {
+                    "type": "Image",
+                    "id": "fd73af25-c9a4-4206-b587-e346a9db89b5",
+                    "label": "blue_x",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 178,
+                    "y": -128
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "17823bb3-1f2a-4ce2-9ec2-ca96304c0105",
+            "label": "items",
+            "objectIds": [
+                "7fb1cdfc-e641-4100-8c14-86058fbefa78",
+                "d72de3b8-e1eb-4a3d-9f4a-438af119150a",
+                "3588c486-0906-4565-b511-30925e03b354",
+                "bbf90d57-ecc8-4fb3-8815-2baa1aec66a7"
+            ]
+        }
+    ]
+}

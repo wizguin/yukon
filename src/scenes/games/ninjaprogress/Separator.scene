@@ -1,0 +1,87 @@
+{
+    "id": "4f090387-6719-455f-887b-a8bf5946be9f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "c6d135e1-2a4a-4b77-a666-bcdae81665f9",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "eebb7e39-e8a3-4ccc-b5b3-6241aca388da",
+                    "id": "ecd14e47-fbbf-4cfa-8a9b-988be08f4c61",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "cards",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 18,
+                    "y": -322,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "2d5f8b75-0c0b-4a5e-90a4-6abe9db5cc71",
+                    "label": "sep",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "separator/separator"
+                    },
+                    "x": 18,
+                    "y": -3
+                },
+                {
+                    "type": "Image",
+                    "id": "9727adbe-155c-48f6-b03b-79b85dcaf0a4",
+                    "label": "button",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onClick()",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "separator/button"
+                    },
+                    "y": -3
+                },
+                {
+                    "type": "Image",
+                    "id": "91643b28-6d46-4265-9b91-21400c869581",
+                    "label": "arrow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "separator/arrow"
+                    },
+                    "y": 6,
+                    "originY": 0.5454545454545454
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

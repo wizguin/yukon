@@ -1,0 +1,101 @@
+{
+    "id": "fbf6af33-9518-47c9-b5a9-fd3beb3a5292",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6c8b4abc-527b-4fb7-86e5-ce92b00f7ca6",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "06e66bb6-5a49-4833-8a26-681a8126ce3b",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "bg"
+                    },
+                    "x": 604,
+                    "y": 565
+                },
+                {
+                    "prefabId": "05d04137-c915-4f19-ba6c-2d937cd558d7",
+                    "id": "e7df3b1d-4174-48f4-a459-8ee32d5c0805",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "senseiSprite",
+                    "scope": "CLASS",
+                    "x": 178,
+                    "y": 332
+                },
+                {
+                    "type": "Sprite",
+                    "id": "285d21e7-04d7-4494-a425-7cff536c0c7a",
+                    "label": "hideout",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "hideout/hideout0001"
+                    },
+                    "x": 988,
+                    "y": 486,
+                    "originX": 0.5005599104143337,
+                    "visible": false
+                },
+                {
+                    "prefabId": "897d8990-9358-4074-882a-e64ab2e43e6d",
+                    "id": "d7b7ee82-0eb5-4a93-9f9f-ebb2c2c4eb8d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "award",
+                    "scope": "CLASS",
+                    "x": 1112,
+                    "y": 571,
+                    "visible": false
+                },
+                {
+                    "prefabId": "21b5b7fb-31dc-48aa-beea-a780ae0fe510",
+                    "id": "536fa4b4-a12b-4d0c-8c76-00af7f45305c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "speech",
+                    "scope": "CLASS",
+                    "x": 937,
+                    "y": 204,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

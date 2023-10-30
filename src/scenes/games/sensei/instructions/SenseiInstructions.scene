@@ -1,0 +1,202 @@
+{
+    "id": "7b12f529-40c2-42c2-a0a5-f84d3040a7fe",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9c2d42b1-a753-45da-8ac2-31cf4a41cddc",
+            "label": "instructions",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "26e917db-c028-470c-ba9e-317f90ba68b9",
+                    "label": "ninja",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "ninja/ninja0035"
+                    },
+                    "x": 1025,
+                    "y": 558,
+                    "originX": 0.5006226650062267,
+                    "originY": 0.5008976660682226,
+                    "visible": false
+                },
+                {
+                    "prefabId": "522cce2c-95b0-443c-8abd-e776fae3b36a",
+                    "id": "d594291c-4950-4a6b-a4d9-2e444b76a38e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "bubble",
+                    "scope": "CLASS",
+                    "x": 1025,
+                    "y": 558,
+                    "visible": false
+                },
+                {
+                    "prefabId": "4f8d4522-9b0f-44e6-b42b-864b442c8610",
+                    "id": "854bd9ca-ac7f-4714-bca1-ab60f0459c73",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "belt",
+                    "scope": "CLASS",
+                    "x": 979,
+                    "y": 547,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "aa86bf5a-4948-48e1-89da-ca19e1002398",
+                    "label": "help",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "help/help0001"
+                    },
+                    "x": 1150,
+                    "y": 646,
+                    "originX": 0.5003996802557954,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "5338c6ce-8dc9-4623-b334-53b971478d7c",
+                    "label": "winDifferent",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "win_different/win0091"
+                    },
+                    "x": 987,
+                    "y": 1335,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "5e425442-0702-407d-9d28-a059391f8ce3",
+                    "label": "winSame",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "win_same/win0090"
+                    },
+                    "x": 1826,
+                    "y": 484,
+                    "originX": 0.5002171081198437,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "c89b4d82-979c-43dd-9196-62ee7c16a495",
+                    "label": "tie",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "tie/tie0040"
+                    },
+                    "x": 1093,
+                    "y": 483,
+                    "originX": 0.5006353240152478,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "90c0fd72-05a3-47e5-a4d6-5899099ed769",
+                    "label": "fire",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "fire/fire0056"
+                    },
+                    "x": 1057,
+                    "y": 440,
+                    "originX": 0.5007704160246533,
+                    "originY": 0.5016835016835017,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "42e6ab7c-2bf1-4fd6-890c-85ffb6586851",
+                    "label": "snow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "snow/snow0056"
+                    },
+                    "x": 949,
+                    "y": 441,
+                    "originX": 0.5007898894154819,
+                    "originY": 0.5016835016835017,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "92e15995-dd48-4803-be48-7798b79c1b2b",
+                    "label": "water",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "water/water0056"
+                    },
+                    "x": 1057,
+                    "y": 440,
+                    "originX": 0.5007704160246533,
+                    "originY": 0.5016835016835017,
+                    "visible": false
+                },
+                {
+                    "type": "Sprite",
+                    "id": "3339fcf5-d715-4ff5-8d81-db0b8c3a477e",
+                    "label": "pick",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "pick/pick0001"
+                    },
+                    "x": 1564,
+                    "y": 1004,
+                    "visible": false
+                },
+                {
+                    "prefabId": "222ec92d-eefc-4309-a7b6-c43572c61a60",
+                    "id": "7702a0ab-d806-4596-be2d-7e15c4e692c1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "cards",
+                    "scope": "CLASS",
+                    "x": 1378,
+                    "y": 658,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

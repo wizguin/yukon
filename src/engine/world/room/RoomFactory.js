@@ -49,13 +49,15 @@ export default class RoomFactory {
     }
 
     createGame(args) {
-        let crumb = this.games[args.game]
+        let config = this.games[args.game]
 
-        if (crumb.flash) {
-            this.world.ruffle.bootGame(crumb)
+        if (config.flash) {
+            this.world.ruffle.bootGame(config)
 
             return
         }
+
+        return this.createRoom({ room: args.game })
     }
 
 }

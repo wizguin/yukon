@@ -65,7 +65,6 @@
             "type": "Image",
             "id": "aa9caccb-a731-4b3b-bfe5-984fe2f6d4ac",
             "label": "chat_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "chat-icon"
@@ -95,7 +94,6 @@
             "type": "Image",
             "id": "b192506d-5e8d-4220-98d0-60ad0d1e2e65",
             "label": "emote_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "emote-icon"
@@ -125,7 +123,6 @@
             "type": "Image",
             "id": "e48d913a-1f46-4bcc-ae4b-2bb6b5e7add7",
             "label": "action_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "action-icon"
@@ -155,7 +152,6 @@
             "type": "Image",
             "id": "0b686bbe-3796-4b9d-b965-ee59d7380e1f",
             "label": "snowball_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "snowball-icon"
@@ -185,7 +181,6 @@
             "type": "Image",
             "id": "9891188b-feea-49f2-8a70-4d5e85546a7c",
             "label": "chat_send_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "chat-icon"
@@ -215,7 +210,6 @@
             "type": "Image",
             "id": "71da470c-c4ad-4f6e-9aa1-ddc2aed0743f",
             "label": "badge_member",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "badge-member"
@@ -245,7 +239,6 @@
             "type": "Image",
             "id": "9fe13e03-fd99-450c-81f6-cf6220c3c28c",
             "label": "buddies_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "buddies-icon"
@@ -275,7 +268,6 @@
             "type": "Image",
             "id": "c3de3562-d313-43a0-b5c1-fa0cc197473a",
             "label": "igloo_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "igloo-icon"
@@ -305,7 +297,6 @@
             "type": "Image",
             "id": "2dd95bb8-62eb-4d8a-916e-734bc44b3c9d",
             "label": "help_icon",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "help-icon"
@@ -318,7 +309,6 @@
             "id": "fcd23835-76eb-4b24-bcc1-920fa5429d8f",
             "label": "onlinePopup",
             "scope": "CLASS",
-            "components": [],
             "x": 1155,
             "y": 849,
             "visible": false,
@@ -328,7 +318,6 @@
                     "id": "795c7f78-2f45-46e5-b2dd-de88c796aa68",
                     "label": "popup",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "buddy-online"
@@ -340,7 +329,6 @@
                     "id": "7cf83357-cb16-4ae2-94c0-49e37796db74",
                     "label": "popupText",
                     "scope": "CLASS",
-                    "components": [],
                     "x": -6,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -361,10 +349,8 @@
             ],
             "label": "chatLog",
             "scope": "CLASS",
-            "components": [],
             "x": 760,
-            "y": 12,
-            "nestedPrefabs": []
+            "y": 12
         },
         {
             "type": "Image",
@@ -472,7 +458,6 @@
             "id": "6dca3f2a-91a7-4ed4-8cf2-5a0ddf89d4c9",
             "label": "mod_m",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "main",
                 "frame": "mod/m"
@@ -485,8 +470,21 @@
             "id": "a205badf-674d-4f0f-bb3e-e687b24d30e9",
             "label": "widgetLayer",
             "scope": "CLASS",
-            "components": [],
             "list": [
+                {
+                    "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
+                    "id": "0040eb03-91ac-4caf-8c26-67b736b50f60",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "waddle",
+                    "scope": "CLASS",
+                    "x": 1099,
+                    "y": 332,
+                    "visible": false
+                },
                 {
                     "prefabId": "27889184-8ae4-4103-ab57-1cbad21b7401",
                     "id": "9acd4a58-cbf9-4751-b96a-2822f121af9c",
@@ -497,11 +495,9 @@
                     ],
                     "label": "buddy",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 1140,
                     "y": 436,
-                    "visible": false,
-                    "nestedPrefabs": []
+                    "visible": false
                 },
                 {
                     "prefabId": "aa26f680-5a55-46f1-b89f-e40211af8a8d",
@@ -513,11 +509,9 @@
                     ],
                     "label": "playerCard",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 446,
                     "y": 436,
-                    "visible": false,
-                    "nestedPrefabs": []
+                    "visible": false
                 }
             ]
         },
@@ -531,11 +525,9 @@
             ],
             "label": "actionsMenu",
             "scope": "CLASS",
-            "components": [],
             "x": 366,
             "y": 864,
-            "visible": false,
-            "nestedPrefabs": []
+            "visible": false
         },
         {
             "prefabId": "0dee3174-7c8b-4158-b686-0fbea0d0c1f1",
@@ -547,11 +539,9 @@
             ],
             "label": "emotesMenu",
             "scope": "CLASS",
-            "components": [],
             "x": 306,
             "y": 864,
-            "visible": false,
-            "nestedPrefabs": []
+            "visible": false
         },
         {
             "prefabId": "847139cb-5cc3-48bc-be0b-14aabf820c56",
@@ -563,11 +553,9 @@
             ],
             "label": "safe",
             "scope": "CLASS",
-            "components": [],
             "x": 246,
             "y": 925,
-            "visible": false,
-            "nestedPrefabs": []
+            "visible": false
         },
         {
             "prefabId": "d44a536e-8824-4c11-8cdd-649f5629a29c",
@@ -579,11 +567,9 @@
             ],
             "label": "moderator",
             "scope": "CLASS",
-            "components": [],
             "x": 760,
             "y": 480,
-            "visible": false,
-            "nestedPrefabs": []
+            "visible": false
         },
         {
             "prefabId": "f2e8b538-6469-4a45-b23d-beac8cbf03a0",
@@ -595,11 +581,9 @@
             ],
             "label": "settings",
             "scope": "CLASS",
-            "components": [],
             "x": 760,
             "y": 480,
-            "visible": false,
-            "nestedPrefabs": []
+            "visible": false
         }
     ],
     "plainObjects": [],
@@ -607,7 +591,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
@@ -617,7 +601,8 @@
                 "4904443b-abe1-429f-9557-f064db674790",
                 "7b10953c-f288-40da-8b3f-44af0dea100d",
                 "9770a528-0c5a-4720-a6db-eabd53c787e1",
-                "9acd4a58-cbf9-4751-b96a-2822f121af9c"
+                "9acd4a58-cbf9-4751-b96a-2822f121af9c",
+                "0040eb03-91ac-4caf-8c26-67b736b50f60"
             ]
         }
     ]

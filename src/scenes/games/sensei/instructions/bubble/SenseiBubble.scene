@@ -1,0 +1,95 @@
+{
+    "id": "522cce2c-95b0-443c-8abd-e776fae3b36a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "ed22e9d6-0163-442d-9108-d016721a9d38",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "e84fd791-8652-4ec9-b010-e739f9ba3f91",
+                    "label": "bubble",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/bubble0030"
+                    },
+                    "originX": 0.5006226650062267,
+                    "originY": 0.5008976660682226
+                },
+                {
+                    "prefabId": "22a41d6c-54a1-45d7-b3ae-580a36389586",
+                    "id": "4af4b1a6-f931-4986-9d71-401e2d976546",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "senseiBubbleWalk2",
+                    "scope": "CLASS",
+                    "x": 226,
+                    "y": 11
+                },
+                {
+                    "prefabId": "22a41d6c-54a1-45d7-b3ae-580a36389586",
+                    "id": "1488d3e7-9e54-4d92-8641-6e0a434aec0c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "senseiBubbleWalk1",
+                    "scope": "CLASS",
+                    "x": -102,
+                    "y": 11,
+                    "scaleX": -1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "047fedb6-2c67-4b2f-9cb0-3033708b696c",
+                    "label": "maskImage",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "senseiinstructions",
+                        "frame": "bubble/mask"
+                    },
+                    "originX": 0.5006226650062267,
+                    "originY": 0.5008976660682226,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "e48b384d-d017-4550-8aa7-33ee9a1985cb",
+            "label": "walks",
+            "objectIds": [
+                "1488d3e7-9e54-4d92-8641-6e0a434aec0c",
+                "4af4b1a6-f931-4986-9d71-401e2d976546"
+            ]
+        }
+    ]
+}

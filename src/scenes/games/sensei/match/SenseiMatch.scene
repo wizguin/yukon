@@ -1,0 +1,141 @@
+{
+    "id": "d658d0fb-b2e2-4eee-ba26-d33156d4eee1",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 80,
+        "snapHeight": 79,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e37bfe4e-e273-4274-9d00-41841d00298a",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "bg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "5688e8cb-f7d7-45bc-b786-59a8031f6dc7",
+                    "label": "bg",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "match/window"
+                    }
+                },
+                {
+                    "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
+                    "id": "c80802ff-9240-44e6-9512-d6cb00e47373",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "opponent",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 98
+                },
+                {
+                    "prefabId": "07fe953a-6cae-4a48-aa0d-6ab406415f4e",
+                    "id": "12bc02a8-5618-461e-83de-1a00a7412997",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "myPlayer",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 46
+                },
+                {
+                    "type": "Text",
+                    "id": "7b204eaf-dbd4-42cb-8322-ce985fdd95fd",
+                    "label": "message",
+                    "scope": "CLASS",
+                    "y": -20,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Waiting for more players",
+                    "fixedWidth": 460,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px"
+                },
+                {
+                    "type": "Text",
+                    "id": "150d74b5-74fe-4764-9d54-4a697e9eda43",
+                    "label": "time",
+                    "scope": "CLASS",
+                    "y": -100,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "10",
+                    "fixedWidth": 60,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Image",
+                    "id": "fd40b908-3817-45e9-9d72-e9fa95d657f1",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "match/spinner"
+                    },
+                    "y": -100,
+                    "originY": 0.5063291139240507
+                },
+                {
+                    "type": "Image",
+                    "id": "1e74f682-47c7-48d3-b696-f422a26ef831",
+                    "label": "xButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 234,
+                    "y": -124
+                },
+                {
+                    "type": "Image",
+                    "id": "931e5701-f927-410a-9586-ec26268a6b61",
+                    "label": "xIcon",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 234,
+                    "y": -126
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "id": "1df77fc4-8fe1-4fbe-9607-335bbd0715d1",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "90f3b620-7810-4e32-ae43-6e0cb91084d9",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "62f29b87-a3db-4de4-8c18-c156a2b82e9b",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "c1995031-6189-41a1-87ce-c923fe14fdfa",
+                    "label": "bg",
+                    "texture": {
+                        "key": "ninjainstructions",
+                        "frame": "bg"
+                    },
+                    "y": -24
+                },
+                {
+                    "type": "Image",
+                    "id": "cabb9816-92a8-4c33-9252-32bf2511ecf5",
+                    "label": "close",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "close",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "ninjainstructions",
+                        "frame": "close"
+                    },
+                    "x": 216,
+                    "y": -399
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

@@ -18,7 +18,7 @@ export default class DojoExt extends RoomScene {
 
         this.roomTriggers = {
             'map': () => this.interface.loadWidget('Map'),
-            'dojo': null,
+            'dojo': () => this.triggerRoom(320, 400, 660),
             'dojohide': null
         }
 

@@ -1,0 +1,94 @@
+{
+    "id": "05d04137-c915-4f19-ba6c-2d937cd558d7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "cd072e2a-a2e4-46a5-8808-9f05596ea6bf",
+            "label": "container_2",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "239209aa-cd82-49d7-bc0d-7e1526fcf9a0",
+                    "label": "base",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/base/base0001"
+                    },
+                    "originX": 0.501039501039501
+                },
+                {
+                    "type": "Sprite",
+                    "id": "10bcd89a-7f3b-422c-95a3-591f6bdfd528",
+                    "label": "beard",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/beard/beard0001"
+                    },
+                    "x": 66,
+                    "y": 118
+                },
+                {
+                    "type": "Sprite",
+                    "id": "1f15b8e8-4bc2-4d8d-be15-5da03a121018",
+                    "label": "beak",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/beak/beak0001"
+                    },
+                    "x": 84,
+                    "y": -111,
+                    "originY": 0.5037593984962406
+                },
+                {
+                    "type": "Sprite",
+                    "id": "8368fd3d-03ce-4524-b9cd-84f9b22c76b8",
+                    "label": "eyebrows",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/eyebrows/eyebrows0001"
+                    },
+                    "x": 45,
+                    "y": -148,
+                    "originY": 0.5027624309392266
+                },
+                {
+                    "type": "Sprite",
+                    "id": "f8ddd89e-07bd-4d19-a71e-2f7c0ccb247c",
+                    "label": "front",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sensei",
+                        "frame": "sensei/talk/front/front0001"
+                    },
+                    "x": 71,
+                    "y": 182,
+                    "originX": 0.5009487666034156
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

@@ -1,0 +1,271 @@
+{
+    "id": "69fb792c-79d1-47f9-a9aa-152d9e190c9d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e79a212e-9595-46b8-930e-6c5f2e0e62c0",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ceff7150-8ae8-4b1a-ba67-c7018433f491",
+                    "label": "cardsButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "button",
+                    "Button.callback": "() => this.onButtonClick()",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "button"
+                    },
+                    "y": 254,
+                    "originY": 0.5060240963855421
+                },
+                {
+                    "type": "Image",
+                    "id": "7b9b4fe8-ae89-45a4-abb5-b027bf877c8b",
+                    "label": "cards",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "cards"
+                    },
+                    "x": 68,
+                    "y": 245
+                },
+                {
+                    "type": "Text",
+                    "id": "179eb58d-0975-484c-b228-cc6276263375",
+                    "label": "cardsNum",
+                    "scope": "CLASS",
+                    "x": 64,
+                    "y": 248,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "0",
+                    "fixedWidth": 100,
+                    "align": "center",
+                    "fontFamily": "Burbank Big Regular",
+                    "fontSize": "48px",
+                    "fontStyle": "bold",
+                    "stroke": "#000",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.fill": true,
+                    "shadow.blur": 2
+                },
+                {
+                    "type": "Text",
+                    "id": "928a8a3c-c2c0-4c2b-8b73-0b1bcd0cfe0e",
+                    "label": "cardsText",
+                    "x": -81,
+                    "y": 254,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "VIEW YOUR\nCARDS",
+                    "fixedWidth": 140,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "20px",
+                    "fontStyle": "bold italic",
+                    "color": "#736357"
+                },
+                {
+                    "type": "Image",
+                    "id": "076ce9cb-e64c-4dcc-be8a-e351954f6d6a",
+                    "label": "progressBg",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "progress"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "d269ba3b-46d9-4af2-8920-62965ed19bf6",
+                    "label": "nextBelt",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "next/1"
+                    },
+                    "x": 436,
+                    "y": 27,
+                    "originX": 0.5042735042735043,
+                    "originY": 0.5052631578947369
+                },
+                {
+                    "type": "Image",
+                    "id": "a85434a7-54ef-4c09-99d2-857f010bf8fc",
+                    "label": "currentBelt",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "belt/1"
+                    },
+                    "x": -399,
+                    "y": 66,
+                    "originX": 0.502262443438914
+                },
+                {
+                    "type": "Text",
+                    "id": "21d65873-cc17-4483-be74-d80f8a55abad",
+                    "label": "nextText",
+                    "scope": "CLASS",
+                    "x": 244,
+                    "y": -42,
+                    "originX": 0.5,
+                    "originY": 1,
+                    "text": "Next Belt",
+                    "fixedWidth": 500,
+                    "align": "right",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "26px",
+                    "fontStyle": "bold",
+                    "color": "#333"
+                },
+                {
+                    "type": "Text",
+                    "id": "d70717d1-7680-46ce-9783-b2a5963bcbdd",
+                    "label": "currentText",
+                    "scope": "CLASS",
+                    "x": -256,
+                    "y": -42,
+                    "originX": 0.5,
+                    "originY": 1,
+                    "text": "Current Belt",
+                    "fixedWidth": 500,
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "32px",
+                    "fontStyle": "bold",
+                    "color": "#333"
+                },
+                {
+                    "type": "Image",
+                    "id": "429725a8-bb97-4868-9739-0025aa45eead",
+                    "label": "bar",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ninjaprogress",
+                        "frame": "progress/1"
+                    },
+                    "x": 46,
+                    "y": 7,
+                    "originX": 0.5008347245409015
+                },
+                {
+                    "type": "Text",
+                    "id": "c60c1252-f381-4260-b587-06924e6e85b7",
+                    "label": "progressText",
+                    "scope": "CLASS",
+                    "x": -192,
+                    "y": 8,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "0%",
+                    "fixedWidth": 80,
+                    "align": "right",
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "28px",
+                    "fontStyle": "bold",
+                    "color": "#333"
+                },
+                {
+                    "type": "Container",
+                    "id": "a91499ce-58e4-4159-866a-6074a3bd6bd8",
+                    "label": "sensei",
+                    "scope": "CLASS",
+                    "x": 12,
+                    "y": -14,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "a8b59277-06bc-450f-a0c6-408956531166",
+                            "label": "senseiImage",
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "sensei"
+                            },
+                            "x": 116,
+                            "originY": 0.5023255813953489
+                        },
+                        {
+                            "type": "Text",
+                            "id": "57ed6934-c5fb-4f95-8746-20adfbcdfd66",
+                            "label": "senseiText",
+                            "y": 20,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Well done, grasshopper. You have earned your\nblack belt. Take the next step of your training\njourney and challenge Sensei to become a ninja.",
+                            "fixedWidth": 600,
+                            "lineSpacing": 8,
+                            "align": "center",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "26px",
+                            "color": "#333"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "73fc1120-7bec-42f7-a3ff-c1ef70dbdf4b",
+                    "label": "hideout",
+                    "scope": "CLASS",
+                    "x": -26,
+                    "y": -6,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "29c6e148-233f-4cbc-959a-f4b295425d1f",
+                            "label": "hideoutImage",
+                            "texture": {
+                                "key": "ninjaprogress",
+                                "frame": "hideout"
+                            }
+                        },
+                        {
+                            "type": "Text",
+                            "id": "7b63e695-ade2-4079-9399-8ac8fa14d8b7",
+                            "label": "hideoutText",
+                            "x": 132,
+                            "y": 10,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Congratulations, ninja! You are a wise Card-Jitsu\nmaster and you now have access to the Ninja Hideout.",
+                            "fixedWidth": 800,
+                            "lineSpacing": 8,
+                            "align": "center",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "26px",
+                            "color": "#333"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}
