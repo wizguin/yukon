@@ -99,8 +99,8 @@
             "id": "aaf33e87-363f-418b-ad7f-f1f814c96da2",
             "label": "progress",
             "scope": "CLASS",
-            "x": 762.3364439073046,
-            "y": 50,
+            "x": 784,
+            "y": 53,
             "list": [
                 {
                     "type": "Image",
@@ -111,7 +111,7 @@
                         "key": "sled",
                         "frame": "progress/bar"
                     },
-                    "x": 303.66355609269544
+                    "x": 304
                 }
             ]
         },
@@ -153,6 +153,33 @@
             "x": 1253,
             "y": 783,
             "originY": 0.4050179211469534
+        },
+        {
+            "type": "Image",
+            "id": "1ba0251d-c368-463b-ae88-c79f4fffbf7e",
+            "label": "closeButton",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "grey-button",
+            "Button.callback": "() => this.onCloseClick()",
+            "texture": {
+                "key": "main",
+                "frame": "grey-button"
+            },
+            "x": 1458,
+            "y": 52
+        },
+        {
+            "type": "Image",
+            "id": "b74212c4-75d9-44de-a31c-07b68eed5a35",
+            "label": "x",
+            "texture": {
+                "key": "main",
+                "frame": "grey-x"
+            },
+            "x": 1458,
+            "y": 50
         }
     ],
     "plainObjects": [],

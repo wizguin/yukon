@@ -1,6 +1,7 @@
 /* START OF COMPILED CODE */
 
 import GameScene from "../GameScene";
+import Button from "../../components/Button";
 /* START-USER-IMPORTS */
 
 import SledPlayer from './SledPlayer'
@@ -74,10 +75,10 @@ export default class Sled extends GameScene {
         const hill = this.add.container(361, 480);
 
         // progress
-        const progress = this.add.container(762.3364439073046, 50);
+        const progress = this.add.container(784, 53);
 
         // bar
-        const bar = this.add.image(303.66355609269544, 0, "sled", "progress/bar");
+        const bar = this.add.image(304, 0, "sled", "progress/bar");
         progress.add(bar);
 
         // text
@@ -91,6 +92,17 @@ export default class Sled extends GameScene {
         // note
         const note = this.add.image(1253, 783, "sled", "note");
         note.setOrigin(0.5, 0.4050179211469534);
+
+        // closeButton
+        const closeButton = this.add.image(1458, 52, "main", "grey-button");
+
+        // x
+        this.add.image(1458, 50, "main", "grey-x");
+
+        // closeButton (components)
+        const closeButtonButton = new Button(closeButton);
+        closeButtonButton.spriteName = "grey-button";
+        closeButtonButton.callback = () => this.onCloseClick();
 
         this.bg = bg;
         this.hill = hill;
@@ -433,6 +445,29 @@ export default class Sled extends GameScene {
 
             onComplete: () => this.note.visible = false
         })
+    }
+
+    onCloseClick() {
+        this.showCloseGamePrompt()
+    }
+
+    showCloseGamePrompt() {
+        this.interface.prompt.showWindow(this.getString('quit_game_prompt'), 'dual', () => {
+            this.sendLeaveGame()
+
+            this.interface.prompt.window.visible = false
+        })
+    }
+
+    sendLeaveGame() {
+        this.network.send('leave_game')
+        this.leaveGame()
+    }
+
+    leaveGame() {
+        this.removeListeners()
+
+        this.world.client.sendJoinLastRoom()
     }
 
     /* END-USER-CODE */
