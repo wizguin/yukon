@@ -130,6 +130,9 @@ export default class Waddle extends BaseContainer {
     }
 
     updateWaddle(waddle, seat, username) {
+        // Update in room waddles object
+        this.world.room.waddles[waddle][seat] = username
+
         if (waddle === this.activeWaddleId) {
             this.items[seat].setItem(username)
         }

@@ -119,13 +119,14 @@ export default class Mtn extends RoomScene {
     /* START-USER-CODE */
 
     setWaddles(waddles) {
+        super.setWaddles(waddles)
+
         for (const [waddle, seats] of Object.entries(waddles)) {
+            // Update waddles to show seats
             for (let i = 0; i < seats.length; i++) {
                 this.updateWaddle(waddle, i, seats[i])
             }
         }
-
-        super.setWaddles(waddles)
     }
 
     updateWaddle(waddle, seat, username) {
