@@ -38,6 +38,9 @@ export default class Mtn extends RoomScene {
 
         this.waddles = {}
 
+        // Don't show waddle seat for sled hand items
+        this.sleds = [5021, 5046, 5047]
+
         /* END-USER-CTR-CODE */
     }
 
@@ -130,12 +133,25 @@ export default class Mtn extends RoomScene {
     }
 
     updateWaddle(waddle, seat, username) {
-        const show = username !== null
+        const show = this.checkShowSeat(username)
 
-        // If user is joining waddle show seat
         this.getWaddle(waddle)[`seat${seat}`].visible = show
 
         super.updateWaddle(waddle, seat, username)
+    }
+
+    checkShowSeat(username) {
+        if (username === null) {
+            return false
+        }
+
+        const penguin = this.getPenguinByUsername(username)
+        if (!penguin) {
+            return false
+        }
+
+        const hand = penguin.items.all.hand.id
+        return !this.sleds.includes(hand)
     }
 
     triggerWaddle(id) {

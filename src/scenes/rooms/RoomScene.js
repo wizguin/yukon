@@ -116,6 +116,10 @@ export default class RoomScene extends BaseScene {
         return this[`waddle${id}`]
     }
 
+    getPenguinByUsername(username) {
+        return Object.values(this.penguins).find(penguin => penguin.username === username)
+    }
+
     setTables(tables) {
         this.tables = tables
 
