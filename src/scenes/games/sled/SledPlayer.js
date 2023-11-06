@@ -148,10 +148,6 @@ export default class SledPlayer extends BaseContainer {
         this.body.tint = this.scene.getColor(playerData.color)
 
         this.setSled(playerData.hand)
-
-        if (this.world.isClientUsername(playerData.username)) {
-            this.setMyPlayer()
-        }
     }
 
     setSled(hand) {
@@ -173,12 +169,6 @@ export default class SledPlayer extends BaseContainer {
 
         // Update frame immediately
         this.setFrame(1)
-    }
-
-    setMyPlayer() {
-        this.scene.myPlayer = this
-
-        this.icon.setFrame('progress/icon_2')
     }
 
     update() {
@@ -241,12 +231,6 @@ export default class SledPlayer extends BaseContainer {
 
         } else if (this.map === 200) {
             this.isFinished = true
-
-        } else if (this.map === 220 && !this.isCrashed) {
-            this.startCrash()
-
-        } else if (this.map === 240) {
-            this.speed = this.boostSpeed
         }
 
         // Used for calculating shadow y for non-jump moves
@@ -291,6 +275,10 @@ export default class SledPlayer extends BaseContainer {
         if (!this.isTube) {
             this.sled.visible = false
         }
+    }
+
+    startBoost() {
+        this.speed = this.boostSpeed
     }
 
     move() {
@@ -364,19 +352,15 @@ export default class SledPlayer extends BaseContainer {
     }
 
     moveUp() {
-        if (!this.isCrashed && !this.isFinished) {
+        if (!this.isFinished) {
             this.gameX = Math.min(this.gameX + this.turnSpeed, 360)
         }
     }
 
     moveDown() {
-        if (!this.isCrashed && !this.isFinished) {
+        if (!this.isFinished) {
             this.gameX = Math.max(this.gameX - this.turnSpeed, 0)
         }
-    }
-
-    checkGameXUpdate() {
-        return this.gameX !== this.lastGameX
     }
 
     /* END-USER-CODE */

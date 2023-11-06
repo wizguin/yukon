@@ -4,6 +4,7 @@ import GameScene from "../GameScene";
 import Button from "../../components/Button";
 /* START-USER-IMPORTS */
 
+import ClientSledPlayer from './ClientSledPlayer'
 import SledPlayer from './SledPlayer'
 
 /* END-USER-IMPORTS */
@@ -149,12 +150,6 @@ export default class Sled extends GameScene {
         // Used for updating current tiles
         this.lastTileY = 0
 
-        // Input
-        this.input.keyboard.on('keydown-UP', this.sendMoveUp, this)
-        this.input.keyboard.on('keydown-RIGHT', this.sendMoveUp, this)
-        this.input.keyboard.on('keydown-DOWN', this.sendMoveDown, this)
-        this.input.keyboard.on('keydown-LEFT', this.sendMoveDown, this)
-
         // Physics fixed timestep
         this.fixedTimestep = 1000 / 60
         this.accumulator = 0
@@ -207,9 +202,23 @@ export default class Sled extends GameScene {
     handleSendMove(args) {
         const player = this.players[args.id]
 
-        if (player) {
-            player.gameX = args.x
-            player.gameY = args.y
+        if (!player) {
+            return
+        }
+
+        switch (args.move) {
+            case 1:
+                player.moveUp()
+                break
+            case 2:
+                player.moveDown()
+                break
+            case 3:
+                player.startCrash()
+                break
+            case 4:
+                player.startBoost()
+                break
         }
     }
 
@@ -220,29 +229,6 @@ export default class Sled extends GameScene {
         }
 
         this.network.send('start_game')
-    }
-
-    sendMoveUp() {
-        if (this.started && this.myPlayer) {
-            this.myPlayer.moveUp()
-
-            this.sendMove()
-        }
-    }
-
-    sendMoveDown() {
-        if (this.started && this.myPlayer) {
-            this.myPlayer.moveDown()
-
-            this.sendMove()
-        }
-    }
-
-    sendMove() {
-        if (this.myPlayer.checkGameXUpdate()) {
-            // gameX has changed, send new position
-            this.network.send('send_move', { id: this.myPlayer.id, x: this.myPlayer.gameX, y: this.myPlayer.gameY })
-        }
     }
 
     update() {
@@ -364,10 +350,19 @@ export default class Sled extends GameScene {
      * @param {number} index - Player index, used as ID
      */
     addPlayer(playerData, index) {
+        const isMyPlayer = this.world.isClientUsername(playerData.username)
+
+        const playerClass = isMyPlayer ? ClientSledPlayer : SledPlayer
+
         // Start off screen
-        const player = new SledPlayer(this, -500, 0)
+        const player = new playerClass(this, -500, 0)
 
         player.setPlayer(playerData, index)
+
+        // Set myPlayer
+        if (isMyPlayer) {
+            this.myPlayer = player
+        }
 
         this.hill.add(player)
         this.progress.add(player.icon)
