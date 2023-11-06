@@ -126,7 +126,11 @@ export default class Sled extends GameScene {
 
         // Store ms since intro started
         this.introTimer = null
-        this.introTargetTime = 2400
+        // Start game after 2s
+        this.startTime = 2000
+        // Hide intro after 3s
+        // Required if game goes into background
+        this.maxIntroTime = 3000
 
         this.started = false
 
@@ -170,7 +174,7 @@ export default class Sled extends GameScene {
         this.sendStartGame()
     }
 
-    get isIntroActive() {
+    get isIntroTimerActive() {
         return this.introTimer !== null
     }
 
@@ -250,11 +254,6 @@ export default class Sled extends GameScene {
         this.lastTime = currentTime
         this.accumulator += frameTime
 
-        if (this.isIntroActive) {
-            // Update intro timer
-            this.introTimer += frameTime
-        }
-
         // Do fixed update when fixed timestep is accumulated
         while (this.accumulator >= this.fixedTimestep) {
             this.fixedUpdate()
@@ -264,7 +263,7 @@ export default class Sled extends GameScene {
     }
 
     fixedUpdate() {
-        if (this.isIntroActive) {
+        if (this.isIntroTimerActive) {
             this.checkIntro()
         }
 
@@ -386,12 +385,13 @@ export default class Sled extends GameScene {
 
         const tweenOut = {
             scale: { from: 1, to: 0.45 },
-            delay: 600
+            delay: 550
         }
 
         // Start intro timer
         this.introTimer = 0
 
+        // Will need to be updated for Phaser v3.60.0+
         this.tweens.timeline({
             targets: this.text,
             duration: 100,
@@ -420,10 +420,18 @@ export default class Sled extends GameScene {
     }
 
     checkIntro() {
-        if (this.introTimer >= this.introTargetTime) {
+        this.introTimer += this.fixedTimestep
+
+        if (this.introTimer >= this.maxIntroTime) {
             // Stop intro timer
             this.introTimer = null
+            // Hide intro tween
+            this.onIntroComplete()
 
+            return
+        }
+
+        if (this.introTimer >= this.startTime) {
             // Start race
             this.started = true
         }
