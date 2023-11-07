@@ -143,6 +143,7 @@ export default class Sled extends GameScene {
 
         this.hillStartX = this.hill.x
         this.hillStartY = this.hill.y
+        this.bgStartX = this.bg.x
 
         // Current tile index
         this.currentTile = 0
@@ -273,7 +274,7 @@ export default class Sled extends GameScene {
         this.hill.x = this.hillStartX - this.myPlayer.gameY
         this.hill.y = this.hillStartY - (this.myPlayer.gameY * 0.6)
 
-        this.bg.x = (-this.myPlayer.gameY) / 25
+        this.bg.x = this.bgStartX + (-this.myPlayer.gameY) / 25
 
         // Update current tiles every 400 pixels
         const tileY = Math.round(this.myPlayer.gameY / 400)
