@@ -468,9 +468,13 @@ export default class Sled extends GameScene {
     }
 
     leaveGame() {
+        this.world.client.sendJoinLastRoom()
+    }
+
+    stop() {
         this.removeListeners()
 
-        this.world.client.sendJoinLastRoom()
+        super.stop()
     }
 
     /* END-USER-CODE */
