@@ -204,9 +204,7 @@ export default class SledPlayer extends BaseContainer {
         this.speed *= this.finishFriction
 
         if (this.speed < 1) {
-            this.isStopped = true
-
-            //sendGameOver()
+            this.endFinish()
         }
     }
 
@@ -279,6 +277,10 @@ export default class SledPlayer extends BaseContainer {
 
     startBoost() {
         this.speed = this.boostSpeed
+    }
+
+    endFinish() {
+        this.isStopped = true
     }
 
     move() {

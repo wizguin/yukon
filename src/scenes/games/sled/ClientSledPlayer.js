@@ -64,6 +64,12 @@ export default class ClientSledPlayer extends SledPlayer {
         super.checkMap()
     }
 
+    endFinish() {
+        super.endFinish()
+
+        this.sendFinished()
+    }
+
     sendMove(move) {
         this.network.send('send_move', { move: move })
     }
@@ -74,6 +80,10 @@ export default class ClientSledPlayer extends SledPlayer {
 
     sendBoost() {
         this.sendMove(4)
+    }
+
+    sendFinished() {
+        this.sendMove(5)
     }
 
 }
