@@ -24,11 +24,11 @@ export default class SledPlayer extends BaseContainer {
 
 
         // shadow
-        const shadow = scene.add.image(-2, -14, "sled", "player/shadow");
+        const shadow = scene.add.image(0, 0, "sled", "player/shadow");
         this.add(shadow);
 
         // character
-        const character = scene.add.container(-2, -14);
+        const character = scene.add.container(0, 0);
         this.add(character);
 
         // sled
@@ -45,8 +45,8 @@ export default class SledPlayer extends BaseContainer {
         character.add(penguin);
 
         // username
-        const username = scene.add.text(0, -50, "", {});
-        username.setOrigin(0.5, 1);
+        const username = scene.add.text(0, -91, "", {});
+        username.setOrigin(0.5, 0);
         username.text = "Username";
         username.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":200,"fontFamily": "Arial", "fontSize": "24px" });
         character.add(username);
@@ -286,16 +286,16 @@ export default class SledPlayer extends BaseContainer {
     move() {
         if (this.started && !this.isCrashed) {
             this.updateFrame()
+
+            this.lastGameX = this.gameX
         }
 
-        this.lastGameX = this.gameX
-
         // Update actual x and y
-        this.x = this.gameX + this.gameY - 2
+        this.x = this.gameX + this.gameY
         this.y = (this.gameY * 0.6) - (this.gameX * 0.6)
 
-        this.character.y =  -this.height - 14
-        this.shadow.y = -this.map - 14
+        this.character.y =  -this.height
+        this.shadow.y = -this.map
 
         this.depth = this.mapX * 10 + 1000
 

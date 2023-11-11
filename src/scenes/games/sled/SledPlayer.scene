@@ -27,17 +27,13 @@
                     "texture": {
                         "key": "sled",
                         "frame": "player/shadow"
-                    },
-                    "x": -2,
-                    "y": -14
+                    }
                 },
                 {
                     "type": "Container",
                     "id": "7318985e-1f9e-491b-9d43-b9bf9daff2c3",
                     "label": "character",
                     "scope": "CLASS",
-                    "x": -2,
-                    "y": -14,
                     "list": [
                         {
                             "type": "Sprite",
@@ -75,9 +71,8 @@
                             "id": "420c4e5e-c3bc-470a-8c2e-97ee49696531",
                             "label": "username",
                             "scope": "CLASS",
-                            "y": -50,
+                            "y": -91,
                             "originX": 0.5,
-                            "originY": 1,
                             "text": "Username",
                             "fixedWidth": 200,
                             "align": "center",
