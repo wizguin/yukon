@@ -136,7 +136,7 @@ export default class Sled extends GameScene {
         this.started = false
 
         // Array of tile IDs for current sled hill
-        this.hillTileIds = this.cache.json.get('sledmap').hills[100]
+        this.hillTileIds = this.setHillTileIds()
 
         // Multidimensional array of tile coordinates for current sled hill
         this.hillMap = this.createHillMap()
@@ -172,6 +172,13 @@ export default class Sled extends GameScene {
 
     get isIntroTimerActive() {
         return this.introTimer !== null
+    }
+
+    setHillTileIds() {
+        const hills = this.cache.json.get('sledmap').hills
+        const lastSledId = this.world.client.lastSledId
+
+        return lastSledId in hills ? hills[lastSledId] : hills[100]
     }
 
     createHillMap() {

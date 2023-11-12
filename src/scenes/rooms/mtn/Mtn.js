@@ -158,6 +158,7 @@ export default class Mtn extends RoomScene {
         const text = this.getString('sled_prompt')
 
         this.interface.prompt.showWindow(text, 'dual', () => {
+            this.world.client.lastSledId = id
             this.network.send('join_waddle', { waddle: id })
 
             this.interface.prompt.window.visible = false

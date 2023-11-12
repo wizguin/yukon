@@ -23,6 +23,7 @@ export default class ClientController {
 
         this.lastRoom
         this.activeSeat
+        this.lastSledId
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
