@@ -10,8 +10,6 @@ export default class GridViewLoader extends BaseLoader {
 
         this.filter
         this.page
-
-        this.attachErrorListener()
     }
 
     get baseURL() {
@@ -94,6 +92,8 @@ export default class GridViewLoader extends BaseLoader {
     }
 
     onLoadError(file) {
+        super.onLoadError(file)
+
         if (!this.gridView.visible) {
             return
         }

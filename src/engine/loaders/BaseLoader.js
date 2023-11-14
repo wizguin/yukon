@@ -4,6 +4,8 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
         super(scene)
 
         this.globalLoadQueue = scene.world.globalLoadQueue
+
+        this.on('loaderror', this.onLoadError, this)
     }
 
     get crumbs() {
@@ -36,12 +38,12 @@ export default class BaseLoader extends Phaser.Loader.LoaderPlugin {
         return parseInt(last)
     }
 
-    attachErrorListener() {
-        this.on('loaderror', this.onLoadError, this)
-    }
-
     onLoadError(file) {
+        if (file.key in this.globalLoadQueue) {
+            this.off(`filecomplete-${file.type}-${file.key}`)
 
+            delete this.globalLoadQueue[file.key]
+        }
     }
 
     checkComplete(type, key, callback = () => {}) {
