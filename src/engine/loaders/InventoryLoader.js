@@ -97,6 +97,10 @@ export default class InventoryLoader extends BaseLoader {
             return
         }
 
+        if (slot.item) {
+            slot.item.destroy()
+        }
+
         if (slot.spinner) {
             slot.spinner.destroy()
         }
