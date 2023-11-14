@@ -71,7 +71,7 @@ export default class ClothingLoader extends BaseLoader {
     }
 
     loadSecretFrames(secretFrames, slot, item) {
-        this.framesLoader.loadFrames(secretFrames, () => {
+        this.framesLoader.loadFrames(item, secretFrames, () => {
             this.addItem(slot, item)
         })
     }
