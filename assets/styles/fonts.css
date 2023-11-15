@@ -64,3 +64,8 @@
     font-weight: bold;
     src: url('../fonts/CCFaceFront Bold Italic.woff2');
 }
+
+@font-face {
+    font-family: 'CPLCD';
+    src: url('../fonts/CPLCD.woff2');
+}
