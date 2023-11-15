@@ -108,4 +108,13 @@ export default class WorldController extends BaseScene {
         return this.crumbs.colors[id - 1] || this.crumbs.colors[0]
     }
 
+    getPSTDate() {
+        const date = new Date()
+
+        date.setHours(date.getUTCHours() - 8)
+        date.setMinutes(date.getUTCMinutes())
+
+        return date
+    }
+
 }

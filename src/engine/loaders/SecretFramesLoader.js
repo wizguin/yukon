@@ -18,7 +18,6 @@ export default class SecretFramesLoader extends BaseLoader {
             return
         }
 
-        // Shallow copy frames
         this.currentItems[itemId] = { remaining: frames.length, callback: callback }
 
         for (let frame of frames) {
