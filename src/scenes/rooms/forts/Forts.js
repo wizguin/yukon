@@ -202,19 +202,19 @@ export default class Forts extends RoomScene {
     }
 
     updateTime() {
-        const date = this.world.getPSTDate()
+        const now = this.world.getWorldTime()
 
-        const hours = date.getHours()
+        const hours = now.getHours()
         // Convert to 12 hour format
         const hoursFormatted = hours % 12 || 12
 
-        const minutes = date.getMinutes().toString().padStart(2, '0')
+        const minutes = now.getMinutes().toString().padStart(2, '0')
 
         this.timeText.text = `${hoursFormatted}:${minutes}`
 
         this.ampmText.text = hours >= 12 ? 'PM' : 'AM'
 
-        this.dayText.text = date.toLocaleDateString('en-US', {weekday: 'long' }).toUpperCase()
+        this.dayText.text = now.toLocaleDateString('en-US', {weekday: 'long' }).toUpperCase()
     }
 
     /* END-USER-CODE */
