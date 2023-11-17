@@ -1,0 +1,192 @@
+{
+    "id": "828270eb-742e-4c15-b92d-0aa31d26d2a4",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 50,
+        "snapHeight": 50,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "GameScene",
+        "preloadPackFiles": [
+            "yukon/assets/media/games/sled/sled-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Sled",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "e6a09201-5058-43f0-abbc-1da2babd448b",
+            "label": "sky",
+            "texture": {
+                "key": "sled",
+                "frame": "sky"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Container",
+            "id": "89eed3bf-202b-4c9f-98d1-c668d9ae2e7f",
+            "label": "bg",
+            "scope": "CLASS",
+            "x": 110,
+            "y": 102,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e3334027-a4a1-468c-9fb0-edc7d2b8fb41",
+                    "label": "bg3",
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_3"
+                    },
+                    "x": 4142,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "9ebf6c7b-96c3-4290-9bd3-53e952d9fc31",
+                    "label": "bg2",
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_2"
+                    },
+                    "x": 2071,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "c72641ae-1dcb-4f5e-be57-3cf33588a5e4",
+                    "label": "bg1",
+                    "texture": {
+                        "key": "sled",
+                        "frame": "bg_1"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "52f6b861-9e28-405a-a512-50ebb31eeb09",
+            "label": "fg",
+            "texture": {
+                "key": "sled",
+                "frame": "fg"
+            },
+            "y": 240,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Container",
+            "id": "5b92479e-c674-44b7-a00e-cb29281af5ba",
+            "label": "hill",
+            "scope": "CLASS",
+            "x": 361,
+            "y": 480
+        },
+        {
+            "type": "Container",
+            "id": "aaf33e87-363f-418b-ad7f-f1f814c96da2",
+            "label": "progress",
+            "scope": "CLASS",
+            "x": 784,
+            "y": 53,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "24aa5469-071c-4548-9cf0-c73ecaa03c19",
+                    "label": "bar",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sled",
+                        "frame": "progress/bar"
+                    },
+                    "x": 304
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "26c9bf8a-09f4-47b1-9bc7-c65ee3644e4c",
+            "label": "text",
+            "scope": "CLASS",
+            "texture": {
+                "key": "sled",
+                "frame": "text/waiting"
+            },
+            "x": 760,
+            "y": 600,
+            "originY": 0.5046728971962616
+        },
+        {
+            "type": "Image",
+            "id": "e362b927-ff08-41b6-8335-2085f9499cec",
+            "label": "spinner",
+            "scope": "CLASS",
+            "texture": {
+                "key": "sled",
+                "frame": "spinner"
+            },
+            "x": 760,
+            "y": 685,
+            "originX": 0.5076923076923077
+        },
+        {
+            "type": "Image",
+            "id": "f86010ba-86a5-42a1-a30f-b46620b1255f",
+            "label": "note",
+            "scope": "CLASS",
+            "texture": {
+                "key": "sled",
+                "frame": "note"
+            },
+            "x": 1253,
+            "y": 783,
+            "originY": 0.4050179211469534
+        },
+        {
+            "type": "Image",
+            "id": "1ba0251d-c368-463b-ae88-c79f4fffbf7e",
+            "label": "closeButton",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "grey-button",
+            "Button.callback": "() => this.onCloseClick()",
+            "texture": {
+                "key": "main",
+                "frame": "grey-button"
+            },
+            "x": 1458,
+            "y": 52
+        },
+        {
+            "type": "Image",
+            "id": "b74212c4-75d9-44de-a31c-07b68eed5a35",
+            "label": "x",
+            "texture": {
+                "key": "main",
+                "frame": "grey-x"
+            },
+            "x": 1458,
+            "y": 50
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

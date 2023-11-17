@@ -8,34 +8,46 @@ export default class SecretFramesLoader extends BaseLoader {
 
         this.baseURL = '/assets/media/penguin/actions/'
         this.keyPrefix = 'secret_frames/'
+
+        // Track current items loading
+        this.currentItems = {}
     }
 
-    loadFrames(frames, callback) {
+    loadFrames(itemId, frames, callback) {
+        if (itemId in this.currentItems) {
+            return
+        }
+
+        this.currentItems[itemId] = { remaining: frames.length, callback: callback }
+
         for (let frame of frames) {
-            this.loadFrame(frame)
+            this.loadFrame(frame, itemId)
         }
-
-        if (this.list.size == 0) {
-            return callback()
-        }
-
-        this.once('complete', () => callback())
 
         this.start()
     }
 
-    loadFrame(frame) {
-        let key = this.getKey(frame)
+    loadFrame(frame, itemId) {
+        const key = this.getKey(frame)
 
-        if (this.checkComplete('json', key)) {
+        if (this.checkComplete('json', key, () => {
+            this.onFrameComplete(itemId)
+        })) {
             return
         }
 
         this.multiatlas(key, `${frame}.json`)
     }
 
-    loadComplete() {
-        super.loadComplete()
+    onFrameComplete(itemId) {
+        this.currentItems[itemId].remaining--
+
+        if (this.currentItems[itemId].remaining < 1) {
+            // All frames loaded for item
+            this.currentItems[itemId].callback()
+
+            delete this.currentItems[itemId]
+        }
     }
 
 }

@@ -1,14 +1,18 @@
-import RoomScene from '../RoomScene'
-
-
 /* START OF COMPILED CODE */
+
+import RoomScene from "../RoomScene";
+import HockeyGame from "./hockey/HockeyGame";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class Rink extends RoomScene {
 
     constructor() {
         super("Rink");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {HockeyGame} */
+        this.hockeyGame;
+        /** @type {Array<Phaser.GameObjects.Image|HockeyGame>} */
         this.sort;
 
 
@@ -45,10 +49,6 @@ export default class Rink extends RoomScene {
         // sports_door0001
         const sports_door0001 = this.add.image(1327, 280, "rink", "sports_door0001");
         sports_door0001.setOrigin(0.5125, 0.62962963);
-
-        // ball
-        const ball = this.add.image(765, 537, "rink", "ball");
-        ball.setOrigin(0.5, 0.7037037);
 
         // fish_dogs
         const fish_dogs = this.add.image(166, 242, "rink", "fish_dogs");
@@ -123,9 +123,15 @@ export default class Rink extends RoomScene {
         // snacks_ring
         this.add.image(1250, 200, "rink", "snacks_ring");
 
-        // lists
-        const sort = [fg, ball, goal_back, goal, goal_back_1, goal_1, snacks, sports_door0001, sports, right_bleachers, bleachers_rail_1, bleachers_rail, left_bleachers, fish_dogs, stand_middle, stand_base, stand_top, trash, rink_border];
+        // hockeyGame
+        const hockeyGame = new HockeyGame(this, 764, 540);
+        this.add.existing(hockeyGame);
+        hockeyGame.visible = false;
 
+        // lists
+        const sort = [fg, goal_back, goal, goal_back_1, goal_1, snacks, sports_door0001, sports, right_bleachers, bleachers_rail_1, bleachers_rail, left_bleachers, fish_dogs, stand_middle, stand_base, stand_top, trash, rink_border, hockeyGame];
+
+        this.hockeyGame = hockeyGame;
         this.sort = sort;
 
         this.events.emit("scene-awake");
@@ -133,6 +139,26 @@ export default class Rink extends RoomScene {
 
 
     /* START-USER-CODE */
+
+    create() {
+        super.create()
+
+        this.hockeyGame.addListeners()
+        this.hockeyGame.sendGetPuck()
+
+        this.hockeyGame.show()
+    }
+
+    update() {
+        this.hockeyGame.update()
+    }
+
+    stop() {
+        this.hockeyGame.removeListeners()
+
+        super.stop()
+    }
+
     /* END-USER-CODE */
 }
 

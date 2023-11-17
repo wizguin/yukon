@@ -116,6 +116,10 @@ export default class RoomScene extends BaseScene {
         return this[`waddle${id}`]
     }
 
+    getPenguinByUsername(username) {
+        return Object.values(this.penguins).find(penguin => penguin.username === username)
+    }
+
     setTables(tables) {
         this.tables = tables
 
@@ -145,6 +149,10 @@ export default class RoomScene extends BaseScene {
 
     setWaddles(waddles) {
         this.waddles = waddles
+    }
+
+    updateWaddle(waddle, seat, username) {
+        this.interface.main.waddle.updateWaddle(waddle, seat, username)
     }
 
     onSnowballComplete(x, y) {

@@ -1,0 +1,176 @@
+{
+    "id": "cfba7939-223b-4c0c-8197-fcf232ce3eb7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "75e1c9ae-2674-4eef-b3ad-c814b6e5b13f",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8bb07154-a913-424d-aea5-bf2b4d7daf96",
+                    "label": "barrier2",
+                    "texture": {
+                        "key": "mtn",
+                        "frame": "barrier_2"
+                    },
+                    "x": 87,
+                    "y": 48,
+                    "originX": 0.48,
+                    "originY": 0.47761194029850745
+                },
+                {
+                    "type": "Image",
+                    "id": "a6b39d38-faa3-4a40-9c30-50a44f34e6a9",
+                    "label": "barrier1",
+                    "texture": {
+                        "key": "mtn",
+                        "frame": "barrier_1"
+                    },
+                    "x": 23,
+                    "y": 36,
+                    "angle": -14.999999999999998,
+                    "originY": 0.45901639344262296
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "53a5c9a8-0fc5-4ccd-b02b-30172928cfa0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done2",
+                    "scope": "CLASS",
+                    "x": 177,
+                    "y": -58,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "e2679429-273c-4ab9-83be-534c9cc9a4cd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done1",
+                    "scope": "CLASS",
+                    "x": 109,
+                    "y": -74,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "a6c6a7b1-58e3-4423-a8b5-0c65024c0c41",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done0",
+                    "scope": "CLASS",
+                    "x": 45,
+                    "y": -86,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "519102f1-ac89-4148-9362-a95ae4c411e7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat0",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done0",
+                    "x": 0,
+                    "y": 0,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "f581f70e-a888-4dda-befd-5622d8b2a7f7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat2",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done2",
+                    "x": 142,
+                    "y": 36,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "0f933f73-8b90-477e-b279-bbe355a2e16b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done1",
+                    "x": 53,
+                    "y": 38,
+                    "visible": false
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e82b88fe-6c99-4667-aa9a-dde975a3b9d1",
+                    "label": "zone",
+                    "components": [
+                        "Zone",
+                        "ShowHint",
+                        "MoveTo"
+                    ],
+                    "ShowHint.text": "sled_hint",
+                    "MoveTo.x": "646",
+                    "MoveTo.y": "630",
+                    "x": 54,
+                    "y": 45,
+                    "angle": 11,
+                    "visible": false,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 200,
+                    "height": 90
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

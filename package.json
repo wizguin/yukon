@@ -1,6 +1,6 @@
 {
   "name": "yukon",
-  "version": "1.6.0-beta",
+  "version": "1.7.0-beta",
   "scripts": {
     "dev": "webpack serve",
     "editor": "phasereditor2d-launcher -project . -max-number-files 5000",

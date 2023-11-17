@@ -1,0 +1,95 @@
+{
+    "id": "cd931a76-a78b-4a03-a5bf-4eb875dffa3f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9334ff58-067c-40e2-9b3d-1b299b91db6c",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "523eb17a-5183-41e2-9689-839e81be5d45",
+                    "label": "shadow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sled",
+                        "frame": "player/shadow"
+                    }
+                },
+                {
+                    "type": "Container",
+                    "id": "7318985e-1f9e-491b-9d43-b9bf9daff2c3",
+                    "label": "character",
+                    "scope": "CLASS",
+                    "list": [
+                        {
+                            "type": "Sprite",
+                            "id": "1c9358a4-54e5-4936-8687-bea28faebd38",
+                            "label": "sled",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/tube/1/sled"
+                            },
+                            "visible": false
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "0f09eeaf-fc93-4d85-a884-a60f4538b08d",
+                            "label": "body",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/tube/1/body"
+                            }
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "7ed04b1a-8c65-4f95-a461-b9e1c87ff89e",
+                            "label": "penguin",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "sled",
+                                "frame": "player/tube/1/penguin"
+                            }
+                        },
+                        {
+                            "type": "Text",
+                            "id": "420c4e5e-c3bc-470a-8c2e-97ee49696531",
+                            "label": "username",
+                            "scope": "CLASS",
+                            "y": -91,
+                            "originX": 0.5,
+                            "text": "Username",
+                            "fixedWidth": 200,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000ff"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

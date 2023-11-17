@@ -23,6 +23,7 @@ export default class ClientController {
 
         this.lastRoom
         this.activeSeat
+        this.lastSledId
 
         // Item inventory
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
@@ -242,12 +243,14 @@ export default class ClientController {
     }
 
     sendJoinLastRoom() {
-        if (this.world.lastRoom) {
-            let room = this.crumbs.scenes.rooms[this.world.lastRoom]
+        if (!this.world.lastRoom || this.world.room && this.world.lastRoom === this.world.room.id) {
+            return
+        }
 
-            if (room) {
-                this.sendJoinRoom(this.world.lastRoom, room.key, room.x, room.y, 80)
-            }
+        const room = this.crumbs.scenes.rooms[this.world.lastRoom]
+
+        if (room) {
+            this.sendJoinRoom(this.world.lastRoom, room.key, room.x, room.y, 80)
         }
     }
 

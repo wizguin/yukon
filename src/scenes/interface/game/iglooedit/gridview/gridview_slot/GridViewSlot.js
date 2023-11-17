@@ -44,6 +44,10 @@ export default class GridViewSlot extends Phaser.GameObjects.Sprite {
     }
 
     addIcon(key, item) {
+        if (this.item) {
+            this.item.destroy()
+        }
+
         let icon = this.scene.add.image(this.x, this.y, key)
         let scale = (key.split('/')[2] == '@5x') ? 1 : 2
 

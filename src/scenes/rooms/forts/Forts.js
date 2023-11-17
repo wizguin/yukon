@@ -14,6 +14,14 @@ export default class Forts extends RoomScene {
         this.tower;
         /** @type {Phaser.GameObjects.Rectangle} */
         this.hitbox;
+        /** @type {Phaser.GameObjects.Text} */
+        this.dayText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.ampmText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.timeText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.clockText;
         /** @type {Array<Phaser.GameObjects.Sprite|Phaser.GameObjects.Image>} */
         this.sort;
 
@@ -98,6 +106,35 @@ export default class Forts extends RoomScene {
         const hitbox = this.add.rectangle(1347, 156, 70, 75);
         hitbox.visible = false;
 
+        // dayText
+        const dayText = this.add.text(1161, 221, "", {});
+        dayText.scaleX = 0.9;
+        dayText.angle = 4;
+        dayText.setOrigin(0.5, 0.5);
+        dayText.setStyle({ "align": "center", "color": "#000", "fixedWidth":200,"fontFamily": "CCComiccrazy", "fontSize": "22px", "fontStyle": "italic" });
+
+        // ampmText
+        const ampmText = this.add.text(1217, 133, "", {});
+        ampmText.angle = -1;
+        ampmText.setOrigin(0.5, 0.5);
+        ampmText.setStyle({ "align": "center", "fixedWidth":50,"fontFamily": "CPLCD", "fontSize": "36px" });
+
+        // timeText
+        const timeText = this.add.text(1144, 150, "", {});
+        timeText.scaleX = 0.65;
+        timeText.angle = -1;
+        timeText.setOrigin(0.5, 0.5);
+        timeText.setStyle({ "align": "center", "fixedWidth":200,"fontFamily": "CPLCD", "fontSize": "86px" });
+
+        // clockText
+        const clockText = this.add.text(1159, 75, "", {});
+        clockText.scaleX = 0.76;
+        clockText.angle = -3.33;
+        clockText.setOrigin(0.5, 0.5);
+        clockText.text = "CLUB PENGUIN\nTIME ZONE";
+        clockText.setStyle({ "align": "center", "color": "#000", "fixedWidth":250,"fontFamily": "CCComiccrazy", "fontSize": "24px" });
+        clockText.setLineSpacing(2);
+
         // lists
         const sort = [red_flag, red_pole, blue_pole, blue_flag, blue_fort, red_fort_front, red_fort, snowballs];
 
@@ -125,6 +162,10 @@ export default class Forts extends RoomScene {
 
         this.tower = tower;
         this.hitbox = hitbox;
+        this.dayText = dayText;
+        this.ampmText = ampmText;
+        this.timeText = timeText;
+        this.clockText = clockText;
         this.sort = sort;
 
         this.events.emit("scene-awake");
@@ -136,8 +177,18 @@ export default class Forts extends RoomScene {
     create() {
         super.create()
 
+        this.clockText.setResolution(2)
+        this.dayText.setResolution(2)
+
         this.bounds = this.hitbox.getBounds()
         this.tower.on('animationcomplete', () => this.onTowerAnimComplete())
+
+        this.time.addEvent({
+            delay: 1000,
+            callback: () => this.updateTime(),
+            loop: true,
+            startAt: 1000
+        })
     }
 
     onSnowballComplete(x, y) {
@@ -148,6 +199,22 @@ export default class Forts extends RoomScene {
 
     onTowerAnimComplete() {
         this.tower.setFrame('tower0001')
+    }
+
+    updateTime() {
+        const now = this.world.getWorldTime()
+
+        const hours = now.getHours()
+        // Convert to 12 hour format
+        const hoursFormatted = hours % 12 || 12
+
+        const minutes = now.getMinutes().toString().padStart(2, '0')
+
+        this.timeText.text = `${hoursFormatted}:${minutes}`
+
+        this.ampmText.text = hours >= 12 ? 'PM' : 'AM'
+
+        this.dayText.text = now.toLocaleDateString('en-US', {weekday: 'long' }).toUpperCase()
     }
 
     /* END-USER-CODE */

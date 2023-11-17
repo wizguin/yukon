@@ -1,0 +1,255 @@
+{
+    "id": "dc463eea-eb00-439e-ab39-e70b942a7342",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d3a3fe4f-84e6-44c6-9da8-79298ee1de08",
+            "label": "hockeyGame",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a1a44a50-bcc5-4254-8688-9e85136372dd",
+                    "label": "bounds",
+                    "x": -16,
+                    "y": 29,
+                    "isFilled": true,
+                    "fillColor": "#FF0000",
+                    "fillAlpha": 0.5,
+                    "width": 1316,
+                    "height": 670
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "eede044a-7141-46be-b3aa-d071b541050c",
+                    "label": "p12",
+                    "x": 289,
+                    "y": -174,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "e9b23c5f-1aca-4781-a100-7f4883fb92a6",
+                    "label": "p11",
+                    "x": -281,
+                    "y": -175,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "a17fae15-3ed4-425e-9fa7-d3e09aa35dad",
+                    "label": "p10",
+                    "x": -459,
+                    "y": -135,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "ef70dad0-4213-49e7-b824-1c1c8a9a3584",
+                    "label": "p9",
+                    "x": -563,
+                    "y": -29,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "4f37e08b-d3da-43ef-902d-c017f9f7d09d",
+                    "label": "p8",
+                    "x": -577,
+                    "y": 111,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "d6fe5bf3-c61e-45a0-901e-1d00e65bc960",
+                    "label": "p7",
+                    "x": -477,
+                    "y": 199,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "3c8e9923-9a0e-42cd-a290-ad5d56d3c10f",
+                    "label": "p6",
+                    "x": -335,
+                    "y": 255,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "8fe9fcf7-34b6-4e67-985d-b9feac4c8cc2",
+                    "label": "p5",
+                    "x": 357,
+                    "y": 251,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "39f4beec-e7c7-4ecf-8ab3-a2f17d0ff135",
+                    "label": "p4",
+                    "x": 483,
+                    "y": 185,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "85a79e69-95a7-4d99-aae1-4cd76033f89d",
+                    "label": "p3",
+                    "x": 555,
+                    "y": 97,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "b2608c24-c0da-4873-b7d1-311088302939",
+                    "label": "p2",
+                    "x": 533,
+                    "y": -33,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "46dd3e89-2f45-454d-b5c3-c83cad1a989b",
+                    "label": "p1",
+                    "x": 445,
+                    "y": -131,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 18,
+                    "height": 18
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "54b3db87-197a-49ec-b26a-96cb7b7d410c",
+                    "label": "netRight",
+                    "scope": "CLASS",
+                    "x": 533,
+                    "y": 15,
+                    "isFilled": true,
+                    "fillColor": "#ff0000",
+                    "fillAlpha": 0.5,
+                    "width": 104,
+                    "height": 84
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f4e9a13c-6c6a-4eb5-8c38-c94570c40595",
+                    "label": "netLeft",
+                    "scope": "CLASS",
+                    "x": -539,
+                    "y": 15,
+                    "isFilled": true,
+                    "fillColor": "#ff0000",
+                    "fillAlpha": 0.5,
+                    "width": 104,
+                    "height": 84
+                },
+                {
+                    "prefabId": "68a3caf3-fc00-480c-98ce-d7dc343891c7",
+                    "id": "c79e7a31-4bac-4d92-963d-9a357acbfb0d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "puck",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 0
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "808a1689-d35b-4945-bff7-5a65ada975ca",
+            "label": "points",
+            "objectIds": [
+                "46dd3e89-2f45-454d-b5c3-c83cad1a989b",
+                "b2608c24-c0da-4873-b7d1-311088302939",
+                "85a79e69-95a7-4d99-aae1-4cd76033f89d",
+                "39f4beec-e7c7-4ecf-8ab3-a2f17d0ff135",
+                "8fe9fcf7-34b6-4e67-985d-b9feac4c8cc2",
+                "3c8e9923-9a0e-42cd-a290-ad5d56d3c10f",
+                "d6fe5bf3-c61e-45a0-901e-1d00e65bc960",
+                "4f37e08b-d3da-43ef-902d-c017f9f7d09d",
+                "ef70dad0-4213-49e7-b824-1c1c8a9a3584",
+                "a17fae15-3ed4-425e-9fa7-d3e09aa35dad",
+                "e9b23c5f-1aca-4781-a100-7f4883fb92a6",
+                "eede044a-7141-46be-b3aa-d071b541050c"
+            ]
+        },
+        {
+            "id": "8e5ef1cf-1d36-476e-afb8-441ff817c10e",
+            "label": "hide",
+            "objectIds": [
+                "a1a44a50-bcc5-4254-8688-9e85136372dd",
+                "f4e9a13c-6c6a-4eb5-8c38-c94570c40595",
+                "54b3db87-197a-49ec-b26a-96cb7b7d410c",
+                "46dd3e89-2f45-454d-b5c3-c83cad1a989b",
+                "b2608c24-c0da-4873-b7d1-311088302939",
+                "85a79e69-95a7-4d99-aae1-4cd76033f89d",
+                "39f4beec-e7c7-4ecf-8ab3-a2f17d0ff135",
+                "8fe9fcf7-34b6-4e67-985d-b9feac4c8cc2",
+                "3c8e9923-9a0e-42cd-a290-ad5d56d3c10f",
+                "d6fe5bf3-c61e-45a0-901e-1d00e65bc960",
+                "4f37e08b-d3da-43ef-902d-c017f9f7d09d",
+                "ef70dad0-4213-49e7-b824-1c1c8a9a3584",
+                "a17fae15-3ed4-425e-9fa7-d3e09aa35dad",
+                "e9b23c5f-1aca-4781-a100-7f4883fb92a6",
+                "eede044a-7141-46be-b3aa-d071b541050c"
+            ]
+        }
+    ]
+}

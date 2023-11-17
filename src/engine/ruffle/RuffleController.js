@@ -82,8 +82,6 @@ export default class RuffleController extends BaseScene {
 
         this.container.visible = false
         this.stopMusic()
-
-        this.world.client.sendJoinLastRoom()
     }
 
     getKeys() {

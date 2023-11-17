@@ -15,8 +15,6 @@ export default class InventoryLoader extends BaseLoader {
 
         this.baseURL = '/assets/media/clothing/icon/120/'
         this.keyPrefix = 'clothing/icon/120/'
-
-        this.attachErrorListener()
     }
 
     loadPage(page) {
@@ -80,6 +78,8 @@ export default class InventoryLoader extends BaseLoader {
     }
 
     onLoadError(file) {
+        super.onLoadError(file)
+
         let item = this.getKeyId(file.key)
 
         this.addIcon(item, 'main', 'x-icon')
@@ -95,6 +95,10 @@ export default class InventoryLoader extends BaseLoader {
 
         if (!slot || !this.validSlots.includes(slot.frame.name)) {
             return
+        }
+
+        if (slot.item) {
+            slot.item.destroy()
         }
 
         if (slot.spinner) {

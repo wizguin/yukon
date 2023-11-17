@@ -39,7 +39,10 @@ export default class Zone extends SimpleButton {
     start() {
         this.gameObject.visible = false
 
-        let zone = this.scene.add.zone(this.gameObject.x, this.gameObject.y, this.gameObject.width, this.gameObject.height)
+        const x = this.getX(this.gameObject)
+        const y = this.getY(this.gameObject)
+
+        const zone = this.scene.add.zone(x, y, this.gameObject.width, this.gameObject.height)
         zone.isButton = true
         zone.angle = this.gameObject.angle
 
@@ -52,6 +55,28 @@ export default class Zone extends SimpleButton {
         zone.on('pointerup', (pointer) => this.onUp(pointer))
 
         this.gameObject.zone = zone
+    }
+
+    getX(gameObject) {
+        if (!gameObject.parentContainer) {
+            return gameObject.x
+        }
+
+        // Get global coordinates of gameObject
+        const matrix = gameObject.getWorldTransformMatrix()
+
+        return matrix.getX(0, 0)
+    }
+
+    getY(gameObject) {
+        if (!gameObject.parentContainer) {
+            return gameObject.y
+        }
+
+        // Get global coordinates of gameObject
+        const matrix = gameObject.getWorldTransformMatrix()
+
+        return matrix.getY(0, 0)
     }
 
     /* END-USER-CODE */

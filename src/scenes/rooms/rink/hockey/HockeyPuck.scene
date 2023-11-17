@@ -1,0 +1,36 @@
+{
+    "id": "68a3caf3-fc00-480c-98ce-d7dc343891c7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseImage",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "2872a4d0-025c-47b9-bf52-098b7bd35305",
+            "label": "puck",
+            "scope": "CLASS",
+            "texture": {
+                "key": "rink",
+                "frame": "ball"
+            },
+            "originY": 0.7037037
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

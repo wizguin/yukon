@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "0502af23-1a8b-4632-b17c-741a3ca0c218",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "bg"
@@ -34,7 +33,6 @@
             "type": "Image",
             "id": "6291cd2e-fc87-4b49-9dfe-87efcf8dca79",
             "label": "red_fort",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "red_fort"
@@ -47,7 +45,6 @@
             "type": "Image",
             "id": "a7eba68a-1f6e-4778-886c-9b83412c56dd",
             "label": "red_pole",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "red_pole"
@@ -61,7 +58,6 @@
             "type": "Image",
             "id": "56c1b41f-3f4f-4dc2-bf62-3703d68a7d75",
             "label": "red_fort_front",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "red_fort_front"
@@ -74,7 +70,6 @@
             "type": "Image",
             "id": "82671712-eb61-4cf9-a79d-a117f9e89798",
             "label": "blue_pole",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "blue_pole"
@@ -87,7 +82,6 @@
             "type": "Image",
             "id": "160a46a9-aa94-4a18-bf7b-bc756cfe9394",
             "label": "blue_fort",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "blue_fort"
@@ -101,7 +95,6 @@
             "type": "Image",
             "id": "3b2a720f-7bd6-4c37-831b-1f6b4ef36eed",
             "label": "tower_shadow",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "tower_shadow"
@@ -136,7 +129,6 @@
             "type": "Image",
             "id": "b2ca6101-5086-4b8d-abd1-92dc5d0fb2b0",
             "label": "clock",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "clock"
@@ -150,7 +142,6 @@
             "type": "Image",
             "id": "b402d711-30c1-460e-b798-b448eddf538e",
             "label": "secret_message",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "secret_message"
@@ -182,7 +173,6 @@
             "type": "Image",
             "id": "1f0cdaf0-e9e6-4541-a76f-2a26400b2146",
             "label": "snowballs",
-            "components": [],
             "texture": {
                 "key": "forts",
                 "frame": "snowballs"
@@ -231,12 +221,79 @@
             "id": "6f93abab-6009-4afb-b0ed-a744f686a16d",
             "label": "hitbox",
             "scope": "CLASS",
-            "components": [],
             "x": 1347,
             "y": 156,
             "visible": false,
             "width": 70,
             "height": 75
+        },
+        {
+            "type": "Text",
+            "id": "77d2a4d5-cd14-489f-9bcb-e9d9461e1228",
+            "label": "dayText",
+            "scope": "CLASS",
+            "x": 1161,
+            "y": 221,
+            "scaleX": 0.9,
+            "angle": 4,
+            "originX": 0.5,
+            "originY": 0.5,
+            "fixedWidth": 200,
+            "align": "center",
+            "fontFamily": "CCComiccrazy",
+            "fontSize": "22px",
+            "fontStyle": "italic",
+            "color": "#000"
+        },
+        {
+            "type": "Text",
+            "id": "1835b117-9c20-49f3-8bf9-02d0d70d8822",
+            "label": "ampmText",
+            "scope": "CLASS",
+            "x": 1217,
+            "y": 133,
+            "angle": -1,
+            "originX": 0.5,
+            "originY": 0.5,
+            "fixedWidth": 50,
+            "align": "center",
+            "fontFamily": "CPLCD",
+            "fontSize": "36px"
+        },
+        {
+            "type": "Text",
+            "id": "1c4ffd57-82ab-48a5-a595-882a32e47879",
+            "label": "timeText",
+            "scope": "CLASS",
+            "x": 1144,
+            "y": 150,
+            "scaleX": 0.65,
+            "angle": -1,
+            "originX": 0.5,
+            "originY": 0.5,
+            "fixedWidth": 200,
+            "align": "center",
+            "fontFamily": "CPLCD",
+            "fontSize": "86px"
+        },
+        {
+            "type": "Text",
+            "id": "f483ce88-4e17-46b0-9a5e-0e853eceab11",
+            "label": "clockText",
+            "scope": "CLASS",
+            "x": 1159,
+            "y": 75,
+            "scaleX": 0.76,
+            "angle": -3.33,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "CLUB PENGUIN\nTIME ZONE",
+            "fixedWidth": 250,
+            "lineSpacing": 2,
+            "align": "center",
+            "fontFamily": "CCComiccrazy",
+            "fontSize": "24px",
+            "color": "#000"
         }
     ],
     "plainObjects": [],
@@ -244,7 +301,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {

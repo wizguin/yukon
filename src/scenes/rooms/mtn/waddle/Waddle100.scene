@@ -1,0 +1,218 @@
+{
+    "id": "dc249af0-ec06-46cc-8fc3-66c3a7288a6d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e5931f95-be08-43ef-8cf6-e86a27cd6869",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e38b3b7c-23a2-4980-9c33-60fa197ec440",
+                    "label": "barrier3",
+                    "texture": {
+                        "key": "mtn",
+                        "frame": "barrier_1"
+                    },
+                    "x": 146,
+                    "y": 101,
+                    "originY": 0.45901639344262296
+                },
+                {
+                    "type": "Image",
+                    "id": "40b9e4a6-5d6d-4cc5-9f93-ae69c9cb22c4",
+                    "label": "barrier2",
+                    "texture": {
+                        "key": "mtn",
+                        "frame": "barrier_1"
+                    },
+                    "x": 86,
+                    "y": 63,
+                    "originY": 0.45901639344262296
+                },
+                {
+                    "type": "Image",
+                    "id": "b97b8631-d351-473e-927c-dfee2403558c",
+                    "label": "barrier1",
+                    "texture": {
+                        "key": "mtn",
+                        "frame": "barrier_1"
+                    },
+                    "x": 26,
+                    "y": 25,
+                    "originY": 0.45901639344262296
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "20071076-0160-4105-82a9-cc8bd657698d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done3",
+                    "scope": "CLASS",
+                    "x": 272,
+                    "y": -6,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "1c4fe617-be62-4332-94be-a878e00f6321",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done2",
+                    "scope": "CLASS",
+                    "x": 212,
+                    "y": -26,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "4104a9c5-e0e6-4ba6-a8e7-f0559a89e8bb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done1",
+                    "scope": "CLASS",
+                    "x": 152,
+                    "y": -46,
+                    "visible": false
+                },
+                {
+                    "prefabId": "3d402c83-0ef8-4993-bf56-3e076074ec9e",
+                    "id": "4a61e1c7-09d9-486a-a688-6e5cec488750",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "done0",
+                    "scope": "CLASS",
+                    "x": 92,
+                    "y": -66,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "a93c7e37-8819-47b0-966f-96b00d57ab09",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat0",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done0",
+                    "x": 0,
+                    "y": 0,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "776dfc04-d0ca-4c51-8737-04fd0f335861",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat1",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done1",
+                    "x": 57,
+                    "y": 30,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "f7711544-facd-449a-85fd-bea814d161dd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat2",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done2",
+                    "x": 113,
+                    "y": 68,
+                    "visible": false
+                },
+                {
+                    "prefabId": "70bb238e-a4a2-4e0d-befb-3abd3b04f9ec",
+                    "id": "0ecae084-7015-48a5-b5b6-2c1b160130fe",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible",
+                        "sitFrame",
+                        "donePoint"
+                    ],
+                    "label": "seat3",
+                    "scope": "CLASS",
+                    "sitFrame": 18,
+                    "donePoint": "done3",
+                    "x": 173,
+                    "y": 90,
+                    "visible": false
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "5fea5b62-2a17-44f2-970c-b8ea5f647db7",
+                    "label": "zone",
+                    "components": [
+                        "Zone",
+                        "ShowHint",
+                        "MoveTo"
+                    ],
+                    "ShowHint.text": "sled_hint",
+                    "MoveTo.x": "404",
+                    "MoveTo.y": "506",
+                    "x": 78,
+                    "y": 53,
+                    "angle": 33,
+                    "visible": false,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 210,
+                    "height": 95
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

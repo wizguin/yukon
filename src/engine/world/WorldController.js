@@ -16,6 +16,8 @@ export default class WorldController extends BaseScene {
         this.secretFramesCache = {}
 
         this.globalLoadQueue = {}
+
+        this.worldTimeZone = 'America/Los_Angeles'
     }
 
     create() {
@@ -106,6 +108,10 @@ export default class WorldController extends BaseScene {
 
     getColor(id) {
         return this.crumbs.colors[id - 1] || this.crumbs.colors[0]
+    }
+
+    getWorldTime() {
+        return new Date(new Date().toLocaleString('en-US', { timeZone: this.worldTimeZone }))
     }
 
 }
