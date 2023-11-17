@@ -243,7 +243,7 @@ export default class ClientController {
     }
 
     sendJoinLastRoom() {
-        if (!this.world.lastRoom || this.world.lastRoom === this.world.room.id) {
+        if (!this.world.lastRoom || this.world.room && this.world.lastRoom === this.world.room.id) {
             return
         }
 
