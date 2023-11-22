@@ -7,6 +7,7 @@
         "snapHeight": 1,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "autoImport": true,
         "superClassName": "BaseScene",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -412,6 +413,7 @@
                 "Button"
             ],
             "Button.spriteName": "mail-button",
+            "Button.callback": "() => this.mail.show()",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
@@ -583,6 +585,26 @@
             "scope": "CLASS",
             "x": 760,
             "y": 480,
+            "visible": false
+        },
+        {
+            "prefabId": "2b073ebe-1fc6-467b-87c1-bb5433937720",
+            "id": "0f64b104-11c8-4e0e-9909-e466d7b4c05a",
+            "unlock": [
+                "visible"
+            ],
+            "label": "mail",
+            "scope": "CLASS",
+            "visible": false
+        },
+        {
+            "prefabId": "cfd4ada9-1244-44f7-a0ac-79b47d443f92",
+            "id": "e74f24a9-f876-4723-b5c2-cee5c473cbe7",
+            "unlock": [
+                "visible"
+            ],
+            "label": "mailbook",
+            "scope": "CLASS",
             "visible": false
         }
     ],
