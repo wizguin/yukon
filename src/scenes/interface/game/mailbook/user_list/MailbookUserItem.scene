@@ -1,0 +1,74 @@
+{
+    "id": "00a9cf55-a533-4da5-8421-01e7de816a86",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "35cf716e-dafe-4d40-8391-dbc0f843f828",
+            "label": "container_1",
+            "x": 882,
+            "y": 352,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "6203ef5e-4f98-4583-a600-73afde8b7de8",
+                    "label": "item",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "list/item",
+                    "Button.callback": "() => this.onClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "list/item"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "658f1fed-92be-4344-8dda-0f0a0d918144",
+                    "label": "icon",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "list/icon_offline"
+                    },
+                    "x": -139
+                },
+                {
+                    "type": "Text",
+                    "id": "51bfcd8e-bd15-4d16-b4d1-13886ce34acc",
+                    "label": "username",
+                    "scope": "CLASS",
+                    "x": 24,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 260,
+                    "fontFamily": "Burbank Small",
+                    "fontSize": "28px",
+                    "fontStyle": "bold",
+                    "color": "#000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

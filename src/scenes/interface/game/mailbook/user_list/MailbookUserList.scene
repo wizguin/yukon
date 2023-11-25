@@ -1,0 +1,271 @@
+{
+    "id": "cda13a82-2ed2-4422-be5d-9a05c903ac25",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapHeight": 56,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f2c55b58-f060-42b7-a694-8026091ec2b1",
+            "label": "container_2",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "31598091-864b-4042-9852-b4e8524ad70d",
+                    "label": "list",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "list/list"
+                    },
+                    "originX": 0.5011990407673861,
+                    "originY": 0.5007072135785007
+                },
+                {
+                    "type": "Image",
+                    "id": "c2e938ce-490c-4abd-a6b3-474858dac82a",
+                    "label": "scroll",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "list/scroll"
+                    },
+                    "x": 165
+                },
+                {
+                    "type": "Image",
+                    "id": "8f4e114e-7da7-4b5f-8163-e8320c27745f",
+                    "label": "downButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.nextPage()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 165,
+                    "y": 308,
+                    "scaleX": 0.86,
+                    "scaleY": 0.86
+                },
+                {
+                    "type": "Image",
+                    "id": "8ccf8bbd-9428-4d36-9ad8-9e75bd0e382b",
+                    "label": "upButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.prevPage()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 165,
+                    "y": -313,
+                    "scaleX": 0.86,
+                    "scaleY": 0.86
+                },
+                {
+                    "type": "Image",
+                    "id": "1c22f0bf-a332-4dc3-960a-6e97923d9c62",
+                    "label": "downArrow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 165,
+                    "y": 306,
+                    "scaleX": 0.86,
+                    "scaleY": 0.86,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "f13654ac-280a-4e10-b4bb-5f291599ee6e",
+                    "label": "upArrow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 165,
+                    "y": -315,
+                    "scaleX": 0.86,
+                    "scaleY": 0.86
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "6dc2b84b-658b-4f5d-9c4d-c3b3d13383e7",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem12",
+                    "x": -30,
+                    "y": 299
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "37aa3389-7230-4968-9a73-d298cdb687e7",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem11",
+                    "x": -30,
+                    "y": 243
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "7ae563c3-ff54-410b-b79a-7b775af73520",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem10",
+                    "x": -30,
+                    "y": 187
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "66a2bf1a-a2e2-43bd-8c01-30c7d4a9d87e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem9",
+                    "x": -30,
+                    "y": 131
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "9be67010-d6e7-49e5-b6c4-bd8db15b96fc",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem8",
+                    "x": -30,
+                    "y": 75
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "4836d30f-e355-42c0-a54f-b3b38b0366cd",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem7",
+                    "x": -30,
+                    "y": 19
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "b71043d6-47a2-42dc-bbb3-d15c6e057af5",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem6",
+                    "x": -30,
+                    "y": -37
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "8572ed12-6cac-408c-903d-f6d15b1bc729",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem5",
+                    "x": -30,
+                    "y": -93
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "a4cecbae-ccdc-4285-b791-e8911c846de9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem4",
+                    "x": -30,
+                    "y": -149
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "400118ed-da33-4228-8cf6-d4fc0c8c9adf",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem3",
+                    "x": -30,
+                    "y": -205
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "78efe28b-d2a6-48c4-bba9-e69391c11b50",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem2",
+                    "x": -30,
+                    "y": -261
+                },
+                {
+                    "prefabId": "00a9cf55-a533-4da5-8421-01e7de816a86",
+                    "id": "0b9ff2d5-4c20-400c-b855-ad47d3ff8cfe",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "mailbookUserItem1",
+                    "x": -30,
+                    "y": -317
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "6ebfc76b-987c-4e8c-b923-7dae4ec9e841",
+            "label": "items",
+            "objectIds": [
+                "0b9ff2d5-4c20-400c-b855-ad47d3ff8cfe",
+                "78efe28b-d2a6-48c4-bba9-e69391c11b50",
+                "400118ed-da33-4228-8cf6-d4fc0c8c9adf",
+                "a4cecbae-ccdc-4285-b791-e8911c846de9",
+                "8572ed12-6cac-408c-903d-f6d15b1bc729",
+                "b71043d6-47a2-42dc-bbb3-d15c6e057af5",
+                "4836d30f-e355-42c0-a54f-b3b38b0366cd",
+                "9be67010-d6e7-49e5-b6c4-bd8db15b96fc",
+                "66a2bf1a-a2e2-43bd-8c01-30c7d4a9d87e",
+                "7ae563c3-ff54-410b-b79a-7b775af73520",
+                "37aa3389-7230-4968-9a73-d298cdb687e7",
+                "6dc2b84b-658b-4f5d-9c4d-c3b3d13383e7"
+            ]
+        }
+    ]
+}
