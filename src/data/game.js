@@ -1,5 +1,6 @@
 import fonts from './fonts'
 import igloos from './igloos'
+import postcards from './postcards'
 import rooms from './rooms'
 import widgets from './widgets'
 
@@ -60,7 +61,8 @@ const game = {
 
         scenes: {
             igloos: igloos,
-            rooms: rooms
+            rooms: rooms,
+            postcards: postcards
         },
 
         widgets: widgets,
