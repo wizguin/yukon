@@ -55,6 +55,18 @@
                     "visible": false,
                     "list": [
                         {
+                            "prefabId": "cda13a82-2ed2-4422-be5d-9a05c903ac25",
+                            "id": "f4553845-4cc4-4b14-a129-9fcaf716ed0a",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "userList",
+                            "scope": "CLASS",
+                            "x": 1051,
+                            "y": 349
+                        },
+                        {
                             "type": "Image",
                             "id": "9b03e74a-66f1-48f7-8ddb-fe1af1c7004f",
                             "label": "send",
@@ -302,6 +314,84 @@
                     ]
                 },
                 {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "1cc6ea04-a628-406e-9064-a90722cc9cdc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem6",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "37b2a16c-115f-4454-881d-92420b721d74",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem5",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "3db6760a-38f8-44c5-bdb4-4674aa4ba591",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem4",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "46cf50f1-e521-4405-a4e7-5305dbc6c1be",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem3",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "5e2ffe91-0571-4c5c-a8dc-639de51099a9",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem2",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
+                    "prefabId": "f753dbbc-9a39-4d38-9eda-8c77184f4792",
+                    "id": "6f3a39c5-b7f1-4cba-832f-9fa00e7c94b9",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPostcardItem1",
+                    "x": -1000,
+                    "y": -1000,
+                    "visible": false
+                },
+                {
                     "type": "Image",
                     "id": "339cf076-debb-4cda-b93b-fc4dc918d53b",
                     "label": "close",
@@ -319,6 +409,20 @@
                     "y": -320,
                     "originX": 0.5028901734104047,
                     "originY": 0.5017667844522968
+                },
+                {
+                    "prefabId": "9105e9af-f2bb-4ae9-ad42-c02031668d8f",
+                    "id": "eb461b88-41d0-494d-b699-2185e2707935",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "mailbookPreview",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 0,
+                    "visible": false
                 }
             ]
         }
@@ -333,7 +437,15 @@
     "lists": [
         {
             "id": "a8c2716a-21f9-4099-89ca-ff974a70a76b",
-            "label": "postcardItems"
+            "label": "postcardItems",
+            "objectIds": [
+                "6f3a39c5-b7f1-4cba-832f-9fa00e7c94b9",
+                "5e2ffe91-0571-4c5c-a8dc-639de51099a9",
+                "46cf50f1-e521-4405-a4e7-5305dbc6c1be",
+                "3db6760a-38f8-44c5-bdb4-4674aa4ba591",
+                "37b2a16c-115f-4454-881d-92420b721d74",
+                "1cc6ea04-a628-406e-9064-a90722cc9cdc"
+            ]
         }
     ]
 }
