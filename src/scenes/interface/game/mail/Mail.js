@@ -7,7 +7,7 @@ import SimpleButton from "../../../components/SimpleButton";
 import Animation from "../../../components/Animation";
 /* START-USER-IMPORTS */
 
-//import PostcardLoader from '@engine/loaders/PostcardLoader'
+import PostcardLoader from '@engine/loaders/PostcardLoader'
 
 /* END-USER-IMPORTS */
 
@@ -186,7 +186,7 @@ export default class Mail extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        // this.postcardLoader = new PostcardLoader(this)
+        this.postcardLoader = new PostcardLoader(this)
 
         this.postcardX = -515
         this.postcardY = -308
@@ -214,6 +214,14 @@ export default class Mail extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get cards() {
+        return this.world.client.postcards
+    }
+
+    get maxPage() {
+        return this.cards.length
+    }
+
     show() {
         this.page = 1
 
@@ -226,11 +234,77 @@ export default class Mail extends BaseContainer {
             ease: this.easeOutBack
         })
 
+        if (this.cards.length) {
+            this.loadPostcard()
+        }
+
         super.show()
+    }
+
+    close() {
+        this.checkDestroyCurrent()
+
+        super.close()
     }
 
     easeOutBack(value) {
         return Phaser.Math.Easing.Back.Out(value, 2)
+    }
+
+    onReplyOver() {
+        this.arrow.__Animation.play()
+    }
+
+    onReplyOut() {
+        this.arrow.__Animation.stop()
+    }
+
+    onPrevClick() {
+        const page = this.page - 1
+        if (page < 1) {
+            return
+        }
+
+        this.page = page
+        this.loadPostcard()
+    }
+
+    onNextClick() {
+        const page = this.page + 1
+        if (page > this.maxPage) {
+            return
+        }
+
+        this.page = page
+        this.loadPostcard()
+    }
+
+    loadPostcard() {
+        this.checkDestroyCurrent()
+
+        this.currentCard = this.cards[this.page - 1]
+
+        this.postcardLoader.loadPostcard(this.currentCard)
+    }
+
+    addPostcard(postcard) {
+        if (postcard !== this.currentCard) {
+            return
+        }
+
+        this.checkDestroyCurrent()
+
+        this.currentPrefab = new this.crumbs.scenes.postcards[postcard.postcardId](this.scene, this.postcardX, this.postcardY)
+        this.currentPrefab.angle = this.postcardAngle
+        this.currentPrefab.setName(postcard.sender)
+
+        this.addAt(this.currentPrefab, 2)
+    }
+
+    checkDestroyCurrent() {
+        if (this.currentPrefab) {
+            this.currentPrefab.destroy()
+        }
     }
 
     /* END-USER-CODE */
