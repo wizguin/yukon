@@ -89,6 +89,10 @@ export default class ClientController {
         return this.rank > 1
     }
 
+    get unreadMailCount() {
+        return this.postcards.filter(postcard => !postcard.hasRead).length
+    }
+
     initInventory() {
          // Generates object from slots in format: { color: [], head: [], ... }
         let inventory = Object.fromEntries(this.slots.map(slot => [slot, []]))

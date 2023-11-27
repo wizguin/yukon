@@ -33,7 +33,7 @@ export default class MailNotification extends BaseContainer {
     /* START-USER-CODE */
 
     updateMailCount() {
-        const unreadCount = this.world.client.postcards.filter(postcard => !postcard.hasRead).length
+        const unreadCount = this.world.client.unreadMailCount
 
         this.visible = unreadCount > 0
         this.count.text = unreadCount

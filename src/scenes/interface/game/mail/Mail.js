@@ -223,6 +223,10 @@ export default class Mail extends BaseContainer {
     }
 
     show() {
+        if (this.world.client.unreadMailCount > 0) {
+            this.network.send('read_mail')
+        }
+
         this.page = 1
 
         this.replyTween = this.scene.tweens.add({
@@ -284,7 +288,14 @@ export default class Mail extends BaseContainer {
 
         this.currentCard = this.cards[this.page - 1]
 
+        this.readPostcard(this.currentCard)
         this.postcardLoader.loadPostcard(this.currentCard)
+    }
+
+    readPostcard(postcard) {
+        postcard.hasRead = true
+
+        this.interface.main.updateMailCount()
     }
 
     addPostcard(postcard) {
