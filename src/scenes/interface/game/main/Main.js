@@ -6,6 +6,7 @@ import Button from "../../../components/Button";
 import ShowHint from "../../../components/ShowHint";
 import ChatLog from "../chatlog/ChatLog";
 import SimpleButton from "../../../components/SimpleButton";
+import MailButton from "./buttons/mail/MailButton";
 import Waddle from "../waddle/Waddle";
 import Buddy from "../buddy/Buddy";
 import PlayerCard from "../playercard/PlayerCard";
@@ -42,6 +43,8 @@ export default class Main extends BaseScene {
         this.crosshair;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
+        /** @type {MailButton} */
+        this.mailButton;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
         /** @type {Waddle} */
@@ -166,8 +169,9 @@ export default class Main extends BaseScene {
         const request_button = this.add.image(276, 71, "main", "buddy-button");
         request_button.visible = false;
 
-        // mail_button
-        const mail_button = this.add.image(176, 58, "main", "mail-button");
+        // mailButton
+        const mailButton = new MailButton(this, 176, 58);
+        this.add.existing(mailButton);
 
         // news_button
         const news_button = this.add.image(76, 70, "main", "news-button");
@@ -319,12 +323,6 @@ export default class Main extends BaseScene {
         request_buttonButton.callback = () => this.onRequestClick();
         request_buttonButton.activeFrame = false;
 
-        // mail_button (components)
-        const mail_buttonButton = new Button(mail_button);
-        mail_buttonButton.spriteName = "mail-button";
-        mail_buttonButton.callback = () => this.mail.show();
-        mail_buttonButton.activeFrame = false;
-
         // news_button (components)
         const news_buttonButton = new Button(news_button);
         news_buttonButton.spriteName = "news-button";
@@ -342,6 +340,7 @@ export default class Main extends BaseScene {
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
+        this.mailButton = mailButton;
         this.mod_m = mod_m;
         this.waddle = waddle;
         this.buddy = buddy;
@@ -370,6 +369,10 @@ export default class Main extends BaseScene {
         // Widgets
 
         this.setupWidgets()
+
+        // Mail
+
+        this.updateMailCount()
 
         // Factories
 
@@ -448,6 +451,10 @@ export default class Main extends BaseScene {
     addToWidgetLayer(widget) {
         this.widgetLayer.add(widget)
         this.setupWidget(widget)
+    }
+
+    updateMailCount() {
+        this.mailButton.updateMailCount()
     }
 
     onSnowballClick() {

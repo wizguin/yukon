@@ -406,19 +406,14 @@
             "visible": false
         },
         {
-            "type": "Image",
-            "id": "24426f54-e0c3-496d-97ec-a720c62ce2f8",
-            "label": "mail_button",
-            "components": [
-                "Button"
+            "prefabId": "4910867d-2158-40cd-881f-3b9764388f90",
+            "id": "dcc47812-1ddf-47f0-b684-8289700b6d8c",
+            "unlock": [
+                "x",
+                "y"
             ],
-            "Button.spriteName": "mail-button",
-            "Button.callback": "() => this.mail.show()",
-            "Button.activeFrame": false,
-            "texture": {
-                "key": "main",
-                "frame": "mail-button"
-            },
+            "label": "mailButton",
+            "scope": "CLASS",
             "x": 176,
             "y": 58
         },
@@ -613,7 +608,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {
