@@ -93,7 +93,7 @@ export default class Mailbook extends BaseContainer {
         const postcardsText2 = scene.add.text(128, 48, "", {});
         postcardsText2.setOrigin(0, 0.5);
         postcardsText2.text = "Postcards";
-        postcardsText2.setStyle({ "color": "#000000", "fixedWidth":400,"fontFamily": "Burbank Big", "fontSize": "58px", "fontStyle": "bold" });
+        postcardsText2.setStyle({ "color": "#000000", "fixedWidth":400,"fontFamily": "Burbank Big Regular", "fontSize": "58px", "fontStyle": "bold" });
         buddy.add(postcardsText2);
 
         // postcards
@@ -123,7 +123,7 @@ export default class Mailbook extends BaseContainer {
         // coinText
         const coinText = scene.add.text(1164, 7, "", {});
         coinText.text = "10";
-        coinText.setStyle({ "color": "#000000", "fixedWidth":50,"fontFamily": "Burbank Big", "fontSize": "40px", "fontStyle": "bold" });
+        coinText.setStyle({ "color": "#000000", "fixedWidth":50,"fontFamily": "Burbank Big Regular", "fontSize": "40px", "fontStyle": "bold" });
         postcards.add(coinText);
 
         // separator1
@@ -152,7 +152,7 @@ export default class Mailbook extends BaseContainer {
         const postcardsText = scene.add.text(188, 22, "", {});
         postcardsText.setOrigin(0, 0.5);
         postcardsText.text = "Postcards";
-        postcardsText.setStyle({ "color": "#000000", "fixedWidth":400,"fontFamily": "Burbank Big", "fontSize": "58px", "fontStyle": "bold" });
+        postcardsText.setStyle({ "color": "#000000", "fixedWidth":400,"fontFamily": "Burbank Big Regular", "fontSize": "58px", "fontStyle": "bold" });
         postcards.add(postcardsText);
 
         // mailbookPostcardItem6

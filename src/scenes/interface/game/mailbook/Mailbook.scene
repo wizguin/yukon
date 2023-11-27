@@ -162,7 +162,7 @@
                             "originY": 0.5,
                             "text": "Postcards",
                             "fixedWidth": 400,
-                            "fontFamily": "Burbank Big",
+                            "fontFamily": "Burbank Big Regular",
                             "fontSize": "58px",
                             "fontStyle": "bold",
                             "color": "#000000"
@@ -245,7 +245,7 @@
                             "y": 7,
                             "text": "10",
                             "fixedWidth": 50,
-                            "fontFamily": "Burbank Big",
+                            "fontFamily": "Burbank Big Regular",
                             "fontSize": "40px",
                             "fontStyle": "bold",
                             "color": "#000000"
@@ -306,7 +306,7 @@
                             "originY": 0.5,
                             "text": "Postcards",
                             "fixedWidth": 400,
-                            "fontFamily": "Burbank Big",
+                            "fontFamily": "Burbank Big Regular",
                             "fontSize": "58px",
                             "fontStyle": "bold",
                             "color": "#000000"
