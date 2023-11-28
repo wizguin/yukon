@@ -22,6 +22,8 @@ export default class Mail extends BaseContainer {
         this.reply;
         /** @type {Phaser.GameObjects.Container} */
         this.noMessages;
+        /** @type {Phaser.GameObjects.Text} */
+        this.count;
 
 
         // bg
@@ -98,6 +100,13 @@ export default class Mail extends BaseContainer {
         text.text = "You Have No\nMessages";
         text.setStyle({ "align": "center", "color": "#223C3C", "fixedWidth":300,"fontFamily": "Burbank Small", "fontSize": "50px", "fontStyle": "bold" });
         noMessages.add(text);
+
+        // count
+        const count = scene.add.text(590, -175, "", {});
+        count.scaleX = 1.1;
+        count.setOrigin(0.5, 0.5);
+        count.setStyle({ "align": "center", "fixedWidth":232,"fixedHeight":110,"fontFamily": "CCFaceFront", "fontSize": "32px", "fontStyle": "bold italic", "stroke": "#000", "strokeThickness":8,"shadow.blur":3,"shadow.stroke":true,"shadow.fill":true});
+        this.add(count);
 
         // closeButton
         const closeButton = scene.add.image(707, -424, "mail", "close_button");
@@ -183,6 +192,7 @@ export default class Mail extends BaseContainer {
         this.arrow = arrow;
         this.reply = reply;
         this.noMessages = noMessages;
+        this.count = count;
 
         /* START-USER-CTR-CODE */
 
@@ -289,6 +299,9 @@ export default class Mail extends BaseContainer {
         this.currentCard = this.cards[this.page - 1]
 
         this.readPostcard(this.currentCard)
+
+        this.updateCount()
+
         this.postcardLoader.loadPostcard(this.currentCard)
     }
 
@@ -316,6 +329,10 @@ export default class Mail extends BaseContainer {
         if (this.currentPrefab) {
             this.currentPrefab.destroy()
         }
+    }
+
+    updateCount() {
+        this.count.text = `MESSAGE\n${this.page} of ${this.cards.length}`
     }
 
     /* END-USER-CODE */
