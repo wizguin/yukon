@@ -129,7 +129,7 @@ export default class MailbookPreview extends BaseContainer {
     }
 
     onYesClick() {
-        this.network.send('send_mail', { recipient: this.parentContainer.recipientId, postcard: this.id })
+        this.network.send('send_mail', { recipient: this.parentContainer.recipientId, postcardId: this.id })
     }
 
     loadPostcard(postcard) {
