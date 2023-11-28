@@ -89,6 +89,10 @@ export default class ClientController {
         return this.rank > 1
     }
 
+    get mailCount() {
+        return this.postcards.length
+    }
+
     get unreadMailCount() {
         return this.postcards.filter(postcard => !postcard.hasRead).length
     }
