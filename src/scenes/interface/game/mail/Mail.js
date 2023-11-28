@@ -19,14 +19,12 @@ export default class Mail extends BaseContainer {
 
         /** @type {MailReply} */
         this.replyButton;
-        /** @type {Phaser.GameObjects.Sprite} */
-        this.arrow;
-        /** @type {Phaser.GameObjects.Container} */
-        this.reply;
         /** @type {Phaser.GameObjects.Container} */
         this.noMessages;
         /** @type {Phaser.GameObjects.Text} */
         this.count;
+        /** @type {Array<Phaser.GameObjects.Text|Phaser.GameObjects.Sprite|MailReply|Phaser.GameObjects.Image>} */
+        this.activeElements;
 
 
         // bg
@@ -99,6 +97,9 @@ export default class Mail extends BaseContainer {
         closeButton.setOrigin(0.5029239766081871, 0.5038167938931297);
         this.add(closeButton);
 
+        // lists
+        const activeElements = [count, removeButton, replyButton, trashButton, prevButton, nextButton];
+
         // bg (components)
         new Interactive(bg);
 
@@ -156,6 +157,7 @@ export default class Mail extends BaseContainer {
         this.replyButton = replyButton;
         this.noMessages = noMessages;
         this.count = count;
+        this.activeElements = activeElements;
 
         /* START-USER-CTR-CODE */
 
@@ -207,6 +209,8 @@ export default class Mail extends BaseContainer {
             this.loadPostcard()
         }
 
+        this.updateVisibleElements()
+
         super.show()
     }
 
@@ -229,6 +233,10 @@ export default class Mail extends BaseContainer {
     }
 
     onPrevClick() {
+        if (this.isMailEmpty) {
+            return
+        }
+
         const page = this.page - 1
         if (page < 1) {
             return
@@ -239,6 +247,10 @@ export default class Mail extends BaseContainer {
     }
 
     onNextClick() {
+        if (this.isMailEmpty) {
+            return
+        }
+
         const page = this.page + 1
         if (page > this.maxPage) {
             return
@@ -255,6 +267,7 @@ export default class Mail extends BaseContainer {
 
         this.readPostcard(this.currentCard)
 
+        this.updateVisibleElements()
         this.updateReplyButton()
         this.updateCount()
 
@@ -289,6 +302,12 @@ export default class Mail extends BaseContainer {
 
     updateCount() {
         this.count.text = `MESSAGE\n${this.page} of ${this.cards.length}`
+    }
+
+    updateVisibleElements() {
+        this.noMessages.visible = this.isMailEmpty
+
+        this.activeElements.forEach(control => control.visible = !this.isMailEmpty)
     }
 
     updateReplyButton() {

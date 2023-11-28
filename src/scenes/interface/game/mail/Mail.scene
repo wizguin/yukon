@@ -111,6 +111,18 @@
                     "originY": 0.5004887585532747
                 },
                 {
+                    "prefabId": "8cf3168e-3e94-4c35-984d-ae291a9fbbb6",
+                    "id": "77bf89d8-6526-4442-82e9-f82e8eb8f6a8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "replyButton",
+                    "scope": "CLASS",
+                    "x": 991,
+                    "y": -1004
+                },
+                {
                     "type": "Sprite",
                     "id": "63ab47f9-85bb-45c7-a889-78bc983441a5",
                     "label": "removeButton",
@@ -160,75 +172,6 @@
                 },
                 {
                     "type": "Container",
-                    "id": "666b1110-e568-4f20-9ac0-6bcc2660c3e4",
-                    "label": "reply",
-                    "scope": "CLASS",
-                    "x": 541,
-                    "y": -810,
-                    "angle": 24.000000000000004,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "2f21b436-6f9f-47b6-b22e-4f8b359ac8e3",
-                            "label": "replyShadow",
-                            "texture": {
-                                "key": "mail",
-                                "frame": "reply/shadow"
-                            },
-                            "x": 173,
-                            "y": 13,
-                            "originX": 0.5005727376861397
-                        },
-                        {
-                            "type": "Sprite",
-                            "id": "4b1a6cc6-23f4-4501-bd7d-965d197bb4c5",
-                            "label": "replyNote",
-                            "components": [
-                                "SimpleButton",
-                                "Animation"
-                            ],
-                            "SimpleButton.hoverCallback": "() => this.onReplyOver()",
-                            "SimpleButton.hoverOutCallback": "() => this.onReplyOut()",
-                            "SimpleButton.pixelPerfect": true,
-                            "Animation.key": "reply/reply",
-                            "Animation.start": 2,
-                            "Animation.end": 8,
-                            "Animation.repeat": 0,
-                            "Animation.autoPlay": false,
-                            "Animation.onHover": true,
-                            "texture": {
-                                "key": "mail",
-                                "frame": "reply/reply0001"
-                            },
-                            "x": 171,
-                            "originY": 0.5006242197253433
-                        },
-                        {
-                            "type": "Sprite",
-                            "id": "1eaac536-e2b5-40aa-9bfc-b0961c3d8deb",
-                            "label": "arrow",
-                            "scope": "CLASS",
-                            "components": [
-                                "Animation"
-                            ],
-                            "Animation.key": "reply/arrow",
-                            "Animation.end": 32,
-                            "Animation.autoPlay": false,
-                            "Animation.stopOnOut": false,
-                            "Animation.showOnStart": true,
-                            "Animation.hideOnComplete": true,
-                            "texture": {
-                                "key": "mail",
-                                "frame": "reply/arrow0001"
-                            },
-                            "y": 219,
-                            "angle": -24.000000000000004,
-                            "originY": 0.5028248587570622
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
                     "id": "1062c1af-95c0-4dec-864e-e5ba8a738e9f",
                     "label": "noMessages",
                     "scope": "CLASS",
@@ -265,6 +208,28 @@
                     ]
                 },
                 {
+                    "type": "Text",
+                    "id": "4bb7f2c9-3412-4e95-94fe-5d22cac404b1",
+                    "label": "count",
+                    "scope": "CLASS",
+                    "x": 590,
+                    "y": -175,
+                    "scaleX": 1.1,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 232,
+                    "fixedHeight": 110,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "fontStyle": "bold italic",
+                    "stroke": "#000",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.fill": true,
+                    "shadow.blur": 3
+                },
+                {
                     "type": "Image",
                     "id": "636c028b-ddc2-429f-9897-5bb26d0505de",
                     "label": "closeButton",
@@ -291,5 +256,19 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "lists": [
+        {
+            "id": "54a15566-67bb-43e8-bdcb-eed480e72b03",
+            "label": "activeElements",
+            "objectIds": [
+                "4bb7f2c9-3412-4e95-94fe-5d22cac404b1",
+                "63ab47f9-85bb-45c7-a889-78bc983441a5",
+                "77bf89d8-6526-4442-82e9-f82e8eb8f6a8",
+                "aceb12d9-8ea0-4f7f-9230-40d224afdad3",
+                "4d38d198-f78b-46b3-b024-f1c91b8e1629",
+                "6da204da-66c2-45a7-b3d3-e5c0e1d4e20e"
+            ]
+        }
+    ]
 }
