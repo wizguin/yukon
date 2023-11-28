@@ -1,0 +1,82 @@
+{
+    "id": "8cf3168e-3e94-4c35-984d-ae291a9fbbb6",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b5d42ace-c20e-4125-8680-73a396ea1013",
+            "label": "reply",
+            "scope": "CLASS",
+            "y": -1,
+            "angle": 24.000000000000004,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "2f21b436-6f9f-47b6-b22e-4f8b359ac8e3",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "reply/shadow"
+                    },
+                    "x": -223,
+                    "y": 396,
+                    "originX": 0.5005727376861397
+                },
+                {
+                    "type": "Sprite",
+                    "id": "4b1a6cc6-23f4-4501-bd7d-965d197bb4c5",
+                    "label": "note",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.hoverCallback": "() => this.onOver()",
+                    "SimpleButton.hoverOutCallback": "() => this.onOut()",
+                    "SimpleButton.callback": "() => this.onClick()",
+                    "SimpleButton.pixelPerfect": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "reply/reply0001"
+                    },
+                    "x": -225,
+                    "y": 383,
+                    "originY": 0.5006242197253433
+                },
+                {
+                    "type": "Sprite",
+                    "id": "1eaac536-e2b5-40aa-9bfc-b0961c3d8deb",
+                    "label": "arrow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "reply/arrow0001"
+                    },
+                    "x": -396,
+                    "y": 603,
+                    "angle": -24.000000000000004,
+                    "originY": 0.5028248587570622,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

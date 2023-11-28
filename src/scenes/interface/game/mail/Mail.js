@@ -5,6 +5,7 @@ import Interactive from "../../../components/Interactive";
 import Button from "../../../components/Button";
 import SimpleButton from "../../../components/SimpleButton";
 import Animation from "../../../components/Animation";
+import MailReply from "./reply/MailReply";
 /* START-USER-IMPORTS */
 
 import PostcardLoader from '@engine/loaders/PostcardLoader'
@@ -16,6 +17,8 @@ export default class Mail extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {MailReply} */
+        this.replyButton;
         /** @type {Phaser.GameObjects.Sprite} */
         this.arrow;
         /** @type {Phaser.GameObjects.Container} */
@@ -52,6 +55,10 @@ export default class Mail extends BaseContainer {
         trashButton.setOrigin(0.5, 0.5004887585532747);
         this.add(trashButton);
 
+        // replyButton
+        const replyButton = new MailReply(scene, 991, -1004);
+        this.add(replyButton);
+
         // removeButton
         const removeButton = scene.add.sprite(-45, 2, "mail", "remove/remove0001");
         removeButton.setOrigin(0.5, 0.500517063081696);
@@ -62,27 +69,6 @@ export default class Mail extends BaseContainer {
         newButton.angle = 19.5;
         newButton.setOrigin(0.5, 0.5003518648838846);
         this.add(newButton);
-
-        // reply
-        const reply = scene.add.container(541, -810);
-        reply.angle = 24.000000000000004;
-        this.add(reply);
-
-        // replyShadow
-        const replyShadow = scene.add.image(173, 13, "mail", "reply/shadow");
-        replyShadow.setOrigin(0.5005727376861397, 0.5);
-        reply.add(replyShadow);
-
-        // replyNote
-        const replyNote = scene.add.sprite(171, 0, "mail", "reply/reply0001");
-        replyNote.setOrigin(0.5, 0.5006242197253433);
-        reply.add(replyNote);
-
-        // arrow
-        const arrow = scene.add.sprite(0, 219, "mail", "reply/arrow0001");
-        arrow.angle = -24.000000000000004;
-        arrow.setOrigin(0.5, 0.5028248587570622);
-        reply.add(arrow);
 
         // noMessages
         const noMessages = scene.add.container(-170, -43);
@@ -162,35 +148,12 @@ export default class Mail extends BaseContainer {
         newButtonAnimation.autoPlay = false;
         newButtonAnimation.onHover = true;
 
-        // replyNote (components)
-        const replyNoteSimpleButton = new SimpleButton(replyNote);
-        replyNoteSimpleButton.hoverCallback = () => this.onReplyOver();
-        replyNoteSimpleButton.hoverOutCallback = () => this.onReplyOut();
-        replyNoteSimpleButton.pixelPerfect = true;
-        const replyNoteAnimation = new Animation(replyNote);
-        replyNoteAnimation.key = "reply/reply";
-        replyNoteAnimation.start = 2;
-        replyNoteAnimation.end = 8;
-        replyNoteAnimation.repeat = 0;
-        replyNoteAnimation.autoPlay = false;
-        replyNoteAnimation.onHover = true;
-
-        // arrow (components)
-        const arrowAnimation = new Animation(arrow);
-        arrowAnimation.key = "reply/arrow";
-        arrowAnimation.end = 32;
-        arrowAnimation.autoPlay = false;
-        arrowAnimation.stopOnOut = false;
-        arrowAnimation.showOnStart = true;
-        arrowAnimation.hideOnComplete = true;
-
         // closeButton (components)
         const closeButtonSimpleButton = new SimpleButton(closeButton);
         closeButtonSimpleButton.callback = () => this.close();
         closeButtonSimpleButton.pixelPerfect = true;
 
-        this.arrow = arrow;
-        this.reply = reply;
+        this.replyButton = replyButton;
         this.noMessages = noMessages;
         this.count = count;
 
@@ -209,15 +172,6 @@ export default class Mail extends BaseContainer {
 
         this.page = 1
 
-        this.replyTween = this.scene.tweens.add({
-            targets: this.reply,
-            duration: 300,
-            x: 592,
-            y: -620,
-            angle: 0,
-            ease: this.easeOutBack
-        })
-
         /* END-USER-CTR-CODE */
     }
 
@@ -232,21 +186,22 @@ export default class Mail extends BaseContainer {
         return this.cards.length
     }
 
+    get isMailEmpty() {
+        return this.world.client.mailCount < 1
+    }
+
+    get isCurrentBuddy() {
+        return this.world.isBuddy(this.currentCard.senderId)
+    }
+
     show() {
+        this.replyButton.reset()
+
         if (this.world.client.unreadMailCount > 0) {
             this.network.send('read_mail')
         }
 
         this.page = 1
-
-        this.replyTween = this.scene.tweens.add({
-            targets: this.reply,
-            duration: 300,
-            x: { from: 541, to: 592 },
-            y: { from: -810, to: -620 },
-            angle: { from: 24, to: 0 },
-            ease: this.easeOutBack
-        })
 
         if (this.cards.length) {
             this.loadPostcard()
@@ -300,6 +255,7 @@ export default class Mail extends BaseContainer {
 
         this.readPostcard(this.currentCard)
 
+        this.updateReplyButton()
         this.updateCount()
 
         this.postcardLoader.loadPostcard(this.currentCard)
@@ -320,7 +276,7 @@ export default class Mail extends BaseContainer {
 
         this.currentPrefab = new this.crumbs.scenes.postcards[postcard.postcardId](this.scene, this.postcardX, this.postcardY)
         this.currentPrefab.angle = this.postcardAngle
-        this.currentPrefab.setName(postcard.sender)
+        this.currentPrefab.setName(postcard.senderName)
 
         this.addAt(this.currentPrefab, 2)
     }
@@ -333,6 +289,10 @@ export default class Mail extends BaseContainer {
 
     updateCount() {
         this.count.text = `MESSAGE\n${this.page} of ${this.cards.length}`
+    }
+
+    updateReplyButton() {
+        this.replyButton.updateState()
     }
 
     /* END-USER-CODE */
