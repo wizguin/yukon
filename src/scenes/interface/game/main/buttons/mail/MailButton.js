@@ -33,6 +33,9 @@ export default class MailButton extends BaseContainer {
         this.notification = notification;
 
         /* START-USER-CTR-CODE */
+
+        this.lastUnreadCount = 0
+
         /* END-USER-CTR-CODE */
     }
 
@@ -41,6 +44,15 @@ export default class MailButton extends BaseContainer {
 
     updateMailCount() {
         this.notification.updateMailCount()
+
+        const unreadCount = this.world.client.unreadMailCount
+
+        // Only bounce on new mail
+        if (unreadCount > this.lastUnreadCount) {
+            this.scene.bounce(this)
+        }
+
+        this.lastUnreadCount = unreadCount
     }
 
     /* END-USER-CODE */
