@@ -29,6 +29,8 @@ export default class ClientController {
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
         this.inventory = this.initInventory()
 
+        this.sortPostcards()
+
         // Reference to ClientPenguin object
         this.penguin
 
@@ -116,6 +118,13 @@ export default class ClientController {
         }
 
         return inventory
+    }
+
+    /**
+     * Sort by newest first.
+     */
+    sortPostcards() {
+        this.postcards.sort((a, b) => new Date(b.sendDate) - new Date(a.sendDate))
     }
 
     onPointerMove(pointer) {
