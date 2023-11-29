@@ -185,7 +185,7 @@ export default class Mail extends BaseContainer {
     }
 
     get maxPage() {
-        return this.cards.length
+        return this.world.client.mailCount
     }
 
     get isMailEmpty() {
@@ -203,13 +203,7 @@ export default class Mail extends BaseContainer {
             this.network.send('read_mail')
         }
 
-        this.page = 1
-
-        if (this.cards.length) {
-            this.loadPostcard()
-        }
-
-        this.updateVisibleElements()
+        this.goToFirstPage()
 
         super.show()
     }
@@ -242,8 +236,7 @@ export default class Mail extends BaseContainer {
             return
         }
 
-        this.page = page
-        this.loadPostcard()
+        this.goToPage(page)
     }
 
     onNextClick() {
@@ -256,6 +249,18 @@ export default class Mail extends BaseContainer {
             return
         }
 
+        this.goToPage(page)
+    }
+
+    goToFirstPage() {
+        if (this.isMailEmpty) {
+            this.updateVisibleElements()
+        } else {
+            this.goToPage(1)
+        }
+    }
+
+    goToPage(page) {
         this.page = page
         this.loadPostcard()
     }
