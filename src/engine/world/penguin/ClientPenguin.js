@@ -69,6 +69,8 @@ export default class ClientPenguin extends Penguin {
     }
 
     isTrigger() {
+        if (this.interface.main.mail.visible) return
+
         if (!this.room.triggers) return
 
         for (let trigger of this.room.triggers) {
