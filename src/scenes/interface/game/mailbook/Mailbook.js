@@ -228,7 +228,8 @@ export default class Mailbook extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.startY = 45
+        this.startX = 20
+        this.startY = 40
         this.cellWidth = 400
         this.cellHeight = 305
 
@@ -347,16 +348,16 @@ export default class Mailbook extends BaseContainer {
             return
         }
 
-        const halfCellWidth = this.cellWidth / 2
-        const halfCellHeight = this.cellHeight / 2
+        const halfCellWidth = Math.round(this.cellWidth / 2)
+        const halfCellHeight = Math.round(this.cellHeight / 2)
 
         switch (items.length) {
             case 1:
-                this.createGrid(items, 1, 1, 0, 0)
+                this.createGrid(items, 1, 0, 0)
                 break
 
             case 2:
-                this.createGrid(items, 2, 1, -halfCellWidth, 0)
+                this.createGrid(items, 2, -halfCellWidth, 0)
                 break
 
             case 3:
@@ -364,7 +365,7 @@ export default class Mailbook extends BaseContainer {
                 break
 
             case 4:
-                this.createGrid(items, 2, 2, -halfCellWidth, -halfCellHeight)
+                this.createGrid(items, 2, -halfCellWidth, -halfCellHeight)
                 break
 
             case 5:
@@ -372,7 +373,7 @@ export default class Mailbook extends BaseContainer {
                 break
 
             case 6:
-                this.createGrid(items, 3, 2, -this.cellWidth, -halfCellHeight)
+                this.createGrid(items, 3, -this.cellWidth, -halfCellHeight)
                 break
 
             default:
@@ -380,32 +381,39 @@ export default class Mailbook extends BaseContainer {
         }
     }
 
-    createGrid(items, cols, rows, x, y) {
+    createGrid(items, cols, x, y) {
+        // Start pos offset
+        x += this.startX
         y += this.startY
 
-        Phaser.Actions.GridAlign(items, {
-            width: cols,
-            height: rows,
-            cellWidth: this.cellWidth,
-            cellHeight: this.cellHeight,
-            position: Phaser.Display.Align.CENTER,
-            x: x,
-            y: y
-        })
+        // Loop through each item and position it in grid
+        for (let i = 0; i < items.length; i++) {
+            const colIndex = i % cols
+            const rowIndex = Math.floor(i / cols)
+
+            const offsetX = colIndex * this.cellWidth
+            const offsetY = rowIndex * this.cellHeight
+
+            items[i].x = x + offsetX
+            items[i].y = y + offsetY
+
+            // Position each column below the previous
+            items[i].y += colIndex * 6
+        }
     }
 
     create3Grid(items, halfCellWidth, halfCellHeight) {
         items = this.splitArray(items, 2)
 
-        this.createGrid(items[0], 2, 1, -halfCellWidth, -halfCellHeight)
-        this.createGrid(items[1], 1, 1, 0, halfCellHeight)
+        this.createGrid(items[0], 2, -halfCellWidth, -halfCellHeight)
+        this.createGrid(items[1], 1, 0, halfCellHeight)
     }
 
     create5Grid(items, halfCellWidth, halfCellHeight) {
         items = this.splitArray(items, 3)
 
-        this.createGrid(items[0], 3, 1, -this.cellWidth, -halfCellHeight)
-        this.createGrid(items[1], 2, 1, -halfCellWidth, halfCellHeight)
+        this.createGrid(items[0], 3, -this.cellWidth, -halfCellHeight)
+        this.createGrid(items[1], 2, -halfCellWidth, halfCellHeight)
     }
 
     splitArray(array, middleIndex) {
