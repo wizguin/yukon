@@ -11,21 +11,10 @@ export default class Mail extends Plugin {
         }
     }
 
-    get main() {
-        return this.interface.main
-    }
-
     receiveMail(args) {
         this.world.client.postcards.push(args)
 
-        this.world.client.sortPostcards()
-
-        if (this.main.mail.visible) {
-            // Read mail before updating count
-            this.main.mail.goToFirstPage()
-        }
-
-        this.main.updateMailCount()
+        this.world.client.refreshPostcards()
     }
 
 }

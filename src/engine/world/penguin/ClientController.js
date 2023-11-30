@@ -120,13 +120,6 @@ export default class ClientController {
         return inventory
     }
 
-    /**
-     * Sort by newest first.
-     */
-    sortPostcards() {
-        this.postcards.sort((a, b) => new Date(b.sendDate) - new Date(a.sendDate))
-    }
-
     onPointerMove(pointer) {
         if (this.interface.main.crosshair.visible) {
             this.interface.main.onCrosshairMove(pointer)
@@ -342,6 +335,30 @@ export default class ClientController {
             x: matrix.getX(0, 0),
             y: matrix.getY(0, 0)
         }
+    }
+
+    /**
+     * Sort by newest first.
+     */
+    sortPostcards() {
+        this.postcards.sort((a, b) => new Date(b.sendDate) - new Date(a.sendDate))
+    }
+
+    filterPostcards(filter) {
+        this.postcards = this.postcards.filter(postcard => filter(postcard))
+
+        this.refreshPostcards()
+    }
+
+    refreshPostcards() {
+        this.sortPostcards()
+
+        if (this.interface.main.mail.visible) {
+            // Read mail before updating count
+            this.interface.main.mail.goToFirstPage()
+        }
+
+        this.interface.main.updateMailCount()
     }
 
 }

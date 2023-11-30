@@ -117,6 +117,7 @@ export default class Mail extends BaseContainer {
 
         // trashButton (components)
         const trashButtonSimpleButton = new SimpleButton(trashButton);
+        trashButtonSimpleButton.callback = () => this.onTrashClick();
         trashButtonSimpleButton.pixelPerfect = true;
         const trashButtonAnimation = new Animation(trashButton);
         trashButtonAnimation.key = "trash/trash";
@@ -128,6 +129,7 @@ export default class Mail extends BaseContainer {
 
         // removeButton (components)
         const removeButtonSimpleButton = new SimpleButton(removeButton);
+        removeButtonSimpleButton.callback = () => this.onRemoveClick();
         removeButtonSimpleButton.pixelPerfect = true;
         const removeButtonAnimation = new Animation(removeButton);
         removeButtonAnimation.key = "remove/remove";
@@ -252,9 +254,31 @@ export default class Mail extends BaseContainer {
         this.goToPage(page)
     }
 
+    onTrashClick() {
+        const text = `Are you sure you want to recycle this postcard from ${this.currentCard.senderName}?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.interface.prompt.window.visible = false
+
+            this.sendDeleteMail()
+        })
+    }
+
+    onRemoveClick() {
+        const text = `This will permanently remove all postcards from ${this.currentCard.senderName}. Do you want to do this?`
+
+        this.interface.prompt.showWindow(text, 'dual', () => {
+            this.interface.prompt.window.visible = false
+
+            this.sendDeleteMailFrom()
+        })
+    }
+
     goToFirstPage() {
         if (this.isMailEmpty) {
+            this.checkDestroyCurrent()
             this.updateVisibleElements()
+
         } else {
             this.goToPage(1)
         }
@@ -317,6 +341,18 @@ export default class Mail extends BaseContainer {
 
     updateReplyButton() {
         this.replyButton.updateState()
+    }
+
+    sendDeleteMail() {
+        this.world.client.filterPostcards((postcard) => postcard.id !== this.currentCard.id)
+
+        this.network.send('delete_mail', { id: this.currentCard.id })
+    }
+
+    sendDeleteMailFrom() {
+        this.world.client.filterPostcards((postcard) => postcard.senderId !== this.currentCard.senderId)
+
+        this.network.send('delete_mail_from', { senderId: this.currentCard.senderId })
     }
 
     /* END-USER-CODE */

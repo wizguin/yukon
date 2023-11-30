@@ -95,6 +95,7 @@
                         "SimpleButton",
                         "Animation"
                     ],
+                    "SimpleButton.callback": "() => this.onTrashClick()",
                     "SimpleButton.pixelPerfect": true,
                     "Animation.key": "trash/trash",
                     "Animation.start": 2,
@@ -130,6 +131,7 @@
                         "SimpleButton",
                         "Animation"
                     ],
+                    "SimpleButton.callback": "() => this.onRemoveClick()",
                     "SimpleButton.pixelPerfect": true,
                     "Animation.key": "remove/remove",
                     "Animation.start": 2,
