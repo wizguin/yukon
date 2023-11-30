@@ -344,15 +344,15 @@ export default class Mail extends BaseContainer {
     }
 
     sendDeleteMail() {
-        this.world.client.filterPostcards((postcard) => postcard.id !== this.currentCard.id)
-
         this.network.send('delete_mail', { id: this.currentCard.id })
+
+        this.world.client.filterPostcards((postcard) => postcard.id !== this.currentCard.id)
     }
 
     sendDeleteMailFrom() {
-        this.world.client.filterPostcards((postcard) => postcard.senderId !== this.currentCard.senderId)
-
         this.network.send('delete_mail_from', { senderId: this.currentCard.senderId })
+
+        this.world.client.filterPostcards((postcard) => postcard.senderId !== this.currentCard.senderId)
     }
 
     /* END-USER-CODE */
