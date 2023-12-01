@@ -256,6 +256,12 @@ export default class Mailbook extends BaseContainer {
         super.show()
     }
 
+    close() {
+        this.mailbookPreview.close()
+
+        super.close()
+    }
+
     buildPages() {
         const pages = []
 
