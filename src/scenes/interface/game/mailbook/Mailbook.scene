@@ -310,6 +310,22 @@
                             "fontSize": "58px",
                             "fontStyle": "bold",
                             "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "c7846fa3-c512-40e4-a244-550a00b0adbf",
+                            "label": "pageText",
+                            "scope": "CLASS",
+                            "x": 1163,
+                            "y": -45,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "fixedWidth": 250,
+                            "align": "right",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "20px",
+                            "fontStyle": "bold",
+                            "color": "#bbb"
                         }
                     ]
                 },

@@ -23,6 +23,8 @@ export default class Mailbook extends BaseContainer {
         this.buddy;
         /** @type {Phaser.GameObjects.Text} */
         this.titleText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.pageText;
         /** @type {Phaser.GameObjects.Container} */
         this.postcards;
         /** @type {MailbookPreview} */
@@ -155,6 +157,12 @@ export default class Mailbook extends BaseContainer {
         postcardsText.setStyle({ "color": "#000000", "fixedWidth":400,"fontFamily": "Burbank Big Regular", "fontSize": "58px", "fontStyle": "bold" });
         postcards.add(postcardsText);
 
+        // pageText
+        const pageText = scene.add.text(1163, -45, "", {});
+        pageText.setOrigin(0.5, 0.5);
+        pageText.setStyle({ "align": "right", "color": "#bbb", "fixedWidth":250,"fontFamily": "Burbank Small", "fontSize": "20px", "fontStyle": "bold" });
+        postcards.add(pageText);
+
         // mailbookPostcardItem6
         const mailbookPostcardItem6 = new MailbookPostcardItem(scene, -1000, -1000);
         mailbookPostcardItem6.visible = false;
@@ -222,6 +230,7 @@ export default class Mailbook extends BaseContainer {
         this.userList = userList;
         this.buddy = buddy;
         this.titleText = titleText;
+        this.pageText = pageText;
         this.postcards = postcards;
         this.mailbookPreview = mailbookPreview;
         this.postcardItems = postcardItems;
@@ -322,6 +331,8 @@ export default class Mailbook extends BaseContainer {
             }
         }
 
+        this.updatePageText()
+
         this.updateGrid()
 
         this.postcardIconLoader.loadPage(page)
@@ -345,6 +356,10 @@ export default class Mailbook extends BaseContainer {
 
         this.page = page
         this.showPage()
+    }
+
+    updatePageText() {
+        this.pageText.text = `Page ${this.page} of ${this.maxPage}`
     }
 
     updateGrid() {
