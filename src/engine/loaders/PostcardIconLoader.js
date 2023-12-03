@@ -33,6 +33,7 @@ export default class PostcardIconLoader extends BaseLoader {
             const postcard = page.postcards[index]
 
             if (postcard) {
+                item.startSpinner()
                 this.loadPostcard(postcard.id)
             }
         }
@@ -68,6 +69,8 @@ export default class PostcardIconLoader extends BaseLoader {
             postcardItem.icon.destroy()
         }
 
+        postcardItem.stopSpinner()
+
         postcardItem.addIcon(key)
     }
 
@@ -82,6 +85,8 @@ export default class PostcardIconLoader extends BaseLoader {
         if (!postcardItem || !postcardItem.visible) {
             return
         }
+
+        postcardItem.stopSpinner()
 
         postcardItem.error.visible = true
     }

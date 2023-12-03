@@ -45,6 +45,17 @@
                     "visible": false
                 },
                 {
+                    "type": "Image",
+                    "id": "36e02b2e-7246-4686-ad3c-0e56ad61319d",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "spinner"
+                    },
+                    "visible": false
+                },
+                {
                     "type": "Text",
                     "id": "6153ef08-41a2-4e63-9f47-6f61bc54a89e",
                     "label": "subject",
