@@ -72,6 +72,8 @@ export default class PostcardIconLoader extends BaseLoader {
     }
 
     onLoadError(file) {
+        super.onLoadError(file)
+
         const postcard = this.getKeyId(file.key)
 
         const index = this.pageIds.indexOf(postcard)
