@@ -40,7 +40,8 @@
                 {
                     "type": "Image",
                     "id": "ddf7ea0f-c875-436d-a71d-573a8ab02fa4",
-                    "label": "display",
+                    "label": "error",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "mail",
                         "frame": "display"
@@ -49,6 +50,17 @@
                     "y": -2,
                     "originX": 0.5004878048780488,
                     "originY": 0.500651890482399,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "8e5e8eb4-4117-4bbc-b8e7-784725095d3e",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "spinner"
+                    },
                     "visible": false
                 },
                 {

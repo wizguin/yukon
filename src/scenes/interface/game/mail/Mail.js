@@ -17,6 +17,10 @@ export default class Mail extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.error;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
         /** @type {MailReply} */
         this.replyButton;
         /** @type {Phaser.GameObjects.Container} */
@@ -32,11 +36,16 @@ export default class Mail extends BaseContainer {
         bg.setOrigin(0.5003170577045022, 0.5004389815627743);
         this.add(bg);
 
-        // display
-        const display = scene.add.image(-1, -2, "mail", "display");
-        display.setOrigin(0.5004878048780488, 0.500651890482399);
-        display.visible = false;
-        this.add(display);
+        // error
+        const error = scene.add.image(-1, -2, "mail", "display");
+        error.setOrigin(0.5004878048780488, 0.500651890482399);
+        error.visible = false;
+        this.add(error);
+
+        // spinner
+        const spinner = scene.add.image(0, 0, "mail", "spinner");
+        spinner.visible = false;
+        this.add(spinner);
 
         // nextButton
         const nextButton = scene.add.image(569, -28, "mail", "next_button");
@@ -156,6 +165,8 @@ export default class Mail extends BaseContainer {
         closeButtonSimpleButton.callback = () => this.close();
         closeButtonSimpleButton.pixelPerfect = true;
 
+        this.error = error;
+        this.spinner = spinner;
         this.replyButton = replyButton;
         this.noMessages = noMessages;
         this.count = count;
@@ -164,6 +175,7 @@ export default class Mail extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.postcardLoader = new PostcardLoader(this)
+        this.postcardLoader.on('loaderror', this.onPostcardLoadError, this)
 
         this.postcardX = -515
         this.postcardY = -308
@@ -175,6 +187,15 @@ export default class Mail extends BaseContainer {
         this.currentPrefab
 
         this.page = 1
+
+        this.spinnerTween = scene.tweens.add({
+            targets: spinner,
+            angle: { from: 0, to: 180 },
+            duration: 900,
+            repeat: -1,
+            ease: 'Cubic',
+            paused: true
+        })
 
         /* END-USER-CTR-CODE */
     }
@@ -300,6 +321,9 @@ export default class Mail extends BaseContainer {
         this.updateReplyButton()
         this.updateCount()
 
+        this.error.visible = false
+        this.startSpinner()
+
         this.postcardLoader.loadPostcard(this.currentCard)
     }
 
@@ -313,6 +337,8 @@ export default class Mail extends BaseContainer {
         if (postcard !== this.currentCard) {
             return
         }
+
+        this.stopSpinner()
 
         this.checkDestroyCurrent()
 
@@ -353,6 +379,29 @@ export default class Mail extends BaseContainer {
         this.network.send('delete_mail_from', { senderId: this.currentCard.senderId })
 
         this.world.client.filterPostcards((postcard) => postcard.senderId !== this.currentCard.senderId)
+    }
+
+    startSpinner() {
+        this.spinnerTween.seek(0)
+        this.spinnerTween.resume()
+
+        this.spinner.visible = true
+    }
+
+    stopSpinner() {
+        this.spinner.visible = false
+
+        this.spinnerTween.pause()
+        this.spinner.angle = 0
+    }
+
+    onPostcardLoadError(file) {
+        const id = this.postcardLoader.getKeyId(file.key)
+
+        if (id === this.currentCard.postcardId) {
+            this.stopSpinner()
+            this.error.visible = true
+        }
     }
 
     /* END-USER-CODE */
