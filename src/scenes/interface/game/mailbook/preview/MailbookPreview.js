@@ -129,6 +129,12 @@ export default class MailbookPreview extends BaseContainer {
     }
 
     onYesClick() {
+        this.parentContainer.close()
+
+        if (this.world.client.coins < this.postcardCost) {
+            return this.interface.prompt.showMailError('Failed to send Postcard.\nYou need more coins.')
+        }
+
         this.network.send('send_mail', { recipient: this.parentContainer.recipientId, postcardId: this.id })
     }
 
