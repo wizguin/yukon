@@ -342,11 +342,17 @@ export default class Mail extends BaseContainer {
 
         this.checkDestroyCurrent()
 
-        this.currentPrefab = new this.crumbs.scenes.postcards[postcard.postcardId](this.scene, this.postcardX, this.postcardY)
-        this.currentPrefab.angle = this.postcardAngle
-        this.currentPrefab.setName(postcard.senderName)
+        try {
+            this.currentPrefab = new this.crumbs.scenes.postcards[postcard.postcardId](this.scene, this.postcardX, this.postcardY)
+            this.currentPrefab.angle = this.postcardAngle
+            this.currentPrefab.setName(postcard.senderName)
 
-        this.addAt(this.currentPrefab, 2)
+            this.addAt(this.currentPrefab, 2)
+
+        } catch {
+            this.showError()
+        }
+
     }
 
     checkDestroyCurrent() {
@@ -395,12 +401,16 @@ export default class Mail extends BaseContainer {
         this.spinner.angle = 0
     }
 
+    showError() {
+        this.stopSpinner()
+        this.error.visible = true
+    }
+
     onPostcardLoadError(file) {
         const id = this.postcardLoader.getKeyId(file.key)
 
         if (id === this.currentCard.postcardId) {
-            this.stopSpinner()
-            this.error.visible = true
+            this.showError()
         }
     }
 

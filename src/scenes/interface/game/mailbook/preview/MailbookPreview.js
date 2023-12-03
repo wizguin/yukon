@@ -179,10 +179,16 @@ export default class MailbookPreview extends BaseContainer {
 
         this.checkDestroyCurrent()
 
-        this.currentPrefab = new this.crumbs.scenes.postcards[postcard](this.scene, this.postcardX, this.postcardY)
-        this.currentPrefab.setName(this.world.client.penguin.username)
+        try {
+            this.currentPrefab = new this.crumbs.scenes.postcards[postcard](this.scene, this.postcardX, this.postcardY)
+            this.currentPrefab.setName(this.world.client.penguin.username)
 
-        this.addAt(this.currentPrefab, 2)
+            this.addAt(this.currentPrefab, 2)
+
+        } catch {
+            this.showError()
+        }
+
     }
 
     checkDestroyCurrent() {
@@ -205,12 +211,16 @@ export default class MailbookPreview extends BaseContainer {
         this.spinner.angle = 0
     }
 
+    showError() {
+        this.stopSpinner()
+        this.error.visible = true
+    }
+
     onPostcardLoadError(file) {
         const id = this.postcardLoader.getKeyId(file.key)
 
         if (id === this.id) {
-            this.stopSpinner()
-            this.error.visible = true
+            this.showError()
         }
     }
 
