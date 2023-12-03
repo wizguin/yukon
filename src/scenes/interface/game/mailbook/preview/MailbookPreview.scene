@@ -125,13 +125,26 @@
                 {
                     "type": "Image",
                     "id": "de5641c5-d08b-4dea-aa26-af8efbf326ef",
-                    "label": "card",
+                    "label": "error",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "mailbook",
                         "frame": "card"
                     },
                     "y": -61,
                     "originY": 0.5007052186177715,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "1b2047a9-6c73-4e75-ae60-70e0658244f5",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "spinner"
+                    },
+                    "y": -61,
                     "visible": false
                 },
                 {

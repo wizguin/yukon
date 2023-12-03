@@ -16,6 +16,10 @@ export default class MailbookPreview extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Text} */
         this.sendText;
+        /** @type {Phaser.GameObjects.Image} */
+        this.error;
+        /** @type {Phaser.GameObjects.Image} */
+        this.spinner;
 
 
         // block
@@ -60,11 +64,16 @@ export default class MailbookPreview extends BaseContainer {
         sendText.setStyle({ "align": "center", "color": "#333333", "fixedWidth":1000,"fontFamily": "Arial", "fontSize": "32px" });
         this.add(sendText);
 
-        // card
-        const card = scene.add.image(0, -61, "mailbook", "card");
-        card.setOrigin(0.5, 0.5007052186177715);
-        card.visible = false;
-        this.add(card);
+        // error
+        const error = scene.add.image(0, -61, "mailbook", "card");
+        error.setOrigin(0.5, 0.5007052186177715);
+        error.visible = false;
+        this.add(error);
+
+        // spinner
+        const spinner = scene.add.image(0, -61, "mail", "spinner");
+        spinner.visible = false;
+        this.add(spinner);
 
         // closeButton
         const closeButton = scene.add.image(485, -407, "main", "grey-button");
@@ -93,10 +102,13 @@ export default class MailbookPreview extends BaseContainer {
         closeButtonButton.callback = () => this.close();
 
         this.sendText = sendText;
+        this.error = error;
+        this.spinner = spinner;
 
         /* START-USER-CTR-CODE */
 
         this.postcardLoader = new PostcardLoader(this)
+        this.postcardLoader.on('loaderror', this.onPostcardLoadError, this)
 
         this.postcardX = -488
         this.postcardY = -416
@@ -107,6 +119,15 @@ export default class MailbookPreview extends BaseContainer {
         this.currentPrefab
 
         this.postcardCost = 10
+
+        this.spinnerTween = scene.tweens.add({
+            targets: spinner,
+            angle: { from: 0, to: 180 },
+            duration: 900,
+            repeat: -1,
+            ease: 'Cubic',
+            paused: true
+        })
 
         /* END-USER-CTR-CODE */
     }
@@ -143,6 +164,9 @@ export default class MailbookPreview extends BaseContainer {
 
         this.id = postcard
 
+        this.error.visible = false
+        this.startSpinner()
+
         this.postcardLoader.loadPostcard(postcard)
     }
 
@@ -150,6 +174,8 @@ export default class MailbookPreview extends BaseContainer {
         if (postcard != this.id) {
             return
         }
+
+        this.stopSpinner()
 
         this.checkDestroyCurrent()
 
@@ -164,6 +190,30 @@ export default class MailbookPreview extends BaseContainer {
             this.currentPrefab.destroy()
         }
     }
+
+    startSpinner() {
+        this.spinnerTween.seek(0)
+        this.spinnerTween.resume()
+
+        this.spinner.visible = true
+    }
+
+    stopSpinner() {
+        this.spinner.visible = false
+
+        this.spinnerTween.pause()
+        this.spinner.angle = 0
+    }
+
+    onPostcardLoadError(file) {
+        const id = this.postcardLoader.getKeyId(file.key)
+
+        if (id === this.id) {
+            this.stopSpinner()
+            this.error.visible = true
+        }
+    }
+
 
     /* END-USER-CODE */
 }
