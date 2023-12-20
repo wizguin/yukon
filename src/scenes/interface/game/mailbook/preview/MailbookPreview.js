@@ -107,7 +107,7 @@ export default class MailbookPreview extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.postcardLoader = new PostcardLoader(this)
+        this.postcardLoader = new PostcardLoader(scene)
         this.postcardLoader.on('loaderror', this.onPostcardLoadError, this)
 
         this.postcardX = -488
@@ -135,8 +135,8 @@ export default class MailbookPreview extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(postcard) {
-        this.loadPostcard(postcard)
+    show(postcardId) {
+        this.loadPostcard(postcardId)
 
         this.sendText.text = `Send this postcard to ${this.parentContainer.recipientName} for ${this.postcardCost} coins?`
 
@@ -159,19 +159,20 @@ export default class MailbookPreview extends BaseContainer {
         this.network.send('send_mail', { recipient: this.parentContainer.recipientId, postcardId: this.id })
     }
 
-    loadPostcard(postcard) {
+    loadPostcard(postcardId) {
         this.checkDestroyCurrent()
 
-        this.id = postcard
+        // ID representing postcard to load
+        this.id = postcardId
 
         this.error.visible = false
         this.startSpinner()
 
-        this.postcardLoader.loadPostcard(postcard)
+        this.postcardLoader.loadPostcard(postcardId, (postcardClass) => this.addPostcard(postcardClass, postcardId))
     }
 
-    addPostcard(postcard) {
-        if (postcard != this.id) {
+    addPostcard(postcardClass, postcardId) {
+        if (postcardId !== this.id) {
             return
         }
 
@@ -180,7 +181,7 @@ export default class MailbookPreview extends BaseContainer {
         this.checkDestroyCurrent()
 
         try {
-            this.currentPrefab = new this.crumbs.scenes.postcards[postcard](this.scene, this.postcardX, this.postcardY)
+            this.currentPrefab = new postcardClass(this.scene, this.postcardX, this.postcardY)
             this.currentPrefab.setName(this.world.client.penguin.username)
 
             this.addAt(this.currentPrefab, 2)

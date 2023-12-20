@@ -3,37 +3,44 @@ import BaseLoader from './BaseLoader'
 
 export default class PostcardLoader extends BaseLoader  {
 
-    constructor(parent) {
-        super(parent.scene)
-
-        this.parent = parent
+    constructor(scene) {
+        super(scene)
 
         this.baseURL = '/assets/media/postcards/sprites/'
         this.keyPrefix = 'postcards/sprites/'
     }
 
-    loadPostcard(postcard) {
-        const id = typeof postcard === 'object' ? postcard.postcardId : postcard
-
-        const key = this.getKey(id)
+    loadPostcard(postcardId, callback) {
+        const key = this.getKey(postcardId)
 
         if (this.checkComplete('json', key, () => {
-            this.onFileComplete(postcard, key)
+            this.onFileComplete(key, postcardId, callback)
         })) {
             return
         }
 
-        this.multiatlas(key, `${id}.json`)
+        this.multiatlas(key, `${postcardId}.json`)
 
         this.start()
     }
 
-    onFileComplete(postcard, key) {
+    async onFileComplete(key, postcardId, callback) {
         if (!this.textureExists(key)) {
             return
         }
 
-        this.parent.addPostcard(postcard)
+        let postcardClass = null
+
+        try {
+            postcardClass = (await import(
+                `@scenes/postcards/Postcard${postcardId}.js`
+            )).default
+
+        } catch (error) {
+            console.error(error)
+        }
+
+        callback(postcardClass)
     }
 
 }

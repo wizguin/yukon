@@ -174,7 +174,7 @@ export default class Mail extends BaseContainer {
 
         /* START-USER-CTR-CODE */
 
-        this.postcardLoader = new PostcardLoader(this)
+        this.postcardLoader = new PostcardLoader(scene)
         this.postcardLoader.on('loaderror', this.onPostcardLoadError, this)
 
         this.postcardX = -515
@@ -324,7 +324,10 @@ export default class Mail extends BaseContainer {
         this.error.visible = false
         this.startSpinner()
 
-        this.postcardLoader.loadPostcard(this.currentCard)
+        // Unique ID assigned to every postcard
+        const id = this.currentCard.id
+
+        this.postcardLoader.loadPostcard(this.currentCard.postcardId, (postcardClass) => this.addPostcard(postcardClass, id))
     }
 
     readPostcard(postcard) {
@@ -333,8 +336,8 @@ export default class Mail extends BaseContainer {
         this.interface.main.updateMailCount()
     }
 
-    addPostcard(postcard) {
-        if (postcard !== this.currentCard) {
+    addPostcard(postcardClass, id) {
+        if (id !== this.currentCard.id) {
             return
         }
 
@@ -343,16 +346,15 @@ export default class Mail extends BaseContainer {
         this.checkDestroyCurrent()
 
         try {
-            this.currentPrefab = new this.crumbs.scenes.postcards[postcard.postcardId](this.scene, this.postcardX, this.postcardY)
+            this.currentPrefab = new postcardClass(this.scene, this.postcardX, this.postcardY)
             this.currentPrefab.angle = this.postcardAngle
-            this.currentPrefab.setName(postcard.senderName)
+            this.currentPrefab.setName(this.currentCard.senderName)
 
             this.addAt(this.currentPrefab, 2)
 
         } catch {
             this.showError()
         }
-
     }
 
     checkDestroyCurrent() {
