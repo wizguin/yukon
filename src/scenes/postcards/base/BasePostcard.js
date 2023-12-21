@@ -11,7 +11,9 @@ export default class BasePostcard extends BaseContainer {
     }
 
     setName(name) {
-        this.name.text = name
+        if (this.name) {
+            this.name.text = name
+        }
     }
 
 }
