@@ -1,0 +1,63 @@
+{
+    "id": "580f9a9c-5d5d-4171-95aa-eba40c9cac82",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "28d63bf6-6bc5-493c-8701-b430e7d6abc5",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c65fb432-5e2c-4e2c-8356-efdbdf20f30f",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/127",
+                        "frame": "127"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "e8fa0bb7-a920-4cf1-a904-1096ab7ed3f3",
+                    "label": "penguin",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 522,
+                    "y": 586,
+                    "text": "undefined",
+                    "fixedWidth": 502,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "50px",
+                    "fontStyle": "bold italic",
+                    "color": "#9a0000",
+                    "strokeThickness": 8
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

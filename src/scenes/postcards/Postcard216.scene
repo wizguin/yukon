@@ -1,0 +1,62 @@
+{
+    "id": "21c7224e-e809-4735-bafd-07385de02367",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6c8ea579-068a-4b04-b04f-93cd0190cd60",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "335a8aec-abcd-4903-9391-e527c6ae8bbc",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/216",
+                        "frame": "216"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "99d086e1-27e0-43a3-a6e6-f91de2416b57",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 182,
+                    "y": 542,
+                    "visible": false,
+                    "text": "penguin88888888",
+                    "fixedWidth": 266,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "24px",
+                    "color": "#a60008"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

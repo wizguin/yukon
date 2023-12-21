@@ -1,0 +1,62 @@
+{
+    "id": "6832104d-406e-4e3f-ac64-4157a79f5185",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f7be9d9f-b95e-4bd1-8b69-d057cd4fbdf8",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "d97244b2-4796-4a84-be00-d2e88b7c1a70",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/130",
+                        "frame": "130"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "30bfff7e-0baf-4c55-bb68-22bae01e11c3",
+                    "label": "penguin",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 383,
+                    "y": 25,
+                    "text": "undefined",
+                    "fixedWidth": 436,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "Comic Sans MS",
+                    "fontSize": "32px",
+                    "fontStyle": "bold",
+                    "color": "#000b71"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

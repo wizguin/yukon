@@ -1,0 +1,78 @@
+{
+    "id": "4863a3da-8cea-4df7-b766-a34d4189c173",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "efcaedfb-5a32-4477-ba52-afa1674f4af6",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c9e8a1ed-1200-4a54-a344-17543d3d77c4",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/172",
+                        "frame": "172"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "9510bc7c-7991-4b36-9fe0-b7769c85e66b",
+                    "label": "dateTxt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 348,
+                    "y": 69,
+                    "text": "undefined undefined, undefined",
+                    "fixedWidth": 308,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "color": "#000000"
+                },
+                {
+                    "type": "Text",
+                    "id": "85605498-3222-4c6b-8519-03a92e347974",
+                    "label": "penguin",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 115,
+                    "y": 187,
+                    "text": "undefined",
+                    "fixedWidth": 360,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "Comic Sans MS",
+                    "fontSize": "34px",
+                    "fontStyle": "bold",
+                    "color": "#000000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "id": "cf7094b8-4f24-4a01-9583-f252c96f5285",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b6bccf37-60b8-4bea-a722-459f70c7d7aa",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "778f5513-f652-4875-b05d-b08f1b04f5e3",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/76",
+                        "frame": "76"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "83e1cb15-0b72-488a-920d-4a8446a2dbd8",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 20,
+                    "y": 569,
+                    "text": "Penguin8888888",
+                    "fixedWidth": 340,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "color": "#32005d"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
