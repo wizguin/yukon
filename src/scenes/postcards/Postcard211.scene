@@ -18,13 +18,25 @@
             "type": "Container",
             "id": "8711b880-59e3-495b-97f8-7d52141384e8",
             "label": "container_1",
-            "components": [],
             "list": [
+                {
+                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+                    "id": "c2e58c76-4b15-497f-a388-9ed9a741b920",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "roomId"
+                    ],
+                    "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 340,
+                    "x": 847,
+                    "y": 613
+                },
                 {
                     "type": "Image",
                     "id": "5443e6a9-f855-48ae-b9a0-6366f92eb66c",
                     "label": "bg",
-                    "components": [],
                     "texture": {
                         "key": "postcards/sprites/211",
                         "frame": "211"
@@ -37,7 +49,6 @@
                     "id": "c211fdb3-a4bf-46c4-bcab-317b0f9d9747",
                     "label": "name",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 142,
                     "y": 595,
                     "text": "penguin88888888",
@@ -47,18 +58,6 @@
                     "fontFamily": "CCFaceFront",
                     "fontSize": "38px",
                     "color": "#512957"
-                },
-                {
-                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
-                    "id": "c2e58c76-4b15-497f-a388-9ed9a741b920",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "goToButton",
-                    "components": [],
-                    "x": 847,
-                    "y": 613
                 }
             ]
         }
@@ -68,6 +67,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

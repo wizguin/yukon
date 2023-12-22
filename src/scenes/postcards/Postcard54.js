@@ -13,6 +13,8 @@ export default class Postcard54 extends BasePostcard {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {GoToButton} */
+        this.goToButton;
         /** @type {Phaser.GameObjects.Text} */
         this.name;
 
@@ -33,6 +35,10 @@ export default class Postcard54 extends BasePostcard {
         name.setPadding({"left":5,"right":5});
         this.add(name);
 
+        // goToButton (prefab fields)
+        goToButton.roomId = 340;
+
+        this.goToButton = goToButton;
         this.name = name;
 
         /* START-USER-CTR-CODE */

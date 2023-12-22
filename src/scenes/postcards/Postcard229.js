@@ -13,9 +13,15 @@ export default class Postcard229 extends BasePostcard {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {GoToButton} */
+        this.goToButton;
         /** @type {Phaser.GameObjects.Text} */
         this.name;
 
+
+        // goToButton
+        const goToButton = new GoToButton(scene, 844, 606);
+        this.add(goToButton);
 
         // bg
         const bg = scene.add.image(0, 0, "postcards/sprites/229", "229");
@@ -29,10 +35,10 @@ export default class Postcard229 extends BasePostcard {
         name.setPadding({"left":5,"right":5});
         this.add(name);
 
-        // goToButton
-        const goToButton = new GoToButton(scene, 844, 606);
-        this.add(goToButton);
+        // goToButton (prefab fields)
+        goToButton.roomId = 230;
 
+        this.goToButton = goToButton;
         this.name = name;
 
         /* START-USER-CTR-CODE */

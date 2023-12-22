@@ -13,6 +13,10 @@ export default class Postcard179 extends BasePostcard {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {GoToButton} */
+        this.goToButton;
+
+
         // bg
         const bg = scene.add.image(0, 0, "postcards/sprites/179", "179");
         bg.setOrigin(0, 0);
@@ -22,10 +26,16 @@ export default class Postcard179 extends BasePostcard {
         const goToButton = new GoToButton(scene, 177, 487);
         this.add(goToButton);
 
+        // goToButton (prefab fields)
+        goToButton.roomId = 320;
+
+        this.goToButton = goToButton;
+
         /* START-USER-CTR-CODE */
         // Write your code here.
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
 

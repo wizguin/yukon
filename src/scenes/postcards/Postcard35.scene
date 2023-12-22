@@ -18,13 +18,25 @@
             "type": "Container",
             "id": "6106539a-39ef-4bd3-853e-0bb596447949",
             "label": "container_1",
-            "components": [],
             "list": [
+                {
+                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+                    "id": "ff83d899-8fa1-4946-bfb2-f8fa85f4d1f4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "roomId"
+                    ],
+                    "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 340,
+                    "x": 847,
+                    "y": 613
+                },
                 {
                     "type": "Image",
                     "id": "cf566c12-46f3-4eb6-97a0-5b255db5803b",
                     "label": "bg",
-                    "components": [],
                     "texture": {
                         "key": "postcards/sprites/35",
                         "frame": "35"
@@ -33,23 +45,10 @@
                     "originY": 0
                 },
                 {
-                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
-                    "id": "ff83d899-8fa1-4946-bfb2-f8fa85f4d1f4",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "goToButton",
-                    "components": [],
-                    "x": 847,
-                    "y": 613
-                },
-                {
                     "type": "Text",
                     "id": "fba74f76-f0f3-4156-acee-c6995907042e",
                     "label": "name",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 137,
                     "y": 111,
                     "text": "penguin88888888",
@@ -68,6 +67,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

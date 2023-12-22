@@ -15,6 +15,8 @@ export default class Postcard49 extends BasePostcard {
 
         /** @type {Phaser.GameObjects.Text} */
         this.name;
+        /** @type {GoToButton} */
+        this.goToButton;
 
 
         // bg
@@ -33,7 +35,11 @@ export default class Postcard49 extends BasePostcard {
         const goToButton = new GoToButton(scene, 563, 620);
         this.add(goToButton);
 
+        // goToButton (prefab fields)
+        goToButton.roomId = 120;
+
         this.name = name;
+        this.goToButton = goToButton;
 
         /* START-USER-CTR-CODE */
         // Write your code here.

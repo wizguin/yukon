@@ -18,13 +18,11 @@
             "type": "Container",
             "id": "1710311a-b84f-46db-9903-1cbd0005fc88",
             "label": "container_1",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "debb17d9-3778-4d69-a5be-4bdcc8d709e7",
                     "label": "bg",
-                    "components": [],
                     "texture": {
                         "key": "postcards/sprites/80",
                         "frame": "80"
@@ -37,10 +35,12 @@
                     "id": "a378bc56-5ce4-4ac2-b0fa-89c1485dac7f",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "roomId"
                     ],
                     "label": "goToButton",
-                    "components": [],
+                    "scope": "CLASS",
+                    "roomId": 120,
                     "x": 137,
                     "y": 626
                 },
@@ -49,7 +49,6 @@
                     "id": "edf8eb58-fb02-4c63-94df-dfcaf62fa9ce",
                     "label": "name",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 27,
                     "y": 47,
                     "text": "penguin88888888",
@@ -69,6 +68,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

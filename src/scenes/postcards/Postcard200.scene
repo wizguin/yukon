@@ -50,9 +50,12 @@
                     "id": "9acfcd9f-1aba-4ae1-aa89-6433149940f0",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "roomId"
                     ],
                     "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 810,
                     "x": 851,
                     "y": 616
                 }

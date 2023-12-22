@@ -18,13 +18,11 @@
             "type": "Container",
             "id": "8be14059-2a36-419d-8e16-457cebd9d122",
             "label": "container_1",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "7da29dba-080e-464d-a5ed-64ab5d266d06",
                     "label": "bg",
-                    "components": [],
                     "texture": {
                         "key": "postcards/sprites/186",
                         "frame": "186"
@@ -40,7 +38,7 @@
                         "y"
                     ],
                     "label": "goToButton",
-                    "components": [],
+                    "scope": "CLASS",
                     "x": 528,
                     "y": 105
                 }
@@ -52,6 +50,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }
