@@ -30,13 +30,15 @@ export default class GoToButton extends BaseImage {
     /* START-USER-CODE */
 
     onClick() {
-        const room = this.crumbs.scenes.rooms[this.roomId]
+        if (this.roomId in this.crumbs.scenes.rooms) {
+            const room = this.crumbs.scenes.rooms[this.roomId]
 
-        if (this.world.room.key !== room.key) {
-            this.world.client.sendJoinRoom(this.roomId, room.key, room.x, room.y)
+            if (this.world.room.key !== room.key) {
+                this.world.client.sendJoinRoom(this.roomId, room.key, room.x, room.y)
+            }
         }
 
-        this.interface.main.mail.close()
+       this.interface.main.mail.close()
     }
 
     /* END-USER-CODE */
