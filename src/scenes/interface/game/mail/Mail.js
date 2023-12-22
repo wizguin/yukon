@@ -350,9 +350,13 @@ export default class Mail extends BaseContainer {
             this.currentPrefab.angle = this.postcardAngle
             this.currentPrefab.setName(this.currentCard.senderName)
 
+            this.currentPrefab.enableInput()
+
             this.addAt(this.currentPrefab, 2)
 
-        } catch {
+        } catch (error) {
+            console.error(error)
+
             this.showError()
         }
     }

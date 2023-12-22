@@ -186,7 +186,9 @@ export default class MailbookPreview extends BaseContainer {
 
             this.addAt(this.currentPrefab, 2)
 
-        } catch {
+        } catch (error) {
+            console.error(error)
+
             this.showError()
         }
 

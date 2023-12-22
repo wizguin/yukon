@@ -16,4 +16,10 @@ export default class BasePostcard extends BaseContainer {
         }
     }
 
+    enableInput() {
+        if (this.goToButton) {
+            this.goToButton.enableInput()
+        }
+    }
+
 }

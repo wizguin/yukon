@@ -18,12 +18,6 @@
             "type": "Image",
             "id": "921e57bb-dd12-4616-91e2-f0ed18fec057",
             "label": "goto_button",
-            "components": [
-                "Button"
-            ],
-            "Button.spriteName": "goto_button",
-            "Button.callback": "() => this.onClick()",
-            "Button.activeFrame": false,
             "texture": {
                 "key": "mail",
                 "frame": "goto_button"

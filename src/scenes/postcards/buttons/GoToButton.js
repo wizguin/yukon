@@ -1,8 +1,10 @@
 /* START OF COMPILED CODE */
 
 import BaseImage from "../../base/BaseImage";
-import Button from "../../components/Button";
 /* START-USER-IMPORTS */
+
+import Button from '@scenes/components/Button'
+
 /* END-USER-IMPORTS */
 
 export default class GoToButton extends BaseImage {
@@ -16,18 +18,20 @@ export default class GoToButton extends BaseImage {
 
         this.setOrigin(0.5031847133757962, 0.5);
 
-        // this (components)
-        const thisButton = new Button(this);
-        thisButton.spriteName = "goto_button";
-        thisButton.callback = () => this.onClick();
-        thisButton.activeFrame = false;
-
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
+
+    enableInput() {
+        const component = new Button(this)
+
+        component.spriteName = 'goto_button'
+        component.callback = () => this.onClick()
+        component.activeFrame = false
+    }
 
     onClick() {
         if (this.roomId in this.crumbs.scenes.rooms) {
