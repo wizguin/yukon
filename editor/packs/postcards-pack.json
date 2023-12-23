@@ -1,0 +1,1147 @@
+{
+    "section1": {
+        "files": [
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/1.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/1"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/10.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/10"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/100.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/100"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/101.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/101"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/102.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/102"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/103.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/103"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/104.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/104"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/105.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/105"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/106.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/106"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/107.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/107"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/108.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/108"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/109.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/109"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/11.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/11"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/110.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/110"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/111.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/111"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/112.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/112"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/12.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/12"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/120.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/120"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/121.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/121"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/122.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/122"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/123.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/123"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/124.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/124"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/125.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/125"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/126.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/126"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/127.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/127"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/128.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/128"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/13.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/13"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/130.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/130"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/131.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/131"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/132.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/132"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/133.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/133"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/134.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/134"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/135.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/135"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/14.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/14"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/15.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/15"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/156.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/156"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/157.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/157"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/158.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/158"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/159.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/159"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/16.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/16"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/160.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/160"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/161.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/161"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/162.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/162"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/163.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/163"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/164.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/164"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/165.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/165"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/167.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/167"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/168.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/168"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/169.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/169"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/17.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/17"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/170.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/170"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/171.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/171"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/172.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/172"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/173.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/173"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/174.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/174"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/175.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/175"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/176.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/176"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/177.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/177"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/178.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/178"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/179.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/179"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/180.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/180"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/181.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/181"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/182.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/182"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/183.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/183"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/184.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/184"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/185.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/185"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/186.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/186"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/19.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/19"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/2.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/2"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/20.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/20"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/200.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/200"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/201.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/201"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/202.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/202"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/203.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/203"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/204.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/204"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/205.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/205"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/206.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/206"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/207.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/207"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/208.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/208"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/209.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/209"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/21.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/21"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/210.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/210"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/211.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/211"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/212.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/212"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/213.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/213"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/216.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/216"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/217.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/217"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/218.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/218"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/219.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/219"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/22.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/22"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/220.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/220"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/221.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/221"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/222.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/222"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/223.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/223"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/224.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/224"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/225.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/225"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/226.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/226"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/227.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/227"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/228.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/228"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/229.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/229"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/23.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/23"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/230.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/230"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/231.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/231"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/232.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/232"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/233.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/233"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/234.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/234"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/235.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/235"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/24.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/24"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/25.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/25"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/26.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/26"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/27.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/27"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/28.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/28"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/29.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/29"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/3.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/3"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/30.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/30"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/31.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/31"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/32.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/32"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/33.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/33"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/34.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/34"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/35.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/35"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/36.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/36"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/37.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/37"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/38.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/38"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/39.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/39"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/4.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/4"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/40.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/40"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/41.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/41"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/42.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/42"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/43.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/43"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/44.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/44"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/45.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/45"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/46.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/46"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/47.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/47"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/48.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/48"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/49.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/49"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/5.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/5"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/50.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/50"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/51.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/51"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/52.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/52"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/53.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/53"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/54.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/54"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/55.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/55"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/56.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/56"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/57.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/57"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/58.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/58"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/59.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/59"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/6.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/6"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/60.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/60"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/61.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/61"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/62.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/62"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/63.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/63"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/64.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/64"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/65.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/65"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/66.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/66"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/67.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/67"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/68.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/68"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/69.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/69"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/7.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/7"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/70.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/70"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/71.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/71"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/72.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/72"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/73.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/73"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/74.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/74"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/75.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/75"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/76.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/76"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/77.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/77"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/78.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/78"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/79.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/79"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/8.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/8"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/80.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/80"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/81.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/81"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/82.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/82"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/83.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/83"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/84.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/84"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/85.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/85"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/86.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/86"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/87.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/87"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/88.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/88"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/89.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/89"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/9.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/9"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/90.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/90"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/91.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/91"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/92.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/92"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/93.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/93"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/94.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/94"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/95.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/95"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/96.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/96"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/98.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/98"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/media/postcards/sprites/99.json",
+                "path": "assets/media/postcards/sprites",
+                "key": "postcards/sprites/99"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
