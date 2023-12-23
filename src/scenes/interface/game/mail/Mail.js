@@ -197,6 +197,8 @@ export default class Mail extends BaseContainer {
             paused: true
         })
 
+        this.systemName = 'sys'
+
         /* END-USER-CTR-CODE */
     }
 
@@ -276,7 +278,7 @@ export default class Mail extends BaseContainer {
     }
 
     onTrashClick() {
-        const text = `Are you sure you want to recycle this postcard from ${this.currentCard.senderName}?`
+        const text = `Are you sure you want to recycle this postcard from ${this.getSenderName()}?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.interface.prompt.window.visible = false
@@ -286,13 +288,17 @@ export default class Mail extends BaseContainer {
     }
 
     onRemoveClick() {
-        const text = `This will permanently remove all postcards from ${this.currentCard.senderName}. Do you want to do this?`
+        const text = `This will permanently remove all postcards from ${this.getSenderName()}. Do you want to do this?`
 
         this.interface.prompt.showWindow(text, 'dual', () => {
             this.interface.prompt.window.visible = false
 
             this.sendDeleteMailFrom()
         })
+    }
+
+    getSenderName() {
+        return this.currentCard.senderName !== this.systemName ? this.currentCard.senderName : this.getString('game')
     }
 
     goToFirstPage() {
