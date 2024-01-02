@@ -1,6 +1,3 @@
-
-// You can write more code here
-
 /* START OF COMPILED CODE */
 
 import BasePostcard from "./base/BasePostcard";
@@ -31,18 +28,12 @@ export default class Postcard17 extends BasePostcard {
         this.name = name;
 
         /* START-USER-CTR-CODE */
-        // Write your code here.
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
-
-    // Write your code here.
-
     /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-// You can write more code here
