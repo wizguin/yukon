@@ -1,8 +1,33 @@
 {
+    "flags": ["-max-number-files", "5000"],
+    "playUrl": "http://localhost:8080",
     "skip": [
         "assets/media/clothing",
+        "assets/media/crumbs",
+        "assets/media/flash",
         "assets/media/furniture",
-        "assets/media/music"
-    ],
-    "playUrl": "http://localhost:8080"
+        "assets/media/igloos/flooring",
+        "assets/media/music",
+        "assets/media/penguin/actions",
+        "assets/scripts",
+        "assets/styles",
+        "create",
+        "defs",
+        "dist",
+        "editor/plugins",
+        "jsconfig.json",
+        "LICENSE",
+        "package-lock.json",
+        "package.json",
+        "phasereditor2d.config.json",
+        "src/data",
+        "src/engine",
+        "utils",
+        "webpack.config.js",
+        "webpack_plugins",
+        "**/*.ejs",
+        "**/*.html",
+        "**/*.ini",
+        "**/*.md"
+    ]
 }
