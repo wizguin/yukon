@@ -1,6 +1,9 @@
 {
     "flags": ["-max-number-files", "5000"],
     "playUrl": "http://localhost:8080",
+    "plugins": [
+        "editor/plugins/tweaks"
+    ],
     "skip": [
         "assets/media/clothing",
         "assets/media/crumbs",
