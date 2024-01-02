@@ -2,7 +2,7 @@
 
 Visit the Discord server for more support.
 
-[![Yukon Discord members](https://badgen.net/discord/members/gxBqXy3qeY)](https://discord.gg/gxBqXy3qeY)
+[![Yukon Discord members](https://badgen.net/discord/members/NtYtpzyxBu)](https://discord.gg/NtYtpzyxBu)
 
 ## Built With
 
@@ -103,8 +103,6 @@ ProxyPass /world/blizzard http://localhost:6112
 * Make sure to use the minified bundle and index.html file generated with the build command. These can be found in "/dist" (the contents can just be merged onto your web server).
 
 * To modify the outputted index.html file, edit the template file "index.ejs" and rebuild.
-
-* If you aren't going to be making any changes to the code, then the latest release can be downloaded from [here](https://github.com/wizguin/yukon/releases).
 
 ## Disclaimer
 
