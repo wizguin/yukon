@@ -10,6 +10,10 @@ export default class BasePostcard extends BaseContainer {
         this.goToButton = null
     }
 
+    get clientName() {
+        return this.world.client.penguin.username
+    }
+
     setName(name) {
         if (this.name) {
             this.name.text = name
