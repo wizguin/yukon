@@ -1,9 +1,9 @@
 {
   "name": "yukon",
-  "version": "1.7.0-beta",
+  "version": "1.8.0-beta",
   "scripts": {
     "dev": "webpack serve",
-    "editor": "phasereditor2d-launcher -project . -max-number-files 5000",
+    "editor": "phasereditor2d-launcher -project .",
     "build": "webpack --mode production --env obfuscate=false",
     "build-crumbs": "node ./utils/build-crumbs.js"
   },
@@ -26,7 +26,7 @@
     "howler": "^2.2.4",
     "html-webpack-plugin": "^5.5.3",
     "javascript-obfuscator": "^4.1.0",
-    "phasereditor2d-launcher": "^3.63.0",
+    "phasereditor2d-launcher": "^3.65.0",
     "phasereditor2d-ninepatch-plugin": "^1.2.0",
     "socket.io-client": "^4.7.2",
     "source-map": "^0.7.4",

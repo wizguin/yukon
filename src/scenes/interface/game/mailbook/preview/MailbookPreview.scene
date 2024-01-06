@@ -1,0 +1,187 @@
+{
+    "id": "9105e9af-f2bb-4ae9-ad42-c02031668d8f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9dbf769b-1fa6-4bd2-ad48-d97fda5fbc70",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "ab41f9b6-0d7a-45d9-a8fa-4abb748f7ec6",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "8050fa40-54dc-4735-b79a-4378462dbba3",
+                    "label": "preview",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "preview"
+                    },
+                    "originY": 0.5005599104143337
+                },
+                {
+                    "type": "Image",
+                    "id": "2b229c57-b4cf-4b23-8460-f5d5359c79c6",
+                    "label": "no",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "button"
+                    },
+                    "x": 165,
+                    "y": 380,
+                    "originY": 0.5068493150684932
+                },
+                {
+                    "type": "Image",
+                    "id": "987e65f9-09d5-4160-ba0d-f14db67d899b",
+                    "label": "yes",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "button",
+                    "Button.callback": "() => this.onYesClick()",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "button"
+                    },
+                    "x": -165,
+                    "y": 380,
+                    "originY": 0.5068493150684932
+                },
+                {
+                    "type": "Text",
+                    "id": "28b7f826-775d-408b-a46f-5a463f6ba17e",
+                    "label": "noText",
+                    "x": 165,
+                    "y": 380,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "No",
+                    "fixedWidth": 200,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "38px",
+                    "color": "#333333"
+                },
+                {
+                    "type": "Text",
+                    "id": "0bb09b62-d164-4909-83d7-1633aca777ba",
+                    "label": "yesText",
+                    "x": -165,
+                    "y": 380,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Yes",
+                    "fixedWidth": 200,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "38px",
+                    "color": "#333333"
+                },
+                {
+                    "type": "Text",
+                    "id": "6e95c238-cf4d-4c81-b7f3-18fc06ec63f3",
+                    "label": "sendText",
+                    "scope": "CLASS",
+                    "y": 312,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 1000,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "color": "#333333"
+                },
+                {
+                    "type": "Image",
+                    "id": "de5641c5-d08b-4dea-aa26-af8efbf326ef",
+                    "label": "error",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "card"
+                    },
+                    "y": -61,
+                    "originY": 0.5007052186177715,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "1b2047a9-6c73-4e75-ae60-70e0658244f5",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "spinner"
+                    },
+                    "y": -61,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "1f66aa88-7ad5-471b-b487-3eb2b93d973f",
+                    "label": "closeButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "grey-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-button"
+                    },
+                    "x": 485,
+                    "y": -407
+                },
+                {
+                    "type": "Image",
+                    "id": "8371459d-c0fc-43dd-b598-4617ab47266f",
+                    "label": "closeIcon",
+                    "texture": {
+                        "key": "main",
+                        "frame": "grey-x"
+                    },
+                    "x": 485,
+                    "y": -409
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

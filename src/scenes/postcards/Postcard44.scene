@@ -1,0 +1,62 @@
+{
+    "id": "19e4ea13-d9d7-4a8c-9248-b8e219543fd6",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "ab14f77d-dfdb-4892-9864-076528a45a32",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "405e7cf7-af42-45d0-8153-454fc8df7a0c",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/44",
+                        "frame": "44"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "98f51acc-8d89-4b9f-8ab0-11de65d29930",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 608,
+                    "y": 321,
+                    "text": "penguin88888888",
+                    "fixedWidth": 326,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "fontStyle": "italic",
+                    "color": "#ffffff"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

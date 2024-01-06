@@ -1,0 +1,72 @@
+{
+    "id": "2bd2aad3-a366-4352-b505-e3f3389c07f2",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "77f54bf4-ac0c-4b65-bdaa-d38d4c48e655",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "99b9644c-9eea-4de5-aebd-61efa8fc83b5",
+                    "label": "bg",
+                    "texture": {
+                        "key": "postcards/sprites/49",
+                        "frame": "49"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "e7dc3299-86cb-4505-aa27-d005b79d29c2",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "x": 127,
+                    "y": 601,
+                    "text": "Penguin88888888",
+                    "fixedWidth": 354,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "color": "#ffffff"
+                },
+                {
+                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+                    "id": "36508ce9-8925-495c-954f-b1752f0c256d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "roomId"
+                    ],
+                    "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 120,
+                    "x": 563,
+                    "y": 620
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

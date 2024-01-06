@@ -1,0 +1,61 @@
+{
+    "id": "81b3a22e-6c91-4866-b32a-fe533d38c6ab",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "7cfdba4e-37b8-4634-8ccf-ef04bd641911",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "6517cbe1-08bc-4210-b4c0-83ee0b2b80c9",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/61",
+                        "frame": "61"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "f21479b5-0e18-4a8d-b9c2-748beb4f0b72",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 130,
+                    "y": 114,
+                    "text": "penguin88888888",
+                    "fixedWidth": 372,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "36px",
+                    "color": "#001a33"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

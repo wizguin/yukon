@@ -16,7 +16,8 @@ let config = {
         yukon: './src/Game.js'
     },
     output: {
-        filename: 'yukon.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[id].bundle.js',
         path: path.resolve(__dirname, 'assets/scripts/client')
     },
     optimization : {
@@ -91,7 +92,8 @@ module.exports = (env, argv) => {
     }
 
     config.output = {
-        filename: 'assets/scripts/client/[name].min.js',
+        filename: 'assets/scripts/client/[name].bundle.min.js',
+        chunkFilename: 'assets/scripts/client/[id].bundle.min.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     }

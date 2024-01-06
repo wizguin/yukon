@@ -1,0 +1,73 @@
+{
+    "id": "195306fc-14b4-47b7-8384-f53f318007d7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "74e7ff3a-5f3c-47c3-9e89-6abec64dc1b4",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9dbc945d-23e1-4d1d-b2c0-751e0154089f",
+                    "label": "bg",
+                    "texture": {
+                        "key": "postcards/sprites/68",
+                        "frame": "68"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+                    "id": "640081e8-0d26-4af4-bb4c-88d9b15e90fc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "roomId"
+                    ],
+                    "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 422,
+                    "x": 843,
+                    "y": 622
+                },
+                {
+                    "type": "Text",
+                    "id": "31723587-11c5-48bb-b104-2bdee234db7c",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "x": 27,
+                    "y": 613,
+                    "text": "TEST NAME123",
+                    "fixedWidth": 266,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "color": "#592113"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

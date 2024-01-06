@@ -4,27 +4,36 @@ import ItemPrompt from '@scenes/interface/prompts/ItemPrompt'
 import LoadingPromptFactory from './LoadingPromptFactory'
 import WindowPrompt from '@scenes/interface/prompts/WindowPrompt'
 
+import MailErrorPrompt from '@scenes/interface/prompts/MailErrorPrompt'
+import MailSuccessPrompt from '@scenes/interface/prompts/MailSuccessPrompt'
+
 
 export default class PromptController {
 
-    constructor(_interface) {
-        this.interface = _interface
+    constructor(scene) {
+        this.interface = scene
 
-        this.crumbs = _interface.crumbs
-        this.network = _interface.network
-        this.world = _interface.world
+        this.crumbs = this.interface.crumbs
+        this.network = this.interface.network
+        this.world = this.interface.world
 
-        this.coin = new CoinPrompt(_interface, 760, 480)
-        this.error = new ErrorPrompt(_interface, 760, 480)
-        this.item = new ItemPrompt(_interface, 760, 480)
-        this.window = new WindowPrompt(_interface, 760, 480)
+        this.coin = this.createPrompt(CoinPrompt)
+        this.error = this.createPrompt(ErrorPrompt)
+        this.item = this.createPrompt(ItemPrompt)
+        this.window = this.createPrompt(WindowPrompt)
 
-        _interface.add.existing(this.coin)
-        _interface.add.existing(this.error)
-        _interface.add.existing(this.item)
-        _interface.add.existing(this.window)
+        this.mailError = this.createPrompt(MailErrorPrompt)
+        this.mailSuccess = this.createPrompt(MailSuccessPrompt)
 
-        this.loadingPromptFactory = new LoadingPromptFactory(_interface)
+        this.loadingPromptFactory = new LoadingPromptFactory(this.interface)
+    }
+
+    createPrompt(promptClass) {
+        const prompt = new promptClass(this.interface, 760, 480)
+
+        this.interface.add.existing(prompt)
+
+        return prompt
     }
 
     showCoin(coins = 0) {
@@ -75,6 +84,14 @@ export default class PromptController {
 
     showLoading(text, key, url, callback = () => {}) {
         this.loadingPromptFactory.showLoading(text, key, url, callback)
+    }
+
+    showMailError(text) {
+        this.mailError.show(text)
+    }
+
+    showMailSuccess(text) {
+        this.mailSuccess.show(text)
     }
 
     hideAll() {

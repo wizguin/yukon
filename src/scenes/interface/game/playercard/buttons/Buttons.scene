@@ -17,7 +17,6 @@
             "type": "Container",
             "id": "6ac0cd17-7552-4894-a5cc-93d2081afaa3",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -67,6 +66,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onMailClick()",
                     "ShowHint.text": "send_mail_hint",
                     "texture": {
                         "key": "main",
@@ -133,7 +133,6 @@
                     "id": "682a26a5-7f79-4e67-9be0-4992ab794f04",
                     "label": "report_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "mod-icon-disabled"
@@ -146,7 +145,6 @@
                     "id": "26ec7369-28a0-470f-b281-7dd6a3e7b31f",
                     "label": "ignore_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "ignore-icon-disabled"
@@ -159,7 +157,6 @@
                     "id": "2b0aee28-83bc-4f3e-bc89-4c338f5558d0",
                     "label": "mail_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "mail-icon-disabled"
@@ -172,7 +169,6 @@
                     "id": "f0daa280-4416-48d2-986e-41f34099de22",
                     "label": "igloo_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "igloo-icon-disabled"
@@ -185,7 +181,6 @@
                     "id": "49810571-d58b-4ed6-883f-1f1baffe6403",
                     "label": "profile_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "help-icon-disabled"
@@ -198,7 +193,6 @@
                     "id": "92ce6fc2-cb90-444d-9a33-0566100ebc0f",
                     "label": "buddy_icon",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "buddies-icon-disabled"
@@ -214,6 +208,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

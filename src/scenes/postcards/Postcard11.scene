@@ -1,0 +1,62 @@
+{
+    "id": "927bb1d4-26db-4b51-8129-1de6a4e23f1c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9d06d944-646d-4aa4-b09e-82eb338adecf",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ca08f8c3-d8eb-4d52-889c-e70c43376efd",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/11",
+                        "frame": "11"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "b6cc635c-0711-4289-8c50-f3f9c385e241",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 194,
+                    "y": 519,
+                    "visible": false,
+                    "text": "penguin88888888",
+                    "fixedWidth": 266,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "24px",
+                    "color": "#a60008"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

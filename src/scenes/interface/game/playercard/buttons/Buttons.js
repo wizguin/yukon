@@ -101,6 +101,7 @@ export default class Buttons extends BaseContainer {
         // mail_button (components)
         const mail_buttonButton = new Button(mail_button);
         mail_buttonButton.spriteName = "blue-button";
+        mail_buttonButton.callback = () => this.onMailClick();
         const mail_buttonShowHint = new ShowHint(mail_button);
         mail_buttonShowHint.text = "send_mail_hint";
 
@@ -246,6 +247,10 @@ export default class Buttons extends BaseContainer {
 
     onIglooClick() {
         this.world.client.sendJoinIgloo(this.parentContainer.id)
+    }
+
+    onMailClick() {
+        this.interface.main.mailbook.showPostcards(this.parentContainer.id, this.username)
     }
 
     onIgnoreClick() {

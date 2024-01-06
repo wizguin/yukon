@@ -1,0 +1,62 @@
+{
+    "id": "35ed23dd-c592-4ff6-b574-3dc3037437da",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "225fe38b-e298-4ed6-aa8c-8e06f8a2f40a",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "53b9f562-f2e0-4a7a-bd05-59aa3e5ad8f1",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/102",
+                        "frame": "102"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "301e853f-0b42-4adf-a22e-f666803f33ec",
+                    "label": "puffle",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 3,
+                    "y": 640,
+                    "text": "undefined",
+                    "fixedWidth": 200,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "22px",
+                    "color": "#000000"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "id": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseImage",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "921e57bb-dd12-4616-91e2-f0ed18fec057",
+            "label": "goto_button",
+            "texture": {
+                "key": "mail",
+                "frame": "goto_button"
+            },
+            "x": 760,
+            "y": 480,
+            "originX": 0.5031847133757962
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "roomId",
+            "label": "roomId",
+            "tooltip": "roomId",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

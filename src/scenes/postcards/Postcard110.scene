@@ -1,0 +1,62 @@
+{
+    "id": "f729d38b-d076-46f6-b521-457f8653ba10",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "03cbec56-85b6-44c2-b5ac-fdc98f257a71",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "04b7fda1-c60e-49cb-8937-97ce2f799c53",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/110",
+                        "frame": "110"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "66cc4b4f-d029-4ce7-96be-050cc3c7ece6",
+                    "label": "puffle",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 260,
+                    "y": 518,
+                    "text": "undefined",
+                    "fixedWidth": 438,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "30px",
+                    "color": "#083a9b"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

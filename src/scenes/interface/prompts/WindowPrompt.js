@@ -43,6 +43,7 @@ export default class WindowPrompt extends BaseContainer {
         text.setOrigin(0.5, 0.5);
         text.text = "Message goes here\nMessage goes here";
         text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":628,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        text.setWordWrapWidth(628);
         this.add(text);
 
         // single

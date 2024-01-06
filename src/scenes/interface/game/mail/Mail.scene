@@ -1,0 +1,288 @@
+{
+    "id": "2b073ebe-1fc6-467b-87c1-bb5433937720",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "535c05e4-b178-421e-a4c0-6757aafbae51",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "32e1978b-7dab-4db5-aa75-89cb68e14901",
+                    "label": "bg",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "texture": {
+                        "key": "mail",
+                        "frame": "bg"
+                    },
+                    "x": 1,
+                    "y": -23,
+                    "originX": 0.5003170577045022,
+                    "originY": 0.5004389815627743
+                },
+                {
+                    "type": "Image",
+                    "id": "ddf7ea0f-c875-436d-a71d-573a8ab02fa4",
+                    "label": "error",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "display"
+                    },
+                    "x": -1,
+                    "y": -2,
+                    "originX": 0.5004878048780488,
+                    "originY": 0.500651890482399,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "8e5e8eb4-4117-4bbc-b8e7-784725095d3e",
+                    "label": "spinner",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "mail",
+                        "frame": "spinner"
+                    },
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "6da204da-66c2-45a7-b3d3-e5c0e1d4e20e",
+                    "label": "nextButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "next_button",
+                    "Button.callback": "() => this.onNextClick()",
+                    "Button.pixelPerfect": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "next_button"
+                    },
+                    "x": 569,
+                    "y": -28,
+                    "originX": 0.5033112582781457
+                },
+                {
+                    "type": "Image",
+                    "id": "4d38d198-f78b-46b3-b024-f1c91b8e1629",
+                    "label": "prevButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "prev_button",
+                    "Button.callback": "() => this.onPrevClick()",
+                    "Button.pixelPerfect": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "prev_button"
+                    },
+                    "x": -573,
+                    "y": 15,
+                    "originX": 0.5033112582781457
+                },
+                {
+                    "type": "Sprite",
+                    "id": "aceb12d9-8ea0-4f7f-9230-40d224afdad3",
+                    "label": "trashButton",
+                    "components": [
+                        "SimpleButton",
+                        "Animation"
+                    ],
+                    "SimpleButton.callback": "() => this.onTrashClick()",
+                    "SimpleButton.pixelPerfect": true,
+                    "Animation.key": "trash/trash",
+                    "Animation.start": 2,
+                    "Animation.end": 11,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "trash/trash0001"
+                    },
+                    "x": 4,
+                    "y": 7,
+                    "originY": 0.5004887585532747
+                },
+                {
+                    "prefabId": "8cf3168e-3e94-4c35-984d-ae291a9fbbb6",
+                    "id": "77bf89d8-6526-4442-82e9-f82e8eb8f6a8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "replyButton",
+                    "scope": "CLASS",
+                    "x": 991,
+                    "y": -1004
+                },
+                {
+                    "type": "Sprite",
+                    "id": "63ab47f9-85bb-45c7-a889-78bc983441a5",
+                    "label": "removeButton",
+                    "components": [
+                        "SimpleButton",
+                        "Animation"
+                    ],
+                    "SimpleButton.callback": "() => this.onRemoveClick()",
+                    "SimpleButton.pixelPerfect": true,
+                    "Animation.key": "remove/remove",
+                    "Animation.start": 2,
+                    "Animation.end": 7,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "remove/remove0001"
+                    },
+                    "x": -45,
+                    "y": 2,
+                    "originY": 0.500517063081696
+                },
+                {
+                    "type": "Sprite",
+                    "id": "0640a8b4-0eb9-486c-9dd4-7746791f3d00",
+                    "label": "newButton",
+                    "components": [
+                        "SimpleButton",
+                        "Animation"
+                    ],
+                    "SimpleButton.callback": "() => this.interface.main.mailbook.show()",
+                    "SimpleButton.pixelPerfect": true,
+                    "Animation.key": "new/new",
+                    "Animation.start": 2,
+                    "Animation.end": 8,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "new/new0001"
+                    },
+                    "x": -28,
+                    "y": -21,
+                    "angle": 19.5,
+                    "originY": 0.5003518648838846
+                },
+                {
+                    "type": "Container",
+                    "id": "1062c1af-95c0-4dec-864e-e5ba8a738e9f",
+                    "label": "noMessages",
+                    "scope": "CLASS",
+                    "x": -170,
+                    "y": -43,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "c4aaed90-3378-4e58-9e45-ed3631a0f13d",
+                            "label": "note",
+                            "texture": {
+                                "key": "mail",
+                                "frame": "note"
+                            },
+                            "x": 170,
+                            "y": 43,
+                            "originX": 0.5011337868480725,
+                            "originY": 0.5011286681715575
+                        },
+                        {
+                            "type": "Text",
+                            "id": "5a303c44-de65-4355-b840-2e5c180e832a",
+                            "label": "text",
+                            "angle": -9,
+                            "text": "You Have No\nMessages",
+                            "fixedWidth": 300,
+                            "align": "center",
+                            "fontFamily": "Burbank Small",
+                            "fontSize": "50px",
+                            "fontStyle": "bold",
+                            "color": "#223C3C"
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "4bb7f2c9-3412-4e95-94fe-5d22cac404b1",
+                    "label": "count",
+                    "scope": "CLASS",
+                    "x": 590,
+                    "y": -175,
+                    "scaleX": 1.1,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 232,
+                    "fixedHeight": 110,
+                    "align": "center",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "32px",
+                    "fontStyle": "bold italic",
+                    "stroke": "#000",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.fill": true,
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "636c028b-ddc2-429f-9897-5bb26d0505de",
+                    "label": "closeButton",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.close()",
+                    "SimpleButton.pixelPerfect": true,
+                    "texture": {
+                        "key": "mail",
+                        "frame": "close_button"
+                    },
+                    "x": 707,
+                    "y": -424,
+                    "originX": 0.5029239766081871,
+                    "originY": 0.5038167938931297
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "54a15566-67bb-43e8-bdcb-eed480e72b03",
+            "label": "activeElements",
+            "objectIds": [
+                "4bb7f2c9-3412-4e95-94fe-5d22cac404b1",
+                "63ab47f9-85bb-45c7-a889-78bc983441a5",
+                "77bf89d8-6526-4442-82e9-f82e8eb8f6a8",
+                "aceb12d9-8ea0-4f7f-9230-40d224afdad3",
+                "4d38d198-f78b-46b3-b024-f1c91b8e1629",
+                "6da204da-66c2-45a7-b3d3-e5c0e1d4e20e"
+            ]
+        }
+    ]
+}

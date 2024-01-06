@@ -2,7 +2,8 @@
 
 class BannerPlugin {
     constructor(options) {
-        this.banner = options.banner
+        // Convert to comment block
+        this.banner = `/*\n${options.banner}*/\n`
     }
 
     apply(compiler) {
@@ -10,9 +11,6 @@ class BannerPlugin {
             compilation.chunks.forEach(chunk => {
                 chunk.files.forEach(filename => {
                     const asset = compilation.assets[filename]
-
-                    // Convert to comment block
-                    this.banner = `/*\n${this.banner}*/\n`
 
                     // Append banner
                     asset._value = `${this.banner}${asset._value}`

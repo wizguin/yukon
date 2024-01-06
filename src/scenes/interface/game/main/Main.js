@@ -1,23 +1,30 @@
-import BaseScene from '@scenes/base/BaseScene'
+/* START OF COMPILED CODE */
 
-import { Button, Interactive, SimpleButton, ShowHint } from '@components/components'
+import BaseScene from "../../../base/BaseScene";
+import Interactive from "../../../components/Interactive";
+import Button from "../../../components/Button";
+import ShowHint from "../../../components/ShowHint";
+import ChatLog from "../chatlog/ChatLog";
+import SimpleButton from "../../../components/SimpleButton";
+import MailButton from "./buttons/mail/MailButton";
+import Waddle from "../waddle/Waddle";
+import Buddy from "../buddy/Buddy";
+import PlayerCard from "../playercard/PlayerCard";
+import ActionsMenu from "../floating/actions/ActionsMenu";
+import EmotesMenu from "../floating/emotes/EmotesMenu";
+import Safe from "../floating/safe/Safe";
+import Moderator from "../moderator/Moderator";
+import Settings from "../settings/Settings";
+import Mail from "../mail/Mail";
+import Mailbook from "../mailbook/Mailbook";
+/* START-USER-IMPORTS */
+
 import TextInput from '@engine/interface/text/TextInput'
 
 import BalloonFactory from '@engine/interface/balloons/BalloonFactory'
 import SnowballFactory from '@engine/interface/snowball/SnowballFactory'
 
-import ActionsMenu from '../floating/actions/ActionsMenu'
-import Buddy from '../buddy/Buddy'
-import ChatLog from '../chatlog/ChatLog'
-import EmotesMenu from '../floating/emotes/EmotesMenu'
-import Moderator from '../moderator/Moderator'
-import PlayerCard from '../playercard/PlayerCard'
-import Safe from '../floating/safe/Safe'
-import Settings from '../settings/Settings'
-import Waddle from '../waddle/Waddle'
-
-
-/* START OF COMPILED CODE */
+/* END-USER-IMPORTS */
 
 export default class Main extends BaseScene {
 
@@ -36,6 +43,8 @@ export default class Main extends BaseScene {
         this.crosshair;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
+        /** @type {MailButton} */
+        this.mailButton;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
         /** @type {Waddle} */
@@ -56,6 +65,10 @@ export default class Main extends BaseScene {
         this.moderator;
         /** @type {Settings} */
         this.settings;
+        /** @type {Mail} */
+        this.mail;
+        /** @type {Mailbook} */
+        this.mailbook;
         /** @type {Array<Settings|Moderator|PlayerCard|Buddy|Waddle>} */
         this.hideOnSleep;
 
@@ -156,8 +169,9 @@ export default class Main extends BaseScene {
         const request_button = this.add.image(276, 71, "main", "buddy-button");
         request_button.visible = false;
 
-        // mail_button
-        const mail_button = this.add.image(176, 58, "main", "mail-button");
+        // mailButton
+        const mailButton = new MailButton(this, 176, 58);
+        this.add.existing(mailButton);
 
         // news_button
         const news_button = this.add.image(76, 70, "main", "news-button");
@@ -210,6 +224,16 @@ export default class Main extends BaseScene {
         const settings = new Settings(this, 760, 480);
         this.add.existing(settings);
         settings.visible = false;
+
+        // mail
+        const mail = new Mail(this);
+        this.add.existing(mail);
+        mail.visible = false;
+
+        // mailbook
+        const mailbook = new Mailbook(this);
+        this.add.existing(mailbook);
+        mailbook.visible = false;
 
         // lists
         const hideOnSleep = [settings, moderator, playerCard, buddy, waddle];
@@ -299,11 +323,6 @@ export default class Main extends BaseScene {
         request_buttonButton.callback = () => this.onRequestClick();
         request_buttonButton.activeFrame = false;
 
-        // mail_button (components)
-        const mail_buttonButton = new Button(mail_button);
-        mail_buttonButton.spriteName = "mail-button";
-        mail_buttonButton.activeFrame = false;
-
         // news_button (components)
         const news_buttonButton = new Button(news_button);
         news_buttonButton.spriteName = "news-button";
@@ -321,6 +340,7 @@ export default class Main extends BaseScene {
         this.chatLog = chatLog;
         this.crosshair = crosshair;
         this.request_button = request_button;
+        this.mailButton = mailButton;
         this.mod_m = mod_m;
         this.waddle = waddle;
         this.buddy = buddy;
@@ -331,6 +351,8 @@ export default class Main extends BaseScene {
         this.safe = safe;
         this.moderator = moderator;
         this.settings = settings;
+        this.mail = mail;
+        this.mailbook = mailbook;
         this.hideOnSleep = hideOnSleep;
 
         this.events.emit("scene-awake");
@@ -347,6 +369,10 @@ export default class Main extends BaseScene {
         // Widgets
 
         this.setupWidgets()
+
+        // Mail
+
+        this.updateMailCount()
 
         // Factories
 
@@ -425,6 +451,10 @@ export default class Main extends BaseScene {
     addToWidgetLayer(widget) {
         this.widgetLayer.add(widget)
         this.setupWidget(widget)
+    }
+
+    updateMailCount() {
+        this.mailButton.updateMailCount()
     }
 
     onSnowballClick() {

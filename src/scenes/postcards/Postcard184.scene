@@ -1,0 +1,79 @@
+{
+    "id": "1819044b-fb48-4621-ac04-8184446b0489",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b7bd0f9e-8560-4a93-9ed2-6de977c10351",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9be49dba-0bdf-47d2-b86c-4792780e3ce8",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "postcards/sprites/184",
+                        "frame": "184"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "61de43cf-e21f-45d7-a96c-40cf4f316379",
+                    "label": "dateTxt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 611,
+                    "y": 160,
+                    "text": "undefined undefined, undefined",
+                    "fixedWidth": 304,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "Politica",
+                    "fontSize": "28px",
+                    "fontStyle": "bold",
+                    "color": "#09214b"
+                },
+                {
+                    "type": "Text",
+                    "id": "d32b169f-216b-40d7-8bc7-a72a6c3ca1aa",
+                    "label": "penguin",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 182,
+                    "y": 219,
+                    "text": "undefined",
+                    "fixedWidth": 446,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "fontFamily": "Politica",
+                    "fontSize": "52px",
+                    "fontStyle": "bold",
+                    "color": "#09214b"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

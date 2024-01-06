@@ -1,0 +1,57 @@
+{
+    "id": "43cfe1d5-e814-43ca-8d9b-08abd661618c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BasePostcard",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "bcbf8681-8d24-447b-ae5e-8d8eb396a9f8",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9e4216ec-0008-4d94-aace-9a201e7dadb8",
+                    "label": "bg",
+                    "texture": {
+                        "key": "postcards/sprites/179",
+                        "frame": "179"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "prefabId": "7b32da7b-162b-4670-aa32-cf9d3cfd4f83",
+                    "id": "9c57a620-99b5-46be-bdda-03fdf9f59588",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "roomId"
+                    ],
+                    "label": "goToButton",
+                    "scope": "CLASS",
+                    "roomId": 320,
+                    "x": 177,
+                    "y": 487
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

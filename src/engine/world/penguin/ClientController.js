@@ -29,6 +29,8 @@ export default class ClientController {
         this.slots = ['color', 'head', 'face', 'neck', 'body', 'hand', 'feet', 'flag', 'photo', 'award']
         this.inventory = this.initInventory()
 
+        this.sortPostcards()
+
         // Reference to ClientPenguin object
         this.penguin
 
@@ -87,6 +89,14 @@ export default class ClientController {
 
     get isModerator() {
         return this.rank > 1
+    }
+
+    get mailCount() {
+        return this.postcards.length
+    }
+
+    get unreadMailCount() {
+        return this.postcards.filter(postcard => !postcard.hasRead).length
     }
 
     initInventory() {
@@ -325,6 +335,30 @@ export default class ClientController {
             x: matrix.getX(0, 0),
             y: matrix.getY(0, 0)
         }
+    }
+
+    /**
+     * Sort by newest first.
+     */
+    sortPostcards() {
+        this.postcards.sort((a, b) => new Date(b.sendDate) - new Date(a.sendDate))
+    }
+
+    filterPostcards(filter) {
+        this.postcards = this.postcards.filter(postcard => filter(postcard))
+
+        this.refreshPostcards()
+    }
+
+    refreshPostcards() {
+        this.sortPostcards()
+
+        if (this.interface.main.mail.visible) {
+            // Read mail before updating count
+            this.interface.main.mail.goToFirstPage()
+        }
+
+        this.interface.main.updateMailCount()
     }
 
 }

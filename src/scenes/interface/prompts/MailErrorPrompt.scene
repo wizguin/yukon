@@ -1,0 +1,104 @@
+{
+    "id": "21bdd44d-becc-41f3-b705-6c083ea40cd5",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "75309ac1-5262-4761-a600-e768f33ef84f",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "visible": false,
+            "list": [
+                {
+                    "type": "NinePatchContainer",
+                    "id": "ebefec9f-2257-4ca5-b315-8ae3a8e5f339",
+                    "label": "bg",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "error"
+                    },
+                    "width": 706,
+                    "height": 504,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
+                },
+                {
+                    "type": "Image",
+                    "id": "d5375d8b-38eb-4cb3-84b2-34d9c504a57f",
+                    "label": "button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "error-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "error-button"
+                    },
+                    "y": 160
+                },
+                {
+                    "type": "Text",
+                    "id": "dac2c36a-3a7b-4cc2-ac02-cebcba8dd46b",
+                    "label": "buttonText",
+                    "y": 160,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Ok",
+                    "fixedWidth": 280,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "1062d012-1f33-43fb-829b-f2758939f2a7",
+                    "label": "message",
+                    "scope": "CLASS",
+                    "y": 39,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 658,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "color": "#000",
+                    "wordWrapWidth": 658
+                },
+                {
+                    "type": "Image",
+                    "id": "34001593-4ef9-41ce-ab03-ccb5f3df2490",
+                    "label": "icon",
+                    "texture": {
+                        "key": "mailbook",
+                        "frame": "full"
+                    },
+                    "y": -123
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
