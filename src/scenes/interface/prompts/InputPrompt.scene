@@ -71,7 +71,8 @@
                         "x",
                         "y"
                     ],
-                    "label": "singleButton",
+                    "label": "button",
+                    "scope": "CLASS",
                     "x": 0,
                     "y": 130
                 },

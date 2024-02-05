@@ -50,8 +50,8 @@ export default class PromptController {
         this.item.showItem(item)
     }
 
-    showInput() {
-        this.input.show()
+    showInput(text, buttonText = 'Continue', callback = () => {}) {
+        this.input.show(text, buttonText, callback)
     }
 
     showFurniture(furniture) {

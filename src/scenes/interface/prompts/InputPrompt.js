@@ -20,6 +20,8 @@ export default class InputPrompt extends BaseContainer {
         this.bg;
         /** @type {Phaser.GameObjects.Text} */
         this.text;
+        /** @type {SingleButton} */
+        this.button;
 
 
         // block
@@ -42,9 +44,9 @@ export default class InputPrompt extends BaseContainer {
         text.setStyle({ "align": "center", "color": "#000000", "fixedWidth":628,"fixedHeight":136,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         this.add(text);
 
-        // singleButton
-        const singleButton = new SingleButton(scene, 0, 130);
-        this.add(singleButton);
+        // button
+        const button = new SingleButton(scene, 0, 130);
+        this.add(button);
 
         // input
         const input = scene.add.rectangle(0, 19, 446, 54);
@@ -75,6 +77,7 @@ export default class InputPrompt extends BaseContainer {
 
         this.bg = bg;
         this.text = text;
+        this.button = button;
 
         /* START-USER-CTR-CODE */
 
@@ -89,6 +92,8 @@ export default class InputPrompt extends BaseContainer {
 
         this.input = new TextInput(scene, 0, 19, 'text', style, () => this.onSubmit(), 12, false)
 
+        this.callback = () => {}
+
         scene.add.existing(this.input)
         this.add(this.input)
 
@@ -98,7 +103,12 @@ export default class InputPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show() {
+    show(text, buttonText, callback) {
+        this.text.text = text
+        this.button.text.text = buttonText
+
+        this.callback = callback
+
         this.input.clearText()
 
         super.show()
