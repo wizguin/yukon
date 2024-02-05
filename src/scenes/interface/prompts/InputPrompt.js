@@ -99,6 +99,8 @@ export default class InputPrompt extends BaseContainer {
     /* START-USER-CODE */
 
     show() {
+        this.input.clearText()
+
         super.show()
     }
 
