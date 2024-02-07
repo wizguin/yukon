@@ -28,6 +28,8 @@ export default class PromptController {
         this.mailSuccess = this.createPrompt(MailSuccessPrompt)
 
         this.loadingPromptFactory = new LoadingPromptFactory(this.interface)
+
+        window.test = () => this.showAdopt()
     }
 
     createPrompt(promptClass) {
@@ -98,6 +100,17 @@ export default class PromptController {
 
     showMailSuccess(text) {
         this.mailSuccess.show(text)
+    }
+
+    showAdopt() {
+        // temp should use item prompt
+        this.showWindow('', 'dual', () => this.showAdoptName())
+    }
+
+    showAdoptName() {
+        this.window.close()
+
+        this.showInput('', 'Continue', (name) => console.log(name))
     }
 
     hideAll() {
