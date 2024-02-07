@@ -29,7 +29,7 @@ export default class PromptController {
 
         this.loadingPromptFactory = new LoadingPromptFactory(this.interface)
 
-        window.test = () => this.showAdopt()
+        window.test = () => this.showAdopt(1)
     }
 
     createPrompt(promptClass) {
@@ -102,15 +102,17 @@ export default class PromptController {
         this.mailSuccess.show(text)
     }
 
-    showAdopt() {
+    showAdopt(petId) {
         // temp should use item prompt
-        this.showWindow('', 'dual', () => this.showAdoptName())
+        this.showWindow('', 'dual', () => this.showAdoptName(petId))
     }
 
-    showAdoptName() {
+    showAdoptName(petId) {
         this.window.close()
 
-        this.showInput('', 'Continue', (name) => console.log(name))
+        this.showInput('', 'Continue', (name) => {
+            this.network.send('adopt_pet', { petId: petId, name: name })
+        })
     }
 
     hideAll() {
