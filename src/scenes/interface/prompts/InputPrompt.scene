@@ -20,6 +20,7 @@
             "label": "container_1",
             "x": 760,
             "y": 480,
+            "visible": false,
             "list": [
                 {
                     "type": "Rectangle",

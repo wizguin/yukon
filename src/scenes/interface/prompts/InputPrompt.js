@@ -24,6 +24,8 @@ export default class InputPrompt extends BaseContainer {
         this.button;
 
 
+        this.visible = false;
+
         // block
         const block = scene.add.rectangle(0, 0, 1520, 960);
         block.isFilled = true;
@@ -90,7 +92,7 @@ export default class InputPrompt extends BaseContainer {
             textAlign: 'center'
         }
 
-        this.input = new TextInput(scene, 0, 19, 'text', style, () => this.onSubmit(), 12, false)
+        this.input = new TextInput(scene, 0, 19, 'text', style, () => this.callback(), 12, false)
 
         this.callback = () => {}
 
@@ -107,7 +109,7 @@ export default class InputPrompt extends BaseContainer {
         this.text.text = text
         this.button.text.text = buttonText
 
-        this.callback = callback
+        this.callback = () => callback(this.input.text)
 
         this.input.clearText()
 
