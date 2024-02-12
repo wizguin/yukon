@@ -9,8 +9,10 @@ export default class IglooPet extends BaseSprite {
         this.room = room
 
         const randomPos = this.getRandomSafePos()
-        this.setPos(randomPos.x, randomPos.y)
+        this.setPosition(randomPos.x, randomPos.y)
 
+        this.updateTimer = null
+        this.tween = null
         this.depth = this.y
     }
 
@@ -18,9 +20,56 @@ export default class IglooPet extends BaseSprite {
         return this.room.pet
     }
 
-    setPos(x, y) {
-        this.x = x
-        this.y = y
+    /**
+     * Update that controls movement and other events, only ran for pet owner.
+     */
+    startUpdate() {
+        this.updateTimer = this.room.time.addEvent({
+            delay: 5000,
+            callback: () => this.handleUpdate(),
+            loop: true
+        })
+    }
+
+    stopUpdate() {
+        if (this.updateTimer) {
+            this.updateTimer.remove()
+            this.room.time.removeEvent(this.updateTimer)
+
+            this.updateTimer = null
+        }
+    }
+
+    handleUpdate() {
+        const newPos = this.getRandomSafePos()
+
+        // * 24 to simulate 24fps frame based tween
+        const duration = Phaser.Math.Distance.BetweenPoints(this, newPos) / 4 * 24
+
+        this.addMoveTween(newPos, duration)
+    }
+
+    addMoveTween(pos, duration) {
+        this.removeTween()
+
+        this.tween = this.room.tweens.add({
+            targets: this,
+            duration: duration,
+
+            x: pos.x,
+            y: pos.y,
+
+            onUpdate: () => this.onMoveUpdate(),
+            onComplete: () => this.onMoveComplete()
+        })
+    }
+
+    onMoveUpdate() {
+        this.depth = this.y
+    }
+
+    onMoveComplete() {
+        this.removeTween()
     }
 
     getRandomSafePos() {
@@ -42,6 +91,13 @@ export default class IglooPet extends BaseSprite {
 
     isSafe(x, y) {
         return this.room.matter.containsPoint(this.safeZone, x, y)
+    }
+
+    removeTween() {
+        if (this.tween) {
+            this.tween.remove()
+            this.tween = null
+        }
     }
 
 }

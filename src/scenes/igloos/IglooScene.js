@@ -261,6 +261,10 @@ export default class IglooScene extends RoomScene {
         const iglooPet = new IglooPet(textureKey, pet, this)
 
         this.add.existing(iglooPet)
+
+        if (this.isClientIgloo) {
+            iglooPet.startUpdate()
+        }
     }
 
     /*========== Physics ==========*/
