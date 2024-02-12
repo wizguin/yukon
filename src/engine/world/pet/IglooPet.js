@@ -24,8 +24,10 @@ export default class IglooPet extends BaseSprite {
      * Update that controls movement and other events, only ran for pet owner.
      */
     startUpdate() {
+        const delayOffset = Phaser.Math.Between(0, 10) * 1000
+
         this.updateTimer = this.room.time.addEvent({
-            delay: 5000,
+            delay: 10000 + delayOffset,
             callback: () => this.handleUpdate(),
             loop: true
         })
