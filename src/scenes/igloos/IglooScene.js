@@ -2,6 +2,8 @@ import RoomScene from '../rooms/RoomScene'
 
 import FurnitureLoader from '@engine/loaders/FurnitureLoader'
 import FurnitureSprite from '@engine/world/room/furniture/FurnitureSprite'
+import IglooPet from '@engine/world/pet/IglooPet'
+import IglooPetLoader from '@engine/loaders/IglooPetLoader'
 import PhysicsMaskGraphics from '@engine/utils/mask/PhysicsMaskGraphics'
 import RoomCrate from './crates/RoomCrate'
 import WallCrate from './crates/WallCrate'
@@ -33,6 +35,7 @@ export default class IglooScene extends RoomScene {
         this.music = data.args.music
 
         this.loader = new FurnitureLoader(this)
+        this.petLoader = new IglooPetLoader(this)
 
         // Active furniture quantities
         this.quantities = {}
@@ -60,6 +63,10 @@ export default class IglooScene extends RoomScene {
         return this.children.list.filter(f => f instanceof FurnitureSprite)
     }
 
+    get isClientIgloo() {
+        return this.id === this.world.client.id
+    }
+
     getQuantity(item) {
         let inventoryQuantity = this.world.client.furniture[item]
         let activeQuantity = (this.quantities[item]) ? this.quantities[item] : 0
@@ -72,7 +79,7 @@ export default class IglooScene extends RoomScene {
     }
 
     create() {
-        if (this.id == this.world.client.id) {
+        if (this.isClientIgloo) {
             this.addEditBg()
             this.addCrates()
             this.interface.showIglooEdit()
@@ -84,6 +91,8 @@ export default class IglooScene extends RoomScene {
         if (this.args.flooring) this.addFlooring(this.args.flooring)
         this.addLocation()
         this.loadAllFurniture()
+
+        this.network.send('get_pets', { userId: this.id })
     }
 
     addEditBg() {
@@ -240,6 +249,18 @@ export default class IglooScene extends RoomScene {
 
     updateQuantity(item) {
         this.quantities[item] = (this.quantities[item]) ? this.quantities[item] + 1 : 1
+    }
+
+    loadPets(pets) {
+        for (const pet of pets) {
+            this.petLoader.loadPet(pet, (key) => this.addPet(key, pet))
+        }
+    }
+
+    addPet(textureKey, pet) {
+        const iglooPet = new IglooPet(textureKey, pet, this)
+
+        this.add.existing(iglooPet)
     }
 
     /*========== Physics ==========*/
