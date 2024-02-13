@@ -12,8 +12,20 @@ export default class PetCard extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Image} */
+        this.restBar;
+        /** @type {Phaser.GameObjects.Image} */
+        this.healthBar;
+        /** @type {Phaser.GameObjects.Image} */
+        this.energyBar;
         /** @type {Phaser.GameObjects.Text} */
         this.name;
+        /** @type {Phaser.GameObjects.Text} */
+        this.restText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.healthText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.energyText;
 
 
         // cardBg
@@ -25,17 +37,17 @@ export default class PetCard extends BaseContainer {
         petBg.setOrigin(0.5, 0.5012285012285013);
         this.add(petBg);
 
-        // pet_bar0001
-        const pet_bar0001 = scene.add.image(73, 78, "main", "pet/bar0001");
-        this.add(pet_bar0001);
+        // restBar
+        const restBar = scene.add.image(73, 166, "main", "pet/bar/1");
+        this.add(restBar);
 
-        // pet_bar
-        const pet_bar = scene.add.image(73, 122, "main", "pet/bar0001");
-        this.add(pet_bar);
+        // healthBar
+        const healthBar = scene.add.image(73, 122, "main", "pet/bar/1");
+        this.add(healthBar);
 
-        // pet_bar_1
-        const pet_bar_1 = scene.add.image(73, 166, "main", "pet/bar0001");
-        this.add(pet_bar_1);
+        // energyBar
+        const energyBar = scene.add.image(73, 78, "main", "pet/bar/1");
+        this.add(energyBar);
 
         // walkButton
         const walkButton = scene.add.image(99, 258, "main", "blue-button");
@@ -86,6 +98,28 @@ export default class PetCard extends BaseContainer {
         const xIcon = scene.add.image(176, -238, "main", "blue-x");
         this.add(xIcon);
 
+        // restText
+        const restText = scene.add.text(-210, 168, "", {});
+        restText.setOrigin(0, 0.5);
+        restText.text = "REST";
+        restText.setStyle({ "align": "right", "fixedWidth":160,"fontFamily": "CCFaceFront", "fontSize": "28px", "stroke": "#003366", "strokeThickness":8,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        this.add(restText);
+
+        // healthText
+        const healthText = scene.add.text(-210, 120, "", {});
+        healthText.setOrigin(0, 0.5);
+        healthText.text = "HEALTH";
+        healthText.setStyle({ "align": "right", "fixedWidth":160,"fontFamily": "CCFaceFront", "fontSize": "28px", "stroke": "#003366", "strokeThickness":8,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        this.add(healthText);
+
+        // energyText
+        const energyText = scene.add.text(-210, 77, "", {});
+        energyText.setOrigin(0, 0.5);
+        energyText.text = "ENERGY";
+        energyText.setStyle({ "align": "right", "fixedWidth":160,"fontFamily": "CCFaceFront", "fontSize": "28px", "stroke": "#003366", "strokeThickness":8,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        this.add(energyText);
+
+
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = cardBg;
@@ -119,7 +153,13 @@ export default class PetCard extends BaseContainer {
         xButtonButton.spriteName = "blue-button";
         xButtonButton.callback = () => this.close();
 
+        this.restBar = restBar;
+        this.healthBar = healthBar;
+        this.energyBar = energyBar;
         this.name = name;
+        this.restText = restText;
+        this.healthText = healthText;
+        this.energyText = energyText;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -131,7 +171,19 @@ export default class PetCard extends BaseContainer {
     show(pet) {
         this.name.text = pet.name
 
+        this.updateStats()
+
         super.show()
+    }
+
+    updateStats() {
+        this.energyBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.energy)}`)
+        this.healthBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.health)}`)
+        this.restBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.rest)}`)
+    }
+
+    getStatFrame(stat) {
+        return Math.round(stat / 10)
     }
 
     /* END-USER-CODE */
