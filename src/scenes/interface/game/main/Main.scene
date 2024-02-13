@@ -478,7 +478,7 @@
                     ],
                     "label": "waddle",
                     "scope": "CLASS",
-                    "x": 1099,
+                    "x": 1104,
                     "y": 332,
                     "visible": false
                 },
@@ -492,8 +492,22 @@
                     ],
                     "label": "buddy",
                     "scope": "CLASS",
-                    "x": 1140,
-                    "y": 436,
+                    "x": 1144,
+                    "y": 444,
+                    "visible": false
+                },
+                {
+                    "prefabId": "dbce115c-74cb-4656-88db-4fe91e6dd262",
+                    "id": "e7e1f84c-7eae-42d4-8334-a0c8ac014563",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "petCard",
+                    "scope": "CLASS",
+                    "x": 484,
+                    "y": 444,
                     "visible": false
                 },
                 {
@@ -506,8 +520,8 @@
                     ],
                     "label": "playerCard",
                     "scope": "CLASS",
-                    "x": 446,
-                    "y": 436,
+                    "x": 444,
+                    "y": 444,
                     "visible": false
                 }
             ]
@@ -618,6 +632,7 @@
                 "4904443b-abe1-429f-9557-f064db674790",
                 "7b10953c-f288-40da-8b3f-44af0dea100d",
                 "9770a528-0c5a-4720-a6db-eabd53c787e1",
+                "e7e1f84c-7eae-42d4-8334-a0c8ac014563",
                 "9acd4a58-cbf9-4751-b96a-2822f121af9c",
                 "0040eb03-91ac-4caf-8c26-67b736b50f60"
             ]
