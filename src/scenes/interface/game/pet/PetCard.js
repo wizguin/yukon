@@ -12,6 +12,10 @@ export default class PetCard extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Text} */
+        this.name;
+
+
         // cardBg
         const cardBg = scene.add.image(0, 0, "main", "card-bg");
         this.add(cardBg);
@@ -67,6 +71,13 @@ export default class PetCard extends BaseContainer {
         const play = scene.add.image(-84, 255, "main", "pet/play");
         this.add(play);
 
+        // name
+        const name = scene.add.text(0, -237, "", {});
+        name.setOrigin(0.5, 0.5);
+        name.text = "Test";
+        name.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":360,"fontFamily": "Arial", "fontSize": "32px", "fontStyle": "bold" });
+        this.add(name);
+
         // xButton
         const xButton = scene.add.image(176, -236, "main", "blue-button");
         this.add(xButton);
@@ -108,11 +119,21 @@ export default class PetCard extends BaseContainer {
         xButtonButton.spriteName = "blue-button";
         xButtonButton.callback = () => this.close();
 
+        this.name = name;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
+
+    show(pet) {
+        this.name.text = pet.name
+
+        super.show()
+    }
+
     /* END-USER-CODE */
 }
 

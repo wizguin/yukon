@@ -8,6 +8,8 @@ export default class IglooPet extends BaseSprite {
     constructor(textureKey, pet, room) {
         super(room, 0, 0, textureKey, '1_1')
 
+        Object.assign(this, pet)
+
         this.room = room
 
         this.createAnims()
@@ -33,7 +35,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     onPointerDown() {
-        this.interface.main.petCard.show()
+        this.interface.main.petCard.show(this)
     }
 
     /**

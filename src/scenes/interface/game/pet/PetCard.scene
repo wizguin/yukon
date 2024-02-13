@@ -193,6 +193,22 @@
                     "y": 255
                 },
                 {
+                    "type": "Text",
+                    "id": "19162c3d-f8c9-417c-ae22-0977a271b63d",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "y": -237,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Test",
+                    "fixedWidth": 360,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                },
+                {
                     "type": "Image",
                     "id": "29115cbe-e9ff-4ca7-8c64-c96f194e7233",
                     "label": "xButton",
