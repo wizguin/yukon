@@ -1,0 +1,181 @@
+{
+    "id": "dbce115c-74cb-4656-88db-4fe91e6dd262",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 60,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "5e6c870e-990f-49db-9990-be1242daf579",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "cardBg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "84eedd47-1d1c-49bc-b020-6c10cfdd6f56",
+                    "label": "cardBg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-bg"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "03530f92-d9ea-4c8a-895a-26c247375568",
+                    "label": "petBg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/card_bg"
+                    },
+                    "originY": 0.5012285012285013
+                },
+                {
+                    "type": "Image",
+                    "id": "d49d584c-5408-49e2-a990-95c1c9d306b9",
+                    "label": "pet_bar0001",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar0001"
+                    },
+                    "x": 73,
+                    "y": 78
+                },
+                {
+                    "type": "Image",
+                    "id": "45d814c4-27ae-4225-9ec4-c32ab381ecee",
+                    "label": "pet_bar",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar0001"
+                    },
+                    "x": 73,
+                    "y": 122
+                },
+                {
+                    "type": "Image",
+                    "id": "d277bc54-e051-4655-81c6-ddc4054a49e6",
+                    "label": "pet_bar_1",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar0001"
+                    },
+                    "x": 73,
+                    "y": 166
+                },
+                {
+                    "type": "Image",
+                    "id": "7bf88fd5-ad79-44c1-9a62-bc7464128379",
+                    "label": "walkButton",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 99,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "349a71fd-e4a8-4b6a-ab93-6035387b18c5",
+                    "label": "feedButton",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 37,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "1e881a54-634d-4c39-9551-3c453ac3d685",
+                    "label": "restButton",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": -23,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "51bbde59-fe69-4933-9f76-4d7c4156104d",
+                    "label": "playButton",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": -83,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "973ef7cc-17bf-4bf9-8211-76e6d669a01a",
+                    "label": "walk",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/walk"
+                    },
+                    "x": 100,
+                    "y": 257
+                },
+                {
+                    "type": "Image",
+                    "id": "1b4ab14b-656b-477d-9ff9-26625c73203c",
+                    "label": "feed",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/feed"
+                    },
+                    "x": 38,
+                    "y": 256,
+                    "originX": 0.5185185185185185
+                },
+                {
+                    "type": "Image",
+                    "id": "b2eb403d-273c-41c9-9fe5-4d33f17389e3",
+                    "label": "rest",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/rest"
+                    },
+                    "x": -24,
+                    "y": 257,
+                    "originY": 0.52
+                },
+                {
+                    "type": "Image",
+                    "id": "b45f13bd-e610-4e52-85ff-1224bc31e58b",
+                    "label": "play",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/play"
+                    },
+                    "x": -84,
+                    "y": 255
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -9,6 +9,7 @@ import SimpleButton from "../../../components/SimpleButton";
 import MailButton from "./buttons/mail/MailButton";
 import Waddle from "../waddle/Waddle";
 import Buddy from "../buddy/Buddy";
+import PetCard from "../pet/PetCard";
 import PlayerCard from "../playercard/PlayerCard";
 import ActionsMenu from "../floating/actions/ActionsMenu";
 import EmotesMenu from "../floating/emotes/EmotesMenu";
@@ -51,6 +52,8 @@ export default class Main extends BaseScene {
         this.waddle;
         /** @type {Buddy} */
         this.buddy;
+        /** @type {PetCard} */
+        this.petCard;
         /** @type {PlayerCard} */
         this.playerCard;
         /** @type {Phaser.GameObjects.Layer} */
@@ -69,7 +72,7 @@ export default class Main extends BaseScene {
         this.mail;
         /** @type {Mailbook} */
         this.mailbook;
-        /** @type {Array<Settings|Moderator|PlayerCard|Buddy|Waddle>} */
+        /** @type {Array<Settings|Moderator|PlayerCard|PetCard|Buddy|Waddle>} */
         this.hideOnSleep;
 
 
@@ -186,17 +189,22 @@ export default class Main extends BaseScene {
         const widgetLayer = this.add.layer();
 
         // waddle
-        const waddle = new Waddle(this, 1099, 332);
+        const waddle = new Waddle(this, 1104, 332);
         waddle.visible = false;
         widgetLayer.add(waddle);
 
         // buddy
-        const buddy = new Buddy(this, 1140, 436);
+        const buddy = new Buddy(this, 1144, 444);
         buddy.visible = false;
         widgetLayer.add(buddy);
 
+        // petCard
+        const petCard = new PetCard(this, 484, 444);
+        petCard.visible = false;
+        widgetLayer.add(petCard);
+
         // playerCard
-        const playerCard = new PlayerCard(this, 446, 436);
+        const playerCard = new PlayerCard(this, 444, 444);
         playerCard.visible = false;
         widgetLayer.add(playerCard);
 
@@ -236,7 +244,7 @@ export default class Main extends BaseScene {
         mailbook.visible = false;
 
         // lists
-        const hideOnSleep = [settings, moderator, playerCard, buddy, waddle];
+        const hideOnSleep = [settings, moderator, playerCard, petCard, buddy, waddle];
 
         // dock (components)
         new Interactive(dock);
@@ -344,6 +352,7 @@ export default class Main extends BaseScene {
         this.mod_m = mod_m;
         this.waddle = waddle;
         this.buddy = buddy;
+        this.petCard = petCard;
         this.playerCard = playerCard;
         this.widgetLayer = widgetLayer;
         this.actionsMenu = actionsMenu;
