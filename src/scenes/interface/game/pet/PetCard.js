@@ -67,6 +67,14 @@ export default class PetCard extends BaseContainer {
         const play = scene.add.image(-84, 255, "main", "pet/play");
         this.add(play);
 
+        // xButton
+        const xButton = scene.add.image(176, -236, "main", "blue-button");
+        this.add(xButton);
+
+        // xIcon
+        const xIcon = scene.add.image(176, -238, "main", "blue-x");
+        this.add(xIcon);
+
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = cardBg;
@@ -94,6 +102,11 @@ export default class PetCard extends BaseContainer {
         playButtonButton.spriteName = "blue-button";
         const playButtonShowHint = new ShowHint(playButton);
         playButtonShowHint.text = "play_pet_hint";
+
+        // xButton (components)
+        const xButtonButton = new Button(xButton);
+        xButtonButton.spriteName = "blue-button";
+        xButtonButton.callback = () => this.close();
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */

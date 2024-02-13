@@ -191,6 +191,33 @@
                     },
                     "x": -84,
                     "y": 255
+                },
+                {
+                    "type": "Image",
+                    "id": "29115cbe-e9ff-4ca7-8c64-c96f194e7233",
+                    "label": "xButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 176,
+                    "y": -236
+                },
+                {
+                    "type": "Image",
+                    "id": "97eaab55-15c6-417c-ba23-d74ff6459732",
+                    "label": "xIcon",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 176,
+                    "y": -238
                 }
             ]
         }
