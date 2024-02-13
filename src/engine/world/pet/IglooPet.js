@@ -10,9 +10,7 @@ export default class IglooPet extends BaseSprite {
 
         this.room = room
 
-        this.frames = this.texture.getFrameNames()
-        this.petAnims = this.getAnims()
-
+        this.createAnims()
         this.playFrame(1)
 
         const randomPos = this.getRandomSafePos()
@@ -91,11 +89,11 @@ export default class IglooPet extends BaseSprite {
         this.play(`${this.texture.key}_${frame}`)
     }
 
-    getAnims() {
+    createAnims() {
         const anims = {}
 
         // Gets max inner frame number for each animation
-        this.frames.map(frame => {
+        this.texture.getFrameNames().map(frame => {
             frame = this.splitAnim(frame)
 
             // Update if doesn't exist or if current count is less
@@ -104,12 +102,10 @@ export default class IglooPet extends BaseSprite {
             }
         })
 
-        // Update to animation objects
+        // Create anim
         for (const frame in anims) {
-            anims[frame] = this.createAnim(frame, anims[frame])
+            this.createAnim(frame, anims[frame])
         }
-
-        return anims
     }
 
     createAnim(frame, num) {
@@ -117,11 +113,11 @@ export default class IglooPet extends BaseSprite {
 
         // If animation already exists
         if (this.scene.anims.exists(key)) {
-            return this.scene.anims.get(key)
+            return
         }
 
         // Create animation
-        return this.scene.anims.create({
+        this.scene.anims.create({
             key: key,
             frames: this.scene.anims.generateFrameNames(this.texture.key, {
                 prefix: `${frame}_`,
