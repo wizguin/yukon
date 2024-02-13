@@ -82,6 +82,12 @@
                     "type": "Image",
                     "id": "7bf88fd5-ad79-44c1-9a62-bc7464128379",
                     "label": "walkButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "ShowHint.text": "walk_pet_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -93,6 +99,12 @@
                     "type": "Image",
                     "id": "349a71fd-e4a8-4b6a-ab93-6035387b18c5",
                     "label": "feedButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "ShowHint.text": "feed_pet_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -104,6 +116,12 @@
                     "type": "Image",
                     "id": "1e881a54-634d-4c39-9551-3c453ac3d685",
                     "label": "restButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "ShowHint.text": "rest_pet_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
@@ -115,6 +133,12 @@
                     "type": "Image",
                     "id": "51bbde59-fe69-4933-9f76-4d7c4156104d",
                     "label": "playButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "ShowHint.text": "play_pet_hint",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"

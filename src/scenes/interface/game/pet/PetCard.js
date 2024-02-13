@@ -2,6 +2,8 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 import DraggableContainer from "../../../components/DraggableContainer";
+import Button from "../../../components/Button";
+import ShowHint from "../../../components/ShowHint";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -68,6 +70,30 @@ export default class PetCard extends BaseContainer {
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = cardBg;
+
+        // walkButton (components)
+        const walkButtonButton = new Button(walkButton);
+        walkButtonButton.spriteName = "blue-button";
+        const walkButtonShowHint = new ShowHint(walkButton);
+        walkButtonShowHint.text = "walk_pet_hint";
+
+        // feedButton (components)
+        const feedButtonButton = new Button(feedButton);
+        feedButtonButton.spriteName = "blue-button";
+        const feedButtonShowHint = new ShowHint(feedButton);
+        feedButtonShowHint.text = "feed_pet_hint";
+
+        // restButton (components)
+        const restButtonButton = new Button(restButton);
+        restButtonButton.spriteName = "blue-button";
+        const restButtonShowHint = new ShowHint(restButton);
+        restButtonShowHint.text = "rest_pet_hint";
+
+        // playButton (components)
+        const playButtonButton = new Button(playButton);
+        playButtonButton.spriteName = "blue-button";
+        const playButtonShowHint = new ShowHint(playButton);
+        playButtonShowHint.text = "play_pet_hint";
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
