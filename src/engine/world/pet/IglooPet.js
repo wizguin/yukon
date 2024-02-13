@@ -1,5 +1,7 @@
 import BaseSprite from '@scenes/base/BaseSprite'
 
+import PathEngine from '../penguin/pathfinding/PathEngine'
+
 
 export default class IglooPet extends BaseSprite {
 
@@ -7,6 +9,11 @@ export default class IglooPet extends BaseSprite {
         super(room, 0, 0, textureKey, '1_1')
 
         this.room = room
+
+        this.frames = this.texture.getFrameNames()
+        this.petAnims = this.getAnims()
+
+        this.playFrame(1)
 
         const randomPos = this.getRandomSafePos()
         this.setPosition(randomPos.x, randomPos.y)
@@ -54,6 +61,11 @@ export default class IglooPet extends BaseSprite {
     addMoveTween(pos, duration) {
         this.removeTween()
 
+        const angle = PathEngine.getAngle(this, pos)
+        const direction = PathEngine.getDirection(angle)
+
+        this.playFrame(direction + 16)
+
         this.tween = this.room.tweens.add({
             targets: this,
             duration: duration,
@@ -62,7 +74,7 @@ export default class IglooPet extends BaseSprite {
             y: pos.y,
 
             onUpdate: () => this.onMoveUpdate(),
-            onComplete: () => this.onMoveComplete()
+            onComplete: () => this.onMoveComplete(direction)
         })
     }
 
@@ -70,8 +82,69 @@ export default class IglooPet extends BaseSprite {
         this.depth = this.y
     }
 
-    onMoveComplete() {
+    onMoveComplete(direction) {
         this.removeTween()
+        this.playFrame(direction)
+    }
+
+    playFrame(frame) {
+        this.play(`${this.texture.key}_${frame}`)
+    }
+
+    getAnims() {
+        const anims = {}
+
+        // Gets max inner frame number for each animation
+        this.frames.map(frame => {
+            frame = this.splitAnim(frame)
+
+            // Update if doesn't exist or if current count is less
+            if (!(anims[frame.key]) || frame.num > anims[frame.key]) {
+                anims[frame.key] = frame.num
+            }
+        })
+
+        // Update to animation objects
+        for (const frame in anims) {
+            anims[frame] = this.createAnim(frame, anims[frame])
+        }
+
+        return anims
+    }
+
+    createAnim(frame, num) {
+        const key = `${this.texture.key}_${frame}`
+
+        // If animation already exists
+        if (this.scene.anims.exists(key)) {
+            return this.scene.anims.get(key)
+        }
+
+        // Create animation
+        return this.scene.anims.create({
+            key: key,
+            frames: this.scene.anims.generateFrameNames(this.texture.key, {
+                prefix: `${frame}_`,
+                start: 1,
+                end: num
+            }),
+            frameRate: 24,
+            repeat: -1
+        })
+    }
+
+    /**
+     * Separates an animation frame from its inner frame number.
+     *
+     * @param {string} frame - Full frame name
+     */
+    splitAnim(frame) {
+        const split = frame.split('_')
+
+        return {
+            key: split[0],
+            num: parseInt(split[1])
+        }
     }
 
     getRandomSafePos() {
