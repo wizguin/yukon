@@ -264,6 +264,7 @@ export default class IglooScene extends RoomScene {
 
         if (this.isClientIgloo) {
             iglooPet.startUpdate()
+            iglooPet.setInteractive()
         }
     }
 

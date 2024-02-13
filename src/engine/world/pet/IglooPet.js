@@ -16,6 +16,7 @@ export default class IglooPet extends BaseSprite {
         const randomPos = this.getRandomSafePos()
         this.setPosition(randomPos.x, randomPos.y)
 
+        this.isButton = true
         this.updateTimer = null
         this.tween = null
         this.depth = this.y
@@ -23,6 +24,16 @@ export default class IglooPet extends BaseSprite {
 
     get safeZone() {
         return this.room.pet
+    }
+
+    setInteractive() {
+        super.setInteractive({ cursor: 'pointer', pixelPerfect: true })
+
+        this.on('pointerdown', this.onPointerDown, this)
+    }
+
+    onPointerDown() {
+        this.interface.main.petCard.show()
     }
 
     /**
