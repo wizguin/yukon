@@ -42,6 +42,8 @@ export default class IglooPet extends BaseSprite {
      * Update that controls movement and other events, only ran for pet owner.
      */
     startUpdate() {
+        this.removeUpdateTimer()
+
         const delayOffset = Phaser.Math.Between(0, 10) * 1000
 
         this.updateTimer = this.room.time.addEvent({
@@ -52,12 +54,8 @@ export default class IglooPet extends BaseSprite {
     }
 
     stopUpdate() {
-        if (this.updateTimer) {
-            this.updateTimer.remove()
-            this.room.time.removeEvent(this.updateTimer)
-
-            this.updateTimer = null
-        }
+        this.removeUpdateTimer()
+        this.removeTween()
     }
 
     handleUpdate() {
@@ -100,6 +98,29 @@ export default class IglooPet extends BaseSprite {
 
     playFrame(frame) {
         this.play(`${this.texture.key}_${frame}`)
+    }
+
+    startPlay() {
+        this.playInteraction(35)
+    }
+
+    startRest() {
+        this.playInteraction(25)
+    }
+
+    playInteraction(frame) {
+        // Remove previous event if exists
+        this.off('animationrepeat')
+
+        this.stopUpdate()
+        this.playFrame(frame)
+
+        this.once('animationrepeat', this.onInteractionComplete, this)
+    }
+
+    onInteractionComplete() {
+        this.playFrame(1)
+        this.startUpdate()
     }
 
     createAnims() {
@@ -177,9 +198,19 @@ export default class IglooPet extends BaseSprite {
         return this.room.matter.containsPoint(this.safeZone, x, y)
     }
 
+    removeUpdateTimer() {
+        if (this.updateTimer) {
+            this.updateTimer.remove()
+            this.room.time.removeEvent(this.updateTimer)
+
+            this.updateTimer = null
+        }
+    }
+
     removeTween() {
         if (this.tween) {
             this.tween.remove()
+
             this.tween = null
         }
     }

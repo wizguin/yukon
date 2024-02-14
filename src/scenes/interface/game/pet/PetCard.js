@@ -139,12 +139,14 @@ export default class PetCard extends BaseContainer {
         // restButton (components)
         const restButtonButton = new Button(restButton);
         restButtonButton.spriteName = "blue-button";
+        restButtonButton.callback = () => this.onRestClick();
         const restButtonShowHint = new ShowHint(restButton);
         restButtonShowHint.text = "rest_pet_hint";
 
         // playButton (components)
         const playButtonButton = new Button(playButton);
         playButtonButton.spriteName = "blue-button";
+        playButtonButton.callback = () => this.onPlayClick();
         const playButtonShowHint = new ShowHint(playButton);
         playButtonShowHint.text = "play_pet_hint";
 
@@ -162,6 +164,9 @@ export default class PetCard extends BaseContainer {
         this.energyText = energyText;
 
         /* START-USER-CTR-CODE */
+
+        this.pet = null
+
         /* END-USER-CTR-CODE */
     }
 
@@ -169,6 +174,7 @@ export default class PetCard extends BaseContainer {
     /* START-USER-CODE */
 
     show(pet) {
+        this.pet = pet
         this.name.text = pet.name
 
         this.updateStats()
@@ -184,6 +190,18 @@ export default class PetCard extends BaseContainer {
 
     getStatFrame(stat) {
         return Math.round(stat / 10)
+    }
+
+    onPlayClick() {
+        this.close()
+
+        this.pet.startPlay()
+    }
+
+    onRestClick() {
+        this.close()
+
+        this.pet.startRest()
     }
 
     /* END-USER-CODE */
