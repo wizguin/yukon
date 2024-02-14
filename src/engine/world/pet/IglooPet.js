@@ -3,6 +3,9 @@ import BaseSprite from '@scenes/base/BaseSprite'
 import PathEngine from '../penguin/pathfinding/PathEngine'
 
 
+const angryFrame = 33
+
+
 export default class IglooPet extends BaseSprite {
 
     constructor(textureKey, pet, room) {
@@ -121,6 +124,19 @@ export default class IglooPet extends BaseSprite {
 
     playFrame(frame) {
         this.play(`${this.texture.key}_${frame}`)
+    }
+
+    requestPlay() {
+        if (this.rest < 20 || this.happiness < 10) {
+            this.playInteraction(angryFrame)
+            return
+        }
+
+        this.network.send('pet_play', { id: this.id })
+    }
+
+    requestRest() {
+
     }
 
     startPlay() {

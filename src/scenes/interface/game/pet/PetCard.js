@@ -195,13 +195,13 @@ export default class PetCard extends BaseContainer {
     onPlayClick() {
         this.close()
 
-        this.pet.startPlay()
+        this.pet.requestPlay()
     }
 
     onRestClick() {
         this.close()
 
-        this.pet.startRest()
+        this.pet.requestRest()
     }
 
     /* END-USER-CODE */
