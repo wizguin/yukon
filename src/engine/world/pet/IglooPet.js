@@ -28,6 +28,12 @@ export default class IglooPet extends BaseSprite {
         return this.room.pet
     }
 
+    get happiness() {
+        const statTotal = this.energy + this.health + this.rest
+
+        return Math.round((statTotal / 300) * 100)
+    }
+
     setInteractive() {
         super.setInteractive({ cursor: 'pointer', pixelPerfect: true })
 
@@ -73,7 +79,9 @@ export default class IglooPet extends BaseSprite {
         const angle = PathEngine.getAngle(this, pos)
         const direction = PathEngine.getDirection(angle)
 
-        this.playFrame(direction + 16)
+        const happyWalk = this.happiness > 50
+
+        this.playFrame(direction + (happyWalk ? 16 : 8))
 
         this.tween = this.room.tweens.add({
             targets: this,
