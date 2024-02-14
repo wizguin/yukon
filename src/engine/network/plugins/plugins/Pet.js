@@ -39,7 +39,7 @@ export default class Chat extends Plugin {
 
     petPlay(args) {
         if (this.isIglooReady && this.petsIncludes(args.id)) {
-            this.pets[args.id].startPlay(args.play)
+            this.pets[args.id].startPlay(args.playType)
         }
     }
 
