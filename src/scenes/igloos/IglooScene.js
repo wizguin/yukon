@@ -40,6 +40,8 @@ export default class IglooScene extends RoomScene {
         // Active furniture quantities
         this.quantities = {}
 
+        this.pets = {}
+
         this.events.once('shutdown', () => this.onShutdown())
 
         super.init()
@@ -259,6 +261,8 @@ export default class IglooScene extends RoomScene {
 
     addPet(textureKey, pet) {
         const iglooPet = new IglooPet(textureKey, pet, this)
+
+        this.pets[pet.id] = iglooPet
 
         this.add.existing(iglooPet)
 

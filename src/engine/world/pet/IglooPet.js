@@ -15,8 +15,7 @@ export default class IglooPet extends BaseSprite {
         this.createAnims()
         this.playFrame(1)
 
-        const randomPos = this.getRandomSafePos()
-        this.setPosition(randomPos.x, randomPos.y)
+        this.setPos(pet.x, pet.y)
 
         this.isButton = true
         this.updateTimer = null
@@ -38,6 +37,17 @@ export default class IglooPet extends BaseSprite {
         super.setInteractive({ cursor: 'pointer', pixelPerfect: true })
 
         this.on('pointerdown', this.onPointerDown, this)
+    }
+
+    setPos(x, y) {
+        if (!this.isSafe(x, y)) {
+            const randomPos = this.getRandomSafePos()
+
+            x = randomPos.x
+            y = randomPos.y
+        }
+
+        this.setPosition(x, y)
     }
 
     onPointerDown() {
@@ -67,10 +77,15 @@ export default class IglooPet extends BaseSprite {
     handleUpdate() {
         const newPos = this.getRandomSafePos()
 
-        // * 24 to simulate 24fps frame based tween
-        const duration = Phaser.Math.Distance.BetweenPoints(this, newPos) / 4 * 24
+        this.move(newPos)
+        this.network.send('pet_move', { id: this.id, x: newPos.x, y: newPos.y })
+    }
 
-        this.addMoveTween(newPos, duration)
+    move(pos) {
+        // * 24 to simulate 24fps frame based tween
+        const duration = Phaser.Math.Distance.BetweenPoints(this, pos) / 4 * 24
+
+        this.addMoveTween(pos, duration)
     }
 
     addMoveTween(pos, duration) {
