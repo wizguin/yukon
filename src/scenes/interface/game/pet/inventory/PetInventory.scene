@@ -196,6 +196,54 @@
                     },
                     "x": 125,
                     "y": -201
+                },
+                {
+                    "type": "Image",
+                    "id": "571bba7d-0710-47fd-af8e-9c4fe77abe3f",
+                    "label": "bath",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bath"
+                    },
+                    "x": 253,
+                    "y": -69,
+                    "originY": 0.5051546391752577
+                },
+                {
+                    "type": "Image",
+                    "id": "ec6a0748-e305-4226-a71d-325d5848a4c2",
+                    "label": "food",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/food"
+                    },
+                    "x": 125,
+                    "y": -70
+                },
+                {
+                    "type": "Image",
+                    "id": "99b26421-48ed-4bfd-8ef2-0482fee492e9",
+                    "label": "cookie",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/cookie"
+                    },
+                    "x": 259,
+                    "y": -199,
+                    "originX": 0.5052631578947369
+                },
+                {
+                    "type": "Image",
+                    "id": "fe911057-c61f-4293-ada6-de01c8bdfee9",
+                    "label": "gum",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/gum"
+                    },
+                    "x": 128,
+                    "y": -200,
+                    "originX": 0.5051546391752577,
+                    "originY": 0.5054945054945055
                 }
             ]
         }

@@ -67,6 +67,25 @@ export default class PetInventory extends BaseContainer {
         const gumButton = scene.add.image(125, -201, "main", "large-box");
         this.add(gumButton);
 
+        // bath
+        const bath = scene.add.image(253, -69, "main", "pet/bath");
+        bath.setOrigin(0.5, 0.5051546391752577);
+        this.add(bath);
+
+        // food
+        const food = scene.add.image(125, -70, "main", "pet/food");
+        this.add(food);
+
+        // cookie
+        const cookie = scene.add.image(259, -199, "main", "pet/cookie");
+        cookie.setOrigin(0.5052631578947369, 0.5);
+        this.add(cookie);
+
+        // gum
+        const gum = scene.add.image(128, -200, "main", "pet/gum");
+        gum.setOrigin(0.5051546391752577, 0.5054945054945055);
+        this.add(gum);
+
         // tabHandle (components)
         const tabHandleSimpleButton = new SimpleButton(tabHandle);
         tabHandleSimpleButton.callback = () => this.onTabClick();
