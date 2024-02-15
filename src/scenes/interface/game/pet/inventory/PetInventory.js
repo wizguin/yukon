@@ -133,6 +133,9 @@ export default class PetInventory extends BaseContainer {
         this.arrow = arrow;
 
         /* START-USER-CTR-CODE */
+
+        bg.setInteractive({ pixelPerfect: true })
+
         /* END-USER-CTR-CODE */
     }
 
