@@ -27,6 +27,20 @@
             "y": 480,
             "list": [
                 {
+                    "prefabId": "49fbcc80-c325-441c-828a-68975855d1ef",
+                    "id": "a54dfab4-57e1-4635-9a1b-5ce4b0ef12eb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "inventory",
+                    "scope": "CLASS",
+                    "x": 187,
+                    "y": 16,
+                    "visible": false
+                },
+                {
                     "type": "Image",
                     "id": "84eedd47-1d1c-49bc-b020-6c10cfdd6f56",
                     "label": "cardBg",
@@ -234,6 +248,42 @@
                     },
                     "x": 176,
                     "y": -238
+                {
+                    "type": "Container",
+                    "id": "474a6b4d-79aa-4770-8806-fdf6bd713c65",
+                    "label": "tab",
+                    "scope": "CLASS",
+                    "x": 234,
+                    "y": -126,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "03881c7f-8931-4102-8e5b-67222ed47631",
+                            "label": "tabHandle",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.onTabClick()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab"
+                            },
+                            "x": 8,
+                            "y": 2,
+                            "angle": -90
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7fe2523d-6083-4c8b-901f-2748e7a6096c",
+                            "label": "arrow",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab-arrow"
+                            },
+                            "angle": -90
+                        }
+                    ]
                 }
             ]
         }

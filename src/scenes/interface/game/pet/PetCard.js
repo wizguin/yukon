@@ -2,8 +2,10 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 import DraggableContainer from "../../../components/DraggableContainer";
+import PetInventory from "./inventory/PetInventory";
 import Button from "../../../components/Button";
 import ShowHint from "../../../components/ShowHint";
+import SimpleButton from "../../../components/SimpleButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -12,6 +14,8 @@ export default class PetCard extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {PetInventory} */
+        this.inventory;
         /** @type {Phaser.GameObjects.Image} */
         this.restBar;
         /** @type {Phaser.GameObjects.Image} */
@@ -26,7 +30,18 @@ export default class PetCard extends BaseContainer {
         this.healthText;
         /** @type {Phaser.GameObjects.Text} */
         this.energyText;
+        /** @type {Phaser.GameObjects.Image} */
+        this.sprite;
+        /** @type {Phaser.GameObjects.Image} */
+        this.arrow;
+        /** @type {Phaser.GameObjects.Container} */
+        this.tab;
 
+
+        // inventory
+        const inventory = new PetInventory(scene, 187, 16);
+        inventory.visible = false;
+        this.add(inventory);
 
         // cardBg
         const cardBg = scene.add.image(0, 0, "main", "card-bg");
@@ -119,6 +134,19 @@ export default class PetCard extends BaseContainer {
         energyText.setStyle({ "align": "right", "fixedWidth":160,"fontFamily": "CCFaceFront", "fontSize": "28px", "stroke": "#003366", "strokeThickness":8,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
         this.add(energyText);
 
+        // tab
+        const tab = scene.add.container(234, -126);
+        this.add(tab);
+
+        // tabHandle
+        const tabHandle = scene.add.image(8, 2, "main", "tab");
+        tabHandle.angle = -90;
+        tab.add(tabHandle);
+
+        // arrow
+        const arrow = scene.add.image(0, 0, "main", "tab-arrow");
+        arrow.angle = -90;
+        tab.add(arrow);
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -155,6 +183,11 @@ export default class PetCard extends BaseContainer {
         xButtonButton.spriteName = "blue-button";
         xButtonButton.callback = () => this.close();
 
+        // tabHandle (components)
+        const tabHandleSimpleButton = new SimpleButton(tabHandle);
+        tabHandleSimpleButton.callback = () => this.onTabClick();
+
+        this.inventory = inventory;
         this.restBar = restBar;
         this.healthBar = healthBar;
         this.energyBar = energyBar;
@@ -162,6 +195,8 @@ export default class PetCard extends BaseContainer {
         this.restText = restText;
         this.healthText = healthText;
         this.energyText = energyText;
+        this.arrow = arrow;
+        this.tab = tab;
 
         /* START-USER-CTR-CODE */
 
@@ -179,6 +214,7 @@ export default class PetCard extends BaseContainer {
 
         this.updateStats()
 
+        this.widgetLayer.bringToTop(this)
         super.show()
     }
 
@@ -202,6 +238,19 @@ export default class PetCard extends BaseContainer {
         this.close()
 
         this.pet.requestRest()
+    }
+
+    onTabClick() {
+        this.hideTab()
+        this.inventory.show()
+    }
+
+    showTab() {
+        this.tab.visible = true
+    }
+
+    hideTab() {
+        this.tab.visible = false
     }
 
     /* END-USER-CODE */
