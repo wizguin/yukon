@@ -213,6 +213,7 @@ export default class PetCard extends BaseContainer {
         this.pet = pet
         this.name.text = pet.name
 
+        this.closeInventory()
         this.updateStats()
 
         this.widgetLayer.bringToTop(this)
