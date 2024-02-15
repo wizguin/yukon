@@ -161,6 +161,7 @@ export default class PetCard extends BaseContainer {
         // feedButton (components)
         const feedButtonButton = new Button(feedButton);
         feedButtonButton.spriteName = "blue-button";
+        feedButtonButton.callback = () => this.onFeedClick();
         const feedButtonShowHint = new ShowHint(feedButton);
         feedButtonShowHint.text = "feed_pet_hint";
 
@@ -240,17 +241,22 @@ export default class PetCard extends BaseContainer {
         this.pet.requestRest()
     }
 
+    onFeedClick() {
+        this.openInventory()
+    }
+
     onTabClick() {
-        this.hideTab()
+        this.openInventory()
+    }
+
+    openInventory() {
+        this.tab.visible = false
         this.inventory.show()
     }
 
-    showTab() {
+    closeInventory() {
+        this.inventory.close()
         this.tab.visible = true
-    }
-
-    hideTab() {
-        this.tab.visible = false
     }
 
     /* END-USER-CODE */

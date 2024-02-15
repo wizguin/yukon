@@ -140,8 +140,7 @@ export default class PetInventory extends BaseContainer {
     /* START-USER-CODE */
 
     onTabClick() {
-        this.close()
-        this.parentContainer.showTab()
+        this.parentContainer.closeInventory()
     }
 
     /* END-USER-CODE */
