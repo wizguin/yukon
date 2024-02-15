@@ -38,6 +38,10 @@ export default class IglooPet extends BaseSprite {
         return Math.round((statTotal / 300) * 100)
     }
 
+    get petCard() {
+        return this.interface.main.petCard
+    }
+
     setInteractive() {
         super.setInteractive({ cursor: 'pointer', pixelPerfect: true })
 
@@ -56,7 +60,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     onPointerDown() {
-        this.interface.main.petCard.show(this)
+        this.petCard.show(this)
     }
 
     /**
@@ -84,6 +88,16 @@ export default class IglooPet extends BaseSprite {
 
         this.move(newPos)
         this.network.send('pet_move', { id: this.id, x: newPos.x, y: newPos.y })
+    }
+
+    updateStats(energy, health, rest) {
+        this.energy = energy
+        this.health = health
+        this.rest = rest
+
+        if (this.petCard.visible && this.petCard.pet === this) {
+            this.petCard.show()
+        }
     }
 
     move(pos) {
