@@ -9,7 +9,8 @@ export default class Chat extends Plugin {
         this.events = {
             'get_pets': this.getPets,
             'pet_move': this.petMove,
-            'pet_play': this.petPlay
+            'pet_play': this.petPlay,
+            'pet_rest': this.petRest
         }
     }
 
@@ -40,6 +41,14 @@ export default class Chat extends Plugin {
     petPlay(args) {
         if (this.isIglooReady && this.petsIncludes(args.id)) {
             this.pets[args.id].startPlay(args.playType)
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petRest(args) {
+        if (this.isIglooReady && this.petsIncludes(args.id)) {
+            this.pets[args.id].startRest()
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 

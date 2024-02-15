@@ -6,6 +6,7 @@ import PathEngine from '../penguin/pathfinding/PathEngine'
 const angryFrame = 33
 // Normal, super, great
 const playFrames = [27, 28, 35]
+const restFrame = 25
 
 
 export default class IglooPet extends BaseSprite {
@@ -152,7 +153,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     requestRest() {
-
+        this.network.send('pet_rest', { id: this.id })
     }
 
     startPlay(playType) {
@@ -160,7 +161,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     startRest() {
-        this.playInteraction(25)
+        this.playInteraction(restFrame)
     }
 
     playInteraction(frame) {
