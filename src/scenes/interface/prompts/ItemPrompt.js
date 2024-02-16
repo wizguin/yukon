@@ -76,6 +76,21 @@ export default class ItemPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
+    show(text, loadConfig, callback) {
+        if (!loadConfig.key) {
+            return
+        }
+
+        this.currentKey = loadConfig.key
+
+        this.text.text = text
+        this.callback = callback
+
+        super.show()
+
+        this.loader.loadIcon(loadConfig)
+    }
+
     showItem(id) {
         if (this.inventoryIncludes(id)) {
             return this.interface.prompt.showError('You already have this item.')
@@ -110,33 +125,36 @@ export default class ItemPrompt extends BaseContainer {
         if (!data) return
 
         const name = data.name.toLowerCase()
+
+        this.showPet(name, this.getFormatString('adopt_pet', data.cost), () => this.showAdoptName(id))
+    }
+
+    showPetFood() {
+        this.showPet('food', this.getString('buy_pet_food'), () => {})
+    }
+
+    showPetBath() {
+        this.showPet('bath', this.getString('buy_pet_bath'), () => {})
+    }
+
+    showPetGum() {
+        this.showPet('gum', this.getString('buy_pet_gum'), () => {})
+    }
+
+    showPetCookie() {
+        this.showPet('cookie', this.getString('buy_pet_cookie'), () => {})
+    }
+
+    showPet(name, text, callback) {
         const loadConfig = {
             key: `pet/icon/${name}`,
             url: `/assets/media/pet/icons/${name}.png`
         }
 
-        const text = `${this.getFormatString('adopt_pet', data.cost)} ${this.getFormatString('num_coins', this.world.client.coins)}`
+        // Add current coins string
+        text = `${text} ${this.getFormatString('num_coins', this.world.client.coins)}`
 
-        this.show(text, loadConfig, () => this.showAdoptName(id))
-    }
-
-    showPetInteract(id) {
-
-    }
-
-    show(text, loadConfig, callback) {
-        if (!loadConfig.key) {
-            return
-        }
-
-        this.currentKey = loadConfig.key
-
-        this.text.text = text
-        this.callback = callback
-
-        super.show()
-
-        this.loader.loadIcon(loadConfig)
+        this.show(text, loadConfig, callback)
     }
 
     addIcon(key, scale) {

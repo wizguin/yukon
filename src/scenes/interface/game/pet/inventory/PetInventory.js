@@ -113,21 +113,25 @@ export default class PetInventory extends BaseContainer {
         // bathButton (components)
         const bathButtonButton = new Button(bathButton);
         bathButtonButton.spriteName = "large-box";
+        bathButtonButton.callback = () => this.onBathClick();
         bathButtonButton.activeFrame = false;
 
         // foodButton (components)
         const foodButtonButton = new Button(foodButton);
         foodButtonButton.spriteName = "large-box";
+        foodButtonButton.callback = () => this.onFoodClick();
         foodButtonButton.activeFrame = false;
 
         // cookieButton (components)
         const cookieButtonButton = new Button(cookieButton);
         cookieButtonButton.spriteName = "large-box";
+        cookieButtonButton.callback = () => this.onCookieClick();
         cookieButtonButton.activeFrame = false;
 
         // gumButton (components)
         const gumButtonButton = new Button(gumButton);
         gumButtonButton.spriteName = "large-box";
+        gumButtonButton.callback = () => this.onGumClick();
         gumButtonButton.activeFrame = false;
 
         this.arrow = arrow;
@@ -141,6 +145,22 @@ export default class PetInventory extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    onGumClick() {
+        this.interface.prompt.showPetGum()
+    }
+
+    onCookieClick() {
+        this.interface.prompt.showPetCookie()
+    }
+
+    onFoodClick() {
+        this.interface.prompt.showPetFood()
+    }
+
+    onBathClick() {
+        this.interface.prompt.showPetBath()
+    }
 
     onTabClick() {
         this.parentContainer.closeInventory()

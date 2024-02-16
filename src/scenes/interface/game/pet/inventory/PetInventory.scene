@@ -141,6 +141,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onBathClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -157,6 +158,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onFoodClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -173,6 +175,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onCookieClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",
@@ -189,6 +192,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onGumClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "main",

@@ -118,6 +118,30 @@ export default class PromptController {
         })
     }
 
+    showPetFood() {
+        if (this.coins < 10) return this.showLowCoins()
+
+        this.item.showPetFood()
+    }
+
+    showPetBath() {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetBath()
+    }
+
+    showPetGum() {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetGum()
+    }
+
+    showPetCookie() {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetCookie()
+    }
+
     showLowCoins() {
         this.showError(this.getString('low_coin_warn'))
     }
