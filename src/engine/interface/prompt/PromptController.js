@@ -32,6 +32,10 @@ export default class PromptController {
         window.test = () => this.showAdopt(1)
     }
 
+    get coins() {
+        return this.world.client.coins
+    }
+
     createPrompt(promptClass) {
         const prompt = new promptClass(this.interface, 760, 480)
 
@@ -112,6 +116,14 @@ export default class PromptController {
         this.showInput('', 'Continue', (name) => {
             this.network.send('adopt_pet', { petId: petId, name: name })
         })
+    }
+
+    showLowCoins() {
+        this.showError(this.getString('low_coin_warn'))
+    }
+
+    getString(...args) {
+        return this.interface.getString(...args)
     }
 
     hideAll() {
