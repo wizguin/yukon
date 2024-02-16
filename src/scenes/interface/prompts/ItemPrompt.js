@@ -62,9 +62,11 @@ export default class ItemPrompt extends BaseContainer {
 
         this.text.setWordWrapWidth(616, true)
 
-        this.item // Active item ID
-        this.icon // Icon sprite
-        this.type
+        // Active icon key
+        this.currentKey = null
+
+        // Active icon
+        this.icon = null
 
         this.loader = new ItemPromptLoader(scene, this)
 
@@ -74,38 +76,81 @@ export default class ItemPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    showItem(item) {
-        if (this.inventoryIncludes(item)) {
+    showItem(id) {
+        if (this.inventoryIncludes(id)) {
             return this.interface.prompt.showError('You already have this item.')
         }
 
-        this.show(item, this.crumbs.items[item], 'clothing')
+        const data = this.crumbs.items[id]
+        if (!data) return
+
+        const loadConfig = {
+            key: `clothing/icon/240/${id}`,
+            url: `/assets/media/clothing/icon/240/${id}.png`
+        }
+
+        this.show(this.getBuyText(data.name, data.cost), loadConfig, () => this.sendAddItem(id))
     }
 
-    showFurniture(furniture) {
-        this.show(furniture, this.crumbs.furniture[furniture], 'furniture')
+    showFurniture(id) {
+        const data = this.crumbs.furniture[id]
+        if (!data) return
+
+        const loadConfig = {
+            key: `furniture/icon/@5x/${id}`,
+            url: `/assets/media/furniture/icon/@5x/${id}.png`,
+            scale: 0.65
+        }
+
+        this.show(this.getBuyText(data.name, data.cost), loadConfig, () => this.sendAddFurniture(id))
     }
 
-    show(item, crumb, type) {
-        if (!crumb) {
+    show(text, loadConfig, callback) {
+        if (!loadConfig.key) {
             return
         }
 
-        this.item = item
-        this.type = type
+        this.currentKey = loadConfig.key
 
-        this.text.text = this.getText(crumb.name, crumb.cost)
-        this.visible = true
+        this.text.text = text
+        this.callback = callback
 
-        this.loader.loadIcon(item)
+        super.show()
+
+        this.loader.loadIcon(loadConfig)
     }
 
-    inventoryIncludes(item) {
-        let flat = Object.values(this.world.client.inventory).flat()
-        return flat.includes(item)
+    addIcon(key, scale) {
+        if (!this.visible || key !== this.currentKey) {
+            return
+        }
+
+        if (this.icon) {
+            this.icon.destroy()
+        }
+
+        const icon = this.scene.add.image(0, -182, key)
+        icon.scale = scale
+
+        this.add(icon)
+        this.icon = icon
     }
 
-    getText(name, cost) {
+    noCallback() {
+        this.close()
+    }
+
+    sendAddItem(id) {
+        this.network.send('add_item', { item: id })
+        this.close()
+    }
+
+    sendAddFurniture(id) {
+        this.network.send('add_furniture', { furniture: id })
+        this.close()
+    }
+
+    getBuyText(name, cost) {
         if (cost < 1) {
             return `You have found a ${name}.\nWould you like to pick it up?`
         } else {
@@ -113,29 +158,8 @@ export default class ItemPrompt extends BaseContainer {
         }
     }
 
-    callback() {
-        if (this.item) {
-            this.sendAddItem()
-        }
-
-        this.visible = false
-    }
-
-    noCallback() {
-        this.visible = false
-    }
-
-    sendAddItem() {
-        switch (this.type) {
-            case 'clothing':
-                this.network.send('add_item', { item: this.item })
-                break
-            case 'furniture':
-                this.network.send('add_furniture', { furniture: this.item })
-                break
-            default:
-                break
-        }
+    inventoryIncludes(item) {
+        return Object.values(this.world.client.inventory).flat().includes(item)
     }
 
     /* END-USER-CODE */
