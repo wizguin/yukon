@@ -103,8 +103,7 @@ export default class PromptController {
     }
 
     showAdopt(petId) {
-        // temp should use item prompt
-        this.showWindow('', 'dual', () => this.showAdoptName(petId))
+        this.item.showAdopt(petId)
     }
 
     showAdoptName(petId) {

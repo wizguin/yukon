@@ -105,6 +105,25 @@ export default class ItemPrompt extends BaseContainer {
         this.show(this.getBuyText(data.name, data.cost), loadConfig, () => this.sendAddFurniture(id))
     }
 
+    showAdopt(id) {
+        const data = this.crumbs.pets[id]
+        if (!data) return
+
+        const name = data.name.toLowerCase()
+        const loadConfig = {
+            key: `pet/icon/${name}`,
+            url: `/assets/media/pet/icons/${name}.png`
+        }
+
+        const text = `${this.getFormatString('adopt_pet', data.cost)} ${this.getFormatString('num_coins', this.world.client.coins)}`
+
+        this.show(text, loadConfig, () => this.showAdoptName(id))
+    }
+
+    showPetInteract(id) {
+
+    }
+
     show(text, loadConfig, callback) {
         if (!loadConfig.key) {
             return
@@ -147,6 +166,11 @@ export default class ItemPrompt extends BaseContainer {
 
     sendAddFurniture(id) {
         this.network.send('add_furniture', { furniture: id })
+        this.close()
+    }
+
+    showAdoptName(id) {
+        this.interface.prompt.showAdoptName(id)
         this.close()
     }
 
