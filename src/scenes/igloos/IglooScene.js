@@ -140,19 +140,29 @@ export default class IglooScene extends RoomScene {
         if (this.editBg) this.editBg.visible = false
     }
 
-    hidePenguins() {
+    hideEntities() {
         for (let penguin of Object.values(this.penguins)) {
             penguin.visible = false
             penguin.nameTag.visible = false
 
             if (penguin.balloon) penguin.balloon.visible = false
         }
+
+        for (let pet of Object.values(this.pets)) {
+            pet.visible = false
+            this.stopPet(pet)
+        }
     }
 
-    showPenguins() {
+    showEntities() {
         for (let penguin of Object.values(this.penguins)) {
             penguin.visible = true
             penguin.nameTag.visible = true
+        }
+
+        for (let pet of Object.values(this.pets)) {
+            pet.visible = true
+            this.startPet(pet)
         }
     }
 
@@ -263,12 +273,21 @@ export default class IglooScene extends RoomScene {
         const iglooPet = new IglooPet(textureKey, pet, this)
 
         this.pets[pet.id] = iglooPet
-
         this.add.existing(iglooPet)
 
+        this.startPet(iglooPet)
+    }
+
+    startPet(pet) {
         if (this.isClientIgloo) {
-            iglooPet.startUpdate()
-            iglooPet.setInteractive()
+            pet.startUpdate()
+            pet.setInteractive()
+        }
+    }
+
+    stopPet(pet) {
+        if (this.isClientIgloo) {
+            pet.stopUpdate()
         }
     }
 
