@@ -227,7 +227,7 @@ export default class PetCard extends BaseContainer {
     }
 
     getStatFrame(stat) {
-        return Math.round(stat / 10)
+        return Math.max(1, Math.round(stat / 10))
     }
 
     onPlayClick() {
