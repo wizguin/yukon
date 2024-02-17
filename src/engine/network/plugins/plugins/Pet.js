@@ -26,8 +26,8 @@ export default class Chat extends Plugin {
         return this.isIglooReady ? this.world.room.pets : {}
     }
 
-    petsIncludes(id) {
-        return id in this.pets
+    petAvailable(id) {
+        return this.isIglooReady && id in this.pets
     }
 
     getPets(args) {
@@ -37,48 +37,48 @@ export default class Chat extends Plugin {
     }
 
     petMove(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].move(args)
         }
     }
 
     petPlay(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startPlay(args.playType)
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 
     petRest(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startRest()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 
     petFeed(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startFeed()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 
     petBath(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startBath()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 
     petGum(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startGum()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }
 
     petCookie(args) {
-        if (this.isIglooReady && this.petsIncludes(args.id)) {
+        if (this.petAvailable(args.id)) {
             this.pets[args.id].startCookie()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
