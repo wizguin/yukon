@@ -97,7 +97,7 @@ export default class IglooPet extends BaseSprite {
         this.rest = rest
 
         if (this.petCard.visible && this.petCard.pet === this) {
-            this.petCard.show()
+            this.petCard.show(this)
         }
     }
 
