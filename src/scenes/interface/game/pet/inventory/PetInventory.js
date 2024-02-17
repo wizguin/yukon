@@ -146,24 +146,28 @@ export default class PetInventory extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get pet() {
+        return this.parentContainer.pet
+    }
+
     onGumClick() {
-        this.interface.prompt.showPetGum()
+        this.interface.prompt.showPetGum(this.pet)
     }
 
     onCookieClick() {
-        this.interface.prompt.showPetCookie()
+        this.interface.prompt.showPetCookie(this.pet)
     }
 
     onFoodClick() {
-        this.interface.prompt.showPetFood()
+        this.interface.prompt.showPetFood(this.pet)
     }
 
     onBathClick() {
-        this.interface.prompt.showPetBath()
+        this.interface.prompt.showPetBath(this.pet)
     }
 
     onTabClick() {
-        this.parentContainer.closeInventory()
+        this.parentContainer.closeInventory(this.pet)
     }
 
     /* END-USER-CODE */

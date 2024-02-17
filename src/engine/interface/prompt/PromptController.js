@@ -118,28 +118,28 @@ export default class PromptController {
         })
     }
 
-    showPetFood() {
+    showPetFood(pet) {
         if (this.coins < 10) return this.showLowCoins()
 
-        this.item.showPetFood()
+        this.item.showPetFood(pet)
     }
 
-    showPetBath() {
+    showPetBath(pet) {
         if (this.coins < 5) return this.showLowCoins()
 
-        this.item.showPetBath()
+        this.item.showPetBath(pet)
     }
 
-    showPetGum() {
+    showPetGum(pet) {
         if (this.coins < 5) return this.showLowCoins()
 
-        this.item.showPetGum()
+        this.item.showPetGum(pet)
     }
 
-    showPetCookie() {
+    showPetCookie(pet) {
         if (this.coins < 5) return this.showLowCoins()
 
-        this.item.showPetCookie()
+        this.item.showPetCookie(pet)
     }
 
     showLowCoins() {

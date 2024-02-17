@@ -129,20 +129,20 @@ export default class ItemPrompt extends BaseContainer {
         this.showPet(name, this.getFormatString('adopt_pet', data.cost), () => this.showAdoptName(id))
     }
 
-    showPetFood() {
-        this.showPet('food', this.getString('buy_pet_food'), () => {})
+    showPetFood(pet) {
+        this.showPet('food', this.getString('buy_pet_food'), () => this.sendPet('pet_feed', pet))
     }
 
-    showPetBath() {
-        this.showPet('bath', this.getString('buy_pet_bath'), () => {})
+    showPetBath(pet) {
+        this.showPet('bath', this.getString('buy_pet_bath'), () => this.sendPet('pet_bath', pet))
     }
 
-    showPetGum() {
-        this.showPet('gum', this.getString('buy_pet_gum'), () => {})
+    showPetGum(pet) {
+        this.showPet('gum', this.getString('buy_pet_gum'), () => this.sendPet('pet_gum', pet))
     }
 
-    showPetCookie() {
-        this.showPet('cookie', this.getString('buy_pet_cookie'), () => {})
+    showPetCookie(pet) {
+        this.showPet('cookie', this.getString('buy_pet_cookie'), () => this.sendPet('pet_cookie', pet))
     }
 
     showPet(name, text, callback) {
@@ -177,14 +177,22 @@ export default class ItemPrompt extends BaseContainer {
         this.close()
     }
 
-    sendAddItem(id) {
-        this.network.send('add_item', { item: id })
+    send(action, args) {
+        this.network.send(action, args)
         this.close()
     }
 
+    sendAddItem(id) {
+        this.send('add_item', { item: id })
+    }
+
     sendAddFurniture(id) {
-        this.network.send('add_furniture', { furniture: id })
-        this.close()
+        this.send('add_furniture', { furniture: id })
+    }
+
+    sendPet(action, pet) {
+        this.send(action, { id: pet.id })
+        // this.interface.main.petCard.close()
     }
 
     showAdoptName(id) {
