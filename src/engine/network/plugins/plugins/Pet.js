@@ -10,7 +10,11 @@ export default class Chat extends Plugin {
             'get_pets': this.getPets,
             'pet_move': this.petMove,
             'pet_play': this.petPlay,
-            'pet_rest': this.petRest
+            'pet_rest': this.petRest,
+            'pet_feed': this.petFeed,
+            'pet_bath': this.petBath,
+            'pet_gum': this.petGum,
+            'pet_cookie': this.petCookie
         }
     }
 
@@ -48,6 +52,34 @@ export default class Chat extends Plugin {
     petRest(args) {
         if (this.isIglooReady && this.petsIncludes(args.id)) {
             this.pets[args.id].startRest()
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petFeed(args) {
+        if (this.isIglooReady && this.petsIncludes(args.id)) {
+            this.pets[args.id].startFeed()
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petBath(args) {
+        if (this.isIglooReady && this.petsIncludes(args.id)) {
+            this.pets[args.id].startBath()
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petGum(args) {
+        if (this.isIglooReady && this.petsIncludes(args.id)) {
+            this.pets[args.id].startGum()
+            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petCookie(args) {
+        if (this.isIglooReady && this.petsIncludes(args.id)) {
+            this.pets[args.id].startCookie()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
         }
     }

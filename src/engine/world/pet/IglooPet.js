@@ -7,6 +7,10 @@ const angryFrame = 33
 // Normal, super, great
 const playFrames = [27, 28, 35]
 const restFrame = 25
+const feedFrame = 31
+const bathFrame = 34
+const gumFrame = 29
+const cookieFrame = 30
 
 
 export default class IglooPet extends BaseSprite {
@@ -162,6 +166,22 @@ export default class IglooPet extends BaseSprite {
 
     startRest() {
         this.playInteraction(restFrame)
+    }
+
+    startFeed() {
+        this.playInteraction(feedFrame)
+    }
+
+    startBath() {
+        this.playInteraction(bathFrame)
+    }
+
+    startGum() {
+        this.playInteraction(gumFrame)
+    }
+
+    startCookie() {
+        this.playInteraction(cookieFrame)
     }
 
     playInteraction(frame) {
