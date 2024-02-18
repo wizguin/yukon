@@ -38,7 +38,7 @@
                     "scope": "CLASS",
                     "x": 187,
                     "y": 16,
-                    "visible": false
+                    "visible": true
                 },
                 {
                     "type": "Image",
@@ -61,36 +61,39 @@
                 },
                 {
                     "type": "Image",
-                    "id": "d49d584c-5408-49e2-a990-95c1c9d306b9",
-                    "label": "pet_bar0001",
+                    "id": "d277bc54-e051-4655-81c6-ddc4054a49e6",
+                    "label": "restBar",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "main",
-                        "frame": "pet/bar0001"
+                        "frame": "pet/bar/1"
                     },
                     "x": 73,
-                    "y": 78
+                    "y": 166
                 },
                 {
                     "type": "Image",
                     "id": "45d814c4-27ae-4225-9ec4-c32ab381ecee",
-                    "label": "pet_bar",
+                    "label": "healthBar",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "main",
-                        "frame": "pet/bar0001"
+                        "frame": "pet/bar/1"
                     },
                     "x": 73,
                     "y": 122
                 },
                 {
                     "type": "Image",
-                    "id": "d277bc54-e051-4655-81c6-ddc4054a49e6",
-                    "label": "pet_bar_1",
+                    "id": "d49d584c-5408-49e2-a990-95c1c9d306b9",
+                    "label": "energyBar",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "main",
-                        "frame": "pet/bar0001"
+                        "frame": "pet/bar/1"
                     },
                     "x": 73,
-                    "y": 166
+                    "y": 78
                 },
                 {
                     "type": "Image",
@@ -118,6 +121,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onFeedClick()",
                     "ShowHint.text": "feed_pet_hint",
                     "texture": {
                         "key": "main",
@@ -135,6 +139,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onRestClick()",
                     "ShowHint.text": "rest_pet_hint",
                     "texture": {
                         "key": "main",
@@ -152,6 +157,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onPlayClick()",
                     "ShowHint.text": "play_pet_hint",
                     "texture": {
                         "key": "main",
@@ -214,7 +220,6 @@
                     "y": -237,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "text": "Test",
                     "fixedWidth": 360,
                     "align": "center",
                     "fontFamily": "Arial",
@@ -248,6 +253,89 @@
                     },
                     "x": 176,
                     "y": -238
+                },
+                {
+                    "type": "Text",
+                    "id": "cd7cc1b4-0429-429b-a86f-b136abe8c56f",
+                    "label": "restText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 168,
+                    "originY": 0.5,
+                    "text": "REST",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "63283323-17d2-4fd0-bffb-d06de47eb7cb",
+                    "label": "healthText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 120,
+                    "originY": 0.5,
+                    "text": "HEALTH",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "d355303f-e579-4439-801c-a8b5008435d5",
+                    "label": "energyText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 77,
+                    "originY": 0.5,
+                    "text": "ENERGY",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "b8a07549-b3c9-41e6-b2f4-f53b1b060ede",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/paper/shadow"
+                    },
+                    "x": 10,
+                    "y": 22,
+                    "originX": 0.5026737967914439,
+                    "originY": 0.5116279069767442
+                },
+                {
+                    "type": "Image",
+                    "id": "5c0151c5-ceb4-4d4d-8e39-9b5b0ee2b419",
+                    "label": "paper",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/paper/blue/1"
+                    },
+                    "x": 10,
+                    "y": -65
+                },
                 {
                     "type": "Container",
                     "id": "474a6b4d-79aa-4770-8806-fdf6bd713c65",
@@ -255,6 +343,7 @@
                     "scope": "CLASS",
                     "x": 234,
                     "y": -126,
+                    "visible": false,
                     "list": [
                         {
                             "type": "Image",

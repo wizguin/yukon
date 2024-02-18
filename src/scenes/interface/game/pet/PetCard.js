@@ -31,7 +31,7 @@ export default class PetCard extends BaseContainer {
         /** @type {Phaser.GameObjects.Text} */
         this.energyText;
         /** @type {Phaser.GameObjects.Image} */
-        this.sprite;
+        this.paper;
         /** @type {Phaser.GameObjects.Image} */
         this.arrow;
         /** @type {Phaser.GameObjects.Container} */
@@ -40,7 +40,7 @@ export default class PetCard extends BaseContainer {
 
         // inventory
         const inventory = new PetInventory(scene, 187, 16);
-        inventory.visible = false;
+        inventory.visible = true;
         this.add(inventory);
 
         // cardBg
@@ -101,7 +101,6 @@ export default class PetCard extends BaseContainer {
         // name
         const name = scene.add.text(0, -237, "", {});
         name.setOrigin(0.5, 0.5);
-        name.text = "Test";
         name.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":360,"fontFamily": "Arial", "fontSize": "32px", "fontStyle": "bold" });
         this.add(name);
 
@@ -134,8 +133,18 @@ export default class PetCard extends BaseContainer {
         energyText.setStyle({ "align": "right", "fixedWidth":160,"fontFamily": "CCFaceFront", "fontSize": "28px", "stroke": "#003366", "strokeThickness":8,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
         this.add(energyText);
 
+        // shadow
+        const shadow = scene.add.image(10, 22, "main", "pet/paper/shadow");
+        shadow.setOrigin(0.5026737967914439, 0.5116279069767442);
+        this.add(shadow);
+
+        // paper
+        const paper = scene.add.image(10, -65, "main", "pet/paper/blue/1");
+        this.add(paper);
+
         // tab
         const tab = scene.add.container(234, -126);
+        tab.visible = false;
         this.add(tab);
 
         // tabHandle
@@ -196,6 +205,7 @@ export default class PetCard extends BaseContainer {
         this.restText = restText;
         this.healthText = healthText;
         this.energyText = energyText;
+        this.paper = paper;
         this.arrow = arrow;
         this.tab = tab;
 
@@ -224,6 +234,17 @@ export default class PetCard extends BaseContainer {
         this.energyBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.energy)}`)
         this.healthBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.health)}`)
         this.restBar.setFrame(`pet/bar/${this.getStatFrame(this.pet.rest)}`)
+
+        this.updatePaper()
+    }
+
+    updatePaper() {
+        const name = this.crumbs.pets[this.pet.petId].name.toLowerCase()
+
+        const happiness = this.pet.happiness
+        const frame = happiness > 75 ? 1 : happiness > 50 ? 2 : happiness > 25 ? 3 : 4
+
+        this.paper.setFrame(`pet/paper/${name}/${frame}`)
     }
 
     getStatFrame(stat) {
