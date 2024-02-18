@@ -85,7 +85,6 @@ export default class IglooPet extends BaseSprite {
 
     stopUpdate() {
         this.removeUpdateTimer()
-        this.removeTween()
     }
 
     handleUpdate() {
@@ -189,6 +188,7 @@ export default class IglooPet extends BaseSprite {
         this.off('animationrepeat')
 
         this.stopUpdate()
+        this.removeTween()
         this.playFrame(frame)
 
         this.once('animationrepeat', this.onInteractionComplete, this)
