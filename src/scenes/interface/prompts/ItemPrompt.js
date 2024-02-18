@@ -192,7 +192,7 @@ export default class ItemPrompt extends BaseContainer {
 
     sendPet(action, pet) {
         this.send(action, { id: pet.id })
-        // this.interface.main.petCard.close()
+        this.interface.main.petCard.close()
     }
 
     showAdoptName(id) {
