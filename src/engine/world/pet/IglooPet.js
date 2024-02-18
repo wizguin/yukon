@@ -99,6 +99,10 @@ export default class IglooPet extends BaseSprite {
         this.energy = energy
         this.health = health
         this.rest = rest
+
+        if (this.petCard.visible && this.petCard.pet === this) {
+            this.petCard.updateStats()
+        }
     }
 
     move(pos) {
