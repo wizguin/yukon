@@ -11,10 +11,10 @@ export default class IglooPetLoader extends BaseLoader {
     }
 
     loadPet(petId, callback) {
-        // temp
-        petId = 'pink'
+        if (!(petId in this.crumbs.pets)) return
 
-        const key = this.getKey(petId)
+        const name = this.crumbs.pets[petId].name.toLowerCase()
+        const key = this.getKey(name)
 
         if (this.checkComplete('json', key, () => {
             this.onFileComplete(key, callback)
@@ -22,7 +22,7 @@ export default class IglooPetLoader extends BaseLoader {
             return
         }
 
-        this.multiatlas(key, `${petId}.json`)
+        this.multiatlas(key, `${name}.json`)
         this.start()
     }
 
