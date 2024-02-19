@@ -47,6 +47,10 @@ export default class IglooPet extends BaseSprite {
             health: false,
             rest: false
         }
+
+        if (this.isClientIgloo) {
+            this.setInteractive()
+        }
     }
 
     get safeZone() {
@@ -61,6 +65,10 @@ export default class IglooPet extends BaseSprite {
 
     get petCard() {
         return this.interface.main.petCard
+    }
+
+    get isClientIgloo() {
+        return this.room.isClientIgloo
     }
 
     setInteractive() {
@@ -88,6 +96,8 @@ export default class IglooPet extends BaseSprite {
      * Update that controls movement and other events, only ran for pet owner.
      */
     startUpdate() {
+        if (!this.isClientIgloo) return
+
         this.removeUpdateTimer()
 
         const delayOffset = Phaser.Math.Between(0, 10) * 1000
@@ -100,7 +110,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     stopUpdate() {
-        this.removeUpdateTimer()
+        if (this.isClientIgloo) this.removeUpdateTimer()
     }
 
     handleUpdate() {
