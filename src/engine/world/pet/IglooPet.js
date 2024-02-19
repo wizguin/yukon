@@ -3,7 +3,6 @@ import BaseSprite from '@scenes/base/BaseSprite'
 import PathEngine from '../penguin/pathfinding/PathEngine'
 
 
-const angryFrame = 33
 // Normal, super, great
 const playFrames = [27, 28, 35]
 const restFrame = 25
@@ -12,6 +11,13 @@ const bathFrame = 34
 const gumFrame = 29
 const cookieFrame = 30
 
+// When to notify low stat
+const lowStatValue = 20
+const lowStatFrames = {
+    energy: 32,
+    health: 33,
+    rest: 26
+}
 
 export default class IglooPet extends BaseSprite {
 
@@ -31,6 +37,16 @@ export default class IglooPet extends BaseSprite {
         this.updateTimer = null
         this.tween = null
         this.depth = this.y
+
+        // If the last update action was a move
+        this.lastActionMove = false
+
+         // If low stat notifications have happened
+        this.statsNotified = {
+            energy: false,
+            health: false,
+            rest: false
+        }
     }
 
     get safeZone() {
@@ -88,10 +104,53 @@ export default class IglooPet extends BaseSprite {
     }
 
     handleUpdate() {
+        // Low stat animation played, only check if last action was a move
+        if (this.lastActionMove && this.checkLowStats()) {
+            return
+        }
+
         const newPos = this.getRandomSafePos()
 
         this.move(newPos)
         this.network.send('pet_move', { id: this.id, x: newPos.x, y: newPos.y })
+    }
+
+    /**
+     * Returns whether a low stat notification has happened this update.
+     *
+     * @returns {boolean}
+     */
+    checkLowStats() {
+        // Only check low stats every other move
+        this.lastActionMove = false
+
+        for (const stat in this.statsNotified) {
+            const notify = this.checkLowStat(stat)
+
+            if (notify) return true
+        }
+
+        // No notifications, reset all
+        for (const stat in this.statsNotified) {
+            this.statsNotified[stat] = false
+        }
+
+        return false
+    }
+
+    checkLowStat(stat) {
+        const statValue = this[stat]
+
+        if (statValue < lowStatValue && !this.statsNotified[stat]) {
+            this.statsNotified[stat] = true
+
+             // Send low stat notification for this stat
+            this.network.send('pet_frame', { id: this.id, frame: lowStatFrames[stat] })
+
+            return true
+        }
+
+        return false
     }
 
     updateStats(energy, health, rest) {
@@ -105,6 +164,8 @@ export default class IglooPet extends BaseSprite {
     }
 
     move(pos) {
+        this.lastActionMove = true
+
         // * 24 to simulate 24fps frame based tween
         const duration = Phaser.Math.Distance.BetweenPoints(this, pos) / 4 * 24
 
@@ -148,7 +209,8 @@ export default class IglooPet extends BaseSprite {
 
     requestPlay() {
         if (this.rest < 20 || this.happiness < 10) {
-            this.playInteraction(angryFrame)
+            // Angry
+            this.playInteraction(lowStatFrames.health)
             return
         }
 
@@ -183,6 +245,13 @@ export default class IglooPet extends BaseSprite {
         this.playInteraction(cookieFrame)
     }
 
+    /**
+     * Handles pet_frame event.
+     */
+    startFrame(frame) {
+        this.playInteraction(frame)
+    }
+
     playInteraction(frame) {
         // Remove previous event if exists
         this.off('animationrepeat')
@@ -191,11 +260,29 @@ export default class IglooPet extends BaseSprite {
         this.removeTween()
         this.playFrame(frame)
 
-        this.once('animationrepeat', this.onInteractionComplete, this)
+        this.once('animationrepeat', (animation) => this.onInteractionComplete(animation, frame))
     }
 
-    onInteractionComplete() {
-        this.playFrame(1)
+    onInteractionComplete(animation, frame) {
+        switch (frame) {
+            case lowStatFrames.energy:
+                // Stop on last frame
+                const lastFrame = animation.getLastFrame().textureFrame
+
+                this.stop()
+                this.setFrame(lastFrame)
+                break
+
+            case lowStatFrames.rest:
+                // Repeat frame
+                break
+
+            default:
+                // Play frame 1
+                this.playFrame(1)
+                break
+        }
+
         this.startUpdate()
     }
 

@@ -15,6 +15,7 @@ export default class Chat extends Plugin {
             'pet_bath': this.petBath,
             'pet_gum': this.petGum,
             'pet_cookie': this.petCookie,
+            'pet_frame': this.petFrame,
             'update_pet': this.updatePet
         }
     }
@@ -82,6 +83,12 @@ export default class Chat extends Plugin {
         if (this.petAvailable(args.id)) {
             this.pets[args.id].startCookie()
             this.pets[args.id].updateStats(args.energy, args.health, args.rest)
+        }
+    }
+
+    petFrame(args) {
+        if (this.petAvailable(args.id)) {
+            this.pets[args.id].startFrame(args.frame)
         }
     }
 
