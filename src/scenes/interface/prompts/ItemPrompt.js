@@ -1,12 +1,15 @@
-import BaseContainer from '@scenes/base/BaseContainer'
-
-import { Interactive, NineSlice } from '@components/components'
-
-import DualButtons from './buttons/DualButtons'
 import ItemPromptLoader from '@engine/loaders/ItemPromptLoader'
 
 
 /* START OF COMPILED CODE */
+
+import BaseContainer from "../../base/BaseContainer";
+import Interactive from "../../components/Interactive";
+import NineSlice from "../../components/NineSlice";
+import DualButtons from "./buttons/DualButtons";
+import PromptIcon from "./icon/PromptIcon";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class ItemPrompt extends BaseContainer {
 
@@ -19,6 +22,8 @@ export default class ItemPrompt extends BaseContainer {
         this.text;
         /** @type {DualButtons} */
         this.dual;
+        /** @type {PromptIcon} */
+        this.promptIcon;
 
 
         this.visible = false;
@@ -47,6 +52,10 @@ export default class ItemPrompt extends BaseContainer {
         const dual = new DualButtons(scene, 0, 130);
         this.add(dual);
 
+        // promptIcon
+        const promptIcon = new PromptIcon(scene, 0, -182);
+        this.add(promptIcon);
+
         // block (components)
         new Interactive(block);
 
@@ -57,16 +66,11 @@ export default class ItemPrompt extends BaseContainer {
         this.bg = bg;
         this.text = text;
         this.dual = dual;
+        this.promptIcon = promptIcon;
 
         /* START-USER-CTR-CODE */
 
         this.text.setWordWrapWidth(616, true)
-
-        // Active icon key
-        this.currentKey = null
-
-        // Active icon
-        this.icon = null
 
         this.loader = new ItemPromptLoader(scene, this)
 
@@ -76,19 +80,13 @@ export default class ItemPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(text, loadConfig, callback) {
-        if (!loadConfig.key) {
-            return
-        }
-
-        this.currentKey = loadConfig.key
-
+    show(text, loadConfig = {}, callback = () => this.close()) {
         this.text.text = text
         this.callback = callback
 
         super.show()
 
-        this.loader.loadIcon(loadConfig)
+        this.promptIcon.loadIcon(loadConfig)
     }
 
     showItem(id) {
@@ -155,22 +153,6 @@ export default class ItemPrompt extends BaseContainer {
         text = `${text} ${this.getFormatString('num_coins', this.world.client.coins)}`
 
         this.show(text, loadConfig, callback)
-    }
-
-    addIcon(key, scale) {
-        if (!this.visible || key !== this.currentKey) {
-            return
-        }
-
-        if (this.icon) {
-            this.icon.destroy()
-        }
-
-        const icon = this.scene.add.image(0, -182, key)
-        icon.scale = scale
-
-        this.add(icon)
-        this.icon = icon
     }
 
     noCallback() {
