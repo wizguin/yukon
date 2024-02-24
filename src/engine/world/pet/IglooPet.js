@@ -74,7 +74,7 @@ export default class IglooPet extends BaseSprite {
     setInteractive() {
         super.setInteractive({ cursor: 'pointer', pixelPerfect: true })
 
-        this.on('pointerdown', this.onPointerDown, this)
+        this.on('pointerup', this.onPointerUp, this)
     }
 
     setPos(x, y) {
@@ -88,7 +88,7 @@ export default class IglooPet extends BaseSprite {
         this.setPosition(x, y)
     }
 
-    onPointerDown() {
+    onPointerUp() {
         this.petCard.show(this)
     }
 
