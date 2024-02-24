@@ -231,6 +231,16 @@ export default class IglooPet extends BaseSprite {
         this.network.send('pet_rest', { id: this.id })
     }
 
+    requestWalk() {
+        if (this.rest < 20 || this.energy < 40) {
+            // Angry
+            this.playInteraction(lowStatFrames.health)
+            return
+        }
+
+        this.network.send('pet_walk', { id: this.id })
+    }
+
     startPlay(playType) {
         this.playInteraction(playFrames[playType])
     }

@@ -104,6 +104,7 @@
                         "ShowHint"
                     ],
                     "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onWalkClick()",
                     "ShowHint.text": "walk_pet_hint",
                     "texture": {
                         "key": "main",

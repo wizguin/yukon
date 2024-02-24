@@ -164,6 +164,7 @@ export default class PetCard extends BaseContainer {
         // walkButton (components)
         const walkButtonButton = new Button(walkButton);
         walkButtonButton.spriteName = "blue-button";
+        walkButtonButton.callback = () => this.onWalkClick();
         const walkButtonShowHint = new ShowHint(walkButton);
         walkButtonShowHint.text = "walk_pet_hint";
 
@@ -265,6 +266,12 @@ export default class PetCard extends BaseContainer {
 
     onFeedClick() {
         this.openInventory()
+    }
+
+    onWalkClick() {
+        this.close()
+
+        this.pet.requestWalk()
     }
 
     onTabClick() {
