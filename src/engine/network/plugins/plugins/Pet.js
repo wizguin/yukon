@@ -18,6 +18,7 @@ export default class Pet extends Plugin {
             'pet_frame': this.petFrame,
             'update_pet': this.updatePet,
             'pet_start_walk': this.petStartWalk,
+            'pet_stop_walk': this.petStopWalk
         }
     }
 
@@ -103,5 +104,11 @@ export default class Pet extends Plugin {
         if (this.petAvailable(args.petId)) {
             this.pets[args.petId].startWalk()
         }
+
+    petStopWalk(args) {
+        if (this.petAvailable(args.petId)) {
+            this.pets[args.petId].stopWalk()
+        }
     }
+
 }
