@@ -238,7 +238,7 @@ export default class IglooPet extends BaseSprite {
             return
         }
 
-        this.network.send('pet_walk', { id: this.id })
+        this.world.client.startWalkingPet(this.id)
     }
 
     startPlay(playType) {
@@ -270,6 +270,15 @@ export default class IglooPet extends BaseSprite {
      */
     startFrame(frame) {
         this.playInteraction(frame)
+    }
+
+    startWalk() {
+        this.walking = true
+        this.updateWalking()
+    }
+
+    updateWalking() {
+        this.visible = !this.walking
     }
 
     playInteraction(frame) {

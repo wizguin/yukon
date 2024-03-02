@@ -1,7 +1,7 @@
 import Plugin from '../Plugin'
 
 
-export default class Chat extends Plugin {
+export default class Pet extends Plugin {
 
     constructor(network) {
         super(network)
@@ -16,7 +16,8 @@ export default class Chat extends Plugin {
             'pet_gum': this.petGum,
             'pet_cookie': this.petCookie,
             'pet_frame': this.petFrame,
-            'update_pet': this.updatePet
+            'update_pet': this.updatePet,
+            'pet_start_walk': this.petStartWalk,
         }
     }
 
@@ -98,4 +99,9 @@ export default class Chat extends Plugin {
         }
     }
 
+    petStartWalk(args) {
+        if (this.petAvailable(args.petId)) {
+            this.pets[args.petId].startWalk()
+        }
+    }
 }

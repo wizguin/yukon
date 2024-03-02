@@ -361,4 +361,8 @@ export default class ClientController {
         this.interface.main.updateMailCount()
     }
 
+    startWalkingPet(petId) {
+        this.network.send('pet_start_walk', { id: petId })
+    }
+
 }
