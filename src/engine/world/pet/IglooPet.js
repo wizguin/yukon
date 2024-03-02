@@ -24,7 +24,9 @@ export default class IglooPet extends BaseSprite {
     constructor(textureKey, pet, room) {
         super(room, 0, 0, textureKey, '1_1')
 
-        Object.assign(this, pet)
+        // Set walking last for update
+        const { walking, ...petProperties } = pet
+        Object.assign(this, petProperties)
 
         this.room = room
 
@@ -51,6 +53,11 @@ export default class IglooPet extends BaseSprite {
         if (this.isClientIgloo) {
             this.setInteractive()
         }
+
+        this._walking = false
+
+        // Set walking
+        this.walking = walking
     }
 
     get safeZone() {
@@ -69,6 +76,26 @@ export default class IglooPet extends BaseSprite {
 
     get isClientIgloo() {
         return this.room.isClientIgloo
+    }
+
+    get walking() {
+        return this._walking
+    }
+
+    set walking(walking) {
+        this._walking = walking
+        this.visible = !walking
+    }
+
+    get visible() {
+        return super.visible
+    }
+
+    set visible(visible) {
+        super.visible = visible && !this.walking
+
+        // Start or stop update
+        this.visible ? this.startUpdate() : this.stopUpdate()
     }
 
     setInteractive() {
@@ -96,7 +123,7 @@ export default class IglooPet extends BaseSprite {
      * Update that controls movement and other events, only ran for pet owner.
      */
     startUpdate() {
-        if (!this.isClientIgloo) return
+        if (!this.isClientIgloo || this.walking) return
 
         this.removeUpdateTimer()
 
@@ -274,11 +301,10 @@ export default class IglooPet extends BaseSprite {
 
     startWalk() {
         this.walking = true
-        this.updateWalking()
     }
 
-    updateWalking() {
-        this.visible = !this.walking
+    stopWalk() {
+        this.walking = false
     }
 
     playInteraction(frame) {

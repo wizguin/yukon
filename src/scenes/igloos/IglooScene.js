@@ -150,7 +150,6 @@ export default class IglooScene extends RoomScene {
 
         for (let pet of Object.values(this.pets)) {
             pet.visible = false
-            pet.stopUpdate()
         }
     }
 
@@ -162,7 +161,6 @@ export default class IglooScene extends RoomScene {
 
         for (let pet of Object.values(this.pets)) {
             pet.visible = true
-            pet.startUpdate()
         }
     }
 
@@ -274,8 +272,6 @@ export default class IglooScene extends RoomScene {
 
         this.pets[pet.id] = iglooPet
         this.add.existing(iglooPet)
-
-        iglooPet.startUpdate()
     }
 
     /*========== Physics ==========*/
