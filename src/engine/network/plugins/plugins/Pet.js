@@ -104,6 +104,7 @@ export default class Pet extends Plugin {
         if (this.petAvailable(args.petId)) {
             this.pets[args.petId].startWalk()
         }
+    }
 
     petStopWalk(args) {
         if (this.petAvailable(args.petId)) {
