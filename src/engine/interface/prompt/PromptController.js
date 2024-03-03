@@ -56,10 +56,6 @@ export default class PromptController {
         this.item.showItem(item)
     }
 
-    showInput(text, buttonText = 'Continue', callback = () => {}) {
-        this.input.show(text, buttonText, callback)
-    }
-
     showFurniture(furniture) {
         this.item.showFurniture(furniture)
     }
@@ -111,11 +107,7 @@ export default class PromptController {
     }
 
     showAdoptName(petId) {
-        this.window.close()
-
-        this.showInput('', 'Continue', (name) => {
-            this.network.send('adopt_pet', { petId: petId, name: name })
-        })
+        this.input.showAdoptName(petId)
     }
 
     showPetFood(pet) {

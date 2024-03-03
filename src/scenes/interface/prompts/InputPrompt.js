@@ -5,6 +5,7 @@ import Interactive from "../../components/Interactive";
 import NineSlice from "../../components/NineSlice";
 import SingleButton from "./buttons/SingleButton";
 import Button from "../../components/Button";
+import PromptIcon from "./icon/PromptIcon";
 /* START-USER-IMPORTS */
 
 import TextInput from '@engine/interface/text/TextInput'
@@ -22,6 +23,8 @@ export default class InputPrompt extends BaseContainer {
         this.text;
         /** @type {SingleButton} */
         this.button;
+        /** @type {PromptIcon} */
+        this.promptIcon;
 
 
         this.visible = false;
@@ -65,6 +68,10 @@ export default class InputPrompt extends BaseContainer {
         const xIcon = scene.add.image(296, -276, "main", "blue-x");
         this.add(xIcon);
 
+        // promptIcon
+        const promptIcon = new PromptIcon(scene, 0, -182);
+        this.add(promptIcon);
+
         // block (components)
         new Interactive(block);
 
@@ -80,6 +87,7 @@ export default class InputPrompt extends BaseContainer {
         this.bg = bg;
         this.text = text;
         this.button = button;
+        this.promptIcon = promptIcon;
 
         /* START-USER-CTR-CODE */
 
@@ -105,7 +113,7 @@ export default class InputPrompt extends BaseContainer {
 
     /* START-USER-CODE */
 
-    show(text, buttonText, callback) {
+    show(text, buttonText, loadConfig = {}, callback = () => this.close()) {
         this.text.text = text
         this.button.text.text = buttonText
 
@@ -114,6 +122,28 @@ export default class InputPrompt extends BaseContainer {
         this.input.clearText()
 
         super.show()
+
+        this.promptIcon.loadIcon(loadConfig)
+    }
+
+    showAdoptName(id) {
+        const data = this.crumbs.pets[id]
+        if (!data) return
+
+        const name = data.name.toLowerCase()
+        const loadConfig = {
+            key: `pet/icon/${name}`,
+            url: `/assets/media/pet/icons/${name}.png`
+        }
+
+        const callback = (text) => this.send('adopt_pet', { petId: id, name: text })
+
+        this.show(this.getFormatString('name_pet'), 'Continue', loadConfig, callback)
+    }
+
+    send(action, args) {
+        this.network.send(action, args)
+        this.close()
     }
 
     /* END-USER-CODE */
