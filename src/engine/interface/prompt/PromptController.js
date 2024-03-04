@@ -103,6 +103,12 @@ export default class PromptController {
     }
 
     showAdopt(petId) {
+        const maxPets = 18
+
+        if (this.world.client.pets.length >= maxPets) {
+            return this.showError(this.getFormatString('max_pets', maxPets))
+        }
+
         this.item.showAdopt(petId)
     }
 
@@ -140,6 +146,10 @@ export default class PromptController {
 
     getString(...args) {
         return this.interface.getString(...args)
+    }
+
+    getFormatString(id, ...args) {
+        return this.interface.getFormatString(id, ...args)
     }
 
     hideAll() {
