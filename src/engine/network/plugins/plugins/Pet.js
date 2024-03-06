@@ -45,6 +45,8 @@ export default class Pet extends Plugin {
 
         // Update catalog coins
         this.interface.updateCatalogCoins(args.coins)
+
+        this.interface.prompt.showWindow(this.getString('adopt_pet_done'))
     }
 
     getPets(args) {
