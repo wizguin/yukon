@@ -7,6 +7,7 @@ export default class Pet extends Plugin {
         super(network)
 
         this.events = {
+            'adopt_pet': this.adoptPet,
             'get_pets': this.getPets,
             'pet_move': this.petMove,
             'pet_play': this.petPlay,
@@ -32,6 +33,18 @@ export default class Pet extends Plugin {
 
     petAvailable(id) {
         return this.isIglooReady && id in this.pets
+    }
+
+    adoptPet(args) {
+        // Update player data
+        this.world.client.coins = args.coins
+        this.world.client.pets.push(args.id)
+
+        // Update player card
+        this.interface.refreshPlayerCard()
+
+        // Update catalog coins
+        this.interface.updateCatalogCoins(args.coins)
     }
 
     getPets(args) {
