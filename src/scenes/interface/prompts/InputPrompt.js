@@ -117,7 +117,11 @@ export default class InputPrompt extends BaseContainer {
         this.text.text = text
         this.button.text.text = buttonText
 
-        this.callback = () => callback(this.input.text)
+        this.callback = () => {
+            if (this.input.text.length) {
+                callback(this.input.text)
+            }
+        }
 
         this.input.clearText()
 
