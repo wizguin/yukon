@@ -29,7 +29,6 @@
                     ],
                     "Button.spriteName": "window-button",
                     "Button.callback": "() => this.onClick()",
-                    "Button.activeFrame": false,
                     "texture": {
                         "key": "prompt",
                         "frame": "window-button"
