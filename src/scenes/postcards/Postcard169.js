@@ -10,7 +10,7 @@ export default class Postcard169 extends BasePostcard {
         super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Text} */
-        this.puffle;
+        this.details;
 
 
         // bg
@@ -18,14 +18,14 @@ export default class Postcard169 extends BasePostcard {
         bg.setOrigin(0, 0);
         this.add(bg);
 
-        // puffle
-        const puffle = scene.add.text(279, 573, "", {});
-        puffle.text = "undefined";
-        puffle.setStyle({ "align": "right", "color": "#000000", "fixedWidth":312,"fontFamily": "CCFaceFront", "fontSize": "28px" });
-        puffle.setPadding({"left":5,"right":5});
-        this.add(puffle);
+        // details
+        const details = scene.add.text(279, 573, "", {});
+        details.text = "undefined";
+        details.setStyle({ "align": "right", "color": "#000000", "fixedWidth":312,"fontFamily": "CCFaceFront", "fontSize": "28px" });
+        details.setPadding({"left":5,"right":5});
+        this.add(details);
 
-        this.puffle = puffle;
+        this.details = details;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
