@@ -20,6 +20,12 @@ export default class BasePostcard extends BaseContainer {
         }
     }
 
+    setDetails(details) {
+        if (this.details) {
+            this.details.text = details
+        }
+    }
+
     enableInput() {
         if (this.goToButton) {
             this.goToButton.enableInput()
