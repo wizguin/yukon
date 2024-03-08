@@ -10,7 +10,7 @@ export default class Postcard127 extends BasePostcard {
         super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Text} */
-        this.penguin;
+        this.receiverName;
 
 
         // bg
@@ -18,14 +18,14 @@ export default class Postcard127 extends BasePostcard {
         bg.setOrigin(0, 0);
         this.add(bg);
 
-        // penguin
-        const penguin = scene.add.text(522, 586, "", {});
-        penguin.text = "undefined";
-        penguin.setStyle({ "color": "#9a0000", "fixedWidth":502,"fontFamily": "CCFaceFront", "fontSize": "50px", "fontStyle": "bold italic", "strokeThickness":8});
-        penguin.setPadding({"left":5,"right":5});
-        this.add(penguin);
+        // receiverName
+        const receiverName = scene.add.text(522, 586, "", {});
+        receiverName.text = "undefined";
+        receiverName.setStyle({ "color": "#9a0000", "fixedWidth":502,"fontFamily": "CCFaceFront", "fontSize": "50px", "fontStyle": "bold italic", "strokeThickness":8});
+        receiverName.setPadding({"left":5,"right":5});
+        this.add(receiverName);
 
-        this.penguin = penguin;
+        this.receiverName = receiverName;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */

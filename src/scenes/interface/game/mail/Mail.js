@@ -354,7 +354,7 @@ export default class Mail extends BaseContainer {
         try {
             this.currentPrefab = new postcardClass(this.scene, this.postcardX, this.postcardY)
             this.currentPrefab.angle = this.postcardAngle
-            this.currentPrefab.setName(this.currentCard.senderName)
+            this.currentPrefab.setText(this.currentCard)
 
             this.currentPrefab.enableInput()
 

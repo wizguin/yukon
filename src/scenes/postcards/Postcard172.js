@@ -10,9 +10,9 @@ export default class Postcard172 extends BasePostcard {
         super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Text} */
-        this.dateTxt;
+        this.date;
         /** @type {Phaser.GameObjects.Text} */
-        this.penguin;
+        this.receiverName;
 
 
         // bg
@@ -20,22 +20,22 @@ export default class Postcard172 extends BasePostcard {
         bg.setOrigin(0, 0);
         this.add(bg);
 
-        // dateTxt
-        const dateTxt = scene.add.text(348, 69, "", {});
-        dateTxt.text = "undefined undefined, undefined";
-        dateTxt.setStyle({ "color": "#000000", "fixedWidth":308,"fontFamily": "CCFaceFront", "fontSize": "28px" });
-        dateTxt.setPadding({"left":5,"right":5});
-        this.add(dateTxt);
+        // date
+        const date = scene.add.text(348, 69, "", {});
+        date.text = "undefined undefined, undefined";
+        date.setStyle({ "color": "#000000", "fixedWidth":308,"fontFamily": "CCFaceFront", "fontSize": "28px" });
+        date.setPadding({"left":5,"right":5});
+        this.add(date);
 
-        // penguin
-        const penguin = scene.add.text(115, 187, "", {});
-        penguin.text = "undefined";
-        penguin.setStyle({ "color": "#000000", "fixedWidth":360,"fontFamily": "Comic Sans MS", "fontSize": "34px", "fontStyle": "bold" });
-        penguin.setPadding({"left":5,"right":5});
-        this.add(penguin);
+        // receiverName
+        const receiverName = scene.add.text(115, 187, "", {});
+        receiverName.text = "undefined";
+        receiverName.setStyle({ "color": "#000000", "fixedWidth":360,"fontFamily": "Comic Sans MS", "fontSize": "34px", "fontStyle": "bold" });
+        receiverName.setPadding({"left":5,"right":5});
+        this.add(receiverName);
 
-        this.dateTxt = dateTxt;
-        this.penguin = penguin;
+        this.date = date;
+        this.receiverName = receiverName;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */

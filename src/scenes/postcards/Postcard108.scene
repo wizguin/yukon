@@ -33,7 +33,7 @@
                 {
                     "type": "Text",
                     "id": "3b4aa07c-9a6b-4043-b9e2-b92658917699",
-                    "label": "penguin",
+                    "label": "receiverName",
                     "scope": "CLASS",
                     "x": 98,
                     "y": 46,

@@ -10,20 +10,34 @@ export default class BasePostcard extends BaseContainer {
         this.goToButton = null
     }
 
-    get clientName() {
-        return this.world.client.penguin.username
-    }
-
-    setName(name) {
+    setText({ senderName, details, sendDate }) {
         if (this.name) {
-            this.name.text = name
+            this.name.text = senderName
         }
-    }
 
-    setDetails(details) {
         if (this.details) {
             this.details.text = details
         }
+
+        if (this.date) {
+            this.date.text = this.getDateText(sendDate)
+        }
+
+        if (this.receiverName) {
+            this.receiverName.text = this.world.client.penguin.username
+        }
+    }
+
+    getDateText(sendDate) {
+        const date = new Date(sendDate)
+
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }
+
+        return date.toLocaleDateString('en-US', options)
     }
 
     enableInput() {
