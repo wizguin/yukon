@@ -16,12 +16,22 @@ export default class RuffleController extends BaseScene {
 
         this.keys = [
             'getGamesPath',
-            'getPlayerObjectById',
+            'getMyPlayer',
             'getMyPlayerHex',
-            'isMyPlayerMember',
+            'getMyPlayerId',
+            'getPlayerObjectById',
             'isItemOnMyPlayer',
+            'isMyPlayerMember',
             'sendGameOver'
         ]
+    }
+
+    get client() {
+        return this.world.client
+    }
+
+    get clientObject() {
+        return this.client.penguin.items.flat
     }
 
     create() {
@@ -96,28 +106,34 @@ export default class RuffleController extends BaseScene {
         return this.crumbs.frameColor
     }
 
-    getMyPlayer() {
-        // todo
-    }
-
     getGamesPath() {
         return `${this.basePath}games/`
     }
 
-    getPlayerObjectById() {
-        // todo
+    getMyPlayer() {
+        return this.clientObject
     }
 
     getMyPlayerHex() {
-        return this.world.getColor(this.world.client.penguin.color)
+        return this.world.getColor(this.client.penguin.color)
+    }
+
+    getMyPlayerId() {
+        return this.client.id
+    }
+
+    getPlayerObjectById([id]) {
+        if (id === this.client.id) {
+            return this.clientObject
+        }
+    }
+
+    isItemOnMyPlayer([id]) {
+        return Object.values(this.clientObject).includes(id)
     }
 
     isMyPlayerMember() {
         return true
-    }
-
-    isItemOnMyPlayer() {
-        // todo
     }
 
     sendGameOver(obj) {
