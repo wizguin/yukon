@@ -22,7 +22,6 @@
             "type": "Image",
             "id": "e88724c5-a30a-4168-a286-ca17ac9c4180",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "bg"
@@ -36,7 +35,6 @@
             "id": "cbd0d9a5-cd03-449a-a668-57a6ac47f32a",
             "label": "black",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "black/black0001"
@@ -50,7 +48,6 @@
             "type": "Image",
             "id": "761bd4ac-b103-4f1f-a969-9cd62098769a",
             "label": "post",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "post"
@@ -64,7 +61,6 @@
             "type": "Image",
             "id": "fb1dca20-69ae-437e-a665-3da3b89718c9",
             "label": "bowls",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "bowls"
@@ -78,7 +74,6 @@
             "type": "Image",
             "id": "b2ef29ac-0b56-45c7-96d3-4f364c54b24e",
             "label": "sack",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "sack"
@@ -160,7 +155,6 @@
             "id": "b757dc27-6d71-4f31-b2ca-3cbaad9ffb98",
             "label": "puffles",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "puffles"
@@ -406,7 +400,6 @@
             "type": "Image",
             "id": "e454a7f6-e81e-4665-8125-f4e5b6398d4c",
             "label": "house3",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "house_3"
@@ -420,7 +413,6 @@
             "type": "Image",
             "id": "e7a60d84-41d3-44b5-b973-721f84a2c866",
             "label": "house2",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "house_2"
@@ -434,7 +426,6 @@
             "type": "Image",
             "id": "53dc0206-2ea3-40a7-85e7-4a22b8e1a4de",
             "label": "house1",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "house_1"
@@ -448,7 +439,6 @@
             "type": "Image",
             "id": "05b754ff-4859-407c-8f1b-898903a8b89a",
             "label": "bedBack",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "bed_back"
@@ -461,7 +451,6 @@
             "type": "Image",
             "id": "802aa5e7-aef2-4431-96c1-1b63044c3b92",
             "label": "bedFront",
-            "components": [],
             "texture": {
                 "key": "pet",
                 "frame": "bed_front"
@@ -522,6 +511,48 @@
             "fillColor": "#00ff00",
             "width": 150,
             "height": 120
+        },
+        {
+            "type": "Image",
+            "id": "a22dddc2-d89d-4c08-ad23-cf627eb9fb9b",
+            "label": "adoptCatalog",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "adopt_catalog",
+            "Button.callback": "() => this.onAdoptCatalogClick()",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "pet",
+                "frame": "adopt_catalog"
+            },
+            "x": 1331,
+            "y": 927,
+            "originX": 0,
+            "originY": 1
+        },
+        {
+            "type": "Image",
+            "id": "d1a03736-bb62-47fb-8129-e2d22de3e12a",
+            "label": "petCatalog",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "pets_catalog",
+            "Button.callback": "() => this.onPetCatalogClick()",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "pet",
+                "frame": "pets_catalog"
+            },
+            "x": 1331,
+            "y": 808,
+            "originX": 0,
+            "originY": 1
         }
     ],
     "plainObjects": [],
@@ -529,7 +560,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     },
     "lists": [
         {
