@@ -357,7 +357,7 @@ export default class Pet extends RoomScene {
     }
 
     onAdoptCatalogClick() {
-
+        this.interface.loadWidget('AdoptCatalog')
     }
 
     onPenOver() {

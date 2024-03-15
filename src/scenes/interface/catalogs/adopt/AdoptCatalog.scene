@@ -1,0 +1,372 @@
+{
+    "id": "c7bd412d-7d1e-4dd4-b349-ec90bbf96937",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e7828f7f-5f53-4824-908b-f4755f55ce7c",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "faf8d7a6-2bf8-47a8-bbad-53cc9690b980",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Container",
+                    "id": "7050d69c-2aad-4e50-8a79-91fba98d34f8",
+                    "label": "page11",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "74726123-8ba0-4954-9887-4a831278cf7c",
+                            "label": "page0011",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0011"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c67e572c-1186-4ffd-a998-ed3b23a1c58b",
+                            "label": "pageLeft_1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_left"
+                            },
+                            "x": 492,
+                            "y": 590,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "72a3526a-6e19-486c-8636-fdad0a158b65",
+                            "label": "closeLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_left",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_left"
+                            },
+                            "x": 491,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "0531505b-b06d-4578-b745-525f5b9cc329",
+                    "label": "page0010",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0010"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "b01f80aa-14c2-46a8-9fca-458dd6a3c748",
+                    "label": "page0009",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0009"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "5ae28422-003a-4a14-b4de-f7ed5dc387e5",
+                    "label": "page0008",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0008"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "d82bb129-872d-4646-87b2-aa51567e5306",
+                    "label": "page0007",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0007"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "f4f3ba17-4a84-4a5b-9999-aa1f952b7202",
+                    "label": "page0006",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0006"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "02e66c56-c10b-40cc-8069-4ce58da5a06b",
+                    "label": "page0005",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0005"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "2e98b393-b10e-460c-be10-1a3db795c80d",
+                    "label": "page0004",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0004"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "37c05bdf-a234-4740-bcfb-6d0f3d7dc557",
+                    "label": "page0003",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0003"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                    "label": "page0002",
+                    "texture": {
+                        "key": "adoptcatalog",
+                        "frame": "page/page0002"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Container",
+                    "id": "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                    "label": "page1",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "0c462b69-419b-46c0-829b-f22133e9b2d9",
+                            "label": "page0001",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0001"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2b34a992-5863-4055-997b-95667d4c9534",
+                            "label": "pageFront",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_front",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_front"
+                            },
+                            "x": 469,
+                            "y": 42,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a460cc47-3b72-45ce-a1fe-8fa107c3abce",
+                            "label": "closeRight_1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 925,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "33038d96-221d-41e9-8999-fbcd325c77fa",
+                    "label": "buttons",
+                    "scope": "CLASS",
+                    "x": 190,
+                    "y": 41,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "5433f276-aa10-43c6-be6d-3d839d7771dd",
+                            "label": "closeRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 1012,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f002fbfa-a409-4b6e-9d7c-fc90adc33812",
+                            "label": "pageRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_right",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_right"
+                            },
+                            "x": 1012,
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e67c6bb2-4813-4b2a-a471-b1a16228c378",
+                            "label": "pageLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_left"
+                            },
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Text",
+                            "id": "18f3a279-1bcc-43e7-a47e-dc2a29765491",
+                            "label": "coins",
+                            "scope": "CLASS",
+                            "x": 1130,
+                            "y": 790,
+                            "originX": 1,
+                            "text": "YOUR COINS:",
+                            "fixedWidth": 600,
+                            "align": "right",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "32px",
+                            "stroke": "#000",
+                            "strokeThickness": 9
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "eee19a2c-6cb3-4ea1-8e06-703f0cc166b2",
+            "label": "pages",
+            "objectIds": [
+                "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                "37c05bdf-a234-4740-bcfb-6d0f3d7dc557",
+                "2e98b393-b10e-460c-be10-1a3db795c80d",
+                "02e66c56-c10b-40cc-8069-4ce58da5a06b",
+                "f4f3ba17-4a84-4a5b-9999-aa1f952b7202",
+                "d82bb129-872d-4646-87b2-aa51567e5306",
+                "5ae28422-003a-4a14-b4de-f7ed5dc387e5",
+                "b01f80aa-14c2-46a8-9fca-458dd6a3c748",
+                "0531505b-b06d-4578-b745-525f5b9cc329",
+                "7050d69c-2aad-4e50-8a79-91fba98d34f8"
+            ]
+        }
+    ]
+}
