@@ -9,6 +9,7 @@ export const preload = {
 import BookContainer from "../../books/BookContainer";
 import Interactive from "../../../components/Interactive";
 import Button from "../../../components/Button";
+import Zone from "../../../components/Zone";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -101,11 +102,36 @@ export default class AdoptCatalog extends BookContainer {
         page0003.visible = false;
         this.add(page0003);
 
+        // page2
+        const page2 = scene.add.container(0, 0);
+        page2.visible = false;
+        this.add(page2);
+
         // page0002
         const page0002 = scene.add.image(0, 0, "adoptcatalog", "page/page0002");
         page0002.setOrigin(0, 0);
-        page0002.visible = false;
-        this.add(page0002);
+        page2.add(page0002);
+
+        // fun
+        const fun = scene.add.rectangle(491, 509, 194, 55);
+        fun.alpha = 0.5;
+        fun.isFilled = true;
+        fun.fillColor = 65535;
+        page2.add(fun);
+
+        // card
+        const card = scene.add.rectangle(437, 420, 219, 55);
+        card.alpha = 0.5;
+        card.isFilled = true;
+        card.fillColor = 65535;
+        page2.add(card);
+
+        // personalities
+        const personalities = scene.add.rectangle(457, 323, 360, 55);
+        personalities.alpha = 0.5;
+        personalities.isFilled = true;
+        personalities.fillColor = 65535;
+        page2.add(personalities);
 
         // page1
         const page1 = scene.add.container(0, 0);
@@ -154,7 +180,7 @@ export default class AdoptCatalog extends BookContainer {
         buttons.add(coins);
 
         // lists
-        const pages = [page1, page0002, page0003, page0004, page0005, page0006, page0007, page0008, page0009, page0010, page11];
+        const pages = [page1, page2, page0003, page0004, page0005, page0006, page0007, page0008, page0009, page0010, page11];
 
         // block (components)
         new Interactive(block);
@@ -171,6 +197,18 @@ export default class AdoptCatalog extends BookContainer {
         closeLeftButton.spriteName = "close_left";
         closeLeftButton.callback = () => this.close();
         closeLeftButton.pixelPerfect = true;
+
+        // fun (components)
+        const funZone = new Zone(fun);
+        funZone.callback = () => this.showPage(8);
+
+        // card (components)
+        const cardZone = new Zone(card);
+        cardZone.callback = () => this.showPage(7);
+
+        // personalities (components)
+        const personalitiesZone = new Zone(personalities);
+        personalitiesZone.callback = () => this.showPage(2);
 
         // pageFront (components)
         const pageFrontButton = new Button(pageFront);

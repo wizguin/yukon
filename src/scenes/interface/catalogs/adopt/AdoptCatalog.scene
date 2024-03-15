@@ -189,16 +189,71 @@
                     "visible": false
                 },
                 {
-                    "type": "Image",
-                    "id": "b03edf36-eb2c-4234-8b62-35a4508a6404",
-                    "label": "page0002",
-                    "texture": {
-                        "key": "adoptcatalog",
-                        "frame": "page/page0002"
-                    },
-                    "originX": 0,
-                    "originY": 0,
-                    "visible": false
+                    "type": "Container",
+                    "id": "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
+                    "label": "page2",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                            "label": "page0002",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0002"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "d6adbc29-7db1-4cc7-97a7-272861600373",
+                            "label": "fun",
+                            "components": [
+                                "Zone"
+                            ],
+                            "Zone.callback": "() => this.showPage(8)",
+                            "x": 491,
+                            "y": 509,
+                            "alpha": 0.5,
+                            "isFilled": true,
+                            "fillColor": "#00ffff",
+                            "width": 194,
+                            "height": 55
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "9aec917a-2a00-4c2c-8172-4c36b079f07e",
+                            "label": "card",
+                            "components": [
+                                "Zone"
+                            ],
+                            "Zone.callback": "() => this.showPage(7)",
+                            "x": 437,
+                            "y": 420,
+                            "alpha": 0.5,
+                            "isFilled": true,
+                            "fillColor": "#00ffff",
+                            "width": 219,
+                            "height": 55
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "62ad36d7-3aa6-47d1-a4af-cee8e95a20f2",
+                            "label": "personalities",
+                            "components": [
+                                "Zone"
+                            ],
+                            "Zone.callback": "() => this.showPage(2)",
+                            "x": 457,
+                            "y": 323,
+                            "alpha": 0.5,
+                            "isFilled": true,
+                            "fillColor": "#00ffff",
+                            "width": 360,
+                            "height": 55
+                        }
+                    ]
                 },
                 {
                     "type": "Container",
@@ -356,7 +411,7 @@
             "label": "pages",
             "objectIds": [
                 "c06e6b99-75ae-44de-8fd6-97a00178f552",
-                "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
                 "37c05bdf-a234-4740-bcfb-6d0f3d7dc557",
                 "2e98b393-b10e-460c-be10-1a3db795c80d",
                 "02e66c56-c10b-40cc-8069-4ce58da5a06b",
