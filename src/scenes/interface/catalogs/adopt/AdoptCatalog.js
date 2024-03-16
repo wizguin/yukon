@@ -24,7 +24,7 @@ export default class AdoptCatalog extends BookContainer {
         this.coins;
         /** @type {Phaser.GameObjects.Container} */
         this.buttons;
-        /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image>} */
+        /** @type {Phaser.GameObjects.Container[]} */
         this.pages;
 
 
@@ -56,17 +56,25 @@ export default class AdoptCatalog extends BookContainer {
         closeLeft.setOrigin(0, 0);
         page11.add(closeLeft);
 
+        // page10
+        const page10 = scene.add.container(0, 0);
+        page10.visible = false;
+        this.add(page10);
+
         // page0010
         const page0010 = scene.add.image(0, 0, "adoptcatalog", "page/page0010");
         page0010.setOrigin(0, 0);
-        page0010.visible = false;
-        this.add(page0010);
+        page10.add(page0010);
+
+        // page9
+        const page9 = scene.add.container(0, 0);
+        page9.visible = false;
+        this.add(page9);
 
         // page0009
         const page0009 = scene.add.image(0, 0, "adoptcatalog", "page/page0009");
         page0009.setOrigin(0, 0);
-        page0009.visible = false;
-        this.add(page0009);
+        page9.add(page0009);
 
         // page8
         const page8 = scene.add.container(0, 0);
@@ -197,35 +205,100 @@ export default class AdoptCatalog extends BookContainer {
         hint.visible = false;
         page8.add(hint);
 
+        // page7
+        const page7 = scene.add.container(0, 0);
+        page7.visible = false;
+        this.add(page7);
+
         // page0007
         const page0007 = scene.add.image(0, 0, "adoptcatalog", "page/page0007");
         page0007.setOrigin(0, 0);
-        page0007.visible = false;
-        this.add(page0007);
+        page7.add(page0007);
+
+        // adopt_8
+        const adopt_8 = scene.add.image(363, 513, "adoptcatalog", "adopt");
+        adopt_8.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page7.add(adopt_8);
+
+        // page6
+        const page6 = scene.add.container(0, 0);
+        page6.visible = false;
+        this.add(page6);
 
         // page0006
         const page0006 = scene.add.image(0, 0, "adoptcatalog", "page/page0006");
         page0006.setOrigin(0, 0);
-        page0006.visible = false;
-        this.add(page0006);
+        page6.add(page0006);
+
+        // adopt_7
+        const adopt_7 = scene.add.image(1167, 532, "adoptcatalog", "adopt");
+        adopt_7.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page6.add(adopt_7);
+
+        // adopt_6
+        const adopt_6 = scene.add.image(587, 533, "adoptcatalog", "adopt");
+        adopt_6.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page6.add(adopt_6);
+
+        // page5
+        const page5 = scene.add.container(0, 0);
+        page5.visible = false;
+        this.add(page5);
 
         // page0005
         const page0005 = scene.add.image(0, 0, "adoptcatalog", "page/page0005");
         page0005.setOrigin(0, 0);
-        page0005.visible = false;
-        this.add(page0005);
+        page5.add(page0005);
+
+        // adopt_5
+        const adopt_5 = scene.add.image(913, 527, "adoptcatalog", "adopt");
+        adopt_5.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page5.add(adopt_5);
+
+        // adopt_4
+        const adopt_4 = scene.add.image(354, 535, "adoptcatalog", "adopt");
+        adopt_4.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page5.add(adopt_4);
+
+        // page4
+        const page4 = scene.add.container(0, 0);
+        page4.visible = false;
+        this.add(page4);
 
         // page0004
         const page0004 = scene.add.image(0, 0, "adoptcatalog", "page/page0004");
         page0004.setOrigin(0, 0);
-        page0004.visible = false;
-        this.add(page0004);
+        page4.add(page0004);
+
+        // adopt_3
+        const adopt_3 = scene.add.image(1157, 539, "adoptcatalog", "adopt");
+        adopt_3.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page4.add(adopt_3);
+
+        // adopt_2
+        const adopt_2 = scene.add.image(598, 504, "adoptcatalog", "adopt");
+        adopt_2.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page4.add(adopt_2);
+
+        // page3
+        const page3 = scene.add.container(0, 0);
+        page3.visible = false;
+        this.add(page3);
 
         // page0003
         const page0003 = scene.add.image(0, 0, "adoptcatalog", "page/page0003");
         page0003.setOrigin(0, 0);
-        page0003.visible = false;
-        this.add(page0003);
+        page3.add(page0003);
+
+        // adopt_1
+        const adopt_1 = scene.add.image(941, 534, "adoptcatalog", "adopt");
+        adopt_1.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page3.add(adopt_1);
+
+        // adopt
+        const adopt = scene.add.image(357, 562, "adoptcatalog", "adopt");
+        adopt.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page3.add(adopt);
 
         // page2
         const page2 = scene.add.container(0, 0);
@@ -299,7 +372,7 @@ export default class AdoptCatalog extends BookContainer {
         buttons.add(coins);
 
         // lists
-        const pages = [page1, page2, page0003, page0004, page0005, page0006, page0007, page8, page0009, page0010, page11];
+        const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11];
 
         // block (components)
         new Interactive(block);
@@ -384,6 +457,60 @@ export default class AdoptCatalog extends BookContainer {
         nameSimpleButton.hoverCallback = () => this.onHintOver(1);
         nameSimpleButton.hoverOutCallback = () => this.onHintOut();
 
+        // adopt_8 (components)
+        const adopt_8Button = new Button(adopt_8);
+        adopt_8Button.spriteName = "adopt";
+        adopt_8Button.callback = () => this.onAdoptClick(8);
+        adopt_8Button.pixelPerfect = true;
+
+        // adopt_7 (components)
+        const adopt_7Button = new Button(adopt_7);
+        adopt_7Button.spriteName = "adopt";
+        adopt_7Button.callback = () => this.onAdoptClick(7);
+        adopt_7Button.pixelPerfect = true;
+
+        // adopt_6 (components)
+        const adopt_6Button = new Button(adopt_6);
+        adopt_6Button.spriteName = "adopt";
+        adopt_6Button.callback = () => this.onAdoptClick(4);
+        adopt_6Button.pixelPerfect = true;
+
+        // adopt_5 (components)
+        const adopt_5Button = new Button(adopt_5);
+        adopt_5Button.spriteName = "adopt";
+        adopt_5Button.callback = () => this.onAdoptClick(6);
+        adopt_5Button.pixelPerfect = true;
+
+        // adopt_4 (components)
+        const adopt_4Button = new Button(adopt_4);
+        adopt_4Button.spriteName = "adopt";
+        adopt_4Button.callback = () => this.onAdoptClick(3);
+        adopt_4Button.pixelPerfect = true;
+
+        // adopt_3 (components)
+        const adopt_3Button = new Button(adopt_3);
+        adopt_3Button.spriteName = "adopt";
+        adopt_3Button.callback = () => this.onAdoptClick(2);
+        adopt_3Button.pixelPerfect = true;
+
+        // adopt_2 (components)
+        const adopt_2Button = new Button(adopt_2);
+        adopt_2Button.spriteName = "adopt";
+        adopt_2Button.callback = () => this.onAdoptClick(1);
+        adopt_2Button.pixelPerfect = true;
+
+        // adopt_1 (components)
+        const adopt_1Button = new Button(adopt_1);
+        adopt_1Button.spriteName = "adopt";
+        adopt_1Button.callback = () => this.onAdoptClick(5);
+        adopt_1Button.pixelPerfect = true;
+
+        // adopt (components)
+        const adoptButton = new Button(adopt);
+        adoptButton.spriteName = "adopt";
+        adoptButton.callback = () => this.onAdoptClick(0);
+        adoptButton.pixelPerfect = true;
+
         // fun (components)
         const funSimpleButton = new SimpleButton(fun);
         funSimpleButton.callback = () => this.showPage(8);
@@ -450,6 +577,10 @@ export default class AdoptCatalog extends BookContainer {
 
     onHintOut() {
         this.hint.visible = false
+    }
+
+    onAdoptClick(petId) {
+        this.interface.prompt.showAdopt(petId)
     }
 
     /* END-USER-CODE */
