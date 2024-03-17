@@ -3,6 +3,7 @@ const widgets = {
     'ClothingCatalog': require('@scenes/interface/catalogs/clothing/ClothingCatalog'),
     'FurnitureCatalog': require('@scenes/interface/catalogs/furniture/FurnitureCatalog'),
     'IglooCatalog': require('@scenes/interface/catalogs/igloo/IglooCatalog'),
+    'PetsCatalog': require('@scenes/interface/catalogs/pets/PetsCatalog'),
 
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),

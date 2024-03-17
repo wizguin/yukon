@@ -353,7 +353,7 @@ export default class Pet extends RoomScene {
     }
 
     onPetCatalogClick() {
-
+        this.interface.loadWidget('PetsCatalog')
     }
 
     onAdoptCatalogClick() {

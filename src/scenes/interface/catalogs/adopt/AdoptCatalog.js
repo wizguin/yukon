@@ -561,7 +561,6 @@ export default class AdoptCatalog extends BookContainer {
         this.pages = pages;
 
         /* START-USER-CTR-CODE */
-        // Write your code here.
         /* END-USER-CTR-CODE */
     }
 
@@ -587,5 +586,3 @@ export default class AdoptCatalog extends BookContainer {
 }
 
 /* END OF COMPILED CODE */
-
-// You can write more code here
