@@ -46,10 +46,10 @@ export default class AdoptCatalog extends BookContainer {
         page0011.setOrigin(0, 0);
         page11.add(page0011);
 
-        // pageLeft_1
-        const pageLeft_1 = scene.add.image(492, 590, "adoptcatalog", "page_left");
-        pageLeft_1.setOrigin(0, 0);
-        page11.add(pageLeft_1);
+        // pageLeft1
+        const pageLeft1 = scene.add.image(492, 590, "adoptcatalog", "page_left");
+        pageLeft1.setOrigin(0, 0);
+        page11.add(pageLeft1);
 
         // closeLeft
         const closeLeft = scene.add.image(491, 39, "adoptcatalog", "close_left");
@@ -215,10 +215,10 @@ export default class AdoptCatalog extends BookContainer {
         page0007.setOrigin(0, 0);
         page7.add(page0007);
 
-        // adopt_8
-        const adopt_8 = scene.add.image(363, 513, "adoptcatalog", "adopt");
-        adopt_8.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page7.add(adopt_8);
+        // adopt8
+        const adopt8 = scene.add.image(363, 513, "adoptcatalog", "adopt");
+        adopt8.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page7.add(adopt8);
 
         // page6
         const page6 = scene.add.container(0, 0);
@@ -230,15 +230,15 @@ export default class AdoptCatalog extends BookContainer {
         page0006.setOrigin(0, 0);
         page6.add(page0006);
 
-        // adopt_7
-        const adopt_7 = scene.add.image(1167, 532, "adoptcatalog", "adopt");
-        adopt_7.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page6.add(adopt_7);
+        // adopt7
+        const adopt7 = scene.add.image(1167, 532, "adoptcatalog", "adopt");
+        adopt7.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page6.add(adopt7);
 
-        // adopt_6
-        const adopt_6 = scene.add.image(587, 533, "adoptcatalog", "adopt");
-        adopt_6.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page6.add(adopt_6);
+        // adopt6
+        const adopt6 = scene.add.image(587, 533, "adoptcatalog", "adopt");
+        adopt6.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page6.add(adopt6);
 
         // page5
         const page5 = scene.add.container(0, 0);
@@ -250,15 +250,15 @@ export default class AdoptCatalog extends BookContainer {
         page0005.setOrigin(0, 0);
         page5.add(page0005);
 
-        // adopt_5
-        const adopt_5 = scene.add.image(913, 527, "adoptcatalog", "adopt");
-        adopt_5.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page5.add(adopt_5);
+        // adopt5
+        const adopt5 = scene.add.image(913, 527, "adoptcatalog", "adopt");
+        adopt5.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page5.add(adopt5);
 
-        // adopt_4
-        const adopt_4 = scene.add.image(354, 535, "adoptcatalog", "adopt");
-        adopt_4.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page5.add(adopt_4);
+        // adopt4
+        const adopt4 = scene.add.image(354, 535, "adoptcatalog", "adopt");
+        adopt4.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page5.add(adopt4);
 
         // page4
         const page4 = scene.add.container(0, 0);
@@ -270,15 +270,15 @@ export default class AdoptCatalog extends BookContainer {
         page0004.setOrigin(0, 0);
         page4.add(page0004);
 
-        // adopt_3
-        const adopt_3 = scene.add.image(1157, 539, "adoptcatalog", "adopt");
-        adopt_3.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page4.add(adopt_3);
+        // adopt3
+        const adopt3 = scene.add.image(1157, 539, "adoptcatalog", "adopt");
+        adopt3.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page4.add(adopt3);
 
-        // adopt_2
-        const adopt_2 = scene.add.image(598, 504, "adoptcatalog", "adopt");
-        adopt_2.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page4.add(adopt_2);
+        // adopt2
+        const adopt2 = scene.add.image(598, 504, "adoptcatalog", "adopt");
+        adopt2.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page4.add(adopt2);
 
         // page3
         const page3 = scene.add.container(0, 0);
@@ -290,10 +290,10 @@ export default class AdoptCatalog extends BookContainer {
         page0003.setOrigin(0, 0);
         page3.add(page0003);
 
-        // adopt_1
-        const adopt_1 = scene.add.image(941, 534, "adoptcatalog", "adopt");
-        adopt_1.setOrigin(0.49074074074074076, 0.4777777777777778);
-        page3.add(adopt_1);
+        // adopt1
+        const adopt1 = scene.add.image(941, 534, "adoptcatalog", "adopt");
+        adopt1.setOrigin(0.49074074074074076, 0.4777777777777778);
+        page3.add(adopt1);
 
         // adopt
         const adopt = scene.add.image(357, 562, "adoptcatalog", "adopt");
@@ -339,10 +339,10 @@ export default class AdoptCatalog extends BookContainer {
         pageFront.setOrigin(0, 0);
         page1.add(pageFront);
 
-        // closeRight_1
-        const closeRight_1 = scene.add.image(925, 39, "adoptcatalog", "close_right");
-        closeRight_1.setOrigin(0, 0);
-        page1.add(closeRight_1);
+        // closeRight1
+        const closeRight1 = scene.add.image(925, 39, "adoptcatalog", "close_right");
+        closeRight1.setOrigin(0, 0);
+        page1.add(closeRight1);
 
         // buttons
         const buttons = scene.add.container(190, 41);
@@ -377,12 +377,12 @@ export default class AdoptCatalog extends BookContainer {
         // block (components)
         new Interactive(block);
 
-        // pageLeft_1 (components)
-        const pageLeft_1Button = new Button(pageLeft_1);
-        pageLeft_1Button.spriteName = "page_left";
-        pageLeft_1Button.callback = () => this.prevPage();
-        pageLeft_1Button.activeFrame = false;
-        pageLeft_1Button.pixelPerfect = true;
+        // pageLeft1 (components)
+        const pageLeft1Button = new Button(pageLeft1);
+        pageLeft1Button.spriteName = "page_left";
+        pageLeft1Button.callback = () => this.prevPage();
+        pageLeft1Button.activeFrame = false;
+        pageLeft1Button.pixelPerfect = true;
 
         // closeLeft (components)
         const closeLeftButton = new Button(closeLeft);
@@ -457,53 +457,53 @@ export default class AdoptCatalog extends BookContainer {
         nameSimpleButton.hoverCallback = () => this.onHintOver(1);
         nameSimpleButton.hoverOutCallback = () => this.onHintOut();
 
-        // adopt_8 (components)
-        const adopt_8Button = new Button(adopt_8);
-        adopt_8Button.spriteName = "adopt";
-        adopt_8Button.callback = () => this.onAdoptClick(8);
-        adopt_8Button.pixelPerfect = true;
+        // adopt8 (components)
+        const adopt8Button = new Button(adopt8);
+        adopt8Button.spriteName = "adopt";
+        adopt8Button.callback = () => this.onAdoptClick(8);
+        adopt8Button.pixelPerfect = true;
 
-        // adopt_7 (components)
-        const adopt_7Button = new Button(adopt_7);
-        adopt_7Button.spriteName = "adopt";
-        adopt_7Button.callback = () => this.onAdoptClick(7);
-        adopt_7Button.pixelPerfect = true;
+        // adopt7 (components)
+        const adopt7Button = new Button(adopt7);
+        adopt7Button.spriteName = "adopt";
+        adopt7Button.callback = () => this.onAdoptClick(7);
+        adopt7Button.pixelPerfect = true;
 
-        // adopt_6 (components)
-        const adopt_6Button = new Button(adopt_6);
-        adopt_6Button.spriteName = "adopt";
-        adopt_6Button.callback = () => this.onAdoptClick(4);
-        adopt_6Button.pixelPerfect = true;
+        // adopt6 (components)
+        const adopt6Button = new Button(adopt6);
+        adopt6Button.spriteName = "adopt";
+        adopt6Button.callback = () => this.onAdoptClick(4);
+        adopt6Button.pixelPerfect = true;
 
-        // adopt_5 (components)
-        const adopt_5Button = new Button(adopt_5);
-        adopt_5Button.spriteName = "adopt";
-        adopt_5Button.callback = () => this.onAdoptClick(6);
-        adopt_5Button.pixelPerfect = true;
+        // adopt5 (components)
+        const adopt5Button = new Button(adopt5);
+        adopt5Button.spriteName = "adopt";
+        adopt5Button.callback = () => this.onAdoptClick(6);
+        adopt5Button.pixelPerfect = true;
 
-        // adopt_4 (components)
-        const adopt_4Button = new Button(adopt_4);
-        adopt_4Button.spriteName = "adopt";
-        adopt_4Button.callback = () => this.onAdoptClick(3);
-        adopt_4Button.pixelPerfect = true;
+        // adopt4 (components)
+        const adopt4Button = new Button(adopt4);
+        adopt4Button.spriteName = "adopt";
+        adopt4Button.callback = () => this.onAdoptClick(3);
+        adopt4Button.pixelPerfect = true;
 
-        // adopt_3 (components)
-        const adopt_3Button = new Button(adopt_3);
-        adopt_3Button.spriteName = "adopt";
-        adopt_3Button.callback = () => this.onAdoptClick(2);
-        adopt_3Button.pixelPerfect = true;
+        // adopt3 (components)
+        const adopt3Button = new Button(adopt3);
+        adopt3Button.spriteName = "adopt";
+        adopt3Button.callback = () => this.onAdoptClick(2);
+        adopt3Button.pixelPerfect = true;
 
-        // adopt_2 (components)
-        const adopt_2Button = new Button(adopt_2);
-        adopt_2Button.spriteName = "adopt";
-        adopt_2Button.callback = () => this.onAdoptClick(1);
-        adopt_2Button.pixelPerfect = true;
+        // adopt2 (components)
+        const adopt2Button = new Button(adopt2);
+        adopt2Button.spriteName = "adopt";
+        adopt2Button.callback = () => this.onAdoptClick(1);
+        adopt2Button.pixelPerfect = true;
 
-        // adopt_1 (components)
-        const adopt_1Button = new Button(adopt_1);
-        adopt_1Button.spriteName = "adopt";
-        adopt_1Button.callback = () => this.onAdoptClick(5);
-        adopt_1Button.pixelPerfect = true;
+        // adopt1 (components)
+        const adopt1Button = new Button(adopt1);
+        adopt1Button.spriteName = "adopt";
+        adopt1Button.callback = () => this.onAdoptClick(5);
+        adopt1Button.pixelPerfect = true;
 
         // adopt (components)
         const adoptButton = new Button(adopt);
@@ -529,11 +529,11 @@ export default class AdoptCatalog extends BookContainer {
         pageFrontButton.callback = () => this.nextPage();
         pageFrontButton.activeFrame = false;
 
-        // closeRight_1 (components)
-        const closeRight_1Button = new Button(closeRight_1);
-        closeRight_1Button.spriteName = "close_right";
-        closeRight_1Button.callback = () => this.close();
-        closeRight_1Button.pixelPerfect = true;
+        // closeRight1 (components)
+        const closeRight1Button = new Button(closeRight1);
+        closeRight1Button.spriteName = "close_right";
+        closeRight1Button.callback = () => this.close();
+        closeRight1Button.pixelPerfect = true;
 
         // closeRight (components)
         const closeRightButton = new Button(closeRight);

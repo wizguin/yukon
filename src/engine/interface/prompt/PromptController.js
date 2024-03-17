@@ -28,8 +28,6 @@ export default class PromptController {
         this.mailSuccess = this.createPrompt(MailSuccessPrompt)
 
         this.loadingPromptFactory = new LoadingPromptFactory(this.interface)
-
-        window.test = () => this.showAdopt(1)
     }
 
     get coins() {

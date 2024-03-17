@@ -73,7 +73,7 @@
                         {
                             "type": "Image",
                             "id": "4ac947c0-9c15-4bdc-a631-4d3f826cc05a",
-                            "label": "pageLeft_1",
+                            "label": "pageLeft1",
                             "components": [
                                 "Button"
                             ],
@@ -112,7 +112,7 @@
                         {
                             "type": "Image",
                             "id": "0fe638b5-3d8b-485f-8747-094933c80d9a",
-                            "label": "buy_22",
+                            "label": "buy22",
                             "components": [
                                 "Button"
                             ],
@@ -130,7 +130,7 @@
                         {
                             "type": "Image",
                             "id": "c9217fc5-7fd6-45d6-8a0e-0781717886c7",
-                            "label": "buy_21",
+                            "label": "buy21",
                             "components": [
                                 "Button"
                             ],
@@ -148,7 +148,7 @@
                         {
                             "type": "Image",
                             "id": "d08212d9-b22c-4140-a72b-3cafb17a7bca",
-                            "label": "buy_20",
+                            "label": "buy20",
                             "components": [
                                 "Button"
                             ],
@@ -166,7 +166,7 @@
                         {
                             "type": "Image",
                             "id": "bf334797-8f5d-43c2-b5c1-b4030859df17",
-                            "label": "buy_19",
+                            "label": "buy19",
                             "components": [
                                 "Button"
                             ],
@@ -184,7 +184,7 @@
                         {
                             "type": "Image",
                             "id": "4c54e8f2-1d2f-4c9b-b662-5664a4c48171",
-                            "label": "buy_18",
+                            "label": "buy18",
                             "components": [
                                 "Button"
                             ],
@@ -202,7 +202,7 @@
                         {
                             "type": "Image",
                             "id": "ab7689a7-7970-48a2-b63b-90aea0084753",
-                            "label": "buy_17",
+                            "label": "buy17",
                             "components": [
                                 "Button"
                             ],
@@ -220,7 +220,7 @@
                         {
                             "type": "Image",
                             "id": "41259662-d436-4843-9e5d-ddde40d5890f",
-                            "label": "buy_16",
+                            "label": "buy16",
                             "components": [
                                 "Button"
                             ],
@@ -238,7 +238,7 @@
                         {
                             "type": "Image",
                             "id": "c17a4296-d16c-432c-a33f-ae647140b6b8",
-                            "label": "buy_15",
+                            "label": "buy15",
                             "components": [
                                 "Button"
                             ],
@@ -256,7 +256,7 @@
                         {
                             "type": "Image",
                             "id": "63b995e1-a2a9-45a0-aac3-1300a2c4bec1",
-                            "label": "buy_14",
+                            "label": "buy14",
                             "components": [
                                 "Button"
                             ],
@@ -274,7 +274,7 @@
                         {
                             "type": "Image",
                             "id": "a88ab00f-2a19-489b-98d4-de78ac0cfc3e",
-                            "label": "buy_13",
+                            "label": "buy13",
                             "components": [
                                 "Button"
                             ],
@@ -292,7 +292,7 @@
                         {
                             "type": "Image",
                             "id": "fbeb637d-091a-48af-b3ce-989d75574591",
-                            "label": "buy_12",
+                            "label": "buy12",
                             "components": [
                                 "Button"
                             ],
@@ -329,7 +329,7 @@
                         {
                             "type": "Image",
                             "id": "60eeb051-6f90-4733-a617-fac1d04c3d46",
-                            "label": "buy_11",
+                            "label": "buy11",
                             "components": [
                                 "Button"
                             ],
@@ -347,7 +347,7 @@
                         {
                             "type": "Image",
                             "id": "319b2999-a2ef-4a88-8e8c-be3d9fe6a7a5",
-                            "label": "buy_10",
+                            "label": "buy10",
                             "components": [
                                 "Button"
                             ],
@@ -365,7 +365,7 @@
                         {
                             "type": "Image",
                             "id": "1d805f7d-ac72-4561-b1a3-229cbb07c9b5",
-                            "label": "buy_9",
+                            "label": "buy9",
                             "components": [
                                 "Button"
                             ],
@@ -383,7 +383,7 @@
                         {
                             "type": "Image",
                             "id": "2a10d04c-461a-4a67-b2c8-e6b9a3e1fa92",
-                            "label": "buy_8",
+                            "label": "buy8",
                             "components": [
                                 "Button"
                             ],
@@ -401,7 +401,7 @@
                         {
                             "type": "Image",
                             "id": "9f5ed0ba-5ef9-45b2-a279-47c006f136e4",
-                            "label": "buy_7",
+                            "label": "buy7",
                             "components": [
                                 "Button"
                             ],
@@ -411,7 +411,7 @@
                                 "key": "petscatalog",
                                 "frame": "buy"
                             },
-                            "x": 563.7,
+                            "x": 564,
                             "y": 752,
                             "originX": 0.5051546391752577,
                             "originY": 0.509090909090909
@@ -419,7 +419,7 @@
                         {
                             "type": "Image",
                             "id": "4c132df2-ea54-44d4-84db-37ea07b17834",
-                            "label": "buy_6",
+                            "label": "buy6",
                             "components": [
                                 "Button"
                             ],
@@ -437,7 +437,7 @@
                         {
                             "type": "Image",
                             "id": "ed314140-5ee2-49e1-8b20-9cea5ea56672",
-                            "label": "buy_5",
+                            "label": "buy5",
                             "components": [
                                 "Button"
                             ],
@@ -474,7 +474,7 @@
                         {
                             "type": "Image",
                             "id": "600fd26f-2003-4554-9c89-77db81bc1c40",
-                            "label": "buy_4",
+                            "label": "buy4",
                             "components": [
                                 "Button"
                             ],
@@ -492,7 +492,7 @@
                         {
                             "type": "Image",
                             "id": "652e6dc2-043c-4a94-b904-89775f6c590e",
-                            "label": "buy_3",
+                            "label": "buy3",
                             "components": [
                                 "Button"
                             ],
@@ -510,7 +510,7 @@
                         {
                             "type": "Image",
                             "id": "ea8e5e10-9af3-4c19-bdd9-46c4702b369b",
-                            "label": "buy_2",
+                            "label": "buy2",
                             "components": [
                                 "Button"
                             ],
@@ -528,7 +528,7 @@
                         {
                             "type": "Image",
                             "id": "b9581063-7f11-4754-9dfa-6de92ec7c1c8",
-                            "label": "buy_1",
+                            "label": "buy1",
                             "components": [
                                 "Button"
                             ],
@@ -601,7 +601,7 @@
                         {
                             "type": "Image",
                             "id": "a460cc47-3b72-45ce-a1fe-8fa107c3abce",
-                            "label": "closeRight_1",
+                            "label": "closeRight1",
                             "components": [
                                 "Button"
                             ],

@@ -54,7 +54,7 @@
                         {
                             "type": "Image",
                             "id": "c67e572c-1186-4ffd-a998-ed3b23a1c58b",
-                            "label": "pageLeft_1",
+                            "label": "pageLeft1",
                             "components": [
                                 "Button"
                             ],
@@ -492,7 +492,7 @@
                         {
                             "type": "Image",
                             "id": "572be12a-3b48-4ee5-bbf6-348cb3f5910f",
-                            "label": "adopt_8",
+                            "label": "adopt8",
                             "components": [
                                 "Button"
                             ],
@@ -530,7 +530,7 @@
                         {
                             "type": "Image",
                             "id": "2603a512-9db2-4d5f-9724-340790af18b7",
-                            "label": "adopt_7",
+                            "label": "adopt7",
                             "components": [
                                 "Button"
                             ],
@@ -549,7 +549,7 @@
                         {
                             "type": "Image",
                             "id": "64ef4fcb-52d7-4ebd-9241-f87baf0ed602",
-                            "label": "adopt_6",
+                            "label": "adopt6",
                             "components": [
                                 "Button"
                             ],
@@ -587,7 +587,7 @@
                         {
                             "type": "Image",
                             "id": "2275d765-a204-40c3-ac38-9246804226f8",
-                            "label": "adopt_5",
+                            "label": "adopt5",
                             "components": [
                                 "Button"
                             ],
@@ -606,7 +606,7 @@
                         {
                             "type": "Image",
                             "id": "344a8805-0bdb-465a-acbc-d9ffc58ef5cf",
-                            "label": "adopt_4",
+                            "label": "adopt4",
                             "components": [
                                 "Button"
                             ],
@@ -644,7 +644,7 @@
                         {
                             "type": "Image",
                             "id": "419ef7d8-0662-4ec8-9443-e9251c5c919a",
-                            "label": "adopt_3",
+                            "label": "adopt3",
                             "components": [
                                 "Button"
                             ],
@@ -663,7 +663,7 @@
                         {
                             "type": "Image",
                             "id": "7cb6a311-7da6-4237-8cf5-67cfa56e1c4e",
-                            "label": "adopt_2",
+                            "label": "adopt2",
                             "components": [
                                 "Button"
                             ],
@@ -701,7 +701,7 @@
                         {
                             "type": "Image",
                             "id": "705e137c-316e-4641-8d53-5b54db292a70",
-                            "label": "adopt_1",
+                            "label": "adopt1",
                             "components": [
                                 "Button"
                             ],
@@ -837,7 +837,7 @@
                         {
                             "type": "Image",
                             "id": "a460cc47-3b72-45ce-a1fe-8fa107c3abce",
-                            "label": "closeRight_1",
+                            "label": "closeRight1",
                             "components": [
                                 "Button"
                             ],

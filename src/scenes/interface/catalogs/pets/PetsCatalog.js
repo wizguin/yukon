@@ -48,10 +48,10 @@ export default class PetsCatalog extends BookContainer {
         closeLeft.setOrigin(0, 0);
         page5.add(closeLeft);
 
-        // pageLeft_1
-        const pageLeft_1 = scene.add.image(492, 590, "petscatalog", "page_left");
-        pageLeft_1.setOrigin(0, 0);
-        page5.add(pageLeft_1);
+        // pageLeft1
+        const pageLeft1 = scene.add.image(492, 590, "petscatalog", "page_left");
+        pageLeft1.setOrigin(0, 0);
+        page5.add(pageLeft1);
 
         // page4
         const page4 = scene.add.container(0, 0);
@@ -63,60 +63,60 @@ export default class PetsCatalog extends BookContainer {
         page0004.setOrigin(0, 0);
         page4.add(page0004);
 
-        // buy_22
-        const buy_22 = scene.add.image(1115, 743, "petscatalog", "buy");
-        buy_22.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_22);
+        // buy22
+        const buy22 = scene.add.image(1115, 743, "petscatalog", "buy");
+        buy22.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy22);
 
-        // buy_21
-        const buy_21 = scene.add.image(924, 551, "petscatalog", "buy");
-        buy_21.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_21);
+        // buy21
+        const buy21 = scene.add.image(924, 551, "petscatalog", "buy");
+        buy21.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy21);
 
-        // buy_20
-        const buy_20 = scene.add.image(1153, 401, "petscatalog", "buy");
-        buy_20.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_20);
+        // buy20
+        const buy20 = scene.add.image(1153, 401, "petscatalog", "buy");
+        buy20.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy20);
 
-        // buy_19
-        const buy_19 = scene.add.image(640, 730, "petscatalog", "buy");
-        buy_19.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_19);
+        // buy19
+        const buy19 = scene.add.image(640, 730, "petscatalog", "buy");
+        buy19.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy19);
 
-        // buy_18
-        const buy_18 = scene.add.image(636, 567, "petscatalog", "buy");
-        buy_18.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_18);
+        // buy18
+        const buy18 = scene.add.image(636, 567, "petscatalog", "buy");
+        buy18.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy18);
 
-        // buy_17
-        const buy_17 = scene.add.image(636, 415, "petscatalog", "buy");
-        buy_17.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_17);
+        // buy17
+        const buy17 = scene.add.image(636, 415, "petscatalog", "buy");
+        buy17.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy17);
 
-        // buy_16
-        const buy_16 = scene.add.image(477, 735, "petscatalog", "buy");
-        buy_16.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_16);
+        // buy16
+        const buy16 = scene.add.image(477, 735, "petscatalog", "buy");
+        buy16.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy16);
 
-        // buy_15
-        const buy_15 = scene.add.image(474, 591, "petscatalog", "buy");
-        buy_15.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_15);
+        // buy15
+        const buy15 = scene.add.image(474, 591, "petscatalog", "buy");
+        buy15.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy15);
 
-        // buy_14
-        const buy_14 = scene.add.image(474, 441, "petscatalog", "buy");
-        buy_14.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_14);
+        // buy14
+        const buy14 = scene.add.image(474, 441, "petscatalog", "buy");
+        buy14.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy14);
 
-        // buy_13
-        const buy_13 = scene.add.image(311, 728, "petscatalog", "buy");
-        buy_13.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_13);
+        // buy13
+        const buy13 = scene.add.image(311, 728, "petscatalog", "buy");
+        buy13.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy13);
 
-        // buy_12
-        const buy_12 = scene.add.image(309, 569, "petscatalog", "buy");
-        buy_12.setOrigin(0.5051546391752577, 0.509090909090909);
-        page4.add(buy_12);
+        // buy12
+        const buy12 = scene.add.image(309, 569, "petscatalog", "buy");
+        buy12.setOrigin(0.5051546391752577, 0.509090909090909);
+        page4.add(buy12);
 
         // page3
         const page3 = scene.add.container(0, 0);
@@ -128,40 +128,40 @@ export default class PetsCatalog extends BookContainer {
         page0003.setOrigin(0, 0);
         page3.add(page0003);
 
-        // buy_11
-        const buy_11 = scene.add.image(933, 750, "petscatalog", "buy");
-        buy_11.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_11);
+        // buy11
+        const buy11 = scene.add.image(933, 750, "petscatalog", "buy");
+        buy11.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy11);
 
-        // buy_10
-        const buy_10 = scene.add.image(1154, 566, "petscatalog", "buy");
-        buy_10.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_10);
+        // buy10
+        const buy10 = scene.add.image(1154, 566, "petscatalog", "buy");
+        buy10.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy10);
 
-        // buy_9
-        const buy_9 = scene.add.image(927, 385, "petscatalog", "buy");
-        buy_9.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_9);
+        // buy9
+        const buy9 = scene.add.image(927, 385, "petscatalog", "buy");
+        buy9.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy9);
 
-        // buy_8
-        const buy_8 = scene.add.image(1154, 202, "petscatalog", "buy");
-        buy_8.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_8);
+        // buy8
+        const buy8 = scene.add.image(1154, 202, "petscatalog", "buy");
+        buy8.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy8);
 
-        // buy_7
-        const buy_7 = scene.add.image(563.7, 752, "petscatalog", "buy");
-        buy_7.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_7);
+        // buy7
+        const buy7 = scene.add.image(564, 752, "petscatalog", "buy");
+        buy7.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy7);
 
-        // buy_6
-        const buy_6 = scene.add.image(395, 574, "petscatalog", "buy");
-        buy_6.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_6);
+        // buy6
+        const buy6 = scene.add.image(395, 574, "petscatalog", "buy");
+        buy6.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy6);
 
-        // buy_5
-        const buy_5 = scene.add.image(567, 388, "petscatalog", "buy");
-        buy_5.setOrigin(0.5051546391752577, 0.509090909090909);
-        page3.add(buy_5);
+        // buy5
+        const buy5 = scene.add.image(567, 388, "petscatalog", "buy");
+        buy5.setOrigin(0.5051546391752577, 0.509090909090909);
+        page3.add(buy5);
 
         // page2
         const page2 = scene.add.container(0, 0);
@@ -173,25 +173,25 @@ export default class PetsCatalog extends BookContainer {
         page0002.setOrigin(0, 0);
         page2.add(page0002);
 
-        // buy_4
-        const buy_4 = scene.add.image(1125, 714, "petscatalog", "buy");
-        buy_4.setOrigin(0.5051546391752577, 0.509090909090909);
-        page2.add(buy_4);
+        // buy4
+        const buy4 = scene.add.image(1125, 714, "petscatalog", "buy");
+        buy4.setOrigin(0.5051546391752577, 0.509090909090909);
+        page2.add(buy4);
 
-        // buy_3
-        const buy_3 = scene.add.image(943, 477, "petscatalog", "buy");
-        buy_3.setOrigin(0.5051546391752577, 0.509090909090909);
-        page2.add(buy_3);
+        // buy3
+        const buy3 = scene.add.image(943, 477, "petscatalog", "buy");
+        buy3.setOrigin(0.5051546391752577, 0.509090909090909);
+        page2.add(buy3);
 
-        // buy_2
-        const buy_2 = scene.add.image(1117, 247, "petscatalog", "buy");
-        buy_2.setOrigin(0.5051546391752577, 0.509090909090909);
-        page2.add(buy_2);
+        // buy2
+        const buy2 = scene.add.image(1117, 247, "petscatalog", "buy");
+        buy2.setOrigin(0.5051546391752577, 0.509090909090909);
+        page2.add(buy2);
 
-        // buy_1
-        const buy_1 = scene.add.image(621, 525, "petscatalog", "buy");
-        buy_1.setOrigin(0.5051546391752577, 0.509090909090909);
-        page2.add(buy_1);
+        // buy1
+        const buy1 = scene.add.image(621, 525, "petscatalog", "buy");
+        buy1.setOrigin(0.5051546391752577, 0.509090909090909);
+        page2.add(buy1);
 
         // buy
         const buy = scene.add.image(342, 729, "petscatalog", "buy");
@@ -212,10 +212,10 @@ export default class PetsCatalog extends BookContainer {
         pageFront.setOrigin(0, 0);
         page1.add(pageFront);
 
-        // closeRight_1
-        const closeRight_1 = scene.add.image(925, 39, "petscatalog", "close_right");
-        closeRight_1.setOrigin(0, 0);
-        page1.add(closeRight_1);
+        // closeRight1
+        const closeRight1 = scene.add.image(925, 39, "petscatalog", "close_right");
+        closeRight1.setOrigin(0, 0);
+        page1.add(closeRight1);
 
         // buttons
         const buttons = scene.add.container(190, 41);
@@ -256,122 +256,122 @@ export default class PetsCatalog extends BookContainer {
         closeLeftButton.callback = () => this.close();
         closeLeftButton.pixelPerfect = true;
 
-        // pageLeft_1 (components)
-        const pageLeft_1Button = new Button(pageLeft_1);
-        pageLeft_1Button.spriteName = "page_left";
-        pageLeft_1Button.callback = () => this.prevPage();
-        pageLeft_1Button.activeFrame = false;
-        pageLeft_1Button.pixelPerfect = true;
+        // pageLeft1 (components)
+        const pageLeft1Button = new Button(pageLeft1);
+        pageLeft1Button.spriteName = "page_left";
+        pageLeft1Button.callback = () => this.prevPage();
+        pageLeft1Button.activeFrame = false;
+        pageLeft1Button.pixelPerfect = true;
 
-        // buy_22 (components)
-        const buy_22Button = new Button(buy_22);
-        buy_22Button.spriteName = "buy";
-        buy_22Button.callback = () => this.onBuyClick(214);
+        // buy22 (components)
+        const buy22Button = new Button(buy22);
+        buy22Button.spriteName = "buy";
+        buy22Button.callback = () => this.onBuyClick(214);
 
-        // buy_21 (components)
-        const buy_21Button = new Button(buy_21);
-        buy_21Button.spriteName = "buy";
-        buy_21Button.callback = () => this.onBuyClick(225);
+        // buy21 (components)
+        const buy21Button = new Button(buy21);
+        buy21Button.spriteName = "buy";
+        buy21Button.callback = () => this.onBuyClick(225);
 
-        // buy_20 (components)
-        const buy_20Button = new Button(buy_20);
-        buy_20Button.spriteName = "buy";
-        buy_20Button.callback = () => this.onBuyClick(212);
+        // buy20 (components)
+        const buy20Button = new Button(buy20);
+        buy20Button.spriteName = "buy";
+        buy20Button.callback = () => this.onBuyClick(212);
 
-        // buy_19 (components)
-        const buy_19Button = new Button(buy_19);
-        buy_19Button.spriteName = "buy";
-        buy_19Button.callback = () => this.onBuyClick(203);
+        // buy19 (components)
+        const buy19Button = new Button(buy19);
+        buy19Button.spriteName = "buy";
+        buy19Button.callback = () => this.onBuyClick(203);
 
-        // buy_18 (components)
-        const buy_18Button = new Button(buy_18);
-        buy_18Button.spriteName = "buy";
-        buy_18Button.callback = () => this.onBuyClick(221);
+        // buy18 (components)
+        const buy18Button = new Button(buy18);
+        buy18Button.spriteName = "buy";
+        buy18Button.callback = () => this.onBuyClick(221);
 
-        // buy_17 (components)
-        const buy_17Button = new Button(buy_17);
-        buy_17Button.spriteName = "buy";
-        buy_17Button.callback = () => this.onBuyClick(227);
+        // buy17 (components)
+        const buy17Button = new Button(buy17);
+        buy17Button.spriteName = "buy";
+        buy17Button.callback = () => this.onBuyClick(227);
 
-        // buy_16 (components)
-        const buy_16Button = new Button(buy_16);
-        buy_16Button.spriteName = "buy";
-        buy_16Button.callback = () => this.onBuyClick(202);
+        // buy16 (components)
+        const buy16Button = new Button(buy16);
+        buy16Button.spriteName = "buy";
+        buy16Button.callback = () => this.onBuyClick(202);
 
-        // buy_15 (components)
-        const buy_15Button = new Button(buy_15);
-        buy_15Button.spriteName = "buy";
-        buy_15Button.callback = () => this.onBuyClick(200);
+        // buy15 (components)
+        const buy15Button = new Button(buy15);
+        buy15Button.spriteName = "buy";
+        buy15Button.callback = () => this.onBuyClick(200);
 
-        // buy_14 (components)
-        const buy_14Button = new Button(buy_14);
-        buy_14Button.spriteName = "buy";
-        buy_14Button.callback = () => this.onBuyClick(232);
+        // buy14 (components)
+        const buy14Button = new Button(buy14);
+        buy14Button.spriteName = "buy";
+        buy14Button.callback = () => this.onBuyClick(232);
 
-        // buy_13 (components)
-        const buy_13Button = new Button(buy_13);
-        buy_13Button.spriteName = "buy";
-        buy_13Button.callback = () => this.onBuyClick(201);
+        // buy13 (components)
+        const buy13Button = new Button(buy13);
+        buy13Button.spriteName = "buy";
+        buy13Button.callback = () => this.onBuyClick(201);
 
-        // buy_12 (components)
-        const buy_12Button = new Button(buy_12);
-        buy_12Button.spriteName = "buy";
-        buy_12Button.callback = () => this.onBuyClick(222);
+        // buy12 (components)
+        const buy12Button = new Button(buy12);
+        buy12Button.spriteName = "buy";
+        buy12Button.callback = () => this.onBuyClick(222);
 
-        // buy_11 (components)
-        const buy_11Button = new Button(buy_11);
-        buy_11Button.spriteName = "buy";
-        buy_11Button.callback = () => this.onBuyClick(206);
+        // buy11 (components)
+        const buy11Button = new Button(buy11);
+        buy11Button.spriteName = "buy";
+        buy11Button.callback = () => this.onBuyClick(206);
 
-        // buy_10 (components)
-        const buy_10Button = new Button(buy_10);
-        buy_10Button.spriteName = "buy";
-        buy_10Button.callback = () => this.onBuyClick(207);
+        // buy10 (components)
+        const buy10Button = new Button(buy10);
+        buy10Button.spriteName = "buy";
+        buy10Button.callback = () => this.onBuyClick(207);
 
-        // buy_9 (components)
-        const buy_9Button = new Button(buy_9);
-        buy_9Button.spriteName = "buy";
-        buy_9Button.callback = () => this.onBuyClick(233);
+        // buy9 (components)
+        const buy9Button = new Button(buy9);
+        buy9Button.spriteName = "buy";
+        buy9Button.callback = () => this.onBuyClick(233);
 
-        // buy_8 (components)
-        const buy_8Button = new Button(buy_8);
-        buy_8Button.spriteName = "buy";
-        buy_8Button.callback = () => this.onBuyClick(228);
+        // buy8 (components)
+        const buy8Button = new Button(buy8);
+        buy8Button.spriteName = "buy";
+        buy8Button.callback = () => this.onBuyClick(228);
 
-        // buy_7 (components)
-        const buy_7Button = new Button(buy_7);
-        buy_7Button.spriteName = "buy";
-        buy_7Button.callback = () => this.onBuyClick(209);
+        // buy7 (components)
+        const buy7Button = new Button(buy7);
+        buy7Button.spriteName = "buy";
+        buy7Button.callback = () => this.onBuyClick(209);
 
-        // buy_6 (components)
-        const buy_6Button = new Button(buy_6);
-        buy_6Button.spriteName = "buy";
-        buy_6Button.callback = () => this.onBuyClick(208);
+        // buy6 (components)
+        const buy6Button = new Button(buy6);
+        buy6Button.spriteName = "buy";
+        buy6Button.callback = () => this.onBuyClick(208);
 
-        // buy_5 (components)
-        const buy_5Button = new Button(buy_5);
-        buy_5Button.spriteName = "buy";
-        buy_5Button.callback = () => this.onBuyClick(223);
+        // buy5 (components)
+        const buy5Button = new Button(buy5);
+        buy5Button.spriteName = "buy";
+        buy5Button.callback = () => this.onBuyClick(223);
 
-        // buy_4 (components)
-        const buy_4Button = new Button(buy_4);
-        buy_4Button.spriteName = "buy";
-        buy_4Button.callback = () => this.onBuyClick(220);
+        // buy4 (components)
+        const buy4Button = new Button(buy4);
+        buy4Button.spriteName = "buy";
+        buy4Button.callback = () => this.onBuyClick(220);
 
-        // buy_3 (components)
-        const buy_3Button = new Button(buy_3);
-        buy_3Button.spriteName = "buy";
-        buy_3Button.callback = () => this.onBuyClick(218);
+        // buy3 (components)
+        const buy3Button = new Button(buy3);
+        buy3Button.spriteName = "buy";
+        buy3Button.callback = () => this.onBuyClick(218);
 
-        // buy_2 (components)
-        const buy_2Button = new Button(buy_2);
-        buy_2Button.spriteName = "buy";
-        buy_2Button.callback = () => this.onBuyClick(224);
+        // buy2 (components)
+        const buy2Button = new Button(buy2);
+        buy2Button.spriteName = "buy";
+        buy2Button.callback = () => this.onBuyClick(224);
 
-        // buy_1 (components)
-        const buy_1Button = new Button(buy_1);
-        buy_1Button.spriteName = "buy";
-        buy_1Button.callback = () => this.onBuyClick(210);
+        // buy1 (components)
+        const buy1Button = new Button(buy1);
+        buy1Button.spriteName = "buy";
+        buy1Button.callback = () => this.onBuyClick(210);
 
         // buy (components)
         const buyButton = new Button(buy);
@@ -384,11 +384,11 @@ export default class PetsCatalog extends BookContainer {
         pageFrontButton.callback = () => this.nextPage();
         pageFrontButton.activeFrame = false;
 
-        // closeRight_1 (components)
-        const closeRight_1Button = new Button(closeRight_1);
-        closeRight_1Button.spriteName = "close_right";
-        closeRight_1Button.callback = () => this.close();
-        closeRight_1Button.pixelPerfect = true;
+        // closeRight1 (components)
+        const closeRight1Button = new Button(closeRight1);
+        closeRight1Button.spriteName = "close_right";
+        closeRight1Button.callback = () => this.close();
+        closeRight1Button.pixelPerfect = true;
 
         // closeRight (components)
         const closeRightButton = new Button(closeRight);
