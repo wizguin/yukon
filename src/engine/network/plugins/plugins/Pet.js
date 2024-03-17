@@ -32,7 +32,7 @@ export default class Pet extends Plugin {
     }
 
     petAvailable(id) {
-        return this.isIglooReady && id in this.pets
+        return id in this.pets
     }
 
     adoptPet(args) {
