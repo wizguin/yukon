@@ -17,7 +17,7 @@ export default class Pet extends Plugin {
             'pet_gum': this.petGum,
             'pet_cookie': this.petCookie,
             'pet_frame': this.petFrame,
-            'update_pet': this.updatePet,
+            'update_pets': this.updatePets,
             'pet_start_walk': this.petStartWalk,
             'pet_stop_walk': this.petStopWalk
         }
@@ -109,10 +109,12 @@ export default class Pet extends Plugin {
         }
     }
 
-    updatePet(args) {
-        if (this.petAvailable(args.id)) {
-            this.pets[args.id].updateStats(args.energy, args.health, args.rest)
-        }
+    updatePets(args) {
+        args.updates.forEach(update => {
+            if (this.petAvailable(update.id)) {
+                this.pets[update.id].updateStats(update.energy, update.health, update.rest)
+            }
+        })
     }
 
     petStartWalk(args) {
