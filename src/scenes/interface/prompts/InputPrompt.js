@@ -140,7 +140,7 @@ export default class InputPrompt extends BaseContainer {
             url: `/assets/media/pet/icons/${name}.png`
         }
 
-        const callback = (text) => this.send('adopt_pet', { petId: id, name: text })
+        const callback = (text) => this.send('adopt_pet', { typeId: id, name: text })
 
         this.show(this.getFormatString('name_pet'), 'Continue', loadConfig, callback)
     }

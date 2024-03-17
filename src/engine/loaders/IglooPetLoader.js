@@ -10,10 +10,10 @@ export default class IglooPetLoader extends BaseLoader {
         this.keyPrefix = 'pet/sprites/'
     }
 
-    loadPet(petId, callback) {
-        if (!(petId in this.crumbs.pets)) return
+    loadPet(typeId, callback) {
+        if (!(typeId in this.crumbs.pets)) return
 
-        const name = this.crumbs.pets[petId].name.toLowerCase()
+        const name = this.crumbs.pets[typeId].name.toLowerCase()
         const key = this.getKey(name)
 
         if (this.checkComplete('json', key, () => {

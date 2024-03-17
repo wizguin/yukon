@@ -263,7 +263,7 @@ export default class IglooScene extends RoomScene {
 
     loadPets(pets) {
         for (const pet of pets) {
-            this.petLoader.loadPet(pet.petId, (key) => this.addPet(key, pet))
+            this.petLoader.loadPet(pet.typeId, (key) => this.addPet(key, pet))
         }
     }
 

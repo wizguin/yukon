@@ -240,7 +240,7 @@ export default class PetCard extends BaseContainer {
     }
 
     updatePaper() {
-        const name = this.crumbs.pets[this.pet.petId].name.toLowerCase()
+        const name = this.crumbs.pets[this.pet.typeId].name.toLowerCase()
 
         const happiness = this.pet.happiness
         const frame = happiness > 75 ? 1 : happiness > 50 ? 2 : happiness > 25 ? 3 : 4

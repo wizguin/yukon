@@ -100,18 +100,18 @@ export default class PromptController {
         this.mailSuccess.show(text)
     }
 
-    showAdopt(petId) {
+    showAdopt(typeId) {
         const maxPets = 18
 
         if (this.world.client.pets.length >= maxPets) {
             return this.showError(this.getFormatString('max_pets', maxPets))
         }
 
-        this.item.showAdopt(petId)
+        this.item.showAdopt(typeId)
     }
 
-    showAdoptName(petId) {
-        this.input.showAdoptName(petId)
+    showAdoptName(typeId) {
+        this.input.showAdoptName(typeId)
     }
 
     showPetFood(pet) {

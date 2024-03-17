@@ -578,8 +578,8 @@ export default class AdoptCatalog extends BookContainer {
         this.hint.visible = false
     }
 
-    onAdoptClick(petId) {
-        this.interface.prompt.showAdopt(petId)
+    onAdoptClick(typeId) {
+        this.interface.prompt.showAdopt(typeId)
     }
 
     /* END-USER-CODE */
