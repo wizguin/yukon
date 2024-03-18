@@ -182,7 +182,10 @@ export default class MailbookPreview extends BaseContainer {
 
         try {
             this.currentPrefab = new postcardClass(this.scene, this.postcardX, this.postcardY)
-            this.currentPrefab.setName(this.world.client.penguin.username)
+
+            this.currentPrefab.setText({
+                senderName: this.world.client.penguin.username
+            })
 
             this.addAt(this.currentPrefab, 2)
 
