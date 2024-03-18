@@ -337,6 +337,12 @@ export default class ClientController {
         }
     }
 
+    addPostcard(postcard) {
+        this.postcards.push(postcard)
+
+        this.refreshPostcards()
+    }
+
     /**
      * Sort by newest first.
      */
