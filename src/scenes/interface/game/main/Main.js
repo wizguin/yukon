@@ -463,7 +463,7 @@ export default class Main extends BaseScene {
     }
 
     updateMailCount() {
-        this.mailButton.updateMailCount()
+        this.mailButton?.updateMailCount()
     }
 
     onSnowballClick() {

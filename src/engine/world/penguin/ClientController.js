@@ -359,7 +359,7 @@ export default class ClientController {
     refreshPostcards() {
         this.sortPostcards()
 
-        if (this.interface.main.mail.visible) {
+        if (this.interface.main.mail?.visible) {
             // Read mail before updating count
             this.interface.main.mail.goToFirstPage()
         }
