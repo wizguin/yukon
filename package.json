@@ -1,6 +1,6 @@
 {
   "name": "yukon",
-  "version": "1.8.0-beta",
+  "version": "1.9.0-beta",
   "scripts": {
     "dev": "webpack serve",
     "editor": "phasereditor2d-launcher -project .",
