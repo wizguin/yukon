@@ -37,9 +37,7 @@ export default class Mail extends Plugin {
     }
 
     receiveMail(args) {
-        this.world.client.postcards.push(args)
-
-        this.world.client.refreshPostcards()
+        this.world.client?.addPostcard(args)
     }
 
     showInsufficientCoins() {

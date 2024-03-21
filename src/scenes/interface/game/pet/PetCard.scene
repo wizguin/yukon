@@ -1,0 +1,388 @@
+{
+    "id": "dbce115c-74cb-4656-88db-4fe91e6dd262",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "snapWidth": 60,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "5e6c870e-990f-49db-9990-be1242daf579",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "cardBg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "prefabId": "49fbcc80-c325-441c-828a-68975855d1ef",
+                    "id": "a54dfab4-57e1-4635-9a1b-5ce4b0ef12eb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "inventory",
+                    "scope": "CLASS",
+                    "x": 187,
+                    "y": 16,
+                    "visible": true
+                },
+                {
+                    "type": "Image",
+                    "id": "84eedd47-1d1c-49bc-b020-6c10cfdd6f56",
+                    "label": "cardBg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "card-bg"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "03530f92-d9ea-4c8a-895a-26c247375568",
+                    "label": "petBg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/card_bg"
+                    },
+                    "originY": 0.5012285012285013
+                },
+                {
+                    "type": "Image",
+                    "id": "d277bc54-e051-4655-81c6-ddc4054a49e6",
+                    "label": "restBar",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar/1"
+                    },
+                    "x": 73,
+                    "y": 166
+                },
+                {
+                    "type": "Image",
+                    "id": "45d814c4-27ae-4225-9ec4-c32ab381ecee",
+                    "label": "healthBar",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar/1"
+                    },
+                    "x": 73,
+                    "y": 122
+                },
+                {
+                    "type": "Image",
+                    "id": "d49d584c-5408-49e2-a990-95c1c9d306b9",
+                    "label": "energyBar",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bar/1"
+                    },
+                    "x": 73,
+                    "y": 78
+                },
+                {
+                    "type": "Image",
+                    "id": "7bf88fd5-ad79-44c1-9a62-bc7464128379",
+                    "label": "walkButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onWalkClick()",
+                    "ShowHint.text": "walk_pet_hint",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 99,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "349a71fd-e4a8-4b6a-ab93-6035387b18c5",
+                    "label": "feedButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onFeedClick()",
+                    "ShowHint.text": "feed_pet_hint",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 37,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "1e881a54-634d-4c39-9551-3c453ac3d685",
+                    "label": "restButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onRestClick()",
+                    "ShowHint.text": "rest_pet_hint",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": -23,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "51bbde59-fe69-4933-9f76-4d7c4156104d",
+                    "label": "playButton",
+                    "components": [
+                        "Button",
+                        "ShowHint"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.onPlayClick()",
+                    "ShowHint.text": "play_pet_hint",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": -83,
+                    "y": 258
+                },
+                {
+                    "type": "Image",
+                    "id": "973ef7cc-17bf-4bf9-8211-76e6d669a01a",
+                    "label": "walk",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/walk"
+                    },
+                    "x": 100,
+                    "y": 257
+                },
+                {
+                    "type": "Image",
+                    "id": "1b4ab14b-656b-477d-9ff9-26625c73203c",
+                    "label": "feed",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/feed"
+                    },
+                    "x": 38,
+                    "y": 256,
+                    "originX": 0.5185185185185185
+                },
+                {
+                    "type": "Image",
+                    "id": "b2eb403d-273c-41c9-9fe5-4d33f17389e3",
+                    "label": "rest",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/rest"
+                    },
+                    "x": -24,
+                    "y": 257,
+                    "originY": 0.52
+                },
+                {
+                    "type": "Image",
+                    "id": "b45f13bd-e610-4e52-85ff-1224bc31e58b",
+                    "label": "play",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/play"
+                    },
+                    "x": -84,
+                    "y": 255
+                },
+                {
+                    "type": "Text",
+                    "id": "19162c3d-f8c9-417c-ae22-0977a271b63d",
+                    "label": "name",
+                    "scope": "CLASS",
+                    "y": -237,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "fixedWidth": 360,
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "32px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Image",
+                    "id": "29115cbe-e9ff-4ca7-8c64-c96f194e7233",
+                    "label": "xButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 176,
+                    "y": -236
+                },
+                {
+                    "type": "Image",
+                    "id": "97eaab55-15c6-417c-ba23-d74ff6459732",
+                    "label": "xIcon",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 176,
+                    "y": -238
+                },
+                {
+                    "type": "Text",
+                    "id": "cd7cc1b4-0429-429b-a86f-b136abe8c56f",
+                    "label": "restText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 168,
+                    "originY": 0.5,
+                    "text": "REST",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "63283323-17d2-4fd0-bffb-d06de47eb7cb",
+                    "label": "healthText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 120,
+                    "originY": 0.5,
+                    "text": "HEALTH",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "d355303f-e579-4439-801c-a8b5008435d5",
+                    "label": "energyText",
+                    "scope": "CLASS",
+                    "x": -210,
+                    "y": 77,
+                    "originY": 0.5,
+                    "text": "ENERGY",
+                    "fixedWidth": 160,
+                    "align": "right",
+                    "fontFamily": "CCFaceFront",
+                    "fontSize": "28px",
+                    "stroke": "#003366",
+                    "strokeThickness": 8,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "b8a07549-b3c9-41e6-b2f4-f53b1b060ede",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/paper/shadow"
+                    },
+                    "x": 10,
+                    "y": 22,
+                    "originX": 0.5026737967914439,
+                    "originY": 0.5116279069767442
+                },
+                {
+                    "type": "Image",
+                    "id": "5c0151c5-ceb4-4d4d-8e39-9b5b0ee2b419",
+                    "label": "paper",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/paper/blue/1"
+                    },
+                    "x": 10,
+                    "y": -65
+                },
+                {
+                    "type": "Container",
+                    "id": "474a6b4d-79aa-4770-8806-fdf6bd713c65",
+                    "label": "tab",
+                    "scope": "CLASS",
+                    "x": 234,
+                    "y": -126,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "03881c7f-8931-4102-8e5b-67222ed47631",
+                            "label": "tabHandle",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.onTabClick()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab"
+                            },
+                            "x": 8,
+                            "y": 2,
+                            "angle": -90
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7fe2523d-6083-4c8b-901f-2748e7a6096c",
+                            "label": "arrow",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab-arrow"
+                            },
+                            "angle": -90
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

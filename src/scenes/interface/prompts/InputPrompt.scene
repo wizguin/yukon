@@ -1,0 +1,140 @@
+{
+    "id": "de9400c1-d847-4336-b338-284779ca153b",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "5d4d6c7c-b458-4473-8e48-8c6bf6188135",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "ce6924c6-8244-4dd6-91d2-67128be58aa3",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "b4e1b321-feb3-4b4e-bc4a-0f827dd138db",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "components": [
+                        "NineSlice"
+                    ],
+                    "NineSlice.corner": 50,
+                    "y": -40,
+                    "isFilled": true,
+                    "fillColor": "#0280CD",
+                    "width": 708,
+                    "height": 584
+                },
+                {
+                    "type": "Text",
+                    "id": "9ae81c43-7893-4aeb-ad49-637dedc295f8",
+                    "label": "text",
+                    "scope": "CLASS",
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Message goes here",
+                    "fixedWidth": 628,
+                    "fixedHeight": 136,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000000"
+                },
+                {
+                    "prefabId": "48dfbf63-271b-4c3d-9fcc-6406eb7a0754",
+                    "id": "6fcb196e-1a89-44f3-960f-4823a12700ab",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "button",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 130
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9c136df6-6bde-4bde-9776-c286c7bc24e1",
+                    "label": "input",
+                    "y": 19,
+                    "isFilled": true,
+                    "strokeColor": "#000",
+                    "isStroked": true,
+                    "width": 446,
+                    "height": 54
+                },
+                {
+                    "type": "Image",
+                    "id": "ccb102df-ba56-46fa-9e5d-4710a4a9790e",
+                    "label": "xButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 296,
+                    "y": -274
+                },
+                {
+                    "type": "Image",
+                    "id": "8c47a724-fa2e-446f-b532-159e3d1478ba",
+                    "label": "xIcon",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 296,
+                    "y": -276
+                },
+                {
+                    "prefabId": "557284f7-26e4-49fe-9001-a645696c675f",
+                    "id": "e6099246-952a-46e2-9a9a-da4b6be75b95",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "promptIcon",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": -182
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

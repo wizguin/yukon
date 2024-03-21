@@ -21,17 +21,14 @@ export default class Balloon extends BaseContainer {
         if (width < this.minWidth) width = this.minWidth
         if (height < this.minHeight) height = this.minHeight
 
-        this.balloon = this.scene.add.nineslice(
-            0, 0,
-            width, height,
-            {
-                key: 'main',
-                frame: 'balloon'
-            },
-            15 // Corner slice
-        )
+        this.balloon = this.scene.add.ninePatchContainer(0, 0, width, height, 'main', 'balloon')
 
-        this.balloon.setOrigin(0.5, 1)
+        this.balloon.marginTop = 15
+        this.balloon.marginRight = 15
+        this.balloon.marginBottom = 15
+        this.balloon.marginLeft = 15
+
+        this.balloon.setNinePatchContainerOrigin(0.5, 1)
 
         this.add(this.balloon)
     }
@@ -39,17 +36,14 @@ export default class Balloon extends BaseContainer {
     addPointer(width, frame) {
         if (width < this.minWidth) width = this.minWidth
 
-        let pointer = this.scene.add.nineslice(
-            0, 0,
-            width, 40,
-            {
-                key: 'main',
-                frame: frame
-            },
-            [0, 110, 0, 15] // Non-uniform corner slice
-        )
+        const pointer = this.scene.add.ninePatchContainer(0, 0, width, 40, 'main', frame)
 
-        pointer.setOrigin(0.5, 0)
+        pointer.marginTop = 0
+        pointer.marginRight = 110
+        pointer.marginBottom = 0
+        pointer.marginLeft = 15
+
+        pointer.setNinePatchContainerOrigin(0.5, 0)
 
         this.add(pointer)
     }

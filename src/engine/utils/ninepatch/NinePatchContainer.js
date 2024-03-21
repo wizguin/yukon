@@ -35,6 +35,10 @@ export default class NinePatchContainer extends Phaser.GameObjects.Container {
     }
 
     redraw() {
+        if (!this.scene) {
+            return
+        }
+
         this._originTexture = this.scene.textures.get(this.textureKey)
         this._originFrame = this._originTexture.frames[this.textureFrame ?? NinePatchContainer.__BASE]
         this._textureXs = [0, this.marginLeft, this._originFrame.width - this.marginRight, this._originFrame.width]

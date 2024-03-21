@@ -1,0 +1,262 @@
+{
+    "id": "49fbcc80-c325-441c-828a-68975855d1ef",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "174d32f8-be50-4a3a-97fc-94a3912c7dcf",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c8be8b70-f6bc-4452-88dc-29128f2a9ec0",
+                    "label": "bg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/inventory"
+                    },
+                    "originX": 0.5006802721088436,
+                    "originY": 0.5008130081300813
+                },
+                {
+                    "type": "Container",
+                    "id": "2e1db83e-a07b-4569-beee-8a703495c309",
+                    "label": "tab",
+                    "x": 369,
+                    "y": -142,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "dc34a641-9bf2-4a9a-98b3-a4280ea413a1",
+                            "label": "tabHandle",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.onTabClick()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab"
+                            },
+                            "x": 8,
+                            "y": 2,
+                            "angle": -90
+                        },
+                        {
+                            "type": "Image",
+                            "id": "aed7d888-40e3-4e38-9781-9fbd79b38b88",
+                            "label": "arrow",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "main",
+                                "frame": "tab-arrow"
+                            },
+                            "angle": -90,
+                            "flipY": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "42d21e59-89c7-4c91-acac-f53c5534cb8e",
+                    "label": "slot8",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 257,
+                    "y": 195
+                },
+                {
+                    "type": "Image",
+                    "id": "8262517c-9a9c-4369-9b24-e143e0226bf9",
+                    "label": "slot7",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 125,
+                    "y": 195
+                },
+                {
+                    "type": "Image",
+                    "id": "4cfbd817-f53e-43b0-9763-f4596d9dff03",
+                    "label": "slot6",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 257,
+                    "y": 63
+                },
+                {
+                    "type": "Image",
+                    "id": "01e0adcf-d0ed-4d0b-af49-e0194b4e19ba",
+                    "label": "slot5",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 125,
+                    "y": 63
+                },
+                {
+                    "type": "Image",
+                    "id": "e485b9dd-6475-4e73-b025-98b217851499",
+                    "label": "bathButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onBathClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 257,
+                    "y": -69
+                },
+                {
+                    "type": "Image",
+                    "id": "0550a0d7-aab2-4c9e-94ba-9689a75beaf7",
+                    "label": "foodButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onFoodClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 125,
+                    "y": -69
+                },
+                {
+                    "type": "Image",
+                    "id": "dbf3610e-93a3-461c-b682-068d6cd3dd30",
+                    "label": "cookieButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onCookieClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 257,
+                    "y": -201
+                },
+                {
+                    "type": "Image",
+                    "id": "06e7244e-c0ca-4ab3-ba90-acfd5767323c",
+                    "label": "gumButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "large-box",
+                    "Button.callback": "() => this.onGumClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "main",
+                        "frame": "large-box"
+                    },
+                    "x": 125,
+                    "y": -201
+                },
+                {
+                    "type": "Image",
+                    "id": "571bba7d-0710-47fd-af8e-9c4fe77abe3f",
+                    "label": "bath",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/bath"
+                    },
+                    "x": 253,
+                    "y": -69,
+                    "originY": 0.5051546391752577
+                },
+                {
+                    "type": "Image",
+                    "id": "ec6a0748-e305-4226-a71d-325d5848a4c2",
+                    "label": "food",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/food"
+                    },
+                    "x": 125,
+                    "y": -70
+                },
+                {
+                    "type": "Image",
+                    "id": "99b26421-48ed-4bfd-8ef2-0482fee492e9",
+                    "label": "cookie",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/cookie"
+                    },
+                    "x": 259,
+                    "y": -199,
+                    "originX": 0.5052631578947369
+                },
+                {
+                    "type": "Image",
+                    "id": "fe911057-c61f-4293-ada6-de01c8bdfee9",
+                    "label": "gum",
+                    "texture": {
+                        "key": "main",
+                        "frame": "pet/gum"
+                    },
+                    "x": 128,
+                    "y": -200,
+                    "originX": 0.5051546391752577,
+                    "originY": 0.5054945054945055
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

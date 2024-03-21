@@ -7,63 +7,33 @@ export default class ItemPromptLoader extends BaseLoader {
         super(scene)
 
         this.prompt = prompt
-
-        this.config = {
-            clothing: {
-                baseURL: '/assets/media/clothing/icon/240/',
-                keyPrefix: 'clothing/icon/240/'
-            },
-            furniture: {
-                baseURL: '/assets/media/furniture/icon/@5x/',
-                keyPrefix: 'furniture/icon/@5x/',
-                scale: 0.65
-            }
-        }
     }
 
-    get baseURL() {
-        return this.config[this.prompt.type].baseURL
-    }
-
-    get keyPrefix() {
-        return this.config[this.prompt.type].keyPrefix
-    }
-
-    get scale() {
-        return this.config[this.prompt.type].scale || 1
-    }
-
-    loadIcon(item) {
+    loadIcon(config) {
         if (this.prompt.icon) {
             this.prompt.icon.destroy()
         }
 
-        let key = this.getKey(item)
+        if (!config.key || !config.url) {
+            return
+        }
 
-        if (this.checkComplete('image', key, () => {
-            this.onFileComplete(key, item)
+        const scale = config.scale || 1
+
+        if (this.checkComplete('image', config.key, () => {
+            this.onFileComplete(config.key, scale)
         })) {
             return
         }
 
-        this.image(key, `${item}.png`)
+        this.image(config.key, config.url)
         this.start()
     }
 
-    onFileComplete(key, item) {
-        if (!this.prompt.visible || !this.textureExists(key) || item != this.prompt.item) {
-            return
+    onFileComplete(key, scale) {
+        if (this.textureExists(key)) {
+            this.prompt.addIcon(key, scale)
         }
-
-        if (this.prompt.icon) {
-            this.prompt.icon.destroy()
-        }
-
-        let icon = this.scene.add.image(0, -182, key)
-        icon.scale = this.scale
-
-        this.prompt.add(icon)
-        this.prompt.icon = icon
     }
 
 }

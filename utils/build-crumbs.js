@@ -13,6 +13,7 @@ const crumbs = {
     igloos: require(`${assets}/igloos.json`),
     items: require(`${assets}/items.json`),
     penguin: require(`${assets}/penguin.json`),
+    pets: require(`${assets}/pets.json`),
     postcards: require(`${assets}/postcards.json`),
     quick_keys: require(`${assets}/quick_keys.json`),
     safe_messages: require(`${assets}/safe_messages.json`),

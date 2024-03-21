@@ -337,6 +337,12 @@ export default class ClientController {
         }
     }
 
+    addPostcard(postcard) {
+        this.postcards.push(postcard)
+
+        this.refreshPostcards()
+    }
+
     /**
      * Sort by newest first.
      */
@@ -353,12 +359,16 @@ export default class ClientController {
     refreshPostcards() {
         this.sortPostcards()
 
-        if (this.interface.main.mail.visible) {
+        if (this.interface.main.mail?.visible) {
             // Read mail before updating count
             this.interface.main.mail.goToFirstPage()
         }
 
         this.interface.main.updateMailCount()
+    }
+
+    startWalkingPet(petId) {
+        this.network.send('pet_start_walk', { id: petId })
     }
 
 }

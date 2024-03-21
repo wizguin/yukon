@@ -1,6 +1,7 @@
 import CoinPrompt from '@scenes/interface/prompts/CoinPrompt'
 import ErrorPrompt from './ErrorPrompt'
 import ItemPrompt from '@scenes/interface/prompts/ItemPrompt'
+import InputPrompt from '@scenes/interface/prompts/InputPrompt'
 import LoadingPromptFactory from './LoadingPromptFactory'
 import WindowPrompt from '@scenes/interface/prompts/WindowPrompt'
 
@@ -20,12 +21,17 @@ export default class PromptController {
         this.coin = this.createPrompt(CoinPrompt)
         this.error = this.createPrompt(ErrorPrompt)
         this.item = this.createPrompt(ItemPrompt)
+        this.input = this.createPrompt(InputPrompt)
         this.window = this.createPrompt(WindowPrompt)
 
         this.mailError = this.createPrompt(MailErrorPrompt)
         this.mailSuccess = this.createPrompt(MailSuccessPrompt)
 
         this.loadingPromptFactory = new LoadingPromptFactory(this.interface)
+    }
+
+    get coins() {
+        return this.world.client.coins
     }
 
     createPrompt(promptClass) {
@@ -92,6 +98,56 @@ export default class PromptController {
 
     showMailSuccess(text) {
         this.mailSuccess.show(text)
+    }
+
+    showAdopt(typeId) {
+        const maxPets = 18
+
+        if (this.world.client.pets.length >= maxPets) {
+            return this.showError(this.getFormatString('max_pets', maxPets))
+        }
+
+        this.item.showAdopt(typeId)
+    }
+
+    showAdoptName(typeId) {
+        this.input.showAdoptName(typeId)
+    }
+
+    showPetFood(pet) {
+        if (this.coins < 10) return this.showLowCoins()
+
+        this.item.showPetFood(pet)
+    }
+
+    showPetBath(pet) {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetBath(pet)
+    }
+
+    showPetGum(pet) {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetGum(pet)
+    }
+
+    showPetCookie(pet) {
+        if (this.coins < 5) return this.showLowCoins()
+
+        this.item.showPetCookie(pet)
+    }
+
+    showLowCoins() {
+        this.showError(this.getString('low_coin_warn'))
+    }
+
+    getString(...args) {
+        return this.interface.getString(...args)
+    }
+
+    getFormatString(id, ...args) {
+        return this.interface.getFormatString(id, ...args)
     }
 
     hideAll() {

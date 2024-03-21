@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "autoImport": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -17,7 +18,6 @@
             "type": "Container",
             "id": "56ccc757-3333-45b8-b0fd-b793ad8b56ed",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "visible": false,
@@ -55,7 +55,6 @@
                     "id": "90f9fa6e-b4dd-49c2-aab0-7f61847a17d4",
                     "label": "text",
                     "scope": "CLASS",
-                    "components": [],
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "You have found a party hat.\nWould you like to pick it up?",
@@ -75,10 +74,20 @@
                     ],
                     "label": "dual",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 0,
-                    "y": 130,
-                    "nestedPrefabs": []
+                    "y": 130
+                },
+                {
+                    "prefabId": "557284f7-26e4-49fe-9001-a645696c675f",
+                    "id": "4ed9471a-9755-42f2-9cd6-5aec8f38a78c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "promptIcon",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": -182
                 }
             ]
         }
@@ -88,6 +97,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

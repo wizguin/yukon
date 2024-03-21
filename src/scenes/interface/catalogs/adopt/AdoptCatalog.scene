@@ -1,0 +1,971 @@
+{
+    "id": "c7bd412d-7d1e-4dd4-b349-ec90bbf96937",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e7828f7f-5f53-4824-908b-f4755f55ce7c",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "faf8d7a6-2bf8-47a8-bbad-53cc9690b980",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Container",
+                    "id": "7050d69c-2aad-4e50-8a79-91fba98d34f8",
+                    "label": "page11",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "74726123-8ba0-4954-9887-4a831278cf7c",
+                            "label": "page0011",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0011"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c67e572c-1186-4ffd-a998-ed3b23a1c58b",
+                            "label": "pageLeft1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_left"
+                            },
+                            "x": 492,
+                            "y": 590,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "72a3526a-6e19-486c-8636-fdad0a158b65",
+                            "label": "closeLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_left",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_left"
+                            },
+                            "x": 491,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "46085572-d7b7-4434-8539-50980a4e3004",
+                    "label": "page10",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "0531505b-b06d-4578-b745-525f5b9cc329",
+                            "label": "page0010",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0010"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "29f0b132-489c-4a01-bc56-0c2d138a7cc9",
+                    "label": "page9",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "b01f80aa-14c2-46a8-9fca-458dd6a3c748",
+                            "label": "page0009",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0009"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "53d910c3-519a-4b67-ad41-b2795d7fb022",
+                    "label": "page8",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "5ae28422-003a-4a14-b4de-f7ed5dc387e5",
+                            "label": "page0008",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0008"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f3a36e27-1f24-432c-83af-1ad2cc57c029",
+                            "label": "bathButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.hoverCallback": "() => this.onHintOver(11)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 1108,
+                            "y": 426,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "28b01e9c-1354-4196-b189-f2f9caf670ee",
+                            "label": "foodButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.hoverCallback": "() => this.onHintOver(10)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 992,
+                            "y": 426,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e92f926a-2a17-4039-ae74-90053ab8958c",
+                            "label": "cookieButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.hoverCallback": "() => this.onHintOver(9)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 1108,
+                            "y": 310,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "644d1e74-c258-462b-8e4a-2fbf0b22b0b7",
+                            "label": "gumButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "large-box",
+                            "Button.hoverCallback": "() => this.onHintOver(8)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "main",
+                                "frame": "large-box"
+                            },
+                            "x": 992,
+                            "y": 310,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "9a8ce184-5cb6-402f-abfa-496b5ce397f2",
+                            "label": "bath",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/bath"
+                            },
+                            "x": 1108,
+                            "y": 426,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91,
+                            "originY": 0.5051546391752577
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b9f71f7d-0b6f-4916-82f0-d19694355553",
+                            "label": "food",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/food"
+                            },
+                            "x": 992,
+                            "y": 426,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "21e57d2d-add0-4f11-902f-315d652eabe1",
+                            "label": "cookie",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/cookie"
+                            },
+                            "x": 1108,
+                            "y": 312,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91,
+                            "originX": 0.5052631578947369
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b8f0fc55-636e-47d9-84d5-ab934f092341",
+                            "label": "gum",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/gum"
+                            },
+                            "x": 994,
+                            "y": 312,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.5054945054945055
+                        },
+                        {
+                            "type": "Image",
+                            "id": "48f41460-f96a-4689-9ed7-84a497fada52",
+                            "label": "walkButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "blue-button",
+                            "Button.hoverCallback": "() => this.onHintOver(7)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "blue-button"
+                            },
+                            "x": 556,
+                            "y": 728,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f37f113e-024c-42dc-a853-d8d236b87abd",
+                            "label": "feedButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "blue-button",
+                            "Button.hoverCallback": "() => this.onHintOver(6)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "blue-button"
+                            },
+                            "x": 500,
+                            "y": 728,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7e6196e7-c318-4d52-b523-9e94f8a27557",
+                            "label": "restButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "blue-button",
+                            "Button.hoverCallback": "() => this.onHintOver(5)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "blue-button"
+                            },
+                            "x": 444,
+                            "y": 728,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7ffca5a8-d017-42a1-b507-08385e42f459",
+                            "label": "playButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "blue-button",
+                            "Button.hoverCallback": "() => this.onHintOver(4)",
+                            "Button.hoverOutCallback": "() => this.onHintOut()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "blue-button"
+                            },
+                            "x": 390,
+                            "y": 728,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "40fc2ea5-d23f-4c02-8df0-eddcf1046e17",
+                            "label": "walk",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/walk"
+                            },
+                            "x": 557,
+                            "y": 727,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Image",
+                            "id": "003fc635-2888-4bb6-bdcd-e97cf83af158",
+                            "label": "feed",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/feed"
+                            },
+                            "x": 501,
+                            "y": 726,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91,
+                            "originX": 0.5185185185185185
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7a0f52de-036c-40fd-8463-8485c930dd7f",
+                            "label": "rest",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/rest"
+                            },
+                            "x": 443,
+                            "y": 727,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91,
+                            "originY": 0.52
+                        },
+                        {
+                            "type": "Image",
+                            "id": "08bcc3bd-e484-4bb3-9405-633f08c3e9e6",
+                            "label": "play",
+                            "texture": {
+                                "key": "main",
+                                "frame": "pet/play"
+                            },
+                            "x": 389,
+                            "y": 725,
+                            "scaleX": 0.91,
+                            "scaleY": 0.91
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "5b575263-df04-479b-830c-1e12d0f7d8ea",
+                            "label": "stats",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.hoverCallback": "() => this.onHintOver(3)",
+                            "SimpleButton.hoverOutCallback": "() => this.onHintOut()",
+                            "x": 476,
+                            "y": 604,
+                            "width": 345,
+                            "height": 127
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "23e04759-38f4-4040-87bf-246d40d86c39",
+                            "label": "pet",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.hoverCallback": "() => this.onHintOver(2)",
+                            "SimpleButton.hoverOutCallback": "() => this.onHintOut()",
+                            "x": 473,
+                            "y": 433,
+                            "width": 216,
+                            "height": 189
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "b83b79b3-ddfc-42dc-a425-a42669e81c9e",
+                            "label": "name",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.hoverCallback": "() => this.onHintOver(1)",
+                            "SimpleButton.hoverOutCallback": "() => this.onHintOut()",
+                            "x": 473,
+                            "y": 281,
+                            "width": 210,
+                            "height": 40
+                        },
+                        {
+                            "type": "Image",
+                            "id": "cde009fb-81c8-40f9-9227-302cb9c61d21",
+                            "label": "hint",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "hint/hint0001"
+                            },
+                            "x": 220,
+                            "y": 229,
+                            "originX": 0,
+                            "originY": 0,
+                            "visible": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "6dd38adc-a9a2-4cc8-9f40-a0fcfea9a549",
+                    "label": "page7",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "d82bb129-872d-4646-87b2-aa51567e5306",
+                            "label": "page0007",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0007"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "572be12a-3b48-4ee5-bbf6-348cb3f5910f",
+                            "label": "adopt8",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(8)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 363,
+                            "y": 513,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "6958a64c-e26b-48e1-b341-1f805a9acc20",
+                    "label": "page6",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "f4f3ba17-4a84-4a5b-9999-aa1f952b7202",
+                            "label": "page0006",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0006"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2603a512-9db2-4d5f-9724-340790af18b7",
+                            "label": "adopt7",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(7)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 1167,
+                            "y": 532,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        },
+                        {
+                            "type": "Image",
+                            "id": "64ef4fcb-52d7-4ebd-9241-f87baf0ed602",
+                            "label": "adopt6",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(4)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 587,
+                            "y": 533,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "1ef6562b-0e92-4d59-b6dc-ed9619917805",
+                    "label": "page5",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "02e66c56-c10b-40cc-8069-4ce58da5a06b",
+                            "label": "page0005",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0005"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2275d765-a204-40c3-ac38-9246804226f8",
+                            "label": "adopt5",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(6)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 913,
+                            "y": 527,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        },
+                        {
+                            "type": "Image",
+                            "id": "344a8805-0bdb-465a-acbc-d9ffc58ef5cf",
+                            "label": "adopt4",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(3)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 354,
+                            "y": 535,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "88fdc0cf-7a86-49c9-8f64-60e96174d2f3",
+                    "label": "page4",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "2e98b393-b10e-460c-be10-1a3db795c80d",
+                            "label": "page0004",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0004"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "419ef7d8-0662-4ec8-9443-e9251c5c919a",
+                            "label": "adopt3",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(2)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 1157,
+                            "y": 539,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7cb6a311-7da6-4237-8cf5-67cfa56e1c4e",
+                            "label": "adopt2",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(1)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 598,
+                            "y": 504,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "5cb750a5-0333-44aa-a280-376cab80599b",
+                    "label": "page3",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "37c05bdf-a234-4740-bcfb-6d0f3d7dc557",
+                            "label": "page0003",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0003"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "705e137c-316e-4641-8d53-5b54db292a70",
+                            "label": "adopt1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(5)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 941,
+                            "y": 534,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d89298e9-511f-488d-9c2a-44f145ad7c5e",
+                            "label": "adopt",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "adopt",
+                            "Button.callback": "() => this.onAdoptClick(0)",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "adopt"
+                            },
+                            "x": 357,
+                            "y": 562,
+                            "originX": 0.49074074074074076,
+                            "originY": 0.4777777777777778
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
+                    "label": "page2",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                            "label": "page0002",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0002"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "d6adbc29-7db1-4cc7-97a7-272861600373",
+                            "label": "fun",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.showPage(8)",
+                            "x": 491,
+                            "y": 509,
+                            "alpha": 0.5,
+                            "width": 194,
+                            "height": 55
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "9aec917a-2a00-4c2c-8172-4c36b079f07e",
+                            "label": "card",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.showPage(7)",
+                            "x": 437,
+                            "y": 420,
+                            "alpha": 0.5,
+                            "width": 219,
+                            "height": 55
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "62ad36d7-3aa6-47d1-a4af-cee8e95a20f2",
+                            "label": "personalities",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.showPage(2)",
+                            "x": 457,
+                            "y": 323,
+                            "alpha": 0.5,
+                            "width": 360,
+                            "height": 55
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                    "label": "page1",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "0c462b69-419b-46c0-829b-f22133e9b2d9",
+                            "label": "page0001",
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page/page0001"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2b34a992-5863-4055-997b-95667d4c9534",
+                            "label": "pageFront",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_front",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_front"
+                            },
+                            "x": 469,
+                            "y": 42,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a460cc47-3b72-45ce-a1fe-8fa107c3abce",
+                            "label": "closeRight1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 925,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "33038d96-221d-41e9-8999-fbcd325c77fa",
+                    "label": "buttons",
+                    "scope": "CLASS",
+                    "x": 190,
+                    "y": 41,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "5433f276-aa10-43c6-be6d-3d839d7771dd",
+                            "label": "closeRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 1012,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f002fbfa-a409-4b6e-9d7c-fc90adc33812",
+                            "label": "pageRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_right",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_right"
+                            },
+                            "x": 1012,
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e67c6bb2-4813-4b2a-a471-b1a16228c378",
+                            "label": "pageLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "adoptcatalog",
+                                "frame": "page_left"
+                            },
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Text",
+                            "id": "18f3a279-1bcc-43e7-a47e-dc2a29765491",
+                            "label": "coins",
+                            "scope": "CLASS",
+                            "x": 1130,
+                            "y": 790,
+                            "originX": 1,
+                            "text": "YOUR COINS:",
+                            "fixedWidth": 600,
+                            "align": "right",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "32px",
+                            "stroke": "#000",
+                            "strokeThickness": 9
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "eee19a2c-6cb3-4ea1-8e06-703f0cc166b2",
+            "label": "pages",
+            "objectIds": [
+                "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
+                "5cb750a5-0333-44aa-a280-376cab80599b",
+                "88fdc0cf-7a86-49c9-8f64-60e96174d2f3",
+                "1ef6562b-0e92-4d59-b6dc-ed9619917805",
+                "6958a64c-e26b-48e1-b341-1f805a9acc20",
+                "6dd38adc-a9a2-4cc8-9f40-a0fcfea9a549",
+                "53d910c3-519a-4b67-ad41-b2795d7fb022",
+                "29f0b132-489c-4a01-bc56-0c2d138a7cc9",
+                "46085572-d7b7-4434-8539-50980a4e3004",
+                "7050d69c-2aad-4e50-8a79-91fba98d34f8"
+            ]
+        }
+    ]
+}

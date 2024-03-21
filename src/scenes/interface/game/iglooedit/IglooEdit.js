@@ -318,7 +318,7 @@ export default class IglooEdit extends BaseScene {
     onEditClick() {
         this.interface.hideInterface(false)
         this.world.room.showEditBg()
-        this.world.room.hidePenguins()
+        this.world.room.hideEntities()
         this.world.room.enableFurnitureInput()
         this.showControls()
     }
@@ -327,7 +327,7 @@ export default class IglooEdit extends BaseScene {
         this.saveIgloo()
         this.interface.showInterface()
         this.world.room.hideEditBg()
-        this.world.room.showPenguins()
+        this.world.room.showEntities()
         this.world.room.disableFurnitureInput()
         this.hideControls()
     }

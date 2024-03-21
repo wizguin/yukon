@@ -28,6 +28,10 @@ export default class Pet extends RoomScene {
         this.fishIdle;
         /** @type {Phaser.GameObjects.Sprite} */
         this.eyesRed;
+        /** @type {Phaser.GameObjects.Image} */
+        this.adoptCatalog;
+        /** @type {Phaser.GameObjects.Image} */
+        this.petCatalog;
         /** @type {Phaser.GameObjects.Sprite[]} */
         this.penEyes;
         /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
@@ -176,6 +180,14 @@ export default class Pet extends RoomScene {
         blackZone.isFilled = true;
         blackZone.fillColor = 65280;
 
+        // adoptCatalog
+        const adoptCatalog = this.add.image(1331, 927, "pet", "adopt_catalog");
+        adoptCatalog.setOrigin(0, 1);
+
+        // petCatalog
+        const petCatalog = this.add.image(1331, 808, "pet", "pets_catalog");
+        petCatalog.setOrigin(0, 1);
+
         // lists
         const penEyes = [eyesPink, eyesBlue, eyesPurple, eyesGreen, eyesBlack];
         const sort = [bedFront, bedBack, house1, house2, house3, bowls, post, sack, os];
@@ -292,6 +304,20 @@ export default class Pet extends RoomScene {
         const blackZoneZone = new Zone(blackZone);
         blackZoneZone.hoverCallback = () => this.onBlackOver();
 
+        // adoptCatalog (components)
+        const adoptCatalogButton = new Button(adoptCatalog);
+        adoptCatalogButton.spriteName = "adopt_catalog";
+        adoptCatalogButton.callback = () => this.onAdoptCatalogClick();
+        adoptCatalogButton.activeFrame = false;
+        adoptCatalogButton.pixelPerfect = true;
+
+        // petCatalog (components)
+        const petCatalogButton = new Button(petCatalog);
+        petCatalogButton.spriteName = "pets_catalog";
+        petCatalogButton.callback = () => this.onPetCatalogClick();
+        petCatalogButton.activeFrame = false;
+        petCatalogButton.pixelPerfect = true;
+
         this.black = black;
         this.puffles = puffles;
         this.jump = jump;
@@ -301,6 +327,8 @@ export default class Pet extends RoomScene {
         this.fish = fish;
         this.fishIdle = fishIdle;
         this.eyesRed = eyesRed;
+        this.adoptCatalog = adoptCatalog;
+        this.petCatalog = petCatalog;
         this.penEyes = penEyes;
         this.sort = sort;
 
@@ -319,6 +347,17 @@ export default class Pet extends RoomScene {
         this.red.on('animationupdate', this.onRedAnimUpdate, this)
 
         this.black.play('black_sleep')
+
+        this.petCatalog.depth = 1000
+        this.adoptCatalog.depth = 1000
+    }
+
+    onPetCatalogClick() {
+        this.interface.loadWidget('PetsCatalog')
+    }
+
+    onAdoptCatalogClick() {
+        this.interface.loadWidget('AdoptCatalog')
     }
 
     onPenOver() {

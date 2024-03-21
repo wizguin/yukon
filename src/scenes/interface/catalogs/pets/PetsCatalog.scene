@@ -1,0 +1,729 @@
+{
+    "id": "0339e9fe-0e06-4185-a986-8115cc5f8010",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e7828f7f-5f53-4824-908b-f4755f55ce7c",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "faf8d7a6-2bf8-47a8-bbad-53cc9690b980",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Container",
+                    "id": "1ef6562b-0e92-4d59-b6dc-ed9619917805",
+                    "label": "page5",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "02e66c56-c10b-40cc-8069-4ce58da5a06b",
+                            "label": "page0005",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page/page0005"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8dc40e68-3e5e-4dad-92be-156e7afe3ac5",
+                            "label": "closeLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_left",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "close_left"
+                            },
+                            "x": 491,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4ac947c0-9c15-4bdc-a631-4d3f826cc05a",
+                            "label": "pageLeft1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page_left"
+                            },
+                            "x": 492,
+                            "y": 590,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "88fdc0cf-7a86-49c9-8f64-60e96174d2f3",
+                    "label": "page4",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "2e98b393-b10e-460c-be10-1a3db795c80d",
+                            "label": "page0004",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page/page0004"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "0fe638b5-3d8b-485f-8747-094933c80d9a",
+                            "label": "buy22",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(214)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1115,
+                            "y": 743,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c9217fc5-7fd6-45d6-8a0e-0781717886c7",
+                            "label": "buy21",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(225)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 924,
+                            "y": 551,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d08212d9-b22c-4140-a72b-3cafb17a7bca",
+                            "label": "buy20",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(212)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1153,
+                            "y": 401,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "bf334797-8f5d-43c2-b5c1-b4030859df17",
+                            "label": "buy19",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(203)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 640,
+                            "y": 730,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4c54e8f2-1d2f-4c9b-b662-5664a4c48171",
+                            "label": "buy18",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(221)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 636,
+                            "y": 567,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ab7689a7-7970-48a2-b63b-90aea0084753",
+                            "label": "buy17",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(227)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 636,
+                            "y": 415,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "41259662-d436-4843-9e5d-ddde40d5890f",
+                            "label": "buy16",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(202)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 477,
+                            "y": 735,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c17a4296-d16c-432c-a33f-ae647140b6b8",
+                            "label": "buy15",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(200)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 474,
+                            "y": 591,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "63b995e1-a2a9-45a0-aac3-1300a2c4bec1",
+                            "label": "buy14",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(232)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 474,
+                            "y": 441,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a88ab00f-2a19-489b-98d4-de78ac0cfc3e",
+                            "label": "buy13",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(201)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 311,
+                            "y": 728,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fbeb637d-091a-48af-b3ce-989d75574591",
+                            "label": "buy12",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(222)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 309,
+                            "y": 569,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "5cb750a5-0333-44aa-a280-376cab80599b",
+                    "label": "page3",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "37c05bdf-a234-4740-bcfb-6d0f3d7dc557",
+                            "label": "page0003",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page/page0003"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "60eeb051-6f90-4733-a617-fac1d04c3d46",
+                            "label": "buy11",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(206)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 933,
+                            "y": 750,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "319b2999-a2ef-4a88-8e8c-be3d9fe6a7a5",
+                            "label": "buy10",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(207)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1154,
+                            "y": 566,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1d805f7d-ac72-4561-b1a3-229cbb07c9b5",
+                            "label": "buy9",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(233)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 927,
+                            "y": 385,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2a10d04c-461a-4a67-b2c8-e6b9a3e1fa92",
+                            "label": "buy8",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(228)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1154,
+                            "y": 202,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "9f5ed0ba-5ef9-45b2-a279-47c006f136e4",
+                            "label": "buy7",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(209)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 564,
+                            "y": 752,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4c132df2-ea54-44d4-84db-37ea07b17834",
+                            "label": "buy6",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(208)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 395,
+                            "y": 574,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ed314140-5ee2-49e1-8b20-9cea5ea56672",
+                            "label": "buy5",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(223)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 567,
+                            "y": 388,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
+                    "label": "page2",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "b03edf36-eb2c-4234-8b62-35a4508a6404",
+                            "label": "page0002",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page/page0002"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "600fd26f-2003-4554-9c89-77db81bc1c40",
+                            "label": "buy4",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(220)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1125,
+                            "y": 714,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "652e6dc2-043c-4a94-b904-89775f6c590e",
+                            "label": "buy3",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(218)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 943,
+                            "y": 477,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ea8e5e10-9af3-4c19-bdd9-46c4702b369b",
+                            "label": "buy2",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(224)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 1117,
+                            "y": 247,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b9581063-7f11-4754-9dfa-6de92ec7c1c8",
+                            "label": "buy1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(210)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 621,
+                            "y": 525,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a79b61f8-8460-49dd-bef8-e2f0384d05ff",
+                            "label": "buy",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "buy",
+                            "Button.callback": "() => this.onBuyClick(211)",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "buy"
+                            },
+                            "x": 342,
+                            "y": 729,
+                            "originX": 0.5051546391752577,
+                            "originY": 0.509090909090909
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                    "label": "page1",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "0c462b69-419b-46c0-829b-f22133e9b2d9",
+                            "label": "page0001",
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page/page0001"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2b34a992-5863-4055-997b-95667d4c9534",
+                            "label": "pageFront",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_front",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page_front"
+                            },
+                            "x": 469,
+                            "y": 42,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a460cc47-3b72-45ce-a1fe-8fa107c3abce",
+                            "label": "closeRight1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 925,
+                            "y": 39,
+                            "originX": 0,
+                            "originY": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "33038d96-221d-41e9-8999-fbcd325c77fa",
+                    "label": "buttons",
+                    "scope": "CLASS",
+                    "x": 190,
+                    "y": 41,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "5433f276-aa10-43c6-be6d-3d839d7771dd",
+                            "label": "closeRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_right",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "close_right"
+                            },
+                            "x": 1012,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f002fbfa-a409-4b6e-9d7c-fc90adc33812",
+                            "label": "pageRight",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_right",
+                            "Button.callback": "() => this.nextPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page_right"
+                            },
+                            "x": 1012,
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e67c6bb2-4813-4b2a-a471-b1a16228c378",
+                            "label": "pageLeft",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "page_left",
+                            "Button.callback": "() => this.prevPage()",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "petscatalog",
+                                "frame": "page_left"
+                            },
+                            "y": 549,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Text",
+                            "id": "18f3a279-1bcc-43e7-a47e-dc2a29765491",
+                            "label": "coins",
+                            "scope": "CLASS",
+                            "x": 1130,
+                            "y": 790,
+                            "originX": 1,
+                            "text": "YOUR COINS:",
+                            "fixedWidth": 600,
+                            "align": "right",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "32px",
+                            "stroke": "#000",
+                            "strokeThickness": 9
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "eee19a2c-6cb3-4ea1-8e06-703f0cc166b2",
+            "label": "pages",
+            "objectIds": [
+                "c06e6b99-75ae-44de-8fd6-97a00178f552",
+                "bb0dc8c5-e671-47fa-8b53-dcba1002dd00",
+                "5cb750a5-0333-44aa-a280-376cab80599b",
+                "88fdc0cf-7a86-49c9-8f64-60e96174d2f3",
+                "1ef6562b-0e92-4d59-b6dc-ed9619917805"
+            ]
+        }
+    ]
+}

@@ -17,7 +17,6 @@
             "type": "Container",
             "id": "64c8eb85-fe90-4df1-88a4-774813373aba",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -30,7 +29,6 @@
                     ],
                     "Button.spriteName": "window-button",
                     "Button.callback": "() => this.onClick()",
-                    "Button.activeFrame": false,
                     "texture": {
                         "key": "prompt",
                         "frame": "window-button"
@@ -40,8 +38,8 @@
                 {
                     "type": "Text",
                     "id": "7cebd0b7-9243-4401-8fde-0d271502364a",
-                    "label": "text_1",
-                    "components": [],
+                    "label": "text",
+                    "scope": "CLASS",
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Ok",
@@ -59,6 +57,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }
