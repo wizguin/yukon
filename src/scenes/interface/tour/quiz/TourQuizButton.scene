@@ -28,6 +28,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "window-button",
+                    "Button.callback": "() => this.onClick()",
                     "texture": {
                         "key": "prompt",
                         "frame": "window-button"
@@ -60,5 +61,18 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "onClick",
+            "label": "onClick",
+            "tooltip": "",
+            "defValue": "() => {}",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "any"
+            }
+        }
+    ]
 }

@@ -4,12 +4,33 @@ import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
 import TourQuizButton from "./TourQuizButton";
 /* START-USER-IMPORTS */
+
+import MultiChoiceQuiz from '@engine/interface/quiz/MultiChoiceQuiz'
+
 /* END-USER-IMPORTS */
 
 export default class TourQuiz extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
+
+        /** @type {TourQuizButton} */
+        this.option4;
+        /** @type {TourQuizButton} */
+        this.option3;
+        /** @type {TourQuizButton} */
+        this.option2;
+        /** @type {TourQuizButton} */
+        this.option1;
+        /** @type {Phaser.GameObjects.Text} */
+        this.questionText;
+        /** @type {Phaser.GameObjects.Container} */
+        this.question;
+        /** @type {Phaser.GameObjects.Container} */
+        this.start;
+        /** @type {TourQuizButton[]} */
+        this.options;
+
 
         // block
         const block = scene.add.rectangle(0, 0, 1520, 960);
@@ -86,12 +107,30 @@ export default class TourQuiz extends BaseContainer {
         startTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
         start.add(startTitle);
 
+        // lists
+        const options = [option1, option2, option3, option4];
+
         // block (components)
         new Interactive(block);
 
+        // startButton (prefab fields)
+        startButton.onClick = () => this.startQuiz();
+
+        this.option4 = option4;
+        this.option3 = option3;
+        this.option2 = option2;
+        this.option1 = option1;
+        this.questionText = questionText;
+        this.question = question;
+        this.start = start;
+        this.options = options;
+
         /* START-USER-CTR-CODE */
 
+        this.quiz = null
+
         startTitle.setText(this.getString('tour_start_title'))
+        questionTitle.setText(this.getString('tour_question_title'))
 
         startText.setText(
             this.getFormatString('tour_start_text',
@@ -103,7 +142,29 @@ export default class TourQuiz extends BaseContainer {
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
+
+    startQuiz() {
+        const questions = this.crumbs.tour_quiz
+
+        this.quiz = new MultiChoiceQuiz(questions, 8, true)
+        this.nextQuestion()
+
+        this.start.visible = false
+        this.question.visible = true
+    }
+
+    nextQuestion() {
+        const nextQuestion = this.quiz.nextQuestion()
+
+        this.questionText.setText(nextQuestion.question)
+
+        for (const [i, answer] of Object.keys(nextQuestion.answers).entries()) {
+            this.options[i].setText(answer)
+        }
+    }
+
     /* END-USER-CODE */
 }
 

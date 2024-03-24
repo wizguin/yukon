@@ -56,6 +56,7 @@
                     "type": "Container",
                     "id": "a0473727-d1a9-42ef-934d-db9a8fd7de3a",
                     "label": "question",
+                    "scope": "CLASS",
                     "x": 760,
                     "y": 214,
                     "visible": false,
@@ -68,6 +69,7 @@
                                 "y"
                             ],
                             "label": "option4",
+                            "scope": "CLASS",
                             "x": 0,
                             "y": 497
                         },
@@ -79,6 +81,7 @@
                                 "y"
                             ],
                             "label": "option3",
+                            "scope": "CLASS",
                             "x": 0,
                             "y": 387
                         },
@@ -90,6 +93,7 @@
                                 "y"
                             ],
                             "label": "option2",
+                            "scope": "CLASS",
                             "x": 0,
                             "y": 277
                         },
@@ -101,6 +105,7 @@
                                 "y"
                             ],
                             "label": "option1",
+                            "scope": "CLASS",
                             "x": 0,
                             "y": 167
                         },
@@ -108,6 +113,7 @@
                             "type": "Text",
                             "id": "d1b1d6b3-fb80-4e7a-a2c7-146d8a975c8f",
                             "label": "questionText",
+                            "scope": "CLASS",
                             "y": 79,
                             "originX": 0.5,
                             "originY": 0.5,
@@ -144,6 +150,7 @@
                     "type": "Container",
                     "id": "d122fc73-b5c2-4e5e-96f8-da3918ea931d",
                     "label": "start",
+                    "scope": "CLASS",
                     "x": 760,
                     "y": 234,
                     "list": [
@@ -152,9 +159,11 @@
                             "id": "f6d1096b-90af-4541-8a24-28879140895e",
                             "unlock": [
                                 "x",
-                                "y"
+                                "y",
+                                "onClick"
                             ],
                             "label": "startButton",
+                            "onClick": "() => this.startQuiz()",
                             "x": 0,
                             "y": 401
                         },
@@ -202,5 +211,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "lists": [
+        {
+            "id": "4990069d-96a8-41a0-b5fb-04445dc78941",
+            "label": "options",
+            "objectIds": [
+                "603bee41-105b-4f08-a1a4-a89a0bdb1115",
+                "b9623784-0cf6-406f-955d-ada14f46a0a5",
+                "89ca17c9-343c-40ad-9183-e1040a3bcadf",
+                "c08e4d75-2903-44fe-a054-2df2fda67cba"
+            ]
+        }
+    ]
 }

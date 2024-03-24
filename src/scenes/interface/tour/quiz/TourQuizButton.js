@@ -12,6 +12,8 @@ export default class TourQuizButton extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Text} */
         this.text;
+        /** @type {any} */
+        this.onClick = () => {};
 
 
         // button
@@ -32,6 +34,7 @@ export default class TourQuizButton extends BaseContainer {
         // button (components)
         const buttonButton = new Button(button);
         buttonButton.spriteName = "window-button";
+        buttonButton.callback = () => this.onClick();
 
         this.text = text;
 
