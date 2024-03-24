@@ -1,0 +1,109 @@
+{
+    "id": "8f4290bb-b8e3-4e55-812d-3a06f165d1cc",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d70aa01c-5622-4d48-bf37-1487a4b335e9",
+            "label": "container_1",
+            "x": -1,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "d4fed1dd-8ee4-4e5f-8031-fee95c04bc2e",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "d6b0b5d0-5244-4c9a-ac74-a513e6cd5437",
+                    "label": "button",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.callback": "() => this.onButtonClick()",
+                    "texture": {
+                        "key": "take_tour",
+                        "frame": "button"
+                    },
+                    "x": 461,
+                    "y": 744,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "1df992f9-68f2-44fd-96cf-ad5e47feffb0",
+                    "label": "bg",
+                    "texture": {
+                        "key": "take_tour",
+                        "frame": "bg"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Container",
+                    "id": "3086d3ba-9601-4819-8caf-b36a2f25c6fb",
+                    "label": "closeButton",
+                    "x": 1100,
+                    "y": 94,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "1cf65d58-463e-45e5-8edd-ec719e68e117",
+                            "label": "greyBbutton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "grey-button",
+                            "Button.callback": "() => this.close()",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-button"
+                            },
+                            "y": 2
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a24cd5f5-af68-4f16-828f-cf590041b3b9",
+                            "label": "greyX",
+                            "texture": {
+                                "key": "main",
+                                "frame": "grey-x"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
