@@ -11,7 +11,7 @@ export default class TourQuizButton extends BaseContainer {
         super(scene, x ?? 0, y ?? 0);
 
         /** @type {Phaser.GameObjects.Text} */
-        this.text;
+        this.buttonText;
         /** @type {any} */
         this.onClick = () => {};
 
@@ -24,19 +24,19 @@ export default class TourQuizButton extends BaseContainer {
         button.marginBottom = 50;
         this.add(button);
 
-        // text
-        const text = scene.add.text(0, 0, "", {});
-        text.setOrigin(0.5, 0.5);
-        text.text = "Text";
-        text.setStyle({ "fontFamily": "Arial Narrow", "fontSize": "40px", "fontStyle": "bold" });
-        this.add(text);
+        // buttonText
+        const buttonText = scene.add.text(0, 0, "", {});
+        buttonText.setOrigin(0.5, 0.5);
+        buttonText.text = "Text";
+        buttonText.setStyle({ "fontFamily": "Arial Narrow", "fontSize": "40px", "fontStyle": "bold" });
+        this.add(buttonText);
 
         // button (components)
         const buttonButton = new Button(button);
         buttonButton.spriteName = "window-button";
         buttonButton.callback = () => this.onClick();
 
-        this.text = text;
+        this.buttonText = buttonText;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
@@ -45,9 +45,13 @@ export default class TourQuizButton extends BaseContainer {
 
     /* START-USER-CODE */
 
+    get text() {
+        return this.buttonText.text
+    }
+
     setText(text, fontSize = 40) {
-        this.text.setText(text)
-        this.text.setFontSize(fontSize)
+        this.buttonText.setText(text)
+        this.buttonText.setFontSize(fontSize)
     }
 
     /* END-USER-CODE */

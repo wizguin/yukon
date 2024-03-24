@@ -43,7 +43,7 @@
                 {
                     "type": "Text",
                     "id": "100b52a7-c421-4e2f-abe9-edc14c05eaec",
-                    "label": "text",
+                    "label": "buttonText",
                     "scope": "CLASS",
                     "originX": 0.5,
                     "originY": 0.5,
