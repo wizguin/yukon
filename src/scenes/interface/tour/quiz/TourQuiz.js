@@ -1,3 +1,5 @@
+const totalQuestions = 8
+
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../../base/BaseContainer";
@@ -113,8 +115,20 @@ export default class TourQuiz extends BaseContainer {
         // block (components)
         new Interactive(block);
 
+        // option4 (prefab fields)
+        option4.onClick = () => this.onOptionClick(4);
+
+        // option3 (prefab fields)
+        option3.onClick = () => this.onOptionClick(3);
+
+        // option2 (prefab fields)
+        option2.onClick = () => this.onOptionClick(2);
+
+        // option1 (prefab fields)
+        option1.onClick = () => this.onOptionClick(1);
+
         // startButton (prefab fields)
-        startButton.onClick = () => this.startQuiz();
+        startButton.onClick = () => this.onStartClick();
 
         this.option4 = option4;
         this.option3 = option3;
@@ -145,24 +159,46 @@ export default class TourQuiz extends BaseContainer {
 
     /* START-USER-CODE */
 
-    startQuiz() {
-        const questions = this.crumbs.tour_quiz
+    show() {
+        this.start.visible = true
+        this.question.visible = false
 
-        this.quiz = new MultiChoiceQuiz(questions, 8, true)
+        this.quiz = new MultiChoiceQuiz(this.crumbs.tour_quiz, totalQuestions, true)
+
+        super.show()
+    }
+
+    onStartClick() {
         this.nextQuestion()
 
         this.start.visible = false
         this.question.visible = true
     }
 
+    onOptionClick(selectedOption) {
+        const option = this.options[selectedOption - 1]
+
+        this.quiz.submitAnswer(option.text)
+        this.nextQuestion()
+    }
+
     nextQuestion() {
         const nextQuestion = this.quiz.nextQuestion()
+
+        if (!nextQuestion) {
+            this.endQuiz()
+            return
+        }
 
         this.questionText.setText(nextQuestion.question)
 
         for (const [i, answer] of Object.keys(nextQuestion.answers).entries()) {
             this.options[i].setText(answer)
         }
+    }
+
+    endQuiz() {
+        this.close()
     }
 
     /* END-USER-CODE */

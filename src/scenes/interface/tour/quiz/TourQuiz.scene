@@ -66,10 +66,12 @@
                             "id": "c08e4d75-2903-44fe-a054-2df2fda67cba",
                             "unlock": [
                                 "x",
-                                "y"
+                                "y",
+                                "onClick"
                             ],
                             "label": "option4",
                             "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(4)",
                             "x": 0,
                             "y": 497
                         },
@@ -78,10 +80,12 @@
                             "id": "89ca17c9-343c-40ad-9183-e1040a3bcadf",
                             "unlock": [
                                 "x",
-                                "y"
+                                "y",
+                                "onClick"
                             ],
                             "label": "option3",
                             "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(3)",
                             "x": 0,
                             "y": 387
                         },
@@ -90,10 +94,12 @@
                             "id": "b9623784-0cf6-406f-955d-ada14f46a0a5",
                             "unlock": [
                                 "x",
-                                "y"
+                                "y",
+                                "onClick"
                             ],
                             "label": "option2",
                             "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(2)",
                             "x": 0,
                             "y": 277
                         },
@@ -102,10 +108,12 @@
                             "id": "603bee41-105b-4f08-a1a4-a89a0bdb1115",
                             "unlock": [
                                 "x",
-                                "y"
+                                "y",
+                                "onClick"
                             ],
                             "label": "option1",
                             "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(1)",
                             "x": 0,
                             "y": 167
                         },
@@ -163,7 +171,7 @@
                                 "onClick"
                             ],
                             "label": "startButton",
-                            "onClick": "() => this.startQuiz()",
+                            "onClick": "() => this.onStartClick()",
                             "x": 0,
                             "y": 401
                         },
