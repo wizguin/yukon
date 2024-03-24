@@ -111,12 +111,14 @@
                             "y": 79,
                             "originX": 0.5,
                             "originY": 0.5,
-                            "text": "Question",
+                            "text": "Text",
                             "fixedWidth": 590,
                             "align": "center",
                             "fontFamily": "Arial Narrow",
                             "fontSize": "32px",
-                            "color": "#000"
+                            "color": "#000",
+                            "wordWrapWidth": 590,
+                            "wordWrapUseAdvanced": true
                         },
                         {
                             "type": "Text",
@@ -124,7 +126,7 @@
                             "label": "questionTitle",
                             "originX": 0.5,
                             "originY": 0.5,
-                            "text": "TOUR GUIDE QUIZ",
+                            "text": "Text",
                             "fixedWidth": 600,
                             "align": "center",
                             "fontFamily": "CCFaceFront",
@@ -141,7 +143,7 @@
                 {
                     "type": "Container",
                     "id": "d122fc73-b5c2-4e5e-96f8-da3918ea931d",
-                    "label": "info",
+                    "label": "start",
                     "x": 760,
                     "y": 234,
                     "list": [
@@ -152,30 +154,32 @@
                                 "x",
                                 "y"
                             ],
-                            "label": "infoButton",
+                            "label": "startButton",
                             "x": 0,
                             "y": 401
                         },
                         {
                             "type": "Text",
                             "id": "dbf251dd-68ed-46d6-8b04-34ac9dadfe01",
-                            "label": "infoText",
+                            "label": "startText",
                             "y": 196,
                             "originX": 0.5,
                             "originY": 0.5,
+                            "text": "Text",
                             "fixedWidth": 600,
                             "align": "center",
                             "fontFamily": "Arial Narrow",
                             "fontSize": "32px",
-                            "color": "#000"
+                            "color": "#000",
+                            "wordWrapWidth": 600
                         },
                         {
                             "type": "Text",
                             "id": "badc5576-85c4-41b3-8633-8e250fbb3025",
-                            "label": "infoTitle",
+                            "label": "startTitle",
                             "originX": 0.5,
                             "originY": 0.5,
-                            "text": "TOUR GUIDES",
+                            "text": "Text",
                             "fixedWidth": 600,
                             "align": "center",
                             "fontFamily": "CCFaceFront",

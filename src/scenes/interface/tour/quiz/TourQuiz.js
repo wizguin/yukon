@@ -51,42 +51,55 @@ export default class TourQuiz extends BaseContainer {
         // questionText
         const questionText = scene.add.text(0, 79, "", {});
         questionText.setOrigin(0.5, 0.5);
-        questionText.text = "Question";
+        questionText.text = "Text";
         questionText.setStyle({ "align": "center", "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        questionText.setWordWrapWidth(590, true);
         question.add(questionText);
 
         // questionTitle
         const questionTitle = scene.add.text(0, 0, "", {});
         questionTitle.setOrigin(0.5, 0.5);
-        questionTitle.text = "TOUR GUIDE QUIZ";
+        questionTitle.text = "Text";
         questionTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
         question.add(questionTitle);
 
-        // info
-        const info = scene.add.container(760, 234);
-        this.add(info);
+        // start
+        const start = scene.add.container(760, 234);
+        this.add(start);
 
-        // infoButton
-        const infoButton = new TourQuizButton(scene, 0, 401);
-        info.add(infoButton);
+        // startButton
+        const startButton = new TourQuizButton(scene, 0, 401);
+        start.add(startButton);
 
-        // infoText
-        const infoText = scene.add.text(0, 196, "", {});
-        infoText.setOrigin(0.5, 0.5);
-        infoText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
-        info.add(infoText);
+        // startText
+        const startText = scene.add.text(0, 196, "", {});
+        startText.setOrigin(0.5, 0.5);
+        startText.text = "Text";
+        startText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        startText.setWordWrapWidth(600);
+        start.add(startText);
 
-        // infoTitle
-        const infoTitle = scene.add.text(0, 0, "", {});
-        infoTitle.setOrigin(0.5, 0.5);
-        infoTitle.text = "TOUR GUIDES";
-        infoTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
-        info.add(infoTitle);
+        // startTitle
+        const startTitle = scene.add.text(0, 0, "", {});
+        startTitle.setOrigin(0.5, 0.5);
+        startTitle.text = "Text";
+        startTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        start.add(startTitle);
 
         // block (components)
         new Interactive(block);
 
         /* START-USER-CTR-CODE */
+
+        startTitle.setText(this.getString('tour_start_title'))
+
+        startText.setText(
+            this.getFormatString('tour_start_text',
+            this.getString('game'))
+        )
+
+        startButton.setText(this.getString('tour_start_button'))
+
         /* END-USER-CTR-CODE */
     }
 

@@ -41,6 +41,12 @@ export default class TourQuizButton extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    setText(text, fontSize = 40) {
+        this.text.setText(text)
+        this.text.setFontSize(fontSize)
+    }
+
     /* END-USER-CODE */
 }
 
