@@ -158,4 +158,10 @@ export default class NinePatchContainer extends Phaser.GameObjects.Container {
             this.redraw()
         }
     }
+
+    setFrame(frame) {
+        this.textureFrame = frame
+        this.redraw()
+    }
+
 }
