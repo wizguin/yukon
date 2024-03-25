@@ -90,6 +90,12 @@ export default class ClientController {
     get isModerator() {
         return this.rank > 1
     }
+    get daysOld() {
+        const oneDay = 1000 * 60 * 60 * 24
+        const timeDiff = Date.now() - Date.parse(this.joinTime)
+
+        return Math.round(timeDiff / oneDay)
+    }
 
     get mailCount() {
         return this.postcards.length
