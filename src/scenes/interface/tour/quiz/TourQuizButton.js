@@ -10,6 +10,8 @@ export default class TourQuizButton extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {NinePatchContainer} */
+        this.button;
         /** @type {Phaser.GameObjects.Text} */
         this.buttonText;
         /** @type {any} */
@@ -36,6 +38,7 @@ export default class TourQuizButton extends BaseContainer {
         buttonButton.spriteName = "window-button";
         buttonButton.callback = () => this.onClick();
 
+        this.button = button;
         this.buttonText = buttonText;
 
         /* START-USER-CTR-CODE */
@@ -49,8 +52,10 @@ export default class TourQuizButton extends BaseContainer {
         return this.buttonText.text
     }
 
-    setText(text, fontSize = 40) {
+    setText(text) {
         this.buttonText.setText(text)
+
+        const fontSize = this.buttonText.width > this.button.width ? 32 : 40
         this.buttonText.setFontSize(fontSize)
     }
 

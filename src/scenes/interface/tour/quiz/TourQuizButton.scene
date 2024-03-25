@@ -24,6 +24,7 @@
                     "type": "NinePatchContainer",
                     "id": "a00fa210-d134-457d-9140-c3e953a12433",
                     "label": "button",
+                    "scope": "CLASS",
                     "components": [
                         "Button"
                     ],
