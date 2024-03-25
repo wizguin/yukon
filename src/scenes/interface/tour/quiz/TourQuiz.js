@@ -152,7 +152,7 @@ export default class TourQuiz extends BaseContainer {
 
         this.quiz = null
 
-        questionTitle.setText(this.getString('tour_question_title'))
+        questionTitle.text = this.getString('tour_question_title')
 
         /* END-USER-CTR-CODE */
     }
@@ -164,9 +164,16 @@ export default class TourQuiz extends BaseContainer {
         this.info.visible = true
         this.question.visible = false
 
-        this.quiz = new MultiChoiceQuiz(this.crumbs.tour_quiz, totalQuestions, true)
+        if (this.world.client.isTourGuide) {
+            this.setAlready()
 
-        this.setStart()
+        } else if (this.world.client.daysOld < 45) {
+            this.setTooYoung()
+
+        } else {
+            this.quiz = new MultiChoiceQuiz(this.crumbs.tour_quiz, totalQuestions, true)
+            this.setStart()
+        }
 
         super.show()
     }
@@ -198,10 +205,10 @@ export default class TourQuiz extends BaseContainer {
             return
         }
 
-        this.questionText.setText(nextQuestion.question)
+        this.questionText.text = nextQuestion.question
 
         for (const [i, answer] of Object.keys(nextQuestion.answers).entries()) {
-            this.options[i].setText(answer)
+            this.options[i].text = answer
         }
     }
 
@@ -217,29 +224,44 @@ export default class TourQuiz extends BaseContainer {
     }
 
     setStart() {
-        const infoText = this.getFormatString('tour_start_text', this.getString('game'))
-
-        this.infoTitle.setText(this.getString('tour_start_title'))
-        this.infoText.setText(infoText)
-        this.infoButton.setText(this.getString('tour_start_button'))
+        this.infoTitle.text = this.getString('tour_start_title')
+        this.infoText.text = this.getFormatString('tour_start_text', this.getString('game'))
+        this.infoButton.text = this.getString('tour_start_button')
 
         this.infoButton.onClick = () => this.onStartClick()
     }
 
-    setSuccess() {
-        const successText = this.getFormatString('tour_success_text', this.getString('game'))
+    setAlready() {
+        this.infoTitle.text = this.getString('tour_fail_title')
+        this.infoText.text = this.getString('tour_already_text')
+        this.infoButton.text = this.getString('ok')
 
-        this.infoTitle.setText(this.getString('tour_success_title'))
-        this.infoText.setText(successText)
-        this.infoButton.setText(this.getString('tour_success_button'))
+        this.infoButton.onClick = () => this.close()
+    }
+
+    setTooYoung() {
+        const ageText = this.getString('tour_age_text')
+        const daysOld = this.getFormatString('days_old', this.world.client.daysOld)
+
+        this.infoTitle.text = this.getString('tour_fail_title')
+        this.infoText.text = `${ageText}\n\n${daysOld}`
+        this.infoButton.text = this.getString('ok')
+
+        this.infoButton.onClick = () => this.close()
+    }
+
+    setSuccess() {
+        this.infoTitle.text = this.getString('tour_success_title')
+        this.infoText.text = this.getFormatString('tour_success_text', this.getString('game'))
+        this.infoButton.text = this.getString('tour_success_button')
 
         this.infoButton.onClick = () => this.onReceiveClick()
     }
 
     setFailure() {
-        this.infoTitle.setText(this.getString('tour_fail_title'))
-        this.infoText.setText(this.getString('tour_fail_text'))
-        this.infoButton.setText(this.getString('done'))
+        this.infoTitle.text = this.getString('tour_fail_title')
+        this.infoText.text = this.getString('tour_fail_text')
+        this.infoButton.text = this.getString('done')
 
         this.infoButton.onClick = () => this.close()
     }
