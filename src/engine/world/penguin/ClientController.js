@@ -90,6 +90,11 @@ export default class ClientController {
     get isModerator() {
         return this.rank > 1
     }
+
+    get isTourGuide() {
+        return this.inventory.head.includes(428)
+    }
+
     get daysOld() {
         const oneDay = 1000 * 60 * 60 * 24
         const timeDiff = Date.now() - Date.parse(this.joinTime)
