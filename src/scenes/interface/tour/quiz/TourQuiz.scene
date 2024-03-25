@@ -157,7 +157,7 @@
                 {
                     "type": "Container",
                     "id": "d122fc73-b5c2-4e5e-96f8-da3918ea931d",
-                    "label": "start",
+                    "label": "info",
                     "scope": "CLASS",
                     "x": 760,
                     "y": 234,
@@ -170,7 +170,8 @@
                                 "y",
                                 "onClick"
                             ],
-                            "label": "startButton",
+                            "label": "infoButton",
+                            "scope": "CLASS",
                             "onClick": "() => this.onStartClick()",
                             "x": 0,
                             "y": 401
@@ -178,7 +179,8 @@
                         {
                             "type": "Text",
                             "id": "dbf251dd-68ed-46d6-8b04-34ac9dadfe01",
-                            "label": "startText",
+                            "label": "infoText",
+                            "scope": "CLASS",
                             "y": 196,
                             "originX": 0.5,
                             "originY": 0.5,
@@ -193,7 +195,8 @@
                         {
                             "type": "Text",
                             "id": "badc5576-85c4-41b3-8633-8e250fbb3025",
-                            "label": "startTitle",
+                            "label": "infoTitle",
+                            "scope": "CLASS",
                             "originX": 0.5,
                             "originY": 0.5,
                             "text": "Text",

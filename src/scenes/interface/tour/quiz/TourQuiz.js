@@ -28,8 +28,14 @@ export default class TourQuiz extends BaseContainer {
         this.questionText;
         /** @type {Phaser.GameObjects.Container} */
         this.question;
+        /** @type {TourQuizButton} */
+        this.infoButton;
+        /** @type {Phaser.GameObjects.Text} */
+        this.infoText;
+        /** @type {Phaser.GameObjects.Text} */
+        this.infoTitle;
         /** @type {Phaser.GameObjects.Container} */
-        this.start;
+        this.info;
         /** @type {TourQuizButton[]} */
         this.options;
 
@@ -86,28 +92,28 @@ export default class TourQuiz extends BaseContainer {
         questionTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
         question.add(questionTitle);
 
-        // start
-        const start = scene.add.container(760, 234);
-        this.add(start);
+        // info
+        const info = scene.add.container(760, 234);
+        this.add(info);
 
-        // startButton
-        const startButton = new TourQuizButton(scene, 0, 401);
-        start.add(startButton);
+        // infoButton
+        const infoButton = new TourQuizButton(scene, 0, 401);
+        info.add(infoButton);
 
-        // startText
-        const startText = scene.add.text(0, 196, "", {});
-        startText.setOrigin(0.5, 0.5);
-        startText.text = "Text";
-        startText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
-        startText.setWordWrapWidth(600);
-        start.add(startText);
+        // infoText
+        const infoText = scene.add.text(0, 196, "", {});
+        infoText.setOrigin(0.5, 0.5);
+        infoText.text = "Text";
+        infoText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        infoText.setWordWrapWidth(600);
+        info.add(infoText);
 
-        // startTitle
-        const startTitle = scene.add.text(0, 0, "", {});
-        startTitle.setOrigin(0.5, 0.5);
-        startTitle.text = "Text";
-        startTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
-        start.add(startTitle);
+        // infoTitle
+        const infoTitle = scene.add.text(0, 0, "", {});
+        infoTitle.setOrigin(0.5, 0.5);
+        infoTitle.text = "Text";
+        infoTitle.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        info.add(infoTitle);
 
         // lists
         const options = [option1, option2, option3, option4];
@@ -127,8 +133,8 @@ export default class TourQuiz extends BaseContainer {
         // option1 (prefab fields)
         option1.onClick = () => this.onOptionClick(1);
 
-        // startButton (prefab fields)
-        startButton.onClick = () => this.onStartClick();
+        // infoButton (prefab fields)
+        infoButton.onClick = () => this.onStartClick();
 
         this.option4 = option4;
         this.option3 = option3;
@@ -136,22 +142,17 @@ export default class TourQuiz extends BaseContainer {
         this.option1 = option1;
         this.questionText = questionText;
         this.question = question;
-        this.start = start;
+        this.infoButton = infoButton;
+        this.infoText = infoText;
+        this.infoTitle = infoTitle;
+        this.info = info;
         this.options = options;
 
         /* START-USER-CTR-CODE */
 
         this.quiz = null
 
-        startTitle.setText(this.getString('tour_start_title'))
         questionTitle.setText(this.getString('tour_question_title'))
-
-        startText.setText(
-            this.getFormatString('tour_start_text',
-            this.getString('game'))
-        )
-
-        startButton.setText(this.getString('tour_start_button'))
 
         /* END-USER-CTR-CODE */
     }
@@ -160,10 +161,12 @@ export default class TourQuiz extends BaseContainer {
     /* START-USER-CODE */
 
     show() {
-        this.start.visible = true
+        this.info.visible = true
         this.question.visible = false
 
         this.quiz = new MultiChoiceQuiz(this.crumbs.tour_quiz, totalQuestions, true)
+
+        this.setStart()
 
         super.show()
     }
@@ -171,7 +174,7 @@ export default class TourQuiz extends BaseContainer {
     onStartClick() {
         this.nextQuestion()
 
-        this.start.visible = false
+        this.info.visible = false
         this.question.visible = true
     }
 
@@ -180,6 +183,11 @@ export default class TourQuiz extends BaseContainer {
 
         this.quiz.submitAnswer(option.text)
         this.nextQuestion()
+    }
+
+    onReceiveClick() {
+        this.interface.prompt.showItem(428)
+        this.close()
     }
 
     nextQuestion() {
@@ -198,7 +206,42 @@ export default class TourQuiz extends BaseContainer {
     }
 
     endQuiz() {
-        this.close()
+        if (this.quiz.correctAnswers > 6) {
+            this.setSuccess()
+        } else {
+            this.setFailure()
+        }
+
+        this.question.visible = false
+        this.info.visible = true
+    }
+
+    setStart() {
+        const infoText = this.getFormatString('tour_start_text', this.getString('game'))
+
+        this.infoTitle.setText(this.getString('tour_start_title'))
+        this.infoText.setText(infoText)
+        this.infoButton.setText(this.getString('tour_start_button'))
+
+        this.infoButton.onClick = () => this.onStartClick()
+    }
+
+    setSuccess() {
+        const successText = this.getFormatString('tour_success_text', this.getString('game'))
+
+        this.infoTitle.setText(this.getString('tour_success_title'))
+        this.infoText.setText(successText)
+        this.infoButton.setText(this.getString('tour_success_button'))
+
+        this.infoButton.onClick = () => this.onReceiveClick()
+    }
+
+    setFailure() {
+        this.infoTitle.setText(this.getString('tour_fail_title'))
+        this.infoText.setText(this.getString('tour_fail_text'))
+        this.infoButton.setText(this.getString('done'))
+
+        this.infoButton.onClick = () => this.close()
     }
 
     /* END-USER-CODE */
