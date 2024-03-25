@@ -52,8 +52,8 @@ export default class TourQuizButton extends BaseContainer {
         return this.buttonText.text
     }
 
-    setText(text) {
-        this.buttonText.setText(text)
+    set text(text) {
+        this.buttonText.text = text
 
         const fontSize = this.buttonText.width > this.button.width ? 32 : 40
         this.buttonText.setFontSize(fontSize)
