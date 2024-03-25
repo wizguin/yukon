@@ -101,8 +101,8 @@ export default class TourQuiz extends BaseContainer {
         info.add(infoButton);
 
         // infoText
-        const infoText = scene.add.text(0, 196, "", {});
-        infoText.setOrigin(0.5, 0.5);
+        const infoText = scene.add.text(0, 59, "", {});
+        infoText.setOrigin(0.5, 0);
         infoText.text = "Text";
         infoText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         infoText.setWordWrapWidth(600);
