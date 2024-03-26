@@ -10,7 +10,9 @@ export default class Village extends RoomScene {
     constructor() {
         super("Village");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Phaser.GameObjects.Image} */
+        this.toursText;
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Container>} */
         this.sort;
 
 
@@ -80,19 +82,24 @@ export default class Village extends RoomScene {
         const right_sign = this.add.image(1471, 668, "village", "right_sign");
         right_sign.setOrigin(0.4861111111111111, 0.7831325301204819);
 
-        // tours
-        const tours = this.add.image(792, 483, "village", "tours");
-        tours.setOrigin(0.5, 0.8846153846153846);
-
-        // tours_text
-        const tours_text = this.add.image(794, 505.2201404552512, "village", "tours_text");
-        tours_text.setOrigin(0.5, 3.9212529261510674);
-
         // chair
         const chair = this.add.sprite(292, 150, "village", "chair0001");
 
+        // toursContainer
+        const toursContainer = this.add.container(792, 483);
+
+        // tours
+        const tours = this.add.image(0, 0, "village", "tours");
+        tours.setOrigin(0.5, 0.8846153846153846);
+        toursContainer.add(tours);
+
+        // toursText
+        const toursText = this.add.image(3, -143, "village", "tours_text");
+        toursText.setOrigin(0.5034965034965035, 0.5);
+        toursContainer.add(toursText);
+
         // lists
-        const sort = [tours, tours_text];
+        const sort = [tours, toursContainer];
 
         // lodge_door (components)
         const lodge_doorButton = new Button(lodge_door);
@@ -121,6 +128,16 @@ export default class Village extends RoomScene {
         chairAnimation.end = 179;
         chairAnimation.repeatDelay = 1500;
 
+        // tours (components)
+        const toursButton = new Button(tours);
+        toursButton.spriteName = "tours";
+        toursButton.hoverCallback = () => this.onToursOver();
+        toursButton.hoverOutCallback = () => this.onToursOut();
+        toursButton.callback = () => this.onToursClick();
+        toursButton.activeFrame = false;
+        toursButton.pixelPerfect = true;
+
+        this.toursText = toursText;
         this.sort = sort;
 
         this.events.emit("scene-awake");
@@ -128,6 +145,21 @@ export default class Village extends RoomScene {
 
 
     /* START-USER-CODE */
+
+    onToursOver() {
+        this.toursText.setFrame('tours_text_large')
+        this.toursText.y -= 6
+    }
+
+    onToursOut() {
+        this.toursText.setFrame('tours_text')
+        this.toursText.y += 6
+    }
+
+    onToursClick() {
+        this.interface.loadWidget('TakeTour')
+    }
+
     /* END-USER-CODE */
 }
 
