@@ -5,6 +5,10 @@ const widgets = {
     'IglooCatalog': require('@scenes/interface/catalogs/igloo/IglooCatalog'),
     'PetsCatalog': require('@scenes/interface/catalogs/pets/PetsCatalog'),
 
+    'GiveTour': require('@scenes/interface/books/give_tour/GiveTour'),
+    'TakeTour': require('@scenes/interface/tour/take_tour/TakeTour'),
+    'TourQuiz': require('@scenes/interface/tour/quiz/TourQuiz'),
+
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),
     'Map': require('@scenes/interface/game/map/Map'),
