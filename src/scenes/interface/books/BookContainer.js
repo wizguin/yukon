@@ -71,7 +71,9 @@ export default class BookContainer extends BaseContainer {
     }
 
     setCoins(coins) {
-        this.coins.text = `YOUR COINS: ${coins}`
+        if (this.coins) {
+            this.coins.text = `YOUR COINS: ${coins}`
+        }
     }
 
 }
