@@ -166,11 +166,18 @@ export default class InterfaceController extends BaseScene {
             return this.showWidget(this.loadedWidgets[key])
         }
 
-        let preload = this.widgets[key].preload
-        let text = this.getWidgetLoadString(preload.loadString)
+        const preload = this.widgets[key].preload
+        const callback = () => this.onWidgetLoaded(key, addToWidgetLayer)
+
+        if (!preload) {
+            callback()
+            return
+        }
+
+        const text = this.getWidgetLoadString(preload.loadString)
 
         this.prompt.showLoading(text, preload.key, preload.url, () => {
-            this.onWidgetLoaded(key, addToWidgetLayer)
+            callback()
         })
     }
 
