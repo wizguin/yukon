@@ -1,7 +1,7 @@
 export const preload = {
     key: 'give_tour-pack',
     url: 'assets/media/interface/books/give_tour/give_tour-pack.json',
-    loadString: ['loading', '']
+    loadString: 'give_tour'
 }
 
 /* START OF COMPILED CODE */

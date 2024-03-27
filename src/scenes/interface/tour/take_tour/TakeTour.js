@@ -1,7 +1,7 @@
 export const preload = {
     key: 'take_tour-pack',
     url: 'assets/media/interface/tour/take_tour-pack.json',
-    loadString: ['loading', '']
+    loadString: 'take_tour'
 }
 
 /* START OF COMPILED CODE */
