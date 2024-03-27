@@ -242,6 +242,12 @@ export default class ClientController {
         this.network.send('send_safe', { safe: safe })
     }
 
+    sendTour() {
+        if (this.penguin.equipped.head.id !== 428) {
+            this.interface.prompt.showError('Sorry, you must wear the tour guide\nhat to use this feature')
+        }
+    }
+
     showCrosshair() {
         if (!this.visible || !this.interface.main) {
             return
