@@ -157,7 +157,12 @@ export default class Village extends RoomScene {
     }
 
     onToursClick() {
-        this.interface.loadWidget('TakeTour')
+        if (this.world.client.isTourGuide) {
+            this.interface.loadWidget('GiveTour')
+        } else {
+            this.interface.loadWidget('TakeTour')
+        }
+
     }
 
     /* END-USER-CODE */
