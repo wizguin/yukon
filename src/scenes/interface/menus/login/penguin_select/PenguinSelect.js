@@ -1,6 +1,7 @@
 import BaseScene from '@scenes/base/BaseScene'
 
 import { Animation, NineSlice, SimpleButton } from '@components/components'
+import { alignGrid, getCenteredStartPos } from '@engine/utils/grid/Grid'
 
 import PenguinLarge from '../card/PenguinLarge'
 import PenguinSmall from '../card/PenguinSmall'
@@ -55,7 +56,7 @@ export default class PenguinSelect extends BaseScene {
         backText.setLineSpacing(25);
 
         // container
-        const container = this.add.container(0, 0);
+        const container = this.add.container(760, 430);
 
         // largeBg (components)
         const largeBgNineSlice = new NineSlice(largeBg);
@@ -149,22 +150,17 @@ export default class PenguinSelect extends BaseScene {
         }
     }
 
-    createGrid(width, height, cellWidth, cellHeight) {
-        Phaser.Actions.GridAlign(this.container.getAll(), {
-            width: width,
-            height: height,
+    createGrid(cols, rows, cellWidth, cellHeight) {
+        const startPos = getCenteredStartPos(cols, rows, cellWidth, cellHeight)
+
+        alignGrid({
+            items: this.container.getAll(),
+            cols: cols,
             cellWidth: cellWidth,
-            cellHeight: cellHeight,
-            position: Phaser.Display.Align.BOTTOM_RIGHT
+            cellHeight, cellHeight,
+            startX: startPos.x,
+            startY: startPos.y
         })
-
-        // Centers container
-        let remainingWidth = 1520 - (cellWidth * width)
-        let remainingHeight = 960 - (cellHeight * height)
-
-        this.container.x = remainingWidth / 2
-        // Offset y position by -50
-        this.container.y = remainingHeight / 2 - 50
     }
 
     updateMasks() {

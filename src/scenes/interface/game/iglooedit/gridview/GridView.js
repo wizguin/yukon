@@ -1,10 +1,16 @@
 import BaseContainer from '@scenes/base/BaseContainer'
 
 import { Button, Interactive } from '@components/components'
+import { alignGrid, getCenteredStartPos } from '@engine/utils/grid/Grid'
 
 import GridViewLoader from '@engine/loaders/GridViewLoader'
 import GridViewSlot from './gridview_slot/GridViewSlot'
 
+
+const cellPad = 40
+const cellSize = 418 + cellPad
+const maxWidth = 1160
+const maxHeight = 770
 
 /* START OF COMPILED CODE */
 
@@ -35,7 +41,7 @@ export default class GridView extends BaseContainer {
         this.add(grey_x);
 
         // container
-        const container = scene.add.container(0, 0);
+        const container = scene.add.container(760, 450);
         this.add(container);
 
         // pageButtons
@@ -85,11 +91,6 @@ export default class GridView extends BaseContainer {
 
         this.scene = scene
 
-        this.maxW = 1160
-        this.maxH = 770
-        this.cellSize = 418
-        this.pad = 40
-        this.offsetY = 30
         this.slots
 
         this.page = 1
@@ -139,10 +140,9 @@ export default class GridView extends BaseContainer {
         this.container.removeAll(true)
         this.slots = this.createSlots()
 
-        let cols = this.getColumns(this.pageSize)
-        let rows = Math.ceil(this.pageSize / cols)
+        const cols = this.getColumns(this.pageSize)
 
-        this.createGrid(cols, rows)
+        this.createGrid(cols)
 
         this.scene.events.once('update', () => {
             this.showPage()
@@ -154,12 +154,12 @@ export default class GridView extends BaseContainer {
 
         this.pageButtons.visible = this.pageSize >= this.maxPageSize
 
-        let page = this.items.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
+        const page = this.items.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
         this.loader.loadPage(this.filter, page)
     }
 
     prevPage() {
-        let page = this.page - 1
+        const page = this.page - 1
         if (page < 1) return
 
         this.page = page
@@ -167,7 +167,7 @@ export default class GridView extends BaseContainer {
     }
 
     nextPage() {
-        let page = this.page + 1
+        const page = this.page + 1
         if (page > this.maxPage) return
 
         this.page = page
@@ -175,42 +175,36 @@ export default class GridView extends BaseContainer {
     }
 
     createSlots() {
-        let slots = []
+        const slots = []
 
         for (let i = 0; i < this.pageSize; i++) {
-            let slot = new GridViewSlot(this.scene)
+            const slot = new GridViewSlot(this.scene)
             this.container.add(slot)
+
             slots.push(slot)
         }
 
         return slots
     }
 
-    createGrid(cols, rows, cellSize = this.cellSize) {
-        cellSize += this.pad
+    createGrid(cols) {
+        const rows = Math.ceil(this.pageSize / cols)
 
-        Phaser.Actions.GridAlign(this.slots, {
-            width: cols,
-            height: rows,
+        const startPos = getCenteredStartPos(cols, rows, cellSize)
+
+        alignGrid({
+            items: this.slots,
+            cols: cols,
             cellWidth: cellSize,
             cellHeight: cellSize,
-            position: Phaser.Display.Align.CENTER,
-            // Starting x and y position
-            x: (cellSize) / 2,
-            y: (cellSize) / 2
+            startX: startPos.x,
+            startY: startPos.y
         })
 
-        let totalW = cellSize * cols
-        let totalH = cellSize * rows
-        let scale = this.getScale(totalW, totalH)
+        const totalWidth = cellSize * cols
+        const totalHeight = cellSize * rows
 
-        // Centers container
-        let remainingW = 1520 - (totalW * scale)
-        let remainingH = 960 - (totalH * scale)
-
-        this.container.x = remainingW / 2
-        this.container.y = remainingH / 2 - (this.offsetY * scale)
-        this.container.scale = scale
+        this.container.scale = this.getScale(totalWidth, totalHeight)
     }
 
     /**
@@ -239,12 +233,12 @@ export default class GridView extends BaseContainer {
      * @param {number} totalW
      * @param {number} totalH
      */
-    getScale(totalW, totalH) {
+    getScale(totalWidth, totalHeight) {
         let scaleX = 1
         let scaleY = 1
 
-        if (totalW > this.maxW) scaleX = this.maxW / totalW
-        if (totalH > this.maxH) scaleY = this.maxH / totalH
+        if (totalWidth > maxWidth) scaleX = maxWidth / totalWidth
+        if (totalHeight > maxHeight) scaleY = maxHeight / totalHeight
 
         return Math.min(scaleX, scaleY)
     }

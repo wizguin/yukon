@@ -6,6 +6,7 @@ import Button from "../../../components/Button";
 
 import CardLoader from '@engine/loaders/CardLoader'
 import CardsViewCard from './CardsViewCard'
+import { alignGrid } from '@engine/utils/grid/Grid'
 
 /* END-USER-IMPORTS */
 
@@ -99,17 +100,13 @@ export default class CardsView extends BaseContainer {
     }
 
     createGrid() {
-        Phaser.Actions.GridAlign(this.cards, {
-            width: this.width,
-            height: this.height,
-
+        alignGrid({
+            items: this.cards,
+            cols: this.width,
             cellWidth: this.cellWidth,
             cellHeight: this.cellHeight,
-
-            position: Phaser.Display.Align.CENTER,
-
-            x: this.startX,
-            y: this.startY
+            startX: this.startX,
+            startY: this.startY
         })
     }
 
