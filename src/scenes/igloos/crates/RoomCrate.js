@@ -33,7 +33,7 @@ export default class RoomCrate extends Crate {
         this.explosion.scale = 1.47
 
         if (!scene.anims.exists('crate_spinner')) {
-            this.createAnims()
+            this.createCrateAnim()
         }
 
         spinner.anims.play('crate_spinner')
@@ -44,7 +44,7 @@ export default class RoomCrate extends Crate {
 
     /* START-USER-CODE */
 
-    createAnims() {
+    createCrateAnim() {
         this.scene.anims.create({
             key: 'crate_spinner',
             frames: this.scene.anims.generateFrameNames('iglooedit', {

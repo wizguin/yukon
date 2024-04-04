@@ -30,7 +30,7 @@ export default class Crate extends Phaser.GameObjects.Container {
         this.items = []
 
         if (!scene.anims.exists('explode')) {
-            this.createAnims()
+            this.createExplodeAnim()
         }
 
         /* END-USER-CTR-CODE */
@@ -39,7 +39,7 @@ export default class Crate extends Phaser.GameObjects.Container {
 
     /* START-USER-CODE */
 
-    createAnims() {
+    createExplodeAnim() {
         this.scene.anims.create({
             key: 'explode',
             frames: this.scene.anims.generateFrameNames('iglooedit', {

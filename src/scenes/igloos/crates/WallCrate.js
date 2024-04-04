@@ -24,7 +24,7 @@ export default class WallCrate extends Crate {
         this.crate.on('animationcomplete', () => this.onComplete())
 
         if (!scene.anims.exists('wall_crate')) {
-            this.createAnims()
+            this.createCrateAnim()
         }
 
         /* END-USER-CTR-CODE */
@@ -33,7 +33,7 @@ export default class WallCrate extends Crate {
 
     /* START-USER-CODE */
 
-    createAnims() {
+    createCrateAnim() {
         this.scene.anims.create({
             key: 'wall_crate',
             frames: this.scene.anims.generateFrameNames('iglooedit', {
