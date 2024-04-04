@@ -111,7 +111,7 @@ export default class SenseiCards extends BaseContainer {
             return
         }
 
-        this.tween.remove()
+        this.tween.stop()
         this.tween = null
     }
 

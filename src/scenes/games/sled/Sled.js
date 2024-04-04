@@ -382,25 +382,27 @@ export default class Sled extends GameScene {
     playIntro() {
         this.hideWaiting()
 
+        const tweenDuration = 100
+        const tweenEase = Phaser.Math.Easing.Back.InOut
+
         const tweenIn = {
-            scale: { from: 0.45, to: 1 }
+            scale: { from: 0.45, to: 1 },
+            duration: tweenDuration,
+            ease: tweenEase
         }
 
         const tweenOut = {
             scale: { from: 1, to: 0.45 },
-            delay: 550
+            delay: 550,
+            duration: tweenDuration,
+            ease: tweenEase
         }
 
         // Start intro timer
         this.introTimer = 0
 
-        // Will need to be updated for Phaser v3.60.0+
-        this.tweens.timeline({
+        this.tweens.chain({
             targets: this.text,
-            duration: 100,
-            ease: Phaser.Math.Easing.Back.InOut,
-
-            onComplete: () => this.onIntroComplete(),
 
             tweens: [
                 {
@@ -418,7 +420,9 @@ export default class Sled extends GameScene {
                     onStart: () => this.text.setTexture('sled', 'text/go'),
                 },
                 tweenOut
-            ]
+            ],
+
+            onComplete: () => this.onIntroComplete(),
         })
     }
 
@@ -445,7 +449,7 @@ export default class Sled extends GameScene {
     }
 
     hideWaiting() {
-        this.spinnerTween.remove()
+        this.spinnerTween.stop()
         this.spinner.visible = false
 
         this.tweens.add({

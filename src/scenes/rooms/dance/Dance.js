@@ -46,7 +46,7 @@ export default class Dance extends RoomScene {
             'lounge': () => this.triggerRoom(121, 1200, 760),
             'mix': null
         }
-        this.roomAnims = true
+
         this.music = '5'
 
         /* END-USER-CTR-CODE */

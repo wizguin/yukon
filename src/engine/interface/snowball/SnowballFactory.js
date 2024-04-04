@@ -36,7 +36,7 @@ export default class SnowballFactory {
     removeOldestBall() {
         let oldest = this.balls.shift()
 
-        if (oldest.tween) oldest.tween.remove()
+        if (oldest.tween) oldest.tween.stop()
         oldest.shadow.destroy()
         oldest.destroy()
     }
@@ -80,7 +80,7 @@ export default class SnowballFactory {
 
             onStart: () => this.onTweenStart(ball),
             onUpdate: () => this.onTweenUpdate(ball, curve),
-            onComplete: () => this.onTweenComplete(ball)
+            onComplete: () => this.onTweenComplete(ball, curve)
         })
     }
 
@@ -100,7 +100,9 @@ export default class SnowballFactory {
         ball.shadow.depth = ball.shadow.y
     }
 
-    onTweenComplete(ball) {
+    onTweenComplete(ball, curve) {
+        this.onTweenUpdate(ball, curve)
+
         if (ball.active) {
             ball.setTexture('main', 'snowball/ground')
             this.world.events.emit('snowballcomplete', ball.x, ball.y)

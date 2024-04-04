@@ -143,6 +143,10 @@ export default class SenseiBubbleWalk extends BaseContainer {
     createAnim(child) {
         const animKey = this.getAnimKey(child)
 
+        if (this.scene.anims.exists(animKey)) {
+            return
+        }
+
         const frameNames = this.scene.anims.generateFrameNames('senseiinstructions', {
             prefix: `${animKey}_`,
             start: 1,

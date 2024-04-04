@@ -15,9 +15,6 @@ export default class Berg extends RoomScene {
 
 
         /* START-USER-CTR-CODE */
-
-        this.roomAnims = true
-
         /* END-USER-CTR-CODE */
     }
 

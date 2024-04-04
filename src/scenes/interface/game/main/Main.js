@@ -413,11 +413,6 @@ export default class Main extends BaseScene {
 
         this.input.keyboard.on('keydown-TAB', (event) => this.onChatKeyDown(event))
         this.input.keyboard.on('keydown-ENTER', (event) => this.onChatKeyDown(event))
-
-        // Anims
-
-        let anims = this.cache.json.get('main-anims')
-        this.anims.fromJSON(anims)
     }
 
     onSleep(sys, data) {

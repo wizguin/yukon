@@ -43,7 +43,6 @@ export default class Dojo extends RoomScene {
             'table203': () => this.triggerMat(203)
         }
 
-        this.roomAnims = true
         this.music = 21
 
         this.waddles = {}

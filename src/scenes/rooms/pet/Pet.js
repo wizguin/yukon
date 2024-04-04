@@ -45,7 +45,6 @@ export default class Pet extends RoomScene {
             'adopt': null,
             'roundup': () => this.triggerGame(902),
         }
-        this.roomAnims = true
 
         /* END-USER-CTR-CODE */
     }

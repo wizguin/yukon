@@ -132,7 +132,7 @@ export default class ClientController {
     }
 
     onPointerMove(pointer) {
-        if (this.interface.main.crosshair.visible) {
+        if (this.interface.main.crosshair?.visible) {
             this.interface.main.onCrosshairMove(pointer)
         }
 

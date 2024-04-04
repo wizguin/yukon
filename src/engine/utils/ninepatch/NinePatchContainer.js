@@ -164,4 +164,11 @@ export default class NinePatchContainer extends Phaser.GameObjects.Container {
         this.redraw()
     }
 
+    setMargin(margin) {
+        this.marginLeft = margin
+        this.marginTop = margin
+        this.marginRight = margin
+        this.marginBottom = margin
+    }
+
 }

@@ -135,7 +135,7 @@ export default class MailReply extends BaseContainer {
     }
 
     removeTween() {
-        this.tween.remove()
+        this.tween.stop()
         this.tween = null
     }
 

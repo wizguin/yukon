@@ -381,6 +381,7 @@ export default class Penguin extends BaseContainer {
     }
 
     onMoveComplete() {
+        this.onMoveUpdate()
         this.removeTween()
 
         if (this.afterMove) {
@@ -405,7 +406,7 @@ export default class Penguin extends BaseContainer {
             return
         }
 
-        this.tween.remove()
+        this.tween.stop()
         this.tween = null
 
         if (playFrame) {
