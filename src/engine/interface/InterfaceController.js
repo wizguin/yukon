@@ -120,7 +120,7 @@ export default class InterfaceController extends BaseScene {
     }
 
     showTourMessage(id, roomId) {
-        if (!roomId in this.crumbs.scenes.rooms) {
+        if (!(roomId in this.crumbs.scenes.rooms)) {
             return
         }
 
