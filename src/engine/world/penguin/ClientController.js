@@ -53,7 +53,8 @@ export default class ClientController {
 
             'emote_key': () => this.emoteKeyPressed = true,
             'send_emote': (id) => this.sendEmote(id),
-            'send_safe': (id) => this.sendSafe(id)
+            'send_safe': (id) => this.sendSafe(id),
+            'send_joke': () => this.sendJoke()
         }
 
         this.lockRotation = false
@@ -240,6 +241,13 @@ export default class ClientController {
 
         this.interface.showTextBalloon(this.id, message)
         this.network.send('send_safe', { safe: safe })
+    }
+
+    sendJoke() {
+        const randomJokeId = Phaser.Math.Between(0, this.crumbs.jokes.length - 1)
+
+        this.interface.showTextBalloon(this.id, this.crumbs.jokes[randomJokeId], false)
+        this.network.send('send_joke', { joke: randomJokeId })
     }
 
     sendTour() {

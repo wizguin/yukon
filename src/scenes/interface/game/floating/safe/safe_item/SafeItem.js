@@ -125,6 +125,7 @@ export default class SafeItem extends BaseContainer {
                 break;
 
             case 'joke':
+                this.world.client.sendJoke()
                 break
 
             default:
