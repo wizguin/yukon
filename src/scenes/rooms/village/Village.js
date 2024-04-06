@@ -90,7 +90,7 @@ export default class Village extends RoomScene {
 
         // tours
         const tours = this.add.image(0, 0, "village", "tours");
-        tours.setOrigin(0.5, 0.8846153846153846);
+        tours.setOrigin(0.5028901734104047, 0.8846153846153846);
         toursContainer.add(tours);
 
         // toursText
