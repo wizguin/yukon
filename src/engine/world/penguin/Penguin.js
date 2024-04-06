@@ -33,7 +33,7 @@ export default class Penguin extends BaseContainer {
         // Active balloon
         this.balloon
 
-        this.balloonTimer
+        this.balloonTimer = new Phaser.Time.TimerEvent()
         this.textBalloon
         this.emoteBalloon
 
@@ -397,8 +397,7 @@ export default class Penguin extends BaseContainer {
     }
 
     updateBalloon() {
-        this.balloon.x = this.x
-        this.balloon.y = this.y - 95
+        this.balloon.updatePosition()
     }
 
     removeTween(playFrame = true) {

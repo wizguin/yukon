@@ -4,18 +4,12 @@ import TextBalloon from './TextBalloon'
 
 export default class BalloonFactory {
 
-    constructor(main) {
-        // Main interface
-        this.main = main
-
-        // Balloon destruction delay
-        this.delay = 4500
-
-        this.offsetY = -95
+    constructor(scene) {
+        this.scene = scene
     }
 
     get penguins() {
-        return this.main.world.room.penguins
+        return this.scene.world.room.penguins
     }
 
     /**
@@ -29,7 +23,7 @@ export default class BalloonFactory {
             return
         }
 
-        let penguin = this.penguins[id]
+        const penguin = this.penguins[id]
         if (!penguin || !penguin.visible) {
             return
         }
@@ -39,8 +33,7 @@ export default class BalloonFactory {
             penguin.room.add.existing(penguin.emoteBalloon)
         }
 
-        penguin.emoteBalloon.setContent(emote)
-        this.updateBalloon(penguin, penguin.emoteBalloon)
+        penguin.emoteBalloon.show(emote)
     }
 
     /**
@@ -48,18 +41,21 @@ export default class BalloonFactory {
      *
      * @param {number} id - Penguin ID
      * @param {string} text - Message to be displayed
+     * @param {boolean} addToLog - If the message should be added to the chat log
      */
-    showTextBalloon(id, text) {
+    showTextBalloon(id, text, addToLog) {
         if (!text) {
             return
         }
 
-        let penguin = this.penguins[id]
+        const penguin = this.penguins[id]
         if (!penguin) {
             return
         }
 
-        this.main.chatLog.addMessage(penguin.id, penguin.username, text)
+        if (addToLog) {
+            this.scene.chatLog.addMessage(penguin.id, penguin.username, text)
+        }
 
         if (!penguin.visible) {
             return
@@ -70,43 +66,7 @@ export default class BalloonFactory {
             penguin.room.add.existing(penguin.textBalloon)
         }
 
-        penguin.textBalloon.setContent(text)
-        this.updateBalloon(penguin, penguin.textBalloon)
-    }
-
-    updateBalloon(penguin, balloon) {
-        if (penguin.balloon) {
-            penguin.balloon.visible = false
-        }
-
-        // Client balloons sorted higher
-        balloon.depth = (penguin.isClient) ? 3001 : 3000
-
-        balloon.visible = true
-        penguin.balloon = balloon
-
-        this.addTimer(penguin, balloon)
-    }
-
-    addTimer(penguin, balloon) {
-        let config = {
-            delay: this.delay,
-            callback: () => this.removeBalloon(penguin, balloon)
-        }
-
-        if (penguin.balloonTimer) {
-            penguin.balloonTimer.reset(config)
-            penguin.room.time.addEvent(penguin.balloonTimer)
-
-            return
-        }
-
-        penguin.balloonTimer = penguin.room.time.addEvent(config)
-    }
-
-    removeBalloon(penguin, balloon) {
-        balloon.visible = false
-        penguin.balloon = null
+        penguin.textBalloon.show(text)
     }
 
 }

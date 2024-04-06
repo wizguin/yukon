@@ -1,17 +1,15 @@
 import Balloon from './Balloon'
 
 
+const width = 256
+const paddingX = 28
+const paddingY = 16
+const textWidth = width - paddingX
+
 export default class TextBalloon extends Balloon {
 
     constructor(penguin) {
         super(penguin)
-
-        let width = 256
-        let paddingX = 28
-        let textWidth = width - paddingX
-
-        this.maxLength = 60
-        this.paddingY = 16
 
         this.textStyle = {
             fontFamily: 'Burbank Small',
@@ -25,9 +23,22 @@ export default class TextBalloon extends Balloon {
 
         this.text = this.addText()
 
-        this.addBalloon(width, this.text.height + this.paddingY)
+        this.textParts = []
+
+        this.addBalloon(width, this.text.height + paddingY)
         this.addPointer(width, 'balloon-text')
         this.add(this.text)
+    }
+
+    get isDone() {
+        return !this.textParts.length
+    }
+
+    show(text) {
+        // Split with delimeter for multi part message
+        this.textParts = text.split('|')
+
+        this.setText()
     }
 
     addText() {
@@ -38,13 +49,21 @@ export default class TextBalloon extends Balloon {
         return textSprite
     }
 
-    setContent(text) {
-        this.updatePosition()
+    setText() {
+        const nextMessage = this.textParts.shift()
 
-        text = text.substring(0, this.maxLength)
-        this.text.text = text
+        this.text.text = nextMessage
+        this.resizeBalloon(this.balloon.width, this.text.height + paddingY)
 
-        this.resizeBalloon(this.balloon.width, this.text.height + this.paddingY)
+        super.show()
+    }
+
+    onTimerComplete() {
+        if (!this.isDone) {
+            this.setText()
+        } else {
+            super.onTimerComplete()
+        }
     }
 
 }
