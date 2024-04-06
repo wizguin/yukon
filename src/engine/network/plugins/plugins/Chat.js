@@ -8,7 +8,8 @@ export default class Chat extends Plugin {
         this.events = {
             'send_message': this.sendMessage,
             'send_safe': this.sendSafe,
-            'send_emote': this.sendEmote
+            'send_emote': this.sendEmote,
+            'send_tour': this.sendTour
         }
     }
 
@@ -20,7 +21,7 @@ export default class Chat extends Plugin {
 
     sendSafe(args) {
         if (this.world.room.isReady) {
-            let message = this.interface.main.safe.safeMessagesMap[args.safe]
+            const message = this.interface.main.safe.safeMessagesMap[args.safe]
 
             this.interface.showTextBalloon(args.id, message)
         }
@@ -29,6 +30,12 @@ export default class Chat extends Plugin {
     sendEmote(args) {
         if (this.world.room.isReady) {
             this.interface.showEmoteBalloon(args.id, args.emote)
+        }
+    }
+
+    sendTour(args) {
+        if (this.world.room.isReady) {
+            this.interface.showTourMessage(args.id, args.roomId)
         }
     }
 

@@ -115,8 +115,21 @@ export default class InterfaceController extends BaseScene {
         this.main.balloonFactory.showEmoteBalloon(id, emote)
     }
 
-    showTextBalloon(id, text) {
-        this.main.balloonFactory.showTextBalloon(id, text)
+    showTextBalloon(id, text, addToLog = true) {
+        this.main.balloonFactory.showTextBalloon(id, text, addToLog)
+    }
+
+    showTourMessage(id, roomId) {
+        if (!roomId in this.crumbs.scenes.rooms) {
+            return
+        }
+
+        const roomName = this.crumbs.scenes.rooms[roomId].key.toLowerCase()
+        const message = this.crumbs.tour_messages[roomName]
+
+        if (message) {
+            this.showTextBalloon(id, message, false)
+        }
     }
 
     showCard(id, refresh = false) {

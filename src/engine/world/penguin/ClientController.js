@@ -245,6 +245,16 @@ export default class ClientController {
     sendTour() {
         if (this.penguin.equipped.head.id !== 428) {
             this.interface.prompt.showError('Sorry, you must wear the tour guide\nhat to use this feature')
+            return
+        }
+
+        const roomName = this.world.room.key.toLowerCase()
+
+        if (roomName in this.crumbs.tour_messages) {
+            const roomId = this.world.room.id
+
+            this.interface.showTourMessage(this.id, roomId)
+            this.network.send('send_tour', { roomId })
         }
     }
 

@@ -493,7 +493,7 @@ export default class Main extends BaseScene {
 
         this.chatInput.clearText()
 
-        this.balloonFactory.showTextBalloon(this.world.client.id, text)
+        this.interface.showTextBalloon(this.world.client.id, text)
         this.network.send('send_message', { message: text })
     }
 
