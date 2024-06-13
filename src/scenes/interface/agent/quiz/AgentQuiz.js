@@ -40,6 +40,8 @@ export default class AgentQuiz extends BaseContainer {
         /** @type {Phaser.GameObjects.Container} */
         this.mission;
         /** @type {Phaser.GameObjects.Text} */
+        this.doneText;
+        /** @type {Phaser.GameObjects.Text} */
         this.questionText;
         /** @type {Phaser.GameObjects.Text} */
         this.infoText;
@@ -93,19 +95,17 @@ export default class AgentQuiz extends BaseContainer {
         this.add(rewards);
 
         // reward2
-        const reward2 = scene.add.text(111, 159, "", {});
-        reward2.setOrigin(0.5, 0);
+        const reward2 = scene.add.text(-184, 159, "", {});
         reward2.text = "Text";
-        reward2.setStyle({ "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "28px" });
-        reward2.setWordWrapWidth(590, true);
+        reward2.setStyle({ "color": "#000", "fixedWidth":500,"fontFamily": "Arial Narrow", "fontSize": "28px" });
+        reward2.setWordWrapWidth(500, true);
         rewards.add(reward2);
 
         // reward1
-        const reward1 = scene.add.text(111, 79, "", {});
-        reward1.setOrigin(0.5, 0);
+        const reward1 = scene.add.text(-184, 79, "", {});
         reward1.text = "Text";
-        reward1.setStyle({ "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "28px" });
-        reward1.setWordWrapWidth(590, true);
+        reward1.setStyle({ "color": "#000", "fixedWidth":500,"fontFamily": "Arial Narrow", "fontSize": "28px" });
+        reward1.setWordWrapWidth(500, true);
         rewards.add(reward1);
 
         // hq
@@ -131,31 +131,28 @@ export default class AgentQuiz extends BaseContainer {
         this.add(mission);
 
         // mission3
-        const mission3 = scene.add.text(92, 210, "", {});
-        mission3.setOrigin(0.5, 0);
+        const mission3 = scene.add.text(-203, 210, "", {});
         mission3.text = "Text";
-        mission3.setStyle({ "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "28px" });
-        mission3.setWordWrapWidth(590, true);
+        mission3.setStyle({ "color": "#000", "fixedWidth":500,"fontFamily": "Arial Narrow", "fontSize": "28px" });
+        mission3.setWordWrapWidth(500, true);
         mission.add(mission3);
 
         // mission2
-        const mission2 = scene.add.text(92, 134, "", {});
-        mission2.setOrigin(0.5, 0);
+        const mission2 = scene.add.text(-203, 134, "", {});
         mission2.text = "Text";
-        mission2.setStyle({ "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "28px" });
-        mission2.setWordWrapWidth(590, true);
+        mission2.setStyle({ "color": "#000", "fixedWidth":500,"fontFamily": "Arial Narrow", "fontSize": "28px" });
+        mission2.setWordWrapWidth(500, true);
         mission.add(mission2);
 
         // mission1
-        const mission1 = scene.add.text(92, 58, "", {});
-        mission1.setOrigin(0.5, 0);
+        const mission1 = scene.add.text(-203, 58, "", {});
         mission1.text = "Text";
-        mission1.setStyle({ "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "28px" });
-        mission1.setWordWrapWidth(590, true);
+        mission1.setStyle({ "color": "#000", "fixedWidth":500,"fontFamily": "Arial Narrow", "fontSize": "28px" });
+        mission1.setWordWrapWidth(500, true);
         mission.add(mission1);
 
         // number3
-        const number3 = scene.add.text(-243, 236, "", {});
+        const number3 = scene.add.text(-250, 236, "", {});
         number3.setOrigin(0.5, 0.5);
         number3.text = "(3)";
         number3.setStyle({ "align": "center", "color": "#003366", "fixedWidth":80,"fontFamily": "CCFaceFront", "fontSize": "36px", "fontStyle": "bold italic" });
@@ -163,7 +160,7 @@ export default class AgentQuiz extends BaseContainer {
         mission.add(number3);
 
         // number2
-        const number2 = scene.add.text(-243, 156, "", {});
+        const number2 = scene.add.text(-250, 156, "", {});
         number2.setOrigin(0.5, 0.5);
         number2.text = "(2)";
         number2.setStyle({ "align": "center", "color": "#003366", "fixedWidth":80,"fontFamily": "CCFaceFront", "fontSize": "36px", "fontStyle": "bold italic" });
@@ -171,7 +168,7 @@ export default class AgentQuiz extends BaseContainer {
         mission.add(number2);
 
         // number1
-        const number1 = scene.add.text(-243, 76, "", {});
+        const number1 = scene.add.text(-250, 76, "", {});
         number1.setOrigin(0.5, 0.5);
         number1.text = "(1)";
         number1.setStyle({ "align": "center", "color": "#003366", "fixedWidth":80,"fontFamily": "CCFaceFront", "fontSize": "36px", "fontStyle": "bold italic" });
@@ -185,6 +182,15 @@ export default class AgentQuiz extends BaseContainer {
         missionText.setStyle({ "align": "center", "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "32px" });
         missionText.setWordWrapWidth(590, true);
         mission.add(missionText);
+
+        // doneText
+        const doneText = scene.add.text(760, 299, "", {});
+        doneText.setOrigin(0.5, 0);
+        doneText.visible = false;
+        doneText.text = "Text";
+        doneText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        doneText.setWordWrapWidth(600, true);
+        this.add(doneText);
 
         // questionText
         const questionText = scene.add.text(760, 279, "", {});
@@ -200,8 +206,8 @@ export default class AgentQuiz extends BaseContainer {
         infoText.setOrigin(0.5, 0);
         infoText.visible = false;
         infoText.text = "Text";
-        infoText.setStyle({ "align": "center", "color": "#000", "fixedWidth":590,"fontFamily": "Arial Narrow", "fontSize": "32px" });
-        infoText.setWordWrapWidth(590, true);
+        infoText.setStyle({ "align": "center", "color": "#000", "fixedWidth":600,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        infoText.setWordWrapWidth(600, true);
         this.add(infoText);
 
         // title
@@ -221,7 +227,7 @@ export default class AgentQuiz extends BaseContainer {
 
         // lists
         const options = [option1, option2, option3];
-        const components = [mission, rewards, infoText, questionText];
+        const components = [mission, rewards, infoText, questionText, doneText];
 
         // block (components)
         new Interactive(block);
@@ -252,6 +258,7 @@ export default class AgentQuiz extends BaseContainer {
         this.mission1 = mission1;
         this.missionText = missionText;
         this.mission = mission;
+        this.doneText = doneText;
         this.questionText = questionText;
         this.infoText = infoText;
         this.title = title;
@@ -325,7 +332,7 @@ export default class AgentQuiz extends BaseContainer {
         this.clear()
 
         this.showText(this.title, this.getString('agent_done_title'))
-        // this.showText(this.infoText, this.getFormatString('agent_done_text', this.getString('game')))
+        this.showText(this.doneText, this.getFormatString('agent_done_text', this.getString('game')))
 
         this.showOption(3, this.getString('done'), () => this.close())
     }
@@ -347,7 +354,6 @@ export default class AgentQuiz extends BaseContainer {
         this.showText(this.questionText, nextQuestion.question)
 
         for (const [i, answer] of Object.keys(nextQuestion.answers).entries()) {
-            console.log(i, answer)
             this.showOption(i + 1, answer, () => this.onOptionClick(answer))
         }
     }
