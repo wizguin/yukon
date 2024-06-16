@@ -279,6 +279,9 @@ export default class AgentQuiz extends BaseContainer {
         if (this.world.client.isSecretAgent) {
             this.setAlready()
 
+        } else if (this.world.client.daysOld < 30) {
+            this.setTooYoung()
+
         } else {
             this.quiz = new MultiChoiceQuiz(this.crumbs.agent_quiz)
             this.setStart()
@@ -294,6 +297,18 @@ export default class AgentQuiz extends BaseContainer {
         this.showText(this.infoText, this.getFormatString('agent_start_text', this.getString('game')))
 
         this.showOption(3, this.getString('agent_start_button'), () => this.setMission())
+    }
+
+    setTooYoung() {
+        this.clear()
+
+        const ageText = this.getString('agent_age_text')
+        const daysOld = this.getFormatString('days_old', this.world.client.daysOld)
+
+        this.showText(this.title, this.getString('agent_fail_title'))
+        this.showText(this.infoText, `${ageText}\n\n${daysOld}`)
+
+        this.showOption(3, this.getString('ok'), () => this.close())
     }
 
     setAlready() {
