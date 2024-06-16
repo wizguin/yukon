@@ -42,6 +42,8 @@ export default class Main extends BaseScene {
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
         this.crosshair;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.phone_button;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
         /** @type {MailButton} */
@@ -167,6 +169,10 @@ export default class Main extends BaseScene {
 
         // map_button
         const map_button = this.add.sprite(96, 880, "main", "map-button");
+
+        // phone_button
+        const phone_button = this.add.sprite(96, 757, "main", "phone-button");
+        phone_button.setOrigin(0.5, 0.504424778761062);
 
         // request_button
         const request_button = this.add.image(276, 71, "main", "buddy-button");
@@ -325,6 +331,11 @@ export default class Main extends BaseScene {
         map_buttonButton.callback = () => this.onMapClick();
         map_buttonButton.activeFrame = false;
 
+        // phone_button (components)
+        const phone_buttonButton = new Button(phone_button);
+        phone_buttonButton.spriteName = "phone-button";
+        phone_buttonButton.activeFrame = false;
+
         // request_button (components)
         const request_buttonButton = new Button(request_button);
         request_buttonButton.spriteName = "buddy-button";
@@ -347,6 +358,7 @@ export default class Main extends BaseScene {
         this.onlinePopup = onlinePopup;
         this.chatLog = chatLog;
         this.crosshair = crosshair;
+        this.phone_button = phone_button;
         this.request_button = request_button;
         this.mailButton = mailButton;
         this.mod_m = mod_m;
@@ -374,6 +386,7 @@ export default class Main extends BaseScene {
         this._create()
 
         this.events.on('sleep', this.onSleep, this)
+        this.events.on('wake', this.onWake, this)
 
         // Widgets
 
@@ -395,6 +408,10 @@ export default class Main extends BaseScene {
         // Buddy requests
 
         this.requests = []
+
+        // Secret agent
+
+        this.showPhone()
 
         // Chat input
 
@@ -442,6 +459,10 @@ export default class Main extends BaseScene {
         }
     }
 
+    onWake() {
+        this.showPhone()
+    }
+
     setupWidgets() {
         for (let widget of this.widgetLayer.list) {
             this.setupWidget(widget)
@@ -459,6 +480,10 @@ export default class Main extends BaseScene {
 
     updateMailCount() {
         this.mailButton?.updateMailCount()
+    }
+
+    showPhone() {
+        this.phone_button.visible = this.world.client?.isSecretAgent
     }
 
     onSnowballClick() {
