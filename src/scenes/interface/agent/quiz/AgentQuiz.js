@@ -276,8 +276,13 @@ export default class AgentQuiz extends BaseContainer {
     /* START-USER-CODE */
 
     show() {
-        this.quiz = new MultiChoiceQuiz(this.crumbs.agent_quiz)
-        this.setStart()
+        if (this.world.client.isSecretAgent) {
+            this.setAlready()
+
+        } else {
+            this.quiz = new MultiChoiceQuiz(this.crumbs.agent_quiz)
+            this.setStart()
+        }
 
         super.show()
     }
@@ -289,6 +294,15 @@ export default class AgentQuiz extends BaseContainer {
         this.showText(this.infoText, this.getFormatString('agent_start_text', this.getString('game')))
 
         this.showOption(3, this.getString('agent_start_button'), () => this.setMission())
+    }
+
+    setAlready() {
+        this.clear()
+
+        this.showText(this.title, this.getString('agent_already_title'))
+        this.showText(this.infoText, this.getString('agent_already_text'))
+
+        this.showOption(3, this.getString('ok'), () => this.close())
     }
 
     setMission() {

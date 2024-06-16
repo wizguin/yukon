@@ -96,6 +96,10 @@ export default class ClientController {
         return this.inventory.head.includes(428)
     }
 
+    get isSecretAgent() {
+        return this.inventory.award.includes(800)
+    }
+
     get daysOld() {
         const oneDay = 1000 * 60 * 60 * 24
         const timeDiff = Date.now() - Date.parse(this.joinTime)
