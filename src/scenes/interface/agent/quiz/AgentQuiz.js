@@ -376,7 +376,7 @@ export default class AgentQuiz extends BaseContainer {
         const nextQuestion = this.quiz.nextQuestion()
 
         if (!nextQuestion) {
-            this.setDone()
+            this.endQuiz()
             return
         }
 
@@ -388,7 +388,11 @@ export default class AgentQuiz extends BaseContainer {
     }
 
     endQuiz() {
+        if (this.quiz.correctAnswers === this.quiz.totalQuestions) {
+            this.network.send('add_item', { item: 800 })
+        }
 
+        this.setDone()
     }
 
     onOptionClick(answer) {
