@@ -52,6 +52,19 @@ export default class Phone extends BaseContainer {
         const closeButton = scene.add.image(94, -123, "main", "phone/close_button");
         this.add(closeButton);
 
+        // scrollDown
+        const scrollDown = scene.add.image(-153, -4, "main", "phone/scroll_button");
+        scrollDown.setInteractive(new Phaser.Geom.Rectangle(10, 0, 36, 81), Phaser.Geom.Rectangle.Contains);
+        scrollDown.setOrigin(0.5087719298245614, 0.5);
+        scrollDown.flipY = true;
+        this.add(scrollDown);
+
+        // scrollUp
+        const scrollUp = scene.add.image(-153, -87, "main", "phone/scroll_button");
+        scrollUp.setInteractive(new Phaser.Geom.Rectangle(10, 0, 36, 81), Phaser.Geom.Rectangle.Contains);
+        scrollUp.setOrigin(0.5087719298245614, 0.5);
+        this.add(scrollUp);
+
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = bg;
@@ -59,10 +72,12 @@ export default class Phone extends BaseContainer {
         // hq (components)
         const hqButton = new Button(hq);
         hqButton.spriteName = "phone/button";
+        hqButton.callback = () => this.onHqClick();
 
         // teleport (components)
         const teleportButton = new Button(teleport);
         teleportButton.spriteName = "phone/button";
+        teleportButton.callback = () => this.onTeleportClick();
 
         // light (components)
         const lightAnimation = new Animation(light);
@@ -74,11 +89,40 @@ export default class Phone extends BaseContainer {
         closeButtonButton.spriteName = "phone/close_button";
         closeButtonButton.callback = () => this.close();
 
+        // scrollDown (components)
+        const scrollDownButton = new Button(scrollDown);
+        scrollDownButton.spriteName = "phone/scroll_button";
+        scrollDownButton.activeFrame = false;
+
+        // scrollUp (components)
+        const scrollUpButton = new Button(scrollUp);
+        scrollUpButton.spriteName = "phone/scroll_button";
+        scrollUpButton.activeFrame = false;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
     /* START-USER-CODE */
+
+    onTeleportClick() {
+
+    }
+
+    onHqClick() {
+        this.joinRoom(803)
+    }
+
+    joinRoom(roomId) {
+        if (!(roomId in this.crumbs.scenes.rooms)) return
+
+        const room = this.crumbs.scenes.rooms[roomId]
+
+        if (this.world.room.key !== room.key) {
+            this.world.client.sendJoinRoom(roomId, room.key, room.x, room.y)
+        }
+    }
+
     /* END-USER-CODE */
 }
 

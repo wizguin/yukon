@@ -55,6 +55,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "phone/button",
+                    "Button.callback": "() => this.onHqClick()",
                     "texture": {
                         "key": "main",
                         "frame": "phone/button"
@@ -69,6 +70,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "phone/button",
+                    "Button.callback": "() => this.onTeleportClick()",
                     "texture": {
                         "key": "main",
                         "frame": "phone/button"
@@ -135,6 +137,49 @@
                     },
                     "x": 94,
                     "y": -123
+                },
+                {
+                    "type": "Image",
+                    "id": "d4932c40-545e-4b65-ac94-40133d78c499",
+                    "label": "scrollDown",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/scroll_button",
+                    "Button.activeFrame": false,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": 10,
+                    "hitArea.width": 36,
+                    "hitArea.height": 81,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll_button"
+                    },
+                    "x": -153,
+                    "y": -4,
+                    "originX": 0.5087719298245614,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "aaa1f570-b8cf-4e6c-aa61-988e11eb06b1",
+                    "label": "scrollUp",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/scroll_button",
+                    "Button.activeFrame": false,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": 10,
+                    "hitArea.width": 36,
+                    "hitArea.height": 81,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll_button"
+                    },
+                    "x": -153,
+                    "y": -87,
+                    "originX": 0.5087719298245614
                 }
             ]
         }
