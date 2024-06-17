@@ -1,0 +1,149 @@
+{
+    "id": "8cc3e8e7-f6fc-4cfb-8b8a-ff681936247f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f866496e-3af0-4333-9bad-a7171cf8ab7e",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "bg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9205570c-1a29-4eab-ad06-8ede89ee948f",
+                    "label": "scroll",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll0001"
+                    },
+                    "x": -91,
+                    "y": -45
+                },
+                {
+                    "type": "Image",
+                    "id": "102bfffb-c003-4580-933e-83e624a1c3c8",
+                    "label": "bg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/bg"
+                    },
+                    "originX": 0.5018867924528302,
+                    "originY": 0.5009523809523809
+                },
+                {
+                    "type": "Image",
+                    "id": "de7ead21-515b-4f4f-afe7-210003037faf",
+                    "label": "hq",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/button",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/button"
+                    },
+                    "y": 121
+                },
+                {
+                    "type": "Image",
+                    "id": "4a354918-5ed3-4072-a582-ccd57927673e",
+                    "label": "teleport",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/button",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/button"
+                    },
+                    "y": 37
+                },
+                {
+                    "type": "Text",
+                    "id": "c05d5f7c-87bf-4a8e-8bdc-74fbf05edd6d",
+                    "label": "hqText",
+                    "y": 41,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Teleport",
+                    "fixedWidth": 160,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "7bf2b277-e07d-44c9-a864-bd5da302ebad",
+                    "label": "teleportText",
+                    "y": 125,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Visit HQ",
+                    "fixedWidth": 160,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Sprite",
+                    "id": "8ba7c06d-fb5d-4d97-b996-64d3d2ad6d53",
+                    "label": "light",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "phone/light/light",
+                    "Animation.end": 648,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/light/light0001"
+                    },
+                    "x": 45,
+                    "y": -144,
+                    "originX": 0.5294117647058824
+                },
+                {
+                    "type": "Image",
+                    "id": "e8bc5d99-ae11-4d7e-acd0-b09faf013bca",
+                    "label": "closeButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/close_button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/close_button"
+                    },
+                    "x": 94,
+                    "y": -123
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
