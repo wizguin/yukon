@@ -12,8 +12,12 @@ export default class Phone extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
 
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.scroll;
+
+
         // scroll
-        const scroll = scene.add.image(-91, -45, "main", "phone/scroll0001");
+        const scroll = scene.add.sprite(-91, -45, "main", "phone/scroll0001");
         this.add(scroll);
 
         // bg
@@ -92,18 +96,31 @@ export default class Phone extends BaseContainer {
         // scrollDown (components)
         const scrollDownButton = new Button(scrollDown);
         scrollDownButton.spriteName = "phone/scroll_button";
+        scrollDownButton.callback = () => this.onScrollDownClick();
         scrollDownButton.activeFrame = false;
 
         // scrollUp (components)
         const scrollUpButton = new Button(scrollUp);
         scrollUpButton.spriteName = "phone/scroll_button";
+        scrollUpButton.callback = () => this.onScrollUpClick();
         scrollUpButton.activeFrame = false;
+
+        this.scroll = scroll;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
+
+    onScrollUpClick() {
+        this.scroll.play('phone_scroll_up')
+    }
+
+    onScrollDownClick() {
+        this.scroll.play('phone_scroll_down')
+    }
 
     onTeleportClick() {
 

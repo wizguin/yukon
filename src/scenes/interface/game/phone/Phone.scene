@@ -26,9 +26,10 @@
             "y": 480,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "9205570c-1a29-4eab-ad06-8ede89ee948f",
                     "label": "scroll",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "main",
                         "frame": "phone/scroll0001"
@@ -146,6 +147,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "phone/scroll_button",
+                    "Button.callback": "() => this.onScrollDownClick()",
                     "Button.activeFrame": false,
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.x": 10,
@@ -168,6 +170,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "phone/scroll_button",
+                    "Button.callback": "() => this.onScrollUpClick()",
                     "Button.activeFrame": false,
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.x": 10,
