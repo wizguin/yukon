@@ -183,6 +183,21 @@
                     "x": -153,
                     "y": -87,
                     "originX": 0.5087719298245614
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "dfbcb043-7715-48ea-a533-f436ab348b2f",
+                    "label": "screen",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScrollUpClick()",
+                    "y": -55,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 208,
+                    "height": 64
                 }
             ]
         }

@@ -4,6 +4,7 @@ import BaseContainer from "../../../base/BaseContainer";
 import DraggableContainer from "../../../components/DraggableContainer";
 import Button from "../../../components/Button";
 import Animation from "../../../components/Animation";
+import Zone from "../../../components/Zone";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -69,6 +70,13 @@ export default class Phone extends BaseContainer {
         scrollUp.setOrigin(0.5087719298245614, 0.5);
         this.add(scrollUp);
 
+        // screen
+        const screen = scene.add.rectangle(0, -55, 208, 64);
+        screen.alpha = 0.5;
+        screen.isFilled = true;
+        screen.fillColor = 65280;
+        this.add(screen);
+
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
         thisDraggableContainer.handle = bg;
@@ -104,6 +112,10 @@ export default class Phone extends BaseContainer {
         scrollUpButton.spriteName = "phone/scroll_button";
         scrollUpButton.callback = () => this.onScrollUpClick();
         scrollUpButton.activeFrame = false;
+
+        // screen (components)
+        const screenZone = new Zone(screen);
+        screenZone.callback = () => this.onScrollUpClick();
 
         this.scroll = scroll;
 
