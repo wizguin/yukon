@@ -7,6 +7,7 @@ import ShowHint from "../../../components/ShowHint";
 import ChatLog from "../chatlog/ChatLog";
 import SimpleButton from "../../../components/SimpleButton";
 import MailButton from "./buttons/mail/MailButton";
+import Phone from "../phone/Phone";
 import Waddle from "../waddle/Waddle";
 import Buddy from "../buddy/Buddy";
 import PetCard from "../pet/PetCard";
@@ -50,6 +51,8 @@ export default class Main extends BaseScene {
         this.mailButton;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
+        /** @type {Phone} */
+        this.phone;
         /** @type {Waddle} */
         this.waddle;
         /** @type {Buddy} */
@@ -74,7 +77,7 @@ export default class Main extends BaseScene {
         this.mail;
         /** @type {Mailbook} */
         this.mailbook;
-        /** @type {Array<Settings|Moderator|PlayerCard|PetCard|Buddy|Waddle>} */
+        /** @type {Array<Settings|Moderator|PlayerCard|PetCard|Buddy|Waddle|Phone>} */
         this.hideOnSleep;
 
 
@@ -194,6 +197,11 @@ export default class Main extends BaseScene {
         // widgetLayer
         const widgetLayer = this.add.layer();
 
+        // phone
+        const phone = new Phone(this, 285, 401);
+        phone.visible = false;
+        widgetLayer.add(phone);
+
         // waddle
         const waddle = new Waddle(this, 1104, 332);
         waddle.visible = false;
@@ -250,7 +258,7 @@ export default class Main extends BaseScene {
         mailbook.visible = false;
 
         // lists
-        const hideOnSleep = [settings, moderator, playerCard, petCard, buddy, waddle];
+        const hideOnSleep = [settings, moderator, playerCard, petCard, buddy, waddle, phone];
 
         // dock (components)
         new Interactive(dock);
@@ -334,6 +342,7 @@ export default class Main extends BaseScene {
         // phone_button (components)
         const phone_buttonButton = new Button(phone_button);
         phone_buttonButton.spriteName = "phone-button";
+        phone_buttonButton.callback = () => this.onPhoneClick();
         phone_buttonButton.activeFrame = false;
 
         // request_button (components)
@@ -362,6 +371,7 @@ export default class Main extends BaseScene {
         this.request_button = request_button;
         this.mailButton = mailButton;
         this.mod_m = mod_m;
+        this.phone = phone;
         this.waddle = waddle;
         this.buddy = buddy;
         this.petCard = petCard;
@@ -620,6 +630,10 @@ export default class Main extends BaseScene {
     onModClick() {
         this.onModOut()
         this.moderator.visible = true
+    }
+
+    onPhoneClick() {
+        this.interface.showWidget(this.phone)
     }
 
     onMapClick() {

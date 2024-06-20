@@ -395,6 +395,7 @@
                 "Button"
             ],
             "Button.spriteName": "phone-button",
+            "Button.callback": "() => this.onPhoneClick()",
             "Button.activeFrame": false,
             "texture": {
                 "key": "main",
@@ -486,6 +487,20 @@
             "label": "widgetLayer",
             "scope": "CLASS",
             "list": [
+                {
+                    "prefabId": "8cc3e8e7-f6fc-4cfb-8b8a-ff681936247f",
+                    "id": "5e592d35-f189-44bc-a565-6d8504e3f7bc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "phone",
+                    "scope": "CLASS",
+                    "x": 285,
+                    "y": 401,
+                    "visible": false
+                },
                 {
                     "prefabId": "032db1d9-1eac-4321-b4b3-ef359e514589",
                     "id": "0040eb03-91ac-4caf-8c26-67b736b50f60",
@@ -652,7 +667,8 @@
                 "9770a528-0c5a-4720-a6db-eabd53c787e1",
                 "e7e1f84c-7eae-42d4-8334-a0c8ac014563",
                 "9acd4a58-cbf9-4751-b96a-2822f121af9c",
-                "0040eb03-91ac-4caf-8c26-67b736b50f60"
+                "0040eb03-91ac-4caf-8c26-67b736b50f60",
+                "5e592d35-f189-44bc-a565-6d8504e3f7bc"
             ]
         }
     ]
