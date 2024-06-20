@@ -193,11 +193,28 @@
                     ],
                     "Zone.callback": "() => this.onScrollUpClick()",
                     "y": -55,
+                    "visible": false,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
                     "width": 208,
                     "height": 64
+                },
+                {
+                    "type": "Text",
+                    "id": "3e3ec0e5-0a94-4cff-a69b-2c7805da46dd",
+                    "label": "screenText",
+                    "scope": "CLASS",
+                    "y": -48,
+                    "scaleX": 0.66,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "the town",
+                    "fixedWidth": 300,
+                    "align": "center",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "48px",
+                    "color": "#000"
                 }
             ]
         }

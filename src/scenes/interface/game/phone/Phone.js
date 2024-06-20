@@ -15,6 +15,8 @@ export default class Phone extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Sprite} */
         this.scroll;
+        /** @type {Phaser.GameObjects.Text} */
+        this.screenText;
 
 
         // scroll
@@ -72,10 +74,19 @@ export default class Phone extends BaseContainer {
 
         // screen
         const screen = scene.add.rectangle(0, -55, 208, 64);
+        screen.visible = false;
         screen.alpha = 0.5;
         screen.isFilled = true;
         screen.fillColor = 65280;
         this.add(screen);
+
+        // screenText
+        const screenText = scene.add.text(0, -48, "", {});
+        screenText.scaleX = 0.66;
+        screenText.setOrigin(0.5, 0.5);
+        screenText.text = "the town";
+        screenText.setStyle({ "align": "center", "color": "#000", "fixedWidth":300,"fontFamily": "CPLCD", "fontSize": "48px" });
+        this.add(screenText);
 
         // this (components)
         const thisDraggableContainer = new DraggableContainer(this);
@@ -118,6 +129,7 @@ export default class Phone extends BaseContainer {
         screenZone.callback = () => this.onScrollUpClick();
 
         this.scroll = scroll;
+        this.screenText = screenText;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
