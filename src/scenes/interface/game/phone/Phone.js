@@ -132,26 +132,53 @@ export default class Phone extends BaseContainer {
         this.screenText = screenText;
 
         /* START-USER-CTR-CODE */
+
+        this.currentLocation = 0
+        this.maxLocation = this.crumbs.phone_locations.length
+
         /* END-USER-CTR-CODE */
     }
 
 
     /* START-USER-CODE */
 
+    show() {
+        this.updateLocation(0)
+
+        super.show()
+    }
+
+    get currentLocationData() {
+        return this.crumbs.phone_locations[this.currentLocation]
+    }
+
     onScrollUpClick() {
         this.scroll.play('phone_scroll_up')
+
+        const location = (this.currentLocation + 1) % this.maxLocation
+
+        this.updateLocation(location)
     }
 
     onScrollDownClick() {
         this.scroll.play('phone_scroll_down')
+
+        const location = (this.currentLocation - 1 + this.maxLocation) % this.maxLocation
+
+        this.updateLocation(location)
     }
 
     onTeleportClick() {
-
+        this.joinRoom(this.currentLocationData.id)
     }
 
     onHqClick() {
         this.joinRoom(803)
+    }
+
+    updateLocation(location) {
+        this.currentLocation = location
+        this.screenText.text = this.currentLocationData.name
     }
 
     joinRoom(roomId) {
