@@ -105,13 +105,6 @@ export default class RoomFactory {
             }
         }
 
-        for (let item of Object.keys(this.world.cache.audio.entries.entries)) {
-            if (['sfx'].includes(item.split('/')[0])) {
-                this.world.room.cache.audio.remove(item)
-                audio++
-            }
-        }
-
         for (let item in this.world.room.anims.anims.entries) {
             if (item.startsWith("clothing/sprites/")) {
                 delete this.world.room.anims.anims.entries[item]
