@@ -91,7 +91,7 @@ export default class RoomFactory {
             }
 
             for (let anim in this.world.room.anims.anims.entries) {
-                if (this.world.room.anims.anims.entries[anim].frames[0].textureKey == item.id) {
+                if (this.world.room.anims.anims.entries[anim].frames[0].textureKey == item.id || this.world.room.anims.anims.entries[anim].key.startsWith(item.id)) {
                     anims++
                     delete this.world.room.anims.anims.entries[anim]
                 }
