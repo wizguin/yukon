@@ -35,6 +35,18 @@ export default class Missions extends BaseContainer {
         frame.setOrigin(0.5003385240352065, 0.5005959475566151);
         this.add(frame);
 
+        // lightGreen
+        const lightGreen = scene.add.sprite(221, 820, "missions", "light/green/green0001");
+        lightGreen.setOrigin(0.5121951219512195, 0.5121951219512195);
+        lightGreen.play("light_green");
+        this.add(lightGreen);
+
+        // lightRed
+        const lightRed = scene.add.sprite(172, 821, "missions", "light/red/red0001");
+        lightRed.setOrigin(0.5121951219512195, 0.5121951219512195);
+        lightRed.play("light_red");
+        this.add(lightRed);
+
         // block (components)
         new Interactive(block);
 

@@ -57,6 +57,36 @@
                     "y": 455,
                     "originX": 0.5003385240352065,
                     "originY": 0.5005959475566151
+                },
+                {
+                    "type": "Sprite",
+                    "id": "3291ca2d-0f66-40d4-afcb-5924f3cac03e",
+                    "label": "lightGreen",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "light/green/green0001"
+                    },
+                    "x": 221,
+                    "y": 820,
+                    "originX": 0.5121951219512195,
+                    "originY": 0.5121951219512195,
+                    "animationPlayMethod": 1,
+                    "animationKey": "light_green"
+                },
+                {
+                    "type": "Sprite",
+                    "id": "b7ca43a4-08d2-4fc7-a2cc-2232569e6cea",
+                    "label": "lightRed",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "light/red/red0001"
+                    },
+                    "x": 172,
+                    "y": 821,
+                    "originX": 0.5121951219512195,
+                    "originY": 0.5121951219512195,
+                    "animationPlayMethod": 1,
+                    "animationKey": "light_red"
                 }
             ]
         }
