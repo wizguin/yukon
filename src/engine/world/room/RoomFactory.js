@@ -113,7 +113,7 @@ export default class RoomFactory {
         }
 
         for (let item in this.world.room.anims.anims.entries) {
-            if (['head', 'face', 'neck', 'body', 'hand', 'feet', 'puffles'].includes(item.split('/')[0])) {
+            if (item.startsWith("clothing/sprites/")) {
                 delete this.world.room.anims.anims.entries[item]
                 anims++
             }
