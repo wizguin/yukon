@@ -51,6 +51,23 @@ export default class Missions extends BaseContainer {
         const closeButton = scene.add.image(1361, 83, "missions", "close_button");
         this.add(closeButton);
 
+        // trainingText
+        const trainingText = scene.add.text(215, 452, "", {});
+        trainingText.text = "TRAINING";
+        trainingText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
+        this.add(trainingText);
+
+        // infoText
+        const infoText = scene.add.text(823, 83, "", {});
+        infoText.text = "INFO";
+        infoText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
+        this.add(infoText);
+
+        // currentText
+        const currentText = scene.add.text(215, 83, "", {});
+        currentText.text = "CURRENT";
+        currentText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
+        this.add(currentText);
 
         // block (components)
         new Interactive(block);

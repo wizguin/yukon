@@ -104,6 +104,39 @@
                     "x": 1361,
                     "y": 83
                 },
+                {
+                    "type": "Text",
+                    "id": "9ce9658a-e76a-4853-a33f-5dcfa5714242",
+                    "label": "trainingText",
+                    "x": 215,
+                    "y": 452,
+                    "text": "TRAINING",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                },
+                {
+                    "type": "Text",
+                    "id": "d368b84d-beaa-4b8d-b2f6-e6728a98df6e",
+                    "label": "infoText",
+                    "x": 823,
+                    "y": 83,
+                    "text": "INFO",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                },
+                {
+                    "type": "Text",
+                    "id": "801efa01-7ea8-4d1b-8e85-70e94a0ed242",
+                    "label": "currentText",
+                    "x": 215,
+                    "y": 83,
+                    "text": "CURRENT",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                },
                 }
             ]
         }
