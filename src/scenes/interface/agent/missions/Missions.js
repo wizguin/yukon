@@ -104,6 +104,30 @@ export default class Missions extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    show() {
+        this.addMissions()
+
+        super.show()
+    }
+
+    addMissions() {
+        this.clearMissions()
+
+        for (const mission of this.crumbs.missions) {
+            const completed = this.world.client.inventory.award.includes(mission.award)
+
+            const list = completed ? this.trainingList : this.currentList
+
+            list.addMission(mission)
+        }
+    }
+
+    clearMissions() {
+        this.currentList.clearMissions()
+        this.trainingList.clearMissions()
+    }
+
     /* END-USER-CODE */
 }
 

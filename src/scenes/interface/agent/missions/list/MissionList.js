@@ -15,6 +15,8 @@ export default class MissionList extends BaseContainer {
 
         /** @type {Phaser.GameObjects.Rectangle} */
         this.maskRect;
+        /** @type {Phaser.GameObjects.Container} */
+        this.missions;
 
 
         // maskRect
@@ -57,6 +59,7 @@ export default class MissionList extends BaseContainer {
         upButtonButton.activeFrame = false;
 
         this.maskRect = maskRect;
+        this.missions = missions;
 
         /* START-USER-CTR-CODE */
 
@@ -67,6 +70,19 @@ export default class MissionList extends BaseContainer {
 
 
     /* START-USER-CODE */
+
+    addMission(mission) {
+        const y = this.missions.length * 100
+        const missionButton = new MissionButton(this.scene, 0, y)
+
+        missionButton.setMission(mission)
+
+        this.missions.add(missionButton)
+    }
+
+    clearMissions() {
+        this.missions.removeAll(true)
+    }
 
     createMask() {
         const rect = this.maskRect

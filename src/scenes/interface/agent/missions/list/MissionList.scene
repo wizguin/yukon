@@ -34,7 +34,8 @@
                 {
                     "type": "Container",
                     "id": "8f48a59a-6271-4d3d-a18a-c5d67bb7b528",
-                    "label": "missions"
+                    "label": "missions",
+                    "scope": "CLASS"
                 },
                 {
                     "type": "Rectangle",

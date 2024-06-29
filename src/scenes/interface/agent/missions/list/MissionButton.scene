@@ -41,6 +41,18 @@
                     "x": 261.2,
                     "y": -1,
                     "originX": 0.5009671179883946
+                },
+                {
+                    "type": "Text",
+                    "id": "76338649-1999-45a8-9111-5607f1fa247a",
+                    "label": "title",
+                    "scope": "CLASS",
+                    "x": 15,
+                    "y": 11,
+                    "text": "text",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "38px",
+                    "color": "#e0ffcc"
                 }
             ]
         }
