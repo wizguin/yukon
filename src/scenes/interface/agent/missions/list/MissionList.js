@@ -69,6 +69,8 @@ export default class MissionList extends BaseContainer {
         /* START-USER-CTR-CODE */
 
         this.scrollY = 0
+        this.minY = 0
+        this.maxY = 0
 
         this.createMask()
 
@@ -86,13 +88,17 @@ export default class MissionList extends BaseContainer {
     }
 
     onUpClick() {
-        this.scrollY += missionHeight
-        this.addScrollTween()
+        if (this.scrollY + missionHeight <= this.maxY) {
+            this.scrollY += missionHeight
+            this.addScrollTween()
+        }
     }
 
     onDownClick() {
-        this.scrollY -= missionHeight
-        this.addScrollTween()
+        if (this.scrollY - missionHeight >= this.minY) {
+            this.scrollY -= missionHeight
+            this.addScrollTween()
+        }
     }
 
     addScrollTween() {
@@ -111,6 +117,9 @@ export default class MissionList extends BaseContainer {
         missionButton.setMission(mission)
 
         this.missions.add(missionButton)
+
+        // 3 missions visible at a time, keep last item at bottom
+        this.minY = -y + (missionHeight * 2)
     }
 
     clearMissions() {
