@@ -46,6 +46,34 @@
                     "height": 750
                 },
                 {
+                    "prefabId": "57fe5605-ca37-4002-9b7a-212437d1d397",
+                    "id": "4b69c46b-c3ab-456b-a7ae-9286e7350771",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "trainingList",
+                    "scope": "CLASS",
+                    "x": 179,
+                    "y": 484,
+                    "visible": true
+                },
+                {
+                    "prefabId": "57fe5605-ca37-4002-9b7a-212437d1d397",
+                    "id": "2bbdd697-b2c7-4705-aa47-f48531035584",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "currentList",
+                    "scope": "CLASS",
+                    "x": 179,
+                    "y": 114,
+                    "visible": true
+                },
+                {
                     "type": "Image",
                     "id": "58978d8d-ce9d-4ffd-b0b3-20b16f0e0769",
                     "label": "frame",

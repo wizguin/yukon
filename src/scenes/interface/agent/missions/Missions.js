@@ -8,6 +8,8 @@ export const preload = {
 
 import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
+import MissionList from "./list/MissionList";
+import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -15,6 +17,12 @@ export default class Missions extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
+
+        /** @type {MissionList} */
+        this.trainingList;
+        /** @type {MissionList} */
+        this.currentList;
+
 
         // block
         const block = scene.add.rectangle(0, 0, 1520, 960);
@@ -29,6 +37,16 @@ export default class Missions extends BaseContainer {
         bg.isFilled = true;
         bg.fillColor = 13056;
         this.add(bg);
+
+        // trainingList
+        const trainingList = new MissionList(scene, 179, 484);
+        trainingList.visible = true;
+        this.add(trainingList);
+
+        // currentList
+        const currentList = new MissionList(scene, 179, 114);
+        currentList.visible = true;
+        this.add(currentList);
 
         // frame
         const frame = scene.add.image(764, 455, "missions", "frame");
@@ -77,9 +95,13 @@ export default class Missions extends BaseContainer {
         closeButtonButton.spriteName = "close_button";
         closeButtonButton.callback = () => this.close();
 
+        this.trainingList = trainingList;
+        this.currentList = currentList;
+
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
+
 
     /* START-USER-CODE */
     /* END-USER-CODE */
