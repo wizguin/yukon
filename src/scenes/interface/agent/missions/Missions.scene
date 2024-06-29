@@ -87,6 +87,23 @@
                     "originY": 0.5121951219512195,
                     "animationPlayMethod": 1,
                     "animationKey": "light_red"
+                },
+                {
+                    "type": "Image",
+                    "id": "e725d6f6-1033-4920-8751-4f2d736ceec8",
+                    "label": "closeButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "close_button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "close_button"
+                    },
+                    "x": 1361,
+                    "y": 83
+                },
                 }
             ]
         }

@@ -47,8 +47,18 @@ export default class Missions extends BaseContainer {
         lightRed.play("light_red");
         this.add(lightRed);
 
+        // closeButton
+        const closeButton = scene.add.image(1361, 83, "missions", "close_button");
+        this.add(closeButton);
+
+
         // block (components)
         new Interactive(block);
+
+        // closeButton (components)
+        const closeButtonButton = new Button(closeButton);
+        closeButtonButton.spriteName = "close_button";
+        closeButtonButton.callback = () => this.close();
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
