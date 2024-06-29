@@ -6,6 +6,9 @@ import Button from "../../../../components/Button";
 
 import MissionButton from './MissionButton'
 
+
+const missionHeight = 100
+
 /* END-USER-IMPORTS */
 
 export default class MissionList extends BaseContainer {
@@ -51,17 +54,21 @@ export default class MissionList extends BaseContainer {
         // downButton (components)
         const downButtonButton = new Button(downButton);
         downButtonButton.spriteName = "menu_button";
+        downButtonButton.callback = () => this.onDownClick();
         downButtonButton.activeFrame = false;
 
         // upButton (components)
         const upButtonButton = new Button(upButton);
         upButtonButton.spriteName = "menu_button";
+        upButtonButton.callback = () => this.onUpClick();
         upButtonButton.activeFrame = false;
 
         this.maskRect = maskRect;
         this.missions = missions;
 
         /* START-USER-CTR-CODE */
+
+        this.scrollY = 0
 
         this.createMask()
 
@@ -71,8 +78,34 @@ export default class MissionList extends BaseContainer {
 
     /* START-USER-CODE */
 
+    show() {
+        this.scrollY = 0
+        this.missions.y = this.scrollY
+
+        super.show()
+    }
+
+    onUpClick() {
+        this.scrollY += missionHeight
+        this.addScrollTween()
+    }
+
+    onDownClick() {
+        this.scrollY -= missionHeight
+        this.addScrollTween()
+    }
+
+    addScrollTween() {
+        this.scene.tweens.add({
+            targets: this.missions,
+            y: this.scrollY,
+            ease: 'Quint.easeOut',
+            duration: 1000
+        })
+    }
+
     addMission(mission) {
-        const y = this.missions.length * 100
+        const y = this.missions.length * missionHeight
         const missionButton = new MissionButton(this.scene, 0, y)
 
         missionButton.setMission(mission)

@@ -57,6 +57,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "menu_button",
+                    "Button.callback": "() => this.onDownClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "missions",
@@ -76,6 +77,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "menu_button",
+                    "Button.callback": "() => this.onUpClick()",
                     "Button.activeFrame": false,
                     "texture": {
                         "key": "missions",
