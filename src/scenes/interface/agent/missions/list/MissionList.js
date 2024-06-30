@@ -137,6 +137,7 @@ export default class MissionList extends BaseContainer {
         const missionButton = new MissionButton(this.scene, 0, y)
 
         missionButton.setMission(mission)
+        missionButton.setCallback(() => this.parentContainer.showInfo(mission))
 
         this.missions.add(missionButton)
 

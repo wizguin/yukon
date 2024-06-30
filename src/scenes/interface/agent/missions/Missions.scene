@@ -46,6 +46,33 @@
                     "height": 750
                 },
                 {
+                    "prefabId": "4d36b1db-2bb4-41ba-bc9d-be41bea03607",
+                    "id": "064b4252-9a17-43e8-b390-7c83f09e550d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "info",
+                    "scope": "CLASS",
+                    "x": 807,
+                    "y": 134,
+                    "visible": false
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "fd804e45-40b3-45df-bb9b-ea72feb7a8f0",
+                    "label": "flash",
+                    "scope": "CLASS",
+                    "x": 1065,
+                    "y": 455,
+                    "alpha": 0,
+                    "isFilled": true,
+                    "fillColor": "#ffffff",
+                    "width": 600,
+                    "height": 750
+                },
+                {
                     "prefabId": "57fe5605-ca37-4002-9b7a-212437d1d397",
                     "id": "4b69c46b-c3ab-456b-a7ae-9286e7350771",
                     "unlock": [
@@ -134,22 +161,22 @@
                 },
                 {
                     "type": "Text",
-                    "id": "9ce9658a-e76a-4853-a33f-5dcfa5714242",
-                    "label": "trainingText",
-                    "x": 215,
-                    "y": 452,
-                    "text": "TRAINING",
+                    "id": "d368b84d-beaa-4b8d-b2f6-e6728a98df6e",
+                    "label": "infoText",
+                    "x": 823,
+                    "y": 83,
+                    "text": "INFO",
                     "fontFamily": "CPLCD",
                     "fontSize": "32px",
                     "color": "#e0ffcc"
                 },
                 {
                     "type": "Text",
-                    "id": "d368b84d-beaa-4b8d-b2f6-e6728a98df6e",
-                    "label": "infoText",
-                    "x": 823,
-                    "y": 83,
-                    "text": "INFO",
+                    "id": "9ce9658a-e76a-4853-a33f-5dcfa5714242",
+                    "label": "trainingText",
+                    "x": 215,
+                    "y": 452,
+                    "text": "TRAINING",
                     "fontFamily": "CPLCD",
                     "fontSize": "32px",
                     "color": "#e0ffcc"
@@ -164,7 +191,6 @@
                     "fontFamily": "CPLCD",
                     "fontSize": "32px",
                     "color": "#e0ffcc"
-                },
                 }
             ]
         }

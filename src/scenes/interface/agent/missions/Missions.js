@@ -8,6 +8,7 @@ export const preload = {
 
 import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
+import MissionInfo from "./info/MissionInfo";
 import MissionList from "./list/MissionList";
 import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
@@ -18,6 +19,10 @@ export default class Missions extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {MissionInfo} */
+        this.info;
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.flash;
         /** @type {MissionList} */
         this.trainingList;
         /** @type {MissionList} */
@@ -37,6 +42,17 @@ export default class Missions extends BaseContainer {
         bg.isFilled = true;
         bg.fillColor = 13056;
         this.add(bg);
+
+        // info
+        const info = new MissionInfo(scene, 807, 134);
+        info.visible = false;
+        this.add(info);
+
+        // flash
+        const flash = scene.add.rectangle(1065, 455, 600, 750);
+        flash.alpha = 0;
+        flash.isFilled = true;
+        this.add(flash);
 
         // trainingList
         const trainingList = new MissionList(scene, 179, 484);
@@ -69,17 +85,17 @@ export default class Missions extends BaseContainer {
         const closeButton = scene.add.image(1361, 83, "missions", "close_button");
         this.add(closeButton);
 
-        // trainingText
-        const trainingText = scene.add.text(215, 452, "", {});
-        trainingText.text = "TRAINING";
-        trainingText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
-        this.add(trainingText);
-
         // infoText
         const infoText = scene.add.text(823, 83, "", {});
         infoText.text = "INFO";
         infoText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
         this.add(infoText);
+
+        // trainingText
+        const trainingText = scene.add.text(215, 452, "", {});
+        trainingText.text = "TRAINING";
+        trainingText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "32px" });
+        this.add(trainingText);
 
         // currentText
         const currentText = scene.add.text(215, 83, "", {});
@@ -95,6 +111,8 @@ export default class Missions extends BaseContainer {
         closeButtonButton.spriteName = "close_button";
         closeButtonButton.callback = () => this.close();
 
+        this.info = info;
+        this.flash = flash;
         this.trainingList = trainingList;
         this.currentList = currentList;
 
@@ -129,6 +147,19 @@ export default class Missions extends BaseContainer {
     clearMissions() {
         this.currentList.clearMissions()
         this.trainingList.clearMissions()
+    }
+
+    showInfo(mission) {
+        this.playFlash()
+        this.info.show(mission)
+    }
+
+    playFlash() {
+        this.scene.tweens.add({
+            targets: this.flash,
+            alpha: { from: 1, to: 0 },
+            duration: 300
+        })
     }
 
     /* END-USER-CODE */

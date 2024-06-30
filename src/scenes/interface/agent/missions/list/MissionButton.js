@@ -33,9 +33,11 @@ export default class MissionButton extends BaseContainer {
         this.add(separator);
 
         // title
-        const title = scene.add.text(15, 11, "", {});
+        const title = scene.add.text(22, 13, "", {});
         title.text = "text";
-        title.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "38px" });
+        title.setStyle({ "color": "#e0ffcc", "fixedWidth":338,"fontFamily": "CPLCD", "fontSize": "38px" });
+        title.setLineSpacing(-4);
+        title.setWordWrapWidth(338);
         this.add(title);
 
         // button (components)
@@ -48,6 +50,9 @@ export default class MissionButton extends BaseContainer {
         this.title = title;
 
         /* START-USER-CTR-CODE */
+
+        this.callback = () => {}
+
         /* END-USER-CTR-CODE */
     }
 
@@ -63,11 +68,15 @@ export default class MissionButton extends BaseContainer {
     }
 
     onClick() {
-
+        this.callback()
     }
 
     setMission(mission) {
         this.title.text = mission.title
+    }
+
+    setCallback(callback) {
+        this.callback = callback
     }
 
     setActive(active) {

@@ -54,12 +54,15 @@
                     "id": "76338649-1999-45a8-9111-5607f1fa247a",
                     "label": "title",
                     "scope": "CLASS",
-                    "x": 15,
-                    "y": 11,
+                    "x": 22,
+                    "y": 13,
                     "text": "text",
+                    "fixedWidth": 338,
+                    "lineSpacing": -4,
                     "fontFamily": "CPLCD",
                     "fontSize": "38px",
-                    "color": "#e0ffcc"
+                    "color": "#e0ffcc",
+                    "wordWrapWidth": 338
                 }
             ]
         }
