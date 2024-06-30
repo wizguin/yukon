@@ -23,6 +23,13 @@
                     "type": "Rectangle",
                     "id": "56451e47-a402-43d8-88b6-532da8778619",
                     "label": "button",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.hoverCallback": "() => this.onOver()",
+                    "SimpleButton.hoverOutCallback": "() => this.onOut()",
+                    "SimpleButton.callback": "() => this.onClick()",
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,

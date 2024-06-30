@@ -1,7 +1,12 @@
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../../../base/BaseContainer";
+import SimpleButton from "../../../../components/SimpleButton";
 /* START-USER-IMPORTS */
+
+const overColor = 0x016D01
+const outColor = 0x003300
+
 /* END-USER-IMPORTS */
 
 export default class MissionButton extends BaseContainer {
@@ -9,6 +14,8 @@ export default class MissionButton extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
+        /** @type {Phaser.GameObjects.Rectangle} */
+        this.button;
         /** @type {Phaser.GameObjects.Text} */
         this.title;
 
@@ -31,6 +38,13 @@ export default class MissionButton extends BaseContainer {
         title.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "38px" });
         this.add(title);
 
+        // button (components)
+        const buttonSimpleButton = new SimpleButton(button);
+        buttonSimpleButton.hoverCallback = () => this.onOver();
+        buttonSimpleButton.hoverOutCallback = () => this.onOut();
+        buttonSimpleButton.callback = () => this.onClick();
+
+        this.button = button;
         this.title = title;
 
         /* START-USER-CTR-CODE */
@@ -40,8 +54,30 @@ export default class MissionButton extends BaseContainer {
 
     /* START-USER-CODE */
 
+    onOver() {
+        this.button.setFillStyle(overColor)
+    }
+
+    onOut() {
+        this.button.setFillStyle(outColor)
+    }
+
+    onClick() {
+
+    }
+
     setMission(mission) {
         this.title.text = mission.title
+    }
+
+    setActive(active) {
+        if (active) {
+            this.button.setInteractive()
+
+        } else {
+            this.button.disableInteractive()
+            this.button.emit('pointerout')
+        }
     }
 
     /* END-USER-CODE */

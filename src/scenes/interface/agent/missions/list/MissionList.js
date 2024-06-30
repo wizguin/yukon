@@ -71,6 +71,7 @@ export default class MissionList extends BaseContainer {
         this.scrollY = 0
         this.minY = 0
         this.maxY = 0
+        this.tween = null
 
         this.createMask()
 
@@ -102,12 +103,33 @@ export default class MissionList extends BaseContainer {
     }
 
     addScrollTween() {
-        this.scene.tweens.add({
+        if (this.tween) {
+            this.removeTween()
+        }
+
+        this.tween = this.scene.tweens.add({
             targets: this.missions,
             y: this.scrollY,
             ease: 'Quint.easeOut',
-            duration: 1000
+            duration: 1000,
+
+            onUpdate: () => this.updateInput(),
+            onComplete: () => this.updateInput()
         })
+    }
+
+    updateInput() {
+        // Enable input only for missions that are in visible region
+        const top = Math.abs(this.missions.y)
+        const bottom = top + (missionHeight * 3)
+
+        for (const mission of this.missions.list) {
+            // Mission inside visible region
+            const active = mission.y + missionHeight > top
+                && mission.y < bottom
+
+            mission.setActive(active)
+        }
     }
 
     addMission(mission) {
@@ -138,6 +160,13 @@ export default class MissionList extends BaseContainer {
         const mask = graphics.createGeometryMask()
 
         this.setMask(mask)
+    }
+
+    removeTween() {
+        if (this.tween) {
+            this.tween.stop()
+            this.tween = null
+        }
     }
 
     /* END-USER-CODE */

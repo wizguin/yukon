@@ -99,6 +99,9 @@ export default class Missions extends BaseContainer {
         this.currentList = currentList;
 
         /* START-USER-CTR-CODE */
+
+        frame.setInteractive({ pixelPerfect: true })
+
         /* END-USER-CTR-CODE */
     }
 
