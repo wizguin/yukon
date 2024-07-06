@@ -129,6 +129,11 @@ export default class Missions extends BaseContainer {
     show() {
         this.addMissions()
 
+        this.scene.events.once('update', () => {
+            this.currentList.show()
+            this.trainingList.show()
+        })
+
         super.show()
     }
 

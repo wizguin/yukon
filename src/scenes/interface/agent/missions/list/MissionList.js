@@ -85,6 +85,8 @@ export default class MissionList extends BaseContainer {
         this.scrollY = 0
         this.missions.y = this.scrollY
 
+        this.updateInput()
+
         super.show()
     }
 
