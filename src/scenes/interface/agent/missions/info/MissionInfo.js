@@ -47,19 +47,23 @@ export default class MissionInfo extends BaseContainer {
         this.add(title);
 
         // preview
-        const preview = scene.add.image(163, 125.5, "missions", "preview/preview0002");
-        preview.setOrigin(0.5, 0.50199203187251);
+        const preview = scene.add.image(0, 0, "missions", "preview/1");
+        preview.setOrigin(0, 0);
         this.add(preview);
 
         // launchButton (components)
         const launchButtonButton = new Button(launchButton);
         launchButtonButton.spriteName = "launch_button";
+        launchButtonButton.callback = () => this.onLaunchClick();
 
         this.description = description;
         this.title = title;
         this.preview = preview;
 
         /* START-USER-CTR-CODE */
+
+        this.missionId = 1
+
         /* END-USER-CTR-CODE */
     }
 
@@ -68,8 +72,26 @@ export default class MissionInfo extends BaseContainer {
 
     show(mission) {
         this.title.text = mission.title
+        this.description.text = mission.description
+
+        this.missionId = mission.id
+
+        this.preview.setFrame(`preview/${mission.id}`)
 
         super.show()
+    }
+
+    onLaunchClick() {
+        const missionKey = `mission${this.missionId}`
+        const games = Object.entries(this.crumbs.games)
+
+        const result = games.find(([, value]) => value.key === missionKey)
+
+        if (result) {
+            const id = parseInt(result[0])
+
+            this.world.client.sendJoinRoom(id, '')
+        }
     }
 
     /* END-USER-CODE */

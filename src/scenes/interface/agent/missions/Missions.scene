@@ -60,6 +60,19 @@
                     "visible": false
                 },
                 {
+                    "type": "Text",
+                    "id": "1aae302d-b9b2-439c-8ee2-3789f5dc5adf",
+                    "label": "chooseText",
+                    "scope": "CLASS",
+                    "x": 810,
+                    "y": 126,
+                    "text": "CLICK A TITLE ON THE LEFT TO\nCHOOSE A MISSION",
+                    "lineSpacing": 7,
+                    "fontFamily": "CPLCD",
+                    "fontSize": "38PX",
+                    "color": "#e0ffcc"
+                },
+                {
                     "type": "Rectangle",
                     "id": "fd804e45-40b3-45df-bb9b-ea72feb7a8f0",
                     "label": "flash",

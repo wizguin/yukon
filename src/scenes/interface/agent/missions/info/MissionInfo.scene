@@ -27,6 +27,7 @@
                         "Button"
                     ],
                     "Button.spriteName": "launch_button",
+                    "Button.callback": "() => this.onLaunchClick()",
                     "texture": {
                         "key": "missions",
                         "frame": "launch_button"
@@ -87,11 +88,10 @@
                     "scope": "CLASS",
                     "texture": {
                         "key": "missions",
-                        "frame": "preview/preview0002"
+                        "frame": "preview/1"
                     },
-                    "x": 163,
-                    "y": 125.5,
-                    "originY": 0.50199203187251
+                    "originX": 0,
+                    "originY": 0
                 }
             ]
         }

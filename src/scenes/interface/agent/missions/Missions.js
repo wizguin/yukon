@@ -21,6 +21,8 @@ export default class Missions extends BaseContainer {
 
         /** @type {MissionInfo} */
         this.info;
+        /** @type {Phaser.GameObjects.Text} */
+        this.chooseText;
         /** @type {Phaser.GameObjects.Rectangle} */
         this.flash;
         /** @type {MissionList} */
@@ -47,6 +49,13 @@ export default class Missions extends BaseContainer {
         const info = new MissionInfo(scene, 807, 134);
         info.visible = false;
         this.add(info);
+
+        // chooseText
+        const chooseText = scene.add.text(810, 126, "", {});
+        chooseText.text = "CLICK A TITLE ON THE LEFT TO\nCHOOSE A MISSION";
+        chooseText.setStyle({ "color": "#e0ffcc", "fontFamily": "CPLCD", "fontSize": "38PX" });
+        chooseText.setLineSpacing(7);
+        this.add(chooseText);
 
         // flash
         const flash = scene.add.rectangle(1065, 455, 600, 750);
@@ -112,6 +121,7 @@ export default class Missions extends BaseContainer {
         closeButtonButton.callback = () => this.close();
 
         this.info = info;
+        this.chooseText = chooseText;
         this.flash = flash;
         this.trainingList = trainingList;
         this.currentList = currentList;
@@ -128,6 +138,9 @@ export default class Missions extends BaseContainer {
 
     show() {
         this.addMissions()
+
+        this.chooseText.visible = true
+        this.info.close()
 
         this.scene.events.once('update', () => {
             this.currentList.show()
@@ -156,6 +169,8 @@ export default class Missions extends BaseContainer {
 
     showInfo(mission) {
         this.playFlash()
+
+        this.chooseText.visible = false
         this.info.show(mission)
     }
 
