@@ -23,7 +23,8 @@ export default class RuffleController extends BaseScene {
             'getPlayerObjectById',
             'isItemOnMyPlayer',
             'isMyPlayerMember',
-            'sendGameOver'
+            'sendGameOver',
+            'sendJoinLastRoom',
         ]
     }
 
@@ -87,7 +88,7 @@ export default class RuffleController extends BaseScene {
     }
 
     close() {
-        this.game.domContainer.style.zIndex = 'auto'
+        this.bringToTop()
 
         setTimeout(() => {
             this.player.pause()
@@ -142,7 +143,13 @@ export default class RuffleController extends BaseScene {
     sendGameOver(obj) {
         this.network.send('game_over', { coins: obj.coins })
 
-        this.game.domContainer.style.zIndex = -10
+        this.sendToBack()
+    }
+
+    sendJoinLastRoom() {
+        this.close()
+
+        this.world.client.sendJoinLastRoom()
     }
 
     startGameMusic() {
@@ -162,6 +169,28 @@ export default class RuffleController extends BaseScene {
         this.load.once(`filecomplete-audio-${music}`, () => {
             this.playMusic(music)
         })
+    }
+
+    getMyLastRoom() {
+        return this.world.lastRoom
+    }
+
+    joinRoom(roomId) {
+        this.close()
+
+        if (roomId in this.crumbs.scenes.rooms) {
+            const room = this.crumbs.scenes.rooms[roomId]
+
+            this.world.client.sendJoinRoom(roomId, room.key, room.x, room.y)
+        }
+    }
+
+    bringToTop() {
+        this.game.domContainer.style.zIndex = 'auto'
+    }
+
+    sendToBack() {
+        this.game.domContainer.style.zIndex = -10
     }
 
 }
