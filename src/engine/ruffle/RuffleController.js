@@ -10,6 +10,7 @@ export default class RuffleController extends BaseScene {
         this.container
 
         this.basePath = 'assets/media/flash/'
+        this.gamesPath = `${this.basePath}games/`
         this.path
 
         window.ruffle = this
@@ -48,7 +49,9 @@ export default class RuffleController extends BaseScene {
     }
 
     bootGame(game) {
-        this.path = `games/${game.key}/bootstrap.swf`
+        const gamePath = game.path || `${game.key}/bootstrap.swf`
+
+        this.path = `${this.gamesPath}${gamePath}`
         this.music = game.music || 0
 
         this.boot()
@@ -99,7 +102,7 @@ export default class RuffleController extends BaseScene {
     }
 
     getPath() {
-        return `${this.basePath}${this.path}`
+        return this.path
     }
 
     getFrameColor() {
@@ -107,7 +110,7 @@ export default class RuffleController extends BaseScene {
     }
 
     getGamesPath() {
-        return `${this.basePath}games/`
+        return this.gamesPath
     }
 
     getMyPlayer() {
