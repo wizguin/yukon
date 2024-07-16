@@ -160,8 +160,12 @@ export default class RuffleController extends BaseScene {
         this.world.client.sendJoinLastRoom()
     }
 
+    buyInventory([itemId]) {
+        this.interface.prompt.showItem(itemId)
+    }
+
     startGameMusic() {
-        let music = this.music
+        const music = this.music
 
         if (!music) {
             return
