@@ -9,6 +9,8 @@ export default class RuffleController extends BaseScene {
         this.player = null
         this.container = null
 
+        this.isActive = false
+
         this.basePath = 'assets/media/flash/'
         this.gamesPath = `${this.basePath}games/`
         this.path = ''
@@ -60,7 +62,10 @@ export default class RuffleController extends BaseScene {
     }
 
     boot() {
-        let ruffle = window.RufflePlayer.newest()
+        this.isActive = true
+
+        const ruffle = window.RufflePlayer.newest()
+
         this.player = ruffle.createPlayer()
 
         this.container.setElement(this.player, this.playerStyle)
@@ -97,6 +102,8 @@ export default class RuffleController extends BaseScene {
 
         this.container.visible = false
         this.stopMusic()
+
+        this.isActive = false
     }
 
     getKeys() {
