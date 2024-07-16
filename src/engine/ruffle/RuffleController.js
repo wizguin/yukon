@@ -6,12 +6,12 @@ export default class RuffleController extends BaseScene {
     constructor(key) {
         super(key)
 
-        this.player
-        this.container
+        this.player = null
+        this.container = null
 
         this.basePath = 'assets/media/flash/'
         this.gamesPath = `${this.basePath}games/`
-        this.path
+        this.path = ''
 
         window.ruffle = this
 
@@ -25,6 +25,7 @@ export default class RuffleController extends BaseScene {
             'isMyPlayerMember',
             'sendGameOver',
             'sendJoinLastRoom',
+            'buyInventory'
         ]
     }
 
