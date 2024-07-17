@@ -1,6 +1,22 @@
 import BaseScene from '@scenes/base/BaseScene'
 
 
+const basePath = 'assets/media/flash/'
+const gamesPath = `${basePath}games/`
+
+const keys = [
+    'getGamesPath',
+    'getMyPlayer',
+    'getMyPlayerHex',
+    'getMyPlayerId',
+    'getPlayerObjectById',
+    'isItemOnMyPlayer',
+    'isMyPlayerMember',
+    'sendGameOver',
+    'sendJoinLastRoom',
+    'buyInventory'
+]
+
 export default class RuffleController extends BaseScene {
 
     constructor(key) {
@@ -11,24 +27,108 @@ export default class RuffleController extends BaseScene {
 
         this.isActive = false
 
-        this.basePath = 'assets/media/flash/'
-        this.gamesPath = `${this.basePath}games/`
         this.path = ''
 
-        window.ruffle = this
+        // Object accessed from Flash ExternalInterface
+        window.ruffle = {
+            getKeys: () => {
+                return keys
+            },
 
-        this.keys = [
-            'getGamesPath',
-            'getMyPlayer',
-            'getMyPlayerHex',
-            'getMyPlayerId',
-            'getPlayerObjectById',
-            'isItemOnMyPlayer',
-            'isMyPlayerMember',
-            'sendGameOver',
-            'sendJoinLastRoom',
-            'buyInventory'
-        ]
+            getFrameColor: () => {
+                return this.crumbs.frameColor
+            },
+
+            getPath: () => {
+                return this.path
+            },
+
+            getGamesPath: () => {
+                return gamesPath
+            },
+
+            getMyPlayer: () => {
+                return this.clientObject
+            },
+
+            getMyPlayerHex: () => {
+                return this.world.getColor(this.client.penguin.color)
+            },
+
+            getMyPlayerId: () => {
+                return this.client.id
+            },
+
+            getMyLastRoom: () => {
+                return this.world.lastRoom
+            },
+
+            getPlayerObjectById: ([id]) => {
+                if (id === this.client.id) {
+                    return this.clientObject
+                }
+            },
+
+            isItemOnMyPlayer: ([id]) => {
+                return Object.values(this.clientObject).includes(id)
+            },
+
+            isMyPlayerMember: () => {
+                return true
+            },
+
+            sendGameOver: (obj) => {
+                this.network.send('game_over', { coins: obj.coins })
+            },
+
+            sendJoinLastRoom: () => {
+                this.close()
+
+                this.world.client.sendJoinLastRoom()
+            },
+
+            joinRoom: (roomId) => {
+                this.close()
+
+                if (roomId in this.crumbs.scenes.rooms) {
+                    const room = this.crumbs.scenes.rooms[roomId]
+
+                    this.world.client.sendJoinRoom(roomId, room.key, room.x, room.y)
+                }
+            },
+
+            buyInventory: ([itemId]) => {
+                this.interface.prompt.showItem(itemId)
+            },
+
+            onLoadComplete: () => {
+                this.interface.hideLoading()
+                this.interface.hideInterface()
+
+                this.stopMusic()
+
+                this.container.visible = true
+            },
+
+            startGameMusic: () => {
+                const music = this.music
+
+                if (!music) {
+                    return
+                }
+
+                if (this.cache.audio.exists(music)) {
+                    return this.playMusic(music)
+                }
+
+                this.load.audio(music, `assets/media/music/${music}.mp3`)
+                this.load.start()
+
+                this.load.once(`filecomplete-audio-${music}`, () => {
+                    this.playMusic(music)
+                })
+            }
+        }
     }
 
     get client() {
@@ -64,7 +164,7 @@ export default class RuffleController extends BaseScene {
     bootGame(game) {
         const gamePath = game.path || `${game.key}/bootstrap.swf`
 
-        this.path = `${this.gamesPath}${gamePath}`
+        this.path = `${gamesPath}${gamePath}`
         this.music = game.music || 0
 
         this.boot()
@@ -80,7 +180,7 @@ export default class RuffleController extends BaseScene {
         this.container.setElement(this.player, this.playerStyle)
 
         this.player.load({
-            url: `${this.basePath}boot.swf`,
+            url: `${basePath}boot.swf`,
             allowScriptAccess: true,
             menu: false,
             contextMenu: 'off',
@@ -92,15 +192,6 @@ export default class RuffleController extends BaseScene {
                 ? 'info'
                 : 'error'
         })
-    }
-
-    onLoadComplete() {
-        this.interface.hideLoading()
-        this.interface.hideInterface()
-
-        this.stopMusic()
-
-        this.container.visible = true
     }
 
     close() {
@@ -115,95 +206,6 @@ export default class RuffleController extends BaseScene {
         this.resetDepth()
 
         this.scene.sleep()
-    }
-
-    getKeys() {
-        return this.keys
-    }
-
-    getPath() {
-        return this.path
-    }
-
-    getFrameColor() {
-        return this.crumbs.frameColor
-    }
-
-    getGamesPath() {
-        return this.gamesPath
-    }
-
-    getMyPlayer() {
-        return this.clientObject
-    }
-
-    getMyPlayerHex() {
-        return this.world.getColor(this.client.penguin.color)
-    }
-
-    getMyPlayerId() {
-        return this.client.id
-    }
-
-    getPlayerObjectById([id]) {
-        if (id === this.client.id) {
-            return this.clientObject
-        }
-    }
-
-    isItemOnMyPlayer([id]) {
-        return Object.values(this.clientObject).includes(id)
-    }
-
-    isMyPlayerMember() {
-        return true
-    }
-
-    sendGameOver(obj) {
-        this.network.send('game_over', { coins: obj.coins })
-    }
-
-    sendJoinLastRoom() {
-        this.close()
-
-        this.world.client.sendJoinLastRoom()
-    }
-
-    buyInventory([itemId]) {
-        this.interface.prompt.showItem(itemId)
-    }
-
-    startGameMusic() {
-        const music = this.music
-
-        if (!music) {
-            return
-        }
-
-        if (this.cache.audio.exists(music)) {
-            return this.playMusic(music)
-        }
-
-        this.load.audio(music, `assets/media/music/${music}.mp3`)
-        this.load.start()
-
-        this.load.once(`filecomplete-audio-${music}`, () => {
-            this.playMusic(music)
-        })
-    }
-
-    getMyLastRoom() {
-        return this.world.lastRoom
-    }
-
-    joinRoom(roomId) {
-        this.close()
-
-        if (roomId in this.crumbs.scenes.rooms) {
-            const room = this.crumbs.scenes.rooms[roomId]
-
-            this.world.client.sendJoinRoom(roomId, room.key, room.x, room.y)
-        }
     }
 
     resetDepth() {
