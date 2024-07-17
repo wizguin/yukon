@@ -95,16 +95,17 @@ export default class RuffleController extends BaseScene {
     }
 
     close() {
-        this.bringToTop()
-
         setTimeout(() => {
             this.player.pause()
         }, 100)
 
         this.container.visible = false
-        this.stopMusic()
-
         this.isActive = false
+
+        this.stopMusic()
+        this.resetDepth()
+
+        this.scene.sleep()
     }
 
     getKeys() {
@@ -198,7 +199,7 @@ export default class RuffleController extends BaseScene {
         }
     }
 
-    bringToTop() {
+    resetDepth() {
         this.game.domContainer.style.zIndex = 'auto'
     }
 

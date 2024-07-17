@@ -51,13 +51,15 @@ export default class RoomFactory {
     createGame(args) {
         let config = this.games[args.game]
 
-        if (config.flash) {
-            this.world.ruffle.bootGame(config)
-
-            return
+        if (!config.flash) {
+            return this.createRoom({ room: args.game })
         }
 
-        return this.createRoom({ room: args.game })
+        this.scene.run(this.world.ruffle)
+
+        this.world.ruffle.events.once('update', () => {
+            this.world.ruffle.bootGame(config)
+        })
     }
 
 }
