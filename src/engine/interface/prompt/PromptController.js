@@ -18,6 +18,8 @@ export default class PromptController {
         this.network = this.interface.network
         this.world = this.interface.world
 
+        this.prompts = []
+
         this.coin = this.createPrompt(CoinPrompt)
         this.error = this.createPrompt(ErrorPrompt)
         this.item = this.createPrompt(ItemPrompt)
@@ -34,9 +36,14 @@ export default class PromptController {
         return this.world.client.coins
     }
 
+    get isPromptVisible() {
+        return this.prompts.some(prompt => prompt.visible === true)
+    }
+
     createPrompt(promptClass) {
         const prompt = new promptClass(this.interface, 760, 480)
 
+        this.prompts.push(prompt)
         this.interface.add.existing(prompt)
 
         return prompt
