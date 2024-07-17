@@ -23,8 +23,6 @@ export default class WorldController extends BaseScene {
     create() {
         this.penguinFactory = new PenguinFactory(this)
         this.roomFactory = new RoomFactory(this)
-
-        this.scene.start('RuffleController')
     }
 
     setClient(args) {
