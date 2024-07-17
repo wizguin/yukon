@@ -46,7 +46,7 @@ export default class PromptController {
         this.coin.show(coins)
     }
 
-    showError(text, buttonText = 'Okay', callback = () => this.error.visible = false) {
+    showError(text, buttonText = 'Okay', callback = () => this.error.close()) {
         this.error.show(text, buttonText, callback)
     }
 
@@ -67,7 +67,7 @@ export default class PromptController {
 
         this.showWindow(text, 'dual', () => {
             this.network.send('add_igloo', { igloo: igloo })
-            this.interface.prompt.window.visible = false
+            this.interface.prompt.window.close()
         })
     }
 
@@ -80,11 +80,11 @@ export default class PromptController {
 
         this.showWindow(text, 'dual', () => {
             this.network.send('update_flooring', { flooring: floor })
-            this.interface.prompt.window.visible = false
+            this.interface.prompt.window.close()
         })
     }
 
-    showWindow(text, buttonLayout = 'single', callback = () => this.window.visible = false, noCallback = () => this.window.visible = false) {
+    showWindow(text, buttonLayout = 'single', callback = () => this.window.close(), noCallback = () => this.window.close()) {
         this.window.show(text, buttonLayout, callback, noCallback)
     }
 

@@ -24,7 +24,7 @@ class ErrorPrompt extends Prompt {
 
         this.resize()
 
-        this.visible = true
+        super.show()
     }
 
     resize() {

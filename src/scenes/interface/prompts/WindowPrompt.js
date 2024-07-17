@@ -87,7 +87,7 @@ export default class WindowPrompt extends BaseContainer {
         // Callback on no button
         this.noCallback = noCallback
 
-        this.visible = true
+        super.show()
     }
 
     /* END-USER-CODE */
