@@ -52,6 +52,15 @@ export default class RuffleController extends BaseScene {
         this.container.visible = false
     }
 
+    update() {
+        if (this.isActive && this.interface.prompt.isPromptVisible) {
+            // Lower DOM container depth so that prompt is above Ruffle content
+            this.sendToBack()
+        } else {
+            this.resetDepth()
+        }
+    }
+
     bootGame(game) {
         const gamePath = game.path || `${game.key}/bootstrap.swf`
 
@@ -152,8 +161,6 @@ export default class RuffleController extends BaseScene {
 
     sendGameOver(obj) {
         this.network.send('game_over', { coins: obj.coins })
-
-        this.sendToBack()
     }
 
     sendJoinLastRoom() {
