@@ -52,7 +52,7 @@ export default class RuffleController extends BaseScene {
             },
 
             getMyPlayerHex: () => {
-                return this.world.getColor(this.client.penguin.color)
+                return this.world.getColor(this.clientObject.color)
             },
 
             getMyPlayerId: () => {
