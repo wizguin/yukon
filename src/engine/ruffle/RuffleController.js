@@ -74,12 +74,13 @@ export default class RuffleController extends BaseScene {
             url: `${this.basePath}boot.swf`,
             allowScriptAccess: true,
             menu: false,
-            contextMenu: false,
+            contextMenu: 'off',
             scale: 'noborder',
             autoplay: 'on',
+            splashScreen: false,
 
-            logLevel: (localStorage.logging == 'true')
-                ? 'trace'
+            logLevel: localStorage.logging === 'true'
+                ? 'info'
                 : 'error'
         })
     }
