@@ -355,7 +355,8 @@ export default class Agent extends RoomScene {
         lodgeZone.callback = () => this.onScreenClick(220);
 
         // sport (components)
-        new Zone(sport);
+        const sportZone = new Zone(sport);
+        sportZone.callback = () => this.onScreenClick(210);
 
         // beacon (components)
         new Zone(beacon);
