@@ -1,14 +1,21 @@
-import BaseContainer from '@scenes/base/BaseContainer'
-
-import { Button, Interactive, NineSlice } from '@components/components'
-
-
 /* START OF COMPILED CODE */
+
+import BaseContainer from "../../../base/BaseContainer";
+import Interactive from "../../../components/Interactive";
+import Button from "../../../components/Button";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class Moderator extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x ?? 760, y ?? 480);
+
+        /** @type {NinePatchContainer} */
+        this.button;
+        /** @type {Phaser.GameObjects.Text} */
+        this.buttonText;
+
 
         // block
         const block = scene.add.rectangle(0, 0, 1520, 960);
@@ -17,94 +24,84 @@ export default class Moderator extends BaseContainer {
         block.fillAlpha = 0.2;
         this.add(block);
 
-        // rectangle
-        const rectangle = scene.add.rectangle(0, -70, 702, 504);
-        rectangle.isFilled = true;
-        rectangle.fillColor = 164045;
-        this.add(rectangle);
+        // bg
+        const bg = scene.add.ninePatchContainer(0, -40, 708, 584, "prompt", "window");
+        bg.marginLeft = 50;
+        bg.marginTop = 50;
+        bg.marginRight = 50;
+        bg.marginBottom = 50;
+        this.add(bg);
 
-        // text3
-        const text3 = scene.add.text(-44, 86, "", {});
-        text3.setOrigin(0.5, 0);
-        text3.text = "to ignore them.";
-        text3.setStyle({ "color": "#ffffffff", "fixedWidth":220,"fixedHeight":60,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
-        this.add(text3);
+        // button
+        const button = scene.add.ninePatchContainer(0, 127, 558, 105, "prompt", "window-button");
+        button.marginLeft = 50;
+        button.marginTop = 50;
+        button.marginRight = 50;
+        button.marginBottom = 50;
+        this.add(button);
 
-        // text2
-        const text2 = scene.add.text(226, -22, "", {});
-        text2.setOrigin(0.5, 0);
-        text2.text = "to report";
-        text2.setStyle({ "color": "#ffffffff", "fixedWidth":200,"fixedHeight":60,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
-        this.add(text2);
+        // buttonText
+        const buttonText = scene.add.text(0, 127, "", {});
+        buttonText.setOrigin(0.5, 0.5);
+        buttonText.text = "Become a Secret Agent";
+        buttonText.setStyle({ "fontFamily": "Arial Narrow", "fontSize": "40px", "fontStyle": "bold" });
+        this.add(buttonText);
 
-        // text1
-        const text1 = scene.add.text(21, -76, "", {});
-        text1.setOrigin(0.5, 0);
-        text1.text = "If someone is breaking the rules, click on\ntheir penguin then click\nthem to a moderator. You can also click\non";
-        text1.setStyle({ "color": "#ffffffff", "fixedWidth":562,"fixedHeight":220,"fontFamily": "Burbank Small", "fontSize": "28px", "fontStyle": "bold", "shadow.offsetX":2,"shadow.offsetY":2,"shadow.color": "#003366", "shadow.fill":true});
-        text1.setLineSpacing(20);
-        this.add(text1);
+        // text
+        const text = scene.add.text(-2, -13, "", {});
+        text.setOrigin(0.5, 0.5);
+        text.text = "Please click a player to Ignore or\nReport the player to a moderator.";
+        text.setStyle({ "align": "center", "color": "#000", "fixedWidth":400,"fixedHeight":80,"fontFamily": "Arial Narrow", "fontSize": "32px" });
+        this.add(text);
 
-        // safe
-        const safe = scene.add.text(0, -151, "", {});
-        safe.setOrigin(0.5, 0);
-        safe.text = "Help keep the island safe!";
-        safe.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "bold italic", "stroke": "#003366", "strokeThickness":10});
-        this.add(safe);
-
-        // x_button
-        const x_button = scene.add.image(300, -268, "main", "blue-button");
-        this.add(x_button);
-
-        // blue_x
-        const blue_x = scene.add.image(300, -270, "main", "blue-x");
-        this.add(blue_x);
-
-        // report_button
-        const report_button = scene.add.image(90, -5, "main", "blue-button");
-        this.add(report_button);
-
-        // report_icon
-        const report_icon = scene.add.image(90, -6, "main", "mod-icon");
-        this.add(report_icon);
-
-        // ignore_button
-        const ignore_button = scene.add.image(-190, 104, "main", "blue-button");
-        this.add(ignore_button);
-
-        // ignore_icon
-        const ignore_icon = scene.add.image(-190, 102, "main", "ignore-icon");
-        this.add(ignore_icon);
+        // title
+        const title = scene.add.text(0, -147, "", {});
+        title.setOrigin(0.5, 0);
+        title.text = "MODERATOR ONLINE";
+        title.setStyle({ "align": "center", "fixedWidth":600,"fontFamily": "CCFaceFront", "fontSize": "40px", "fontStyle": "italic", "stroke": "#003366", "strokeThickness":9,"shadow.color": "#003366", "shadow.blur":3,"shadow.stroke":true});
+        this.add(title);
 
         // mod
-        const mod = scene.add.image(0, -222, "main", "mod");
+        const mod = scene.add.image(-1, -237, "main", "mod_smaller");
+        mod.setOrigin(0.504950495049505, 0.504950495049505);
         this.add(mod);
+
+        // blueButton
+        const blueButton = scene.add.image(295, -273, "main", "blue-button");
+        this.add(blueButton);
+
+        // blueX
+        const blueX = scene.add.image(295, -275, "main", "blue-x");
+        this.add(blueX);
 
         // block (components)
         new Interactive(block);
 
-        // rectangle (components)
-        const rectangleNineSlice = new NineSlice(rectangle);
-        rectangleNineSlice.corner = 50;
+        // button (components)
+        const buttonButton = new Button(button);
+        buttonButton.spriteName = "window-button";
+        buttonButton.callback = () => this.onClick();
 
-        // x_button (components)
-        const x_buttonButton = new Button(x_button);
-        x_buttonButton.spriteName = "blue-button";
-        x_buttonButton.callback = () => { this.visible = false };
+        // blueButton (components)
+        const blueButtonButton = new Button(blueButton);
+        blueButtonButton.spriteName = "blue-button";
+        blueButtonButton.callback = () => this.close();
 
-        // report_button (components)
-        const report_buttonButton = new Button(report_button);
-        report_buttonButton.spriteName = "blue-button";
-
-        // ignore_button (components)
-        const ignore_buttonButton = new Button(ignore_button);
-        ignore_buttonButton.spriteName = "blue-button";
+        this.button = button;
+        this.buttonText = buttonText;
 
         /* START-USER-CTR-CODE */
         /* END-USER-CTR-CODE */
     }
 
+
     /* START-USER-CODE */
+
+    onClick() {
+        this.close()
+        this.interface.loadWidget('AgentQuiz')
+    }
+
     /* END-USER-CODE */
 }
 
