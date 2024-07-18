@@ -10,6 +10,9 @@ if (!localStorage.getItem('webgl')) {
     localStorage.setItem('webgl', 'true')
 }
 
+const width = 1520
+const height = 960
+
 const game = {
     type: (localStorage.getItem('webgl') == 'true')
         ? Phaser.WEBGL
@@ -19,11 +22,11 @@ const game = {
     roundPixels: true,
 
     scale: {
-        width: 1520,
-        height: 960,
+        width: width,
+        height: height,
         max: {
-            width: 1520,
-            height: 960,
+            width: width,
+            height: height
         },
         parent: 'game',
         mode: Phaser.Scale.FIT,
