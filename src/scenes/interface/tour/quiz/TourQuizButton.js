@@ -19,7 +19,7 @@ export default class TourQuizButton extends BaseContainer {
 
 
         // button
-        const button = scene.add.ninePatchContainer(0, 0, 556, 105, "prompt", "window-button");
+        const button = scene.add.ninePatchContainer(0, 0, 558, 105, "prompt", "window-button");
         button.marginLeft = 50;
         button.marginTop = 50;
         button.marginRight = 50;
@@ -57,6 +57,12 @@ export default class TourQuizButton extends BaseContainer {
 
         const fontSize = this.buttonText.width > this.button.width ? 32 : 40
         this.buttonText.setFontSize(fontSize)
+    }
+
+    close() {
+        this.onClick = () => {}
+
+        super.close()
     }
 
     /* END-USER-CODE */
