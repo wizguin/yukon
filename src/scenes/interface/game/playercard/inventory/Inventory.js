@@ -5,6 +5,9 @@ import { Button, SimpleButton } from '@components/components'
 import InventoryLoader from '@engine/loaders/InventoryLoader'
 
 
+const phoneId = 800
+const cardDeckId = 821
+
 /* START OF COMPILED CODE */
 
 export default class Inventory extends BaseContainer {
@@ -234,8 +237,6 @@ export default class Inventory extends BaseContainer {
         this.pageSize = 12
         this.filter = null
 
-        this.cardDeckId = 821
-
         this.inventoryLoader = new InventoryLoader(scene, this)
 
         this.inventory_bg.setInteractive({ pixelPerfect: true })
@@ -304,12 +305,19 @@ export default class Inventory extends BaseContainer {
 
         if (!item || !item.id || !item.active) return
 
-        if (item.id === this.cardDeckId) {
-            this.interface.loadWidget('NinjaProgress')
-            return
-        }
+        switch (item.id) {
+            case phoneId:
+                this.interface.main.onPhoneClick()
+                break
 
-        this.network.send('update_player', { item: item.id })
+            case cardDeckId:
+                this.interface.loadWidget('NinjaProgress')
+                break
+
+            default:
+                this.network.send('update_player', { item: item.id })
+                break
+        }
     }
 
     /* END-USER-CODE */
