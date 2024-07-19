@@ -68,6 +68,7 @@ export default class MissionButton extends BaseContainer {
     }
 
     onClick() {
+        this.soundManager.play('switch')
         this.callback()
     }
 

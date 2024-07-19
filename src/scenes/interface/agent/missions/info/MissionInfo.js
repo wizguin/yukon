@@ -82,6 +82,8 @@ export default class MissionInfo extends BaseContainer {
     }
 
     onLaunchClick() {
+        this.soundManager.play('switch')
+
         const missionKey = `mission${this.missionId}`
         const games = Object.entries(this.crumbs.games)
 
