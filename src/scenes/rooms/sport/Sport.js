@@ -30,7 +30,7 @@ export default class Sport extends RoomScene {
 
         this.roomTriggers = {
             village: () => this.triggerRoom(200, 1152, 510),
-            agent: () => this.triggerRoom(803, 240, 720)
+            agent: () => this.triggerAgent()
         }
 
         /* END-USER-CTR-CODE */
@@ -210,6 +210,12 @@ export default class Sport extends RoomScene {
 
     onCatalogClick() {
 
+    }
+
+    triggerAgent() {
+        if (this.world.client.isSecretAgent) {
+            this.triggerRoom(803, 240, 720)
+        }
     }
 
     /* END-USER-CODE */
