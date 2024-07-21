@@ -7,14 +7,18 @@ const lang = 'en'
 const crumbsDir = path.resolve(__dirname, `../assets/media/crumbs/${lang}`)
 
 const crumbFiles = [
+    'agent_quiz',
     'colors',
     'flooring',
     'furniture',
     'games',
     'igloos',
     'items',
+    'jokes',
+    'missions',
     'penguin',
     'pets',
+    'phone_locations',
     'postcards',
     'quick_keys',
     'safe_messages',
