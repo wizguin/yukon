@@ -12,7 +12,9 @@ export default class Game extends Phaser.Game {
         super(config)
 
         this.logBanner()
-        this.initContainers()
+
+        // Removes focus from active element
+        this.canvas.addEventListener('click', () => document.activeElement.blur())
 
         this.crumbs = config.crumbs
         this.network = new Network(this)
@@ -28,26 +30,7 @@ export default class Game extends Phaser.Game {
     logBanner() {
         // Please leave this line here for credit purposes
         console.log('%cYukon Client\nhttps://github.com/wizguin/yukon', 'font-size: 25px;')
-
-        // Edit this line if you want to display a custom name
         console.log(`Version ${VERSION}`)
-    }
-
-    initContainers() {
-        let parent = document.querySelector(`#${this.config.parent} canvas`)
-
-        parent.onclick = () => {
-            // Removes input focus from active element
-            document.activeElement.blur()
-        }
-
-        // Styles
-        let style = {
-            overflow: 'hidden'
-        }
-
-        Object.assign(parent.style, style)
-        Object.assign(this.domContainer.style, style)
     }
 
 }
