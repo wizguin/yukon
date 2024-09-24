@@ -1,0 +1,56 @@
+{
+    "id": "dc53000c-b693-4402-90e9-6f8cfd6bd8e9",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/restaurant/restaurant-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Restaurant",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "cd4e06d9-fcae-4bf9-84c4-b42aca1f312c",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "restaurant-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "fd8d1d48-7b1f-4013-bbf8-040178b952dc",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "texture": {
+                "key": "restaurant-igloo",
+                "frame": "door"
+            },
+            "x": 284.95653595912785,
+            "y": 620.56131911667,
+            "originX": 0.589335999796656,
+            "originY": 0.6799509688101575
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

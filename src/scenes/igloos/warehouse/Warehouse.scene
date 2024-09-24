@@ -1,0 +1,50 @@
+{
+    "id": "3905a10f-c033-465a-8c97-cbea46b166be",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/warehouse/warehouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Warehouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "a12da8e8-b54f-45d0-a946-a8793f443239",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "warehouse-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "5adeafc8-5ab2-4ebd-bddf-dade30c4ebcb",
+            "label": "bg_upper",
+            "texture": {
+                "key": "warehouse-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

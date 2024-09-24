@@ -1,0 +1,26 @@
+{
+    "id": "f4ebc578-49ac-4fd3-8093-f5edc7160308",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/empty/empty-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Empty",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "id": "41c56146-3464-461d-9d6c-00970c5c4f13",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "CPAirliner",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "0368c7e2-e81f-4c57-a504-02a4b2ecca78",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "4c3c894e-4a3e-4086-b8e7-81be36d96bb6",
+            "label": "fg",
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 1010.2892524515606,
+            "originY": 1.0523846379703756
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "47c46516-a77a-45db-b909-cbeef9db0eec",
+            "label": "sort",
+            "objectIds": [
+                "4c3c894e-4a3e-4086-b8e7-81be36d96bb6"
+            ]
+        }
+    ]
+}

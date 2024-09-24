@@ -276,6 +276,14 @@ export default class IglooScene extends RoomScene {
 
     /*========== Physics ==========*/
 
+    get roomPhysics() {
+        let key = this.key.toLowerCase()
+
+        let iglooPhysicsKey = this.cache.json.get(`${key}-igloo-physics`)
+
+        return iglooPhysicsKey || this.cache.json.get(`${key}-physics`)
+    }
+
     addPhysics() {
         super.addPhysics()
 
