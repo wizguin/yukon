@@ -42,10 +42,16 @@ export default class DragonsLair extends IglooScene {
         this.add.image(760, 480, "dragonslair-igloo", "bg-lower-upper");
 
         // bg_upper
-        this.add.image(760, 637, "dragonslair-igloo", "bg-upper");
+        this.add.image(760, 656, "dragonslair-igloo", "bg-upper");
 
         // door
-        this.add.image(760, 578, "dragonslair-igloo", "door");
+        const door = this.add.image(758, 674, "dragonslair-igloo", "door");
+        door.setOrigin(0.48402590063732504, 1.006368509208996);
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        new MoveTo(door);
 
         this.floor = floor;
 

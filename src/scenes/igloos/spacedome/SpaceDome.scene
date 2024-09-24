@@ -32,14 +32,19 @@
             "type": "Image",
             "id": "e30be747-4a33-4b9c-90d9-19b65205c4db",
             "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "spacedome-igloo",
                 "frame": "door"
             },
-            "x": 288,
-            "y": 394,
-            "originX": 0.5245534535102981,
-            "originY": 0.7440470644753876
+            "x": 294,
+            "y": 417,
+            "originX": 0.5541101037566035,
+            "originY": 0.8394827491226905
         },
         {
             "type": "Image",
@@ -70,7 +75,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

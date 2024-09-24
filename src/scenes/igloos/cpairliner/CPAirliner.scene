@@ -7,7 +7,9 @@
         "exportClass": true,
         "superClassName": "IglooScene",
         "preloadMethodName": "_preload",
-        "preloadPackFiles": [],
+        "preloadPackFiles": [
+            "yukon-public/assets/media/igloos/buildings/sprites/cpairliner/cpairliner-igloo-pack.json"
+        ],
         "createMethodName": "_create",
         "sceneKey": "CPAirliner",
         "borderWidth": 1520,
@@ -37,6 +39,44 @@
             "x": 760,
             "y": 1010.2892524515606,
             "originY": 1.0523846379703756
+        },
+        {
+            "type": "Image",
+            "id": "0b7f4ba7-ec89-4289-854d-1812ddaa563b",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "door"
+            },
+            "x": 150.28874992305697,
+            "y": 559.7271871729922,
+            "originX": 0.36621742656648976,
+            "originY": 0.7701969928361644
+        },
+        {
+            "type": "Image",
+            "id": "67af62d2-b1f1-43a8-92e9-ab700a1983cc",
+            "label": "door_1",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door2",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "door2"
+            },
+            "x": 409.87744411491667,
+            "y": 330.156191757789,
+            "originX": 0.4912394456197931,
+            "originY": 1.006144588526023
         }
     ],
     "plainObjects": [],
@@ -44,7 +84,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

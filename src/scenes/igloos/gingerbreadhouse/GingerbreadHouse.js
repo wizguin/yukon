@@ -63,8 +63,11 @@ export default class GingerbreadHouse extends IglooScene {
 
         // door (components)
         const doorSimpleButton = new SimpleButton(door);
-        doorSimpleButton.hoverCallback = () => this.door.alpha = 0;
+        doorSimpleButton.hoverCallback = () => {this.door.alpha = 0.01};
         doorSimpleButton.hoverOutCallback = () => {this.door.alpha = 1};
+        const doorMoveTo = new MoveTo(door);
+        doorMoveTo.x = 596;
+        doorMoveTo.y = 596;
 
         this.door = door;
         this.floor = floor;

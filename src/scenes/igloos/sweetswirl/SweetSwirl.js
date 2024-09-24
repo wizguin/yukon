@@ -56,7 +56,8 @@ export default class SweetSwirl extends IglooScene {
 
         // door (components)
         new MoveTo(door);
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
 
         this.floor = floor;
         this.sort = sort;

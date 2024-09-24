@@ -15,7 +15,7 @@ export default class Cave extends IglooScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            map: () => this.interface.main.onMapClick()
+            triggers: () => this.interface.main.onMapClick()
         }
 
         this.floorSpawn = [760, 760]
@@ -46,7 +46,8 @@ export default class Cave extends IglooScene {
         door.setOrigin(0.584305317139221, 0.8826479200251047);
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

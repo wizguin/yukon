@@ -48,18 +48,25 @@
                 "frame": "bg-upper"
             },
             "x": 760,
-            "y": 637
+            "y": 656
         },
         {
             "type": "Image",
             "id": "e98a9c80-1a55-4b07-9dca-b8d411d9d773",
             "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "dragonslair-igloo",
                 "frame": "door"
             },
-            "x": 760,
-            "y": 578
+            "x": 758,
+            "y": 674,
+            "originX": 0.48402590063732504,
+            "originY": 1.006368509208996
         }
     ],
     "plainObjects": [],
@@ -67,6 +74,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     }
 }

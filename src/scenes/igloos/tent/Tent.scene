@@ -39,6 +39,24 @@
             "x": 760,
             "y": 994.1047699026867,
             "originY": 1.0355258019819653
+        },
+        {
+            "type": "Rectangle",
+            "id": "8a7dcad0-0af4-4fee-a8e6-db6c7dff56f6",
+            "label": "rectangle_1",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "x": 759.2484479811357,
+            "y": 666.4161909813262,
+            "originX": 0.5097534998526223,
+            "originY": 0.9213511936332885,
+            "isFilled": true,
+            "fillColor": "#059de3",
+            "fillAlpha": 0.5,
+            "width": 128,
+            "height": 160
         }
     ],
     "plainObjects": [],
@@ -46,7 +64,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

@@ -43,7 +43,8 @@ export default class SnowyBackyard extends IglooScene {
         door.setOrigin(0.4387755102040816, 0.8557692307692307);
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

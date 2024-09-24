@@ -39,6 +39,24 @@
             "x": 760,
             "y": 988.9025695084486,
             "originY": 1.030106836234104
+        },
+        {
+            "type": "Rectangle",
+            "id": "8a7dcad0-0af4-4fee-a8e6-db6c7dff56f6",
+            "label": "rectangle_1",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "x": 759.2484479811357,
+            "y": 666.4161909813262,
+            "originX": 0.5097534998526223,
+            "originY": 0.9213511936332885,
+            "isFilled": true,
+            "fillColor": "#059de3",
+            "fillAlpha": 0.5,
+            "width": 128,
+            "height": 160
         }
     ],
     "plainObjects": [],

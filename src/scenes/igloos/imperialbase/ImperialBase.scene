@@ -36,6 +36,7 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "imperialbase-igloo",
                 "frame": "door"

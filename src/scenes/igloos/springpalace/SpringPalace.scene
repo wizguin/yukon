@@ -36,6 +36,8 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "springpalace-igloo",
                 "frame": "door"
@@ -63,7 +65,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

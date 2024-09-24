@@ -39,11 +39,12 @@ export default class Restaurant extends IglooScene {
         const floor = this.add.image(760, 480, "restaurant-igloo", "bg");
 
         // door
-        const door = this.add.image(284.95653595912785, 620.56131911667, "restaurant-igloo", "door");
-        door.setOrigin(0.589335999796656, 0.6799509688101575);
+        const door = this.add.image(263.95654296875, 677.5613403320312, "restaurant-igloo", "door");
+        door.setOrigin(0.48485838785635743, 0.8295572680227559);
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
         new MoveTo(door);
 
         this.floor = floor;

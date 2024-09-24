@@ -43,12 +43,19 @@
             "type": "Image",
             "id": "a4c7f251-3c55-4f60-9bbe-9d782f71b7c1",
             "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "pinkicepalace-igloo",
                 "frame": "door"
             },
-            "x": 754,
-            "y": 551
+            "x": 761,
+            "y": 644,
+            "originX": 0.5368421052631579,
+            "originY": 0.9769230769230769
         }
     ],
     "plainObjects": [],
@@ -56,6 +63,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     }
 }

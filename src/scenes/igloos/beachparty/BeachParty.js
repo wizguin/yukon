@@ -56,9 +56,11 @@ export default class BeachParty extends IglooScene {
 
         // water_anim_lower
         const water_anim_lower = this.add.sprite(1367, 661, "beachparty-igloo", "water-anim-lower0001");
+        water_anim_lower.play("beachparty-water-anim-lower");
 
         // water_anim_upper
         const water_anim_upper = this.add.sprite(1334, 340, "beachparty-igloo", "water-anim-upper0001");
+        water_anim_upper.play("beachparty-water-anim-lower");
 
         // fg
         const fg = this.add.image(760, 980.0929316408556, "beachparty-igloo", "fg");
@@ -68,7 +70,8 @@ export default class BeachParty extends IglooScene {
         const sort = [fg];
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
         new MoveTo(door);
 
         this.floor = floor;

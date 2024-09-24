@@ -35,6 +35,7 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "icecastle-igloo",
                 "frame": "door"

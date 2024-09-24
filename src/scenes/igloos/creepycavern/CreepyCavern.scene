@@ -36,12 +36,13 @@
                 "MoveTo",
                 "Button"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "creepycavern-igloo",
                 "frame": "door"
             },
-            "x": 648.734090229998,
-            "y": 399.4263519559652,
+            "x": 687,
+            "y": 416,
             "originX": 0.5228700011111012,
             "originY": 0.7960958252944188
         },
@@ -74,7 +75,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

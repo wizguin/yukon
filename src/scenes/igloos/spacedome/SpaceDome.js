@@ -41,8 +41,8 @@ export default class SpaceDome extends IglooScene {
         const floor = this.add.image(760, 480, "spacedome-igloo", "bg-lower");
 
         // door
-        const door = this.add.image(288, 394, "spacedome-igloo", "door");
-        door.setOrigin(0.5245534535102981, 0.7440470644753876);
+        const door = this.add.image(294, 417, "spacedome-igloo", "door");
+        door.setOrigin(0.5541101037566035, 0.8394827491226905);
 
         // bg_upper
         this.add.image(760, 480, "spacedome-igloo", "bg-upper");
@@ -53,6 +53,11 @@ export default class SpaceDome extends IglooScene {
 
         // lists
         const sort = [fg];
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        new MoveTo(door);
 
         this.floor = floor;
         this.sort = sort;

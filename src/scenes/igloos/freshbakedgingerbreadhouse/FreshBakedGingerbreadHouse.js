@@ -41,8 +41,8 @@ export default class FreshBakedGingerbreadHouse extends IglooScene {
         const floor = this.add.image(760, 480, "freshbakedgingerbreadhouse-igloo", "bg-lower");
 
         // door
-        const door = this.add.image(369.69045232017226, 672.6479067928531, "freshbakedgingerbreadhouse-igloo", "door");
-        door.setOrigin(0.5904115178401657, 0.8117415059578482);
+        const door = this.add.image(378.6904602050781, 693.6478881835938, "freshbakedgingerbreadhouse-igloo", "door");
+        door.setOrigin(0.7120331394617873, 0.9085156995062353);
 
         // bg_upper
         this.add.image(760, 480, "freshbakedgingerbreadhouse-igloo", "bg-upper");
@@ -56,7 +56,8 @@ export default class FreshBakedGingerbreadHouse extends IglooScene {
 
         // door (components)
         new MoveTo(door);
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
 
         this.floor = floor;
         this.sort = sort;

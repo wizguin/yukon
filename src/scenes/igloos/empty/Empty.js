@@ -1,5 +1,4 @@
 import IglooScene from '../IglooScene'
-import {Button, MoveTo} from '@components/components'
 
 /* START OF COMPILED CODE */
 
@@ -9,10 +8,6 @@ export default class Empty extends IglooScene {
         super("Empty");
 
         /* START-USER-CTR-CODE */
-
-        this.roomTriggers = {
-            map: () => this.interface.main.onMapClick()
-        }
 
         this.floorSpawn = [760, 760]
         this.wallSpawn = [750, 320]

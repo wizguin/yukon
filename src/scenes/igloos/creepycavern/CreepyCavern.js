@@ -41,7 +41,7 @@ export default class CreepyCavern extends IglooScene {
         const floor = this.add.image(760, 480, "creepycavern-igloo", "bg-lower");
 
         // door
-        const door = this.add.image(648.734090229998, 399.4263519559652, "creepycavern-igloo", "door");
+        const door = this.add.image(687, 416, "creepycavern-igloo", "door");
         door.setOrigin(0.5228700011111012, 0.7960958252944188);
 
         // bg_upper
@@ -56,7 +56,8 @@ export default class CreepyCavern extends IglooScene {
 
         // door (components)
         new MoveTo(door);
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
 
         this.floor = floor;
         this.sort = sort;

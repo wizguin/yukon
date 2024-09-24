@@ -1,5 +1,5 @@
 import IglooScene from '../IglooScene'
-import {SimpleButton, MoveTo} from '@components/components'
+import {Button, MoveTo} from '@components/components'
 
 /* START OF COMPILED CODE */
 
@@ -40,21 +40,25 @@ export default class SharksGym extends IglooScene {
         // floor
         const floor = this.add.image(760, 480, "sharksgym-igloo", "bg");
 
+        // door
+        const door = this.add.image(211, 754, "sharksgym-igloo", "door");
+        door.setOrigin(0.6614634532434245, 0.7539283342233536);
+
+        // bg-upper
+        this.add.image(746, 712, "sharksgym-igloo", "bg-upper");
+
         // fg
         const fg = this.add.image(760, 962.2032731464075, "sharksgym-igloo", "fg");
         fg.setOrigin(0.5, 1.0022950761941745);
 
-        // rectangle_1
-        const rectangle_1 = this.add.rectangle(204.70242562990978, 730.9859953942396, 128, 300);
-        rectangle_1.angle = -11;
-        rectangle_1.setOrigin(0.3991374119784773, 0.6987264098703221);
-
         // lists
         const sort = [fg];
 
-        // rectangle_1 (components)
-        new SimpleButton(rectangle_1);
-        new MoveTo(rectangle_1);
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        new MoveTo(door);
 
         this.floor = floor;
         this.sort = sort;

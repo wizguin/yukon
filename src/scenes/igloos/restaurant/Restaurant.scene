@@ -36,14 +36,15 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "restaurant-igloo",
                 "frame": "door"
             },
-            "x": 284.95653595912785,
-            "y": 620.56131911667,
-            "originX": 0.589335999796656,
-            "originY": 0.6799509688101575
+            "x": 263.95654296875,
+            "y": 677.5613403320312,
+            "originX": 0.48485838785635743,
+            "originY": 0.8295572680227559
         }
     ],
     "plainObjects": [],
@@ -51,6 +52,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     }
 }

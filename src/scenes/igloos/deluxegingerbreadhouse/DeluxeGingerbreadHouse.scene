@@ -36,14 +36,15 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "deluxegingerbreadhouse-igloo",
                 "frame": "door"
             },
-            "x": 368.1365162807567,
-            "y": 681.4832530391134,
-            "originX": 0.6099529227129287,
-            "originY": 0.8524573872770201
+            "x": 374.1365051269531,
+            "y": 691.4832763671875,
+            "originX": 0.6910340037940098,
+            "originY": 0.8985403365857759
         },
         {
             "type": "Image",
@@ -74,7 +75,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

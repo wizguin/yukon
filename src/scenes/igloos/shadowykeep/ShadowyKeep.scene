@@ -43,12 +43,20 @@
             "type": "Image",
             "id": "382996a3-b3cd-4dcb-85be-bfcea7b11b4f",
             "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "shadowykeep-igloo",
                 "frame": "door"
             },
-            "x": 754,
-            "y": 552
+            "x": 755,
+            "y": 643,
+            "originX": 0.5052631578947369,
+            "originY": 0.9666666666666667
         }
     ],
     "plainObjects": [],
@@ -56,6 +64,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     }
 }

@@ -53,7 +53,9 @@ export default class Schoolhouse extends IglooScene {
         const sort = [roof];
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
         new MoveTo(door);
 
         this.floor = floor;

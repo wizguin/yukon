@@ -30,6 +30,36 @@
         },
         {
             "type": "Image",
+            "id": "9d6e9d16-d8d3-4198-a39c-84082a7c2681",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "door"
+            },
+            "x": 211,
+            "y": 754,
+            "originX": 0.6614634532434245,
+            "originY": 0.7539283342233536
+        },
+        {
+            "type": "Image",
+            "id": "dc004d72-3645-4a40-a0f1-cfadee17252a",
+            "label": "bg-upper",
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 746,
+            "y": 712
+        },
+        {
+            "type": "Image",
             "id": "c3ee7c44-63f8-4135-ba5c-001febcd17f0",
             "label": "fg",
             "texture": {
@@ -39,22 +69,6 @@
             "x": 760,
             "y": 962.2032731464075,
             "originY": 1.0022950761941745
-        },
-        {
-            "type": "Rectangle",
-            "id": "d85c6b4f-a59a-487b-829c-4bc270a4bc1a",
-            "label": "rectangle_1",
-            "components": [
-                "SimpleButton",
-                "MoveTo"
-            ],
-            "x": 204.70242562990978,
-            "y": 730.9859953942396,
-            "angle": -11,
-            "originX": 0.3991374119784773,
-            "originY": 0.6987264098703221,
-            "width": 128,
-            "height": 300
         }
     ],
     "plainObjects": [],
@@ -62,7 +76,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

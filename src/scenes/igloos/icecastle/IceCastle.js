@@ -49,7 +49,8 @@ export default class IceCastle extends IglooScene {
         this.add.image(760, 480, "icecastle-igloo", "fg");
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

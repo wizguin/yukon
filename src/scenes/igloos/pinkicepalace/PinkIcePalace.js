@@ -42,7 +42,13 @@ export default class PinkIcePalace extends IglooScene {
         const floor = this.add.image(760, 480, "pinkicepalace-igloo", "bg-upper");
 
         // door
-        this.add.image(754, 551, "pinkicepalace-igloo", "door");
+        const door = this.add.image(761, 644, "pinkicepalace-igloo", "door");
+        door.setOrigin(0.5368421052631579, 0.9769230769230769);
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        new MoveTo(door);
 
         this.floor = floor;
 

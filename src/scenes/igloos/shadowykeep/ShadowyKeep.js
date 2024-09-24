@@ -42,7 +42,14 @@ export default class ShadowyKeep extends IglooScene {
         const floor = this.add.image(760, 480, "shadowykeep-igloo", "bg-upper");
 
         // door
-        this.add.image(754, 552, "shadowykeep-igloo", "door");
+        const door = this.add.image(755, 643, "shadowykeep-igloo", "door");
+        door.setOrigin(0.5052631578947369, 0.9666666666666667);
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        new MoveTo(door);
 
         this.floor = floor;
 

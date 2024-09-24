@@ -46,7 +46,8 @@ export default class CandySplitLevel extends IglooScene {
         door.setOrigin(0.5740401041214434, 0.890966892852713);
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

@@ -51,7 +51,8 @@ export default class ImperialBase extends IglooScene {
         const sort = [fg];
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

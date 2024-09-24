@@ -47,6 +47,7 @@
                 "Button",
                 "MoveTo"
             ],
+            "Button.spriteName": "door",
             "texture": {
                 "key": "beachparty-igloo",
                 "frame": "door"
@@ -76,7 +77,9 @@
                 "frame": "water-anim-lower0001"
             },
             "x": 1367,
-            "y": 661
+            "y": 661,
+            "animationPlayMethod": 1,
+            "animationKey": "beachparty-water-anim-lower"
         },
         {
             "type": "Sprite",
@@ -88,7 +91,9 @@
                 "frame": "water-anim-upper0001"
             },
             "x": 1334,
-            "y": 340
+            "y": 340,
+            "animationPlayMethod": 1,
+            "animationKey": "beachparty-water-anim-lower"
         },
         {
             "type": "Image",
@@ -108,7 +113,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

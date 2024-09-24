@@ -40,10 +40,13 @@
                     "label": "door",
                     "scope": "CLASS",
                     "components": [
-                        "SimpleButton"
+                        "SimpleButton",
+                        "MoveTo"
                     ],
-                    "SimpleButton.hoverCallback": "() => this.door.alpha = 0",
+                    "SimpleButton.hoverCallback": "() => {this.door.alpha = 0.01}",
                     "SimpleButton.hoverOutCallback": "() => {this.door.alpha = 1}",
+                    "MoveTo.x": "596",
+                    "MoveTo.y": "596",
                     "texture": {
                         "key": "gingerbreadhouse-igloo",
                         "frame": "door"
@@ -80,7 +83,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     },
     "lists": [
         {

@@ -15,7 +15,7 @@ export default class CozyCottage extends IglooScene {
         /* START-USER-CTR-CODE */
 
         this.roomTriggers = {
-            map: () => this.interface.main.onMapClick()
+            triggers: () => this.interface.main.onMapClick()
         }
 
         this.floorSpawn = [656, 614]
@@ -43,7 +43,8 @@ export default class CozyCottage extends IglooScene {
         door.setOrigin(0.5335068898097584, 0.9320638809646956);
 
         // door (components)
-        new Button(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";;
         new MoveTo(door);
 
         this.floor = floor;

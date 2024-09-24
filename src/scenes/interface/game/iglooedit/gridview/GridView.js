@@ -110,7 +110,7 @@ export default class GridView extends BaseContainer {
         let items = Object.keys(this.world.client.furniture).map(item => parseInt(item))
 
         if (!this.filter) return items
-        if (this.filter == 'igloo') return this.world.client.igloos.filter(igloo => igloo != 0)
+        if (this.filter == 'igloo') return this.world.client.igloos.filter(igloo => Object.keys(this.crumbs.igloos).includes(`${igloo}`))
 
         return items.filter(item => {
             if (this.crumbs.furniture[item].sort == this.filter) return item
