@@ -7,7 +7,7 @@ export default class SnowballFactory {
         this.world = world
 
         this.balls = []
-        this.speed = 800
+        this.speed = 15
         this.startHeight = -12
         this.maxHeight = 425
         this.minHeight = 350
@@ -62,7 +62,7 @@ export default class SnowballFactory {
 
     addTween(ball, x, y) {
         let distance = Phaser.Math.Distance.Between(ball.x, ball.y, x, y)
-        let duration = PathEngine.getDuration(distance, this.speed)
+        let duration = PathEngine.getFrameBasedDuration(distance, this.speed * 2)
 
         let peak = this.getPeak(duration)
         let control = this.getMidPoint([ball.x, ball.y], [x, y])

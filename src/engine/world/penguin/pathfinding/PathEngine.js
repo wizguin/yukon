@@ -1,6 +1,6 @@
 export default class PathEngine {
 
-    static speed = 215
+    static speed = 4
 
     // Valid screen region
     static minX = 30
@@ -50,7 +50,7 @@ export default class PathEngine {
         let distance = Phaser.Math.Distance.BetweenPoints(pos, safe)
 
         if (distance > 10) {
-            let duration = this.getDuration(distance, this.speed)
+            let duration = this.getFrameBasedDuration(distance, this.speed * 2)
             let angle = this.getAngle(pos, safe)
 
             penguin.direction = this.getDirection(angle)
@@ -96,8 +96,11 @@ export default class PathEngine {
         return safe
     }
 
-    static getDuration(distance, speed) {
-        return (distance / speed) * 1000
+    static getFrameBasedDuration(distance, speed, fps = 24)  {
+        const frames = distance / speed
+        const seconds = frames / fps
+
+        return seconds * 1000
     }
 
     static getAngle(pos, target) {
