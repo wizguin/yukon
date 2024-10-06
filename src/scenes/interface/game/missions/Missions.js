@@ -1,7 +1,7 @@
 export const preload = {
     key: 'missions-pack',
     url: 'assets/media/interface/agent/missions/missions-pack.json',
-    loadString: 'missions'
+    loadString: ['loading', 'missions']
 }
 
 /* START OF COMPILED CODE */
