@@ -39,8 +39,8 @@
                     "id": "6de369d7-81e7-40ca-9b9e-d7310c77b889",
                     "label": "agent",
                     "texture": {
-                        "key": "main",
-                        "frame": "agent/agent"
+                        "key": "agent_quiz",
+                        "frame": "agent"
                     },
                     "x": 364,
                     "y": 370,
@@ -156,8 +156,8 @@
                             "id": "60be3b81-6843-4dc9-94b1-22dfb7a479ec",
                             "label": "hq",
                             "texture": {
-                                "key": "main",
-                                "frame": "agent/hq"
+                                "key": "agent_quiz",
+                                "frame": "hq"
                             },
                             "x": -250,
                             "y": 215,
@@ -168,8 +168,8 @@
                             "id": "b91f3d5a-14fe-4cc9-a76d-0bd2e01b302f",
                             "label": "phone",
                             "texture": {
-                                "key": "main",
-                                "frame": "agent/phone"
+                                "key": "agent_quiz",
+                                "frame": "phone"
                             },
                             "x": -250,
                             "y": 101

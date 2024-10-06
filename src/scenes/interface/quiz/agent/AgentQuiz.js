@@ -1,3 +1,9 @@
+export const preload = {
+    key: 'agent_quiz-pack',
+    url: 'assets/media/interface/quiz/agent/agent_quiz-pack.json',
+    loadString: 'agent_quiz'
+}
+
 /* START OF COMPILED CODE */
 
 import BaseContainer from "../../../base/BaseContainer";
@@ -62,7 +68,7 @@ export default class AgentQuiz extends BaseContainer {
         this.add(block);
 
         // agent
-        const agent = scene.add.image(364, 370, "main", "agent/agent");
+        const agent = scene.add.image(364, 370, "agent_quiz", "agent");
         agent.setOrigin(0.5012787723785166, 0.5008319467554077);
         this.add(agent);
 
@@ -109,12 +115,12 @@ export default class AgentQuiz extends BaseContainer {
         rewards.add(reward1);
 
         // hq
-        const hq = scene.add.image(-250, 215, "main", "agent/hq");
+        const hq = scene.add.image(-250, 215, "agent_quiz", "hq");
         hq.setOrigin(0.5079365079365079, 0.5);
         rewards.add(hq);
 
         // phone
-        const phone = scene.add.image(-250, 101, "main", "agent/phone");
+        const phone = scene.add.image(-250, 101, "agent_quiz", "phone");
         rewards.add(phone);
 
         // rewardsText
