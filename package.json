@@ -3,7 +3,6 @@
   "version": "1.9.0-beta",
   "scripts": {
     "dev": "webpack serve",
-    "editor": "phasereditor2d-launcher -project .",
     "build": "webpack --mode production --env obfuscate=false",
     "build-crumbs": "node ./utils/build-crumbs.js"
   },
