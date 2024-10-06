@@ -18,6 +18,8 @@ export default class PromptController {
         this.network = this.interface.network
         this.world = this.interface.world
 
+        this.prompts = []
+
         this.coin = this.createPrompt(CoinPrompt)
         this.error = this.createPrompt(ErrorPrompt)
         this.item = this.createPrompt(ItemPrompt)
@@ -34,9 +36,14 @@ export default class PromptController {
         return this.world.client.coins
     }
 
+    get isPromptVisible() {
+        return this.prompts.some(prompt => prompt.visible === true)
+    }
+
     createPrompt(promptClass) {
         const prompt = new promptClass(this.interface, 760, 480)
 
+        this.prompts.push(prompt)
         this.interface.add.existing(prompt)
 
         return prompt
@@ -46,7 +53,7 @@ export default class PromptController {
         this.coin.show(coins)
     }
 
-    showError(text, buttonText = 'Okay', callback = () => this.error.visible = false) {
+    showError(text, buttonText = 'Okay', callback = () => this.error.close()) {
         this.error.show(text, buttonText, callback)
     }
 
@@ -67,7 +74,7 @@ export default class PromptController {
 
         this.showWindow(text, 'dual', () => {
             this.network.send('add_igloo', { igloo: igloo })
-            this.interface.prompt.window.visible = false
+            this.interface.prompt.window.close()
         })
     }
 
@@ -80,11 +87,11 @@ export default class PromptController {
 
         this.showWindow(text, 'dual', () => {
             this.network.send('update_flooring', { flooring: floor })
-            this.interface.prompt.window.visible = false
+            this.interface.prompt.window.close()
         })
     }
 
-    showWindow(text, buttonLayout = 'single', callback = () => this.window.visible = false, noCallback = () => this.window.visible = false) {
+    showWindow(text, buttonLayout = 'single', callback = () => this.window.close(), noCallback = () => this.window.close()) {
         this.window.show(text, buttonLayout, callback, noCallback)
     }
 

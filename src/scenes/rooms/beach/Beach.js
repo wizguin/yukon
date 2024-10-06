@@ -24,7 +24,6 @@ export default class Beach extends RoomScene {
             'lighthouse': null,
             'ship': null
         }
-        this.roomAnims = true
 
         /* END-USER-CTR-CODE */
     }

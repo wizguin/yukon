@@ -66,8 +66,6 @@ export default class CoinPrompt extends BaseContainer {
     /* START-USER-CODE */
 
     show(coins) {
-        this.visible = true
-
         let newCoins = this.world.client.coins + coins
 
         if (coins == 1) {
@@ -75,6 +73,8 @@ export default class CoinPrompt extends BaseContainer {
         } else {
             this.text.text = this.getFormatString('game_over', coins, newCoins)
         }
+
+        super.show()
     }
 
     callback() {
@@ -84,7 +84,7 @@ export default class CoinPrompt extends BaseContainer {
 
         this.world.client.sendJoinLastRoom()
 
-        this.visible = false
+        this.close()
     }
 
     /* END-USER-CODE */

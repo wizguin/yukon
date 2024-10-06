@@ -32,7 +32,20 @@ export default class RoomCrate extends Crate {
 
         this.explosion.scale = 1.47
 
-        scene.anims.create({
+        if (!scene.anims.exists('crate_spinner')) {
+            this.createCrateAnim()
+        }
+
+        spinner.anims.play('crate_spinner')
+
+        /* END-USER-CTR-CODE */
+    }
+
+
+    /* START-USER-CODE */
+
+    createCrateAnim() {
+        this.scene.anims.create({
             key: 'crate_spinner',
             frames: this.scene.anims.generateFrameNames('iglooedit', {
                 prefix: 'crate/spinner',
@@ -43,13 +56,7 @@ export default class RoomCrate extends Crate {
             repeat: -1,
             frameRate: 24
         })
-        spinner.anims.play('crate_spinner')
-
-        /* END-USER-CTR-CODE */
     }
-
-
-    /* START-USER-CODE */
 
     drop(item) {
         this.items.push(item)
@@ -60,7 +67,7 @@ export default class RoomCrate extends Crate {
         this.scale = 1
 
         if (this.tween) {
-            this.tween.remove()
+            this.tween.stop()
             this.tween = null
         }
 

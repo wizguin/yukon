@@ -41,6 +41,12 @@ const rooms = {
         x: 800,
         y: 640
     },
+    210: {
+        key: 'Sport',
+        scene: require('@rooms/sport/Sport').default,
+        x: 1000,
+        y: 560
+    },
     220: {
         key: 'Lodge',
         scene: require('@rooms/lodge/Lodge').default,
@@ -106,6 +112,12 @@ const rooms = {
         scene: require('@rooms/rink/Rink').default,
         x: 770,
         y: 400
+    },
+    803: {
+        key: 'Agent',
+        scene: require('@rooms/agent/Agent').default,
+        x: 748,
+        y: 720
     },
     805: {
         key: 'Berg',

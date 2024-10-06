@@ -10,18 +10,29 @@ if (!localStorage.getItem('webgl')) {
     localStorage.setItem('webgl', 'true')
 }
 
+const width = 1520
+const height = 960
+
 const game = {
     type: (localStorage.getItem('webgl') == 'true')
         ? Phaser.WEBGL
         : Phaser.CANVAS,
 
-    width: 1520,
-    height: 960,
-    maxWidth: 1520,
-    maxHeight: 960,
-
     transparent: true,
     roundPixels: true,
+
+    scale: {
+        width: width,
+        height: height,
+        max: {
+            width: width,
+            height: height
+        },
+        parent: 'game',
+        mode: Phaser.Scale.FIT,
+        autoRound: true,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
 
     dom: {
         createContainer: true
@@ -42,17 +53,6 @@ const game = {
     audio: {
         // Default Phaser audio systems not needed
         noAudio: true
-    },
-
-    plugins: {
-        global: [ NineSlice.Plugin.DefaultCfg ]
-    },
-
-    scale: {
-        parent: 'game',
-        mode: Phaser.Scale.FIT,
-        autoRound: true,
-        autoCenter: Phaser.Scale.CENTER_BOTH
     },
 
     crumbs: {

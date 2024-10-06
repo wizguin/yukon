@@ -1,0 +1,77 @@
+{
+    "id": "23aa2feb-974e-40ad-bd60-2b3be1fe7627",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "7925ef8d-c2b0-4a19-9af3-113dd916c3d4",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "56451e47-a402-43d8-88b6-532da8778619",
+                    "label": "button",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton"
+                    ],
+                    "SimpleButton.hoverCallback": "() => this.onOver()",
+                    "SimpleButton.hoverOutCallback": "() => this.onOut()",
+                    "SimpleButton.callback": "() => this.onClick()",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#003300",
+                    "width": 562,
+                    "height": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "8919c18e-e204-4212-9a6b-21339df9411f",
+                    "label": "separator",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "separator"
+                    },
+                    "x": 261.2,
+                    "y": -1,
+                    "originX": 0.5009671179883946
+                },
+                {
+                    "type": "Text",
+                    "id": "76338649-1999-45a8-9111-5607f1fa247a",
+                    "label": "title",
+                    "scope": "CLASS",
+                    "x": 22,
+                    "y": 13,
+                    "text": "text",
+                    "fixedWidth": 338,
+                    "lineSpacing": -4,
+                    "fontFamily": "CPLCD",
+                    "fontSize": "38px",
+                    "color": "#e0ffcc",
+                    "wordWrapWidth": 338
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

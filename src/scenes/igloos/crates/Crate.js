@@ -29,7 +29,18 @@ export default class Crate extends Phaser.GameObjects.Container {
         // array is used to prevent new tweens from cancelling previous items
         this.items = []
 
-        scene.anims.create({
+        if (!scene.anims.exists('explode')) {
+            this.createExplodeAnim()
+        }
+
+        /* END-USER-CTR-CODE */
+    }
+
+
+    /* START-USER-CODE */
+
+    createExplodeAnim() {
+        this.scene.anims.create({
             key: 'explode',
             frames: this.scene.anims.generateFrameNames('iglooedit', {
                 prefix: 'crate/explode',
@@ -40,12 +51,7 @@ export default class Crate extends Phaser.GameObjects.Container {
             frameRate: 24,
             hideOnComplete: true
         })
-
-        /* END-USER-CTR-CODE */
     }
-
-
-    /* START-USER-CODE */
 
     explode() {
         this.explosion.visible = true

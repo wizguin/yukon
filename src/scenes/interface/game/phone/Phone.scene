@@ -1,0 +1,257 @@
+{
+    "id": "8cc3e8e7-f6fc-4cfb-8b8a-ff681936247f",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f866496e-3af0-4333-9bad-a7171cf8ab7e",
+            "label": "container_1",
+            "components": [
+                "DraggableContainer"
+            ],
+            "DraggableContainer.handle": "bg",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "554752c4-7e68-42c4-9c9b-c4e46f32bc3b",
+                    "label": "gadget",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/comb/comb0001"
+                    },
+                    "x": 121,
+                    "y": -24,
+                    "originX": 0.5010615711252654
+                },
+                {
+                    "type": "Sprite",
+                    "id": "9205570c-1a29-4eab-ad06-8ede89ee948f",
+                    "label": "scroll",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll0001"
+                    },
+                    "x": -91,
+                    "y": -45
+                },
+                {
+                    "type": "Image",
+                    "id": "102bfffb-c003-4580-933e-83e624a1c3c8",
+                    "label": "bg",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/bg"
+                    },
+                    "originX": 0.5018867924528302,
+                    "originY": 0.5009523809523809
+                },
+                {
+                    "type": "Image",
+                    "id": "de7ead21-515b-4f4f-afe7-210003037faf",
+                    "label": "hq",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/button",
+                    "Button.callback": "() => this.onHqClick()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/button"
+                    },
+                    "y": 121
+                },
+                {
+                    "type": "Image",
+                    "id": "4a354918-5ed3-4072-a582-ccd57927673e",
+                    "label": "teleport",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/button",
+                    "Button.callback": "() => this.onTeleportClick()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/button"
+                    },
+                    "y": 37
+                },
+                {
+                    "type": "Text",
+                    "id": "7bf2b277-e07d-44c9-a864-bd5da302ebad",
+                    "label": "hqText",
+                    "y": 125,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Visit HQ",
+                    "fixedWidth": 160,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Text",
+                    "id": "c05d5f7c-87bf-4a8e-8bdc-74fbf05edd6d",
+                    "label": "teleportText",
+                    "y": 41,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Teleport",
+                    "fixedWidth": 160,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "28px",
+                    "fontStyle": "bold"
+                },
+                {
+                    "type": "Image",
+                    "id": "e8bc5d99-ae11-4d7e-acd0-b09faf013bca",
+                    "label": "closeButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/close_button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/close_button"
+                    },
+                    "x": 94,
+                    "y": -123
+                },
+                {
+                    "type": "Sprite",
+                    "id": "8ba7c06d-fb5d-4d97-b996-64d3d2ad6d53",
+                    "label": "light",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "phone/light/light",
+                    "Animation.end": 648,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/light/light0001"
+                    },
+                    "x": 45,
+                    "y": -144,
+                    "originX": 0.5294117647058824
+                },
+                {
+                    "type": "Image",
+                    "id": "d4932c40-545e-4b65-ac94-40133d78c499",
+                    "label": "scrollDown",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/scroll_button",
+                    "Button.callback": "() => this.onScrollDownClick()",
+                    "Button.activeFrame": false,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": 10,
+                    "hitArea.width": 36,
+                    "hitArea.height": 81,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll_button"
+                    },
+                    "x": -153,
+                    "y": -4,
+                    "originX": 0.5087719298245614,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "aaa1f570-b8cf-4e6c-aa61-988e11eb06b1",
+                    "label": "scrollUp",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "phone/scroll_button",
+                    "Button.callback": "() => this.onScrollUpClick()",
+                    "Button.activeFrame": false,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": 10,
+                    "hitArea.width": 36,
+                    "hitArea.height": 81,
+                    "texture": {
+                        "key": "main",
+                        "frame": "phone/scroll_button"
+                    },
+                    "x": -153,
+                    "y": -87,
+                    "originX": 0.5087719298245614
+                },
+                {
+                    "type": "Text",
+                    "id": "3e3ec0e5-0a94-4cff-a69b-2c7805da46dd",
+                    "label": "screenText",
+                    "scope": "CLASS",
+                    "y": -48,
+                    "scaleX": 0.66,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "the town",
+                    "fixedWidth": 300,
+                    "align": "center",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "48px",
+                    "color": "#000"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "dfbcb043-7715-48ea-a533-f436ab348b2f",
+                    "label": "screenButton",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScrollUpClick()",
+                    "y": -55,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 208,
+                    "height": 64
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "801d02a0-ff19-44dc-b062-56e0d89db594",
+                    "label": "secretButton",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onSecretClick()",
+                    "x": 45,
+                    "y": -143,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 32,
+                    "height": 32
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

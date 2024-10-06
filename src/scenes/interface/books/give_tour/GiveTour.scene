@@ -1,0 +1,374 @@
+{
+    "id": "26c453f4-0733-4ae2-9527-dee9a4121055",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "431ba523-8265-43ed-801a-2a30431d6428",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "72dd9249-d405-4ba9-a843-0ae7f4109310",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Container",
+                    "id": "907cc171-3734-4c19-b561-e950c6062c89",
+                    "label": "page4",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "25c90a73-8e7a-4c32-b0a0-dcca7d854169",
+                            "label": "page0004",
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "page/page0004"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ecd48f76-ca8c-4678-b60a-12615a2af9fe",
+                            "label": "backTurnCover",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.prevPage()",
+                            "SimpleButton.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "turn_cover"
+                            },
+                            "x": 554,
+                            "y": 732,
+                            "scaleX": -1,
+                            "originX": 0.5057471264367817
+                        },
+                        {
+                            "type": "Image",
+                            "id": "051c420f-f428-4c76-b696-bafb88edab2f",
+                            "label": "backCloseButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_button",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "close_button"
+                            },
+                            "x": 577,
+                            "y": 148,
+                            "scaleX": -1
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "5f9eef38-9d5a-4e02-a1c2-6abd3c4740ff",
+                    "label": "page3",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "113ed49f-e7a8-4434-8700-747de6d27d56",
+                            "label": "page0003",
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "page/page0003"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "aefdf557-74b4-49e9-838a-d93e0afcc397",
+                            "label": "button5",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "button",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "button"
+                            },
+                            "x": 397,
+                            "y": 684
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c9a2de3c-85c5-4cb1-9d82-cf5d42a89ea1",
+                            "label": "button4",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "button",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "button"
+                            },
+                            "x": 397,
+                            "y": 632
+                        },
+                        {
+                            "type": "Image",
+                            "id": "66fe3439-ffdd-4b29-a804-bb50bfb2d9d5",
+                            "label": "button3",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "button",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "button"
+                            },
+                            "x": 397,
+                            "y": 580
+                        },
+                        {
+                            "type": "Image",
+                            "id": "74c82086-0a3a-4646-a3cb-96efe84c1186",
+                            "label": "button2",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "button",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "button"
+                            },
+                            "x": 610,
+                            "y": 528
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d1d81e74-95b2-4710-aeea-e49711aeb59b",
+                            "label": "button1",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "button",
+                            "Button.activeFrame": false,
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "button"
+                            },
+                            "x": 397,
+                            "y": 528
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f4501f7b-e973-4dcb-ae4f-7ccb07a365df",
+                            "label": "buttonsText",
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "buttons_text"
+                            },
+                            "x": 513,
+                            "y": 608,
+                            "originX": 0.501577287066246,
+                            "originY": 0.5029239766081871
+                        },
+                        {
+                            "type": "Image",
+                            "id": "085df061-8175-40c8-93dd-fcffadb8de86",
+                            "label": "cursor",
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "cursor"
+                            },
+                            "x": 647,
+                            "y": 577,
+                            "originX": 0.5142857142857142,
+                            "originY": 0.5072463768115942
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "b5e8decc-c481-4bf4-bfa0-68c166c14b26",
+                    "label": "page2",
+                    "texture": {
+                        "key": "give_tour",
+                        "frame": "page/page0002"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Container",
+                    "id": "fc3f2a73-762a-4d4f-a636-6617da1cf847",
+                    "label": "page1",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "a0f557a4-40df-4571-9d1f-0ad81bdb2de7",
+                            "label": "page0001",
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "page/page0001"
+                            },
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2768a2fa-22e7-4733-afe6-f8306cc4c732",
+                            "label": "turnCover",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.nextPage()",
+                            "SimpleButton.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "turn_cover"
+                            },
+                            "x": 1032,
+                            "y": 732,
+                            "originX": 0.5057471264367817
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a7aab2b2-ea75-4046-a1eb-f4e4e5b6c003",
+                            "label": "frontCloseButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_button",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "close_button"
+                            },
+                            "x": 1008,
+                            "y": 148
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "7c8e2c55-b9f8-40c6-8d80-deb1202f96d4",
+                    "label": "buttons",
+                    "scope": "CLASS",
+                    "x": 190,
+                    "y": 41,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "116b8e56-9676-443b-8f5a-c9592e346e14",
+                            "label": "closeButton",
+                            "components": [
+                                "Button"
+                            ],
+                            "Button.spriteName": "close_button",
+                            "Button.callback": "() => this.close()",
+                            "Button.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "close_button"
+                            },
+                            "x": 1084,
+                            "y": 124
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2c93fd0c-a893-4a4a-a4e4-a3cd167a4de1",
+                            "label": "pageRight",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.nextPage()",
+                            "SimpleButton.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "turn_page"
+                            },
+                            "x": 1095,
+                            "y": 671,
+                            "originX": 0.5045871559633027,
+                            "originY": 0.5022421524663677
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d89824f4-c880-48c3-9f13-972c529f4167",
+                            "label": "pageLeft",
+                            "components": [
+                                "SimpleButton"
+                            ],
+                            "SimpleButton.callback": "() => this.prevPage()",
+                            "SimpleButton.pixelPerfect": true,
+                            "texture": {
+                                "key": "give_tour",
+                                "frame": "turn_page"
+                            },
+                            "x": 62,
+                            "y": 671,
+                            "scaleX": -1,
+                            "originX": 0.5045871559633027,
+                            "originY": 0.5022421524663677
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "a01793f2-dbc7-4c49-82e6-f24a11d811c3",
+            "label": "pages",
+            "objectIds": [
+                "fc3f2a73-762a-4d4f-a636-6617da1cf847",
+                "b5e8decc-c481-4bf4-bfa0-68c166c14b26",
+                "5f9eef38-9d5a-4e02-a1c2-6abd3c4740ff",
+                "907cc171-3734-4c19-b561-e950c6062c89"
+            ]
+        }
+    ]
+}

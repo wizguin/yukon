@@ -5,9 +5,13 @@ import MetricsManager from './metrics/MetricsManager'
 import PromptController from './prompt/PromptController'
 
 
+const Status = Phaser.Scenes
+
 export default class InterfaceController extends BaseScene {
 
     metricsManager = new MetricsManager()
+
+    goingToSleep = new Set()
 
     create() {
         this.hint = new Hint(this, 0, 0)
@@ -20,7 +24,7 @@ export default class InterfaceController extends BaseScene {
         this.loadedWidgets = {}
 
         // Draw frame
-        let graphics = this.add.graphics()
+        const graphics = this.add.graphics()
 
         graphics.lineStyle(16, this.crumbs.frameColor, 1)
         graphics.strokeRoundedRect(0, 0, 1520, 960, 15)
@@ -43,60 +47,73 @@ export default class InterfaceController extends BaseScene {
     }
 
     showLoading(text = '', showBar = false) {
-        this.hideInterface()
-
-        if (this.scene.isActive('Load')) {
+        if (this.scene.isActive(this.loading)) {
             this.loading.setContent(text, showBar)
 
-        } else if (this.scene.isSleeping('Load')) {
-            this.scene.wake('Load', { text: text, showBar: showBar })
-
         } else {
-            this.scene.launch('Load', { text: text, showBar: showBar })
-        }
-
-        this.bringToTop('Load')
-    }
-
-    hideLoading() {
-        if (this.loading && this.loading.scene.isActive()) {
-            this.scene.sleep('Load')
+            this.hideInterface()
+            this.runScene(this.loading, { text, showBar })
         }
     }
 
     showInterface() {
         this.hideLoading()
-
-        if (this.scene.isSleeping('Main')) {
-            this.scene.wake('Main')
-
-        } else if (!this.scene.isActive('Main')) {
-            this.scene.launch('Main')
-        }
-
-        this.bringToTop('Main')
-    }
-
-    hideInterface(clearChat = true) {
-        if (this.main && this.main.scene.isActive()) {
-            this.scene.sleep('Main', { clearChat: clearChat })
-        }
+        this.runScene(this.main)
     }
 
     showIglooEdit() {
-        if (this.scene.isSleeping('IglooEdit')) {
-            this.scene.wake('IglooEdit')
-
-        } else if (!this.scene.isActive('IglooEdit')) {
-            this.scene.launch('IglooEdit')
-        }
-
-        this.bringToTop('IglooEdit')
+        this.runScene(this.iglooEdit)
     }
 
-    bringToTop(key = null) {
-        if (key) {
-            this.scene.bringToTop(key)
+    hideLoading() {
+        this.sleepScene(this.loading)
+    }
+
+    hideInterface(clearChat = true) {
+        this.sleepScene(this.main, { clearChat })
+    }
+
+    hideIglooEdit() {
+        this.sleepScene(this.iglooEdit)
+    }
+
+    runScene(scene, data = {}) {
+        if (!scene) return
+
+        const status = this.scene.getStatus(scene)
+
+        if (status < Status.START) {
+            this.scene.launch(scene, data)
+        } else {
+            this.scene.wake(scene, data)
+        }
+
+        this.bringToTop(scene)
+    }
+
+    sleepScene(scene, data = {}) {
+        if (!scene) return
+
+        const status = this.scene.getStatus(scene)
+
+        if (status !== Status.CREATING && status !== Status.RUNNING) {
+            return
+        }
+
+        // Prevent sleep from being queued multiple times
+        if (this.goingToSleep.has(scene)) {
+            return
+        }
+
+        this.goingToSleep.add(scene)
+
+        this.scene.sleep(scene, data)
+        scene.events.once('sleep', () => this.goingToSleep.delete(scene))
+    }
+
+    bringToTop(scene = null) {
+        if (scene) {
+            this.scene.bringToTop(scene)
         }
 
         // Keeps InterfaceController scene always on top, for prompts
@@ -105,18 +122,25 @@ export default class InterfaceController extends BaseScene {
         this.input.setDefaultCursor('default')
     }
 
-    hideIglooEdit() {
-        if (this.iglooEdit && this.iglooEdit.scene.isActive()) {
-            this.scene.sleep('IglooEdit')
-        }
-    }
-
     showEmoteBalloon(id, emote) {
         this.main.balloonFactory.showEmoteBalloon(id, emote)
     }
 
-    showTextBalloon(id, text) {
-        this.main.balloonFactory.showTextBalloon(id, text)
+    showTextBalloon(id, text, addToLog = true) {
+        this.main.balloonFactory.showTextBalloon(id, text, addToLog)
+    }
+
+    showTourMessage(id, roomId) {
+        if (!(roomId in this.crumbs.scenes.rooms)) {
+            return
+        }
+
+        const roomName = this.crumbs.scenes.rooms[roomId].key.toLowerCase()
+        const message = this.crumbs.tour_messages[roomName]
+
+        if (message) {
+            this.showTextBalloon(id, message, false)
+        }
     }
 
     showCard(id, refresh = false) {
@@ -150,7 +174,7 @@ export default class InterfaceController extends BaseScene {
     destroyWidget(widget) {
         widget.destroy()
 
-        for (let key in this.loadedWidgets) {
+        for (const key in this.loadedWidgets) {
             if (this.loadedWidgets[key] == widget) {
                 delete this.loadedWidgets[key]
             }
@@ -166,11 +190,18 @@ export default class InterfaceController extends BaseScene {
             return this.showWidget(this.loadedWidgets[key])
         }
 
-        let preload = this.widgets[key].preload
-        let text = this.getWidgetLoadString(preload.loadString)
+        const preload = this.widgets[key].preload
+        const callback = () => this.onWidgetLoaded(key, addToWidgetLayer)
+
+        if (!preload) {
+            callback()
+            return
+        }
+
+        const text = this.getWidgetLoadString(preload.loadString)
 
         this.prompt.showLoading(text, preload.key, preload.url, () => {
-            this.onWidgetLoaded(key, addToWidgetLayer)
+            callback()
         })
     }
 
@@ -183,9 +214,9 @@ export default class InterfaceController extends BaseScene {
     }
 
     onWidgetLoaded(key, addToWidgetLayer) {
-        let scene = (addToWidgetLayer) ? this.main : this
+        const scene = (addToWidgetLayer) ? this.main : this
 
-        let widget = new this.widgets[key].default(scene)
+        const widget = new this.widgets[key].default(scene)
 
         this.loadedWidgets[key] = widget
 
@@ -202,11 +233,11 @@ export default class InterfaceController extends BaseScene {
     }
 
     updateCatalogCoins(coins) {
-        let books = Object.values(this.loadedWidgets).filter(
+        const books = Object.values(this.loadedWidgets).filter(
             widget => widget.isBook
         )
 
-        books.map(book => {
+        books.forEach(book => {
             if (book.coins) {
                 book.setCoins(coins)
             }
@@ -223,13 +254,13 @@ export default class InterfaceController extends BaseScene {
             return
         }
 
-        this.lastScene.input._over[0].map(gameObject => {
+        this.lastScene.input._over[0].forEach(gameObject => {
             if (gameObject.input && gameObject.input.enabled) {
                 gameObject.emit('pointerout')
             }
         })
 
-        let currentlyOver = scene.input._temp[0]
+        const currentlyOver = scene.input._temp[0]
 
         // Only reset cursor if currently over has no cursor
         if (!currentlyOver || (currentlyOver.input && !currentlyOver.input.cursor)) {

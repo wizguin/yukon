@@ -236,6 +236,7 @@ export default class IglooPet extends BaseSprite {
     }
 
     onMoveComplete(direction) {
+        this.onMoveUpdate()
         this.removeTween()
         this.playFrame(direction)
     }
@@ -427,7 +428,7 @@ export default class IglooPet extends BaseSprite {
 
     removeTween() {
         if (this.tween) {
-            this.tween.remove()
+            this.tween.stop()
 
             this.tween = null
         }

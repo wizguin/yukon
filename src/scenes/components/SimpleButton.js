@@ -42,14 +42,24 @@ export default class SimpleButton extends EventComponent {
     /* START-USER-CODE */
 
     start() {
-        this.gameObject.setInteractive({
-            cursor: 'pointer',
-            pixelPerfect: this.pixelPerfect
-        })
+        this.setInteractive()
 
         this.gameObject.on('pointerover', () => this.onOver())
         this.gameObject.on('pointerout', () => this.onOut())
         this.gameObject.on('pointerup', (pointer) => this.onUp(pointer))
+    }
+
+    setInteractive() {
+        // Input already enabled by Hit Area tool
+        if (this.gameObject.input && this.gameObject.input.enabled) {
+            this.gameObject.input.cursor = 'pointer'
+            return
+        }
+
+        this.gameObject.setInteractive({
+            cursor: 'pointer',
+            pixelPerfect: this.pixelPerfect
+        })
     }
 
     onOver() {

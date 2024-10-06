@@ -79,7 +79,7 @@ export default class SenseiBelt extends BaseContainer {
 
     stop() {
         if (this.tween) {
-            this.tween.remove()
+            this.tween.stop()
             this.tween = null
         }
     }

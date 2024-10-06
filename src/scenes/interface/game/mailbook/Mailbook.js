@@ -8,6 +8,8 @@ import MailbookPostcardItem from "./postcard_item/MailbookPostcardItem";
 import MailbookPreview from "./preview/MailbookPreview";
 /* START-USER-IMPORTS */
 
+import { alignGrid } from '@engine/utils/grid/Grid'
+
 import PostcardIconLoader from '@engine/loaders/PostcardIconLoader'
 
 /* END-USER-IMPORTS */
@@ -403,24 +405,19 @@ export default class Mailbook extends BaseContainer {
     }
 
     createGrid(items, cols, x, y) {
-        // Start pos offset
-        x += this.startX
-        y += this.startY
+        alignGrid({
+            items: items,
+            cols: cols,
+            cellWidth: this.cellWidth,
+            cellHeight: this.cellHeight,
 
-        // Loop through each item and position it in grid
-        for (let i = 0; i < items.length; i++) {
-            const colIndex = i % cols
-            const rowIndex = Math.floor(i / cols)
-
-            const offsetX = colIndex * this.cellWidth
-            const offsetY = rowIndex * this.cellHeight
-
-            items[i].x = x + offsetX
-            items[i].y = y + offsetY
+            // Offset start pos
+            startX: this.startX + x,
+            startY: this.startY + y,
 
             // Position each column below the previous
-            items[i].y += colIndex * 6
-        }
+            callback: (item, colIndex) => item.y += colIndex * 6
+        })
     }
 
     create3Grid(items, halfCellWidth, halfCellHeight) {

@@ -17,7 +17,6 @@
             "type": "Container",
             "id": "7c1c9ca3-0998-4409-b76a-ead91db93dce",
             "label": "container_1",
-            "components": [],
             "list": [
                 {
                     "type": "Rectangle",
@@ -54,7 +53,6 @@
                     "type": "Image",
                     "id": "ade69e0f-0b5e-424b-a78a-9a510e592742",
                     "label": "grey_x",
-                    "components": [],
                     "texture": {
                         "key": "main",
                         "frame": "grey-x"
@@ -67,15 +65,14 @@
                     "id": "f252d1e9-d775-4ff8-a24a-4bf688bd7767",
                     "label": "container",
                     "scope": "CLASS",
-                    "components": [],
-                    "list": []
+                    "x": 760,
+                    "y": 450
                 },
                 {
                     "type": "Container",
                     "id": "b4417fac-c8de-4926-bff3-4a4f3b1fd6ed",
                     "label": "pageButtons",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 1393,
                     "y": 125,
                     "visible": false,
@@ -99,7 +96,6 @@
                             "type": "Image",
                             "id": "1100a04f-1ac4-4c35-b46c-ba649092312a",
                             "label": "grey_arrow_1",
-                            "components": [],
                             "texture": {
                                 "key": "main",
                                 "frame": "grey-arrow"
@@ -126,7 +122,6 @@
                             "type": "Image",
                             "id": "4773964e-d84d-40ff-8658-16620b15e061",
                             "label": "grey_arrow",
-                            "components": [],
                             "texture": {
                                 "key": "main",
                                 "frame": "grey-arrow"
@@ -142,6 +137,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

@@ -1,0 +1,106 @@
+{
+    "id": "4d36b1db-2bb4-41ba-bc9d-be41bea03607",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "eaa7b1f1-3e06-41f9-bac9-ad451a6a9670",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "d2e7f090-4010-48b6-bb73-10e272cb0260",
+                    "label": "launchButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "launch_button",
+                    "Button.callback": "() => this.onLaunchClick()",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "launch_button"
+                    },
+                    "x": 257,
+                    "y": 585
+                },
+                {
+                    "type": "Text",
+                    "id": "8823912d-6afc-4e76-82d7-6b2a316d29a7",
+                    "label": "launchText",
+                    "x": 257,
+                    "y": 585,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "launch mission",
+                    "fixedWidth": 300,
+                    "lineSpacing": -4,
+                    "align": "center",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "43px",
+                    "color": "#ffff00"
+                },
+                {
+                    "type": "Text",
+                    "id": "a32c6913-9d40-4ccb-875c-ed6e90bc9280",
+                    "label": "description",
+                    "scope": "CLASS",
+                    "x": 3,
+                    "y": 318,
+                    "text": "text",
+                    "fixedWidth": 600,
+                    "lineSpacing": 4,
+                    "fontFamily": "CPLCD",
+                    "fontSize": "36px",
+                    "color": "#e0ffcc",
+                    "wordWrapWidth": 600
+                },
+                {
+                    "type": "Text",
+                    "id": "204b6ff7-f2a0-4317-9763-3fe71653de50",
+                    "label": "title",
+                    "scope": "CLASS",
+                    "x": 3,
+                    "y": 258,
+                    "text": "text",
+                    "fixedWidth": 600,
+                    "lineSpacing": -4,
+                    "fontFamily": "CPLCD",
+                    "fontSize": "36px",
+                    "color": "#ffff00",
+                    "wordWrapWidth": 600
+                },
+                {
+                    "type": "Image",
+                    "id": "3afa2803-1bb8-402d-91bd-6aaa36c8bc6f",
+                    "label": "preview",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "preview/1"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

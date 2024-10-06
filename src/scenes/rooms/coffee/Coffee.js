@@ -23,7 +23,7 @@ export default class Coffee extends RoomScene {
             'beans': () => this.triggerGame(901),
             'book': () => this.triggerRoom(111, 1200, 580)
         }
-        this.roomAnims = true
+
         this.music = '1'
 
         this.boardToggle = true

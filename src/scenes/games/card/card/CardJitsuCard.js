@@ -363,7 +363,7 @@ export default class CardJitsuCard extends BaseContainer {
             return
         }
 
-        this.tween.remove()
+        this.tween.stop()
         this.tween = null
     }
 
@@ -372,29 +372,28 @@ export default class CardJitsuCard extends BaseContainer {
     }
 
     flip() {
-        let timeline = this.scene.tweens.createTimeline({
-            onComplete: () => this.scene.time.delayedCall(500, () => this.scene.events.emit('flipped'))
-        })
-
-        timeline.add({
+        this.scene.tweens.chain({
             targets: this,
-            duration: 250,
 
-            x: this.x + this.back.width / 2,
-            scaleX: 0,
+            tweens: [
+                {
+                    x: this.x + this.back.width / 2,
+                    scaleX: 0,
+                    duration: 250,
 
-            onComplete: () => this.showFrontSprites(true)
+                    onComplete: () => this.showFrontSprites(true)
+                },
+                {
+                    x: this.x,
+                    scaleX: 1,
+                    duration: 250
+                }
+            ],
+
+            onComplete: () => this.scene.time.delayedCall(500, () => {
+                this.scene.events.emit('flipped')
+            })
         })
-
-        timeline.add({
-            targets: this,
-            duration: 250,
-
-            x: this.x,
-            scaleX: 1,
-        })
-
-        timeline.play()
     }
 
     enableInput() {

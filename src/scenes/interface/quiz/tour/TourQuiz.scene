@@ -1,0 +1,236 @@
+{
+    "id": "a2d17c73-33da-4f9d-a478-fc3f8a7259a0",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "62d15337-6c1c-4491-8ff4-f84ea05e29ff",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "7015f394-1bb0-4c9e-871c-22818d2bfe7b",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "NinePatchContainer",
+                    "id": "28db3512-1861-4cf6-8d55-45704bc7af69",
+                    "label": "bg",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window"
+                    },
+                    "x": 760,
+                    "y": 484,
+                    "width": 708,
+                    "height": 664,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
+                },
+                {
+                    "type": "Container",
+                    "id": "a0473727-d1a9-42ef-934d-db9a8fd7de3a",
+                    "label": "question",
+                    "scope": "CLASS",
+                    "x": 760,
+                    "y": 214,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+                            "id": "c08e4d75-2903-44fe-a054-2df2fda67cba",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "onClick"
+                            ],
+                            "label": "option4",
+                            "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(4)",
+                            "x": 0,
+                            "y": 497
+                        },
+                        {
+                            "prefabId": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+                            "id": "89ca17c9-343c-40ad-9183-e1040a3bcadf",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "onClick"
+                            ],
+                            "label": "option3",
+                            "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(3)",
+                            "x": 0,
+                            "y": 387
+                        },
+                        {
+                            "prefabId": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+                            "id": "b9623784-0cf6-406f-955d-ada14f46a0a5",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "onClick"
+                            ],
+                            "label": "option2",
+                            "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(2)",
+                            "x": 0,
+                            "y": 277
+                        },
+                        {
+                            "prefabId": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+                            "id": "603bee41-105b-4f08-a1a4-a89a0bdb1115",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "onClick"
+                            ],
+                            "label": "option1",
+                            "scope": "CLASS",
+                            "onClick": "() => this.onOptionClick(1)",
+                            "x": 0,
+                            "y": 167
+                        },
+                        {
+                            "type": "Text",
+                            "id": "d1b1d6b3-fb80-4e7a-a2c7-146d8a975c8f",
+                            "label": "questionText",
+                            "scope": "CLASS",
+                            "y": 79,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Text",
+                            "fixedWidth": 590,
+                            "align": "center",
+                            "fontFamily": "Arial Narrow",
+                            "fontSize": "32px",
+                            "color": "#000",
+                            "wordWrapWidth": 590,
+                            "wordWrapUseAdvanced": true
+                        },
+                        {
+                            "type": "Text",
+                            "id": "00f0ed98-aef3-4ef1-a296-f9c61e0ff97c",
+                            "label": "questionTitle",
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Text",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCFaceFront",
+                            "fontSize": "40px",
+                            "fontStyle": "bold italic",
+                            "stroke": "#003366",
+                            "strokeThickness": 9,
+                            "shadow.stroke": true,
+                            "shadow.color": "#003366",
+                            "shadow.blur": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "bec12921-d1df-4f9d-b05a-a595fce54eb3",
+                    "label": "info",
+                    "scope": "CLASS",
+                    "x": 760,
+                    "y": 234,
+                    "list": [
+                        {
+                            "prefabId": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+                            "id": "f6d1096b-90af-4541-8a24-28879140895e",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "onClick"
+                            ],
+                            "label": "infoButton",
+                            "scope": "CLASS",
+                            "onClick": "() => this.onStartClick()",
+                            "x": 0,
+                            "y": 401
+                        },
+                        {
+                            "type": "Text",
+                            "id": "dbf251dd-68ed-46d6-8b04-34ac9dadfe01",
+                            "label": "infoText",
+                            "scope": "CLASS",
+                            "y": 59,
+                            "originX": 0.5,
+                            "text": "Text",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "Arial Narrow",
+                            "fontSize": "32px",
+                            "color": "#000",
+                            "wordWrapWidth": 600
+                        },
+                        {
+                            "type": "Text",
+                            "id": "badc5576-85c4-41b3-8633-8e250fbb3025",
+                            "label": "infoTitle",
+                            "scope": "CLASS",
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Text",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCFaceFront",
+                            "fontSize": "40px",
+                            "fontStyle": "bold italic",
+                            "stroke": "#003366",
+                            "strokeThickness": 9,
+                            "shadow.stroke": true,
+                            "shadow.color": "#003366",
+                            "shadow.blur": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "4990069d-96a8-41a0-b5fb-04445dc78941",
+            "label": "options",
+            "objectIds": [
+                "603bee41-105b-4f08-a1a4-a89a0bdb1115",
+                "b9623784-0cf6-406f-955d-ada14f46a0a5",
+                "89ca17c9-343c-40ad-9183-e1040a3bcadf",
+                "c08e4d75-2903-44fe-a054-2df2fda67cba"
+            ]
+        }
+    ]
+}

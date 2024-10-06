@@ -1,0 +1,218 @@
+{
+    "id": "52f2926e-feaf-4c98-8029-2afad17b341a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "137129e9-9482-4125-877e-6a3b6abd5a8e",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "391d633f-9a7d-4033-b1b2-2cddd855d184",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "62860b3f-a05a-45be-8c96-6481a810a342",
+                    "label": "bg",
+                    "x": 764,
+                    "y": 455,
+                    "isFilled": true,
+                    "fillColor": "#003300",
+                    "width": 1200,
+                    "height": 750
+                },
+                {
+                    "prefabId": "4d36b1db-2bb4-41ba-bc9d-be41bea03607",
+                    "id": "064b4252-9a17-43e8-b390-7c83f09e550d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "info",
+                    "scope": "CLASS",
+                    "x": 807,
+                    "y": 134,
+                    "visible": false
+                },
+                {
+                    "type": "Text",
+                    "id": "1aae302d-b9b2-439c-8ee2-3789f5dc5adf",
+                    "label": "chooseText",
+                    "scope": "CLASS",
+                    "x": 810,
+                    "y": 126,
+                    "text": "CLICK A TITLE ON THE LEFT TO\nCHOOSE A MISSION",
+                    "lineSpacing": 7,
+                    "fontFamily": "CPLCD",
+                    "fontSize": "38PX",
+                    "color": "#e0ffcc"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "fd804e45-40b3-45df-bb9b-ea72feb7a8f0",
+                    "label": "flash",
+                    "scope": "CLASS",
+                    "x": 1065,
+                    "y": 455,
+                    "alpha": 0,
+                    "isFilled": true,
+                    "fillColor": "#ffffff",
+                    "width": 600,
+                    "height": 750
+                },
+                {
+                    "prefabId": "57fe5605-ca37-4002-9b7a-212437d1d397",
+                    "id": "4b69c46b-c3ab-456b-a7ae-9286e7350771",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "trainingList",
+                    "scope": "CLASS",
+                    "x": 179,
+                    "y": 484,
+                    "visible": true
+                },
+                {
+                    "prefabId": "57fe5605-ca37-4002-9b7a-212437d1d397",
+                    "id": "2bbdd697-b2c7-4705-aa47-f48531035584",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "currentList",
+                    "scope": "CLASS",
+                    "x": 179,
+                    "y": 114,
+                    "visible": true
+                },
+                {
+                    "type": "Image",
+                    "id": "58978d8d-ce9d-4ffd-b0b3-20b16f0e0769",
+                    "label": "frame",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "frame"
+                    },
+                    "x": 764,
+                    "y": 455,
+                    "originX": 0.5003385240352065,
+                    "originY": 0.5005959475566151
+                },
+                {
+                    "type": "Sprite",
+                    "id": "3291ca2d-0f66-40d4-afcb-5924f3cac03e",
+                    "label": "lightGreen",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "light/green/green0001"
+                    },
+                    "x": 221,
+                    "y": 820,
+                    "originX": 0.5121951219512195,
+                    "originY": 0.5121951219512195,
+                    "animationPlayMethod": 1,
+                    "animationKey": "light_green"
+                },
+                {
+                    "type": "Sprite",
+                    "id": "b7ca43a4-08d2-4fc7-a2cc-2232569e6cea",
+                    "label": "lightRed",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "light/red/red0001"
+                    },
+                    "x": 172,
+                    "y": 821,
+                    "originX": 0.5121951219512195,
+                    "originY": 0.5121951219512195,
+                    "animationPlayMethod": 1,
+                    "animationKey": "light_red"
+                },
+                {
+                    "type": "Image",
+                    "id": "e725d6f6-1033-4920-8751-4f2d736ceec8",
+                    "label": "closeButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "close_button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "missions",
+                        "frame": "close_button"
+                    },
+                    "x": 1361,
+                    "y": 83
+                },
+                {
+                    "type": "Text",
+                    "id": "d368b84d-beaa-4b8d-b2f6-e6728a98df6e",
+                    "label": "infoText",
+                    "x": 823,
+                    "y": 83,
+                    "text": "INFO",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                },
+                {
+                    "type": "Text",
+                    "id": "9ce9658a-e76a-4853-a33f-5dcfa5714242",
+                    "label": "trainingText",
+                    "x": 215,
+                    "y": 452,
+                    "text": "TRAINING",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                },
+                {
+                    "type": "Text",
+                    "id": "801efa01-7ea8-4d1b-8e85-70e94a0ed242",
+                    "label": "currentText",
+                    "x": 215,
+                    "y": 83,
+                    "text": "CURRENT",
+                    "fontFamily": "CPLCD",
+                    "fontSize": "32px",
+                    "color": "#e0ffcc"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

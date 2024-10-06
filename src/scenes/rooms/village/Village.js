@@ -1,16 +1,26 @@
-import RoomScene from '../RoomScene'
-
-import { Animation, Button, MoveTo } from '@components/components'
-
-
 /* START OF COMPILED CODE */
+
+import RoomScene from "../RoomScene";
+import SimpleButton from "../../components/SimpleButton";
+import Button from "../../components/Button";
+import MoveTo from "../../components/MoveTo";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class Village extends RoomScene {
 
     constructor() {
         super("Village");
 
-        /** @type {Phaser.GameObjects.Image[]} */
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.rings;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.chair;
+        /** @type {Phaser.GameObjects.Image} */
+        this.lift;
+        /** @type {Phaser.GameObjects.Image} */
+        this.toursText;
+        /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
         this.sort;
 
 
@@ -21,7 +31,7 @@ export default class Village extends RoomScene {
             'dock': () => this.triggerRoom(800, 436, 280),
             'beach': () => this.triggerRoom(400, 920, 360),
             'mtn': () => this.triggerRoom(230, 840, 320),
-            'phone': null
+            'sport': () => this.triggerRoom(210, 1000, 560)
         }
 
         /* END-USER-CTR-CODE */
@@ -36,91 +46,128 @@ export default class Village extends RoomScene {
     /** @returns {void} */
     _create() {
 
+        // rings
+        const rings = this.add.sprite(1377, 584, "village", "rings/rings0001");
+        rings.setInteractive(new Phaser.Geom.Polygon("1455 456 1455 643 1295 643"), Phaser.Geom.Polygon.Contains);
+        rings.setOrigin(0.9297771775827144, 0.906832298136646);
+
         // bg
-        const bg = this.add.image(-25, -15, "village", "bg");
+        const bg = this.add.image(-26, -12, "village", "bg");
         bg.setOrigin(0, 0);
 
-        // lodge_door
-        const lodge_door = this.add.image(1075, 318, "village", "lodge_door");
-        lodge_door.setOrigin(0.27807486631016043, 0.5560538116591929);
+        // lodgeFront
+        const lodgeFront = this.add.image(1086, 384, "village", "lodge_front");
+        lodgeFront.setOrigin(0.4789272030651341, 0.5352112676056338);
 
-        // lodge_stairs
-        this.add.image(972, 444, "village", "lodge_stairs");
+        // lodgeSnow
+        const lodgeSnow = this.add.image(1067, 423, "village", "lodge_snow");
+        lodgeSnow.setOrigin(0.46332046332046334, 0.47435897435897434);
 
-        // lodge_front
-        const lodge_front = this.add.image(1087, 389, "village", "lodge_front");
-        lodge_front.setOrigin(0.4807692307692308, 0.5352112676056338);
+        // lodgeStairs
+        const lodgeStairs = this.add.image(931, 459, "village", "lodge_stairs");
+        lodgeStairs.setOrigin(0, 0.7868852459016393);
 
-        // lodge_snow
-        const lodge_snow = this.add.image(1104, 429, "village", "lodge_snow");
-        lodge_snow.setOrigin(0.5368217054263565, 0.4838709677419355);
-
-        // phone
-        this.add.image(1373, 316, "village", "phone");
-
-        // phone_door
-        const phone_door = this.add.image(1350, 387, "village", "phone_door");
-        phone_door.setOrigin(0.22797927461139897, 0.6206896551724138);
-
-        // phone_snow
-        const phone_snow = this.add.image(1361, 595, "village", "phone_snow");
-        phone_snow.setOrigin(0.509090909090909, 0.5272727272727272);
-
-        // lift
-        this.add.image(348, 200, "village", "lift");
+        // lodgeDoor
+        const lodgeDoor = this.add.image(1024, 186, "village", "lodge_door");
+        lodgeDoor.setOrigin(0, 0);
 
         // smoke
-        const smoke = this.add.sprite(1110, 32, "village", "smoke0001");
+        const smoke = this.add.sprite(1093, -39, "village", "smoke0001");
+        smoke.setOrigin(0, 0);
+        smoke.play("village/smoke");
 
-        // left_sign
-        const left_sign = this.add.image(133, 677, "village", "left_sign");
-        left_sign.setOrigin(0.4444444444444444, 0.5217391304347826);
+        // sportShop
+        const sportShop = this.add.container(1185, 428.3932671887646);
 
-        // right_sign
-        const right_sign = this.add.image(1471, 668, "village", "right_sign");
-        right_sign.setOrigin(0.4861111111111111, 0.7831325301204819);
+        // sport
+        const sport = this.add.image(0, -395.3932695094585, "village", "sport");
+        sport.setOrigin(0, 0);
+        sportShop.add(sport);
 
-        // tours
-        const tours = this.add.image(792, 483, "village", "tours");
-        tours.setOrigin(0.5, 0.8846153846153846);
+        // sportDoor
+        const sportDoor = this.add.image(126, -208.3932695094585, "village", "sport_door");
+        sportDoor.setOrigin(0, 0);
+        sportShop.add(sportDoor);
 
-        // tours_text
-        const tours_text = this.add.image(794, 505.2201404552512, "village", "tours_text");
-        tours_text.setOrigin(0.5, 3.9212529261510674);
+        // ring
+        const ring = this.add.image(1468, 566, "village", "ring");
+        ring.setOrigin(0.5, 0.8181818181818182);
+
+        // sled
+        const sled = this.add.image(1415, 576, "village", "sled");
+        sled.setOrigin(0.49206349206349204, 2);
+
+        // chairLift
+        const chairLift = this.add.layer();
 
         // chair
-        const chair = this.add.sprite(292, 150, "village", "chair0001");
+        const chair = this.add.sprite(-116, -136, "village", "chair/chair0001");
+        chair.setOrigin(0, 0);
+        chair.play("village/chair");
+        chairLift.add(chair);
+
+        // lift
+        const lift = this.add.image(85, -5, "village", "lift");
+        lift.setOrigin(0, 0);
+        chairLift.add(lift);
+
+        // rightSign
+        const rightSign = this.add.image(1465, 667, "village", "right_sign");
+        rightSign.setOrigin(0.4794520547945205, 0.7831325301204819);
+
+        // leftSign
+        const leftSign = this.add.image(139, 675, "village", "left_sign");
+        leftSign.setOrigin(0.4444444444444444, 0.5217391304347826);
+
+        // tourBooth
+        const tourBooth = this.add.container(797, 476);
+
+        // tours
+        const tours = this.add.image(0, 0, "village", "tours");
+        tours.setOrigin(0.5028901734104047, 0.8894230769230769);
+        tourBooth.add(tours);
+
+        // toursText
+        const toursText = this.add.image(3, -144, "village", "tours_text");
+        toursText.setOrigin(0.5034965034965035, 0.5);
+        tourBooth.add(toursText);
 
         // lists
-        const sort = [tours, tours_text];
+        const sort = [tourBooth, leftSign, rightSign, sled, rings, ring, sportShop, lodgeStairs, lodgeSnow, lodgeFront];
 
-        // lodge_door (components)
-        const lodge_doorButton = new Button(lodge_door);
-        lodge_doorButton.spriteName = "lodge_door";
-        lodge_doorButton.activeFrame = false;
-        const lodge_doorMoveTo = new MoveTo(lodge_door);
-        lodge_doorMoveTo.x = 1000;
-        lodge_doorMoveTo.y = 400;
+        // rings (components)
+        const ringsSimpleButton = new SimpleButton(rings);
+        ringsSimpleButton.hoverCallback = () => this.onRingsOver();
 
-        // phone_door (components)
-        const phone_doorButton = new Button(phone_door);
-        phone_doorButton.spriteName = "phone_door";
-        phone_doorButton.activeFrame = false;
-        const phone_doorMoveTo = new MoveTo(phone_door);
-        phone_doorMoveTo.x = 1340;
-        phone_doorMoveTo.y = 480;
+        // lodgeDoor (components)
+        const lodgeDoorButton = new Button(lodgeDoor);
+        lodgeDoorButton.spriteName = "lodge_door";
+        lodgeDoorButton.activeFrame = false;
+        const lodgeDoorMoveTo = new MoveTo(lodgeDoor);
+        lodgeDoorMoveTo.x = 1000;
+        lodgeDoorMoveTo.y = 400;
 
-        // smoke (components)
-        const smokeAnimation = new Animation(smoke);
-        smokeAnimation.key = "smoke";
-        smokeAnimation.end = 5;
+        // sportDoor (components)
+        const sportDoorButton = new Button(sportDoor);
+        sportDoorButton.spriteName = "sport_door";
+        sportDoorButton.activeFrame = false;
+        const sportDoorMoveTo = new MoveTo(sportDoor);
+        sportDoorMoveTo.x = 1340;
+        sportDoorMoveTo.y = 480;
 
-        // chair (components)
-        const chairAnimation = new Animation(chair);
-        chairAnimation.key = "chair";
-        chairAnimation.end = 179;
-        chairAnimation.repeatDelay = 1500;
+        // tours (components)
+        const toursButton = new Button(tours);
+        toursButton.spriteName = "tours";
+        toursButton.hoverCallback = () => this.onToursOver();
+        toursButton.hoverOutCallback = () => this.onToursOut();
+        toursButton.callback = () => this.onToursClick();
+        toursButton.activeFrame = false;
+        toursButton.pixelPerfect = true;
 
+        this.rings = rings;
+        this.chair = chair;
+        this.lift = lift;
+        this.toursText = toursText;
         this.sort = sort;
 
         this.events.emit("scene-awake");
@@ -128,6 +175,40 @@ export default class Village extends RoomScene {
 
 
     /* START-USER-CODE */
+
+    create() {
+        super.create()
+
+        this.chair.on('animationupdate', this.onChairUpdate, this)
+    }
+
+    onChairUpdate(animation, frame) {
+        this.chair.depth = frame.index > 90 ? 1 : -1
+    }
+
+    onRingsOver() {
+        this.rings.play('village/rings')
+    }
+
+    onToursOver() {
+        this.toursText.setFrame('tours_text_large')
+        this.toursText.y -= 6
+    }
+
+    onToursOut() {
+        this.toursText.setFrame('tours_text')
+        this.toursText.y += 6
+    }
+
+    onToursClick() {
+        if (this.world.client.isTourGuide) {
+            this.interface.loadWidget('GiveTour')
+        } else {
+            this.interface.loadWidget('TakeTour')
+        }
+
+    }
+
     /* END-USER-CODE */
 }
 

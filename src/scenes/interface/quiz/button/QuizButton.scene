@@ -1,0 +1,78 @@
+{
+    "id": "363faf5f-b011-471d-beb7-4b16de5cafdc",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8b719047-e916-4261-b76f-85d6e6239579",
+            "label": "container_2",
+            "list": [
+                {
+                    "type": "NinePatchContainer",
+                    "id": "a00fa210-d134-457d-9140-c3e953a12433",
+                    "label": "button",
+                    "scope": "CLASS",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "window-button",
+                    "Button.callback": "() => this.onClick()",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window-button"
+                    },
+                    "width": 558,
+                    "height": 105,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
+                },
+                {
+                    "type": "Text",
+                    "id": "100b52a7-c421-4e2f-abe9-edc14c05eaec",
+                    "label": "buttonText",
+                    "scope": "CLASS",
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Text",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "onClick",
+            "label": "onClick",
+            "tooltip": "",
+            "defValue": "() => {}",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "any"
+            }
+        }
+    ]
+}

@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "autoImport": true,
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -17,7 +18,6 @@
             "type": "Container",
             "id": "2c529465-d587-4faf-91dd-fb51fe023b47",
             "label": "container_1",
-            "components": [],
             "x": 760,
             "y": 480,
             "list": [
@@ -35,188 +35,129 @@
                     "height": 960
                 },
                 {
-                    "type": "Rectangle",
-                    "id": "e55ecf1a-ca17-4310-ba90-285576179253",
-                    "label": "rectangle",
+                    "type": "NinePatchContainer",
+                    "id": "f9229e1c-d5c7-4cf7-8d3f-f7460b47757c",
+                    "label": "bg",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window"
+                    },
+                    "y": -40,
+                    "width": 708,
+                    "height": 584,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
+                },
+                {
+                    "type": "NinePatchContainer",
+                    "id": "1496d353-12ee-467f-b7b6-63f2c6e336f0",
+                    "label": "button",
+                    "scope": "CLASS",
                     "components": [
-                        "NineSlice"
+                        "Button"
                     ],
-                    "NineSlice.corner": 50,
-                    "y": -70,
-                    "isFilled": true,
-                    "fillColor": "#0280CD",
-                    "width": 702,
-                    "height": 504
+                    "Button.spriteName": "window-button",
+                    "Button.callback": "() => this.onClick()",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window-button"
+                    },
+                    "y": 127,
+                    "width": 558,
+                    "height": 105,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
                 },
                 {
                     "type": "Text",
-                    "id": "d2892131-b20b-40e2-93c8-a9e5ce92c66d",
-                    "label": "text3",
-                    "components": [],
-                    "x": -44,
-                    "y": 86,
+                    "id": "71bfc37a-0736-47e9-95b1-471b649b7138",
+                    "label": "buttonText",
+                    "scope": "CLASS",
+                    "y": 127,
                     "originX": 0.5,
-                    "text": "to ignore them.",
-                    "fixedWidth": 220,
-                    "fixedHeight": 60,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "28px",
-                    "fontStyle": "bold",
-                    "color": "#ffffffff",
-                    "shadow.offsetX": 2,
-                    "shadow.offsetY": 2,
-                    "shadow.fill": true,
-                    "shadow.color": "#003366"
+                    "originY": 0.5,
+                    "text": "Become a Secret Agent",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "40px",
+                    "fontStyle": "bold"
                 },
                 {
                     "type": "Text",
-                    "id": "dacbf3a4-8512-4cd5-969b-217ae76289a6",
-                    "label": "text2",
-                    "components": [],
-                    "x": 226,
-                    "y": -22,
+                    "id": "5e32e41d-5889-463a-8973-e1c667b663ce",
+                    "label": "text",
+                    "x": -2,
+                    "y": -13,
                     "originX": 0.5,
-                    "text": "to report",
-                    "fixedWidth": 200,
-                    "fixedHeight": 60,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "28px",
-                    "fontStyle": "bold",
-                    "color": "#ffffffff",
-                    "shadow.offsetX": 2,
-                    "shadow.offsetY": 2,
-                    "shadow.fill": true,
-                    "shadow.color": "#003366"
-                },
-                {
-                    "type": "Text",
-                    "id": "6be961f8-b51a-4438-82a8-4a1107d292a2",
-                    "label": "text1",
-                    "components": [],
-                    "x": 21,
-                    "y": -76,
-                    "originX": 0.5,
-                    "text": "If someone is breaking the rules, click on\ntheir penguin then click\nthem to a moderator. You can also click\non",
-                    "fixedWidth": 562,
-                    "fixedHeight": 220,
-                    "lineSpacing": 20,
-                    "fontFamily": "Burbank Small",
-                    "fontSize": "28px",
-                    "fontStyle": "bold",
-                    "color": "#ffffffff",
-                    "shadow.offsetX": 2,
-                    "shadow.offsetY": 2,
-                    "shadow.fill": true,
-                    "shadow.color": "#003366"
+                    "originY": 0.5,
+                    "text": "Please click a player to Ignore or\nReport the player to a moderator.",
+                    "fixedWidth": 400,
+                    "fixedHeight": 80,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#000"
                 },
                 {
                     "type": "Text",
                     "id": "96b0d404-05b7-4afa-8248-0f4e7aa1b18c",
-                    "label": "safe",
-                    "components": [],
-                    "y": -151,
+                    "label": "title",
+                    "y": -147,
                     "originX": 0.5,
-                    "text": "Help keep the island safe!",
+                    "text": "MODERATOR ONLINE",
                     "fixedWidth": 600,
                     "align": "center",
                     "fontFamily": "CCFaceFront",
                     "fontSize": "40px",
-                    "fontStyle": "bold italic",
+                    "fontStyle": "italic",
                     "stroke": "#003366",
-                    "strokeThickness": 10
+                    "strokeThickness": 9,
+                    "shadow.stroke": true,
+                    "shadow.color": "#003366",
+                    "shadow.blur": 3
                 },
                 {
                     "type": "Image",
-                    "id": "86e7cf14-aee6-4930-8b88-b1daed1d736a",
-                    "label": "x_button",
+                    "id": "89c11358-9fb7-4200-a165-b7290734c558",
+                    "label": "mod",
+                    "texture": {
+                        "key": "main",
+                        "frame": "mod_smaller"
+                    },
+                    "x": -1,
+                    "y": -237,
+                    "originX": 0.504950495049505,
+                    "originY": 0.504950495049505
+                },
+                {
+                    "type": "Image",
+                    "id": "66f04d86-8a45-4291-a87e-54a44592dab4",
+                    "label": "blueButton",
                     "components": [
                         "Button"
                     ],
                     "Button.spriteName": "blue-button",
-                    "Button.callback": "() => { this.visible = false }",
+                    "Button.callback": "() => this.close()",
                     "texture": {
                         "key": "main",
                         "frame": "blue-button"
                     },
-                    "x": 300,
-                    "y": -268
+                    "x": 295,
+                    "y": -273
                 },
                 {
                     "type": "Image",
-                    "id": "38207f10-6105-457c-a5b7-247f1c12f8fb",
-                    "label": "blue_x",
-                    "components": [],
+                    "id": "5453ea33-e5bf-4be5-a2f0-497c75d3594f",
+                    "label": "blueX",
                     "texture": {
                         "key": "main",
                         "frame": "blue-x"
                     },
-                    "x": 300,
-                    "y": -270
-                },
-                {
-                    "type": "Image",
-                    "id": "e12d01cd-ee58-4c0a-8532-5e749f889e8f",
-                    "label": "report_button",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "blue-button",
-                    "texture": {
-                        "key": "main",
-                        "frame": "blue-button"
-                    },
-                    "x": 90,
-                    "y": -5
-                },
-                {
-                    "type": "Image",
-                    "id": "74d0e597-f0d9-4150-ab69-e78d34e8d2cb",
-                    "label": "report_icon",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "mod-icon"
-                    },
-                    "x": 90,
-                    "y": -6
-                },
-                {
-                    "type": "Image",
-                    "id": "01ac9dbe-59a2-4eb4-86dd-b4873c3d799b",
-                    "label": "ignore_button",
-                    "components": [
-                        "Button"
-                    ],
-                    "Button.spriteName": "blue-button",
-                    "texture": {
-                        "key": "main",
-                        "frame": "blue-button"
-                    },
-                    "x": -190,
-                    "y": 104
-                },
-                {
-                    "type": "Image",
-                    "id": "2362d30f-d6a3-4d53-b3b9-17ec1259bd56",
-                    "label": "ignore_icon",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "ignore-icon"
-                    },
-                    "x": -190,
-                    "y": 102
-                },
-                {
-                    "type": "Image",
-                    "id": "510247da-d1ef-4bbf-b8f9-c266b5c39048",
-                    "label": "mod",
-                    "components": [],
-                    "texture": {
-                        "key": "main",
-                        "frame": "mod"
-                    },
-                    "y": -222
+                    "x": 295,
+                    "y": -275
                 }
             ]
         }
@@ -226,6 +167,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

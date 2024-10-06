@@ -7,6 +7,7 @@ import ShowHint from "../../../components/ShowHint";
 import ChatLog from "../chatlog/ChatLog";
 import SimpleButton from "../../../components/SimpleButton";
 import MailButton from "./buttons/mail/MailButton";
+import Phone from "../phone/Phone";
 import Waddle from "../waddle/Waddle";
 import Buddy from "../buddy/Buddy";
 import PetCard from "../pet/PetCard";
@@ -42,12 +43,16 @@ export default class Main extends BaseScene {
         this.chatLog;
         /** @type {Phaser.GameObjects.Image} */
         this.crosshair;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.phone_button;
         /** @type {Phaser.GameObjects.Image} */
         this.request_button;
         /** @type {MailButton} */
         this.mailButton;
         /** @type {Phaser.GameObjects.Sprite} */
         this.mod_m;
+        /** @type {Phone} */
+        this.phone;
         /** @type {Waddle} */
         this.waddle;
         /** @type {Buddy} */
@@ -72,7 +77,7 @@ export default class Main extends BaseScene {
         this.mail;
         /** @type {Mailbook} */
         this.mailbook;
-        /** @type {Array<Settings|Moderator|PlayerCard|PetCard|Buddy|Waddle>} */
+        /** @type {Array<Settings|Moderator|PlayerCard|PetCard|Buddy|Waddle|Phone>} */
         this.hideOnSleep;
 
 
@@ -168,6 +173,10 @@ export default class Main extends BaseScene {
         // map_button
         const map_button = this.add.sprite(96, 880, "main", "map-button");
 
+        // phone_button
+        const phone_button = this.add.sprite(96, 757, "main", "phone-button");
+        phone_button.setOrigin(0.5, 0.504424778761062);
+
         // request_button
         const request_button = this.add.image(276, 71, "main", "buddy-button");
         request_button.visible = false;
@@ -187,6 +196,11 @@ export default class Main extends BaseScene {
 
         // widgetLayer
         const widgetLayer = this.add.layer();
+
+        // phone
+        const phone = new Phone(this, 285, 401);
+        phone.visible = false;
+        widgetLayer.add(phone);
 
         // waddle
         const waddle = new Waddle(this, 1104, 332);
@@ -244,7 +258,7 @@ export default class Main extends BaseScene {
         mailbook.visible = false;
 
         // lists
-        const hideOnSleep = [settings, moderator, playerCard, petCard, buddy, waddle];
+        const hideOnSleep = [settings, moderator, playerCard, petCard, buddy, waddle, phone];
 
         // dock (components)
         new Interactive(dock);
@@ -325,6 +339,12 @@ export default class Main extends BaseScene {
         map_buttonButton.callback = () => this.onMapClick();
         map_buttonButton.activeFrame = false;
 
+        // phone_button (components)
+        const phone_buttonButton = new Button(phone_button);
+        phone_buttonButton.spriteName = "phone-button";
+        phone_buttonButton.callback = () => this.onPhoneClick();
+        phone_buttonButton.activeFrame = false;
+
         // request_button (components)
         const request_buttonButton = new Button(request_button);
         request_buttonButton.spriteName = "buddy-button";
@@ -347,9 +367,11 @@ export default class Main extends BaseScene {
         this.onlinePopup = onlinePopup;
         this.chatLog = chatLog;
         this.crosshair = crosshair;
+        this.phone_button = phone_button;
         this.request_button = request_button;
         this.mailButton = mailButton;
         this.mod_m = mod_m;
+        this.phone = phone;
         this.waddle = waddle;
         this.buddy = buddy;
         this.petCard = petCard;
@@ -374,6 +396,7 @@ export default class Main extends BaseScene {
         this._create()
 
         this.events.on('sleep', this.onSleep, this)
+        this.events.on('wake', this.onWake, this)
 
         // Widgets
 
@@ -396,6 +419,10 @@ export default class Main extends BaseScene {
 
         this.requests = []
 
+        // Secret agent
+
+        this.showPhone()
+
         // Chat input
 
         let style = {
@@ -413,11 +440,6 @@ export default class Main extends BaseScene {
 
         this.input.keyboard.on('keydown-TAB', (event) => this.onChatKeyDown(event))
         this.input.keyboard.on('keydown-ENTER', (event) => this.onChatKeyDown(event))
-
-        // Anims
-
-        let anims = this.cache.json.get('main-anims')
-        this.anims.fromJSON(anims)
     }
 
     onSleep(sys, data) {
@@ -447,6 +469,10 @@ export default class Main extends BaseScene {
         }
     }
 
+    onWake() {
+        this.showPhone()
+    }
+
     setupWidgets() {
         for (let widget of this.widgetLayer.list) {
             this.setupWidget(widget)
@@ -464,6 +490,10 @@ export default class Main extends BaseScene {
 
     updateMailCount() {
         this.mailButton?.updateMailCount()
+    }
+
+    showPhone() {
+        this.phone_button.visible = this.world.client?.isSecretAgent
     }
 
     onSnowballClick() {
@@ -498,7 +528,7 @@ export default class Main extends BaseScene {
 
         this.chatInput.clearText()
 
-        this.balloonFactory.showTextBalloon(this.world.client.id, text)
+        this.interface.showTextBalloon(this.world.client.id, text)
         this.network.send('send_message', { message: text })
     }
 
@@ -600,6 +630,10 @@ export default class Main extends BaseScene {
     onModClick() {
         this.onModOut()
         this.moderator.visible = true
+    }
+
+    onPhoneClick() {
+        this.interface.showWidget(this.phone)
     }
 
     onMapClick() {

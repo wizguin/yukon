@@ -41,17 +41,14 @@ export default class Prompt extends BaseContainer {
     }
 
     createBackground(width, frame) {
-        let bg = this.scene.add.nineslice(
+        let bg = this.scene.add.ninePatchContainer(
             0, 0,
             width, 400,
-            {
-                key: 'prompt',
-                frame: frame
-            },
-            50 // Corner slice
+            'prompt',
+            frame
         )
 
-        bg.setOrigin(0.5)
+        bg.setMargin(50)
 
         return bg
     }

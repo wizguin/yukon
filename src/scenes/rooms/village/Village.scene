@@ -5,6 +5,7 @@
         "compilerInsertSpaces": true,
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
+        "autoImport": true,
         "superClassName": "RoomScene",
         "preloadMethodName": "_preload",
         "preloadPackFiles": [
@@ -17,225 +18,284 @@
     },
     "displayList": [
         {
+            "type": "Sprite",
+            "id": "15cc344f-91e9-4196-8d67-49a6751f08c3",
+            "label": "rings",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onRingsOver()",
+            "hitArea.shape": "POLYGON",
+            "hitArea.points": "1455 456 1455 643 1295 643",
+            "texture": {
+                "key": "village",
+                "frame": "rings/rings0001"
+            },
+            "x": 1377,
+            "y": 584,
+            "originX": 0.9297771775827144,
+            "originY": 0.906832298136646
+        },
+        {
             "type": "Image",
-            "id": "0547e328-4d9e-4ae5-a5bd-fb355f7d5b31",
+            "id": "ac99a882-3569-430e-8017-16b16d181855",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "village",
                 "frame": "bg"
             },
-            "x": -25,
-            "y": -15,
+            "x": -26,
+            "y": -12,
             "originX": 0,
             "originY": 0
         },
         {
             "type": "Image",
-            "id": "8f355d69-ebb4-4d3a-88da-8435a41f5dee",
-            "label": "lodge_door",
+            "id": "d85852e5-bd94-4d34-830b-9eedf0cb995b",
+            "label": "lodgeFront",
+            "texture": {
+                "key": "village",
+                "frame": "lodge_front"
+            },
+            "x": 1086,
+            "y": 384,
+            "originX": 0.4789272030651341,
+            "originY": 0.5352112676056338
+        },
+        {
+            "type": "Image",
+            "id": "39641a7b-b0f9-4dc5-a0ea-4445d3198c91",
+            "label": "lodgeSnow",
+            "texture": {
+                "key": "village",
+                "frame": "lodge_snow"
+            },
+            "x": 1067,
+            "y": 423,
+            "originX": 0.46332046332046334,
+            "originY": 0.47435897435897434
+        },
+        {
+            "type": "Image",
+            "id": "528418d1-9c51-44a4-b187-11604f775026",
+            "label": "lodgeStairs",
+            "texture": {
+                "key": "village",
+                "frame": "lodge_stairs"
+            },
+            "x": 931,
+            "y": 459,
+            "originX": 0,
+            "originY": 0.7868852459016393
+        },
+        {
+            "type": "Image",
+            "id": "c002f978-a7ad-4bca-94f9-55a37c55c2f1",
+            "label": "lodgeDoor",
             "components": [
                 "Button",
                 "MoveTo"
             ],
             "Button.spriteName": "lodge_door",
             "Button.activeFrame": false,
-            "MoveTo.x": 1000,
-            "MoveTo.y": 400,
+            "MoveTo.x": "1000",
+            "MoveTo.y": "400",
             "texture": {
                 "key": "village",
                 "frame": "lodge_door"
             },
-            "x": 1075,
-            "y": 318,
-            "originX": 0.27807486631016043,
-            "originY": 0.5560538116591929
-        },
-        {
-            "type": "Image",
-            "id": "3b82c03d-5f38-4e67-b46e-8805be857584",
-            "label": "lodge_stairs",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "lodge_stairs"
-            },
-            "x": 972,
-            "y": 444
-        },
-        {
-            "type": "Image",
-            "id": "1de1a3a5-5ec0-4245-837b-abfc34de7285",
-            "label": "lodge_front",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "lodge_front"
-            },
-            "x": 1087,
-            "y": 389,
-            "originX": 0.4807692307692308,
-            "originY": 0.5352112676056338
-        },
-        {
-            "type": "Image",
-            "id": "f8c4cf76-a72b-462f-be61-522c13bbc662",
-            "label": "lodge_snow",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "lodge_snow"
-            },
-            "x": 1104,
-            "y": 429,
-            "originX": 0.5368217054263565,
-            "originY": 0.4838709677419355
-        },
-        {
-            "type": "Image",
-            "id": "f0381b07-f18b-4510-9dc6-506b9b011521",
-            "label": "phone",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "phone"
-            },
-            "x": 1373,
-            "y": 316
-        },
-        {
-            "type": "Image",
-            "id": "482889f5-4705-4747-ada5-8711b4fe9935",
-            "label": "phone_door",
-            "components": [
-                "Button",
-                "MoveTo"
-            ],
-            "Button.spriteName": "phone_door",
-            "Button.activeFrame": false,
-            "MoveTo.x": 1340,
-            "MoveTo.y": 480,
-            "texture": {
-                "key": "village",
-                "frame": "phone_door"
-            },
-            "x": 1350,
-            "y": 387,
-            "originX": 0.22797927461139897,
-            "originY": 0.6206896551724138
-        },
-        {
-            "type": "Image",
-            "id": "70f6f844-57c4-44d2-8fb2-48a153053776",
-            "label": "phone_snow",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "phone_snow"
-            },
-            "x": 1361,
-            "y": 595,
-            "originX": 0.509090909090909,
-            "originY": 0.5272727272727272
-        },
-        {
-            "type": "Image",
-            "id": "846691f5-1c86-454a-8c41-b6f10da5def6",
-            "label": "lift",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "lift"
-            },
-            "x": 348,
-            "y": 200
+            "x": 1024,
+            "y": 186,
+            "originX": 0,
+            "originY": 0
         },
         {
             "type": "Sprite",
-            "id": "fdecd243-800b-4abf-b11f-d1bd9eddb82b",
+            "id": "2a0a06d7-3362-49ab-bdb4-29d6d5f7d9ca",
             "label": "smoke",
-            "components": [
-                "Animation"
-            ],
-            "Animation.key": "smoke",
-            "Animation.end": 5,
             "texture": {
                 "key": "village",
                 "frame": "smoke0001"
             },
-            "x": 1110,
-            "y": 32
+            "x": 1093,
+            "y": -39,
+            "originX": 0,
+            "originY": 0,
+            "animationPlayMethod": 1,
+            "animationKey": "village/smoke"
+        },
+        {
+            "type": "Container",
+            "id": "b6b22135-3fe1-4af7-838d-b5cb023ee1d6",
+            "label": "sportShop",
+            "x": 1185,
+            "y": 428.3932671887646,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "4a05eea2-67ce-4eaa-8f1b-cdae01182fa2",
+                    "label": "sport",
+                    "texture": {
+                        "key": "village",
+                        "frame": "sport"
+                    },
+                    "y": -395.3932695094585,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "211efafa-685d-41b3-8e5d-62730cc426bf",
+                    "label": "sportDoor",
+                    "components": [
+                        "Button",
+                        "MoveTo"
+                    ],
+                    "Button.spriteName": "sport_door",
+                    "Button.activeFrame": false,
+                    "MoveTo.x": "1340",
+                    "MoveTo.y": "480",
+                    "texture": {
+                        "key": "village",
+                        "frame": "sport_door"
+                    },
+                    "x": 126,
+                    "y": -208.3932695094585,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
         },
         {
             "type": "Image",
-            "id": "90385a83-2876-4b63-acb7-cc4d4f0e540f",
-            "label": "left_sign",
-            "components": [],
+            "id": "356d5fe7-e8b0-40e9-bc1f-b42d378e80b9",
+            "label": "ring",
             "texture": {
                 "key": "village",
-                "frame": "left_sign"
+                "frame": "ring"
             },
-            "x": 133,
-            "y": 677,
-            "originX": 0.4444444444444444,
-            "originY": 0.5217391304347826
+            "x": 1468,
+            "y": 566,
+            "originY": 0.8181818181818182
         },
         {
             "type": "Image",
-            "id": "00dfc36c-a436-4c05-af2e-c3a1a3cefd30",
-            "label": "right_sign",
-            "components": [],
+            "id": "0e1b8d9c-5606-49d5-9b32-f87b328e03df",
+            "label": "sled",
+            "texture": {
+                "key": "village",
+                "frame": "sled"
+            },
+            "x": 1415,
+            "y": 576,
+            "originX": 0.49206349206349204,
+            "originY": 2
+        },
+        {
+            "type": "Layer",
+            "id": "d6bd2ccd-49e3-4996-8d88-c38d995ad10d",
+            "label": "chairLift",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "34237729-b9db-4197-b907-e316dea59ca1",
+                    "label": "chair",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "village",
+                        "frame": "chair/chair0001"
+                    },
+                    "x": -116,
+                    "y": -136,
+                    "originX": 0,
+                    "originY": 0,
+                    "animationPlayMethod": 1,
+                    "animationKey": "village/chair"
+                },
+                {
+                    "type": "Image",
+                    "id": "d4b5f35f-802a-4705-8291-60e63b7766af",
+                    "label": "lift",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "village",
+                        "frame": "lift"
+                    },
+                    "x": 85,
+                    "y": -5,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "9a290316-6de3-4593-8b33-2bf614b961f4",
+            "label": "rightSign",
             "texture": {
                 "key": "village",
                 "frame": "right_sign"
             },
-            "x": 1471,
-            "y": 668,
-            "originX": 0.4861111111111111,
+            "x": 1465,
+            "y": 667,
+            "originX": 0.4794520547945205,
             "originY": 0.7831325301204819
         },
         {
             "type": "Image",
-            "id": "e8099f35-1e7b-451e-a295-ad3348c46dd4",
-            "label": "tours",
-            "components": [],
+            "id": "1ac1d038-da64-4465-8446-e497f107a34e",
+            "label": "leftSign",
             "texture": {
                 "key": "village",
-                "frame": "tours"
+                "frame": "left_sign"
             },
-            "x": 792,
-            "y": 483,
-            "originY": 0.8846153846153846
+            "x": 139,
+            "y": 675,
+            "originX": 0.4444444444444444,
+            "originY": 0.5217391304347826
         },
         {
-            "type": "Image",
-            "id": "b11a8fd1-6631-47b7-afb6-828357023244",
-            "label": "tours_text",
-            "components": [],
-            "texture": {
-                "key": "village",
-                "frame": "tours_text"
-            },
-            "x": 794,
-            "y": 505.2201404552512,
-            "originY": 3.9212529261510674
-        },
-        {
-            "type": "Sprite",
-            "id": "afa23f89-e095-4594-9ade-31a3e78ae5ae",
-            "label": "chair",
-            "components": [
-                "Animation"
-            ],
-            "Animation.key": "chair",
-            "Animation.end": 179,
-            "Animation.repeatDelay": 1500,
-            "texture": {
-                "key": "village",
-                "frame": "chair0001"
-            },
-            "x": 292,
-            "y": 150
+            "type": "Container",
+            "id": "654e92fd-0a3b-4cb7-81a4-4421190f500b",
+            "label": "tourBooth",
+            "x": 797,
+            "y": 476,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "45f31723-a7a6-414e-9ee6-4e3d2ecf2e96",
+                    "label": "tours",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "tours",
+                    "Button.hoverCallback": "() => this.onToursOver()",
+                    "Button.hoverOutCallback": "() => this.onToursOut()",
+                    "Button.callback": "() => this.onToursClick()",
+                    "Button.activeFrame": false,
+                    "Button.pixelPerfect": true,
+                    "texture": {
+                        "key": "village",
+                        "frame": "tours"
+                    },
+                    "originX": 0.5028901734104047,
+                    "originY": 0.8894230769230769
+                },
+                {
+                    "type": "Image",
+                    "id": "aa425296-6ff6-4ee7-8669-fd5fbc907864",
+                    "label": "toursText",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "village",
+                        "frame": "tours_text"
+                    },
+                    "x": 3,
+                    "y": -144,
+                    "originX": 0.5034965034965035
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -243,7 +303,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     },
     "lists": [
         {
@@ -251,7 +311,16 @@
             "label": "sort",
             "objectIds": [
                 "e8099f35-1e7b-451e-a295-ad3348c46dd4",
-                "b11a8fd1-6631-47b7-afb6-828357023244"
+                "654e92fd-0a3b-4cb7-81a4-4421190f500b",
+                "1ac1d038-da64-4465-8446-e497f107a34e",
+                "9a290316-6de3-4593-8b33-2bf614b961f4",
+                "0e1b8d9c-5606-49d5-9b32-f87b328e03df",
+                "15cc344f-91e9-4196-8d67-49a6751f08c3",
+                "356d5fe7-e8b0-40e9-bc1f-b42d378e80b9",
+                "b6b22135-3fe1-4af7-838d-b5cb023ee1d6",
+                "528418d1-9c51-44a4-b187-11604f775026",
+                "39641a7b-b0f9-4dc5-a0ea-4445d3198c91",
+                "d85852e5-bd94-4d34-830b-9eedf0cb995b"
             ]
         }
     ]

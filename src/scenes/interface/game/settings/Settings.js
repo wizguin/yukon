@@ -120,12 +120,8 @@ export default class Settings extends BaseContainer {
             this.checkbox.setTexture('login', 'checkbox-active')
         }
 
-        let oneDay = 1000 * 60 * 60 * 24
-        let timeDiff = Date.now() - Date.parse(this.world.client.joinTime)
-        let daysDiff = Math.round(timeDiff / oneDay)
-
         server.text = `You're on ${this.network.worldName}`
-        age.text = `Your penguin is ${daysDiff} days old`
+        age.text = `Your penguin is ${this.world.client.daysOld} days old`
         buddies.text = `${this.world.client.buddies.length}/100 Buddies`
 
         /* END-USER-CTR-CODE */

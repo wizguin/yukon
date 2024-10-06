@@ -1,0 +1,101 @@
+{
+    "id": "57fe5605-ca37-4002-9b7a-212437d1d397",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "04bc8dea-c8ad-49d8-8e4d-4f236837ebaf",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "bf8749b1-c7c1-4bc1-a738-fd5d46c5d990",
+                    "label": "maskRect",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 560,
+                    "height": 300
+                },
+                {
+                    "type": "Container",
+                    "id": "8f48a59a-6271-4d3d-a18a-c5d67bb7b528",
+                    "label": "missions",
+                    "scope": "CLASS"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "28d0d7c8-2167-426b-9ee4-bda90fcd8f67",
+                    "label": "scroll",
+                    "x": 524,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#025c01",
+                    "width": 42,
+                    "height": 300
+                },
+                {
+                    "type": "Image",
+                    "id": "d9c43dcf-ebdd-44f6-abbb-465a01dab4e6",
+                    "label": "downButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "menu_button",
+                    "Button.callback": "() => this.onDownClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "missions",
+                        "frame": "menu_button"
+                    },
+                    "x": 544,
+                    "y": 264,
+                    "originX": 0.5151515151515151,
+                    "originY": 0.5076923076923077,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "18441b10-7f72-4d20-ae92-b8cac324eb73",
+                    "label": "upButton",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "menu_button",
+                    "Button.callback": "() => this.onUpClick()",
+                    "Button.activeFrame": false,
+                    "texture": {
+                        "key": "missions",
+                        "frame": "menu_button"
+                    },
+                    "x": 544,
+                    "y": 33,
+                    "originX": 0.5151515151515151,
+                    "originY": 0.5076923076923077
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

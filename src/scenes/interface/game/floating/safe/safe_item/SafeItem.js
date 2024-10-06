@@ -118,7 +118,20 @@ export default class SafeItem extends BaseContainer {
         }
 
         this.safe.closeMenu()
-        this.world.client.sendSafe(this.data.id)
+
+        switch (this.data.action) {
+            case 'tour':
+                this.world.client.sendTour()
+                break;
+
+            case 'joke':
+                this.world.client.sendJoke()
+                break
+
+            default:
+                this.world.client.sendSafe(this.data.id)
+                break
+        }
     }
 
     /* END-USER-CODE */

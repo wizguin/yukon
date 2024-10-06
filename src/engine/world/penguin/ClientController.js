@@ -53,7 +53,8 @@ export default class ClientController {
 
             'emote_key': () => this.emoteKeyPressed = true,
             'send_emote': (id) => this.sendEmote(id),
-            'send_safe': (id) => this.sendSafe(id)
+            'send_safe': (id) => this.sendSafe(id),
+            'send_joke': () => this.sendJoke()
         }
 
         this.lockRotation = false
@@ -91,6 +92,21 @@ export default class ClientController {
         return this.rank > 1
     }
 
+    get isTourGuide() {
+        return this.inventory.head.includes(428)
+    }
+
+    get isSecretAgent() {
+        return this.inventory.award.includes(800)
+    }
+
+    get daysOld() {
+        const oneDay = 1000 * 60 * 60 * 24
+        const timeDiff = Date.now() - Date.parse(this.joinTime)
+
+        return Math.round(timeDiff / oneDay)
+    }
+
     get mailCount() {
         return this.postcards.length
     }
@@ -121,7 +137,7 @@ export default class ClientController {
     }
 
     onPointerMove(pointer) {
-        if (this.interface.main.crosshair.visible) {
+        if (this.interface.main.crosshair?.visible) {
             this.interface.main.onCrosshairMove(pointer)
         }
 
@@ -229,6 +245,29 @@ export default class ClientController {
 
         this.interface.showTextBalloon(this.id, message)
         this.network.send('send_safe', { safe: safe })
+    }
+
+    sendJoke() {
+        const randomJokeId = Phaser.Math.Between(0, this.crumbs.jokes.length - 1)
+
+        this.interface.showTextBalloon(this.id, this.crumbs.jokes[randomJokeId], false)
+        this.network.send('send_joke', { joke: randomJokeId })
+    }
+
+    sendTour() {
+        if (this.penguin.equipped.head.id !== 428) {
+            this.interface.prompt.showError('Sorry, you must wear the tour guide\nhat to use this feature')
+            return
+        }
+
+        const roomName = this.world.room.key.toLowerCase()
+
+        if (roomName in this.crumbs.tour_messages) {
+            const roomId = this.world.room.id
+
+            this.interface.showTourMessage(this.id, roomId)
+            this.network.send('send_tour', { roomId })
+        }
     }
 
     showCrosshair() {

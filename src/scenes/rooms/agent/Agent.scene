@@ -1,0 +1,670 @@
+{
+    "id": "185ee649-c9e2-46fa-b3a4-5a4bb04d2108",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/agent/agent-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Agent",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "74e14d03-3ffe-4387-90bc-8e665666ee54",
+            "label": "bg",
+            "texture": {
+                "key": "agent",
+                "frame": "bg"
+            },
+            "x": -6,
+            "y": -4,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "be206d82-9f94-438f-bc88-54cba828d71e",
+            "label": "secret",
+            "texture": {
+                "key": "agent",
+                "frame": "secret/secret0001"
+            },
+            "x": 1276,
+            "y": 337,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "233100f6-c55d-437f-b700-7ffa2b76ec69",
+            "label": "fish",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "fish",
+            "Button.callback": "() => this.onFishClick()",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "agent",
+                "frame": "fish"
+            },
+            "x": 1329,
+            "y": 808,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "75175c4a-bcc4-46a9-b1d3-731b82b24dbe",
+            "label": "missions",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "missions",
+            "Button.callback": "() => this.onMissionsClick()",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "agent",
+                "frame": "missions"
+            },
+            "x": 1347,
+            "y": 691,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "4f108d5b-274d-4000-b636-7cd0720b6fb7",
+            "label": "chair2",
+            "texture": {
+                "key": "agent",
+                "frame": "chair2"
+            },
+            "x": 1168,
+            "y": 607,
+            "originX": 0.503448275862069,
+            "originY": 0.441747572815534
+        },
+        {
+            "type": "Image",
+            "id": "00215510-db5b-4d5e-b36e-bf4ef979468d",
+            "label": "chair1",
+            "texture": {
+                "key": "agent",
+                "frame": "chair1"
+            },
+            "x": 418,
+            "y": 594,
+            "originX": 0.503448275862069,
+            "originY": 0.441747572815534
+        },
+        {
+            "type": "Sprite",
+            "id": "027b57c8-49a8-46b0-9470-ac74d6c0b2e0",
+            "label": "door",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton",
+                "MoveTo"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onDoorOver()",
+            "SimpleButton.hoverOutCallback": "() => this.onDoorOut()",
+            "SimpleButton.pixelPerfect": true,
+            "MoveTo.x": "200",
+            "MoveTo.y": "600",
+            "texture": {
+                "key": "agent",
+                "frame": "door/door0001"
+            },
+            "x": 137,
+            "y": 283,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "a1111705-e58e-45ee-b131-aa77d9a439e9",
+            "label": "danceFloor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "agent",
+                "frame": "dance/floor0001"
+            },
+            "x": 518,
+            "y": 245,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "236477cd-6e20-4fca-84b4-3cb531d421cc",
+            "label": "danceFloorOutline",
+            "texture": {
+                "key": "agent",
+                "frame": "dance/floor_outline"
+            },
+            "x": 514,
+            "y": 243,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "ec0f7aee-f0ac-4cbd-99de-ef4cb63c4dba",
+            "label": "danceFront",
+            "texture": {
+                "key": "agent",
+                "frame": "dance/front"
+            },
+            "x": 573,
+            "y": 213,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "e4173fae-b284-463c-a335-9e63ef2123b2",
+            "label": "danceScreen",
+            "texture": {
+                "key": "agent",
+                "frame": "dance/screen"
+            },
+            "x": 508,
+            "y": 199,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Layer",
+            "id": "f2a4316d-aa71-4c48-9602-65097fa97c49",
+            "label": "screenZones",
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "c070e809-3311-48f4-b7aa-96577c06185f",
+                    "label": "beach",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(400)",
+                    "x": 1090,
+                    "y": 311,
+                    "angle": 8,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 97,
+                    "height": 71
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "84b63772-07cf-4602-b411-422d0b43a8a6",
+                    "label": "plaza",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(300)",
+                    "x": 998,
+                    "y": 306,
+                    "angle": 2,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 71
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "2d0d8b0d-cb3e-4831-8739-9c5f17c55ff3",
+                    "label": "pet",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(310)",
+                    "x": 901,
+                    "y": 303,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "22050ab9-8f66-416c-ae62-a852e28fc574",
+                    "label": "forts",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(801)",
+                    "x": 801,
+                    "y": 302,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 67
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "cda22d5e-5794-42a7-aa89-ed33cf9efe1c",
+                    "label": "coffee",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(110)",
+                    "x": 681,
+                    "y": 308,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 68
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "eb25f1a1-32a2-4c4b-89d9-c73a751cd665",
+                    "label": "book",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(111)",
+                    "x": 574,
+                    "y": 307,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 70
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "00dd4bab-1985-4a6c-849d-fc62b236fa2e",
+                    "label": "lodge",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(220)",
+                    "x": 475,
+                    "y": 317,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "31ce60f6-3264-4973-ad2a-ab84e0aece22",
+                    "label": "sport",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(210)",
+                    "x": 374,
+                    "y": 322,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 95,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e6f70b09-bac7-4926-ab2f-a95f0fcee0dc",
+                    "label": "beacon",
+                    "components": [
+                        "Zone"
+                    ],
+                    "x": 1158,
+                    "y": 229,
+                    "angle": 14,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 74,
+                    "height": 75
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "09c2edc2-d5a3-401e-871a-f7c498a4a7da",
+                    "label": "light",
+                    "components": [
+                        "Zone"
+                    ],
+                    "x": 1060,
+                    "y": 214,
+                    "angle": 4,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 89,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f3a5f05d-a9df-455f-8e2c-0304c9bd0dbc",
+                    "label": "pizza",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() =>{}",
+                    "x": 967,
+                    "y": 207,
+                    "angle": 4,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 97,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4ae236af-2577-4e01-bcd4-b514cd9f8340",
+                    "label": "rink",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(802)",
+                    "x": 870,
+                    "y": 208,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 100,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "831b588f-96e1-477b-8dea-6319fb3f289f",
+                    "label": "shop",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(130)",
+                    "x": 787,
+                    "y": 208,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a1a57b1a-3bc1-4117-a265-f8d2540717b8",
+                    "label": "town",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(100)",
+                    "x": 698,
+                    "y": 213,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 97,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "42673489-6ca3-4b06-9031-4ffb99d7696c",
+                    "label": "dock",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(800)",
+                    "x": 604,
+                    "y": 205,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 68
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9b052879-e0c8-4424-94eb-5ad04cd05a31",
+                    "label": "dance",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(120)",
+                    "x": 508,
+                    "y": 215,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 93,
+                    "height": 68
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "7e447131-293b-4307-a1c7-7c38e7348d6b",
+                    "label": "lounge",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(121)",
+                    "x": 411,
+                    "y": 231,
+                    "angle": -8,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 100,
+                    "height": 68
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4fecf3ab-3a42-4da6-9e57-ad78c80f5a57",
+                    "label": "attic",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(221)",
+                    "x": 312,
+                    "y": 250,
+                    "angle": -8,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 96,
+                    "height": 68
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "cd62f32d-2b3e-439b-ac98-83af116c6840",
+                    "label": "stage",
+                    "components": [
+                        "Zone"
+                    ],
+                    "x": 978,
+                    "y": 117,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 71
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "6ce50cd1-2a19-497d-9274-79fdbcb2e026",
+                    "label": "cove",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(810)",
+                    "x": 882,
+                    "y": 113,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 93,
+                    "height": 70
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "3c72af6f-21d2-43b7-afcd-45f32181bb98",
+                    "label": "forest",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(809)",
+                    "x": 793,
+                    "y": 110,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 83,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f647ee24-1bd9-4cc0-9899-b3096ff80379",
+                    "label": "dojo",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(320)",
+                    "x": 695,
+                    "y": 110,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "ef1f7068-cc2e-42b2-ba09-7798af2e0625",
+                    "label": "mtn",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(230)",
+                    "x": 599,
+                    "y": 114,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 95,
+                    "height": 69
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "287ff487-eb85-431a-a00f-319ae6689035",
+                    "label": "village",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(200)",
+                    "x": 498,
+                    "y": 124,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 94,
+                    "height": 67
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "882fad60-f2a2-4b59-add0-593c0d98e524",
+                    "label": "dojoext",
+                    "components": [
+                        "Zone"
+                    ],
+                    "Zone.callback": "() => this.onScreenClick(321)",
+                    "x": 400,
+                    "y": 131,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.5,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 87,
+                    "height": 64
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "894596b8-2110-45c0-bc38-49553eebe4c8",
+            "label": "sort",
+            "objectIds": [
+                "4f108d5b-274d-4000-b636-7cd0720b6fb7",
+                "00215510-db5b-4d5e-b36e-bf4ef979468d"
+            ]
+        }
+    ]
+}

@@ -108,7 +108,7 @@ export default class CardJitsuHelp extends BaseContainer {
             return
         }
 
-        this.tween.remove()
+        this.tween.stop()
         this.tween = null
     }
 

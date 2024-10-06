@@ -41,7 +41,6 @@ export default class RoomScene extends BaseScene {
         this.sortChildren()
 
         if (this.roomPhysics) this.addPhysics()
-        if (this.roomAnims) this.addAnims()
 
         this.addInput()
         this.setMusic()
@@ -262,21 +261,6 @@ export default class RoomScene extends BaseScene {
 
             this.interface.prompt.window.visible = false
         })
-    }
-
-    /*========== Animations ==========*/
-
-    /**
-     * Loads complex animations from JSON room anims file,
-     * simpler animations should use the Animation component instead.
-     * To trigger this add a roomAnims get property to the room, and
-     * set it to return true.
-     */
-    addAnims() {
-        let key = this.key.toLowerCase()
-        let anims = this.cache.json.get(`${key}-anims`)
-
-        this.anims.fromJSON(anims)
     }
 
 }

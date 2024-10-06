@@ -87,7 +87,7 @@ export default class Separator extends BaseContainer {
             ease: ease,
 
             onComplete: this.onTweenComplete,
-            onCompleteScope: this
+            callbackScope: this
         })
     }
 
@@ -104,7 +104,7 @@ export default class Separator extends BaseContainer {
 
     close() {
         if (this.tween) {
-            this.tween.remove()
+            this.tween.stop()
             this.tween = null
         }
 

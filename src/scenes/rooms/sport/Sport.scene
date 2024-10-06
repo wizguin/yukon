@@ -1,0 +1,294 @@
+{
+    "id": "9e3093b2-af49-4257-ba8a-7646af0e4c2f",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/sport/sport-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Sport",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "46f71fe7-03d6-4683-a9e5-320b6461a1ee",
+            "label": "bg",
+            "texture": {
+                "key": "sport",
+                "frame": "bg"
+            },
+            "x": 4,
+            "y": 4,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Container",
+            "id": "0fa846db-53ed-4ef1-a4f3-ed6f5e9df94c",
+            "label": "container",
+            "x": 1310,
+            "y": 664,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "78314dc0-d6d0-4aef-a1c6-28389cb7b71d",
+                    "label": "counter",
+                    "texture": {
+                        "key": "sport",
+                        "frame": "counter"
+                    },
+                    "x": 1.0305368858855672,
+                    "y": 1.4989092534428892,
+                    "originX": 0.4,
+                    "originY": 0.8102766798418972
+                },
+                {
+                    "type": "Sprite",
+                    "id": "a9db8d0e-fb78-4440-a758-1a2a61b0413a",
+                    "label": "phone",
+                    "scope": "CLASS",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "phone/phone",
+                    "Animation.end": 55,
+                    "Animation.repeat": 0,
+                    "Animation.autoPlay": false,
+                    "Animation.onHover": true,
+                    "Animation.stopOnOut": false,
+                    "texture": {
+                        "key": "sport",
+                        "frame": "phone/phone0001"
+                    },
+                    "x": 63,
+                    "y": -178,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Sprite",
+                    "id": "0e8b50c3-2b5a-4d04-bc0d-ae79c0ecf2a9",
+                    "label": "register",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "sport",
+                        "frame": "register/register0001"
+                    },
+                    "x": -102,
+                    "y": -289,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "id": "9bc9e191-b7a5-4d28-b671-bc1fe47967c2",
+            "label": "ball",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "ball/ball",
+            "Animation.end": 37,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "Animation.onHover": true,
+            "texture": {
+                "key": "sport",
+                "frame": "ball/ball0001"
+            },
+            "x": 1422,
+            "y": 698,
+            "originY": 0.8963414634146342
+        },
+        {
+            "type": "Image",
+            "id": "2b1489c1-3189-4b92-8591-70c5b9556c32",
+            "label": "bike",
+            "texture": {
+                "key": "sport",
+                "frame": "bike"
+            },
+            "x": 1342,
+            "y": 816,
+            "originY": 0.6623931623931624
+        },
+        {
+            "type": "Image",
+            "id": "0574ac07-b5fa-403b-b0ea-f23a612bc37c",
+            "label": "catalog",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "catalog",
+            "Button.callback": "() => this.onCatalogClick()",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "texture": {
+                "key": "sport",
+                "frame": "catalog"
+            },
+            "x": 1329,
+            "y": 808,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "3cd503be-8016-4426-ad8e-3c7518a4a732",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": 1080,
+            "MoveTo.y": 466,
+            "texture": {
+                "key": "sport",
+                "frame": "door"
+            },
+            "x": 1016,
+            "y": 140,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "f48243e3-ec84-4c2f-beb5-b2909d6c6450",
+            "label": "ring",
+            "texture": {
+                "key": "sport",
+                "frame": "ring"
+            },
+            "x": 79,
+            "y": 805,
+            "originX": 0,
+            "originY": 0.69
+        },
+        {
+            "type": "Image",
+            "id": "99306ebc-64f1-4f44-931b-ba8396272f84",
+            "label": "curtain",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "curtain",
+            "Button.activeFrame": false,
+            "MoveTo.x": "460",
+            "MoveTo.y": "540",
+            "texture": {
+                "key": "sport",
+                "frame": "curtain"
+            },
+            "x": 385,
+            "y": 280,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "02dc49d0-9606-4307-98f3-627e2f056f2c",
+            "label": "speaker",
+            "components": [
+                "SimpleButton",
+                "Animation"
+            ],
+            "SimpleButton.pixelPerfect": true,
+            "Animation.key": "speaker/speaker",
+            "Animation.end": 30,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "Animation.onHover": true,
+            "Animation.stopOnOut": false,
+            "texture": {
+                "key": "sport",
+                "frame": "speaker/speaker0001"
+            },
+            "x": 2,
+            "y": 189,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Rectangle",
+            "id": "08ab72ce-1d8d-4ef6-becc-612db04a119a",
+            "label": "ballZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.ball.__Animation.play()",
+            "x": 1422,
+            "y": 668,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 100,
+            "height": 100
+        },
+        {
+            "type": "Rectangle",
+            "id": "205fb8aa-d568-472e-bd38-6fc33cdca4e4",
+            "label": "phoneZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.phone.__Animation.play()",
+            "x": 1428,
+            "y": 541,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 75,
+            "height": 60
+        },
+        {
+            "type": "Rectangle",
+            "id": "1390e2df-c976-4d52-90a4-521ccaffd0d4",
+            "label": "registerZone",
+            "components": [
+                "Zone"
+            ],
+            "Zone.hoverCallback": "() => this.onRegisterOver()",
+            "x": 1292,
+            "y": 467,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 110,
+            "height": 100
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "74808b14-d54a-4e8f-8e73-510aada4154f",
+            "label": "sort",
+            "objectIds": [
+                "f48243e3-ec84-4c2f-beb5-b2909d6c6450",
+                "2b1489c1-3189-4b92-8591-70c5b9556c32",
+                "9bc9e191-b7a5-4d28-b671-bc1fe47967c2",
+                "0fa846db-53ed-4ef1-a4f3-ed6f5e9df94c"
+            ]
+        }
+    ]
+}
