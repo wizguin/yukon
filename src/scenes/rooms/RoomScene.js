@@ -53,6 +53,11 @@ export default class RoomScene extends BaseScene {
 
     preload() {
         this.load.on('progress', this.onProgress, this)
+
+        this.load.on('filecomplete', (key, type, data) =>{
+            this.world.loadedAssets.push({id: key, type})
+        })
+
         this.events.once('create', () => this.isReady = true)
 
         if (this.music && !this.cache.audio.exists(this.music)) {
