@@ -6,7 +6,6 @@
         "javaScriptInitFieldsInConstructor": true,
         "exportClass": true,
         "autoImport": true,
-        "displayName": "",
         "superClassName": "BaseContainer",
         "preloadMethodName": "",
         "preloadPackFiles": [],

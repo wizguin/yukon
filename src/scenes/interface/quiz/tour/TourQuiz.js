@@ -4,7 +4,7 @@ const totalQuestions = 8
 
 import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
-import TourQuizButton from "./TourQuizButton";
+import QuizButton from "../button/QuizButton";
 /* START-USER-IMPORTS */
 
 import MultiChoiceQuiz from '@engine/interface/quiz/MultiChoiceQuiz'
@@ -16,19 +16,19 @@ export default class TourQuiz extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option4;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option3;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option2;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option1;
         /** @type {Phaser.GameObjects.Text} */
         this.questionText;
         /** @type {Phaser.GameObjects.Container} */
         this.question;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.infoButton;
         /** @type {Phaser.GameObjects.Text} */
         this.infoText;
@@ -36,7 +36,7 @@ export default class TourQuiz extends BaseContainer {
         this.infoTitle;
         /** @type {Phaser.GameObjects.Container} */
         this.info;
-        /** @type {TourQuizButton[]} */
+        /** @type {QuizButton[]} */
         this.options;
 
 
@@ -62,19 +62,19 @@ export default class TourQuiz extends BaseContainer {
         this.add(question);
 
         // option4
-        const option4 = new TourQuizButton(scene, 0, 497);
+        const option4 = new QuizButton(scene, 0, 497);
         question.add(option4);
 
         // option3
-        const option3 = new TourQuizButton(scene, 0, 387);
+        const option3 = new QuizButton(scene, 0, 387);
         question.add(option3);
 
         // option2
-        const option2 = new TourQuizButton(scene, 0, 277);
+        const option2 = new QuizButton(scene, 0, 277);
         question.add(option2);
 
         // option1
-        const option1 = new TourQuizButton(scene, 0, 167);
+        const option1 = new QuizButton(scene, 0, 167);
         question.add(option1);
 
         // questionText
@@ -97,7 +97,7 @@ export default class TourQuiz extends BaseContainer {
         this.add(info);
 
         // infoButton
-        const infoButton = new TourQuizButton(scene, 0, 401);
+        const infoButton = new QuizButton(scene, 0, 401);
         info.add(infoButton);
 
         // infoText

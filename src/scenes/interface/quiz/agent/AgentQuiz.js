@@ -2,7 +2,7 @@
 
 import BaseContainer from "../../../base/BaseContainer";
 import Interactive from "../../../components/Interactive";
-import TourQuizButton from "../../tour/quiz/TourQuizButton";
+import QuizButton from "../button/QuizButton";
 import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
 
@@ -15,11 +15,11 @@ export default class AgentQuiz extends BaseContainer {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
 
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option3;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option2;
-        /** @type {TourQuizButton} */
+        /** @type {QuizButton} */
         this.option1;
         /** @type {Phaser.GameObjects.Text} */
         this.reward2;
@@ -47,7 +47,7 @@ export default class AgentQuiz extends BaseContainer {
         this.infoText;
         /** @type {Phaser.GameObjects.Text} */
         this.title;
-        /** @type {TourQuizButton[]} */
+        /** @type {QuizButton[]} */
         this.options;
         /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Text>} */
         this.components;
@@ -75,17 +75,17 @@ export default class AgentQuiz extends BaseContainer {
         this.add(bg);
 
         // option3
-        const option3 = new TourQuizButton(scene, 760, 636);
+        const option3 = new QuizButton(scene, 760, 636);
         option3.visible = true;
         this.add(option3);
 
         // option2
-        const option2 = new TourQuizButton(scene, 760, 524);
+        const option2 = new QuizButton(scene, 760, 524);
         option2.visible = true;
         this.add(option2);
 
         // option1
-        const option1 = new TourQuizButton(scene, 760, 412);
+        const option1 = new QuizButton(scene, 760, 412);
         option1.visible = true;
         this.add(option1);
 

@@ -5,7 +5,7 @@ import Button from "../../../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class TourQuizButton extends BaseContainer {
+export default class QuizButton extends BaseContainer {
 
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
