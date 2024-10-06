@@ -21,13 +21,11 @@
             "id": "6bf500d2-e798-4778-afc4-98eb5cbfd1e8",
             "label": "floor",
             "scope": "CLASS",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "d17cf53d-0385-4c40-b08c-2c121a9587db",
                     "label": "floor_1",
-                    "components": [],
                     "texture": {
                         "key": "logcabin",
                         "frame": "floor_1"
@@ -39,7 +37,6 @@
                     "type": "Image",
                     "id": "98aaa491-15a7-4c06-9c57-afba35e81543",
                     "label": "floor_2",
-                    "components": [],
                     "texture": {
                         "key": "logcabin",
                         "frame": "floor_2"
@@ -54,7 +51,6 @@
             "type": "Image",
             "id": "e414dbe5-fc7a-4203-9c06-71ee34f2a1da",
             "label": "wall",
-            "components": [],
             "texture": {
                 "key": "logcabin",
                 "frame": "wall"
@@ -68,13 +64,20 @@
             "type": "Image",
             "id": "b08b3534-e2db-40b2-84ae-aa88534e24d9",
             "label": "door",
-            "components": [],
+            "components": [
+                "MoveTo",
+                "Button"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "logcabin",
                 "frame": "door"
             },
-            "x": 421,
-            "y": 555
+            "x": 418,
+            "y": 666,
+            "originX": 0.4594594594594595,
+            "originY": 0.9302325581395349
         }
     ],
     "plainObjects": [],
@@ -82,6 +85,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

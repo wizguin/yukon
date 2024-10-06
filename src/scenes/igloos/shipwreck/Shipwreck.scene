@@ -1,0 +1,59 @@
+{
+    "id": "f2aface1-5a55-418c-8877-fe2e2ebc0c9f",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/shipwreck/shipwreck-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Shipwreck",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1a4a0c2b-7287-4879-8f1d-02e72f5245c5",
+            "label": "bg",
+            "texture": {
+                "key": "shipwreck-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "0163cdcf-e8bb-45ab-8944-93883fa9fb68",
+            "label": "fg",
+            "texture": {
+                "key": "shipwreck-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 975.6472409848757,
+            "originY": 1.0162992093592456
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "33daeb77-c209-468a-9f71-01a418966b61",
+            "label": "sort",
+            "objectIds": [
+                "0163cdcf-e8bb-45ab-8944-93883fa9fb68"
+            ]
+        }
+    ]
+}

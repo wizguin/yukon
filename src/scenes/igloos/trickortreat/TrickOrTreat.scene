@@ -1,0 +1,50 @@
+{
+    "id": "d40d2160-13e7-4344-ade7-f0c6511fdd48",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/trickortreat/trickortreat-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "TrickOrTreat",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "13ae5dce-3115-4bec-90a0-e4e0b4ca642c",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "trickortreat-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "54cf4cab-6580-4932-8d2e-81966356436b",
+            "label": "bg_upper",
+            "texture": {
+                "key": "trickortreat-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

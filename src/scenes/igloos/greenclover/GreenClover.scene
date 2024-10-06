@@ -1,0 +1,57 @@
+{
+    "id": "580fdee3-c530-42f0-adeb-1e24001a0bd6",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/greenclover/greenclover-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "GreenClover",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6aa8a520-f515-439e-ac88-2ef64e5efbc7",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "greenclover-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "5b72d683-9cd8-440e-8aaf-cfb8a800528c",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "greenclover-igloo",
+                "frame": "door"
+            },
+            "x": 685.3360133153067,
+            "y": 316.0552770686766,
+            "originX": 0.43425859398167804,
+            "originY": 0.8752657551378683
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "id": "8f3fd8c8-e8d4-460d-9a08-896cad3beee7",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/trainstation/trainstation-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "TrainStation",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f20f679d-ef77-4233-8fc7-e031299e2f54",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "trainstation-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "6243e141-c4a8-4378-b6bf-911004666e5b",
+            "label": "door",
+            "components": [
+                "MoveTo",
+                "Button"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "trainstation-igloo",
+                "frame": "door"
+            },
+            "x": 213.32162953120633,
+            "y": 533.8495897445486,
+            "originX": 0.3490670182286467,
+            "originY": 0.7170441225472356
+        },
+        {
+            "type": "Image",
+            "id": "94f431eb-dbe3-439d-b634-866a85de61a5",
+            "label": "bg_upper",
+            "texture": {
+                "key": "trainstation-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "0ea081e6-91fb-44f8-96b8-4ae3fd2f23cb",
+            "label": "fg",
+            "texture": {
+                "key": "trainstation-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 962.2032731464072,
+            "originY": 1.0022950761941742
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "247566af-6bb6-4130-91d1-43a8754abfe9",
+            "label": "sort",
+            "objectIds": [
+                "0ea081e6-91fb-44f8-96b8-4ae3fd2f23cb"
+            ]
+        }
+    ]
+}

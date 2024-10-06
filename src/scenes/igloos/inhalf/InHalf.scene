@@ -1,0 +1,84 @@
+{
+    "id": "0b4d6046-342b-4dd2-9405-4048562fbf8f",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/inhalf/inhalf-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "InHalf",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "744a10aa-cb07-4226-a866-2b0564e805d1",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "inhalf-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "e8859b2d-24f3-4660-9b74-e370abe88ff4",
+            "label": "bg_upper",
+            "texture": {
+                "key": "inhalf-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "b37acaaf-203f-4211-9608-942c987477c4",
+            "label": "fg",
+            "texture": {
+                "key": "inhalf-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 997.435028120684,
+            "originY": 1.0389948209590458
+        },
+        {
+            "type": "Image",
+            "id": "1be6502d-d40c-4587-ba55-eb7037e84160",
+            "label": "fg_again",
+            "texture": {
+                "key": "inhalf-igloo",
+                "frame": "fg-again"
+            },
+            "x": 760,
+            "y": 1003.5585195777335,
+            "originY": 1.0453734578934724
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "cb17d9ba-bc2d-4bcd-bc1a-5c38c6066ced",
+            "label": "sort",
+            "objectIds": [
+                "1be6502d-d40c-4587-ba55-eb7037e84160",
+                "b37acaaf-203f-4211-9608-942c987477c4"
+            ]
+        }
+    ]
+}

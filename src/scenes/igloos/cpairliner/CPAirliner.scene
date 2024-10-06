@@ -1,0 +1,98 @@
+{
+    "id": "41c56146-3464-461d-9d6c-00970c5c4f13",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon-public/assets/media/igloos/buildings/sprites/cpairliner/cpairliner-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "CPAirliner",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "0368c7e2-e81f-4c57-a504-02a4b2ecca78",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "4c3c894e-4a3e-4086-b8e7-81be36d96bb6",
+            "label": "fg",
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 1010.2892524515606,
+            "originY": 1.0523846379703756
+        },
+        {
+            "type": "Image",
+            "id": "0b7f4ba7-ec89-4289-854d-1812ddaa563b",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "door"
+            },
+            "x": 150.28874992305697,
+            "y": 559.7271871729922,
+            "originX": 0.36621742656648976,
+            "originY": 0.7701969928361644
+        },
+        {
+            "type": "Image",
+            "id": "67af62d2-b1f1-43a8-92e9-ab700a1983cc",
+            "label": "door_1",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door2",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "cpairliner-igloo",
+                "frame": "door2"
+            },
+            "x": 409.87744411491667,
+            "y": 330.156191757789,
+            "originX": 0.4912394456197931,
+            "originY": 1.006144588526023
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "47c46516-a77a-45db-b909-cbeef9db0eec",
+            "label": "sort",
+            "objectIds": [
+                "4c3c894e-4a3e-4086-b8e7-81be36d96bb6"
+            ]
+        }
+    ]
+}

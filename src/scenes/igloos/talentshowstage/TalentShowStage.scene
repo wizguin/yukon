@@ -1,0 +1,60 @@
+{
+    "id": "24652e2c-cb30-4ef1-9c79-d7ef82f45929",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/talentshowstage/talentshowstage-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "TalentShowStage",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f97cd8a6-3609-4f5b-86bd-cdb5c57096b8",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "talentshowstage-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "526f8020-99fb-4043-9b21-5921d83be43f",
+            "label": "fg",
+            "texture": {
+                "key": "talentshowstage-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 966.8674310998953,
+            "originY": 1.007153574062391
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "c3d45ccf-e174-4ebd-b066-4deb84689da2",
+            "label": "sort",
+            "objectIds": [
+                "526f8020-99fb-4043-9b21-5921d83be43f"
+            ]
+        }
+    ]
+}

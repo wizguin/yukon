@@ -1,0 +1,116 @@
+{
+    "id": "126f6d38-0cdf-4c69-9b84-2c0f1a71f9b8",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/snowglobe/snowglobe-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Snowglobe",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "16ab8065-7a83-4532-a29b-392c2ccf0ca8",
+            "label": "base",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "base_",
+            "Animation.end": 19,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "texture": {
+                "key": "snowglobe-igloo",
+                "frame": "base_0001"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Sprite",
+            "id": "d9b8e872-62a2-40c4-bd1a-cf5e36a55c4f",
+            "label": "snow",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "snow_",
+            "Animation.end": 130,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "texture": {
+                "key": "snowglobe-igloo",
+                "frame": "snow_0130"
+            },
+            "x": 763,
+            "y": 453.02794067215564,
+            "originY": 0.5085020418740832
+        },
+        {
+            "type": "Sprite",
+            "id": "327b3769-5dab-4296-9dfa-60037d8b33e7",
+            "label": "glass",
+            "scope": "CLASS",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "glass_",
+            "Animation.end": 19,
+            "Animation.repeat": 0,
+            "Animation.autoPlay": false,
+            "texture": {
+                "key": "snowglobe-igloo",
+                "frame": "glass_0001"
+            },
+            "x": 764,
+            "y": 812.686167034485,
+            "originY": 0.9982002427667671
+        },
+        {
+            "type": "Rectangle",
+            "id": "15461547-7bda-43f1-9aaf-b629934158b7",
+            "label": "rectangle_1",
+            "components": [
+                "SimpleButton"
+            ],
+            "SimpleButton.callback": "() => { this.onShake() }",
+            "x": 315,
+            "y": 805,
+            "scaleX": 1.680599858658224,
+            "scaleY": 0.7104486328756106,
+            "angle": 17,
+            "fillColor": "#08ffaf",
+            "fillAlpha": 100,
+            "width": 128,
+            "height": 128
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "c9c2715e-b27a-4f75-a9f4-07fc64a99407",
+            "label": "sort",
+            "objectIds": [
+                "ac0d5413-3e69-4e6d-a463-e2cd8604b252",
+                "e3ca0136-93ae-4594-a55d-100be6810fba",
+                "327b3769-5dab-4296-9dfa-60037d8b33e7",
+                "d9b8e872-62a2-40c4-bd1a-cf5e36a55c4f"
+            ]
+        }
+    ]
+}

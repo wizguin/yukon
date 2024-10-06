@@ -1,0 +1,57 @@
+{
+    "id": "39700ebe-fbdb-4988-874b-6d85f547e65c",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/greyicecastle/greyicecastle-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "GreyIceCastle",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "3dea9253-1526-47c5-8950-32fc71b0da1a",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "greyicecastle-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "e4e30293-987f-49f4-ad7c-9b49ee842dd4",
+            "label": "door",
+            "components": [
+                "MoveTo",
+                "Button"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "greyicecastle-igloo",
+                "frame": "door"
+            },
+            "x": 757.8242352528688,
+            "y": 635.7270575860633,
+            "originX": 0.5148643960677305,
+            "originY": 0.9344977312105811
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

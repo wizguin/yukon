@@ -1,0 +1,68 @@
+{
+    "id": "cce574ff-975c-422d-8513-851bbfbe6358",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/pinkicepalace/pinkicepalace-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "PinkIcePalace",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "a3f1b6bc-bb0c-4fb5-8d2d-09916373091d",
+            "label": "bg_lower",
+            "texture": {
+                "key": "pinkicepalace-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 634
+        },
+        {
+            "type": "Image",
+            "id": "39f8dfd3-ff0f-4249-963d-e41db5d570a0",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "pinkicepalace-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "a4c7f251-3c55-4f60-9bbe-9d782f71b7c1",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "pinkicepalace-igloo",
+                "frame": "door"
+            },
+            "x": 761,
+            "y": 644,
+            "originX": 0.5368421052631579,
+            "originY": 0.9769230769230769
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

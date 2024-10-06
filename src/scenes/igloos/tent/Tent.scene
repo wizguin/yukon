@@ -1,0 +1,78 @@
+{
+    "id": "a875eb30-c4b9-4591-b447-b516b7c85284",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/tent/tent-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Tent",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f1189240-bc0e-4724-911b-56934f1b71ed",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "tent-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "536c008d-da54-43be-9a33-40eb63aafe86",
+            "label": "fg",
+            "texture": {
+                "key": "tent-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 994.1047699026867,
+            "originY": 1.0355258019819653
+        },
+        {
+            "type": "Rectangle",
+            "id": "8a7dcad0-0af4-4fee-a8e6-db6c7dff56f6",
+            "label": "rectangle_1",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "x": 759.2484479811357,
+            "y": 666.4161909813262,
+            "originX": 0.5097534998526223,
+            "originY": 0.9213511936332885,
+            "isFilled": true,
+            "fillColor": "#059de3",
+            "fillAlpha": 0.5,
+            "width": 128,
+            "height": 160
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "baf85a0a-9ace-4e59-8802-ec53e15b53d0",
+            "label": "sort",
+            "objectIds": [
+                "536c008d-da54-43be-9a33-40eb63aafe86"
+            ]
+        }
+    ]
+}

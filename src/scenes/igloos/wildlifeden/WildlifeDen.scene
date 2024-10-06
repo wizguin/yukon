@@ -1,0 +1,71 @@
+{
+    "id": "61864f90-df7b-4b40-800a-beac608eb79f",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/wildlifeden/wildlifeden-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "WildlifeDen",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6af02e42-cf55-4884-b4ed-fb46f5c1fb19",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "wildlifeden-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "f8f47aba-46fb-4811-b4ac-cbc9885a0a3e",
+            "label": "bg_upper",
+            "texture": {
+                "key": "wildlifeden-igloo",
+                "frame": "bg_upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "d772d9a1-70ed-4c5b-91d9-e9f5087755c7",
+            "label": "fg",
+            "texture": {
+                "key": "wildlifeden-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 964.9881605335881,
+            "originY": 1.005196000555821
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "b7ce50d0-753f-4dcb-9b13-4cded3e37cb7",
+            "label": "sort",
+            "objectIds": [
+                "d772d9a1-70ed-4c5b-91d9-e9f5087755c7"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "id": "a49c1bc5-4c67-40a3-9695-6a8cdba8a9c6",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/sweetswirl/sweetswirl-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "SweetSwirl",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "2c2dd146-1848-4c72-ac43-d13b5d03866b",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "sweetswirl-igloo",
+                "frame": "bg_lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "76582fa0-0ec7-4d55-9c7b-3085750ddbea",
+            "label": "door",
+            "components": [
+                "MoveTo",
+                "Button"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "sweetswirl-igloo",
+                "frame": "door"
+            },
+            "x": 215.72656106823746,
+            "y": 625.4397284611821,
+            "originX": 0.6624402244165981,
+            "originY": 0.705483141024683
+        },
+        {
+            "type": "Image",
+            "id": "59b9b8b6-a0d1-44f7-aa00-a5f64acefc55",
+            "label": "bg_upper",
+            "texture": {
+                "key": "sweetswirl-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "3ea64f94-9630-42e5-8c1e-5551771e6800",
+            "label": "fg",
+            "texture": {
+                "key": "sweetswirl-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 975.6472409848757,
+            "originY": 1.0162992093592456
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "9135a858-360a-4b27-a2e9-e641ffe670ee",
+            "label": "sort",
+            "objectIds": [
+                "3ea64f94-9630-42e5-8c1e-5551771e6800"
+            ]
+        }
+    ]
+}

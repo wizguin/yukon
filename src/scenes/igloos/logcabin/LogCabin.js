@@ -1,4 +1,5 @@
 import IglooScene from '../IglooScene'
+import {Button, MoveTo} from '@components/components'
 
 /* START OF COMPILED CODE */
 
@@ -12,6 +13,10 @@ export default class LogCabin extends IglooScene {
 
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            triggers: () => this.interface.main.onMapClick()
+        }
 
         this.floorSpawn = [760, 728]
         this.wallSpawn = [760, 450]
@@ -47,7 +52,14 @@ export default class LogCabin extends IglooScene {
         wall.setOrigin(0.5003441156228493, 0.5006896551724138);
 
         // door
-        this.add.image(421, 555, "logcabin", "door");
+        const door = this.add.image(418, 666, "logcabin", "door");
+        door.setOrigin(0.4594594594594595, 0.9302325581395349);
+
+        // door (components)
+        new MoveTo(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
 
         this.floor = floor;
 

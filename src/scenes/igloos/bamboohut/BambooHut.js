@@ -1,4 +1,5 @@
 import IglooScene from '../IglooScene'
+import {Button, MoveTo} from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -13,6 +14,10 @@ export default class BambooHut extends IglooScene {
 
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            triggers: () => this.interface.main.onMapClick()
+        }
 
         this.floorSpawn = [770, 750]
         this.wallSpawn = [790, 400]
@@ -36,12 +41,18 @@ export default class BambooHut extends IglooScene {
         floor.setOrigin(0.5004468275245755, 0.5017421602787456);
 
         // door
-        const door = this.add.image(424, 474, "bamboohut", "door");
-        door.setOrigin(0.5054945054945055, 0.5);
+        const door = this.add.image(428, 591, "bamboohut", "door");
+        door.setOrigin(0.5494505494505495, 0.9301470588235294);
 
         // wall
         const wall = this.add.image(760, 402, "bamboohut", "wall");
         wall.setOrigin(0.5004101722723544, 0.5);
+
+        // door (components)
+        new MoveTo(door);
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
 
         this.floor = floor;
 

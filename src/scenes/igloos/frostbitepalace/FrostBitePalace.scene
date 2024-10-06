@@ -1,0 +1,91 @@
+{
+    "id": "ae2c2e23-9068-408e-b92c-94f804c48850",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/frostbitepalace/frostbitepalace-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "FrostBitePalace",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f7470508-ea7a-4cc1-ab04-d2232db9db9c",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "frostbitepalace-igloo",
+                "frame": "door"
+            },
+            "x": 221,
+            "y": 660,
+            "originX": 0.6926380709927753,
+            "originY": 0.7975277914128519
+        },
+        {
+            "type": "Image",
+            "id": "d7ff7ecc-5470-4951-8835-7785c74ab602",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "frostbitepalace-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "3c013830-08ae-47b4-b8f9-0577c145eabb",
+            "label": "bg_upper",
+            "scope": "CLASS",
+            "texture": {
+                "key": "frostbitepalace-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "4a309250-6546-41ae-97b4-5e7089a51155",
+            "label": "fg",
+            "texture": {
+                "key": "frostbitepalace-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 970.3177007592319,
+            "originY": 1.0107476049575332
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "ef7b2d2e-12ea-4b09-a188-3da4f2ae7c5e",
+            "label": "sort",
+            "objectIds": [
+                "4a309250-6546-41ae-97b4-5e7089a51155"
+            ]
+        }
+    ]
+}

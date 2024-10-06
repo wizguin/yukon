@@ -1,0 +1,71 @@
+{
+    "id": "6be8730e-7a67-4fd0-a3b7-21a336c94ba1",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/starship/starship-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Starship",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "d678b8f1-5d1b-4173-8475-28d7c69f754f",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "starship-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "141dcd45-70ad-4723-a5eb-72ce80b69aff",
+            "label": "bg_upper",
+            "texture": {
+                "key": "starship-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "f6aaf80a-80e0-4195-9971-9946cb2b8d4b",
+            "label": "fg",
+            "texture": {
+                "key": "starship-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 968.0459003755292,
+            "originY": 1.0083811462245096
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "fa37d6c5-149b-43eb-ae2b-750d5abcef1c",
+            "label": "sort",
+            "objectIds": [
+                "f6aaf80a-80e0-4195-9971-9946cb2b8d4b"
+            ]
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 import IglooScene from '../IglooScene'
+import {Button, MoveTo} from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -13,6 +14,10 @@ export default class Candy extends IglooScene {
 
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            triggers: () => this.interface.main.onMapClick()
+        }
 
         this.floorSpawn = [760, 760]
         this.wallSpawn = [750, 320]
@@ -51,7 +56,14 @@ export default class Candy extends IglooScene {
         window.setOrigin(0.5014164305949008, 0.5);
 
         // door
-        this.add.image(491, 467, "candy", "door");
+        const door = this.add.image(498, 551, "candy", "door");
+        door.setOrigin(0.5636363636363636, 0.9077669902912622);
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        new MoveTo(door);
 
         this.floor = floor;
 

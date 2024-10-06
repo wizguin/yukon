@@ -21,7 +21,6 @@
             "id": "509aab3a-26ae-49bf-a03f-275324831814",
             "label": "floor",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "bamboohut",
                 "frame": "floor"
@@ -35,20 +34,25 @@
             "type": "Image",
             "id": "06fe3266-0d8b-4b51-8183-45d6455d6abe",
             "label": "door",
-            "components": [],
+            "components": [
+                "MoveTo",
+                "Button"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "bamboohut",
                 "frame": "door"
             },
-            "x": 424,
-            "y": 474,
-            "originX": 0.5054945054945055
+            "x": 428,
+            "y": 591,
+            "originX": 0.5494505494505495,
+            "originY": 0.9301470588235294
         },
         {
             "type": "Image",
             "id": "915b4812-cd1b-4d09-8484-152726e4ada3",
             "label": "wall",
-            "components": [],
             "texture": {
                 "key": "bamboohut",
                 "frame": "wall"
@@ -63,6 +67,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

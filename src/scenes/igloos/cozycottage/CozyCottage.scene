@@ -1,0 +1,57 @@
+{
+    "id": "1ae2d280-469e-4351-9347-1d5b754ab527",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/cozycottage/cozycottage-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "CozyCottage",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f24219e2-8795-4578-9f20-fe3030e63fce",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "cozycottage-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "82bdfddb-14fa-4a3c-9aa1-8ace756a404d",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "cozycottage-igloo",
+                "frame": "door"
+            },
+            "x": 228.4616230389906,
+            "y": 375.3638818594334,
+            "originX": 0.5335068898097584,
+            "originY": 0.9320638809646956
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

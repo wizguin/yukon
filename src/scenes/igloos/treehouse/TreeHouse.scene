@@ -1,0 +1,71 @@
+{
+    "id": "8bf3888a-f95d-4884-965a-c33522ce5b9f",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/treehouse/treehouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "TreeHouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "8b7bb5e8-9207-4cce-9154-8c43d54b1f89",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "treehouse-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "b51d309f-f39a-4205-b75f-2516d6b1615c",
+            "label": "bg_upper",
+            "texture": {
+                "key": "treehouse-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "6b45716d-f81c-4237-a04e-f07cb1cef480",
+            "label": "fg",
+            "texture": {
+                "key": "treehouse-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 966.8674310998953,
+            "originY": 1.007153574062391
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "2eaf1612-930c-42df-b652-543b1ff7b3bf",
+            "label": "sort",
+            "objectIds": [
+                "6b45716d-f81c-4237-a04e-f07cb1cef480"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "id": "296bec38-82e0-4cf3-b34a-81dc31e2f067",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/ezrashideout/ezrashideout-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "EzrasHideout",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "48d94e3d-380c-414c-a7a2-c84b75c521d2",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "ezrashideout-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "b4a0f175-0b89-4f97-80b7-94df1ebd6c7a",
+            "label": "bg_upper",
+            "texture": {
+                "key": "ezrashideout-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "dc90aaba-86af-48db-ab50-9c1adf49ee45",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "ezrashideout-igloo",
+                "frame": "door"
+            },
+            "x": 392.46917750651227,
+            "y": 374.994848909551,
+            "originX": 0.5228235362270544,
+            "originY": 0.8269032650367347
+        },
+        {
+            "type": "Image",
+            "id": "eb17e705-efda-4d49-8980-5c1f88c4770a",
+            "label": "fg",
+            "texture": {
+                "key": "ezrashideout-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 985.707708299273,
+            "originY": 1.0267788628117427
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "b5b2cf8f-331c-40aa-8e67-eba349c75086",
+            "label": "sort",
+            "objectIds": [
+                "eb17e705-efda-4d49-8980-5c1f88c4770a"
+            ]
+        }
+    ]
+}

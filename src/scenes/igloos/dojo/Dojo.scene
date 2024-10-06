@@ -1,0 +1,57 @@
+{
+    "id": "947bf150-e25c-4d51-b4c2-8cafaba6d44a",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/dojo/dojo-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Dojo",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f47d6765-8841-4fa7-8df1-4895e8ff846b",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dojo-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "bf50a6f7-88be-4ac8-b675-9edbf0b838fb",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "dojo-igloo",
+                "frame": "door"
+            },
+            "x": 521.9537353515625,
+            "y": 607.684457871213,
+            "originX": 0.48974231971909804,
+            "originY": 0.8447979348966812
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

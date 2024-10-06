@@ -88,7 +88,7 @@ export default class IglooScene extends RoomScene {
         }
 
         super.create()
-        this.floor.depth = -2
+        if (this.floor) this.floor.depth = -2
 
         if (this.args.flooring) this.addFlooring(this.args.flooring)
         this.addLocation()
@@ -275,6 +275,14 @@ export default class IglooScene extends RoomScene {
     }
 
     /*========== Physics ==========*/
+
+    get roomPhysics() {
+        let key = this.key.toLowerCase()
+
+        let iglooPhysicsKey = this.cache.json.get(`${key}-igloo-physics`)
+
+        return iglooPhysicsKey || this.cache.json.get(`${key}-physics`)
+    }
 
     addPhysics() {
         super.addPhysics()

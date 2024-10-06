@@ -1,0 +1,59 @@
+{
+    "id": "f974e5bb-4507-4d5b-b89f-bc3941cc1e96",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/greenpuffletreehouse/greenpuffletreehouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "GreenPuffleTreeHouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1c1d2cb0-ec1f-4a06-8424-422fd8412298",
+            "label": "floor",
+            "texture": {
+                "key": "greenpuffletreehouse-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "d3184466-413d-454b-89ec-4302a96c06ef",
+            "label": "fg",
+            "texture": {
+                "key": "greenpuffletreehouse-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 975.6472409848757,
+            "originY": 1.0162992093592456
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "f309e12e-f0ad-495f-a7a9-c09dd69531d5",
+            "label": "sort",
+            "objectIds": [
+                "d3184466-413d-454b-89ec-4302a96c06ef"
+            ]
+        }
+    ]
+}

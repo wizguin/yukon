@@ -47,7 +47,7 @@ export default class GridViewLoader extends BaseLoader {
 
             let item = page[index]
 
-            if (item) {
+            if (item || item === 0) {
                 slot.setInteractive()
                 slot.visible = true
                 this.loadItem(item, scale)

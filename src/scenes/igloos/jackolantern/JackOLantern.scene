@@ -1,0 +1,39 @@
+{
+    "id": "fb31c35c-b907-446e-9d30-185753b30ad6",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/jackolantern/jackolantern-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "JackOLantern",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "8c076105-d9c9-441d-90b5-f641830b9775",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "jackolantern-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

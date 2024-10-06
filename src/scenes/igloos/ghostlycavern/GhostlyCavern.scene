@@ -1,0 +1,79 @@
+{
+    "id": "dc8ef2c4-0179-4e61-800e-08969e609419",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/ghostlycavern/ghostlycavern-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "GhostlyCavern",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "d7fd98f8-83a8-495a-8077-fabcbbb85925",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "ghostlycavern-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "0b95f1fd-4eee-431d-bdeb-74df507bbd78",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "ghostlycavern-igloo",
+                "frame": "door"
+            },
+            "x": 644.2223192223685,
+            "y": 385.112469113158,
+            "originX": 0.539632606511901,
+            "originY": 0.8754847806601638
+        },
+        {
+            "type": "Image",
+            "id": "121398b6-b02c-46e9-abdb-081cc0188f61",
+            "label": "fg",
+            "texture": {
+                "key": "ghostlycavern-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 969.9014391839448,
+            "originY": 1.0103139991499426
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "b0a4050c-17ee-43c6-bba2-8c02ad29192e",
+            "label": "sort",
+            "objectIds": [
+                "121398b6-b02c-46e9-abdb-081cc0188f61"
+            ]
+        }
+    ]
+}

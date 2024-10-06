@@ -1,0 +1,97 @@
+{
+    "id": "9105fe8d-662d-4f86-bc57-72e623290e52",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/gingerbreadhouse/gingerbreadhouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "GingerbreadHouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b707e449-c3cc-4689-8ee8-196801d96818",
+            "label": "floor",
+            "scope": "CLASS",
+            "x": 643,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "126e95a4-a38b-4e91-966b-f88b41fd684b",
+                    "label": "bg_lower",
+                    "texture": {
+                        "key": "gingerbreadhouse-igloo",
+                        "frame": "bg-lower"
+                    },
+                    "x": 117
+                },
+                {
+                    "type": "Image",
+                    "id": "061eb7f6-0eca-4820-9206-82a0ebe6833a",
+                    "label": "door",
+                    "scope": "CLASS",
+                    "components": [
+                        "SimpleButton",
+                        "MoveTo"
+                    ],
+                    "SimpleButton.hoverCallback": "() => {this.door.alpha = 0.01}",
+                    "SimpleButton.hoverOutCallback": "() => {this.door.alpha = 1}",
+                    "MoveTo.x": "596",
+                    "MoveTo.y": "596",
+                    "texture": {
+                        "key": "gingerbreadhouse-igloo",
+                        "frame": "door"
+                    },
+                    "y": 72
+                },
+                {
+                    "type": "Image",
+                    "id": "8615e089-bd73-4c94-90d4-30d30f1b096a",
+                    "label": "bg_upper",
+                    "texture": {
+                        "key": "gingerbreadhouse-igloo",
+                        "frame": "bg-upper"
+                    },
+                    "x": 117
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "f0fbc7bc-0bf4-4e5f-81ea-510a029b8d44",
+            "label": "fg",
+            "texture": {
+                "key": "gingerbreadhouse-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 981.0723668360147,
+            "originY": 1.0219504065289033
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "e22b3465-d26e-46c8-a52b-ac356ee9c6d9",
+            "label": "sort",
+            "objectIds": [
+                "f0fbc7bc-0bf4-4e5f-81ea-510a029b8d44"
+            ]
+        }
+    ]
+}

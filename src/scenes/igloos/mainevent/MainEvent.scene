@@ -1,0 +1,60 @@
+{
+    "id": "2b3ab90f-969e-4d3a-81f2-96108246dc41",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/mainevent/mainevent-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "MainEvent",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "ba7376c8-0a70-4107-95b6-aab9068a4cf5",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "mainevent-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "74dd9113-7045-41c9-a694-5701a7c1f811",
+            "label": "fg",
+            "texture": {
+                "key": "mainevent-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 980.9767912736692,
+            "originY": 1.021850813760958
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "129f8f67-f215-41a2-b36e-448af152819d",
+            "label": "sort",
+            "objectIds": [
+                "74dd9113-7045-41c9-a694-5701a7c1f811"
+            ]
+        }
+    ]
+}

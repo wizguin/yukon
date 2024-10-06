@@ -1,0 +1,61 @@
+{
+    "id": "e342e14b-4676-48a2-afa9-08da9cc1e437",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/mermaidcove/mermaidcove-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "MermaidCove",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "baea2c9c-3907-4612-a571-4ea6b1131dbc",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "mermaidcove-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "1cbb616d-0374-44ae-ac98-2c4a0a25d60e",
+            "label": "bridge",
+            "texture": {
+                "key": "mermaidcove-igloo",
+                "frame": "bridge"
+            },
+            "x": 478.71526559673634,
+            "y": 686.5007154026904,
+            "originX": 0.5517666298233039,
+            "originY": 0.09254678465999935
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "92af56ce-4777-45f2-95c9-62f6da4576cf",
+            "label": "sort",
+            "objectIds": [
+                "1cbb616d-0374-44ae-ac98-2c4a0a25d60e"
+            ]
+        }
+    ]
+}
