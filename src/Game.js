@@ -4,6 +4,7 @@ import registerNinePatchContainerFactory from '@engine/utils/ninepatch/registerN
 import SoundManager from '@engine/sound/SoundManager'
 
 import game from './data/game'
+import './styles/game.css'
 
 
 export default class Game extends Phaser.Game {
