@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "e7ab62b8-6032-4b57-b05e-00934179e5c3",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "bg"
@@ -33,7 +32,6 @@
             "type": "Image",
             "id": "acd6c4d4-4d4d-4825-b2bf-b4f31174a258",
             "label": "lamp",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "lamp"
@@ -47,7 +45,6 @@
             "type": "Image",
             "id": "5beaef60-3e4f-40a3-9fb3-01dc145bfeda",
             "label": "table",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "table"
@@ -61,7 +58,6 @@
             "type": "Image",
             "id": "07c938ab-f75d-4718-bf8b-cf3a5b619d64",
             "label": "counter_back",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "counter_back"
@@ -75,7 +71,6 @@
             "type": "Image",
             "id": "4025e1a5-f97d-4dba-87dd-4633cf3557bf",
             "label": "counter_front",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "counter_front"
@@ -107,7 +102,6 @@
             "type": "Image",
             "id": "9783525f-a865-4877-9de4-bf83985dcb6b",
             "label": "sign_back",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "sign_back"
@@ -120,7 +114,6 @@
             "type": "Image",
             "id": "2af1eeae-7993-4b46-98c7-a63e57822b27",
             "label": "sign_front",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "sign_front"
@@ -153,7 +146,6 @@
             "type": "Image",
             "id": "495e8163-ee24-4674-bfaf-3b1ab8d91de8",
             "label": "machine_1",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "machine_1"
@@ -167,7 +159,6 @@
             "type": "Image",
             "id": "188af677-d3b9-4bd5-a1e4-dfe2ce005467",
             "label": "machine_2",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "machine_2"
@@ -181,7 +172,6 @@
             "type": "Image",
             "id": "8a605348-9b6d-46e6-8e9a-a85c0ee0353d",
             "label": "machine_3",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "machine_3"
@@ -195,7 +185,6 @@
             "type": "Image",
             "id": "86a80e93-528d-45f0-baa2-6392cf65d675",
             "label": "bag",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "bag"
@@ -231,7 +220,6 @@
             "type": "Image",
             "id": "1bedd6e8-3870-49d0-9854-fbd028b74996",
             "label": "lamp_2",
-            "components": [],
             "texture": {
                 "key": "coffee",
                 "frame": "lamp_2"
@@ -290,7 +278,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
@@ -298,7 +286,6 @@
             "label": "sort",
             "objectIds": [
                 "86153e9a-e9e2-4608-b038-65a44c58761b",
-                "86a80e93-528d-45f0-baa2-6392cf65d675",
                 "2af1eeae-7993-4b46-98c7-a63e57822b27",
                 "9783525f-a865-4877-9de4-bf83985dcb6b",
                 "4025e1a5-f97d-4dba-87dd-4633cf3557bf",
