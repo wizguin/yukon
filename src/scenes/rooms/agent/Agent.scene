@@ -383,7 +383,7 @@
                         "Zone",
                         "ShowHint"
                     ],
-                    "Zone.callback": "() =>{}",
+                    "Zone.callback": "() => this.onScreenClick(330)",
                     "ShowHint.text": "pizza_hint",
                     "x": 1012.9752595163882,
                     "y": 244.79914949461818,

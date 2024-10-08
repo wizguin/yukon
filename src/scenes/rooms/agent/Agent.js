@@ -362,7 +362,7 @@ export default class Agent extends RoomScene {
 
         // pizza (components)
         const pizzaZone = new Zone(pizza);
-        pizzaZone.callback = () =>{};
+        pizzaZone.callback = () => this.onScreenClick(330);
         const pizzaShowHint = new ShowHint(pizza);
         pizzaShowHint.text = "pizza_hint";
 
