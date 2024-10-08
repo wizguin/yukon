@@ -7,6 +7,7 @@ const widgets = {
     'PetsCatalog': require('@scenes/interface/catalogs/pets/PetsCatalog'),
 
     'AgentQuiz': require('@scenes/interface/quiz/agent/AgentQuiz'),
+    'ClockTower': require('@scenes/interface/game/clock_tower/ClockTower'),
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),
     'Map': require('@scenes/interface/game/map/Map'),
