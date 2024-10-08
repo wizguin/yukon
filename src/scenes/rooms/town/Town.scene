@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "21bbb0a2-0327-46f9-8472-29a729848d75",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "bg"
@@ -33,7 +32,6 @@
             "type": "Image",
             "id": "79ce3240-4965-41fc-a51b-a2b6ec9c624d",
             "label": "fg",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "fg"
@@ -47,7 +45,6 @@
             "type": "Image",
             "id": "ee943a05-82e6-40f3-b909-728c73d766d2",
             "label": "left_sign",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "left_sign"
@@ -61,7 +58,6 @@
             "type": "Image",
             "id": "51de414e-abf0-47b2-ba0b-07aa8057153f",
             "label": "right_sign",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "right_sign"
@@ -116,62 +112,68 @@
             "originY": 0
         },
         {
-            "type": "Image",
-            "id": "bfabdf1f-c4c7-4ece-8599-ca93c8326447",
-            "label": "canopy",
-            "components": [
-                "SimpleButton",
-                "MoveTo"
-            ],
-            "SimpleButton.hoverCallback": "() => this.onCanopyOver()",
-            "SimpleButton.hoverOutCallback": "() => this.onCanopyOut()",
-            "MoveTo.x": 684,
-            "MoveTo.y": 410,
-            "texture": {
-                "key": "town",
-                "frame": "canopy"
-            },
+            "type": "Container",
+            "id": "cf24e85a-7b96-4461-b034-88e15ecdeb5d",
+            "label": "container",
             "x": 692,
             "y": 464,
-            "originX": 0.49606299212598426,
-            "originY": 0.9403669724770642
-        },
-        {
-            "type": "Sprite",
-            "id": "45fa492b-a213-4d30-acbe-ebe11fa805c1",
-            "label": "canopy_lights",
-            "scope": "CLASS",
-            "components": [
-                "Animation"
-            ],
-            "Animation.key": "canopy_lights",
-            "Animation.end": 57,
-            "Animation.autoPlay": false,
-            "Animation.showOnStart": true,
-            "Animation.hideOnComplete": true,
-            "texture": {
-                "key": "town",
-                "frame": "canopy_lights0001"
-            },
-            "x": 648,
-            "y": 548,
-            "originX": 0,
-            "originY": 7.142857142857143,
-            "visible": false
-        },
-        {
-            "type": "Image",
-            "id": "cae986f7-795f-4d18-9618-d35f387c2e18",
-            "label": "canopy_stars",
-            "components": [],
-            "texture": {
-                "key": "town",
-                "frame": "canopy_stars"
-            },
-            "x": 647,
-            "y": 548,
-            "originX": 0,
-            "originY": 7.142857142857143
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "bfabdf1f-c4c7-4ece-8599-ca93c8326447",
+                    "label": "canopy",
+                    "components": [
+                        "SimpleButton",
+                        "MoveTo"
+                    ],
+                    "SimpleButton.hoverCallback": "() => this.onCanopyOver()",
+                    "SimpleButton.hoverOutCallback": "() => this.onCanopyOut()",
+                    "MoveTo.x": 684,
+                    "MoveTo.y": 410,
+                    "texture": {
+                        "key": "town",
+                        "frame": "canopy"
+                    },
+                    "originX": 0.49606299212598426,
+                    "originY": 0.9403669724770642
+                },
+                {
+                    "type": "Sprite",
+                    "id": "34413ec7-1a83-4ebd-b1d9-4029ae5194cc",
+                    "label": "canopy_lights",
+                    "scope": "CLASS",
+                    "components": [
+                        "Animation"
+                    ],
+                    "Animation.key": "canopy_lights",
+                    "Animation.end": 57,
+                    "Animation.autoPlay": false,
+                    "Animation.showOnStart": true,
+                    "Animation.hideOnComplete": true,
+                    "texture": {
+                        "key": "town",
+                        "frame": "canopy_lights0001"
+                    },
+                    "x": -44,
+                    "y": 84,
+                    "originX": 0,
+                    "originY": 7.142857142857143,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "2dc5fcd9-a3f2-4dd4-aeda-f9dbc099af58",
+                    "label": "canopy_stars",
+                    "texture": {
+                        "key": "town",
+                        "frame": "canopy_stars"
+                    },
+                    "x": -45,
+                    "y": 84,
+                    "originX": 0,
+                    "originY": 7.142857142857143
+                }
+            ]
         },
         {
             "type": "Sprite",
@@ -201,7 +203,6 @@
             "id": "c71b8a27-c71e-4eab-81e9-86a8b3bf87c1",
             "label": "disco",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "disco"
@@ -234,7 +235,6 @@
             "type": "Image",
             "id": "d2f7523e-4ee3-4112-afea-1031b0bde58e",
             "label": "box_1",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "box_1"
@@ -248,7 +248,6 @@
             "type": "Image",
             "id": "0c94c016-2a42-4413-bfc0-abe028143024",
             "label": "box_2",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "box_2"
@@ -262,7 +261,6 @@
             "type": "Image",
             "id": "40a013ea-83e9-4eff-8634-46134d60d75a",
             "label": "box_3",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "box_3"
@@ -276,7 +274,6 @@
             "type": "Image",
             "id": "97ca136f-d936-4bb2-8db1-381245bfaa5b",
             "label": "chair_2",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "chair_2"
@@ -290,7 +287,6 @@
             "type": "Image",
             "id": "52130162-4cfc-4f67-b4b2-fa16fd824ee2",
             "label": "table_2",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "table_2"
@@ -303,7 +299,6 @@
             "type": "Image",
             "id": "da800ad3-3d6f-4c6b-be77-696bbf7e30b5",
             "label": "chair_1",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "chair_1"
@@ -317,7 +312,6 @@
             "type": "Image",
             "id": "dafb207c-e4d9-4941-83f8-9351f393e0a0",
             "label": "table_1",
-            "components": [],
             "texture": {
                 "key": "town",
                 "frame": "table_1"
@@ -333,7 +327,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
@@ -348,9 +342,7 @@
                 "da800ad3-3d6f-4c6b-be77-696bbf7e30b5",
                 "dafb207c-e4d9-4941-83f8-9351f393e0a0",
                 "52130162-4cfc-4f67-b4b2-fa16fd824ee2",
-                "bfabdf1f-c4c7-4ece-8599-ca93c8326447",
-                "cae986f7-795f-4d18-9618-d35f387c2e18",
-                "45fa492b-a213-4d30-acbe-ebe11fa805c1"
+                "cf24e85a-7b96-4461-b034-88e15ecdeb5d"
             ]
         }
     ]
