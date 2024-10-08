@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "685ecad6-3875-40e9-9934-40b9a6e47ffc",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "bg"
@@ -34,7 +33,6 @@
             "type": "Image",
             "id": "9ce4c0b0-b105-4dd2-9cf7-48c92b24f169",
             "label": "cliff_1",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "cliff_1"
@@ -48,7 +46,6 @@
             "type": "Image",
             "id": "54a9f30d-d23c-45a2-b695-9218efef692b",
             "label": "water_water_15",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_15"
@@ -62,7 +59,6 @@
             "type": "Image",
             "id": "d5f4964a-e666-4927-a80f-6baea0dd2580",
             "label": "water_water_14",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_14"
@@ -75,7 +71,6 @@
             "type": "Image",
             "id": "250fc985-8606-4e36-8f66-8a468cad2dd2",
             "label": "water_water_13",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_13"
@@ -89,7 +84,6 @@
             "type": "Image",
             "id": "ad116ec1-7ce0-4537-bc08-39c2f7ad28a1",
             "label": "water_water_12",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_12"
@@ -102,7 +96,6 @@
             "type": "Image",
             "id": "7c816bc0-efc6-4978-b936-7ae8a3f644e1",
             "label": "water_water_11",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_11"
@@ -116,7 +109,6 @@
             "type": "Image",
             "id": "390fbd69-dcec-47ed-8187-8a3db4ae1c95",
             "label": "water_water_10",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_10"
@@ -130,7 +122,6 @@
             "type": "Image",
             "id": "e6ccbc4f-0c52-44a8-9d55-20e59c9d200f",
             "label": "water_water_9",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_9"
@@ -143,7 +134,6 @@
             "type": "Image",
             "id": "f5efd64f-68b2-4531-b825-935500fee480",
             "label": "water_water_8",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_8"
@@ -156,7 +146,6 @@
             "type": "Image",
             "id": "5795a848-8650-47a8-9149-5198bebcc437",
             "label": "water_water_7",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_7"
@@ -170,7 +159,6 @@
             "type": "Image",
             "id": "eeb4a5d4-4e79-4fdb-a1b7-76fce3b66741",
             "label": "water_water_6",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_6"
@@ -184,7 +172,6 @@
             "type": "Image",
             "id": "7faa8eca-d743-4d5e-89ab-28598d0356f3",
             "label": "water_water_5",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_5"
@@ -197,7 +184,6 @@
             "type": "Image",
             "id": "89d42766-f9ae-43ab-bb1e-8fd083d64272",
             "label": "water_water_4",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_4"
@@ -211,7 +197,6 @@
             "type": "Image",
             "id": "204af5d2-9dd2-47a6-b653-f5b0697711b9",
             "label": "water_water_3",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_3"
@@ -224,7 +209,6 @@
             "type": "Image",
             "id": "aaa60bba-67ff-4ac2-876e-b3cfebd67132",
             "label": "water_water_2",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_2"
@@ -237,7 +221,6 @@
             "type": "Image",
             "id": "3082ee9b-c2a6-4121-8fad-53338cdece4a",
             "label": "water_water_1",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "water/water_1"
@@ -252,12 +235,14 @@
             "label": "hut",
             "components": [
                 "Button",
-                "MoveTo"
+                "MoveTo",
+                "ShowHint"
             ],
             "Button.spriteName": "hut",
             "Button.activeFrame": false,
             "MoveTo.x": 1250,
             "MoveTo.y": 500,
+            "ShowHint.text": "waves_hint",
             "texture": {
                 "key": "cove",
                 "frame": "hut"
@@ -271,7 +256,6 @@
             "type": "Image",
             "id": "bdcc462a-0951-487e-add4-61d60a995f24",
             "label": "hut_wall",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "hut_wall"
@@ -285,7 +269,6 @@
             "type": "Image",
             "id": "79a1dfec-395e-4a21-a9f8-b09aeaabf9d6",
             "label": "boards",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "boards"
@@ -299,7 +282,6 @@
             "type": "Image",
             "id": "7ab9af43-7533-4338-839a-67a25516cd87",
             "label": "rock_1",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "rock_1"
@@ -313,7 +295,6 @@
             "type": "Image",
             "id": "0a1bb735-7c0b-4413-ade9-13179d4f0837",
             "label": "fg",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "fg"
@@ -327,7 +308,6 @@
             "type": "Image",
             "id": "c00705fa-082d-4ad0-81ee-92b2bcfa4460",
             "label": "log_1",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "log_1"
@@ -359,7 +339,6 @@
             "type": "Image",
             "id": "a8383932-be18-46d1-b4bf-19b662689e4a",
             "label": "chair_arm",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "chair_arm"
@@ -373,7 +352,6 @@
             "type": "Image",
             "id": "d38ba832-8548-492f-b4bb-f3dbc74ee343",
             "label": "binoculars",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "binoculars0001"
@@ -387,7 +365,6 @@
             "type": "Image",
             "id": "8fc7d735-cffd-4208-8411-0b29e7606c7b",
             "label": "silver_board",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "silver_board"
@@ -401,7 +378,6 @@
             "type": "Image",
             "id": "b64c5402-0391-4e1d-812c-01a3d4f5c353",
             "label": "rock_4",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "rock_4"
@@ -415,7 +391,6 @@
             "type": "Image",
             "id": "35270094-7aa8-4910-ade0-99f373a64195",
             "label": "rock_2",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "rock_2"
@@ -429,7 +404,6 @@
             "type": "Image",
             "id": "1ec55d4a-8027-4492-8317-2ce1faa6c920",
             "label": "rock_3",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "rock_3"
@@ -443,7 +417,6 @@
             "type": "Image",
             "id": "f75ee06c-c97b-4531-9ba3-41f88aae6538",
             "label": "hut_stool",
-            "components": [],
             "texture": {
                 "key": "cove",
                 "frame": "hut_stool"
@@ -458,7 +431,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
