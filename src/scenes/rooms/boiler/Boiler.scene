@@ -1,0 +1,189 @@
+{
+    "id": "f9d36d51-b4ba-45b3-a655-e1e7aca07e44",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "RoomScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/rooms/boiler/boiler-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Boiler",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "be5d229d-98c9-4f19-a8ee-8deedf9b312d",
+            "label": "bg",
+            "texture": {
+                "key": "boiler",
+                "frame": "bg"
+            },
+            "x": 759,
+            "y": 477
+        },
+        {
+            "type": "Image",
+            "id": "1806224a-0b6b-43ba-8b28-7aa54ebe9421",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "Button.pixelPerfect": true,
+            "MoveTo.x": "600",
+            "MoveTo.y": "554",
+            "texture": {
+                "key": "boiler",
+                "frame": "door"
+            },
+            "x": 591,
+            "y": 364
+        },
+        {
+            "type": "Sprite",
+            "id": "889ba722-d1ee-44f2-87cc-4dd5b4e875d7",
+            "label": "steam",
+            "components": [
+                "Animation"
+            ],
+            "Animation.key": "steam",
+            "Animation.end": 5,
+            "texture": {
+                "key": "boiler",
+                "frame": "steam0001"
+            },
+            "x": 262,
+            "y": 195
+        },
+        {
+            "type": "Image",
+            "id": "d7519f96-3731-446c-a8dc-e6b74928fea5",
+            "label": "archives_icon",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "Button.spriteName": "archives_icon",
+            "Button.callback": "() => this.onArchivesClick()",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "boiler",
+                "frame": "archives_icon"
+            },
+            "x": 1428,
+            "y": 854
+        },
+        {
+            "type": "Image",
+            "id": "2e50c8bd-9841-45c9-9c94-6b757f1524a6",
+            "label": "cab5",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 940,
+            "y": 541
+        },
+        {
+            "type": "Image",
+            "id": "b8de99d6-f2f9-4c8f-9ec4-a0b8e9f2b8ce",
+            "label": "cab4",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 824,
+            "y": 542
+        },
+        {
+            "type": "Image",
+            "id": "9b73799a-590d-4c4e-8cf0-aa660862c2fd",
+            "label": "cab3",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 943,
+            "y": 467
+        },
+        {
+            "type": "Image",
+            "id": "f8e7f68b-c1c1-4330-9172-3752a5891e7f",
+            "label": "cab2",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 827,
+            "y": 467
+        },
+        {
+            "type": "Image",
+            "id": "85651cec-ceb5-49ae-9db8-af35a82d1932",
+            "label": "cab1",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 946,
+            "y": 392
+        },
+        {
+            "type": "Sprite",
+            "id": "73b9d376-0e87-46ac-8ca8-61ddc2f2a15c",
+            "label": "cab",
+            "scope": "CLASS",
+            "components": [
+                "SimpleButton",
+                "ShowHint"
+            ],
+            "SimpleButton.hoverCallback": "() => this.onCabOver()",
+            "SimpleButton.hoverOutCallback": "() => this.onCabOut()",
+            "SimpleButton.callback": "() => this.onArchivesClick()",
+            "SimpleButton.pixelPerfect": true,
+            "ShowHint.text": "archives_hint",
+            "texture": {
+                "key": "boiler",
+                "frame": "cab0001"
+            },
+            "x": 830,
+            "y": 392
+        },
+        {
+            "type": "Rectangle",
+            "id": "5c3b8994-023c-423a-ae5c-6796d6eb6155",
+            "label": "zone",
+            "components": [
+                "Zone",
+                "MoveTo"
+            ],
+            "MoveTo.x": "1042",
+            "MoveTo.y": "560",
+            "x": 965.9,
+            "y": 1.1,
+            "originX": 0,
+            "originY": 0,
+            "alpha": 0.5,
+            "isFilled": true,
+            "fillColor": "#00ff00",
+            "width": 118,
+            "height": 536
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

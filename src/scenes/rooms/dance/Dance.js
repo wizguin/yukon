@@ -42,7 +42,7 @@ export default class Dance extends RoomScene {
 
         this.roomTriggers = {
             'town': () => this.triggerRoom(100, 680, 520),
-            'boiler': null,
+            'boiler': () => this.triggerRoom(804, 1120, 640),
             'lounge': () => this.triggerRoom(121, 1200, 760),
             'mix': null
         }
