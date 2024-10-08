@@ -10,6 +10,7 @@ const widgets = {
     'ClockTower': require('@scenes/interface/game/clock_tower/ClockTower'),
     'FindFour': require('@scenes/games/four/FindFour'),
     'Mancala': require('@scenes/games/mancala/Mancala'),
+    'MancalaHelp': require('@scenes/interface/instructions/mancala/MancalaHelp'),
     'Map': require('@scenes/interface/game/map/Map'),
     'Missions': require('@scenes/interface/game/missions/Missions'),
     'NinjaBelts': require('@scenes/interface/instructions/ninjabelts/NinjaBelts'),

@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "8fc441d9-2cd2-4728-8d28-e81bc40d58c1",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "book",
                 "frame": "bg"
@@ -51,7 +50,6 @@
             "type": "Image",
             "id": "3f068263-f4f5-4b66-88b0-078006583a4c",
             "label": "chair_back",
-            "components": [],
             "texture": {
                 "key": "book",
                 "frame": "chair_back"
@@ -65,7 +63,6 @@
             "type": "Image",
             "id": "587577af-f9ef-471a-849a-09a07bc115b1",
             "label": "chair_front",
-            "components": [],
             "texture": {
                 "key": "book",
                 "frame": "chair_front"
@@ -79,7 +76,6 @@
             "type": "Image",
             "id": "c9532f84-c85e-4dc4-bae4-aaaf8557e69e",
             "label": "chair_table",
-            "components": [],
             "texture": {
                 "key": "book",
                 "frame": "chair_table"
@@ -97,6 +93,7 @@
                 "Button"
             ],
             "Button.spriteName": "poster",
+            "Button.callback": "() => this.onInstructionsClick()",
             "Button.activeFrame": false,
             "Button.pixelPerfect": true,
             "texture": {
@@ -118,12 +115,9 @@
             ],
             "label": "table104",
             "scope": "CLASS",
-            "components": [],
             "x": 1208,
             "y": 755,
-            "visible": true,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": true
         },
         {
             "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
@@ -135,12 +129,9 @@
             ],
             "label": "table103",
             "scope": "CLASS",
-            "components": [],
             "x": 806,
             "y": 690,
-            "visible": true,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": true
         },
         {
             "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
@@ -152,12 +143,9 @@
             ],
             "label": "table102",
             "scope": "CLASS",
-            "components": [],
             "x": 426,
             "y": 652,
-            "visible": true,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": true
         },
         {
             "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
@@ -169,12 +157,9 @@
             ],
             "label": "table101",
             "scope": "CLASS",
-            "components": [],
             "x": 951,
             "y": 453,
-            "visible": true,
-            "nestedPrefabs": [],
-            "list": []
+            "visible": true
         },
         {
             "prefabId": "a31bdfcd-9fee-4e6e-b421-7edb8b8c7008",
@@ -185,11 +170,8 @@
             ],
             "label": "table100",
             "scope": "CLASS",
-            "components": [],
             "x": 651,
-            "y": 450,
-            "nestedPrefabs": [],
-            "list": []
+            "y": 450
         }
     ],
     "plainObjects": [],
@@ -197,7 +179,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {
