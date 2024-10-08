@@ -22,6 +22,8 @@ export default class Lounge extends RoomScene {
             'astro': () => this.triggerGame(900)
         }
 
+        this.music = '6'
+
         /* END-USER-CTR-CODE */
     }
 
