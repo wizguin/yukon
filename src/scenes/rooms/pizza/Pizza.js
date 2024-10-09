@@ -173,7 +173,7 @@ export default class Pizza extends RoomScene {
         fg.setOrigin(0, 1);
 
         // lists
-        const sort = [pan, fg, piano, chair2, oven, fire, deskContainer, table1Container, table2Container, table3Container, chair4, chair3];
+        const sort = [pan, fg, piano, oven, fire, deskContainer, table1Container, table2Container, table3Container, chair6, chair5, chair4, chair3, chair2, chair1];
 
         // door (components)
         const doorButton = new Button(door);
