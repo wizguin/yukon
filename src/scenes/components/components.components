@@ -234,6 +234,16 @@
                     "type": {
                         "id": "boolean"
                     }
+                },
+                {
+                    "name": "handCursor",
+                    "label": "Hand Cursor",
+                    "tooltip": "Hand Cursor",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
         },
@@ -377,14 +387,24 @@
                         "id": "expression",
                         "expressionType": "any"
                     }
+                },
+                {
+                    "name": "handCursor",
+                    "label": "Hand Cursor",
+                    "tooltip": "Hand Cursor",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
         }
     ],
     "meta": {
-        "app": "Phaser Editor 2D - Object Script Editor",
+        "app": "Phaser Editor 2D - User Components Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.UserComponents"
     },
     "javaScriptInitFieldsInConstructor": true,
     "insertSpaces": true,

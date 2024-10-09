@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "827705b8-e5f0-4b55-a123-ebd0b4c793bf",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "bg"
@@ -32,7 +31,6 @@
             "type": "Image",
             "id": "1535c362-53c6-4419-90b1-7ae94c5eb1bf",
             "label": "wire",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "wire"
@@ -45,7 +43,6 @@
             "type": "Image",
             "id": "697cf3b5-7ce2-428e-af72-686676a152f5",
             "label": "floor_frame",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "floor/frame"
@@ -74,7 +71,6 @@
             "type": "Image",
             "id": "5b00960f-fbed-4eb1-9360-497cb991b12e",
             "label": "stage",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "stage"
@@ -88,7 +84,6 @@
             "type": "Image",
             "id": "adfa27af-cd92-4b74-8b62-31b2ae1aa1c2",
             "label": "fg_wire",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "fg/fg_wire"
@@ -136,7 +131,6 @@
             "type": "Image",
             "id": "33ef0225-8757-4bcb-b044-b4f46779abf9",
             "label": "fg_wire_1",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "fg/fg_wire"
@@ -168,7 +162,6 @@
             "type": "Image",
             "id": "5afcee12-4520-4be3-ba1c-f7ff61ee1643",
             "label": "speaker_3",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "speaker_3"
@@ -219,7 +212,6 @@
             "type": "Image",
             "id": "126a798d-0fca-48e8-97be-556d2535adb7",
             "label": "lamp",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "lamp"
@@ -232,7 +224,6 @@
             "type": "Image",
             "id": "b506480b-8171-4d98-b6d0-e060959d1bec",
             "label": "door_behind",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "door/behind"
@@ -268,7 +259,6 @@
             "type": "Image",
             "id": "072a9d40-7f36-4292-a10f-448da1e80d9e",
             "label": "door_frame",
-            "components": [],
             "texture": {
                 "key": "dance",
                 "frame": "door/frame"
@@ -318,7 +308,6 @@
             "type": "Container",
             "id": "4dfc59f6-228a-404e-9295-f232e65fb617",
             "label": "puffle_speaker",
-            "components": [],
             "x": 1164,
             "y": 735.5295257801258,
             "list": [
@@ -326,7 +315,6 @@
                     "type": "Image",
                     "id": "6c4cba5d-d47d-4d86-be9f-c3bc2c1f43c5",
                     "label": "speaker_4",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "speaker_4"
@@ -341,7 +329,6 @@
                     "id": "0533211a-1c41-4299-9067-7b5f97c80689",
                     "label": "puffle",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "puffle/puffle0001"
@@ -355,7 +342,6 @@
             "type": "Container",
             "id": "595b30dd-eb9e-42d4-91f7-d53fcd6f87c6",
             "label": "boiler",
-            "components": [],
             "x": 979.3584381110322,
             "y": 418.96573398979467,
             "list": [
@@ -405,7 +391,6 @@
             "type": "Container",
             "id": "43e90a8b-ac6b-457f-bed7-77da9a82d963",
             "label": "dj_speaker",
-            "components": [],
             "x": 790.7929422877853,
             "y": 305.10866987575673,
             "list": [
@@ -413,7 +398,6 @@
                     "type": "Image",
                     "id": "50acead0-a33b-4ba0-830c-bad87b5abac2",
                     "label": "dj_speaker_speaker",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/speaker"
@@ -449,7 +433,6 @@
             "type": "Container",
             "id": "fddb63fc-c183-495a-8d07-76dae057349c",
             "label": "mixer",
-            "components": [],
             "x": 656.758588457557,
             "y": 340.0371580227643,
             "list": [
@@ -457,7 +440,6 @@
                     "type": "Image",
                     "id": "6ab927ea-c842-4262-bd7d-6e00f23edbe1",
                     "label": "dj_mixer_wave_green",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/mixer/wave/green"
@@ -469,7 +451,6 @@
                     "id": "c6273a95-4066-47c3-b0a1-69dee637628e",
                     "label": "dj_mixer_wave",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/mixer/wave/wave0001"
@@ -480,7 +461,6 @@
                     "type": "Image",
                     "id": "0795ef57-6abb-45b2-af8a-418015d03a82",
                     "label": "dj_mixer",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/mixer/mixer"
@@ -567,7 +547,6 @@
                     "type": "Image",
                     "id": "d5c83a2b-816d-4200-b174-4916e432af49",
                     "label": "dj_wires",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/wires"
@@ -583,7 +562,6 @@
             "type": "Container",
             "id": "2e01dc76-ddeb-4860-8a94-ded19a24c254",
             "label": "box",
-            "components": [],
             "x": 520.6001395292443,
             "y": 310.6122881275866,
             "list": [
@@ -631,7 +609,6 @@
                     "id": "e51b9d3e-302a-4fad-8d41-4bdda94ee5f9",
                     "label": "dj_box_sliders",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "dance",
                         "frame": "dj/box/sliders/sliders0001"
@@ -688,6 +665,7 @@
                 "Zone"
             ],
             "Zone.hoverCallback": "() => this.onPuffleOver()",
+            "Zone.handCursor": false,
             "x": 1164,
             "y": 537,
             "alpha": 0.5,
@@ -702,7 +680,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {

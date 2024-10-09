@@ -20,7 +20,6 @@
             "type": "Image",
             "id": "c9d8a072-5746-43ad-99db-a0707d77be3a",
             "label": "bg",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "bg"
@@ -80,7 +79,6 @@
             "type": "Image",
             "id": "da775854-13dc-41bc-8d75-dc350847eb90",
             "label": "plant",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "plant"
@@ -99,6 +97,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 488,
             "texture": {
                 "key": "lounge",
@@ -118,6 +117,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 466,
             "texture": {
                 "key": "lounge",
@@ -132,7 +132,6 @@
             "type": "Image",
             "id": "bff848fe-51ca-467e-a12d-e16ebee675e5",
             "label": "table_1",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "table_1"
@@ -150,6 +149,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 690,
             "texture": {
                 "key": "lounge",
@@ -169,6 +169,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 667,
             "texture": {
                 "key": "lounge",
@@ -183,7 +184,6 @@
             "type": "Image",
             "id": "e9b341be-b019-4c84-95b3-59a1d2c8277d",
             "label": "table_2",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "table_2"
@@ -202,6 +202,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 728,
             "texture": {
                 "key": "lounge",
@@ -221,6 +222,7 @@
                 "MoveTo"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "MoveTo.y": 739,
             "texture": {
                 "key": "lounge",
@@ -236,7 +238,6 @@
             "type": "Image",
             "id": "3494e81b-643b-4756-927a-23d08ea4f2ff",
             "label": "table_3",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "table_3"
@@ -250,7 +251,6 @@
             "type": "Image",
             "id": "71108d45-7bfb-4447-bd20-66a33691e012",
             "label": "rail_2",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "rail_2"
@@ -263,7 +263,6 @@
             "type": "Image",
             "id": "5d9a6895-145f-4097-b222-3c834ae23e32",
             "label": "rail_3",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "rail_3"
@@ -276,7 +275,6 @@
             "type": "Image",
             "id": "7f2a52f5-cc21-422d-8d37-dab1fb490290",
             "label": "rail_4",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "rail_4"
@@ -289,7 +287,6 @@
             "type": "Image",
             "id": "0f779640-c5cb-4432-a51d-6fdff91bba81",
             "label": "rail_1",
-            "components": [],
             "texture": {
                 "key": "lounge",
                 "frame": "rail_1"
@@ -305,7 +302,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "lists": [
         {

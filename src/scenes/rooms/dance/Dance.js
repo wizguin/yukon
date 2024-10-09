@@ -379,6 +379,7 @@ export default class Dance extends RoomScene {
         // zone (components)
         const zoneZone = new Zone(zone);
         zoneZone.hoverCallback = () => this.onPuffleOver();
+        zoneZone.handCursor = false;
 
         this.puffle = puffle;
         this.dj_speaker_sound = dj_speaker_sound;

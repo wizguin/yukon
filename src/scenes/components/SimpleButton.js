@@ -21,6 +21,8 @@ export default class SimpleButton extends EventComponent {
         this.callback = () => {};
         /** @type {boolean} */
         this.pixelPerfect = false;
+        /** @type {boolean} */
+        this.handCursor = true;
 
 
         this.gameObject = gameObject;
@@ -57,7 +59,7 @@ export default class SimpleButton extends EventComponent {
         }
 
         this.gameObject.setInteractive({
-            cursor: 'pointer',
+            cursor: this.handCursor ? 'pointer' : 'default',
             pixelPerfect: this.pixelPerfect
         })
     }
