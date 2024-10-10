@@ -19,6 +19,8 @@ export default class Zone extends SimpleButton {
         this.hoverOutCallback = null;
         /** @type {any} */
         this.callback = () => {};
+        /** @type {boolean} */
+        this.handCursor = true;
 
 
         this.gameObject = gameObject;
@@ -51,7 +53,7 @@ export default class Zone extends SimpleButton {
         zone.setOrigin(this.gameObject.originX, this.gameObject.originY)
 
         zone.setInteractive({
-            cursor: 'pointer'
+            cursor: this.handCursor ? 'pointer' : 'default'
         })
 
         zone.on('pointerover', () => this.onOver())

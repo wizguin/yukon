@@ -54,6 +54,13 @@
 }
 
 @font-face {
+    font-family: 'CCComiccrazy';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/CCComicrazy_Italic.woff2');
+}
+
+@font-face {
     font-family: 'CCFaceFront';
     src: url('../fonts/CCFaceFront.woff2');
 }

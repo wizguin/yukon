@@ -198,14 +198,14 @@
                     "id": "c070e809-3311-48f4-b7aa-96577c06185f",
                     "label": "beach",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(400)",
-                    "x": 1090,
-                    "y": 311,
+                    "ShowHint.text": "beach_hint",
+                    "x": 1133.0873552635312,
+                    "y": 352.90441144257784,
                     "angle": 8,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -217,14 +217,14 @@
                     "id": "84b63772-07cf-4602-b411-422d0b43a8a6",
                     "label": "plaza",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(300)",
-                    "x": 998,
-                    "y": 306,
+                    "ShowHint.text": "plaza_hint",
+                    "x": 1043.7324374131858,
+                    "y": 343.11865112930536,
                     "angle": 2,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -236,13 +236,13 @@
                     "id": "2d0d8b0d-cb3e-4831-8739-9c5f17c55ff3",
                     "label": "pet",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(310)",
-                    "x": 901,
-                    "y": 303,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "pet_hint",
+                    "x": 949,
+                    "y": 337.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -254,13 +254,13 @@
                     "id": "22050ab9-8f66-416c-ae62-a852e28fc574",
                     "label": "forts",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(801)",
-                    "x": 801,
-                    "y": 302,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "forts_hint",
+                    "x": 849,
+                    "y": 335.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -272,13 +272,13 @@
                     "id": "cda22d5e-5794-42a7-aa89-ed33cf9efe1c",
                     "label": "coffee",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(110)",
-                    "x": 681,
-                    "y": 308,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "coffee_hint",
+                    "x": 728,
+                    "y": 342,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -290,13 +290,13 @@
                     "id": "eb25f1a1-32a2-4c4b-89d9-c73a751cd665",
                     "label": "book",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(111)",
-                    "x": 574,
-                    "y": 307,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "book_hint",
+                    "x": 621,
+                    "y": 342,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -308,13 +308,13 @@
                     "id": "00dd4bab-1985-4a6c-849d-fc62b236fa2e",
                     "label": "lodge",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(220)",
-                    "x": 475,
-                    "y": 317,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "lodge_hint",
+                    "x": 523,
+                    "y": 351.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -326,13 +326,13 @@
                     "id": "31ce60f6-3264-4973-ad2a-ab84e0aece22",
                     "label": "sport",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(210)",
-                    "x": 374,
-                    "y": 322,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "sport_hint",
+                    "x": 421.5,
+                    "y": 356.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -344,13 +344,13 @@
                     "id": "e6f70b09-bac7-4926-ab2f-a95f0fcee0dc",
                     "label": "beacon",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
-                    "x": 1158,
-                    "y": 229,
+                    "ShowHint.text": "beacon_hint",
+                    "x": 1184.8288705945015,
+                    "y": 274.3372001349926,
                     "angle": 14,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -362,13 +362,13 @@
                     "id": "09c2edc2-d5a3-401e-871a-f7c498a4a7da",
                     "label": "light",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
-                    "x": 1060,
-                    "y": 214,
+                    "ShowHint.text": "light_hint",
+                    "x": 1101.985003206879,
+                    "y": 251.52012361213565,
                     "angle": 4,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -380,14 +380,14 @@
                     "id": "f3a5f05d-a9df-455f-8e2c-0304c9bd0dbc",
                     "label": "pizza",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
-                    "Zone.callback": "() =>{}",
-                    "x": 967,
-                    "y": 207,
+                    "Zone.callback": "() => this.onScreenClick(330)",
+                    "ShowHint.text": "pizza_hint",
+                    "x": 1012.9752595163882,
+                    "y": 244.79914949461818,
                     "angle": 4,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -399,13 +399,13 @@
                     "id": "4ae236af-2577-4e01-bcd4-b514cd9f8340",
                     "label": "rink",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(802)",
-                    "x": 870,
-                    "y": 208,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "rink_hint",
+                    "x": 920,
+                    "y": 242.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -417,13 +417,13 @@
                     "id": "831b588f-96e1-477b-8dea-6319fb3f289f",
                     "label": "shop",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(130)",
-                    "x": 787,
-                    "y": 208,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "shop_hint",
+                    "x": 835,
+                    "y": 242.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -435,13 +435,13 @@
                     "id": "a1a57b1a-3bc1-4117-a265-f8d2540717b8",
                     "label": "town",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(100)",
-                    "x": 698,
-                    "y": 213,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "town_hint",
+                    "x": 746.5,
+                    "y": 247.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -453,13 +453,13 @@
                     "id": "42673489-6ca3-4b06-9031-4ffb99d7696c",
                     "label": "dock",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(800)",
-                    "x": 604,
-                    "y": 205,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "dock_hint",
+                    "x": 652,
+                    "y": 239,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -471,13 +471,13 @@
                     "id": "9b052879-e0c8-4424-94eb-5ad04cd05a31",
                     "label": "dance",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(120)",
-                    "x": 508,
-                    "y": 215,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "dance_hint",
+                    "x": 554.5,
+                    "y": 249,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -489,14 +489,14 @@
                     "id": "7e447131-293b-4307-a1c7-7c38e7348d6b",
                     "label": "lounge",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(121)",
-                    "x": 411,
-                    "y": 231,
+                    "ShowHint.text": "lounge_hint",
+                    "x": 465.24528816342354,
+                    "y": 257.71045848727226,
                     "angle": -8,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -508,14 +508,14 @@
                     "id": "4fecf3ab-3a42-4da6-9e57-ad78c80f5a57",
                     "label": "attic",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(221)",
-                    "x": 312,
-                    "y": 250,
+                    "ShowHint.text": "attic_hint",
+                    "x": 364.26475206017494,
+                    "y": 276.9888046979904,
                     "angle": -8,
-                    "originX": 0,
-                    "originY": 0,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -527,12 +527,12 @@
                     "id": "cd62f32d-2b3e-439b-ac98-83af116c6840",
                     "label": "stage",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
-                    "x": 978,
-                    "y": 117,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "stage_hint",
+                    "x": 1025,
+                    "y": 152.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -544,13 +544,13 @@
                     "id": "6ce50cd1-2a19-497d-9274-79fdbcb2e026",
                     "label": "cove",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(810)",
-                    "x": 882,
-                    "y": 113,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "cove_hint",
+                    "x": 928.5,
+                    "y": 148,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -562,13 +562,13 @@
                     "id": "3c72af6f-21d2-43b7-afcd-45f32181bb98",
                     "label": "forest",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(809)",
-                    "x": 793,
-                    "y": 110,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "forest_hint",
+                    "x": 834.5,
+                    "y": 144.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -580,13 +580,13 @@
                     "id": "f647ee24-1bd9-4cc0-9899-b3096ff80379",
                     "label": "dojo",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(320)",
-                    "x": 695,
-                    "y": 110,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "dojo_hint",
+                    "x": 742,
+                    "y": 144.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -598,13 +598,13 @@
                     "id": "ef1f7068-cc2e-42b2-ba09-7798af2e0625",
                     "label": "mtn",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(230)",
-                    "x": 599,
-                    "y": 114,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "mtn_hint",
+                    "x": 646.5,
+                    "y": 148.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -616,13 +616,13 @@
                     "id": "287ff487-eb85-431a-a00f-319ae6689035",
                     "label": "village",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(200)",
-                    "x": 498,
-                    "y": 124,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "village_hint",
+                    "x": 545,
+                    "y": 157.5,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -634,13 +634,13 @@
                     "id": "882fad60-f2a2-4b59-add0-593c0d98e524",
                     "label": "dojoext",
                     "components": [
-                        "Zone"
+                        "Zone",
+                        "ShowHint"
                     ],
                     "Zone.callback": "() => this.onScreenClick(321)",
-                    "x": 400,
-                    "y": 131,
-                    "originX": 0,
-                    "originY": 0,
+                    "ShowHint.text": "dojoext_hint",
+                    "x": 443.5,
+                    "y": 163,
                     "alpha": 0.5,
                     "isFilled": true,
                     "fillColor": "#00ff00",
@@ -655,7 +655,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 5
+        "version": 4
     },
     "lists": [
         {

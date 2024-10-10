@@ -148,6 +148,7 @@ export default class Forts extends RoomScene {
         // sign (components)
         const signButton = new Button(sign);
         signButton.spriteName = "sign";
+        signButton.callback = () => this.onPlaqueClick();
         signButton.activeFrame = false;
 
         // blue_flag (components)
@@ -215,6 +216,10 @@ export default class Forts extends RoomScene {
         this.ampmText.text = hours >= 12 ? 'PM' : 'AM'
 
         this.dayText.text = now.toLocaleDateString('en-US', {weekday: 'long' }).toUpperCase()
+    }
+
+    onPlaqueClick() {
+        this.interface.loadWidget('ClockTower')
     }
 
     /* END-USER-CODE */

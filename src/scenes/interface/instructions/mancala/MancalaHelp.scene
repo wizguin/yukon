@@ -1,0 +1,582 @@
+{
+    "id": "b6d70a42-fc0b-488a-a246-0b7d45e0b440",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BookContainer",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "7ccede66-2c72-4b2d-aa98-6b7ddebbcc6d",
+            "label": "container_1",
+            "x": 760,
+            "y": 480,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "3f447312-ee70-467c-9ccc-50135a68b49c",
+                    "label": "block",
+                    "components": [
+                        "Interactive"
+                    ],
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.2,
+                    "width": 1520,
+                    "height": 960
+                },
+                {
+                    "type": "NinePatchContainer",
+                    "id": "75361d4d-e115-43d6-9bca-d2b2f23aca3e",
+                    "label": "bg",
+                    "texture": {
+                        "key": "prompt",
+                        "frame": "window"
+                    },
+                    "width": 1136,
+                    "height": 664,
+                    "marginLeft": 50,
+                    "marginRight": 50,
+                    "marginTop": 50,
+                    "marginBottom": 50
+                },
+                {
+                    "type": "Text",
+                    "id": "2d93b594-89c7-4dc5-91bb-3e8ea45edd7c",
+                    "label": "title",
+                    "y": -238,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "HOW TO PLAY MANCALA",
+                    "fixedWidth": 600,
+                    "align": "center",
+                    "fontFamily": "CCComiccrazy",
+                    "fontSize": "40px",
+                    "fontStyle": "italic",
+                    "stroke": "#014066",
+                    "strokeThickness": 10
+                },
+                {
+                    "type": "Container",
+                    "id": "ba97d037-8cd5-4063-b3aa-a5e36a1cfeea",
+                    "label": "page1",
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "55def667-8963-40e1-ac3f-16381c7c8223",
+                            "label": "page1_text1",
+                            "y": -147,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "OBJECT OF THE GAME",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "8e5b6148-6c72-4511-a4cc-17ae2770edb0",
+                            "label": "page1_text2",
+                            "y": -70,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Each player attempts to collect as many stones as\npossible before one of the players\nclears his or her side of stones.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "3c30ef8d-5c4c-4443-b197-78632b186248",
+                            "label": "page1_text3",
+                            "y": 19,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "THE BOARD",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "4e58ae77-be30-4ca2-a602-6e7920126ede",
+                            "label": "page1_text4",
+                            "y": 113,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Each player has a side of the board. (top and\nbottom) The six holes nearest each player belong\nto him or her and their large holes or\nmancala is to the right.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "6fe37283-25fd-4aef-80c4-7293818d7c05",
+                    "label": "page2",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "16350a02-6285-47a2-ab20-c2f0876d426c",
+                            "label": "board",
+                            "texture": {
+                                "key": "mancala_help",
+                                "frame": "board"
+                            },
+                            "y": 38
+                        },
+                        {
+                            "type": "Text",
+                            "id": "bf7f91ac-c761-439b-8f62-b0e542100026",
+                            "label": "page2_text1",
+                            "y": -132,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "THE BOARD",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "53d463c9-d971-4296-b1ff-3791a815cc24",
+                            "label": "page2_text2",
+                            "x": -35,
+                            "y": -78,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Player 2 Side",
+                            "fixedWidth": 200,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "89eebc39-0a66-4bdb-99b6-c613d2939698",
+                            "label": "page2_text3",
+                            "x": 38,
+                            "y": 142,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Player 1 Side",
+                            "fixedWidth": 200,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "fc4f5057-70d4-4b22-9989-107efb576fed",
+                            "label": "page2_text4",
+                            "x": -335,
+                            "y": 27,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Player 2\nMancala",
+                            "fixedWidth": 150,
+                            "align": "right",
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "fc7479ee-792e-47e8-8e49-da07429c3ece",
+                            "label": "page2_text5",
+                            "x": 336,
+                            "y": 27,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Player 1\nMancala",
+                            "fixedWidth": 150,
+                            "fontFamily": "Arial",
+                            "fontSize": "24px",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "28880a25-3dee-45bb-9054-52d559c267b7",
+                    "label": "page3",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "75d188af-3705-4fde-8e97-4360b4febd5d",
+                            "label": "page3_text1",
+                            "y": -93,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "HOW TO PLAY",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "a6ae73f8-ed7c-4073-afcb-6b09ac5124f8",
+                            "label": "page3_text2",
+                            "y": 27,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Players alternate turns. In his or her turn each\nplayer selects a group of stones from one hole on\nhis or her side of the board. Each stone is dropped\none by one in the holes around the board, including\nhis mancala but not the opponents mancala.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "b968c1e5-b899-4353-a6a6-cacd59246317",
+                    "label": "page4",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "e221f402-d448-4bff-b2cd-8fc2da6fdfa6",
+                            "label": "page4_text1",
+                            "y": -149,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "FREE TURNS",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "fd24918e-76aa-41d0-b9c3-351527b24d60",
+                            "label": "page4_text2",
+                            "y": -88,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "If the last stone lands in the players own mancala,\nthat player goes again.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "0ceef9bb-c11a-4fe7-8f56-ba8507c4e765",
+                            "label": "page4_text3",
+                            "y": -4,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "CAPTURES",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "ac381a6d-7d3e-471a-a622-33fb3ae642aa",
+                            "label": "page4_text4",
+                            "y": 92,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "If the last stone is dropped in an empty hole on the\nplayers own side, he captures all the stones from\nthe opponents hole directly opposite that hole,\nincluding his stone.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "7442b2f1-1619-428c-900a-b38edc6c316a",
+                    "label": "page5",
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "ccd19154-2374-4909-8315-1896a530f817",
+                            "label": "page5_text1",
+                            "y": -93,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "HOW TO WIN",
+                            "fixedWidth": 600,
+                            "align": "center",
+                            "fontFamily": "CCComiccrazy",
+                            "fontSize": "40px",
+                            "fontStyle": "italic",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "f93e11e0-846c-4251-9566-6327cf672e2e",
+                            "label": "page5_text2",
+                            "y": 26,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "The game is over when a player has no more\nstones on his side of the board. The winner is the\nplayer with the greatest total of stones in his or her\nmancala and any remaining stones on his or her\nside of the board.",
+                            "fixedWidth": 750,
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "32px",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "b5f3eee0-5d1d-4d90-9527-544cd5298008",
+                    "label": "tab1",
+                    "texture": {
+                        "key": "mancala_help",
+                        "frame": "tab"
+                    },
+                    "x": 36,
+                    "y": 270
+                },
+                {
+                    "type": "Image",
+                    "id": "c42ca810-4ca8-4cbd-8a89-5b2e83c9d612",
+                    "label": "tab2",
+                    "texture": {
+                        "key": "mancala_help",
+                        "frame": "tab"
+                    },
+                    "x": 76,
+                    "y": 270,
+                    "alpha": 0.2,
+                    "alphaTopLeft": 0.2,
+                    "alphaTopRight": 0.2,
+                    "alphaBottomLeft": 0.2,
+                    "alphaBottomRight": 0.2
+                },
+                {
+                    "type": "Image",
+                    "id": "33a529c3-dd17-4793-872b-9cc2a7b4be17",
+                    "label": "tab3",
+                    "texture": {
+                        "key": "mancala_help",
+                        "frame": "tab"
+                    },
+                    "x": 116,
+                    "y": 270,
+                    "alpha": 0.2,
+                    "alphaTopLeft": 0.2,
+                    "alphaTopRight": 0.2,
+                    "alphaBottomLeft": 0.2,
+                    "alphaBottomRight": 0.2
+                },
+                {
+                    "type": "Image",
+                    "id": "525b2732-e667-4260-a8de-69688e0188c0",
+                    "label": "tab4",
+                    "texture": {
+                        "key": "mancala_help",
+                        "frame": "tab"
+                    },
+                    "x": 156,
+                    "y": 270,
+                    "alpha": 0.2,
+                    "alphaTopLeft": 0.2,
+                    "alphaTopRight": 0.2,
+                    "alphaBottomLeft": 0.2,
+                    "alphaBottomRight": 0.2
+                },
+                {
+                    "type": "Image",
+                    "id": "2ad1bf07-b638-445e-8452-770b6a8a33ba",
+                    "label": "tab5",
+                    "texture": {
+                        "key": "mancala_help",
+                        "frame": "tab"
+                    },
+                    "x": 196,
+                    "y": 270,
+                    "alpha": 0.2,
+                    "alphaTopLeft": 0.2,
+                    "alphaTopRight": 0.2,
+                    "alphaBottomLeft": 0.2,
+                    "alphaBottomRight": 0.2
+                },
+                {
+                    "type": "Text",
+                    "id": "37cefc98-0e14-4772-82a1-d5c11efc42d6",
+                    "label": "pageText",
+                    "scope": "CLASS",
+                    "x": 310,
+                    "y": 269,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "alpha": 0.5,
+                    "alphaTopLeft": 0.5,
+                    "alphaTopRight": 0.5,
+                    "alphaBottomLeft": 0.5,
+                    "alphaBottomRight": 0.5,
+                    "text": "Page 1 of 5",
+                    "fixedWidth": 150,
+                    "lineSpacing": 1,
+                    "align": "center",
+                    "fontFamily": "Arial Narrow",
+                    "fontSize": "32px",
+                    "color": "#ffffff"
+                },
+                {
+                    "type": "Image",
+                    "id": "a192047d-2414-458a-a66e-e98d6b2a7270",
+                    "label": "right_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.nextPage()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 512,
+                    "y": 269
+                },
+                {
+                    "type": "Image",
+                    "id": "b333a7ff-ce60-43af-9405-bbe781b8adeb",
+                    "label": "right_arrow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 512,
+                    "y": 267,
+                    "angle": 90,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "13ac76a9-2b3d-49bd-a268-a338bbedf3e5",
+                    "label": "left_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.prevPage()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 452,
+                    "y": 269
+                },
+                {
+                    "type": "Image",
+                    "id": "8244dfe1-5cd8-4c61-99d5-06301899e8b5",
+                    "label": "left_arrow",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-arrow"
+                    },
+                    "x": 452,
+                    "y": 267,
+                    "angle": 90,
+                    "flipX": true,
+                    "flipY": true
+                },
+                {
+                    "type": "Image",
+                    "id": "74d3e62f-891d-4503-a6fe-3c959ba1a674",
+                    "label": "x_button",
+                    "components": [
+                        "Button"
+                    ],
+                    "Button.spriteName": "blue-button",
+                    "Button.callback": "() => this.close()",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-button"
+                    },
+                    "x": 510,
+                    "y": -274
+                },
+                {
+                    "type": "Image",
+                    "id": "28586f60-7efc-424f-ab91-f02c7815475d",
+                    "label": "blue_x",
+                    "texture": {
+                        "key": "main",
+                        "frame": "blue-x"
+                    },
+                    "x": 510,
+                    "y": -276
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "28802ee6-2a5b-4eec-8a6b-68b823862339",
+            "label": "indicators",
+            "objectIds": [
+                "b5f3eee0-5d1d-4d90-9527-544cd5298008",
+                "c42ca810-4ca8-4cbd-8a89-5b2e83c9d612",
+                "33a529c3-dd17-4793-872b-9cc2a7b4be17",
+                "525b2732-e667-4260-a8de-69688e0188c0",
+                "2ad1bf07-b638-445e-8452-770b6a8a33ba"
+            ]
+        },
+        {
+            "id": "6bed8884-59c5-446c-84eb-881cf67b0bd2",
+            "label": "pages",
+            "objectIds": [
+                "ba97d037-8cd5-4063-b3aa-a5e36a1cfeea",
+                "6fe37283-25fd-4aef-80c4-7293818d7c05",
+                "28880a25-3dee-45bb-9054-52d559c267b7",
+                "b968c1e5-b899-4353-a6a6-cacd59246317",
+                "7442b2f1-1619-428c-900a-b38edc6c316a"
+            ]
+        }
+    ]
+}

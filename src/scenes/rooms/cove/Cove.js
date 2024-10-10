@@ -1,6 +1,6 @@
 import RoomScene from '../RoomScene'
 
-import { Animation, Button, MoveTo } from '@components/components'
+import { Animation, Button, MoveTo, ShowHint } from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -167,6 +167,8 @@ export default class Cove extends RoomScene {
         const hutMoveTo = new MoveTo(hut);
         hutMoveTo.x = 1250;
         hutMoveTo.y = 500;
+        const hutShowHint = new ShowHint(hut);
+        hutShowHint.text = "waves_hint";
 
         // fire (components)
         const fireAnimation = new Animation(fire);

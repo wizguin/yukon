@@ -42,7 +42,7 @@ export default class Pet extends RoomScene {
 
         this.roomTriggers = {
             'plaza': () => this.triggerRoom(300, 384, 620),
-            'adopt': null,
+            'adopt': () => this.onAdoptCatalogClick(),
             'roundup': () => this.triggerGame(902),
         }
 
@@ -194,6 +194,7 @@ export default class Pet extends RoomScene {
         // os (components)
         const osSimpleButton = new SimpleButton(os);
         osSimpleButton.pixelPerfect = true;
+        osSimpleButton.handCursor = false;
         const osAnimation = new Animation(os);
         osAnimation.key = "os/os";
         osAnimation.end = 74;
@@ -228,6 +229,7 @@ export default class Pet extends RoomScene {
         // red (components)
         const redSimpleButton = new SimpleButton(red);
         redSimpleButton.hoverCallback = () => this.onRedOver();
+        redSimpleButton.handCursor = false;
 
         // yellow (components)
         const yellowAnimation = new Animation(yellow);
@@ -269,6 +271,7 @@ export default class Pet extends RoomScene {
         const penSimpleButton = new SimpleButton(pen);
         penSimpleButton.hoverCallback = () => this.onPenOver();
         penSimpleButton.hoverOutCallback = () => this.onPenOut();
+        penSimpleButton.handCursor = false;
         const penMoveTo = new MoveTo(pen);
         penMoveTo.x = 590;
         penMoveTo.y = 490;
@@ -277,6 +280,7 @@ export default class Pet extends RoomScene {
         const fishSimpleButton = new SimpleButton(fish);
         fishSimpleButton.hoverCallback = () => this.onFishOver();
         fishSimpleButton.pixelPerfect = true;
+        fishSimpleButton.handCursor = false;
         const fishAnimation = new Animation(fish);
         fishAnimation.key = "fish/fish";
         fishAnimation.start = 2;
@@ -302,6 +306,7 @@ export default class Pet extends RoomScene {
         // blackZone (components)
         const blackZoneZone = new Zone(blackZone);
         blackZoneZone.hoverCallback = () => this.onBlackOver();
+        blackZoneZone.handCursor = false;
 
         // adoptCatalog (components)
         const adoptCatalogButton = new Button(adoptCatalog);

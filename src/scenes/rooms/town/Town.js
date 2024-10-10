@@ -16,7 +16,7 @@ export default class Town extends RoomScene {
         this.disco_lights;
         /** @type {Phaser.GameObjects.Image} */
         this.disco;
-        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Sprite>} */
+        /** @type {Array<Phaser.GameObjects.Image|Phaser.GameObjects.Container>} */
         this.sort;
 
 
@@ -66,18 +66,24 @@ export default class Town extends RoomScene {
         const gift_door = this.add.image(995, 294, "town", "gift_door");
         gift_door.setOrigin(0, 0);
 
+        // container
+        const container = this.add.container(692, 464);
+
         // canopy
-        const canopy = this.add.image(692, 464, "town", "canopy");
+        const canopy = this.add.image(0, 0, "town", "canopy");
         canopy.setOrigin(0.49606299212598426, 0.9403669724770642);
+        container.add(canopy);
 
         // canopy_lights
-        const canopy_lights = this.add.sprite(648, 548, "town", "canopy_lights0001");
+        const canopy_lights = this.add.sprite(-44, 84, "town", "canopy_lights0001");
         canopy_lights.setOrigin(0, 7.142857142857143);
         canopy_lights.visible = false;
+        container.add(canopy_lights);
 
         // canopy_stars
-        const canopy_stars = this.add.image(647, 548, "town", "canopy_stars");
+        const canopy_stars = this.add.image(-45, 84, "town", "canopy_stars");
         canopy_stars.setOrigin(0, 7.142857142857143);
+        container.add(canopy_stars);
 
         // disco_lights
         const disco_lights = this.add.sprite(766, 332, "town", "disco_lights0007");
@@ -121,7 +127,7 @@ export default class Town extends RoomScene {
         table_1.setOrigin(0.49572649572649574, 0.7830188679245284);
 
         // lists
-        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2, canopy, canopy_stars, canopy_lights];
+        const sort = [fg, box_2, box_1, box_3, chair_2, chair_1, table_1, table_2, container];
 
         // coffee_door (components)
         const coffee_doorButton = new Button(coffee_door);

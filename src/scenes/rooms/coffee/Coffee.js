@@ -109,7 +109,7 @@ export default class Coffee extends RoomScene {
         door.setOrigin(0, 0);
 
         // lists
-        const sort = [beans, bag, sign_front, sign_back, counter_front, counter_back, table];
+        const sort = [beans, sign_front, sign_back, counter_front, counter_back, table];
 
         // smoke (components)
         const smokeAnimation = new Animation(smoke);
