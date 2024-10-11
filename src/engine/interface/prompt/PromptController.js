@@ -95,8 +95,8 @@ export default class PromptController {
         this.window.show(text, buttonLayout, callback, noCallback)
     }
 
-    showLoading(text, key, url, callback = () => {}) {
-        this.loadingPromptFactory.showLoading(text, key, url, callback)
+    showLoading(text, key, url, unload, callback = () => {}) {
+        this.loadingPromptFactory.showLoading(text, key, url, unload, callback)
     }
 
     showMailError(text) {

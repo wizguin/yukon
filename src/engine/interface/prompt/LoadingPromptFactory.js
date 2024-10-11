@@ -9,13 +9,24 @@ export default class LoadingPromptFactory {
         this.prompts = {}
     }
 
-    showLoading(text, key, url, callback) {
+    get world() {
+        return this.interface.world
+    }
+
+    showLoading(text, key, url, unload = true, callback) {
         if (key in this.prompts) {
             return this.updatePrompt(key)
         }
 
         let prompt = this.createPrompt()
         this.prompts[key] = prompt
+
+        if (unload) {
+            prompt.packFileLoader.on('filecomplete', (key, type, data) => {
+                this.world.loadedAssets.push({id: key, type})
+                console.log(key)
+            })
+        }
 
         prompt.packFileLoader.on('complete', () => {
             prompt.destroy()

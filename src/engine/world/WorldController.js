@@ -18,6 +18,8 @@ export default class WorldController extends BaseScene {
         this.globalLoadQueue = {}
 
         this.worldTimeZone = 'America/Los_Angeles'
+
+        this.loadedAssets = []
     }
 
     create() {
