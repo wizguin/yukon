@@ -89,6 +89,12 @@ const rooms = {
         x: 780,
         y: 790
     },
+    330: {
+        key: 'Pizza',
+        scene: require('@rooms/pizza/Pizza').default,
+        x: 800,
+        y: 556
+    },
     400: {
         key: 'Beach',
         scene: require('@rooms/beach/Beach').default,
@@ -118,6 +124,12 @@ const rooms = {
         scene: require('@rooms/agent/Agent').default,
         x: 748,
         y: 720
+    },
+    804: {
+        key: 'Boiler',
+        scene: require('@rooms/boiler/Boiler').default,
+        x: 780,
+        y: 700
     },
     805: {
         key: 'Berg',

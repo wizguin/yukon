@@ -159,6 +159,7 @@
                 "Button"
             ],
             "Button.spriteName": "sign",
+            "Button.callback": "() => this.onPlaqueClick()",
             "Button.activeFrame": false,
             "texture": {
                 "key": "forts",

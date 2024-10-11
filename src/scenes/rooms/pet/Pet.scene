@@ -92,6 +92,7 @@
                 "Animation"
             ],
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "Animation.key": "os/os",
             "Animation.end": 74,
             "Animation.repeat": 0,
@@ -193,6 +194,7 @@
                 "SimpleButton"
             ],
             "SimpleButton.hoverCallback": "() => this.onRedOver()",
+            "SimpleButton.handCursor": false,
             "texture": {
                 "key": "pet",
                 "frame": "red/red0001"
@@ -341,6 +343,7 @@
             ],
             "SimpleButton.hoverCallback": "() => this.onPenOver()",
             "SimpleButton.hoverOutCallback": "() => this.onPenOut()",
+            "SimpleButton.handCursor": false,
             "MoveTo.x": 590,
             "MoveTo.y": 490,
             "texture": {
@@ -363,6 +366,7 @@
             ],
             "SimpleButton.hoverCallback": "() => this.onFishOver()",
             "SimpleButton.pixelPerfect": true,
+            "SimpleButton.handCursor": false,
             "Animation.key": "fish/fish",
             "Animation.start": 2,
             "Animation.end": 32,
@@ -504,6 +508,7 @@
                 "Zone"
             ],
             "Zone.hoverCallback": "() => this.onBlackOver()",
+            "Zone.handCursor": false,
             "x": 92,
             "y": 356,
             "alpha": 0.5,

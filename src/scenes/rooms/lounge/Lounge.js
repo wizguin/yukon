@@ -22,6 +22,8 @@ export default class Lounge extends RoomScene {
             'astro': () => this.triggerGame(900)
         }
 
+        this.music = '6'
+
         /* END-USER-CTR-CODE */
     }
 
@@ -131,36 +133,42 @@ export default class Lounge extends RoomScene {
         // chair_1 (components)
         const chair_1SimpleButton = new SimpleButton(chair_1);
         chair_1SimpleButton.pixelPerfect = true;
+        chair_1SimpleButton.handCursor = false;
         const chair_1MoveTo = new MoveTo(chair_1);
         chair_1MoveTo.y = 488;
 
         // chair_2 (components)
         const chair_2SimpleButton = new SimpleButton(chair_2);
         chair_2SimpleButton.pixelPerfect = true;
+        chair_2SimpleButton.handCursor = false;
         const chair_2MoveTo = new MoveTo(chair_2);
         chair_2MoveTo.y = 466;
 
         // chair_1_1 (components)
         const chair_1_1SimpleButton = new SimpleButton(chair_1_1);
         chair_1_1SimpleButton.pixelPerfect = true;
+        chair_1_1SimpleButton.handCursor = false;
         const chair_1_1MoveTo = new MoveTo(chair_1_1);
         chair_1_1MoveTo.y = 690;
 
         // chair_2_1 (components)
         const chair_2_1SimpleButton = new SimpleButton(chair_2_1);
         chair_2_1SimpleButton.pixelPerfect = true;
+        chair_2_1SimpleButton.handCursor = false;
         const chair_2_1MoveTo = new MoveTo(chair_2_1);
         chair_2_1MoveTo.y = 667;
 
         // chair_1_2 (components)
         const chair_1_2SimpleButton = new SimpleButton(chair_1_2);
         chair_1_2SimpleButton.pixelPerfect = true;
+        chair_1_2SimpleButton.handCursor = false;
         const chair_1_2MoveTo = new MoveTo(chair_1_2);
         chair_1_2MoveTo.y = 728;
 
         // chair_1_3 (components)
         const chair_1_3SimpleButton = new SimpleButton(chair_1_3);
         chair_1_3SimpleButton.pixelPerfect = true;
+        chair_1_3SimpleButton.handCursor = false;
         const chair_1_3MoveTo = new MoveTo(chair_1_3);
         chair_1_3MoveTo.y = 739;
 
