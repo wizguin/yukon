@@ -78,7 +78,7 @@ export default class CoinPrompt extends BaseContainer {
     }
 
     callback() {
-        if (this.ruffle.container.visible) {
+        if (this.ruffle.isActive) {
             this.ruffle.close()
         }
 

@@ -171,13 +171,12 @@ export default class RuffleController extends BaseScene {
     }
 
     boot() {
-        this.isActive = true
-
         const ruffle = window.RufflePlayer.newest()
 
         this.player = ruffle.createPlayer()
-
         this.container.setElement(this.player, this.playerStyle)
+
+        this.isActive = true
 
         this.player.load({
             url: `${basePath}boot.swf`,
