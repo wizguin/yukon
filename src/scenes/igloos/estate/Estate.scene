@@ -1,0 +1,57 @@
+{
+    "id": "620a0c32-f17b-42f8-953f-1279bd0cf542",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/estate/estate-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Estate",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "4d60d035-f5ef-4682-9e21-067c02a68822",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "estate-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "d581e79d-4b70-4860-a22f-7517a3527658",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "estate-igloo",
+                "frame": "door"
+            },
+            "x": 308.1007210357244,
+            "y": 735.6257333203877,
+            "originX": 0.4940445101703603,
+            "originY": 0.7867669762241104
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

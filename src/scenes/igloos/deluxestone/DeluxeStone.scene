@@ -21,7 +21,6 @@
             "id": "9481130c-80b7-4120-afac-f9c2beb02afe",
             "label": "floor",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "deluxestone",
                 "frame": "floor"
@@ -35,19 +34,25 @@
             "type": "Image",
             "id": "d56de95b-2701-4ad1-b8b4-fcd2e06cb60f",
             "label": "door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "deluxestone",
                 "frame": "door"
             },
-            "x": 243,
-            "y": 478
+            "x": 253,
+            "y": 561,
+            "originX": 0.5909090909090909,
+            "originY": 0.9029126213592233
         },
         {
             "type": "Image",
             "id": "0da75d0d-20cb-4a64-8eca-a909d69c891a",
             "label": "wall_1",
-            "components": [],
             "texture": {
                 "key": "deluxestone",
                 "frame": "wall_1"
@@ -60,7 +65,6 @@
             "type": "Image",
             "id": "34087b87-c523-432c-8a9b-11aeaf02e0bb",
             "label": "wall_2",
-            "components": [],
             "texture": {
                 "key": "deluxestone",
                 "frame": "wall_2"
@@ -73,7 +77,6 @@
             "type": "Image",
             "id": "aa342ee9-1c35-4534-9b32-8fa568c796af",
             "label": "wall_3",
-            "components": [],
             "texture": {
                 "key": "deluxestone",
                 "frame": "wall_3"
@@ -87,6 +90,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

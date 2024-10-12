@@ -1,4 +1,5 @@
 import IglooScene from '../IglooScene'
+import {Button, MoveTo} from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -13,6 +14,10 @@ export default class DeluxeSnow extends IglooScene {
 
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            triggers: () => this.interface.main.onMapClick()
+        }
 
         this.floorSpawn = [720, 720]
         this.wallSpawn = [720, 260]
@@ -36,7 +41,8 @@ export default class DeluxeSnow extends IglooScene {
         floor.setOrigin(0.5003940110323088, 0.5013477088948787);
 
         // door
-        this.add.image(243, 478, "deluxesnow", "door");
+        const door = this.add.image(252, 562, "deluxesnow", "door");
+        door.setOrigin(0.5818181818181818, 0.9077669902912622);
 
         // wall_1
         const wall_1 = this.add.image(321, 389, "deluxesnow", "wall_1");
@@ -48,6 +54,12 @@ export default class DeluxeSnow extends IglooScene {
 
         // wall_3
         this.add.image(1210, 401, "deluxesnow", "wall_3");
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        new MoveTo(door);
 
         this.floor = floor;
 

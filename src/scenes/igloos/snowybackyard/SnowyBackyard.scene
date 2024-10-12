@@ -1,0 +1,57 @@
+{
+    "id": "d71cb051-a07e-4344-9d8b-cc18b8891c8e",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/snowybackyard/snowybackyard-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "SnowyBackyard",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "44ed207f-441d-4865-9e79-524395dd57a2",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "snowybackyard-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "93528dab-1a17-4233-9c0e-97b7cce4af4a",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "snowybackyard-igloo",
+                "frame": "door"
+            },
+            "x": 680,
+            "y": 318,
+            "originX": 0.4387755102040816,
+            "originY": 0.8557692307692307
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

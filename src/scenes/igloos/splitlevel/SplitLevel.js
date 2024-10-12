@@ -1,4 +1,5 @@
 import IglooScene from '../IglooScene'
+import {Button, MoveTo} from '@components/components'
 
 
 /* START OF COMPILED CODE */
@@ -13,6 +14,10 @@ export default class SplitLevel extends IglooScene {
 
 
         /* START-USER-CTR-CODE */
+
+        this.roomTriggers = {
+            triggers: () => this.interface.main.onMapClick()
+        }
 
         this.floorSpawn = [1080, 490]
         this.wallSpawn = [970, 200]
@@ -45,7 +50,8 @@ export default class SplitLevel extends IglooScene {
         floor.add(stairs_top);
 
         // door
-        this.add.image(235, 556, "splitlevel", "door");
+        const door = this.add.image(246, 637, "splitlevel", "door");
+        door.setOrigin(0.6, 0.8932038834951457);
 
         // wall_1
         const wall_1 = this.add.image(757, 380, "splitlevel", "wall_1");
@@ -57,6 +63,12 @@ export default class SplitLevel extends IglooScene {
         // wall_2
         const wall_2 = this.add.image(925, 811, "splitlevel", "wall_2");
         wall_2.setOrigin(0.5, 0.5015197568389058);
+
+        // door (components)
+        const doorButton = new Button(door);
+        doorButton.spriteName = "door";
+        doorButton.activeFrame = false;
+        new MoveTo(door);
 
         this.floor = floor;
 

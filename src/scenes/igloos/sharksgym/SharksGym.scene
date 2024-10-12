@@ -1,0 +1,90 @@
+{
+    "id": "490bff69-619b-4923-88fa-03dacac40c09",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/sharksgym/sharksgym-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "SharksGym",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6de439c1-4d7b-43c8-be83-2b8cb9dbc152",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "9d6e9d16-d8d3-4198-a39c-84082a7c2681",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "door"
+            },
+            "x": 211,
+            "y": 754,
+            "originX": 0.6614634532434245,
+            "originY": 0.7539283342233536
+        },
+        {
+            "type": "Image",
+            "id": "dc004d72-3645-4a40-a0f1-cfadee17252a",
+            "label": "bg-upper",
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 746,
+            "y": 712
+        },
+        {
+            "type": "Image",
+            "id": "c3ee7c44-63f8-4135-ba5c-001febcd17f0",
+            "label": "fg",
+            "texture": {
+                "key": "sharksgym-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 962.2032731464075,
+            "originY": 1.0022950761941745
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "7d035b34-8cec-43c9-b9e2-0313f9c7c3c1",
+            "label": "sort",
+            "objectIds": [
+                "c3ee7c44-63f8-4135-ba5c-001febcd17f0"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "id": "25a25a34-581f-4659-97a9-b6b7c789c310",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/candysplitlevel/candysplitlevel-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "CandySplitLevel",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "b8954e9c-9acf-4fe6-b98c-e7f9deb0eabd",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "candysplitlevel-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "596e4a1d-114b-4d4b-b44c-d72758e1adbb",
+            "label": "bg_upper",
+            "texture": {
+                "key": "candysplitlevel-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "14cd531d-9d8f-4a8e-8d98-ae8eed9e6e79",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "candysplitlevel-igloo",
+                "frame": "door"
+            },
+            "x": 247.14441145335877,
+            "y": 644.5391799276589,
+            "originX": 0.5740401041214434,
+            "originY": 0.890966892852713
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

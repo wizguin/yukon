@@ -1,0 +1,79 @@
+{
+    "id": "c92d487e-897b-4c57-a980-0c5669be4c10",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/dragonslair/dragonslair-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "DragonsLair",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "ba63fff5-8f90-4d42-9917-97d7f2de66b1",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "dragonslair-igloo",
+                "frame": "bg-lower-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "2a1fb874-6ab7-4a4a-b334-1c9daf7ed356",
+            "label": "bg_lower_upper",
+            "texture": {
+                "key": "dragonslair-igloo",
+                "frame": "bg-lower-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "be010d6d-c08a-436c-8826-1cc66556fa38",
+            "label": "bg_upper",
+            "texture": {
+                "key": "dragonslair-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 656
+        },
+        {
+            "type": "Image",
+            "id": "e98a9c80-1a55-4b07-9dca-b8d411d9d773",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "dragonslair-igloo",
+                "frame": "door"
+            },
+            "x": 758,
+            "y": 674,
+            "originX": 0.48402590063732504,
+            "originY": 1.006368509208996
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

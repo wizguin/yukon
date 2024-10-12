@@ -1,0 +1,77 @@
+{
+    "id": "33c1cc53-a4ec-453a-b24e-a468bf2d7056",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/imperialbase/imperialbase-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "ImperialBase",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f2863a10-030d-44d9-ac5e-f62fbcd4ff4b",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "imperialbase-igloo",
+                "frame": "bg"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "20d44ae1-0b2c-4019-90fb-6de6531a9434",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "imperialbase-igloo",
+                "frame": "door"
+            },
+            "x": 1463.5797817763448,
+            "y": 818.2601171409206,
+            "originX": 0.9194124436263208,
+            "originY": 0.8260854983351174
+        },
+        {
+            "type": "Image",
+            "id": "f092dc11-2417-4ae5-81d7-388d09c4fd12",
+            "label": "fg",
+            "texture": {
+                "key": "imperialbase-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 480
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "95927b49-e07f-4614-8710-3084a946f56e",
+            "label": "sort",
+            "objectIds": [
+                "f092dc11-2417-4ae5-81d7-388d09c4fd12"
+            ]
+        }
+    ]
+}

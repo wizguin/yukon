@@ -1,0 +1,69 @@
+{
+    "id": "1224f909-6474-4186-9bdf-a33d78a41191",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/shadowykeep/shadowykeep-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "ShadowyKeep",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "22295a0c-685a-467b-84e0-63333ce7ed24",
+            "label": "bg_lower",
+            "texture": {
+                "key": "shadowykeep-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 758,
+            "y": 639
+        },
+        {
+            "type": "Image",
+            "id": "acc671b9-1673-4427-a598-e1a41eaff473",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "shadowykeep-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "382996a3-b3cd-4dcb-85be-bfcea7b11b4f",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "shadowykeep-igloo",
+                "frame": "door"
+            },
+            "x": 755,
+            "y": 643,
+            "originX": 0.5052631578947369,
+            "originY": 0.9666666666666667
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

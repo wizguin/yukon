@@ -1,0 +1,127 @@
+{
+    "id": "fc182fe6-6fe5-48f2-aa2c-7782ceba91cf",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/beachparty/beachparty-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "BeachParty",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "51f72d7b-f68b-4bf5-88c4-664c03c90137",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "f564f6ea-079e-4af9-b4a2-be104a7b138a",
+            "label": "bg_middle",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "bg-middle"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "732f36d5-48da-4e68-89e7-4a4bd364db8f",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "door"
+            },
+            "x": 229,
+            "y": 330.95607374795964,
+            "originY": 0.7932161966612257
+        },
+        {
+            "type": "Image",
+            "id": "9208b14b-9f38-4b23-a1a3-43443b64df9a",
+            "label": "bg_upper",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Sprite",
+            "id": "cdcf8757-6ed9-447d-9050-4852c255f75a",
+            "label": "water_anim_lower",
+            "scope": "CLASS",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "water-anim-lower0001"
+            },
+            "x": 1367,
+            "y": 661,
+            "animationPlayMethod": 1,
+            "animationKey": "beachparty-water-anim-lower"
+        },
+        {
+            "type": "Sprite",
+            "id": "c37160b4-1f65-452a-95fe-195eca7f24f9",
+            "label": "water_anim_upper",
+            "scope": "CLASS",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "water-anim-upper0001"
+            },
+            "x": 1334,
+            "y": 340,
+            "animationPlayMethod": 1,
+            "animationKey": "beachparty-water-anim-lower"
+        },
+        {
+            "type": "Image",
+            "id": "8bc3e937-2d24-4576-85fe-44f65143e1aa",
+            "label": "fg",
+            "texture": {
+                "key": "beachparty-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 980.0929316408556,
+            "originY": 1.0209301371258912
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "4d46b501-dc29-469c-bc26-cff1190fab2f",
+            "label": "sort",
+            "objectIds": [
+                "8bc3e937-2d24-4576-85fe-44f65143e1aa"
+            ]
+        }
+    ]
+}

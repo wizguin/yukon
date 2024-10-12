@@ -1,0 +1,90 @@
+{
+    "id": "c4bdac47-0611-425e-b4d0-9610cb1184dd",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/icepalace/icepalace-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "IcePalace",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "e243c0d9-294b-432a-9d76-1638672ef47c",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "icepalace-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "1f889a08-4b56-41f8-8ccc-5b50b2313038",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "icepalace-igloo",
+                "frame": "door"
+            },
+            "x": 124.60876175959251,
+            "y": 704.1420696882822,
+            "originX": 0.5084550244387849,
+            "originY": 0.753290944889556
+        },
+        {
+            "type": "Image",
+            "id": "2fbccea1-754a-4516-82be-555f9c5661e6",
+            "label": "bg_upper",
+            "texture": {
+                "key": "icepalace-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "85dbb311-1b1d-4d9e-bfe9-d392014c8c73",
+            "label": "fg",
+            "texture": {
+                "key": "icepalace-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 1011.7065039428029,
+            "originY": 1.0538609416070863
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "1d8edc64-91e3-454a-b650-58de146b73a5",
+            "label": "sort",
+            "objectIds": [
+                "85dbb311-1b1d-4d9e-bfe9-d392014c8c73"
+            ]
+        }
+    ]
+}

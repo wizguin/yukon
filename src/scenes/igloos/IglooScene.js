@@ -12,7 +12,7 @@ import WallCrate from './crates/WallCrate'
 export default class IglooScene extends RoomScene {
 
     constructor(key) {
-        super(key)
+        super(`${key}-igloo`)
 
         this.isIgloo = true
         this.editBg
@@ -88,7 +88,7 @@ export default class IglooScene extends RoomScene {
         }
 
         super.create()
-        this.floor.depth = -2
+        if (this.floor) this.floor.depth = -2
 
         if (this.args.flooring) this.addFlooring(this.args.flooring)
         this.addLocation()
@@ -275,6 +275,13 @@ export default class IglooScene extends RoomScene {
     }
 
     /*========== Physics ==========*/
+
+    get roomPhysics() {
+        let key = this.key.toLowerCase()
+        let baseKey = this.crumbs.scenes.igloos[this.id].key.toLowerCase()
+
+        return this.cache.json.get(`${key}-physics`) || this.cache.json.get(`${baseKey}-physics`)
+    }
 
     addPhysics() {
         super.addPhysics()

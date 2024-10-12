@@ -1,0 +1,80 @@
+{
+    "id": "ab024c48-e36c-4fc6-a16c-0a455313cc89",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/schoolhouse/schoolhouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "Schoolhouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "a65af918-403d-4d1a-925d-720f7d7941f0",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "schoolhouse-igloo",
+                "frame": "bg"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "368cb0ba-1301-4df1-aac3-dc638b9d3960",
+            "label": "door",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
+            "texture": {
+                "key": "schoolhouse-igloo",
+                "frame": "door"
+            },
+            "x": 349.806860413513,
+            "y": 422.78523116485115,
+            "originX": 0.5218785081236379,
+            "originY": 0.8172383677927505
+        },
+        {
+            "type": "Image",
+            "id": "9a642136-2339-4ade-9cb3-2c871b2f7c74",
+            "label": "roof",
+            "texture": {
+                "key": "schoolhouse-igloo",
+                "frame": "roof"
+            },
+            "y": 960,
+            "originX": 0,
+            "originY": 1
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "319ce25b-89d5-4c1a-825f-e0ed6a76b3e8",
+            "label": "sort",
+            "objectIds": [
+                "9a642136-2339-4ade-9cb3-2c871b2f7c74"
+            ]
+        }
+    ]
+}

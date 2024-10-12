@@ -21,13 +21,11 @@
             "id": "94672f7c-be6c-4491-9ad1-624c6a573510",
             "label": "floor",
             "scope": "CLASS",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "8c7db143-d0ca-411d-99aa-6cd56118e27c",
                     "label": "wood_1",
-                    "components": [],
                     "texture": {
                         "key": "gym",
                         "frame": "wood"
@@ -42,7 +40,6 @@
                     "type": "Image",
                     "id": "c76c6db2-a1f9-47c3-b6e9-9882f9f2e95c",
                     "label": "wood",
-                    "components": [],
                     "texture": {
                         "key": "gym",
                         "frame": "wood"
@@ -56,7 +53,6 @@
                     "type": "Image",
                     "id": "ccf8a5ef-cf1d-4698-bc6e-4a40a88c7418",
                     "label": "floor_1",
-                    "components": [],
                     "texture": {
                         "key": "gym",
                         "frame": "floor"
@@ -71,7 +67,6 @@
             "type": "Image",
             "id": "e413acaa-e002-4866-85c2-a1c04ef15653",
             "label": "wall",
-            "components": [],
             "texture": {
                 "key": "gym",
                 "frame": "wall"
@@ -84,14 +79,20 @@
             "type": "Image",
             "id": "ac383f53-ed54-4d52-a6ce-6e5f24e084be",
             "label": "door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "gym",
                 "frame": "door"
             },
-            "x": 339,
-            "y": 571,
-            "originX": 0.5084745762711864
+            "x": 337,
+            "y": 655,
+            "originX": 0.4745762711864407,
+            "originY": 0.9038461538461539
         }
     ],
     "plainObjects": [],
@@ -99,6 +100,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }

@@ -1,0 +1,89 @@
+{
+    "id": "66ef69ce-3c9f-48fd-8948-7f5f09f9e469",
+    "sceneType": "SCENE",
+    "settings": {
+        "compilerInsertSpaces": true,
+        "javaScriptInitFieldsInConstructor": true,
+        "exportClass": true,
+        "superClassName": "IglooScene",
+        "preloadMethodName": "_preload",
+        "preloadPackFiles": [
+            "yukon/assets/media/igloos/buildings/sprites/deluxegingerbreadhouse/deluxegingerbreadhouse-igloo-pack.json"
+        ],
+        "createMethodName": "_create",
+        "sceneKey": "DeluxeGingerbreadHouse",
+        "borderWidth": 1520,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "4026e8a4-c2d4-4846-8bcd-4cca1aac1431",
+            "label": "floor",
+            "scope": "CLASS",
+            "texture": {
+                "key": "deluxegingerbreadhouse-igloo",
+                "frame": "bg-lower"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "513fc3ab-bb9e-4450-9601-6a8f3afadaf5",
+            "label": "door",
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "texture": {
+                "key": "deluxegingerbreadhouse-igloo",
+                "frame": "door"
+            },
+            "x": 374.1365051269531,
+            "y": 691.4832763671875,
+            "originX": 0.6910340037940098,
+            "originY": 0.8985403365857759
+        },
+        {
+            "type": "Image",
+            "id": "07450169-fe07-40b4-9a41-d4e68ff61a36",
+            "label": "bg_upper",
+            "texture": {
+                "key": "deluxegingerbreadhouse-igloo",
+                "frame": "bg-upper"
+            },
+            "x": 760,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "967cb1d0-4efe-446d-8727-ac0ba6aa9876",
+            "label": "fg",
+            "texture": {
+                "key": "deluxegingerbreadhouse-igloo",
+                "frame": "fg"
+            },
+            "x": 760,
+            "y": 971.4395405059269,
+            "originY": 1.0119161880270071
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "4bf86c81-a69d-48c5-b035-ae5b7d6cb76b",
+            "label": "sort",
+            "objectIds": [
+                "967cb1d0-4efe-446d-8727-ac0ba6aa9876"
+            ]
+        }
+    ]
+}

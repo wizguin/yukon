@@ -21,13 +21,11 @@
             "id": "98be1edb-be78-4b16-af00-63c387ae9080",
             "label": "floor",
             "scope": "CLASS",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "746c3c7a-a19d-4796-a1ae-65809d0ab585",
                     "label": "floor_1",
-                    "components": [],
                     "texture": {
                         "key": "splitlevel",
                         "frame": "floor"
@@ -40,7 +38,6 @@
                     "type": "Image",
                     "id": "584f6f3e-f68c-49f4-8213-0befec59e33e",
                     "label": "stairs_top",
-                    "components": [],
                     "texture": {
                         "key": "splitlevel",
                         "frame": "stairs_top"
@@ -55,19 +52,25 @@
             "type": "Image",
             "id": "3331b290-70cf-49b2-aadd-fe156d47370b",
             "label": "door",
-            "components": [],
+            "components": [
+                "Button",
+                "MoveTo"
+            ],
+            "Button.spriteName": "door",
+            "Button.activeFrame": false,
             "texture": {
                 "key": "splitlevel",
                 "frame": "door"
             },
-            "x": 235,
-            "y": 556
+            "x": 246,
+            "y": 637,
+            "originX": 0.6,
+            "originY": 0.8932038834951457
         },
         {
             "type": "Image",
             "id": "c403d38e-23ba-487e-9af1-cdf39917103b",
             "label": "wall_1",
-            "components": [],
             "texture": {
                 "key": "splitlevel",
                 "frame": "wall_1"
@@ -80,7 +83,6 @@
             "type": "Image",
             "id": "a2faaa3e-b19e-4730-9b8c-3967696fff44",
             "label": "stairs",
-            "components": [],
             "texture": {
                 "key": "splitlevel",
                 "frame": "stairs"
@@ -92,7 +94,6 @@
             "type": "Image",
             "id": "277514b6-704e-4e32-9ec3-c24b85c78f16",
             "label": "wall_2",
-            "components": [],
             "texture": {
                 "key": "splitlevel",
                 "frame": "wall_2"
@@ -107,6 +108,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }
