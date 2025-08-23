@@ -1,4 +1,5 @@
 import DataHandler from './DataHandler'
+import CryptoJS from 'crypto-js'
 
 import io from 'socket.io-client'
 
@@ -21,6 +22,12 @@ export default class Network {
         this.lastLoginScene = null
 
         this.worldName
+
+        this.encryptionKey = null
+        this.sessionTimeout = null
+        this.loginAttempts = 0
+        this.maxLoginAttempts = 5
+        this.loginTimeout = 30000 // 30 seconds
     }
 
     connectLogin(saveUsername, savePassword, onConnect) {
@@ -35,22 +42,32 @@ export default class Network {
     }
 
     connectGame(world, username, key) {
+        if (this.loginAttempts >= this.maxLoginAttempts) {
+            this.onConnectionLost('Too many login attempts. Please try again later.')
+            return
+        }
+
+        this.loginAttempts++
+        this.startLoginTimeout()
+
         // Only create token if save password is checked and space is available
         let createToken = this.savePassword && Object.keys(this.savedPenguins).length <= 6
-        let response = { username: username, key: key, createToken: createToken }
+        let response = { 
+            username: this.encryptData(username), 
+            key: this.encryptData(key), 
+            createToken: createToken 
+        }
 
-        // If a token exists for the user add the token selector to response,
-        // so that the token can be deleted/refreshed by the server
+        // If a token exists for the user add the token selector to response
         let token = this.getToken(username)
-
         if (token) {
-            response.token = token.split(':')[0]
+            response.token = this.encryptData(token.split(':')[0])
         }
 
         this.connect(world, () => {
             this.send('game_auth', response)
             this.worldName = world
-
+            this.loginAttempts = 0 // Reset on successful connection
         }, () => {
             this.onConnectionLost()
         })
@@ -93,11 +110,13 @@ export default class Network {
         this.handler.handle(message)
     }
 
-    onConnectionLost() {
-        this.disconnect()
-
-        let prompt = this.game.scene.getScene('InterfaceController').prompt
-        prompt.showError('Connection was lost.\nPlease click to learn more', 'Learn More', () => { })
+    onConnectionLost(message = 'Connection lost. Please try again.') {
+        if (this.sessionTimeout) {
+            clearTimeout(this.sessionTimeout)
+        }
+        this.interface.prompt.showError(message, 'Okay', () => {
+            this.scene.start('Login')
+        })
     }
 
     // Saved penguins
@@ -126,12 +145,43 @@ export default class Network {
 
     getToken(username) {
         let save = this.savedPenguins[username.toLowerCase()]
-
         if (save && save.token) {
-            return save.token
-        } else {
-            return null
+            try {
+                return this.decryptData(save.token)
+            } catch (e) {
+                return null
+            }
         }
+        return null
+    }
+
+    saveToken(username, token) {
+        if (!this.savePassword) return
+        this.savedPenguins[username.toLowerCase()] = {
+            token: this.encryptData(token)
+        }
+    }
+
+    // Add encryption methods
+    encryptData(data) {
+        if (!this.encryptionKey) return data
+        return CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptionKey).toString()
+    }
+
+    decryptData(encryptedData) {
+        if (!this.encryptionKey) return encryptedData
+        const bytes = CryptoJS.AES.decrypt(encryptedData, this.encryptionKey)
+        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+    }
+
+    // Add session timeout management
+    startLoginTimeout() {
+        if (this.sessionTimeout) {
+            clearTimeout(this.sessionTimeout)
+        }
+        this.sessionTimeout = setTimeout(() => {
+            this.onConnectionLost('Session timeout. Please login again.')
+        }, this.loginTimeout)
     }
 
 }
