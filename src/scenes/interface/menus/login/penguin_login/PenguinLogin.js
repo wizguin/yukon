@@ -26,6 +26,7 @@ export default class PenguinLogin extends BaseScene {
 
 
         /* START-USER-CTR-CODE */
+        this.sanitizeInput = this.sanitizeInput.bind(this)
         /* END-USER-CTR-CODE */
     }
 
@@ -163,10 +164,10 @@ export default class PenguinLogin extends BaseScene {
         // Penguin
         this.penguin = data.penguin
         this.container.paperDoll.loadDoll(this.penguin)
-        this.container.username.text = this.penguin.username.toUpperCase()
+        this.container.username.text = this.sanitizeInput(this.penguin.username.toUpperCase())
         this.container.button.callback = () => this.onBackClick(this.penguin)
 
-        // Login form
+        // Login form with improved security
         let style = {
             width: 380,
             height: 53,
@@ -180,36 +181,68 @@ export default class PenguinLogin extends BaseScene {
         this.passwordInput = new TextInput(this, 973, 250, 'password', style, () => this.onLoginSubmit(), 128, false)
         this.add.existing(this.passwordInput)
 
-        // Token
+        // Add input validation
+        this.passwordInput.node.addEventListener('input', (e) => {
+            e.target.value = this.sanitizeInput(e.target.value)
+        })
+
+        // Token with improved security
         let token = this.network.getToken(this.penguin.username)
         this.passwordEdited = false
 
         if (token) {
             this.passwordInput.setText('password')
-            // Update password edited on password input
-            this.passwordInput.node.addEventListener('keydown', () => this.passwordEdited = true, { once: true })
+            // Update password edited on password input with sanitization
+            this.passwordInput.node.addEventListener('keydown', () => {
+                this.passwordEdited = true
+                this.passwordInput.setText(this.sanitizeInput(this.passwordInput.text))
+            }, { once: true })
 
             this.checks.enable(this.checks.password)
         }
 
-        // Input
-        this.input.keyboard.on('keydown-ENTER', () => this.onLoginSubmit())
+        // Input with rate limiting
+        let lastSubmitTime = 0
+        this.input.keyboard.on('keydown-ENTER', () => {
+            const now = Date.now()
+            if (now - lastSubmitTime < 1000) { // 1 second cooldown
+                return
+            }
+            lastSubmitTime = now
+            this.onLoginSubmit()
+        })
     }
 
-
     onLoginSubmit() {
-        let username = this.penguin.username
-        let password = this.passwordInput.text
+        let username = this.sanitizeInput(this.penguin.username)
+        let password = this.sanitizeInput(this.passwordInput.text)
         let token = this.network.getToken(username)
         let onConnect
+
+        // Validate input lengths
+        if (username.length < 4 || username.length > 12) {
+            this.interface.prompt.showError('Invalid username length', 'Okay', () => {})
+            return
+        }
+
+        if (password.length < 3 || password.length > 128) {
+            this.interface.prompt.showError('Invalid password length', 'Okay', () => {})
+            return
+        }
 
         this.interface.showLoading(`Logging in ${username}`)
         this.scene.stop()
 
         if (token && !this.passwordEdited) {
-            onConnect = () => this.network.send('token_login', { username: username, token: token })
+            onConnect = () => this.network.send('token_login', { 
+                username: username, 
+                token: token 
+            })
         } else {
-            onConnect = () => this.network.send('login', { username: username, password: password })
+            onConnect = () => this.network.send('login', { 
+                username: username, 
+                password: password 
+            })
         }
 
         this.network.connectLogin(this.checks.username.checked, this.checks.password.checked, onConnect)
@@ -230,6 +263,17 @@ export default class PenguinLogin extends BaseScene {
     }
 
     /* END-USER-CODE */
+
+    // Add input sanitization
+    sanitizeInput(input) {
+        // Remove any HTML tags
+        input = input.replace(/<[^>]*>/g, '')
+        // Remove any script tags
+        input = input.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        // Remove any special characters except alphanumeric and spaces
+        input = input.replace(/[^a-zA-Z0-9\s]/g, '')
+        return input.trim()
+    }
 }
 
 /* END OF COMPILED CODE */
