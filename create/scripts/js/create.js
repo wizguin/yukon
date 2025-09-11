@@ -66,12 +66,12 @@ function showSuccess() {
 }
 
 function updateModal(title, content, button, onclick) {
-    document.getElementById('modal-title').innerHTML = title
-    document.getElementById('modal-content').innerHTML = content
+    document.getElementById('modal-title').textContent = title
+    document.getElementById('modal-content').textContent = content
 
     let modalButton = document.getElementById('modal-button')
 
-    modalButton.innerHTML = button
+    modalButton.textContent = button
     modalButton.onclick = onclick
 
     // Replay fade animation
